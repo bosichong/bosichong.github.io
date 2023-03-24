@@ -81,6 +81,86 @@
 
 
 <hgroup>
+    <h2>Vue快速学习笔记(9)Vuetify配置及简单使用</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2020-03-19 09:33:18</small> Tag:
+        
+        
+        <samll>Vue</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>Vuetify的安装及配置</h2>
+<p>相对来说vuecli的安装配置比较简单，在插件里搜索<code>Vuetify</code>，安装即可，这里说下<code>Vuetify</code>在<code>webpack</code>的安装及配置方式。</p>
+<p>首先是:</p>
+<pre><code>npm install vuetify
+npm install sass sass-loader fibers deepmerge -D
+</code></pre>
+<p>然后是配置文件里的加载器配置，因为使用了sass,如下方法配置。</p>
+<pre><code>// webpack.config.js
+
+module.exports = {
+rules: [
+    {
+    test: /\.s(c|a)ss$/,
+    use: [
+        'vue-style-loader',
+        'css-loader',
+        {
+        loader: 'sass-loader',
+        // Requires sass-loader@^7.0.0
+        options: {
+            implementation: require('sass'),
+            fiber: require('fibers'),
+            indentedSyntax: true // optional
+        },
+        // Requires sass-loader@^8.0.0
+        options: {
+            implementation: require('sass'),
+            sassOptions: {
+            fiber: require('fibers'),
+            indentedSyntax: true // optional
+            },
+        },
+        },
+    ],
+    },
+],
+}
+</code></pre>
+<p>然后是引入，这里官网用了一个新建.js来配置<code>Vuetify</code>的引入，如果没有设置<code>@</code>指向目录，可能会没有效果。
+这里我就直接修改了在<code>main.js</code>里引用：</p>
+<pre><code>//导入Vue
+import Vue from "vue";
+
+import App from "./components/App.vue";
+
+// 引入Vuetify组件
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+Vue.use(Vuetify)
+// vuetify 自定义配置
+var vuetify = new Vuetify({})
+
+var vm = new Vue({
+    el: '#app',
+    render: c =&gt; c(App),
+    vuetify
+
+});
+</code></pre>
+<p>好了，大功告成，现在就可以开始愉快的使用<code>Vuetify</code>了，总体来说，我比较喜欢<code>Vuetify</code>，很有设计感细节颜色设计的非常棒。
+javaScript在线正则表达式测试，本程序纯粹是为了学习Vue、webpack、Vuetify，一个重复制造轮子的的实践。欢迎大家交流学习。</p>
+<p>项目演示地址：<a href="http://j_sky.gitee.io/javascript_regexp/">JavaScript_RegExp</a></p>
+<p>项目仓库地址：</p>
+<p><a href="https://gitee.com/J_Sky/JavaScript_RegExp">JavaScript_RegExp___gitee</a>
+<a href="https://gitee.com/J_Sky/JavaScript_RegExp">JavaScript_RegExp___github</a></p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Vue快速学习笔记(8)webpack4.X配置Vue开发打包环境</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2020-03-05 15:16:08</small> Tag:
         
@@ -294,68 +374,6 @@ new CleanWebpackPlugin(),//清理目录 而且不用加入目录数组['dist']</
 &lt;/script&gt;
 </code></pre>
 <p>子组件向父组件传值</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Vue快速学习笔记(3)Vue的组件</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2020-02-04 15:08:07</small> Tag:
-        
-        
-        <samll>Vue</samll>
-        
-    </h3>
-</hgroup>
-<p><h3>Vue中的组件</h3>
-<p>首先注册组件：</p>
-<pre><code>    Vue.component("my-btn", {
-        data:function() {
-            return {
-                count:0
-            }
-        },
-        template:"#mybtn"
-    });
-</code></pre>
-<p>需要一个组件名称和组件的代码模板，组件中的数据和Vue实例的数据不同，一个组件的data选项必须是一个函数。</p>
-<p>定义模板</p>
-<pre><code>&lt;template id="mybtn"&gt;
-    &lt;button v-on:click="count++"&gt;已经点击了{{ count }}次！&lt;/button&gt;
-&lt;/template&gt;
-</code></pre>
-<p>编写Vue实例，完整代码如下：</p>
-<pre><code>&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;
-&lt;script src="assets/plugins/vue.js"&gt;&lt;/script&gt;
-&lt;template id="mybtn"&gt;
-    &lt;button v-on:click="count++"&gt;已经点击了{{ count }}次！&lt;/button&gt;
-&lt;/template&gt;
-
-&lt;div id="app"&gt;
-    &lt;my-btn&gt;&lt;/my-btn&gt;
-    &lt;my-btn&gt;&lt;/my-btn&gt;
-    &lt;my-btn&gt;&lt;/my-btn&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-    Vue.component("my-btn", {
-        data:function() {
-            return {
-                count:0
-            }
-        },
-        template:"#mybtn"
-    });
-
-    vm = new Vue({
-        el:'#app'
-    })
-
-&lt;/script&gt;
-</code></pre>
-<p>如上，就可以实现一个全局的组件注册，可以重复使用。</p></p>
 
 
 <hr>
