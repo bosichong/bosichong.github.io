@@ -1,1 +1,1 @@
-var suiyan = { url : 'https://bosichong.github.io/'}
+var suiyan = { url : 'http://www.suiyan.cc/'}
