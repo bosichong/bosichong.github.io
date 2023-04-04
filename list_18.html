@@ -87,6 +87,97 @@
 
 
 <hgroup>
+    <h2>“编学编玩”用Pygame写游戏（3）让角色动起来及碰撞检测</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-20 16:00:52</small> Tag:
+        
+        
+        <samll>pygame</samll>
+        
+    </h3>
+</hgroup>
+<p><p>上次的代码中，除了绘制基本图形与图片外，中间还插入了一个小小动画，就是头像在不停的移动，这个移动确实简单了些，游戏中的的角色肯定不是简单的移动几像素那么简单了。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/QQ20171020-145146-HD111.gif" /></p>
+<h2>屡屡顺序</h2>
+<p>我觉得刚开始做游戏写代码的时候，总是弄不清游戏的顺序，你可以这样想象一下，比如是拍电影，大家都了解电影是一段一段拍，最后合成在一起然后电影可以播放了。
+游戏呢和这个差不多，也是一段一段做，只不过游戏需要一些条件判断，True了，我就播放第三段，这个属性值达到了我就播放第五段，游戏over了，我就播放结尾。
+好吧，那么我们规划一下现在这个小游戏（应该算不上是一个游戏）场景及角色。</p>
+<h2>游戏内容</h2>
+<p>建一个 640X480的黑色背景的游戏场景，场景中随机生成一些大小一样的小球，他们随机属性值，有一个绿色，有一组红色，如果绿色碰到红色他们就会反转滚动，这些小球如果碰到边界也会反转滚动。
+注意：这里碰撞的检测之后的动作，只是简单的，并不是真的物理运动哦，当然如果你很懂物理学，做一组力学物理运动应该也不是很难的。</p>
+<h2>游戏场景</h2>
+<ul>
+<li>游戏场景的搭建和之前基本上差不多，这里不在介绍了，如果不了解可以翻看之前或是本节的代码参考。</li>
+</ul>
+<h2>游戏中的角色</h2>
+<p>之前我们在场景中是直接绘制的图形，这次我们通过面向对象的方式来管理场景中的角色，pygame中提供了一个<code>Sprite</code>类，这个类专门为游戏中的角色精灵准备的。
+框架中还提供了一个<code>pygame.sprite.Group()</code>容器，他可以把sprite加进去，通过group来管理，group这个容器，通过查看源代码，他只能处理图片类型的sprite。
+如果创建的Rect对象是不行的，这种加到组里后，通过draw是无法绘制出来的，<code>group.draw()</code>这个方法中的画笔使用了<code>blit()</code>，而不是<code>draw()</code></p>
+<h2>游戏中的逻辑判断</h2>
+<p>这个我们直接在游戏中的循环当中直接判断，我是这么把游戏分成各种对象的：</p>
+<ul>
+<li>游戏场景对象，他只负责绘制场景中的任何角色及精灵</li>
+<li>游戏逻辑判断对象，他只负责判断游戏场景中的碰撞，时间检测，然后修改他们的属性。</li>
+<li>精灵group，他们只负责创建，删除。</li>
+</ul>
+<h2>开始制作</h2>
+<p>理论课结束，我们来实践一下，<code>main()</code>函数中创建一个游戏运行函数<code>rungame()</code>，这个函数中运行着当前游戏的所有数据，及各种事件触发的检测。
+为什么需要<code>rungame()</code>?你可以把他这个函数看成一个电影片段，当前你还可以有<code>gamestart() gameover()</code>函数，这样游戏运行到哪个部位时就让哪个函数运行即可。</p>
+<h2>Sprite 精灵</h2>
+<p>说说<code>class MyImgSprite(pygame.sprite.Sprite</code>，这是当前游戏中的精灵，我们为他创建了几个属性，其中比较重要的有：</p>
+<pre><code>self.image = pygame.image.load('./images/a.png') #导入图片
+self.rect = self.image.get_rect() #返回一个rect对象
+self.rect.topleft = (random.randint(40,590),random.randint(40,430))#设置他的坐标  
+self.last_update = pygame.time.get_ticks()#获取当前游戏动行的时间，这是一个整数，不明白可以打印看看
+#移动速度
+self.speed_x = random.randint(1,10)
+self.speed_y = random.randint(1,10)
+</code></pre>
+<p>有了速度，我们就可以通过<code>update()</code>方法来更新自己的坐标</p>
+<pre><code>now = pygame.time.get_ticks()
+if now - self.last_update &gt;1:#通过这个时间差来做一些动画       
+    #self.rect.topleft = (random.randint(0,600),random.randint(0,440))#随机变化位置
+    self.rect.x += self.speed_x
+    self.rect.y += self.speed_y
+    self.last_update = now
+</code></pre>
+<p>如果你不在<code>update()</code>方法更新任何值，那么 这个精灵就是不会动弹的。
+那么问题来了，为什么不直接在游戏循环中更新？
+上节的代码中有段小小的移动是在循环中更新的，因为那只有一段动画，如果以后有很多个对象的话，在循环中更新会很麻烦，这里更新更符合面向对象的的编程方式。</p>
+<h2>绘制及更新</h2>
+<p>在rungame函数中创建个绿球，一组红球，然后就可以直接在场景里绘制了，绘制方法：</p>
+<pre><code>drawbackground()#绘制场景背景颜色
+DISPLAYSURF.blit(m.image,m.rect)#绘制绿球
+myimgs.draw(DISPLAYSURF)#绘制一组红球
+</code></pre>
+<p>场景中的绘制顺序应该是：</p>
+<ol>
+<li>绘制精灵</li>
+<li>逻辑判断</li>
+<li>udpate()更新数据</li>
+</ol>
+<p>以此为循环，这样反复循环即可生成画面。</p>
+<h2>逻辑判断</h2>
+<p>说到逻辑判断，这次场景中包括的判断有二种：边界碰撞及球体之间的碰撞。
+边界碰撞，我自个写了个边界碰撞检测器<code>BorderCrossing.py</code>，因为我在pygame中没找到边界碰撞检测的方法，大家在运行代码的时候，记得git clone一下整个项目。
+这个边界碰撞检测器，我就不多说了，不然这又一篇博客了，有兴趣可以自己看看源码。</p>
+<p>球体之间的碰撞检测直接套用的pygame中的碰撞检测，具体可以参考官方文档</p>
+<p><a href="http://pygame.org/docs/ref/sprite.html#pygame.sprite.spritecollide">碰撞检测官方文档</a></p>
+<h2>更新游戏数据</h2>
+<p>在逻辑判断中根据自己的需要进行速度等数据修改，最后记得用方法更新一下精灵们的坐标。
+说的不是很好，具体大家跑跑程序，改改数值就明白了，如果有什么不懂的，可以直接留言或是邮件给我。欢迎各位大佬指正！</p>
+<h2>本文源码下载</h2>
+<p>请git clone 下所有代码，以免造成游戏跑不起来的情况。</p>
+<ul>
+<li><a href="https://github.com/bosichong/My_pygame/">github</a></li>
+<li><a href="https://gitee.com/J_Sky/My_pygame/">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>“编学编玩”用Pygame写游戏（2）在场景中绘制图形与动画</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-19 14:03:46</small> Tag:
         
@@ -343,83 +434,10 @@ if __name__ == '__main__':
 <br>
 
 
-<hgroup>
-    <h2>聊聊Python中晦涩的生成器（yield）与生成器表达式</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-14 08:21:49</small> Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171014_4.png" /></p>
-<h2>晦涩的生成器yield</h2>
-<p>刚开始接触Python的时候感觉很清爽，入门很简单，但后边学到生成器和协程的时候就感觉有些吃力了，是时候深入的学习一下了。</p>
-<h2>什么是生成器？</h2>
-<p>书上说：函数使用yield可以定义生成器对象，那么包含yield的函数主是一个生成器函数，它可以生成一个序列，方便迭代中使用，<code>__next__()</code>#python3中的特殊方法，应该避免使用特殊方法，<code>next(c)</code>使用内置函数next()即可。</p>
-<pre><code>def countdown(n):
-    print("Counting down from %s" % n)
-    while n > 0:
-        yield n
-        n -= 1
-    return
-
-c = countdown(10)
-print(c.__next__())#python3中的特殊方法，应该避免使用特殊方法
-print(next(c))#使用内置函数next()
-for i in c :
-    print(i,end=' ')
-</code></pre>
-
-<p>函数对象调用<code>.__next__()</code>函数时开始执行语句，遇到yield语句时停止。可以使用循环来操作生成器。
-调用<code>close()</code>方法关闭未使用完的生成器。
-那么问题来了，yield到底是什么？</p>
-<p>我们把上边的代码稍加变化:</p>
-<pre><code>def countdown1(n):
-    print("Counting down from %s" % n)
-    while n > 0:
-        yield n*n
-        n -= 1
-    return
-
-c = countdown1(10)
-print(next(c))
-print(next(c))
-print(next(c))
-for i in c :
-    print(i,end=' ')
-</code></pre>
-
-<p>运行之后我们可以发现程序运行到yield的时候返回了一个值，那么yield和return在功能上有些相似。</p>
-<h2>生成器表达式</h2>
-<p>如果你对列表推导有些了解，你会发现，生成器表达式只不过是把列表的[]换成了元组的()，但列表推导返回的是一个结果集，而生成器表达式返回的是一个生成器。
-因为这个特点，我们可以通过流方式访问一个巨大的文件而不必把它直接加载到内存，这样很大的提高了程序的性能。</p>
-<p>代码如下：</p>
-<pre><code>print('')
-print("生成器表达式:")
-b = (x*x for x in range(10) if (x % 2 ==0))
-print(next(b))
-print(next(b))
-for i in b :
-    print(i, end=' ')
-
-</code></pre>
-
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/blob/master/deftest/yieldtest.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/deftest/yieldtest.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_17.html" role="button" class="outline">Prev</a></li>
-    <li><small>18 / 28</small></li>
+    <li><small>18 / 29</small></li>
     <li><a href="list_19.html" role="button" class="outline">Next</a></li>
 </nav>
 

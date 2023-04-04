@@ -87,6 +87,95 @@
 
 
 <hgroup>
+    <h2>wxPython编程学习笔记(04)wx.Butoon的应用</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-12-22 20:26:29</small> Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181222_8.png" /></p>
+<h2>wx.Butoon</h2>
+<p>按钮是在GUI中使用率最高的一种组件了，点击按钮触发事件可以说是非常普遍的事了。<code>wx.Button</code>使用起来操作简单。
+wx中开关按钮<code>ToggleButton</code>，类似于电灯开关，绑定事件后可以通过</p>
+<pre><code>obj = e.GetEventObject()
+isPressed = obj.GetValue()
+</code></pre>
+<p>来获取对象的属性，这样就可以知道开关按钮的状态了。</p>
+<h2>Button的创建与使用</h2>
+<p>创建</p>
+<pre><code>bt = wx.Button(self,label="关闭窗口",)
+</code></pre>
+<p>绑定事件</p>
+<pre><code>bt.Bind(wx.EVT_BUTTON, self.onCloseWindow)
+</code></pre>
+<p>然后编写绑定事件的函数方法，这样就可以调用此方法了。</p>
+<p>具体代码如下，希望这些短小的代码，能给您带来帮助。</p>
+<pre><code>import wx
+
+class HelloFrame(wx.Frame):
+    def __init__(self, *args, **kw):
+        #调用父类的创建方法
+        super(HelloFrame, self).__init__(*args, **kw)
+
+        box = wx.BoxSizer(wx.VERTICAL)
+        bt1 = wx.Button(self,label="关闭窗口",)
+        bt1.Bind(wx.EVT_BUTTON, self.onCloseWindow)
+
+
+        self.bt2 = wx.ToggleButton(self,label='开关')
+        self.bt2.Bind(wx.EVT_TOGGLEBUTTON,self.showFlash)
+        st = wx.TextCtrl(self,value='helloworld',)
+
+
+        box.AddMany([(bt1,0, wx.ALL | wx.EXPAND, 0),(self.bt2,0, wx.ALL | wx.EXPAND, 0),(st,0, wx.ALL | wx.EXPAND | wx.SHAPED, 0)])
+
+
+        self.SetSizer(box)
+
+
+    def onCloseWindow(self,e):
+        dl = wx.MessageDialog(None,"是否要关闭窗口？","请选择",wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
+        ret = dl.ShowModal()
+
+        if ret == wx.ID_YES:
+            self.Destroy()
+        else:
+            pass
+
+    def showFlash(self,e):
+        obj = e.GetEventObject()
+        isPressed = obj.GetValue()
+
+        if isPressed:
+            self.bt2.SetLabel("关闭")
+        else:
+            self.bt2.SetLabel("打开")
+
+
+def main():
+    app = wx.App()
+    frm = HelloFrame(None, title='wxPython Button',)
+    frm.Show()#显示窗口
+    app.MainLoop()#持续更新窗口
+
+
+if __name__ == '__main__':
+        main()
+</code></pre>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy04.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy04.py">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>wxPython编程学习笔记(03)wxPython中的事件</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-12-21 19:11:40</small> Tag:
         
@@ -331,46 +420,10 @@ if __name__ == '__main__':
 <br>
 
 
-<hgroup>
-    <h2>Python os.path.dirname(__file__) 在终端命令行下报错</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-11-21 22:16:58</small> Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p>最近在写程序中用到了<code>os.path.dirname(__file__)</code>，在PyCharm中启动程序调试的时候，是没有问题的，但是如果在终端命令行下运行程序时就会报错</p>
-<pre><code>FileNotFoundError: [Errno 2] No such file or directory
-</code></pre>
-<p>我们先来测试一下，看看报错是什么样的？</p>
-<pre><code>print(os.path.dirname(__file__))
-</code></pre>
-<p>如果在终端运行当前程序就会报错：</p>
-<pre><code>&gt;&gt;&gt; print(os.path.dirname(__file__))
-Traceback (most recent call last):
-File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-NameError: name 'os' is not defined
-</code></pre>
-<p>如何使之正确运行呢？如果你用过<code>Django</code>，就会想到<code>BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</code>,
-这个是<code>Django</code>里用来定义当前文件所属目录的一行代码，后来我查询了一下，其中<code>os.path.abspath(__file__)</code>这条是返回当前文件的绝对地址，
-而<code>os.path.dirname(os.path.abspath(__file__))</code>就是返回当前文件所在的目录的绝对地址，这样我们就轻松的得到当前文件所属目录了。
-困扰人生的小问题就这样绝对喽！</p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/blob/master/io/ospathabspath.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/io/ospathabspath.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_10.html" role="button" class="outline">Prev</a></li>
-    <li><small>11 / 28</small></li>
+    <li><small>11 / 29</small></li>
     <li><a href="list_12.html" role="button" class="outline">Next</a></li>
 </nav>
 
