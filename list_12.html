@@ -87,6 +87,53 @@
 
 
 <hgroup>
+    <h2>MyDjangoBlog是基于Django搭建的个人blog</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-11-20 08:55:16</small> Tag:
+        
+        
+        <samll>站长源创</samll>
+        
+    </h3>
+</hgroup>
+<p><p>开心Python Django 学习交流q群：217840699</p>
+<p>一个简易易用的blog，基于以下技术构建</p>
+<ul>
+<li>Python </li>
+<li>Django </li>
+<li>Amaze UI </li>
+<li>SQLite3 </li>
+<li>highlight.js </li>
+</ul>
+<p>后台基于Django admin搭建。</p>
+<p>展示如下图，<a href="http://www.17python.com">点击博客</a>查看在线演示效果</p>
+<p><img alt="输入图片说明" src="https://images.gitee.com/uploads/images/2018/1116/201630_6f5d34a4_125848.png" title="001.png" /></p>
+<p><img alt="输入图片说明" src="https://images.gitee.com/uploads/images/2018/1116/204359_4d1b64ee_125848.png" title="002.png" /></p>
+<h1>本地调试</h1>
+<p>环境需求：</p>
+<p>python (3.6.1)
+Django (1.11.3)
+Markdown (2.6.8)
+Pillow (4.2.1)</p>
+<p>进入程序目录后，运行<code>python3 manage.py runserver</code></p>
+<p>后台管理地址<code>http://127.0.0.1:8000/admin/</code></p>
+<p>管理员登陆:</p>
+<p>用户名：<code>admin</code>   密码：<code>17python.com</code></p>
+<p>前台地址<code>http://127.0.0.1:8000/</code></p>
+<p>如果想在部署到生产环境，<a href="http://www.17python.com/blog/67">请点此查看详细教程</a></p>
+<p>欢迎有识之士参与提交代码，大家共同学习共同进步！</p>
+<p>开心Python Django 学习交流q群：217840699</p>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/www.17python.com">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Git多人协作（码云）中的一些操作简单记录</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-10-28 14:24:15</small> Tag:
         
@@ -274,67 +321,10 @@ git remote -v 显示更详细的信息：
 <br>
 
 
-<hgroup>
-    <h2>聊聊Python中的递归与快速排序那点事</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-01-30 14:38:39</small> Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p>最近买了两本算法相关的书，快速了翻看了一下，原来算法真是编程解决问题的最基础要素，以前很少关注算法这块，以为学了基础了解了一些框架包模块等就是学会了编程，请原谅我。。。</p>
-<h2>在Python中递归</h2>
-<p>递归比较简单的例子就是阶乘，看下递归的必要条件：</p>
-<ul>
-<li>边界条件：确定递归到何时终止，也称为递归出口。</li>
-<li>递归模式：大问题是如何分解为小问题的，也称为递归体。</li>
-</ul>
-<p>阶乘中如果n=1那么就达到了边界条件，递归结束，如果大于1那么进入递归模式调用本体，具体看下代码：</p>
-<pre><code>def f(n):
-    if n == 1: return 1
-    return n * f(n - 1)
-print(f(5))
-</code></pre>
-<p>上边就是一个简单的递归阶乘函数，很简单喽，不过在<code>Python</code>中，递归调用是有限制的，通过如下代码可以查看递归可以使用的层数:</p>
-<pre><code>import sys
-sys.setrecursionlimit(5000)  # 设置递归层数
-print(sys.getrecursionlimit())  # 查看
-</code></pre>
-<h2>Python中的快速排序</h2>
-<p>快速排序法是一个非常精典的递归例子，C语言标准库中的<code>qsort</code>函数的实现主是采用的快速排序法。
-快速排序算法的边界条件是数组中只有一个成中了，即停止排序，否则继续递归模式。
-具体看代码：</p>
-<pre><code>def q_sort(arr):
-    if len(arr) &lt; 2 :
-        return arr
-    else:
-        p = arr[0]
-        print(p)
-        l = [i for i in arr[1:] if i &lt;= p]
-        g = [i for i in arr[1:] if i &gt; p]
-        temp = list()
-        temp.append(p)
-        return q_sort(l) + temp  + q_sort(g)
-print(q_sort([2,44,3,77,6,5,888,999]))
-</code></pre>
-<p>上边代码如果直接<code>return q_sort(l) + p  + q_sort(g)</code>是会报错的，所以修改了使用list相加。
-算法其实很有意思，程序都是有算法组成的，以后得多看看了。</p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_11.html" role="button" class="outline">Prev</a></li>
-    <li><small>12 / 28</small></li>
+    <li><small>12 / 29</small></li>
     <li><a href="list_13.html" role="button" class="outline">Next</a></li>
 </nav>
 

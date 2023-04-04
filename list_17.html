@@ -87,6 +87,52 @@
 
 
 <hgroup>
+    <h2>基于Python、Tk构建的可视化目录文件同步助手</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-26 15:04:15</small> Tag:
+        
+        
+        <samll>站长源创</samll>
+        
+    </h3>
+</hgroup>
+<p><p>之前用java GUI写过一个简单的目录同步助手，前几天在WIN10下边想用的时候，发现竟然无法使用了，正好最近在学习python，所以用python重写了一简单的目录文件同步助手。</p>
+<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180109_24.png" /></p>
+<h2>功能需求</h2>
+<p>之前有些喜欢拍照，但设备和场景比较多，所以每次照相回来，都为每台设备创建目录，然后在目录下边创建以时间为名的目录进行照片备份。
+之后这个备份了几年，后来目录越来越多，经常发现无法准确的判断哪些照片是否备份过，因为实在太多了，所以，需要一个实际目录与备份目录比较，
+并且能把比较后的结果复制到备份目录中进行备份。</p>
+<h2>需求分析</h2>
+<p>从需求上分析：参数需要给定两个目录，然后有比较和复制两个功能，GUI构建上只需要两个目录选择和两个按钮，使用Tk即可实现。
+技术上实现采用python的 filecmp shutil os 进行一些目录及文件的比较及复制来实现需求。</p>
+<h2>逻辑分析</h2>
+<p>通过目录选择框获得了两个字符串，然后进行比较，分析出不同的目录与文件，然后复制到目标目录中。
+为此，我创建了一个目录比较类，专门负责比较目录与文件。
+此类中的比较方法中使用到了递归，Python中的递归记得最大是1000次，我觉得这个目录层次应该是够了吧？
+其实本程序中，目录与文件的分析是重要部分：</p>
+<ul>
+<li>先判断根目录中不相同的目录与文件，然后分别记录。</li>
+<li>如果有相同的目录，使用递归比较这二个相同的目录。</li>
+<li>最后分别创建目录，复制文件到目标目录中。</li>
+</ul>
+<h2>Tk Button传参方法</h2>
+<p>在构建GUI的时候，点击按钮激活的函数需要传参数进去，但Python并没有在Button中提供传参的方法，后来查到可以使用lambda</p>
+<pre><code>command=lambda: def(参数1, 参数2)
+</code></pre>
+<p>这样即可达到函数传参的实现。</p>
+<h2>目录与文件的操作</h2>
+<p>通过这个小软件的制作，达到了对python目录及文件的分析及创建复制的模块功能的复制，功能上还可以继续扩展，后续有需要再继续添加。</p>
+<h2>本文源码下载</h2>
+<ul>
+<li><a href="https://github.com/bosichong/PyDirectoryComparison">github</a></li>
+<li><a href="https://gitee.com/J_Sky/PyDirectoryComparison">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>“编学编玩”用Pygame编写游戏（5）pygame绘制一个钟表</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-23 15:51:11</small> Tag:
         
@@ -279,78 +325,10 @@ myimgs.draw(DISPLAYSURF)#绘制一组红球
 <br>
 
 
-<hgroup>
-    <h2>“编学编玩”用Pygame写游戏（2）在场景中绘制图形与动画</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-19 14:03:46</small> Tag:
-        
-        
-        <samll>pygame</samll>
-        
-    </h3>
-</hgroup>
-<p><p><code>pygame</code>的框架使用起来很简单，但这个框架功能也还算可以的，虽然网上对<code>pygame</code>评价褒贬不一，但对于其的存在必有其的存在意义，功能上虽然不能说是十分的完美，但对于新手来说，在使用和学习中还是很有价值的。</p>
-<h2><code>pygame</code> 图形绘制</h2>
-<p>rect    绘制矩形
-polygon 绘制多边形（三个及三个以上的边）
-circle  绘制圆
-ellipse 绘制椭圆
-arc 绘制圆弧
-line    绘制线
-lines   绘制一系列的线
-aaline  绘制一根平滑的线
-aalines 绘制一系列平滑的线</p>
-<p>上边列举了一些图形绘制的方法，第一结中的代码我们只是给出pygame中最简约的实现代码，我们在上节代码的基础之上继续添加一下，试试画出各种图形。</p>
-<pre><code>pygame.draw.polygon(screen, RED, ((146,0),(290,100),(36,277),(55,200),(0,106)),2)
-pygame.draw.line(screen, BLUE, (11,33), (55,300), 1)
-pygame.draw.circle(screen, GREEN, (300,50), 100, 0)
-pygame.draw.ellipse(screen, RED, (300,250,180,80), 1)
-pygame.draw.rect(screen, RED, (200,150,100,100), 1)
-</code></pre>
-<p>以上为各种图形绘制的方法演示，关于这些方法的参数，我们可以参考官方的文档，其实都是挺简单的。</p>
-<h2>在场景中绘制图片</h2>
-<p>游戏中的角色不可能只是一些简单的图形，大多数时应该都是一张张图片，我们看下图片的绘制方法</p>
-<pre><code>bosiImg = pygame.image.load('./images/bosi.png')
-screen.blit(bosiImg,(bosix,bosiy))
-</code></pre>
-<p>通过<code>pygame.image.load()</code>加载图片后，在场景中使用<code>screen.blit</code>绘制，两个参数：图片对象和一个坐标元组。</p>
-<h2>在场景中写字</h2>
-<p>pygame中的文字绘制稍稍有一点麻烦，我们看代码：</p>
-<pre><code>fobj = pygame.font.Font('./font/3.ttf', 40)
-textobj = fobj.render('Hello World', True, GREEN,)
-text = textobj.get_rect()
-text.center = (400, 400)
-screen.blit(textobj, text)#文字显示
-</code></pre>
-<p>看代码行数是五步：</p>
-<ol>
-<li>通过<code>pygame.font.Font()</code>加载字体，创建一个font对象，设置文字的大小</li>
-<li>通过<code>render('Hello World', True, GREEN,)</code>设置文字的内容，颜色。</li>
-<li><code>get_rect()</code>或得一个rect对象，之后就有些象绘制图象了。</li>
-<li>设置绘制图像的坐标</li>
-<li><code>blit()</code>方法绘制文字到场景</li>
-</ol>
-<h2>让图片动起来</h2>
-<p>如何在场景中绘制动画？动画其实就是角色坐标值的修改，</p>
-<pre><code>bosix = 100
-bosiy = 100
-</code></pre>
-<p>在代码中我定义了二个变量，然后我在游戏场景的循环输出中，不断的修改角色的坐标值即可达到需要的动画效果了。</p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2017/10/Snip20171019_3.png" /></p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/My_pygame/blob/master/pygame00.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/My_pygame/blob/master/pygame00.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_16.html" role="button" class="outline">Prev</a></li>
-    <li><small>17 / 28</small></li>
+    <li><small>17 / 29</small></li>
     <li><a href="list_18.html" role="button" class="outline">Next</a></li>
 </nav>
 

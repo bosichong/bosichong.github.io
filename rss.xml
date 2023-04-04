@@ -5,8 +5,15 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-03-24 23:40:58</pubDate>
+        <pubDate>2023-04-04 16:39:16</pubDate>
 
+        
+        <item>
+            <title>Pico.css大道至简返璞归真--一个简单轻量化的CSS框架</title>
+            <link>https://suiyan.cc/2023/20230404163916.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-04 16:39:16</pubDate>
+        </item>
         
         <item>
             <title>好了，又可以愉快的写博客了</title>
@@ -69,13 +76,6 @@
             <link>https://suiyan.cc/before-2022/20201202155245.html</link>
             <author>J.sky</author>
             <pubDate>2020-12-07 20:30:45</pubDate>
-        </item>
-        
-        <item>
-            <title>聊聊Python中的装饰器</title>
-            <link>https://suiyan.cc/before-2022/20201005203404.html</link>
-            <author>J.sky</author>
-            <pubDate>2020-10-05 20:34:04</pubDate>
         </item>
         
 

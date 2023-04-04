@@ -87,6 +87,82 @@
 
 
 <hgroup>
+    <h2>Python多线程编程（下）多线程锁 threading.Lock</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-04 14:49:34</small> Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p><p>在多线程任务中，线程对数据的操作是随机的，这个先后次序无法预测，如果利用多线程修改唯一数据，由于对数据操作的随机性，必会影响到数据结果的准确性，所以在多线程的任务的编码中，我们必须使用线程锁。</p>
+<h2>Python的多线程锁 threading.Lock</h2>
+<p>通过下边的例子，我们来看看多线程锁的重要性，定义两个数据，同时利用多线程对其+ -相同的数值，
+如果操作次序是正常的，一加一减，那个数据应该是没有变化的，但是因为多线程操作没有加锁时对数据的操作是随机争抢资源的，
+多线程操作时会发生，多加或是多减的结果，我们看下边的例子：</p>
+<pre><code class="python">import threading
+
+data = 0
+lock_data = 0
+lock = threading.Lock()#创建一把线程锁
+
+lock.acquire()
+lock.release()
+
+def change_d(n):
+    '''修改无锁数据的函数'''
+    global data
+    data += n
+    data -= n
+
+def change_l_d(n):
+    '''修改有锁数据的函数'''
+    global lock_data
+    lock_data += n
+    lock_data -= n
+
+def myfun(n):
+    for i in range(500000):
+        change_d(n)
+        #lock.acquire()
+        #change_l_d(n)
+        #lock.release()
+        #与下边的with语句处相同
+        with lock:
+            change_l_d(n)
+
+def main():
+    threads = []
+    k = 5
+    for i in range(k):
+        t = threading.Thread(target=myfun, args=(10,))
+        threads.append(t)
+    for i in range(k):
+        threads[i].start()
+    for i in range(k):
+        threads[i].join()
+    print("无锁数据最终结果=={0}".format(data))
+    print("有锁数据最终结果=={0}".format(lock_data))
+
+if __name__ == '__main__':
+    main()
+
+</code></pre>
+
+<p>多次运行后我们会发现，无锁数据的最终结果会出现不同，因为可以证明，无锁的时候多线程操作是随机性的。所以在多线程操作中，如果存在多线程操作唯一数据时，一定要加锁保证每次只有一个线程对基进行操作。</p>
+<p>除了对多唯一数据进行加锁这种方法以外，在<code>Python</code>中还可以使用信号量或是事件对线程进行控制，但笔者认为，还是使用Lock对象比较方便。</p>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/thread">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/thread">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Python多线程编程（上）多线程创建的几种方法</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-03 13:01:21</small> Tag:
         
@@ -403,113 +479,10 @@ isay(cat)#Tom:我的叫声是：喵喵喵
 <br>
 
 
-<hgroup>
-    <h2>Python TK和Tkinter的GUI编程(9) Event 键盘鼠标事件</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-28 13:33:43</small> Tag:
-        
-        
-        <samll>Python GUI</samll>
-        
-    </h3>
-</hgroup>
-<p><h2>Event鼠标事件</h2>
-<ul>
-<li><Button-1>：鼠标左击事件  </li>
-<li><Button-2>：鼠标右击事件  </li>
-<li><Button-3>：鼠标中击事件  </li>
-<li><Double-Button-1>：双击事件  </li>
-<li><Triple-Button-1>：三击事件  </li>
-<li><Bx-Motion>：鼠标移动事件,x=[1,2,3]分别表示左、中、右鼠标操作。  </li>
-<li><ButtonRelease-x>鼠标释放事件,x=[1,2,3],分别表示鼠标的左、中、右键操作  </li>
-<li><Leave>：鼠标离开时产生此事件  </li>
-</ul>
-<h2>Event键盘事件</h2>
-<p>bing<Key>和事件函数来触发，其中Key 可以换成对应的键值，也可以是组合键。</p>
-<h2>程序事件</h2>
-<p>程序退出<code>root.protocol('WM_DELETE_WINDOW', printProtocol)</code></p>
-<h2>源码</h2>
-<p><img alt="" src="assets/images/media/upload/2017/09/Snip20170928_18.png" /></p>
-<pre><code class="python">import tkinter as tk
-
-root = tk.Tk()
-
-###################################
-# 鼠标事件
-###################################
-def printroot(event):
-    print(event.x,event.y)
-
-bt = tk.Button(root, text="<Double-Button-1>：双击事件 ")
-bt1 = tk.Button(root, text="<Triple-Button-1>：三击事件  ")
-bt2 = tk.Button(root, text="<Leave>：鼠标离开时产生此事件")
-bt3 = tk.Button(root, text="<Button-1>：鼠标左击事件")
-bt4 = tk.Button(root, text="<Button-2>：鼠标右击事件")
-bt5 = tk.Button(root, text="<Button-3>：鼠标中击事件")
-bt6 = tk.Button(root, text="<B1-Motion>：鼠标移动事件,x=[1,2,3]分别表示左、右、中鼠标操作。  ")
-bt7 = tk.Button(root, text="<ButtonRelease-2>鼠标释放事件,x=[1,2,3],分别表示鼠标的左、右、中键操作  ")
-bt.grid()
-bt1.grid()
-bt2.grid()
-bt3.grid()
-bt4.grid()
-bt5.grid()
-bt6.grid()
-bt7.grid()
-bt.bind("<Double-Button-1>",printroot)
-bt1.bind("<Triple-Button-1>",printroot)
-bt2.bind("<Leave>",printroot)
-bt3.bind("<Button-1>",printroot)
-bt4.bind("<Button-2>",printroot)
-bt5.bind("<Button-3>",printroot)
-bt6.bind("<B1-Motion>",printroot)
-bt7.bind("<ButtonRelease-2>",printroot)
-
-
-###################################
-# 键盘事件
-###################################
-def printkey(event):
-    print("event.char = " + event.char)
-    print('event.keycode = ', event.keycode)  
-
-
-root.bind("<Shift_R>",printkey)
-root.bind("<Shift_L>",printkey)
-root.bind("<Return>",printkey)
-root.bind("<Key>",printkey)
-
-
-###################################
-# 程序退出
-###################################
-def printProtocol():  
-    print('WM_DELETE_WINDOW')  
-    root.destroy() 
-
-root.protocol('WM_DELETE_WINDOW', printProtocol)  
-root.mainloop()
-</code></pre>
-
-<h2>相关参考</h2>
-<ul>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
-<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
-</ul>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_20.html" role="button" class="outline">Prev</a></li>
-    <li><small>21 / 28</small></li>
+    <li><small>21 / 29</small></li>
     <li><a href="list_22.html" role="button" class="outline">Next</a></li>
 </nav>
 
