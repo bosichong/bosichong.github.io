@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+    <channel>
+        <title>SuiYan 碎言博客</title>
+        <link>https://suiyan.cc/</link>
+        <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
+        <pubDate>2023-03-24 23:40:58</pubDate>
+
+        
+        <item>
+            <title>好了，又可以愉快的写博客了</title>
+            <link>https://suiyan.cc/2023/20230324234058.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-03-24 23:40:58</pubDate>
+        </item>
+        
+        <item>
+            <title>又可以继续写blog了</title>
+            <link>https://suiyan.cc/before-2022/20220923093608.html</link>
+            <author>J.sky</author>
+            <pubDate>2022-09-23 09:36:08</pubDate>
+        </item>
+        
+        <item>
+            <title>PyKeyBoardFairy可以替代你游戏中的卡键盘和鼠标宏</title>
+            <link>https://suiyan.cc/before-2022/20210521155450.html</link>
+            <author>J.sky</author>
+            <pubDate>2021-05-21 15:54:50</pubDate>
+        </item>
+        
+        <item>
+            <title>Flask-SQLAlchemy 使用学习笔记(下):一对一、一对多、多对多关系</title>
+            <link>https://suiyan.cc/before-2022/20210316093818.html</link>
+            <author>J.sky</author>
+            <pubDate>2021-03-16 09:38:18</pubDate>
+        </item>
+        
+        <item>
+            <title>Flask-SQLAlchemy 使用学习笔记(上):简单的配置及使用</title>
+            <link>https://suiyan.cc/before-2022/20210223155027.html</link>
+            <author>J.sky</author>
+            <pubDate>2021-02-23 15:50:27</pubDate>
+        </item>
+        
+        <item>
+            <title>Flask项目配置(config)经验</title>
+            <link>https://suiyan.cc/before-2022/20210222084745.html</link>
+            <author>J.sky</author>
+            <pubDate>2021-02-22 08:47:45</pubDate>
+        </item>
+        
+        <item>
+            <title>pipenv 简化的虚拟环境、项目依赖管理工具</title>
+            <link>https://suiyan.cc/before-2022/20210220153815.html</link>
+            <author>J.sky</author>
+            <pubDate>2021-02-20 15:38:15</pubDate>
+        </item>
+        
+        <item>
+            <title>Anaconda常用终端命令</title>
+            <link>https://suiyan.cc/before-2022/20210212002001.html</link>
+            <author>J.sky</author>
+            <pubDate>2021-02-12 00:20:01</pubDate>
+        </item>
+        
+        <item>
+            <title>如何打包上传Python程序或模块包到PyPi供其他人使用pip下载？</title>
+            <link>https://suiyan.cc/before-2022/20201202155245.html</link>
+            <author>J.sky</author>
+            <pubDate>2020-12-07 20:30:45</pubDate>
+        </item>
+        
+        <item>
+            <title>聊聊Python中的装饰器</title>
+            <link>https://suiyan.cc/before-2022/20201005203404.html</link>
+            <author>J.sky</author>
+            <pubDate>2020-10-05 20:34:04</pubDate>
+        </item>
+        
+
+    </channel>
+
+</rss>
