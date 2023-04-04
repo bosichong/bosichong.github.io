@@ -113,16 +113,16 @@ In [1]:
 <ul>
 <li>代码提示</li>
 </ul>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180107_19.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180107_19.png" /></p>
 <ul>
 <li>问号？妙用</li>
 </ul>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180107_20.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180107_20.png" /></p>
 <p>这样可以直接查看到对象的一些属性介绍。</p>
 <ul>
 <li>直接使用shell命令</li>
 </ul>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180107_21.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180107_21.png" /></p>
 <p>这个是不是很方便有没有？</p>
 <p>IPython确实是Python学习中的好帮手，在熟悉某些模块的时候，用IPythong先来探个明白是个不错的方法。</p>
 <h2>相关参考</h2>
@@ -151,13 +151,13 @@ In [1]:
     </h3>
 </hgroup>
 <p><p>在编写游戏的时候常常不知道从何处入手，如果真的想不出从哪开始写，不妨从游戏的背景开始^o^.</p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180105_16.png" /></p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180105_17.png" /></p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180105_18.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180105_16.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180105_17.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180105_18.png" /></p>
 <h2>GreedSnake贪食蛇设计思路</h2>
 <p>游戏在设计前，可以使用一些做图软件先进行画面设计，至少需要有一个大体样式，对颜色做一些定义，我用fireworks简单的布局了一下，
 这样的好处是我们可以通过绘制先计算出来游戏中需要的一些数值，比如蛇身体及背景方格的大小。</p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180104_13.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180104_13.png" /></p>
 <p>除去游戏的开始和结束画面，整个游戏的核心逻辑很简单：</p>
 <ul>
 <li>游戏的背景渲染</li>
@@ -176,7 +176,7 @@ for i in range(0, 10):
          pygame.draw.rect(self.screen, (238,238,238), (i*40, j*40, 40, 40), 1)
 </code></pre>
 <p>在场景中创建对象后，进行渲染，效果如下：</p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180104_12.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180104_12.png" /></p>
 <h2>绘制蛇并让它动起来</h2>
 <p>默认出场的蛇身体有五个节点，我们先在场景中绘制出这条蛇，而且先不必让蛇动起来。为此我创建了一个SnakeBody类，定义蛇的身体上的一节。
 这样我们在游戏场景中创建一个list用来表示蛇的身体：</p>
@@ -184,7 +184,7 @@ for i in range(0, 10):
 for i in range(0,4):
     self.bodys.append(SnakeBody(self.screen,3*40,(3+i)*40))
 </code></pre>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180104_14.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180104_14.png" /></p>
 <p>蛇是出来了，不过没有蛇头哇，如果满屏都是蛇身的话，无法分辨哪个是头啦，所以我们得把头部变成其它颜色加以区分，看来还得加入颜色的参数:</p>
 <pre><code>    self.bodys = []  # 创建一个精灵组，用来放置蛇的身体
     for i in range(0, 5):
@@ -285,9 +285,9 @@ for i in range(0,4):
 <h2>功能扩展</h2>
 <p>这个弹球游戏只完成了最最最基本的功能，扩展性很强，比如添加关卡，打印得分，增加一些特效，只要你想修改，弹球也一样可以玩的很嗨。</p>
 <p>以下为游戏效果图，建议下载相关代码跑一下，有问题可以留言给我。</p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2017/12/Snip20171229_8.png" /></p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2017/12/Snip20171229_9.png" /></p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2017/12/Snip20171229_10.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_8.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_9.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_10.png" /></p>
 <h2>本文源码下载</h2>
 <p>请git clone My_pygame下所有代码，以免造成游戏跑不起来的情况。本例源文件：PY_RPG.pingball.py</p>
 <ul>

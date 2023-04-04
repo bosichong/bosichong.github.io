@@ -142,7 +142,7 @@ pip install twine
 </code></pre>
 <h3>打包项目配置</h3>
 <p>需要打包的项目结构图如下：</p>
-<p><img alt="" src="assets/images/2021/Snip20201207_1.png" /></p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2021/Snip20201207_1.png" /></p>
 <p><code>PrimarySchoolMath</code>目录就是我们要打包的项目目录(这个名称和setup.py里的项目名称要一致，也是pip install XXXX  的名字是一样的)。
 <code>LICENSE</code>是软件的开源协议，如果不知道怎么选可以到https://choosealicense.com 这里选择一下。
 <code>readme.md</code>是软件或包的说明，可以写一些仓库地址简要说明。
@@ -177,7 +177,7 @@ setuptools.setup(
 <pre><code>python3 setup.py sdist bdist_wheel
 </code></pre>
 <p>打包完毕，此时的项目目录如下：</p>
-<p><img alt="" src="assets/images/2021/Snip20201207_4.png" /></p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2021/Snip20201207_4.png" /></p>
 <p><code>dist</code>下就是要上传的打包文件了。</p>
 <h3>上传到pypi.org</h3>
 <p>这里的上传可以使用测试上传或是直接上传。</p>
@@ -194,7 +194,7 @@ Enter your username: bosichong
 Enter your password:
 </code></pre>
 <p>如果没有什么错误就可以上传成功了！登录网站就可以看到刚刚上传的软件包了</p>
-<p><img alt="" src="assets/images/2021/Snip20201207_6.png" /></p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2021/Snip20201207_6.png" /></p>
 <p>然后使用<code>pip install XXXX</code> 安装测试吧。</p>
 <h3>其他注意事项</h3>
 <p>如果需要更新软件包，修改完代码后记得修改<code>setup.py</code>中的软件版本，这样才能正常上传。</p>
