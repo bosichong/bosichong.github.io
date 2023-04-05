@@ -88,31 +88,38 @@
 
 <hgroup>
     <h2>碎言静态博客</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-12-31 10:26:39</small> Tag:
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2023-04-05 10:26:39</small> Tag:
         
         
         <small>站长源创</small>
         
     </h3>
 </hgroup>
-<p><h1>碎言静态博客</h1>
-<p><a href='https://gitee.com/J_Sky/suiyan/stargazers'><img src='https://gitee.com/J_Sky/suiyan/badge/star.svg?theme=dark' alt='star'></img></a></p>
+<p><h3>suiyan 碎言静态博客</h3>
 <h3>介绍</h3>
 <p>碎言这个名称取自与"碎言片语"，码兄累了吗？累了就休息一下，为未来的自己留下一些碎言片语吧。</p>
-<p>演示(码云)： <a href="https://j_sky.gitee.io/suiyan/blog">碎言博客</a></p>
-<p>演示(github)： <a href="https://bosichong.github.io/suiyan/blog">碎言博客</a></p>
-<p><img alt="" src="https://suiyan.cc/assets/images/fabu.png" /></p>
+<p>演示(github)： <a href="https:/suiyan.cc/">碎言博客</a></p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/fba.png" /></p>
+<p>一键切换主题，自动主题。</p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/fbb.png" /></p>
 <h3>软件架构</h3>
-<p>前端使用了<code>jQuery，bootstrap4,font-awesome-4.07,highlight.js,less,jQuery.toTop等技术框架。</code></p>
-<p>本地构建博客索引使用了<code>Python</code>的相关技术,实现了全站静态页面，并可以通过标题进行全站搜索。</p>
+<p>2023-03-24 新版 3.0.0 发布啦！</p>
+<p>集成了jinja2的模板引擎，大大的提高了静态页面的构建速度， 支持模板主题的制作。</p>
+<p>使用了asyncio和aiofiles模块来实现异步IO操作，提高了生成静态博客页面的效率，几百页面瞬间生成。</p>
+<p>更新当前博客主题：使用了pico.css样式，大道至简，返璞归真，没有组件，只有HTML标签。</p>
+<p>构建博客索引并可以通过标题进行全站搜索。</p>
 <p>博客文章写作采用Markdown技术支持，让你专注写作更流畅。</p>
+<p>推荐使用Vscode搭配进行blog文章的编写(因为当创建新文章后会直接使用vscode直接打开)</p>
+<p>如果新建blog文章无法在vscode中打开，请在命令面板中搜索shell，在PATH 中安装code命令。</p>
 <p>博客的管理支持终端和图形界面：</p>
 <p>图形界面：</p>
 <pre><code>python3 w.py
 </code></pre>
-<p><img alt="" src="https://suiyan.cc/assets/images/bloggui.png" /></p>
-<p>终端：</p>
-<p><img alt="" src="https://suiyan.cc/assets/images/zhongduan.png" /></p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/bloggui.png" /></p>
+<p>终端启动命令：</p>
+<pre><code>python s.py
+</code></pre>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/zhongduan1.png" /></p>
 <p>可以根据自己的喜好进行选择。</p>
 <h3>安装教程</h3>
 <p>首先克隆下载碎言静态博客，
@@ -126,35 +133,24 @@
 <h3>创建文章</h3>
 <pre><code>python z.py -n 此处写文章标题
 </code></pre>
-<p>这个时候就会在<code>articles</code>目录下创建一篇文章。<a href="https://j_sky.gitee.io/suiyan/20191230155649.html">更多终端操作</a></p>
-<h3>创建索引</h3>
-<p>博客的文章排序及搜索以来此索引<code>blog_data.json</code>，每次创建文章的时候回自动更新索引，但是如果你修改了头部的一些索引信息，则需要运行命令来更新索引。</p>
-<pre><code>python z.py -i
-</code></pre>
+<p>这个时候就会在<code>articles</code>目录下创建一篇文章,并且使用<code>vscode</code>直接打开。</p>
 <h3>修改博客及站长资料</h3>
 <p><code>config.json</code>里存放着一些站点的资料，上传前建议先修改成自己的资料。</p>
-<p><a href="https://j_sky.gitee.io/suiyan/20191231133518.html"><code>config</code>配置详解点击查看</a></p>
 <h3>运行站点</h3>
-<p>推荐使用<code>Live Server</code>这个vscode得插件，非常方便。</p>
+<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。</p>
 <h3>修改站点样式</h3>
-<p>碎言博客内置了八套网站样式，四套light四套dark，修改四个html页面的外链CSS连接即可。</p>
-<p>具体修改方法请点击查看： <a href="https://j_sky.gitee.io/suiyan/20191230201529.html">细说修改碎言博客站点的样式</a></p>
+<p>采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。</p>
 <h3>部署</h3>
 <pre><code>git push origin master
 </code></pre>
-<p>提交所有文件到git仓库即可。</p>
+<p>提交<code>blog</code>目录下所有文件到git仓库即可，<code>blog</code>就是所有博客的全部文件！</p>
 <h4>参与贡献</h4>
 <ol>
 <li>Fork 本仓库</li>
 <li>新建 Feat_xxx 分支</li>
 <li>提交代码</li>
 <li>新建 Pull Request</li>
-</ol>
-<h2>源码下载：</h2>
-<ul>
-<li><a href="https://gitee.com/J_Sky/suiyan">Gitee</a></li>
-<li><a href="https://github.com/Jsky2020/suiyan">GitHub</a></li>
-</ul></p>
+</ol></p>
 
 
 </section>

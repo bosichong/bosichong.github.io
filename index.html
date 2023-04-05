@@ -87,6 +87,77 @@
 
 
 <hgroup>
+    <h2>碎言静态博客</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2023-04-05 10:26:39</small> Tag:
+        
+        
+        <samll>站长源创</samll>
+        
+    </h3>
+</hgroup>
+<p><h3>suiyan 碎言静态博客</h3>
+<h3>介绍</h3>
+<p>碎言这个名称取自与"碎言片语"，码兄累了吗？累了就休息一下，为未来的自己留下一些碎言片语吧。</p>
+<p>演示(github)： <a href="https:/suiyan.cc/">碎言博客</a></p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/fba.png" /></p>
+<p>一键切换主题，自动主题。</p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/fbb.png" /></p>
+<h3>软件架构</h3>
+<p>2023-03-24 新版 3.0.0 发布啦！</p>
+<p>集成了jinja2的模板引擎，大大的提高了静态页面的构建速度， 支持模板主题的制作。</p>
+<p>使用了asyncio和aiofiles模块来实现异步IO操作，提高了生成静态博客页面的效率，几百页面瞬间生成。</p>
+<p>更新当前博客主题：使用了pico.css样式，大道至简，返璞归真，没有组件，只有HTML标签。</p>
+<p>构建博客索引并可以通过标题进行全站搜索。</p>
+<p>博客文章写作采用Markdown技术支持，让你专注写作更流畅。</p>
+<p>推荐使用Vscode搭配进行blog文章的编写(因为当创建新文章后会直接使用vscode直接打开)</p>
+<p>如果新建blog文章无法在vscode中打开，请在命令面板中搜索shell，在PATH 中安装code命令。</p>
+<p>博客的管理支持终端和图形界面：</p>
+<p>图形界面：</p>
+<pre><code>python3 w.py
+</code></pre>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/bloggui.png" /></p>
+<p>终端启动命令：</p>
+<pre><code>python s.py
+</code></pre>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/zhongduan1.png" /></p>
+<p>可以根据自己的喜好进行选择。</p>
+<h3>安装教程</h3>
+<p>首先克隆下载碎言静态博客，
+* <a href="https://gitee.com/J_Sky/suiyan">Gitee</a>
+* <a href="https://github.com/Jsky2020/suiyan">GitHub</a></p>
+<p>终端运行:</p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
+<p>安装相关依赖</p>
+<p>安装完成。</p>
+<h3>创建文章</h3>
+<pre><code>python z.py -n 此处写文章标题
+</code></pre>
+<p>这个时候就会在<code>articles</code>目录下创建一篇文章,并且使用<code>vscode</code>直接打开。</p>
+<h3>修改博客及站长资料</h3>
+<p><code>config.json</code>里存放着一些站点的资料，上传前建议先修改成自己的资料。</p>
+<h3>运行站点</h3>
+<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。</p>
+<h3>修改站点样式</h3>
+<p>采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。</p>
+<h3>部署</h3>
+<pre><code>git push origin master
+</code></pre>
+<p>提交<code>blog</code>目录下所有文件到git仓库即可，<code>blog</code>就是所有博客的全部文件！</p>
+<h4>参与贡献</h4>
+<ol>
+<li>Fork 本仓库</li>
+<li>新建 Feat_xxx 分支</li>
+<li>提交代码</li>
+<li>新建 Pull Request</li>
+</ol></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>解决Github Pages自定义域名失效的问题</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2023-04-04 21:22:58</small> Tag:
         
@@ -159,24 +230,6 @@
 <p>上次我说这话的时候还是2022-09-23，一下子都过去大半年了！花了三天的时间把之前写的静态博客重构了，这次的重构还算满意挺开心的，重构达到了预期的效果。</p>
 <p>把之前在Python代码中使用字符串拼接的方式更换成了jinja2的模板引擎，大大的提高了前端页面的构建速度，之后需要丰富页面内容就简单多了，至少以后有人要用也看得懂，另外更换了前端的UI框架，这里推案件一个不错的框架：pico.css,Docs <a href="https://picocss.com/docs/">https://picocss.com/docs/</a>。Pico选择使用极少的<code>.classes</code> 尽可能保持中性和语义,这使得使用原生的HTML标签写网页就很方便了，而且样式也不错挺美观的！</p>
 <p>Python生成静态页面的代码也仔细的重构了一下，由于使用的jinja2模板引擎，代码量大大减少了很多。这几天抽空把这个静态博客的搭建心得分享一下。好了，今天起个头，以后的日子还长着呢。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>又可以继续写blog了</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2022-09-23 09:36:08</small> Tag:
-        
-        
-        <samll>站长吐槽</samll>
-        
-    </h3>
-</hgroup>
-<p><p>又可以继续写blog了</p>
-<p>好久没有更新blog,最近抽些时间继续更新blog,把一些未完成的代码和技术债务更新完成.</p>
-<p>测试,GitHub页面不更新啊?</p></p>
 
 
 <hr>

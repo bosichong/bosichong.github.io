@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://suiyan.cc/before-2022/106.html</loc>
+        <lastmod>2023-04-05 10:26:39</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://suiyan.cc/2023/20230404212258.html</loc>
         <lastmod>2023-04-04 21:22:58</lastmod>
         <changefreq>daily</changefreq>
@@ -172,13 +179,6 @@
     <url>
         <loc>https://suiyan.cc/before-2022/20191231133518.html</loc>
         <lastmod>2019-12-31 13:35:18</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://suiyan.cc/before-2022/106.html</loc>
-        <lastmod>2019-12-31 10:26:39</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>

@@ -5,8 +5,15 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-04 21:22:58</pubDate>
+        <pubDate>2023-04-05 10:26:39</pubDate>
 
+        
+        <item>
+            <title>碎言静态博客</title>
+            <link>https://suiyan.cc/before-2022/106.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-05 10:26:39</pubDate>
+        </item>
         
         <item>
             <title>解决Github Pages自定义域名失效的问题</title>
@@ -69,13 +76,6 @@
             <link>https://suiyan.cc/before-2022/20210220153815.html</link>
             <author>J.sky</author>
             <pubDate>2021-02-20 15:38:15</pubDate>
-        </item>
-        
-        <item>
-            <title>Anaconda常用终端命令</title>
-            <link>https://suiyan.cc/before-2022/20210212002001.html</link>
-            <author>J.sky</author>
-            <pubDate>2021-02-12 00:20:01</pubDate>
         </item>
         
 
