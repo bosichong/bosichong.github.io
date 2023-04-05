@@ -15,24 +15,9 @@
     <!-- 引入 站点样式 -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/custom.css">
     <script src="https://suiyan.cc/assets/js/jquery-3.3.1.min.js"></script>
-
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PVH77QT');
-    </script>
-    <!-- End Google Tag Manager -->
     
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVH77QT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <div class="hero" data-theme="dark" style="background-image: url('https://suiyan.cc/assets/pexels-masha-raymers-3068711.jpg');">
     <nav class="container-fluid"><ul>
     <li><a href="https://suiyan.cc/" class="contrast">SuiYan</a></li>
@@ -192,25 +177,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <hgroup>
-    <h2>关于站长</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-12-30 16:25:07</small> Tag:
+    <h2>碎言博客终端操作详解</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-12-30 15:56:49</small> Tag:
         
         
-        <samll>未分类</samll>
-        
-        <samll>站长吐槽</samll>
+        <samll>碎言博客</samll>
         
     </h3>
 </hgroup>
-<p><h2>About Me</h2>
-<p>一个浪迹于互联网的编程爱好者且酷爱画画，希望能成为一名出色的插画师。</p>
-<h2>关于碎言博客</h2>
-<p>本来用<code>Python Django</code>开发了一套简易的博客系统，但是由于维护起来倍感吃力，而且云服务器也即将到期费用不菲。</p>
-<p>索性改成静态博客得了，试了几个静态博客程序，但是总觉得和别人一样太没意思，正好最近在学习<code>JavaScript jQuery</code>，</p>
-<p>索性撸一个静态博客，发现自己就是爱重复造轮子。</p>
-<p>2023-03-24 </p>
-<p>这几天把碎言博客给重构了，换了界面，这次打算坚持写博客了，也不知道能坚持多久。</p>
-<p>欢迎进群讨论学习Q群:217840699</p></p>
+<p><h2>关于z.py</h2>
+<p><code>z.py</code>是碎言博客构建索引的关键程序，采用<code>Python3</code>相关技术开发。</p>
+<p>终端运行：
+    python3 z.py</p>
+<p><img alt="" src="assets/images/blog/Snip20191230_4.png" /></p>
+<p>即可看到相关的命令帮助。</p>
+<h2>-i</h2>
+<pre><code>python3 z.py -i
+</code></pre>
+<p>每次创建完新文章后都会自动创建索引，若是修改了文章的标题，作者，标签，时间等头部信息后，应该运行此命令进行索引更新。</p>
+<h2>-n</h2>
+<pre><code>python3 z.py -n 这里写你的新文章的标题名称
+</code></pre>
+<ul>
+<li><code>-n</code>用来创建新文章，其中还有几个选项可以使用，其中<code>-n</code>后边必须跟随一个新标题。</li>
+<li>
+<p><code>-d</code>用来创建一个存放的目录</p>
+<p>python3 z.py -n blog_title -d blog</p>
+</li>
+</ul>
+<p>会在默认<code>.md</code>存放目录<code>articles</code>下创建一个<code>blog</code>目录，新文章就创建在这里。</p>
+<ul>
+<li>
+<p><code>-t -a -p</code>分别对应标签，作者和文章地址页面名称。作者留空默认填充为博客站长昵称。</p>
+</li>
+<li>
+<p><code>-v</code>显示当前程序的版本。</p>
+</li>
+<li>
+<p><code>-tt</code> 参数为<code>int</code>，此命令用来生成测试blog,填写需要生成的数目，测试文章放在目录suiyantest下。</p>
+</li>
+</ul></p>
 
 
 <hr>
@@ -220,7 +226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav>
     <li><a href="list_5.html" role="button" class="outline">Prev</a></li>
-    <li><small>6 / 28</small></li>
+    <li><small>6 / 27</small></li>
     <li><a href="list_7.html" role="button" class="outline">Next</a></li>
 </nav>
 
@@ -339,7 +345,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 bottom: 30       //numeric value (as pixels) for position from bottom. It will work only if the 'position' is set 'true'
             });
         });
-
 
 </script>
 </body>

@@ -15,24 +15,9 @@
     <!-- 引入 站点样式 -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/custom.css">
     <script src="https://suiyan.cc/assets/js/jquery-3.3.1.min.js"></script>
-
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PVH77QT');
-    </script>
-    <!-- End Google Tag Manager -->
     
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVH77QT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <div class="hero" data-theme="dark" style="background-image: url('https://suiyan.cc/assets/pexels-masha-raymers-3068711.jpg');">
     <nav class="container-fluid"><ul>
     <li><a href="https://suiyan.cc/" class="contrast">SuiYan</a></li>
@@ -102,44 +87,132 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <hgroup>
-    <h2>基于Python、Tk构建的可视化目录文件同步助手</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-26 15:04:15</small> Tag:
+    <h2>浅谈Python中的协程及利用协程代替多线程及多进程并发编程</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-15 15:52:46</small> Tag:
         
         
-        <samll>站长源创</samll>
+        <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><p>之前用java GUI写过一个简单的目录同步助手，前几天在WIN10下边想用的时候，发现竟然无法使用了，正好最近在学习python，所以用python重写了一简单的目录文件同步助手。</p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2018/01/Snip20180109_24.png" /></p>
-<h2>功能需求</h2>
-<p>之前有些喜欢拍照，但设备和场景比较多，所以每次照相回来，都为每台设备创建目录，然后在目录下边创建以时间为名的目录进行照片备份。
-之后这个备份了几年，后来目录越来越多，经常发现无法准确的判断哪些照片是否备份过，因为实在太多了，所以，需要一个实际目录与备份目录比较，
-并且能把比较后的结果复制到备份目录中进行备份。</p>
-<h2>需求分析</h2>
-<p>从需求上分析：参数需要给定两个目录，然后有比较和复制两个功能，GUI构建上只需要两个目录选择和两个按钮，使用Tk即可实现。
-技术上实现采用python的 filecmp shutil os 进行一些目录及文件的比较及复制来实现需求。</p>
-<h2>逻辑分析</h2>
-<p>通过目录选择框获得了两个字符串，然后进行比较，分析出不同的目录与文件，然后复制到目标目录中。
-为此，我创建了一个目录比较类，专门负责比较目录与文件。
-此类中的比较方法中使用到了递归，Python中的递归记得最大是1000次，我觉得这个目录层次应该是够了吧？
-其实本程序中，目录与文件的分析是重要部分：</p>
-<ul>
-<li>先判断根目录中不相同的目录与文件，然后分别记录。</li>
-<li>如果有相同的目录，使用递归比较这二个相同的目录。</li>
-<li>最后分别创建目录，复制文件到目标目录中。</li>
-</ul>
-<h2>Tk Button传参方法</h2>
-<p>在构建GUI的时候，点击按钮激活的函数需要传参数进去，但Python并没有在Button中提供传参的方法，后来查到可以使用lambda</p>
-<pre><code>command=lambda: def(参数1, 参数2)
+<p><p>协程定义说的清楚明了的文章不是很多，手头上有几本Python相关的书籍，其中流畅的Python一书中解释协程的定义是我认为最简单明了的。</p>
+<h2>生成器如何演变成协程？</h2>
+<p>乍看生成器和协程长的可真象，因为都用到了yield关键字，那么问题来了，如何区分二者？</p>
+<pre><code>def cd(n):
+    print("Counting down from %s" % n)
+    while n > 0:
+        yield n
+        n -= 1
+c = cd(10)
+next(c)
+for i in c :
+    print(i,end=' ')
 </code></pre>
-<p>这样即可达到函数传参的实现。</p>
-<h2>目录与文件的操作</h2>
-<p>通过这个小软件的制作，达到了对python目录及文件的分析及创建复制的模块功能的复制，功能上还可以继续扩展，后续有需要再继续添加。</p>
-<h2>本文源码下载</h2>
+
+<p>上边是一个典型的生成器函数，我们稍加变化使之成为协程。</p>
+<pre><code>def cd1():
+    n = yield
+    while n > 0:
+        print("Counting down from %s" % n)
+        n -= 1
+
+c1 = cd1()
+next(c1)
+c1.send(10)
+#运行到这里应该抛出一个异常
+</code></pre>
+
+<p>生成器和协程的不同有没有看出来？很明显的有两处：</p>
 <ul>
-<li><a href="https://github.com/bosichong/PyDirectoryComparison">github</a></li>
-<li><a href="https://gitee.com/J_Sky/PyDirectoryComparison">开源中国码云镜像gitee</a></li>
+<li>yield的位置</li>
+<li>next()和send()函数的用法</li>
+</ul>
+<p>通过运行结果我们可以到最后抛出了一个异常<code>StopIteration</code>,结束了这个协程。我们可以考虑一下：用装饰器省略掉next()这步，然后捕获抛出的异常，优雅的关闭掉协程函数。</p>
+<pre><code>from functools import wraps
+def coroutine(func):
+    @wraps(func)
+    def primer(*args, **kwargs):
+        gen = func(*args,**kwargs)
+        next(gen)
+        return gen
+    return primer
+@coroutine
+def cd2():
+    n = yield
+    while n > 0:
+        print("Counting down from %s" % n)
+        n -= 1
+try:
+    cd2().send(10)
+except Exception as e:
+    print('协程任务终止')
+</code></pre>
+
+<p>带上了装饰器，就更简便一些了，最后捕获异常，就可以优雅的结束这个协程了。</p>
+<h2>利用协程代替线程或进程进行并发编程</h2>
+<p>我们想用生成器（协程）作为系统线程的替代方案来实现并发。协程有时也称为用户级线程或绿色线程。————引自《Python Cookbook》
+这里的协程用到了asyncio模块，利用asyncio模块实现了一个协程的并发。关于asyncio的实现原理，稍后再研究一下。</p>
+<pre><code>import asyncio
+import time
+import threading
+def tn(func):
+    '''定义一个程序运行时间计算函数'''
+    def wrapper(*args, **kwargs):
+        start = time.time() # 起始时间
+        func(*args, **kwargs) # 要执行的函数
+        end = time.time() # 结束时间
+        print('程序运行时间:{:.2f}ms'.format((end-start)))
+    return wrapper
+
+def loop1(tname):
+    print(tname+"循环loop1打印时间======" + time.ctime())
+    time.sleep(1)
+
+# @asyncio.coroutine
+async def loop2(tname):# async等同于@asyncio.coroutine
+    print(tname+"循环loop1打印时间======" + time.ctime())
+    # yield from asyncio.sleep(1)
+    await asyncio.sleep(1)  # 等同于yield from
+
+@asyncio.coroutine
+def loop3(tname):# async等同于@asyncio.coroutine
+    print(tname+"循环loop1打印时间======" + time.ctime())
+    yield from asyncio.sleep(1)
+    # await asyncio.sleep(1)  # 等同于yield from
+
+@tn
+def main():
+    print('多线程任务开始执行=====')
+    threads = []#定义一个线程队列
+    for i in range(5):
+        t = threading.Thread(target=loop1, args=("thread"+str(i),))
+        threads.append(t)
+    for i in range(5):
+        threads[i].start()
+    for i in range(5):
+        threads[i].join()
+
+    #协程并发测试
+    print('协程并发测试开始======')
+    loop = asyncio.get_event_loop()# 获取一个event_loop
+    #任务列表
+    tasks = [
+        asyncio.ensure_future(loop2('11111')),
+        asyncio.ensure_future(loop2('22222')),
+        asyncio.ensure_future(loop2('33333')),
+        asyncio.ensure_future(loop3('44444')),#loop3
+        asyncio.ensure_future(loop3('55555'))]#loop3
+    loop.run_until_complete(asyncio.wait(tasks))
+    loop.close()
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<p>上边这组代码稍稍有点乱，可能你需要认真的理下思绪，对比一下结果，你会发现虽然后边执行的代码没有利用多线程，但打印结果上的时间和多线程的执行结果是一样的。
+这就是协程的魅力所在，一条线程搞定多线程任务。</p>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/blob/master/deftest/yieldtest2.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/deftest/yieldtest2.py">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -148,42 +221,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <hgroup>
-    <h2>“编学编玩”用Pygame编写游戏（5）pygame绘制一个钟表</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-23 15:51:11</small> Tag:
+    <h2>聊聊Python中晦涩的生成器（yield）与生成器表达式</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-14 08:21:49</small> Tag:
         
         
-        <samll>pygame</samll>
+        <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><p>游戏中绘制圆及圆形的轨迹需求还是不少的，而且很多地方都需要用到圆及弧度的理论，如果想做些游戏的话，必须熟练掌握这些基本知识。</p>
-<h2>一些知识点</h2>
-<ul>
-<li>radius 圆的半径</li>
-<li>diameter 圆的直径</li>
-<li>angle 角度</li>
-<li>一个圆的完整的弧度 PI*2=6.28</li>
-<li>1弧度的角度值为 360/6.28=57.3248</li>
-<li>1度的弧度值为 6.28/360=0.0174</li>
-<li>math.degrees(x)将角度x从弧度转换为度。</li>
-<li>math.radians(x)将角度x从度转换为弧度。</li>
-<li>math.sin(x)返回x弧度的正弦值。</li>
-<li>math.cos(x)返回x弧度的余弦值。</li>
-</ul>
-<h2>圆周上点的坐标</h2>
-<pre><code>x = math.cos(math.radians(angle)) * (radius)
-y = math.sin(math.radians(angle)) * (radius）
+<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171014_4.png" /></p>
+<h2>晦涩的生成器yield</h2>
+<p>刚开始接触Python的时候感觉很清爽，入门很简单，但后边学到生成器和协程的时候就感觉有些吃力了，是时候深入的学习一下了。</p>
+<h2>什么是生成器？</h2>
+<p>书上说：函数使用yield可以定义生成器对象，那么包含yield的函数主是一个生成器函数，它可以生成一个序列，方便迭代中使用，<code>__next__()</code>#python3中的特殊方法，应该避免使用特殊方法，<code>next(c)</code>使用内置函数next()即可。</p>
+<pre><code>def countdown(n):
+    print("Counting down from %s" % n)
+    while n > 0:
+        yield n
+        n -= 1
+    return
+
+c = countdown(10)
+print(c.__next__())#python3中的特殊方法，应该避免使用特殊方法
+print(next(c))#使用内置函数next()
+for i in c :
+    print(i,end=' ')
 </code></pre>
-<p>如果不想深入了解的话，只需要记住，我们需要角度，即可求得圆周上的坐标值，对就上边的函数解释应该可以理解上边的python语句的含意。</p>
-<h2>实例</h2>
-<p>没有比绘制一个表盘更贴近实际需求的例子了，通过pythondatetime函数，我们可以很方便的获得时间，然后转换成相关数据。</p>
-<p>以下为游戏效果图，建议下载相关代码跑一下，有问题可以留言给我。</p>
-<p><img alt="输入图片说明" src="assets/images/media/upload/2017/10/Snip20171023_1.png" /></p>
-<h2>本文源码下载</h2>
-<p>请git clone 下所有代码，以免造成游戏跑不起来的情况。本例源文件pygame05.py</p>
+
+<p>函数对象调用<code>.__next__()</code>函数时开始执行语句，遇到yield语句时停止。可以使用循环来操作生成器。
+调用<code>close()</code>方法关闭未使用完的生成器。
+那么问题来了，yield到底是什么？</p>
+<p>我们把上边的代码稍加变化:</p>
+<pre><code>def countdown1(n):
+    print("Counting down from %s" % n)
+    while n > 0:
+        yield n*n
+        n -= 1
+    return
+
+c = countdown1(10)
+print(next(c))
+print(next(c))
+print(next(c))
+for i in c :
+    print(i,end=' ')
+</code></pre>
+
+<p>运行之后我们可以发现程序运行到yield的时候返回了一个值，那么yield和return在功能上有些相似。</p>
+<h2>生成器表达式</h2>
+<p>如果你对列表推导有些了解，你会发现，生成器表达式只不过是把列表的[]换成了元组的()，但列表推导返回的是一个结果集，而生成器表达式返回的是一个生成器。
+因为这个特点，我们可以通过流方式访问一个巨大的文件而不必把它直接加载到内存，这样很大的提高了程序的性能。</p>
+<p>代码如下：</p>
+<pre><code>print('')
+print("生成器表达式:")
+b = (x*x for x in range(10) if (x % 2 ==0))
+print(next(b))
+print(next(b))
+for i in b :
+    print(i, end=' ')
+
+</code></pre>
+
+<h2>本文源码下载：</h2>
 <ul>
-<li><a href="https://github.com/bosichong/My_pygame/">github</a></li>
-<li><a href="https://gitee.com/J_Sky/My_pygame/">开源中国码云镜像gitee</a></li>
+<li><a href="https://github.com/bosichong/17python.com/blob/master/deftest/yieldtest.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/deftest/yieldtest.py">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -192,56 +294,34 @@ y = math.sin(math.radians(angle)) * (radius）
 
 
 <hgroup>
-    <h2>“编学编玩”用Pygame写游戏（4）一个python问答游戏</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-22 09:50:35</small> Tag:
+    <h2>Python中创建TCP服务器与客户端进行通信(下)Tk、thread与socket组合。</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-13 10:57:48</small> Tag:
         
         
-        <samll>pygame</samll>
+        <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171022_7.png" />
-<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171022_8.png" />
-<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171022_9.png" /></p>
-<p>好开心，买的书终于到手了，极力推荐《Python游戏编程入门》！非常不错的一本书，另千万别买《Python和Pygame游戏开发指南》，好了，不要问什么，请叫我雷锋！</p>
-<h2>游戏流程</h2>
-<p>我觉得新手编写游戏的时候最大的难点是先把游戏构思的太细致了，以至于真正上手编程的时候完全不知道从哪里开始，平时构思设计游戏时，脑子里那闪耀的光芒，就觉得只要拿起键盘，一个旷世神作的游戏就要蛋生了！
-实际呢？两眼瞪着电脑，我特么从哪开始写呢？，所以你需要一个流程，你可以拿纸笔画，或是找个流程图画一下。可以参考下图：</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171022_5.png" /></p>
-<p>有游戏流程后，先不要急于实现游戏的细节功能，先把流程走一下，先搭建游戏骨架<code>pygame.init()</code>，嗯，这个你应该很熟了。
-然后我们通过面向对象的方法来进行这个小游戏的编写：</p>
-<pre><code>pyqa.game_Start()
-pyqa.show_qt()
-pyqa.game_Over()
-</code></pre>
-<p>这样在循环中你应该很明白游戏的流程，虽然他们都在循环中，但我们可以控制他们在游戏中渲染的逻辑，这样我们就可以考虑好游戏中类的属性了。
-这是一个问答游戏，需要有基本的题库数据，我们通过python的流读入数据，因为python可以很方便的读行，这样我们可以定义一些规律，把每一题的问题、选择项，答案都分别占一行。
-这样导入数据后可以返回一个list，方便操作。</p>
-<p>好了，我们定义一下当前答题类<code>class Pyqa</code>的一些属性，首先他需要三个开关，分别代表游戏开始画面，答题画面，游戏结束画面，当然游戏一开始就是开始画面，我们可以设置他为<code>True</code>，
-这样游戏一旦开始，即可直接进入游戏开始画面，当然我们还需要定义三个函数，分别渲染三个场景，通过<code>if self.gameStart</code>判断当前是否要渲染这段场景。
-好了，流程说到这里应该了解了吧？如果还是很头疼，建议先打代码试试，游戏内容可以不用填加，就试过场。</p>
-<h2>游戏中的事件</h2>
-<p>当我们运行游戏的时候，我们发现游戏只停止在游戏开始画面上，并没有继续进和到问答画面，因为我们没有加入游戏的控制，我们通过玩家来按键获取当前的游戏按键事件，
-<code>pygame</code>中的游戏事件轮询获取相应的事件来响应用户的操作。</p>
-<pre><code>while True:
-    for event in pygame.event.get():
-</code></pre>
-<p>当我们通过<code>event.key == K_RETURN:</code>在游戏开始画面处获得了回车键的事件，就可以把游戏中的<code>self.showQuestion</code>设置<code>True</code>，然后开始游戏了，其它响应也是如此，
-比如获取游戏中的答案数字，也是通过相应的键值获取，具体可以查看代码了解。</p>
-<h2>答题场景编写</h2>
-<p>本游戏的核心就是回答问题，导入题库后，通过<code>def show_qt()</code>方法来渲染问题及选项。我在游戏中定义了一个函数<code>def print_text</code>是专门用来打印游戏中的文字的。
-当我们在游戏中选择答案按下数字键1-4的时候，我们会通过<code>pyqa.handle_input(int)</code>方法来处理当前游戏中的一些数据，比如回答是否正确，提示正确答案，记录回答正确数等，
-当我们再次按下回车键，<code>def next_question</code>方法会更新问题题库的索引指针，告诉<code>def show_qt()</code>我得渲染下一道题了！</p>
-<h2>游戏结束</h2>
-<p>当<code>def next_question</code>通过<code>self.current &gt;= len(self.data)</code>发现已经到达题库最后边了，游戏就要结束了，设置游戏开关相关参数为false，设置游戏结束标识<code>gameOver</code>为<code>true</code>
-进入游戏结束画面，展示游戏数据统计，最后当然还可以让你有重来的机会，具体实现请看代码吧，无非就是一些按键事件触发。</p>
-<h2>写在最后</h2>
-<p>无论是整个游戏还是中间的答题系统，我们发现在这个游戏中我们必须细致入微的进行设计判断每一步的操作，这就是游戏设计的精髓及乐趣，至少我们可以按着自己的需要来进行设计，当你把游戏设计成功，代码编写运行无错时，希望你能体会到这其中的乐趣！如果你有时间，可否帮忙丰富一下题？谢啦，记得提git提交给我哦，谢谢了。</p>
-<h2>本文源码下载</h2>
-<p>请git clone 下所有代码，以免造成游戏跑不起来的情况。</p>
+<p><p>先这样吧，为了不耽误稍后的学习进程，这个聊天室先码到这里，不想继续填坑了。服务器端用TK实现了图形展示，客户端依然终端。具体如下图：</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171013_1.png" />
+<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171013_3.png" /></p>
+<h2>Tk多线程中的坑</h2>
 <ul>
-<li><a href="https://github.com/bosichong/My_pygame/">github</a></li>
-<li><a href="https://gitee.com/J_Sky/My_pygame/">开源中国码云镜像gitee</a></li>
+<li>在图形化后，主线程中开出一条线程，不要直接在主线程中进行通信，不然循环会卡死，专门处理创建socket线程的工作线程，记得self.t.setDaemon(True)#这里很重要，不加程序界面会卡死！</li>
+<li>客户端没有实现图形化，完全不知道怎么弄，只要一启动，窗口就会被线程卡死，暂时先终端吧。</li>
+</ul>
+<h2>多用户服务器端</h2>
+<p>每条连接都创建一个socket，这样每个线程处理自己的收发消息，但是这种架构如果在大量连接下会占用很多的系统资源，如果把socket放到一个容器里，然后使用生成器协程来轮循收发消息，
+这样的话只需要一个线程即可，性能必会提高不少，这正是稍后要学习的任务，也是python中的难点。</p>
+<p>关于服务器的命令及私聊功能，这些应该都是通过消息来判断，所以后续一定会把消息进行封装发送，一条消息中应该包括命令及消息正文，这样就可以通过命令来判断用户的需求了。</p>
+<h2>客户端</h2>
+<p>客户端目前就是没有实现图形化，哪位大侠如果实现了，记得通知我，万分感谢，这个坑先放这里不踩了。</p>
+<p>具体代码就不贴了，到git下载吧。</p>
+<p>代码运行，请在终端中，不要在IDE中启动。代码运行，请在终端中，不要在IDE中启动。代码运行，请在终端中，不要在IDE中启动。</p>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/TCP/GUISocket">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/TCP/GUISocket">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -250,89 +330,159 @@ pyqa.game_Over()
 
 
 <hgroup>
-    <h2>“编学编玩”用Pygame写游戏（3）让角色动起来及碰撞检测</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-20 16:00:52</small> Tag:
+    <h2>Python中创建TCP服务器与客户端进行通信（上）</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-12 10:14:40</small> Tag:
         
         
-        <samll>pygame</samll>
+        <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><p>上次的代码中，除了绘制基本图形与图片外，中间还插入了一个小小动画，就是头像在不停的移动，这个移动确实简单了些，游戏中的的角色肯定不是简单的移动几像素那么简单了。</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/QQ20171020-145146-HD111.gif" /></p>
-<h2>屡屡顺序</h2>
-<p>我觉得刚开始做游戏写代码的时候，总是弄不清游戏的顺序，你可以这样想象一下，比如是拍电影，大家都了解电影是一段一段拍，最后合成在一起然后电影可以播放了。
-游戏呢和这个差不多，也是一段一段做，只不过游戏需要一些条件判断，True了，我就播放第三段，这个属性值达到了我就播放第五段，游戏over了，我就播放结尾。
-好吧，那么我们规划一下现在这个小游戏（应该算不上是一个游戏）场景及角色。</p>
-<h2>游戏内容</h2>
-<p>建一个 640X480的黑色背景的游戏场景，场景中随机生成一些大小一样的小球，他们随机属性值，有一个绿色，有一组红色，如果绿色碰到红色他们就会反转滚动，这些小球如果碰到边界也会反转滚动。
-注意：这里碰撞的检测之后的动作，只是简单的，并不是真的物理运动哦，当然如果你很懂物理学，做一组力学物理运动应该也不是很难的。</p>
-<h2>游戏场景</h2>
+<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171012_19.png" /></p>
+<h2>前言</h2>
+<p>学习套接字编程最好的方法就是从实际应用的开发中边学边用，这样对TCP服务器及客户端通信中遇到的知识点才会更加了解。
+开发一个拥有服务器并且可以处理多客户端的聊天室应用程序，服务器有一定的管理权限，比如：群发消息，管理客户端可以限制连接及断开客户端连接等。
+客户端可以在聊天室里群聊，私聊。</p>
+<p>好吧，为了保证这个小小的应用开发跨度不会太大，我们采用循序渐进的方式，从基础代码上迭代开发，这里会用到的知识点有：</p>
 <ul>
-<li>游戏场景的搭建和之前基本上差不多，这里不在介绍了，如果不了解可以翻看之前或是本节的代码参考。</li>
+<li><code>Python</code>的socket套接字模块</li>
+<li><code>Python</code>的多线程模块</li>
+<li><code>Python Tk GUI</code>模块，后边有可能考虑做成可视化的聊天室。</li>
 </ul>
-<h2>游戏中的角色</h2>
-<p>之前我们在场景中是直接绘制的图形，这次我们通过面向对象的方式来管理场景中的角色，pygame中提供了一个<code>Sprite</code>类，这个类专门为游戏中的角色精灵准备的。
-框架中还提供了一个<code>pygame.sprite.Group()</code>容器，他可以把sprite加进去，通过group来管理，group这个容器，通过查看源代码，他只能处理图片类型的sprite。
-如果创建的Rect对象是不行的，这种加到组里后，通过draw是无法绘制出来的，<code>group.draw()</code>这个方法中的画笔使用了<code>blit()</code>，而不是<code>draw()</code></p>
-<h2>游戏中的逻辑判断</h2>
-<p>这个我们直接在游戏中的循环当中直接判断，我是这么把游戏分成各种对象的：</p>
+<h2>socket模块</h2>
+<p>关于套接字网络编程的理论知识，这里就不在重复了，网上有很多，大家自己搜索一下好了。
+要创建套接字，使用<code>Python socket.socket()</code>函数即可，他有一些固定的方式：</p>
+<pre><code>s = socket(AF_INET, SOCK_STREAM)# 创建TCP/IP套接字对象
+</code></pre>
+<p>获得了套接字对象后，就可以使用套接字对象的方法进行交互了。</p>
+<h2><code>socket</code>中一些常用方法</h2>
+<p>服务器套接字方法：</p>
 <ul>
-<li>游戏场景对象，他只负责绘制场景中的任何角色及精灵</li>
-<li>游戏逻辑判断对象，他只负责判断游戏场景中的碰撞，时间检测，然后修改他们的属性。</li>
-<li>精灵group，他们只负责创建，删除。</li>
+<li><code>s.bind()</code>这个方法，绑定服务器的IP及端口</li>
+<li><code>s.listen(int)</code>监听，可以设置一个整数限制客户端的连接。</li>
+<li><code>s.accpt()</code>被动接受TCP客户端的连接（阻塞）</li>
 </ul>
-<h2>开始制作</h2>
-<p>理论课结束，我们来实践一下，<code>main()</code>函数中创建一个游戏运行函数<code>rungame()</code>，这个函数中运行着当前游戏的所有数据，及各种事件触发的检测。
-为什么需要<code>rungame()</code>?你可以把他这个函数看成一个电影片段，当前你还可以有<code>gamestart() gameover()</code>函数，这样游戏运行到哪个部位时就让哪个函数运行即可。</p>
-<h2>Sprite 精灵</h2>
-<p>说说<code>class MyImgSprite(pygame.sprite.Sprite</code>，这是当前游戏中的精灵，我们为他创建了几个属性，其中比较重要的有：</p>
-<pre><code>self.image = pygame.image.load('./images/a.png') #导入图片
-self.rect = self.image.get_rect() #返回一个rect对象
-self.rect.topleft = (random.randint(40,590),random.randint(40,430))#设置他的坐标  
-self.last_update = pygame.time.get_ticks()#获取当前游戏动行的时间，这是一个整数，不明白可以打印看看
-#移动速度
-self.speed_x = random.randint(1,10)
-self.speed_y = random.randint(1,10)
-</code></pre>
-<p>有了速度，我们就可以通过<code>update()</code>方法来更新自己的坐标</p>
-<pre><code>now = pygame.time.get_ticks()
-if now - self.last_update &gt;1:#通过这个时间差来做一些动画       
-    #self.rect.topleft = (random.randint(0,600),random.randint(0,440))#随机变化位置
-    self.rect.x += self.speed_x
-    self.rect.y += self.speed_y
-    self.last_update = now
-</code></pre>
-<p>如果你不在<code>update()</code>方法更新任何值，那么 这个精灵就是不会动弹的。
-那么问题来了，为什么不直接在游戏循环中更新？
-上节的代码中有段小小的移动是在循环中更新的，因为那只有一段动画，如果以后有很多个对象的话，在循环中更新会很麻烦，这里更新更符合面向对象的的编程方式。</p>
-<h2>绘制及更新</h2>
-<p>在rungame函数中创建个绿球，一组红球，然后就可以直接在场景里绘制了，绘制方法：</p>
-<pre><code>drawbackground()#绘制场景背景颜色
-DISPLAYSURF.blit(m.image,m.rect)#绘制绿球
-myimgs.draw(DISPLAYSURF)#绘制一组红球
-</code></pre>
-<p>场景中的绘制顺序应该是：</p>
-<ol>
-<li>绘制精灵</li>
-<li>逻辑判断</li>
-<li>udpate()更新数据</li>
-</ol>
-<p>以此为循环，这样反复循环即可生成画面。</p>
-<h2>逻辑判断</h2>
-<p>说到逻辑判断，这次场景中包括的判断有二种：边界碰撞及球体之间的碰撞。
-边界碰撞，我自个写了个边界碰撞检测器<code>BorderCrossing.py</code>，因为我在pygame中没找到边界碰撞检测的方法，大家在运行代码的时候，记得git clone一下整个项目。
-这个边界碰撞检测器，我就不多说了，不然这又一篇博客了，有兴趣可以自己看看源码。</p>
-<p>球体之间的碰撞检测直接套用的pygame中的碰撞检测，具体可以参考官方文档</p>
-<p><a href="http://pygame.org/docs/ref/sprite.html#pygame.sprite.spritecollide">碰撞检测官方文档</a></p>
-<h2>更新游戏数据</h2>
-<p>在逻辑判断中根据自己的需要进行速度等数据修改，最后记得用方法更新一下精灵们的坐标。
-说的不是很好，具体大家跑跑程序，改改数值就明白了，如果有什么不懂的，可以直接留言或是邮件给我。欢迎各位大佬指正！</p>
-<h2>本文源码下载</h2>
-<p>请git clone 下所有代码，以免造成游戏跑不起来的情况。</p>
+<p>客户端套接字方法：</p>
 <ul>
-<li><a href="https://github.com/bosichong/My_pygame/">github</a></li>
-<li><a href="https://gitee.com/J_Sky/My_pygame/">开源中国码云镜像gitee</a></li>
+<li><code>s.connect()</code> 连接服务器</li>
+</ul>
+<p>其它方法：</p>
+<ul>
+<li><code>s.recv()</code> 接收TCP消息</li>
+<li><code>s.send()</code> 发送TCP消息</li>
+<li><code>s.close()</code> 关闭套接字。</li>
+</ul>
+<h2>关于消息</h2>
+<p>发送和接收消息时需要进行编码和解码，这里使用<code>data.encode('utf-8')</code>和<code>data.decode()</code>保证通信消息的正常发送，如果不使用会报错。</p>
+<p>好了，先来个简单的例子，下边是代码，建议代码运行的时候不要在IDE里运行，请在终端中运行。</p>
+<h2>服务器端</h2>
+<pre><code>from socket import *
+from time import ctime
+
+HOST = '127.0.0.1'
+PORT = 6666
+BUFSIZ = 1024
+ADDR = (HOST, PORT)# IP 端口
+
+tcpSerSock = socket(AF_INET, SOCK_STREAM)# 创建TCP/IP套接字服务器
+tcpSerSock.bind(ADDR)#绑定IP及端口
+tcpSerSock.listen(5)
+
+while True:
+    print("等待客户端连接=======")
+    tcpCliSock, addr = tcpSerSock.accept()#被动接受客户端连接
+    print("客户端已连接=====")
+
+    while True:
+        data = tcpCliSock.recv(BUFSIZ)#接收客户端发来的数据
+        print(data.decode())
+        if 'exit' == data.decode():break
+        data = "{0}".format(ctime())+" "+data.decode()
+        tcpCliSock.send(data.encode('utf-8'))
+    tcpCliSock.close()
+tcpSerSock.close()</code></pre>
+
+<h2>客户端</h2>
+<pre><code>from socket import *
+HOST = '127.0.0.1'
+PORT = 6666
+BUFSIZ = 1024
+ADDR = (HOST,PORT)
+# 创建客户端，并连接服务器
+tcpCliSock = socket(AF_INET, SOCK_STREAM)
+tcpCliSock.connect(ADDR)
+
+while True:
+    data = input("> ")
+    tcpCliSock.send(data.encode('utf-8'))
+    if 'exit' == data :break
+    data = tcpCliSock.recv(BUFSIZ)
+    print(data.decode())
+tcpCliSock.close()</code></pre>
+
+<p>就目前这个聊天室只是完成了通信的最基本功能，只能由客户端发送一条消息，服务器端自动回应消息。之后的继续都是建立在这个基础模型之上了。</p>
+<h2>半双工的聊天室</h2>
+<p>如果稍加修改，我们就可以使这个服务器和客户端进行一对一的聊天了。</p>
+<ul>
+<li>服务器端添加判断，如果客户端发来的数据有内容，就进行输入，然后把数据发送给客户端。</li>
+<li>客户端连接后，先进行消息的发送，然后就一直等待服务器的消息回送，然后循环。</li>
+</ul>
+<p>现在的这个聊天系统缺点就是，必须等待另一方发来消息，才能回复消息，稍后我们继续改进。</p>
+<p>相关代码如下：</p>
+<h2>半双工服务器</h2>
+<pre><code>from socket import *
+from time import ctime
+
+HOST = '127.0.0.1'
+PORT = 6666
+BUFSIZ = 1024
+ADDR = (HOST, PORT)# IP 端口
+
+tcpSerSock = socket(AF_INET, SOCK_STREAM)# 创建TCP/IP套接字
+tcpSerSock.bind(ADDR)#绑定IP及端口
+tcpSerSock.listen(5)
+
+while True:
+    print("等待客户端连接=======")
+    tcpCliSock, addr = tcpSerSock.accept()#被动接受客户端连接
+    print("客户端已连接=====")
+
+    while True:
+        data = tcpCliSock.recv(BUFSIZ)#接收客户端发来的数据
+        print(data.decode())
+        if 'exit' == data.decode():break
+        if data:
+            data = input("> ")
+            data = "{0}".format(ctime())+" "+data
+            tcpCliSock.send(data.encode('utf-8'))
+    tcpCliSock.close()
+tcpSerSock.close()</code></pre>
+
+<h2>半双式的客户端</h2>
+<pre><code>from socket import *
+HOST = '127.0.0.1'
+PORT = 6666
+BUFSIZ = 1024
+ADDR = (HOST,PORT)
+# 创建客户端，并连接服务器
+tcpCliSock = socket(AF_INET, SOCK_STREAM)
+tcpCliSock.connect(ADDR)
+
+while True:
+    data = input("> ")
+    tcpCliSock.send(data.encode('utf-8'))
+    if 'exit' == data :break
+    while True:
+        data = tcpCliSock.recv(BUFSIZ)
+        if data:
+            print(data.decode())
+            break
+tcpCliSock.close()</code></pre>
+
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/TCP">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/TCP">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -343,7 +493,7 @@ myimgs.draw(DISPLAYSURF)#绘制一组红球
 
 <nav>
     <li><a href="list_16.html" role="button" class="outline">Prev</a></li>
-    <li><small>17 / 28</small></li>
+    <li><small>17 / 27</small></li>
     <li><a href="list_18.html" role="button" class="outline">Next</a></li>
 </nav>
 
@@ -462,7 +612,6 @@ myimgs.draw(DISPLAYSURF)#绘制一组红球
                 bottom: 30       //numeric value (as pixels) for position from bottom. It will work only if the 'position' is set 'true'
             });
         });
-
 
 </script>
 </body>

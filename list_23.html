@@ -15,24 +15,9 @@
     <!-- 引入 站点样式 -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/custom.css">
     <script src="https://suiyan.cc/assets/js/jquery-3.3.1.min.js"></script>
-
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PVH77QT');
-    </script>
-    <!-- End Google Tag Manager -->
     
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVH77QT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <div class="hero" data-theme="dark" style="background-image: url('https://suiyan.cc/assets/pexels-masha-raymers-3068711.jpg');">
     <nav class="container-fluid"><ul>
     <li><a href="https://suiyan.cc/" class="contrast">SuiYan</a></li>
@@ -102,81 +87,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <hgroup>
-    <h2>Python TK和Tkinter的GUI编程(5) messagebox tk的弹出对话框</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-26 16:48:51</small> Tag:
+    <h2>Python 对象引用与复制 (Python参考手册读书笔记)</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-19 15:51:04</small> Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>读书笔记</samll>
         
     </h3>
 </hgroup>
-<p><p>messagebox 弹出提示框 一共有七种常用方法，基本上可以应付一般简单的程序需求了：
-showinfo, showwarning, showerror, askquestion, askokcancel, askyesno, or askretrycancel.
-其中askquestion, askokcancel, askyesno, or askretrycancel这4个方法，应该注意一下点击按钮的返回值。</p>
-<p>演示图如下：</p>
-<p>![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_5.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_6.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_7.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_8.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_9.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_10.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_11.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_12.png" /></p>
-<pre><code class="python">import tkinter as tk
-from tkinter import messagebox  # 导入提示窗口包
-
-str1=("showinfo","showwarning","showerror","askquestion","askokcancel","askyesno","askretrycancel")
-def showMsg(str):
-    """弹出窗口设置函数"""
-    print(str)
-    if str == str1[0]:
-        messagebox.showinfo("showinfo","信息提示框！")
-    elif str == str1[1]:
-        messagebox.showwarning("showwarning","警告框！")
-    elif str == str1[2]:
-        messagebox.showerror("showerror","错误信息框！")
-    elif str == str1[3]:
-        if messagebox.askquestion("askquestion","askquestion提示框") == messagebox.YES:
-            messagebox.showinfo("yes","你点了yes!")
-        else:
-            messagebox.showinfo("no","你点了no")
-    elif str == str1[4]:
-        if messagebox.askokcancel("askokcancel","askokcancel提示框"):
-            messagebox.showinfo("OK","你点Ok")
-        else:
-            messagebox.showwarning("cancel","你点了cancel")
-    elif str == str1[5]:    
-        print(messagebox.askyesno("askyesno","askyesno提示框"))
-    elif str == str1[6]:    
-        print(messagebox.askretrycancel("askretrycancel","askretrycancel提示框"))
-
-root = tk.Tk()
-root.title("messagebox 弹出对话框使用例子")
-
-show_frame = tk.Frame(root)
-show_frame.pack(fill=tk.X, side=tk.TOP)
-btn1= tk.Button(show_frame, text=str1[0],command=lambda showMsg = showMsg : showMsg(str1[0]) ).pack(side=tk.LEFT)
-btn2= tk.Button(show_frame, text=str1[1],command=lambda showMsg = showMsg : showMsg(str1[1]) ).pack(side=tk.LEFT)
-btn3= tk.Button(show_frame, text=str1[2],command=lambda showMsg = showMsg : showMsg(str1[2]) ).pack(side=tk.LEFT)
-
-asky_frame = tk.Frame(root)
-asky_frame.pack(fill=tk.X,side=tk.TOP)
-bt4 = tk.Button(asky_frame,text=str1[3],command=lambda showMsg = showMsg : showMsg(str1[3]) ).pack(side=tk.LEFT)
-bt5 = tk.Button(asky_frame,text=str1[4],command=lambda showMsg = showMsg : showMsg(str1[4]) ).pack(side=tk.LEFT)
-bt6 = tk.Button(asky_frame,text=str1[5],command=lambda showMsg = showMsg : showMsg(str1[5]) ).pack(side=tk.LEFT)
-bt7 = tk.Button(asky_frame,text=str1[6],command=lambda showMsg = showMsg : showMsg(str1[6]) ).pack(side=tk.LEFT)
-root.mainloop()
+<p><p>Python 对象引用与复制 (Python参考手册读书笔记)
+![Python参考手册读书笔记](<img alt="输入图片说明" src="assets/images/media/upload/2017/09/timg.jpeg" /></p>
+<h2>通过赋值创建一个副本</h2>
+<pre><code>a = [1,2,3,4,5]
+b = a
+print(b is a )
+b[2] = -99
+print(a)
+</code></pre>
+<p>通过控制台打印，我们修改list b中的值，打印a发现值也跟着变化了，说明a与b的引用是同一个对象</p>
+<h3>浅复制 通过结果可以发现一些不同</h3>
+<pre><code class="python">c = [11,22,]
+d = list(c)
+print(c is d)
+d.append(33)
+print(c)
+print(d)
+d[1] = 00
+print(c)
+print(d)
 </code></pre>
 
-<h2>相关参考</h2>
+<h3>深复制</h3>
+<pre><code class="python">import copy
+e = [11,12,13]
+f = copy.deepcopy(e)
+print(e is f)
+f[1] = 78
+print(e)
+print(f)
+</code></pre>
+
+<h3>本文源码下载：</h3>
 <ul>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
-<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
-</ul>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
+<li><a href="https://github.com/bosichong/17python.com/blob/master/copy/copytest.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/copy/copytest.py">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -185,73 +139,51 @@ root.mainloop()
 
 
 <hgroup>
-    <h2>Python TK和Tkinter的GUI编程(4) Entry Text 文本框控件</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-26 10:26:15</small> Tag:
+    <h2>Python 字符串格式化(%操作符)及format函数的使用</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-19 15:12:22</small> Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>读书笔记</samll>
         
     </h3>
 </hgroup>
-<p><p>Tk的功能不多，但应付一般应用还是足够了，Entry和Text是Tk下边显示及处理文本的小部件。
-涉及到文本，从使用角度来说，有几个功能是必须的：</p>
+<p><p><strong>Python 字符串格式化（%操作符）及format函数的使用,Python参考手册，字符串格式化章读书笔记。</strong>
+![Python参考手册](<img alt="输入图片说明" src="assets/images/media/upload/2017/09/timg.jpeg" /></p>
+<p>python的字符串操作是程序员编码中频繁使用的技巧，所以熟练掌握是可以影响到你的编码效率地。
+目前比较流行的字符串打印有两种方式（据笔者所知，当然如果还有其它方法，请不吝赐教）：</p>
 <ul>
-<li>设置文本框的内容<code>insert()</code></li>
-<li>删除文本框的内容<code>delete()</code></li>
-<li>获得文本框的内容<code>get()</code></li>
-<li><code>show="*"</code>这个可以设置密码框用***来显示密码</li>
+<li>一种是%符号操作，</li>
+<li>一种是format函数高级字符串格式化，</li>
 </ul>
-<p>关于布局，和其它部件基本上是一样的，前边的章节有过介绍。</p>
-<p>本次使用tk制作了一个用户登陆验证用户名和密码的小例子。</p>
-<p>演示图如下：</p>
-<p>![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_4.png" /></p>
-<pre><code class="python">import tkinter as tk
-def isLogin(uname,pword):
-    """验证用户登陆函数"""
-    if uname == "17python" and pword == "17python":
-        print("登陆成功！")
-        out.insert(tk.END,"登陆成功！\n")
-    else:
-        print("用户名或密码错误！")
-        out.insert(tk.END,"用户名或密码错误！ \n")
-
-root = tk.Tk()
-root.title('文本框的测试')
-userinfo_frame = tk.Frame(root)
-userinfo_frame.pack(fill=tk.X, side=tk.TOP)
-########
-user_frame = tk.Frame(userinfo_frame, )
-user_frame.pack(fill=tk.X, side=tk.TOP)
-user_label = tk.Label(user_frame, text="username:",font=("Symbol", 14)).pack(side=tk.LEFT)
-username = tk.Entry(user_frame, width=40)
-username.pack(fill=tk.X, side= tk.LEFT)
-
-#######
-pass_frame = tk.Frame(userinfo_frame)
-pass_frame.pack(fill=tk.X, side=tk.TOP)
-pass_label = tk.Label(pass_frame, text="password:",font=("Symbol", 14)).pack(side=tk.LEFT)
-password = tk.Entry(pass_frame, width=40, show="*")
-password.pack(fill=tk.X, side= tk.LEFT)
-########
-btn_frame = tk.Frame(userinfo_frame)
-btn_frame.pack(fill=tk.X, side=tk.TOP)
-btn = tk.Button(btn_frame, text='登陆', command= lambda isLogin = isLogin : isLogin(username.get(), password.get())).pack(fill=tk.X)
-out = tk.Text(btn_frame,width=40,font=("Symbol", 14))
-out.insert(tk.END, "world \n")
-out.pack(fill=tk.X)
-
-root.mainloop()
+<p>两种各有特点，据说format的性能更好。</p>
+<h3>%操作符的使用</h3>
+<pre><code class="python">
+a = 'hello'
+b = 588
+c = 12.7896
+d = {'x':98, 'y':235.4444, 'z':'world',}
+print("a:%s" % a)
+# 10 和 2 是间隔的空格长度,小数点后的数字可以用来设置浮点数显示的精度，四舍五入，—号表示左对齐，+号是右对齐。
+print("%-10d %2.3f" % (b, c)) 
+print("%(x)-5d %(y).2f %(z).4s" % d)#打印字典中的值,.4s 表示要打印四个字符
+#vars() 函数，它将返回当前定义的所有变量的字典
+print ("%(a)s %(b)d %(c).2f %(d)s)" % vars())
 </code></pre>
 
-<h2>相关参考</h2>
-<ul>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
-<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
-</ul>
+<h3>format函数高级字符串格式化</h3>
+<pre><code class="python">print("{0} {1} {2}".format(a,b,c))
+print("{0},{b},{c}".format(a,b=b,c=c))
+print("{0[x]} {0[y]} {0[z]}".format(d))
+
+print("{0:>10.4s} {1:d}".format(a,b))# <>^ 这几个符号用来设置排版间隔
+print("{0:10b}".format(b))#二进制整数
+print("{0:,}".format(123456789))#,号用来做金额的千位分隔符。
+</code></pre>
+
 <h2>本文源码下载：</h2>
 <ul>
-<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
+<li><a href="https://github.com/bosichong/17python.com/blob/master/str/formatstr.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/str/formatstr.py">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -260,65 +192,34 @@ root.mainloop()
 
 
 <hgroup>
-    <h2>Python TK和Tkinter的GUI编程(3) 列表框 Listbox</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-23 13:40:35</small> Tag:
+    <h2>关于本站封面头部大图</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-18 14:19:35</small> Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>站长吐槽</samll>
         
     </h3>
 </hgroup>
-<p><h2>listbox 列表框</h2>
-<p>列表框的日常使用的场景：</p>
-<ul>
-<li>获取列表项中的内容lb.curselection()</li>
-<li>selectmode=tk.EXTENDED 这个属性设置listbox可以选择多个选项</li>
-<li>添加列表项 lb.insert(tk.END,v.get()) END代表最后一个位置，第二个参数是要添加的字符串值。</li>
-<li>删除列表中选中的项 command = lambda lb=lb:lb.delete(tk.ANCHOR)</li>
-<li>lb.bind() 用来绑定列表的事件，比如删除列表中选中的项。</li>
-</ul>
-<h2>源码</h2>
-<p><img alt="" src="https://suiyan.cc/assets/images/media/upload/2017/09/QQ20170923-134123.png" /></p>
-<pre><code class="python">import tkinter as tk
-root = tk.Tk()
-root.title("Listbox 测试。")
-# 存放list的容器
-list_frame = tk.Frame(root)
-list_frame.pack(fill=tk.X, side=tk.TOP)
-#存放按钮文本框的容器
-button_frame = tk.Frame(root)
-button_frame.pack(fill=tk.X, side=tk.TOP)
-# 获取当前listbox中item值，并在控制台打印值
-def print_item(event):
-    items = lb.curselection()
-    for k in items:
-        print(lb.get(k))
-var = tk.StringVar()#绑定listbox的列表值
-var.set(('aa','bb','cc','dd','ee'))
-lb = tk.Listbox(list_frame, listvariable = var, selectmode=tk.EXTENDED)#创建一个listbox
-lb.bind('<ButtonRelease-1>',print_item)#绑定鼠标左键点击事件。
-lb.pack(fill=tk.X)
-# 添加listbox item的方法
-def additem():
-    lb.insert(tk.END,v.get())
-    v.set('')
-v = tk.StringVar()#绑定文本框的变量
-en = tk.Entry(button_frame, textvariable = v).pack()
-b1 = tk.Button(button_frame, text="添加", command=additem).pack(side=tk.LEFT)#添加一个item
-b2 = tk.Button(button_frame, text="删除", command= lambda lb=lb:lb.delete(tk.ANCHOR)).pack(side=tk.LEFT)#删除一个listbox中选中的item
-root.mainloop()
-</code></pre>
-
-<h2>相关参考</h2>
-<ul>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
-<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
-</ul>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
-</ul></p>
+<p><p><em>看到喜欢的图片就会换上，不知道为什么会喜欢这些偏暖的色调，记得很久以前的有段时间，也曾偏爱冷色调调，可能偏暖色调更LOMO些。</em></p>
+<h3>2017/09/18</h3>
+<p>本图来自bing每日壁纸</p>
+<p>戈尔代小镇是普罗旺斯地区最美丽的小镇之一，依山头而建，是众多被日光洗的发白的石头建筑与深深浅浅的绿色植物相拼而成的村庄。每年那里都会入选法国最美丽的小镇之一。从外到内小镇戈尔代给人的印象就是石头建筑，围墙，房子，教堂几乎都是石头堆砌而成，壮观而真实！</p>
+<p><img alt="戈尔代小镇是普罗旺斯地区最美丽的小镇之一" src="https://suiyan.cc/assets/images/media/upload/2017/09/BingWallpaper-2017-09-17.jpg" /></p>
+<h3>2017/10/09</h3>
+<p>windows10美丽的海边风景</p>
+<p>先前的顶部大图太闪眼睛了。。。换个清爽些的。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/6fb13e4db9f043b276e06f340cbdff6d.jpg" /></p>
+<h3>2017/11/07</h3>
+<p>windows10 秋天</p>
+<p>这个秋天真的很无聊，是个多事之秋。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/11/bing-021.jpg" /></p>
+<h3>2017/11/25</h3>
+<p>网上搜索来的图片</p>
+<p>冬天来了，我们期待着下雪。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/11/timg.jpg" /></p>
+<h3>2017/11/25</h3>
+<p>《星月夜》（The Starry Night）是荷兰后印象派画家文森特·梵·高于1889年在法国圣雷米的一家精神病院里创作的一幅油画，是梵高的代表作之一，现藏纽约现代艺术博物馆。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/11/1432084191361509.jpeg" /></p></p>
 
 
 <hr>
@@ -326,70 +227,83 @@ root.mainloop()
 
 
 <hgroup>
-    <h2>Python TK和Tkinter的GUI编程(2)菜单Menu</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-22 11:02:33</small> Tag:
+    <h2>Python3 datetime模块的时间操作</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-18 13:23:43</small> Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><h2>Menu</h2>
-<p>菜单的创建是很简单的，先创建一个顶层的菜单加入顶层窗口root中，然后分别创建二级菜单就可以了。
-几个比较重要的方法函数：</p>
-<ul>
-<li>tkinter.Menu(root) 创建顶层菜单，root是你的顶层窗口。</li>
-<li>root.config(menu=menu) 然后加入顶层窗口</li>
-<li>menu.add_cascade() 添加二级菜单，label设置二级菜单名称，menu设置二级菜单对象。</li>
-<li>filemenu.add_command() 添加一个普通的菜单项，label设置显示字符串，command设置回调函数</li>
-<li>关于右键菜单的实现，可以参考源码中的注释处。</li>
-</ul>
-<p>还有很多功能，建议参考一下文档了了解，以上几个功能一般简单应用可以应付了。</p>
-<h2>参考源码</h2>
-<p><img alt="" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170922_3.png" /></p>
-<pre><code class="python">import tkinter #导入支持库
-def callback():
-    """一个简单的回调测试"""
-    print ("called the callback!")
-
-root = tkinter.Tk()#创建一个root窗口
-root.title('我只是一个测试的窗口')#设置窗口标题
-root.geometry('500x300+300+300')#设置窗口的大小及位置
-
-# 创建菜单
-menu = tkinter.Menu(root)#顶层菜单
-root.config(menu=menu)#加入窗口
-filemenu = tkinter.Menu(menu)#创建二级菜单File
-menu.add_cascade(label="File", menu=filemenu)#加入menu
-# 创建二级菜单下的功能键
-filemenu.add_command(label="New", command=callback)#按钮
-filemenu.add_command(label="Open...", command=callback)
-filemenu.add_checkbutton(label="checkbutton",)#选择框，选中后会画一个对号。
-filemenu.add_separator()#分隔线
-filemenu.add_radiobutton(label="radiobutton",)#一旦勾选，无法取消
-filemenu.add_separator()#分隔线
-filemenu.add_command(label="Exit", command=callback)
-
-helpmenu = tkinter.Menu(menu)
-menu.add_cascade(label="Help", menu=helpmenu)
-helpmenu.add_command(label="About...", command=callback)
-
-#####实现右键弹出菜单####
-def popup(event):
-    menu.post(event.x_root, event.y_root)
-root.bind("<Button-2>", popup)
-root.mainloop() 
+<p><p><em>出去旅游一个星期刚刚回来，上周是什么也没有更新，当我们要去做一件自己非常喜欢而又美好的事，就得去做更多不喜欢不美好的事来换取这个机会。时间是有限的，所以应当珍惜当下！今天就来复习一下Python 中有关时间的操作</em></p>
+<h3>datetime 模块</h3>
+<p>导入模块</p>
+<pre><code>from datetime import *
 </code></pre>
-
-<h2>相关参考</h2>
+<p>获取当前时间:</p>
+<pre><code>now = datetime.now()
+td = datetime.today()
+</code></pre>
+<p>格式化打印时间 格式字符串参见后边的附录。</p>
+<pre><code>format = "%Y-%m-%d %H:%M:%S"
+print('今天的日期：'+ now.strftime(format))
+</code></pre>
+<p>根据字符串返回datetime对象
+格式化的字符串应与前边的时间对应。比如："2017-09-18 13:02:34", "%Y-%m-%d %H:%M:%S"</p>
+<pre><code>print('strptime:{}'.format(datetime.strptime("2017-09-18", "%Y-%m-%d")))
+</code></pre>
+<p>时间对象转换成时间戮</p>
+<pre><code>tmp = td.timestamp()
+print('timestamp: {}'.format(tmp))
+</code></pre>
+<p>根据时间戮转换成datetime对象</p>
+<pre><code>print('fromtimestamp:{}'.format(datetime.fromtimestamp(tmp)))
+</code></pre>
+<p>星期几？0是星期一</p>
+<pre><code>print(now.weekday()+1)
+</code></pre>
+<p>datetime 支持的最大及最小时间单位</p>
+<pre><code>print(datetime.max)
+print(datetime.min)
+</code></pre>
+<p>打印datetime对象包含的一个tuple</p>
+<pre><code>for it in now.timetuple():
+    print(it)
+</code></pre>
+<h3>附录：格式字符串</h3>
 <ul>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
-<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
+<li>datetime. strftime (format)  </li>
+<li>%a 星期的简写。如 星期三为Web  </li>
+<li>%A 星期的全写。如 星期三为Wednesday  </li>
+<li>%b 月份的简写。如4月份为Apr  </li>
+<li>%B月份的全写。如4月份为April   </li>
+<li>%c:  日期时间的字符串表示。（如： 04/07/10 10:43:39）  </li>
+<li>%d:  日在这个月中的天数（是这个月的第几天）  </li>
+<li>%f:  微秒（范围[0,999999]）  </li>
+<li>%H:  小时（24小时制，[0, 23]）  </li>
+<li>%I:  小时（12小时制，[0, 11]）  </li>
+<li>%j:  日在年中的天数 [001,366]（是当年的第几天）  </li>
+<li>%m:  月份（[01,12]）  </li>
+<li>%M:  分钟（[00,59]）  </li>
+<li>%p:  AM或者PM  </li>
+<li>%S:  秒（范围为[00,61]，为什么不是[00, 59]，参考python手册~_~）  </li>
+<li>%U:  周在当年的周数当年的第几周），星期天作为周的第一天  </li>
+<li>%w:  今天在这周的天数，范围为[0, 6]，6表示星期天  </li>
+<li>%W:  周在当年的周数（是当年的第几周），星期一作为周的第一天  </li>
+<li>%x:  日期字符串（如：04/07/10）  </li>
+<li>%X:  时间字符串（如：10:43:39）  </li>
+<li>%y:  2个数字表示的年份  </li>
+<li>%Y:  4个数字表示的年份  </li>
+<li>%z:  与utc时间的间隔 （如果是本地时间，返回空字符串）  </li>
+<li>%Z:  时区名称（如果是本地时间，返回空字符串）  </li>
+<li>%%:  %% =&gt; %</li>
 </ul>
-<h2>本文源码下载：</h2>
+<h3>相关参考</h3>
+<p><a href="http://python.usyiyi.cn/documents/python_352/library/datetime.html#strftime-strptime-behavior">官方文档：datetime — 基本日期和时间类型</a></p>
+<h3>本文源码下载：</h3>
 <ul>
-<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
+<li><a href="https://github.com/bosichong/17python.com/blob/master/datetime/datetimetest.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/datetime/datetimetest.py">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -400,7 +314,7 @@ root.mainloop()
 
 <nav>
     <li><a href="list_22.html" role="button" class="outline">Prev</a></li>
-    <li><small>23 / 28</small></li>
+    <li><small>23 / 27</small></li>
     <li><a href="list_24.html" role="button" class="outline">Next</a></li>
 </nav>
 
@@ -519,7 +433,6 @@ root.mainloop()
                 bottom: 30       //numeric value (as pixels) for position from bottom. It will work only if the 'position' is set 'true'
             });
         });
-
 
 </script>
 </body>
