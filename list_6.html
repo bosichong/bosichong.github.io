@@ -87,6 +87,33 @@
 
 
 <hgroup>
+    <h2>今天是个好日子发行了碎言静态博客的功能完整版</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2020-01-08 16:10:47</small> Tag:
+        
+        
+        <samll>碎言博客</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>发布了碎言静态博客的功能完整第一个版本</h2>
+<p>经过这段时间的努力，终于把博客成功的更换成了自己开发的碎言静态博客，也算是对这段时间学习JavaScript的一个总结。
+后续还要继续开发维护，添加一些使用的功能，目前来说，对这个版本最大的满意就是界面的美化和网站的加载速度。
+后续还会继续优化。</p>
+<h2>未来需要添加的功能</h2>
+<ul>
+<li>支持在线一件换肤。</li>
+<li>更好的拓展功能。</li>
+<li>更实用的功能。</li>
+<li>吸引更多的程序员兄弟前来提交代码。</li>
+</ul>
+<p>加油2020！！</p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>前端项目构建打包的一些学习笔记</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2020-01-01 21:09:54</small> Tag:
         
@@ -170,53 +197,6 @@
 <p>Markdown代码样式通过修改<code>&lt;link id="highlight"&gt;</code>标签连接的highlightCSS来修改，在<code>https://suiyan.cc/assets/plugins/highlight/styles</code>下可以选择自己喜欢的样式。</p>
 <h2>进阶修改</h2>
 <p>觉得手动修改站点样式太麻烦？可以利用<code>jQuery</code>在站点上添加在线改变站点样式的浮动按钮，近期会考录添加的碎言博客的。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>碎言博客终端操作详解</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-12-30 15:56:49</small> Tag:
-        
-        
-        <samll>碎言博客</samll>
-        
-    </h3>
-</hgroup>
-<p><h2>关于z.py</h2>
-<p><code>z.py</code>是碎言博客构建索引的关键程序，采用<code>Python3</code>相关技术开发。</p>
-<p>终端运行：
-    python3 z.py</p>
-<p><img alt="" src="assets/images/blog/Snip20191230_4.png" /></p>
-<p>即可看到相关的命令帮助。</p>
-<h2>-i</h2>
-<pre><code>python3 z.py -i
-</code></pre>
-<p>每次创建完新文章后都会自动创建索引，若是修改了文章的标题，作者，标签，时间等头部信息后，应该运行此命令进行索引更新。</p>
-<h2>-n</h2>
-<pre><code>python3 z.py -n 这里写你的新文章的标题名称
-</code></pre>
-<ul>
-<li><code>-n</code>用来创建新文章，其中还有几个选项可以使用，其中<code>-n</code>后边必须跟随一个新标题。</li>
-<li>
-<p><code>-d</code>用来创建一个存放的目录</p>
-<p>python3 z.py -n blog_title -d blog</p>
-</li>
-</ul>
-<p>会在默认<code>.md</code>存放目录<code>articles</code>下创建一个<code>blog</code>目录，新文章就创建在这里。</p>
-<ul>
-<li>
-<p><code>-t -a -p</code>分别对应标签，作者和文章地址页面名称。作者留空默认填充为博客站长昵称。</p>
-</li>
-<li>
-<p><code>-v</code>显示当前程序的版本。</p>
-</li>
-<li>
-<p><code>-tt</code> 参数为<code>int</code>，此命令用来生成测试blog,填写需要生成的数目，测试文章放在目录suiyantest下。</p>
-</li>
-</ul></p>
 
 
 <hr>
