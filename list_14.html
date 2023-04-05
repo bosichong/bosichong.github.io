@@ -87,122 +87,6 @@
 
 
 <hgroup>
-    <h2>极速学习C++之基础篇</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-01-11 09:07:47</small> Tag:
-        
-        
-        <samll>C/C++</samll>
-        
-    </h3>
-</hgroup>
-<p><p>极速学习C++其实听起来很可笑，怎么可能呢？如果不巧你正好有其它编程语言多年的学习与实践经验，或许这个想法还真能实现。
-假设你和笔者有相同的经历，曾经接触过php java js python，并且和每个语言有过一段还不算太短的"恋情"，那么我开始极速极速学习C++。</p>
-<h2>万年不变的HelloWorld</h2>
-<p>C++运行环境及集成IDE各个平台都有很强大的IDE的，如果你正用MAC，我推荐你用Xcode或是CLion，这二个都是IDE中的战斗机。
-打开CLion,new一个C++ Project，输入以下代码：</p>
-<h1>include "iostream"</h1>
-<pre><code>using namespace std;
-int main()
-{
-    cout &lt;&lt; "Hello World!" &lt;&lt; endl;
-    return 0;
-}
-</code></pre>
-<p>好啦，C++的入门级代码搞定了，其实我挺喜欢C++的输入输出的&lt;&lt;&gt;&gt;符号，简单省事灵活。</p>
-<h2>常量变量及运算</h2>
-<p>常量定义的二种方法：</p>
-<pre><code>#define COOL 18
-const int COOLA = 19;
-cout &lt;&lt; "COOL : " &lt;&lt; COOL &lt;&lt; "  COOLA : " &lt;&lt; COOLA &lt;&lt; endl;
-</code></pre>
-<p>这样就可以打印常量了。</p>
-<p>定义变量和运算符也是如此简单上手：</p>
-<pre><code>int a,b,c;
-float d = 23.99;
-double e = 1.9876;
-char s[] = "hellp";
-string str = "world";
-a = 10,b=21,c=43;
-</code></pre>
-<p>cout &lt;&lt; b+a &lt;&lt; c-b &lt;&lt; b/a &lt;&lt; b%a &lt;&lt; endl;</p>
-<p>当然运算符远远不指这些，还有很多，具体可以查阅相关资料。</p>
-<h2>条件与循环</h2>
-<p>条件判断：</p>
-<pre><code>int a = 10;
-int b = 20;
-if(a &lt; b){
-    cout &lt;&lt; "a &lt; b" &lt;&lt;endl;
-}
-</code></pre>
-<p>循环输出九九乘法口决：</p>
-<pre><code>for (int i = 1; i &lt; 10; ++i) {
-    for (int j = 1; j &lt;= i; ++j) {
-        cout &lt;&lt; j &lt;&lt; "*" &lt;&lt; i &lt;&lt; "=" &lt;&lt; i * j &lt;&lt; "   ";
-    }
-    cout &lt;&lt; endl;
-}
-</code></pre>
-<h2>函数声明及使用</h2>
-<p>要使用一个函数，需要先在源文件的顶部声明：</p>
-<pre><code>int add (int a,intb)
-</code></pre>
-<p>然后再源文件中编写代码：</p>
-<pre><code>int add(int a, int b) {
-    return a + b;
-}
-</code></pre>
-<p>然后就可以调用了：</p>
-<pre><code>cout &lt;&lt; add(22, 33) &lt;&lt; endl;
-</code></pre>
-<h2>C++中的指针</h2>
-<pre><code>int var = 9;
-int *ip = &amp;var;
-
-cout &lt;&lt; "ip " &lt;&lt; ip &lt;&lt; endl;
-cout &lt;&lt; "*ip " &lt;&lt; *ip &lt;&lt; endl;
-</code></pre>
-<p>是不是理解了？一个输出内存的地址，一个输出地址中的值。</p>
-<h2>结构体与枚举</h2>
-<p>结构体与类很相似，结构体是C中的数据结构。
-枚举用起来很方便，有枚举常量和枚举变量，注意区分。</p>
-<pre><code>#include &lt;iostream&gt;
-using namespace std;
-
-struct Books {
-    char title[20];
-    char author[50];
-    int book_id;
-//    结构体中的函数
-    void prt(){
-        printf("book_id:%d",book_id);
-    }
-};
-
-//定义枚举常量
-enum Direction{up,left,down,right};
-
-int main() {
-
-    Books book1;
-    book1 = {"booka","ba",1};
-    cout &lt;&lt; "book1.title:" &lt;&lt; book1.title &lt;&lt; endl;
-    printf("sdfsdfsdf %s \n",book1.author);
-    book1.prt();
-    cout &lt;&lt; endl
-//打印枚举
-    printf("up:%d down:%d",up,down);
-
-    return 0;
-}
-</code></pre>
-<p>基础当然不是只有这些，以上只是简单快速的学习及入门级的了解C++,欢迎各位大侠补充。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
     <h2>妙用IPython学习Python--IPython快速上手</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-01-07 10:16:11</small> Tag:
         
@@ -362,10 +246,64 @@ for i in range(0,4):
 <br>
 
 
+<hgroup>
+    <h2>“编学编玩”用Pygame编写游戏（7）Pingball弹球小游戏</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-12-29 20:18:35</small> Tag:
+        
+        
+        <samll>pygame</samll>
+        
+    </h3>
+</hgroup>
+<p><p>以前学java的时候用java做了一个简单弹球小游戏，觉得还是蛮有意思的，这次用<code>pygame</code>重写一下试试，以前觉得游戏编程很简单，可能是考虑的太简单了，游戏的编写是步步为营，逻辑紧扣，错一点游戏都无法运行的，所以学习用面向对象方式编写游戏，是对python编程学习的强化练习，大家可以多试试。</p>
+<h2>Pingball游戏的设计</h2>
+<p>游戏很小，场景中的精灵有两个：球拍和一个小球。游戏的顺序包括：游戏开始画面，游戏主场景，游戏结束画面。
+游戏逻辑：判断小球的Y坐标低于球拍的Y坐标值即为游戏结束，球拍和小球都有自己的运动逻辑。这么简单的游戏我们从哪里入手呢？
+肯定是先创建一个游戏窗口啦：）</p>
+<h2>设定一些游戏的基本数据</h2>
+<p>游戏包括的主要数据有：</p>
+<ul>
+<li>游戏场景（宽+高）</li>
+<li>球拍，（宽，高，位置，移动速度）</li>
+<li>小球，（宽，高，位置，移动速度）</li>
+<li>游戏逻辑，判断游戏是否结束，暂停游戏，重新开始游戏，及一些文字的打印。</li>
+</ul>
+<p>有了这些构思，我们一样一样的通过我们之前封装的PY_RPG及pygame提供的一些功能来实现这个小游戏。</p>
+<h2>创建场景</h2>
+<p>一共有三个场景，分别为游戏开始画面<code>MainScene</code>游戏主场景<code>Pingball</code>游戏结束画面<code>GameOverScene</code></p>
+<p>先创建三个场景的类，通过继承<code>PY_RPG.Scene</code>，会很方便的创建出三个类，分别修改三个场景的一些参数，然后设置键盘判断，进行游戏场景的跳转。
+因为<code>Scene</code>中的三个方法分工非常明确，我们可以很好的控制游戏场景，这样我们可以先把三个场景制作出来，然后进行测试，虽然游戏主场景没有任何精灵，
+但游戏场景整体是可以切换的。</p>
+<h2>创建球拍与球</h2>
+<p><code>Racket</code>和<code>Ball</code>分别进行一些属性设置，其中<code>Racket</code>相对来说比较简单，只需要左右移动，做一个场景边界判断即可。
+<code>Ball</code>的属性多了一些，需要有移动速度，需要通过<code>update</code>方法进移动的控制。</p>
+<h2>游戏逻辑判断</h2>
+<p>在游戏主场景中的<code>Pingball.update</code>方法中进行了一些游戏逻辑判断，包括：球遇到边界反弹，小球遇到球拍反弹后增加速度，和游戏结束的判断。
+这个方法中还需要添加球与球拍自己的<code>update</code>方法,用来更新自己的坐标变化。</p>
+<h2>游戏结束</h2>
+<p>游戏结束后，还可以通过按键重新开始，在<code>Pingball</code>中有个<code>replay</code>的函数，是用来控制重新开始后球体的位置.</p>
+<h2>功能扩展</h2>
+<p>这个弹球游戏只完成了最最最基本的功能，扩展性很强，比如添加关卡，打印得分，增加一些特效，只要你想修改，弹球也一样可以玩的很嗨。</p>
+<p>以下为游戏效果图，建议下载相关代码跑一下，有问题可以留言给我。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_8.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_9.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_10.png" /></p>
+<h2>本文源码下载</h2>
+<p>请git clone My_pygame下所有代码，以免造成游戏跑不起来的情况。本例源文件：PY_RPG.pingball.py</p>
+<ul>
+<li><a href="https://github.com/bosichong/My_pygame/tree/master/PY_RPG/demo">github</a></li>
+<li><a href="https://gitee.com/J_Sky/My_pygame/tree/master/PY_RPG/demo">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
 
 <nav>
     <li><a href="list_13.html" role="button" class="outline">Prev</a></li>
-    <li><small>14 / 29</small></li>
+    <li><small>14 / 28</small></li>
     <li><a href="list_15.html" role="button" class="outline">Next</a></li>
 </nav>
 

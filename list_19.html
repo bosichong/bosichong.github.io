@@ -87,79 +87,6 @@
 
 
 <hgroup>
-    <h2>聊聊Python中晦涩的生成器（yield）与生成器表达式</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-14 08:21:49</small> Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171014_4.png" /></p>
-<h2>晦涩的生成器yield</h2>
-<p>刚开始接触Python的时候感觉很清爽，入门很简单，但后边学到生成器和协程的时候就感觉有些吃力了，是时候深入的学习一下了。</p>
-<h2>什么是生成器？</h2>
-<p>书上说：函数使用yield可以定义生成器对象，那么包含yield的函数主是一个生成器函数，它可以生成一个序列，方便迭代中使用，<code>__next__()</code>#python3中的特殊方法，应该避免使用特殊方法，<code>next(c)</code>使用内置函数next()即可。</p>
-<pre><code>def countdown(n):
-    print("Counting down from %s" % n)
-    while n > 0:
-        yield n
-        n -= 1
-    return
-
-c = countdown(10)
-print(c.__next__())#python3中的特殊方法，应该避免使用特殊方法
-print(next(c))#使用内置函数next()
-for i in c :
-    print(i,end=' ')
-</code></pre>
-
-<p>函数对象调用<code>.__next__()</code>函数时开始执行语句，遇到yield语句时停止。可以使用循环来操作生成器。
-调用<code>close()</code>方法关闭未使用完的生成器。
-那么问题来了，yield到底是什么？</p>
-<p>我们把上边的代码稍加变化:</p>
-<pre><code>def countdown1(n):
-    print("Counting down from %s" % n)
-    while n > 0:
-        yield n*n
-        n -= 1
-    return
-
-c = countdown1(10)
-print(next(c))
-print(next(c))
-print(next(c))
-for i in c :
-    print(i,end=' ')
-</code></pre>
-
-<p>运行之后我们可以发现程序运行到yield的时候返回了一个值，那么yield和return在功能上有些相似。</p>
-<h2>生成器表达式</h2>
-<p>如果你对列表推导有些了解，你会发现，生成器表达式只不过是把列表的[]换成了元组的()，但列表推导返回的是一个结果集，而生成器表达式返回的是一个生成器。
-因为这个特点，我们可以通过流方式访问一个巨大的文件而不必把它直接加载到内存，这样很大的提高了程序的性能。</p>
-<p>代码如下：</p>
-<pre><code>print('')
-print("生成器表达式:")
-b = (x*x for x in range(10) if (x % 2 ==0))
-print(next(b))
-print(next(b))
-for i in b :
-    print(i, end=' ')
-
-</code></pre>
-
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/blob/master/deftest/yieldtest.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/deftest/yieldtest.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
     <h2>Python中创建TCP服务器与客户端进行通信(下)Tk、thread与socket组合。</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-13 10:57:48</small> Tag:
         
@@ -390,10 +317,66 @@ eps/pep-0263/ for details</code></pre>
 <br>
 
 
+<hgroup>
+    <h2>你与黑客之间差了多少行Python代码？</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-10 15:23:17</small> Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p><p><img alt="输入图片说明" src="assets/images/media/upload/2017/10/Snip20171010_11.png" /></p>
+<p>雷布斯曾说过：“必须写够十万行代码，不要心存侥幸。没有写过足够代码量的，想成为高手是不可能的，只能纸上谈兵！”，看来要成一名黑客10万代码量也许只是个起步。那么自己与黑客差了多少呢，要不咱统计一下吧。</p>
+<h2>编写思路</h2>
+<p>程序的编写思路其实很简单：统计自己编写过的.py文件，然后统计文件行数累加到一起就ok。</p>
+<p><code>os.walk</code>这个方法可以统计当前目录下所有的文件、子目录、子目录下的文件，有了这个数据，我们只需要排除掉不需要的，统计以.py为结尾的文件目录地址加入一个列表即可。</p>
+<p>有了所有.py文件的列表，循环迭代出每个文件的行数，加到一起总数据就出来了。具体实现请看代码：</p>
+<pre><code class="python">import os
+def getpys(dir):
+    '''
+    递归获得当前目录及其子目录中所有的.py文件列表。
+    '''
+    pys = []
+    # 当前目录下所有的文件、子目录、子目录下的文件。
+    for root, dirs, files in os.walk(dir):
+        for name in files:
+            #排除掉git目录中的备份的文件，只保留.py文件
+            if '.git' not in root and name.endswith('.py'):
+                pys.append(os.path.join(root, name))
+        #下边是拼装所有目录
+        # for name in dirs:
+        #     print(os.path.join(root, name))
+    return pys
+pys = getpys(os.path.dirname(__file__))
+# print(pys)
+hacker=100000#假设黑客需要10万行代码才能练成
+lines = 0
+for file in pys:
+    with open(file, mode='r', encoding='utf8') as f:
+        lines = lines + len(f.readlines())#统计每个文件的行数。
+print("累计编写了源文件{0}个,手打{1}行Python代码，完成度{2:.2f}%".format(len(pys),lines,lines/hacker*100))
+print("距离成为一名黑客还差{0}行代码".format(hacker-lines))
+</code></pre>
+
+<p>累计编写了源文件32个,手打2133行Python代码，完成度2.13%
+距离成为一名黑客还差97867行代码</p>
+<p>这个数量有点惨。。。不过我会努力的。</p>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/blob/master/counttest.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/counttest.py">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
 
 <nav>
     <li><a href="list_18.html" role="button" class="outline">Prev</a></li>
-    <li><small>19 / 29</small></li>
+    <li><small>19 / 28</small></li>
     <li><a href="list_20.html" role="button" class="outline">Next</a></li>
 </nav>
 

@@ -87,92 +87,6 @@
 
 
 <hgroup>
-    <h2>Python TK和Tkinter的GUI编程(6) Checkbutton Radiobutton</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-27 13:10:36</small> Tag:
-        
-        
-        <samll>Python GUI</samll>
-        
-    </h3>
-</hgroup>
-<p><p>Checkbutton和Radiobutton单选和多选按钮在GUI编程中是经常使用的选项选择方法，tk提供的单选与多选按钮功能虽然简约，但功能上也是足够应付日常应用了。</p>
-<h2>Checkbutton</h2>
-<p>多选按钮，因为是选择按钮，所以我们需要判断当这个按钮被点击后，应该属于选择状态，然后根据状态的选择状态返回值进行相关操作。
-<code>variable</code>是多选按钮的一个属性，这个属性的值用来显示当前多选择按钮的状态，1时为选中，2时为释放。
-<code>select() deselect() toggle()</code>这三个方法用来切换多选择按钮的选择状态。</p>
-<h2>Radiobutton</h2>
-<p>单选选按钮一般都是二个以上成组显示，一般最需要的就是获取单选按钮的返回值，程序中先设置一组包括属性及显示字符串的list，然后用for循环来创建多选按钮。
-<code>variable=v, value=mode,</code>这二个属性配合使用，当使用<code>get()</code>方法返回值的时候，返回的是value上的这个值（这里的原因我也没明白，希望高人指点一下。），所以设置单选按钮值的时候，记得设置value。</p>
-<h2>LabelFrame</h2>
-<p>LabelFrame 是一个带线的部件容器，具体效果请看下边的截图：</p>
-<h2>源码</h2>
-<p><img alt="" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170927_13.png" /></p>
-<pre><code class="python">import tkinter as tk
-
-def cdef():
-    if var.get():
-        strvar.set("看，我改变了！")
-    else:
-        strvar.set("有种你点我试试")
-
-def rdoprt():
-    print(v.get())
-    r_frame['bg']=v.get()
-root = tk.Tk()
-root.title("Checkbutton和Radiobutton")
-
-c_frame = tk.LabelFrame(root,text="Checkbutton", padx=5, pady=5)
-c_frame.pack(fill=tk.X, side=tk.TOP)
-
-var = tk.IntVar()
-strvar = tk.StringVar()
-strvar.set("有种你点我试试")
-cbt = tk.Checkbutton(c_frame,textvariable=strvar, variable = var,command= cdef,)
-# cbt.select()#选中
-# print(var.get())
-# cbt.deselect()#取消选中
-# print(var.get())
-# cbt.toggle()#切换选中开关
-# print(var.get())
-cbt.pack(side=tk.LEFT)
-cbt1 = tk.Checkbutton(c_frame,text="Checkbutton", variable = var, command=cdef)
-cbt1.pack(side=tk.LEFT)
-
-r_frame = tk.LabelFrame(root,text="Radiobutton", padx=5, pady=5)
-r_frame.pack(fill=tk.X, side=tk.TOP)
-v = tk.StringVar()
-v.set("L") # initialize
-MODES = [
-        ("#c00", "#c00"),
-        ("#fff", "#fff"),
-        ("#000", "#000"),
-        ("#ccc", "#ccc"),
-    ]
-
-for text, mode in MODES:
-        b = tk.Radiobutton(r_frame, text=text,variable=v, value=mode,command=rdoprt)
-        b.pack(anchor=tk.W)
-
-root.mainloop()
-</code></pre>
-
-<h2>相关参考</h2>
-<ul>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
-<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
-</ul>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
     <h2>Python TK和Tkinter的GUI编程(5) messagebox tk的弹出对话框</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-26 16:48:51</small> Tag:
         
@@ -396,10 +310,82 @@ root.mainloop()
 <br>
 
 
+<hgroup>
+    <h2>Python TK和Tkinter的GUI编程(2)菜单Menu</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-22 11:02:33</small> Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>Menu</h2>
+<p>菜单的创建是很简单的，先创建一个顶层的菜单加入顶层窗口root中，然后分别创建二级菜单就可以了。
+几个比较重要的方法函数：</p>
+<ul>
+<li>tkinter.Menu(root) 创建顶层菜单，root是你的顶层窗口。</li>
+<li>root.config(menu=menu) 然后加入顶层窗口</li>
+<li>menu.add_cascade() 添加二级菜单，label设置二级菜单名称，menu设置二级菜单对象。</li>
+<li>filemenu.add_command() 添加一个普通的菜单项，label设置显示字符串，command设置回调函数</li>
+<li>关于右键菜单的实现，可以参考源码中的注释处。</li>
+</ul>
+<p>还有很多功能，建议参考一下文档了了解，以上几个功能一般简单应用可以应付了。</p>
+<h2>参考源码</h2>
+<p><img alt="" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170922_3.png" /></p>
+<pre><code class="python">import tkinter #导入支持库
+def callback():
+    """一个简单的回调测试"""
+    print ("called the callback!")
+
+root = tkinter.Tk()#创建一个root窗口
+root.title('我只是一个测试的窗口')#设置窗口标题
+root.geometry('500x300+300+300')#设置窗口的大小及位置
+
+# 创建菜单
+menu = tkinter.Menu(root)#顶层菜单
+root.config(menu=menu)#加入窗口
+filemenu = tkinter.Menu(menu)#创建二级菜单File
+menu.add_cascade(label="File", menu=filemenu)#加入menu
+# 创建二级菜单下的功能键
+filemenu.add_command(label="New", command=callback)#按钮
+filemenu.add_command(label="Open...", command=callback)
+filemenu.add_checkbutton(label="checkbutton",)#选择框，选中后会画一个对号。
+filemenu.add_separator()#分隔线
+filemenu.add_radiobutton(label="radiobutton",)#一旦勾选，无法取消
+filemenu.add_separator()#分隔线
+filemenu.add_command(label="Exit", command=callback)
+
+helpmenu = tkinter.Menu(menu)
+menu.add_cascade(label="Help", menu=helpmenu)
+helpmenu.add_command(label="About...", command=callback)
+
+#####实现右键弹出菜单####
+def popup(event):
+    menu.post(event.x_root, event.y_root)
+root.bind("<Button-2>", popup)
+root.mainloop() 
+</code></pre>
+
+<h2>相关参考</h2>
+<ul>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
+<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
+</ul>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
 
 <nav>
     <li><a href="list_22.html" role="button" class="outline">Prev</a></li>
-    <li><small>23 / 29</small></li>
+    <li><small>23 / 28</small></li>
     <li><a href="list_24.html" role="button" class="outline">Next</a></li>
 </nav>
 

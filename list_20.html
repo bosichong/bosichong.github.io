@@ -87,62 +87,6 @@
 
 
 <hgroup>
-    <h2>你与黑客之间差了多少行Python代码？</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-10 15:23:17</small> Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p><img alt="输入图片说明" src="assets/images/media/upload/2017/10/Snip20171010_11.png" /></p>
-<p>雷布斯曾说过：“必须写够十万行代码，不要心存侥幸。没有写过足够代码量的，想成为高手是不可能的，只能纸上谈兵！”，看来要成一名黑客10万代码量也许只是个起步。那么自己与黑客差了多少呢，要不咱统计一下吧。</p>
-<h2>编写思路</h2>
-<p>程序的编写思路其实很简单：统计自己编写过的.py文件，然后统计文件行数累加到一起就ok。</p>
-<p><code>os.walk</code>这个方法可以统计当前目录下所有的文件、子目录、子目录下的文件，有了这个数据，我们只需要排除掉不需要的，统计以.py为结尾的文件目录地址加入一个列表即可。</p>
-<p>有了所有.py文件的列表，循环迭代出每个文件的行数，加到一起总数据就出来了。具体实现请看代码：</p>
-<pre><code class="python">import os
-def getpys(dir):
-    '''
-    递归获得当前目录及其子目录中所有的.py文件列表。
-    '''
-    pys = []
-    # 当前目录下所有的文件、子目录、子目录下的文件。
-    for root, dirs, files in os.walk(dir):
-        for name in files:
-            #排除掉git目录中的备份的文件，只保留.py文件
-            if '.git' not in root and name.endswith('.py'):
-                pys.append(os.path.join(root, name))
-        #下边是拼装所有目录
-        # for name in dirs:
-        #     print(os.path.join(root, name))
-    return pys
-pys = getpys(os.path.dirname(__file__))
-# print(pys)
-hacker=100000#假设黑客需要10万行代码才能练成
-lines = 0
-for file in pys:
-    with open(file, mode='r', encoding='utf8') as f:
-        lines = lines + len(f.readlines())#统计每个文件的行数。
-print("累计编写了源文件{0}个,手打{1}行Python代码，完成度{2:.2f}%".format(len(pys),lines,lines/hacker*100))
-print("距离成为一名黑客还差{0}行代码".format(hacker-lines))
-</code></pre>
-
-<p>累计编写了源文件32个,手打2133行Python代码，完成度2.13%
-距离成为一名黑客还差97867行代码</p>
-<p>这个数量有点惨。。。不过我会努力的。</p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/blob/master/counttest.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/counttest.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
     <h2>一些站长常用的搜索收录、访问统计平台</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-09 20:45:57</small> Tag:
         
@@ -427,10 +371,113 @@ while True:
 <br>
 
 
+<hgroup>
+    <h2>Python并发编程（上）进程模块multiprocessing模块和Process类</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-06 09:43:48</small> Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>Python中为什么要用多进程编程？</h2>
+<p>由于<code>Python</code>解释器中使用了内部的GIL全局解释器锁，使得<code>Python</code>多线程的并发在任意时刻只允许单个CPU来运行，这样的运行方式会影响程序的并发。
+当程序是在I/O密集时，CPU可能会有更多的空闲处理多线程的并发，这种情况下一般是没有问题的。如果是大量计算密集型的应用，如果使用多线程来并发，性能会大大降低，这个时候，我们就得考虑使用进程<code>Process</code>来进行编程及通信了。</p>
+<h2>创建进程Process(方法1)</h2>
+<pre><code class="python">import time, os
+from multiprocessing import Process
+def clock(x,y):
+    for i in range(x):
+        print('当前时间=={0}'.format(time.ctime()))
+        time.sleep(y)
+if __name__ == '__main__':
+    p = Process(target=clock,args=(5,1))
+    p.start()
+    p.join()
+</code></pre>
+
+<h2>创建进程Process(方法2)</h2>
+<pre><code class="python">import time, os
+from multiprocessing import Process
+class ClockProcess(Process):
+    def __init__(self,x,y):
+        Process.__init__(self)
+        self.x=x
+        self.y=y
+
+    def run(self):
+        for i in range(self.x):
+            print('{0}=={1}'.format(os.getpid(),time.ctime()))
+            time.sleep(self.y)
+if __name__ == '__main__':
+    p = ClockProcess(5,1)
+    p1= ClockProcess(5,1)
+    p.start()
+    p1.start()
+    p.join()
+    p1.join()
+</code></pre>
+
+<p>通过<code>Process</code>类创建实例，然后传函数创建进程，另一种是继承<code>Process</code>类，然后重写<code>run()</code>方法创建要执行的任务。</p>
+<h2>进程池 Pool(方法3)</h2>
+<pre><code class="python">from multiprocessing import Pool
+import os
+
+def clock(k):
+    for i in range(k):
+        print('{0}当前时间=={1}'.format(os.getpid(),time.ctime()))
+        time.sleep(k)
+if __name__ == '__main__':
+    l = [1 for i in range(20)]# 列表推导出一个列表对象
+    with Pool(5) as p:
+        p.map(clock,l)
+</code></pre>
+
+<p>进程池方便创建多进程进行操作，创建使用也是比较简单的，使用时可以根据应用场景对线程的控制要求来选择线程的创建方式。</p>
+<h2>线程间的通信</h2>
+<p><code>Python</code>为线程提供了<code>Queue、Pipes</code>等多种方式来交换数据，我们以<code>Queue</code>为例来演示学习一下进程间的通信及协作，稍后我们还要做分布式多进程的演示。</p>
+<p><code>Queue</code>进程间通信演示：</p>
+<pre><code class="python">import multiprocessing as mp
+import time, os
+from queue import Queue
+
+def prt_q(q):
+    '''消费者打印数据'''
+    while True:
+        v = q.get()
+        print(v)
+        time.sleep(0.1)
+def wrt_q(q):
+    '''生产者添加数据'''
+    for k in ['aa','bb','cc','dd','ee','ff','gg']:
+        print("{0}已经加入到队列中".format(k))
+        q.put(k)
+        time.sleep(0.2)
+if __name__ == '__main__':
+    q = Queue()
+    wrt_q(q)
+    p = mp.Process(target=prt_q, args=(q,))
+    p.start()
+    p.join()
+</code></pre>
+
+<p><code>Queue</code>的使用其实就是生产者与消费者的模式，上边的代码运行后会有死锁，请按<code>ctrl+c</code>强制停止程序运行。
+<code>Python</code>的进程有个很强大的地方，就是通过简单的配置就可以进行分布式多进程，这点是很吸引人的，稍后我会有一个篇幅来介绍一下分布式多进程。</p>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/multiprocessingtest.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/multiprocessingtest.py">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
 
 <nav>
     <li><a href="list_19.html" role="button" class="outline">Prev</a></li>
-    <li><small>20 / 29</small></li>
+    <li><small>20 / 28</small></li>
     <li><a href="list_21.html" role="button" class="outline">Next</a></li>
 </nav>
 
