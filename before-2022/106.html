@@ -111,6 +111,17 @@
 <p>博客文章写作采用Markdown技术支持，让你专注写作更流畅。</p>
 <p>推荐使用Vscode搭配进行blog文章的编写(因为当创建新文章后会直接使用vscode直接打开)</p>
 <p>如果新建blog文章无法在vscode中打开，请在命令面板中搜索shell，在PATH 中安装code命令。</p>
+<h3>安装教程</h3>
+<p>首先克隆下载碎言静态博客，
+* <a href="https://gitee.com/J_Sky/suiyan">Gitee</a>
+* <a href="https://github.com/Jsky2020/suiyan">GitHub</a></p>
+<p>终端运行:</p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
+<p>如果速度太慢请使用镜像：</p>
+<pre><code>pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/
+</code></pre>
+<p>安装相关依赖。</p>
 <p>博客的管理支持终端和图形界面：</p>
 <p>图形界面：</p>
 <pre><code>python3 w.py
@@ -121,36 +132,118 @@
 </code></pre>
 <p><img alt="" src="https://suiyan.cc/assets/images/2023/zhongduan1.png" /></p>
 <p>可以根据自己的喜好进行选择。</p>
-<h3>安装教程</h3>
-<p>首先克隆下载碎言静态博客，
-* <a href="https://gitee.com/J_Sky/suiyan">Gitee</a>
-* <a href="https://github.com/Jsky2020/suiyan">GitHub</a></p>
-<p>终端运行:</p>
-<pre><code>pip install -r requirements.txt
+<h3>目录结构</h3>
+<p>下边是一个完整的项目结构，有些目录需要创建md文件和生成静态文件后才会显示。</p>
+<pre><code>├── LICENSE 开源协议
+├── README.md 说明文档
+├── articles md文件存放目录（名称可以自定义）
+├── blog 静态文件存放目录（名称可以自定义）
+├── config.json 站点配置文件
+├── logs 日志存放目录
+├── requirements.txt 依赖文件
+├── s.py 主程序和终端操作命令行
+├── seo 这里存放着一些SEO文件，比如验证，robots.txt
+├── theme 主题目录，下边的每一个目录对应一个主题，可以在配置文件里修改主题
+├── utils.py 程序依赖的方法
+└── w.py 窗口操作的程序
 </code></pre>
-<p>安装相关依赖</p>
-<p>安装完成。</p>
+<h3>首次运行</h3>
+<p>首次运行建议先修改根目录下的配置文件<code>config.json</code>这里简单介绍一下配置项:</p>
+<pre><code>{
+    "dev": 0,  # 调试模式，如果改为1，则使用"blog_test_url"来添加静态资源地址前缀，方便本地调试。
+    "blog_name": "碎言博客",   # 站点名称
+    "blog_name_en": "SuiYan", # 站点英文名称
+    "blog_author": "J.sky", # 站长昵称
+    "blog_description_en": "You see see you , This one day day di.",  # 站长简介
+    ## 下边是网页中的meta
+    "meta_description": " Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。",
+    "meta_keywords":"Python,Django,JavaScript,程序员,人生苦短,我用Python",
+    "profile_image":"assets/images/touxiang.jpg",  # 头像地址
+    "blog_bg": "assets/pexels-masha-raymers-3068711.jpg", #当前站点背景图片地址
+    "theme": "default_theme", # 当前使用的主题目录名称
+    "build": "blog", # 静态文件的目录名称
+    "md_dir": "articles", #md文件目录
+    "blog_page_num":4,# 静态站点首页的数据分页数值
+    "blog_test_url":"http://127.0.0.1:5500/blog/", #本地调试是的测试地址前缀
+    "blog_url":"https://suiyan.cc/", # 你的域名，生产模式使用
+    "github":"", # 这个是你的仓库地址前缀，暂时无用。
+    # sns 图标 和地址，图标的选择，后边会说。
+    "blog_sns": [
+        {
+            "ico": "github",
+            "url": "https://github.com/bosichong/suiyan"
+        },
+        {
+            "ico": "git",
+            "url": "https://gitee.com/J_Sky/suiyan"
+        },
+        {
+            "ico": "weibo",
+            "url": "https://weibo.com/qq285911"
+        },
+        {
+            "ico": "qq",
+            "url": "https://user.qzone.qq.com/285911/"
+        },
+        {
+            "ico": "book",
+            "url": "https://www.zhihu.com/people/J_sky/activities"
+        },
+        {
+            "ico": "rss",
+            "url": "https://suiyan.cc/rss.xml"
+        }
+    ],
+    # 站点的导航
+    "nav": [
+        {
+            "ico": "home",
+            "text": "Blog Home",
+            "url": "index.html"
+        },
+        {
+            "ico": "archive",
+            "text": "Blog Archive",
+            "url": "archives.html"
+        },
+        {
+            "ico": "tags",
+            "text": "Blog Tag",
+            "url": "tags.html"
+        },
+        {
+            "ico": "user",
+            "text": "About Me",
+            "url": "aboutme.html"
+        }
+    ]
+
+}
+</code></pre>
+<p>配置文件可以根据自己的需要添加删除，在jinja2 模板中使用<code>{{ 属性名称 }}</code>来调用。</p>
+<p>修改完毕后就可以穿件文章了。</p>
 <h3>创建文章</h3>
 <pre><code>python z.py -n 此处写文章标题
 </code></pre>
-<p>这个时候就会在<code>articles</code>目录下创建一篇文章,并且使用<code>vscode</code>直接打开。</p>
+<p>注意！文章标题为必填！</p>
+<p>这个时候就会在<code>articles</code>目录下创建一篇文章,并且使用<code>vscode</code>直接打开。
+如果你没有安装<code>vscode</code>的命令行，需要安装后才会打开，但是文件会被创建</p>
 <h3>修改博客及站长资料</h3>
 <p><code>config.json</code>里存放着一些站点的资料，上传前建议先修改成自己的资料。</p>
 <h3>运行站点</h3>
-<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。</p>
+<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。
+在配置文件里修改：
+"dev": 1,  # 调试模式，如果改为1，则使用"blog_test_url"来添加静态资源地址前缀，方便本地调试。</p>
 <h3>修改站点样式</h3>
-<p>采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。</p>
+<p>采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。
+在jinja2 模板中使用<code>{{ 属性名称 }}</code>来调用。</p>
 <h3>部署</h3>
 <pre><code>git push origin master
 </code></pre>
 <p>提交<code>blog</code>目录下所有文件到git仓库即可，<code>blog</code>就是所有博客的全部文件！</p>
-<h4>参与贡献</h4>
-<ol>
-<li>Fork 本仓库</li>
-<li>新建 Feat_xxx 分支</li>
-<li>提交代码</li>
-<li>新建 Pull Request</li>
-</ol></p>
+<h3>github pages</h3>
+<p>如何部署GitHub pages 搭建自己的博客，这里就不在详细介绍了，请参考下文。</p>
+<p><a href="https://docs.github.com/zh/pages/quickstart">GitHub Pages 快速入门</a></p></p>
 
 
 </section>
