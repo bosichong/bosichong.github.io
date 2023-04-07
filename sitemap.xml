@@ -198,6 +198,13 @@
     </url>
     
     <url>
+        <loc>https://suiyan.cc/aboutme.html</loc>
+        <lastmod>2019-12-30 16:25:07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://suiyan.cc/before-2022/20191230155649.html</loc>
         <lastmod>2019-12-30 15:56:49</lastmod>
         <changefreq>daily</changefreq>

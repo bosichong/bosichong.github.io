@@ -87,6 +87,109 @@
 
 
 <hgroup>
+    <h2>Python TK和Tkinter的GUI编程(9) Event 键盘鼠标事件</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-28 13:33:43</small> Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>Event鼠标事件</h2>
+<ul>
+<li><Button-1>：鼠标左击事件  </li>
+<li><Button-2>：鼠标右击事件  </li>
+<li><Button-3>：鼠标中击事件  </li>
+<li><Double-Button-1>：双击事件  </li>
+<li><Triple-Button-1>：三击事件  </li>
+<li><Bx-Motion>：鼠标移动事件,x=[1,2,3]分别表示左、中、右鼠标操作。  </li>
+<li><ButtonRelease-x>鼠标释放事件,x=[1,2,3],分别表示鼠标的左、中、右键操作  </li>
+<li><Leave>：鼠标离开时产生此事件  </li>
+</ul>
+<h2>Event键盘事件</h2>
+<p>bing<Key>和事件函数来触发，其中Key 可以换成对应的键值，也可以是组合键。</p>
+<h2>程序事件</h2>
+<p>程序退出<code>root.protocol('WM_DELETE_WINDOW', printProtocol)</code></p>
+<h2>源码</h2>
+<p><img alt="" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170928_18.png" /></p>
+<pre><code class="python">import tkinter as tk
+
+root = tk.Tk()
+
+###################################
+# 鼠标事件
+###################################
+def printroot(event):
+    print(event.x,event.y)
+
+bt = tk.Button(root, text="<Double-Button-1>：双击事件 ")
+bt1 = tk.Button(root, text="<Triple-Button-1>：三击事件  ")
+bt2 = tk.Button(root, text="<Leave>：鼠标离开时产生此事件")
+bt3 = tk.Button(root, text="<Button-1>：鼠标左击事件")
+bt4 = tk.Button(root, text="<Button-2>：鼠标右击事件")
+bt5 = tk.Button(root, text="<Button-3>：鼠标中击事件")
+bt6 = tk.Button(root, text="<B1-Motion>：鼠标移动事件,x=[1,2,3]分别表示左、右、中鼠标操作。  ")
+bt7 = tk.Button(root, text="<ButtonRelease-2>鼠标释放事件,x=[1,2,3],分别表示鼠标的左、右、中键操作  ")
+bt.grid()
+bt1.grid()
+bt2.grid()
+bt3.grid()
+bt4.grid()
+bt5.grid()
+bt6.grid()
+bt7.grid()
+bt.bind("<Double-Button-1>",printroot)
+bt1.bind("<Triple-Button-1>",printroot)
+bt2.bind("<Leave>",printroot)
+bt3.bind("<Button-1>",printroot)
+bt4.bind("<Button-2>",printroot)
+bt5.bind("<Button-3>",printroot)
+bt6.bind("<B1-Motion>",printroot)
+bt7.bind("<ButtonRelease-2>",printroot)
+
+
+###################################
+# 键盘事件
+###################################
+def printkey(event):
+    print("event.char = " + event.char)
+    print('event.keycode = ', event.keycode)  
+
+
+root.bind("<Shift_R>",printkey)
+root.bind("<Shift_L>",printkey)
+root.bind("<Return>",printkey)
+root.bind("<Key>",printkey)
+
+
+###################################
+# 程序退出
+###################################
+def printProtocol():  
+    print('WM_DELETE_WINDOW')  
+    root.destroy() 
+
+root.protocol('WM_DELETE_WINDOW', printProtocol)  
+root.mainloop()
+</code></pre>
+
+<h2>相关参考</h2>
+<ul>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
+<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
+</ul>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Python TK和Tkinter的GUI编程(8) Scalet和Spinbox的简单使用</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-28 09:50:15</small> Tag:
         
@@ -279,89 +382,6 @@ for text, mode in MODES:
         b = tk.Radiobutton(r_frame, text=text,variable=v, value=mode,command=rdoprt)
         b.pack(anchor=tk.W)
 
-root.mainloop()
-</code></pre>
-
-<h2>相关参考</h2>
-<ul>
-<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
-<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
-</ul>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Python TK和Tkinter的GUI编程(5) messagebox tk的弹出对话框</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-26 16:48:51</small> Tag:
-        
-        
-        <samll>Python GUI</samll>
-        
-    </h3>
-</hgroup>
-<p><p>messagebox 弹出提示框 一共有七种常用方法，基本上可以应付一般简单的程序需求了：
-showinfo, showwarning, showerror, askquestion, askokcancel, askyesno, or askretrycancel.
-其中askquestion, askokcancel, askyesno, or askretrycancel这4个方法，应该注意一下点击按钮的返回值。</p>
-<p>演示图如下：</p>
-<p>![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_5.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_6.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_7.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_8.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_9.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_10.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_11.png" />
-![演示图](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170926_12.png" /></p>
-<pre><code class="python">import tkinter as tk
-from tkinter import messagebox  # 导入提示窗口包
-
-str1=("showinfo","showwarning","showerror","askquestion","askokcancel","askyesno","askretrycancel")
-def showMsg(str):
-    """弹出窗口设置函数"""
-    print(str)
-    if str == str1[0]:
-        messagebox.showinfo("showinfo","信息提示框！")
-    elif str == str1[1]:
-        messagebox.showwarning("showwarning","警告框！")
-    elif str == str1[2]:
-        messagebox.showerror("showerror","错误信息框！")
-    elif str == str1[3]:
-        if messagebox.askquestion("askquestion","askquestion提示框") == messagebox.YES:
-            messagebox.showinfo("yes","你点了yes!")
-        else:
-            messagebox.showinfo("no","你点了no")
-    elif str == str1[4]:
-        if messagebox.askokcancel("askokcancel","askokcancel提示框"):
-            messagebox.showinfo("OK","你点Ok")
-        else:
-            messagebox.showwarning("cancel","你点了cancel")
-    elif str == str1[5]:    
-        print(messagebox.askyesno("askyesno","askyesno提示框"))
-    elif str == str1[6]:    
-        print(messagebox.askretrycancel("askretrycancel","askretrycancel提示框"))
-
-root = tk.Tk()
-root.title("messagebox 弹出对话框使用例子")
-
-show_frame = tk.Frame(root)
-show_frame.pack(fill=tk.X, side=tk.TOP)
-btn1= tk.Button(show_frame, text=str1[0],command=lambda showMsg = showMsg : showMsg(str1[0]) ).pack(side=tk.LEFT)
-btn2= tk.Button(show_frame, text=str1[1],command=lambda showMsg = showMsg : showMsg(str1[1]) ).pack(side=tk.LEFT)
-btn3= tk.Button(show_frame, text=str1[2],command=lambda showMsg = showMsg : showMsg(str1[2]) ).pack(side=tk.LEFT)
-
-asky_frame = tk.Frame(root)
-asky_frame.pack(fill=tk.X,side=tk.TOP)
-bt4 = tk.Button(asky_frame,text=str1[3],command=lambda showMsg = showMsg : showMsg(str1[3]) ).pack(side=tk.LEFT)
-bt5 = tk.Button(asky_frame,text=str1[4],command=lambda showMsg = showMsg : showMsg(str1[4]) ).pack(side=tk.LEFT)
-bt6 = tk.Button(asky_frame,text=str1[5],command=lambda showMsg = showMsg : showMsg(str1[5]) ).pack(side=tk.LEFT)
-bt7 = tk.Button(asky_frame,text=str1[6],command=lambda showMsg = showMsg : showMsg(str1[6]) ).pack(side=tk.LEFT)
 root.mainloop()
 </code></pre>
 

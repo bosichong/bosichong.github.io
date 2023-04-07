@@ -87,6 +87,30 @@
 
 
 <hgroup>
+    <h2>2018 新年快乐！希望在coding中找到自己的快乐与希望</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-01-01 17:40:57</small> Tag:
+        
+        
+        <samll>站长吐槽</samll>
+        
+    </h3>
+</hgroup>
+<p><p>转眼间时光匆匆流过，稀里糊涂的又过去了一年，大约2017年6月时我开始了博客的搭建与设计，8月份上线运营维护，这期间又草草聊聊的写了71篇技术相关的博文。。。这一深一浅的一路走来，希望自己在编程的路上走得更坚实更努力一些！</p>
+<h2>编程之路</h2>
+<p>断断续续的自学编程有10年多了，其中有苦有乐，成绩自我评价也就是接近及格那种。期间接触过好多种编程语言，就像打游戏一样，要把所有的职业都玩一遍，每个职业都练了几个月最后都放弃了，其中拿捏时间比较长的有：<code>php js java</code> 和现在正在深度学习的<code>Python</code>。其实一开始学习<code>Coding</code>的时候也是没有什么目标的，只是有一次在论坛做版主的时候被安排了一个任务，任务中需要用到<code>html+css</code>排版，然后自己就去百度搜索了一下相关知识，然后就一发不可收拾的迷上了编码。虽然最开始的时候学的是易语言，而且竟然学用了近二年之久，最后才因为某种原因不得不放弃它。之后就是各种语言职业的轮番试玩了。。。一直到14年左右，才开始稳定到java，16年弃坑<code>java</code>转而<code>Python</code>。</p>
+<h2>2018的书单</h2>
+<p>今年有一些目标和计划，除了努力工作之外，还是要继续学习<code>Python</code>，然后继续学习一门新的编程语言，感觉这门语言非<code>C++</code>莫属了，天下武功（编码）少林正宗（C++）。
+然后计划读30本书，其中10本编程专业书籍，20本兴趣书籍。写50篇或更多的专业博文，用来记录自己的学习历程，巩固学习进度，加深学习印象。</p>
+<h2>编程计划</h2>
+<p>计划写一个学习<code>Python</code>编程的RPG游戏及开发一个<code>Django</code>开源blog。我会为此而努力。2018，新的一年，希望大家更加努力，早日实现自己的梦想。
+最后，我告诉你：<strong>相信我，多读书，不会错的。</strong></p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>“编学编玩”用Pygame编写游戏（7）Pingball弹球小游戏</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-12-29 20:18:35</small> Tag:
         
@@ -271,85 +295,6 @@ root.mainloop()
 <ul>
 <li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
 <li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Python生成器yield应用实例——监控日志</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-12-22 09:19:40</small> Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p><code>Python</code>生成器<code>yield</code>是编写基于处理管道，流或数据流程序的一种极其强大的方式，在《Python参考手册》中有一则实例非常简单实用，略加修改，分享一下给大家。</p>
-<h2>需要分析</h2>
-<p>假设服务器有一个日志文件，每隔一秒都会更新日志的内容，日志每行中都有一组类似：<code>2017-12-21 14:07:26.471691 99123</code>数据被写入日志。
-<strong>我们的目的是分析日志中的数字如果大于5000就要打印出来。</strong>
-这样来看，我们需要一个程序负责模拟日志写入，另一个程序负责分析日志打印数据。</p>
-<h2>模拟日志写入</h2>
-<p><code>server_log.py:</code></p>
-<pre><code>import random
-from datetime import *
-import os
-import time
-
-
-def server_log():
-    # 生成模拟的日志数据
-    server_int = random.randint(1,99999)#生成需要的随机数
-    server_date = datetime.now()#获取当前系统时间
-    return str(server_date) + ' ' + str(server_int)#拼装日志字符串
-
-
-while True:
-    #模拟系统写入日志
-    #打开日志文件并写入日志
-    with open(os.path.join(os.path.dirname(__file__),'server_log.log'),'at') as f :
-        s = server_log()
-        print(s)
-        f.write(s + '\n')
-    time.sleep(1)
-</code></pre>
-<p>上边的代码我已经添加了相关的注释，这样我们就有了一个日志文件，每秒会有一第记录插入到日志中。</p>
-<h2>利用生成器yield解析日志</h2>
-<p>生成器可以返回一个迭代的流式的对象，我们可以通过这种方式便捷的获得相关数据，而且代码也更清晰易懂</p>
-<p><code>tail.py</code> 代码如下：</p>
-<pre><code>import time
-
-def tail(f):
-    f.seek(0,2)#移动到文件尾部。
-    while True:
-        line = f.readline()
-        if not line :
-            time.sleep(1)
-            continue
-        yield line
-
-def grep(lines):
-    for l in lines:
-        k = int(l.split()[2])
-        if k &gt;50000:
-            yield l
-
-serverlog = tail(open('server_log.log'))
-lines = grep(serverlog)
-
-for line in lines:
-    print(line)
-</code></pre>
-<p>我们运行两个文件看下效果：</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/QQ20171222-090710-HD1.gif" /></p>
-<p>代码虽然简单，但值得细细品味，感受python的简约与强大吧。</p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/tree/master/deftest">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/deftest">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 

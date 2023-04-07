@@ -87,6 +87,108 @@
 
 
 <hgroup>
+    <h2>wxPython编程学习笔记(02)wxPython的布局</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-12-19 20:22:01</small> Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181219_1.png" /></p>
+<h2>wxPython的布局</h2>
+<p>窗口程序中会用到很多的小部件，有序的排列这些小部件可以让应用更直观，</p>
+<p>我们可以选择下列sizers：</p>
+<p>1.wx.BoxSizer</p>
+<p>2.wx.StaticBoxSizer</p>
+<p>3.wx.GridSizer</p>
+<p>4.wx.FlexGridSizer</p>
+<p>5.wx.GridBagSizer</p>
+<p>这里我介绍一下<code>wx.BoxSizer</code>，灵活应用它基本上可以满足大部分窗口中的布局。</p>
+<h2>wx.BoxSizer</h2>
+<p><code>wx.BoxSizer</code>有<code>wx.VERTICAL</code>或<code>wx.HORIZONTAL</code>两种方向属性，而且可以嵌套，这样复杂的窗口布局也可以迎刃解决。</p>
+<p>如果我们使用wx.EXPAND标志，我们的部件将使用所有已分配给它的空间。</p>
+<p>列举一些属性：</p>
+<p>1.wx.LEFT</p>
+<p>2.wx.RIGHT</p>
+<p>3.wx.BOTTOM</p>
+<p>4.wx.TOP</p>
+<p>5.wx.ALL</p>
+<p>以上属性用来控制小部件在布局管理器中的位置，wx.All 可以用来控制边距，例如：</p>
+<pre><code>vbox.Add(midPan, 1, wx.EXPAND | wx.ALL, 20)
+</code></pre>
+<p>我们还可以通过以下属性定义我们的部件对齐：：</p>
+<p>1.wx.ALIGN_LEFT
+2.wx.ALIGN_RIGHT
+3.wx.ALIGN_TOP
+4.wx.ALIGN_BOTTOM
+5.wx.ALIGN_CENTER_VERTICAL
+6.wx.ALIGN_CENTER_HORIZONTAL
+7.wx.ALIGN_CENTER</p>
+<p>好了，下边列举了一下小例子：</p>
+<pre><code>import wx
+
+
+class HelloFrame(wx.Frame):
+    def __init__(self, *args, **kw):
+        # 调用父类的创建方法
+        super(HelloFrame, self).__init__(*args, **kw)
+        # 创建一个面板窗口，panel 是用来放置各种小部件的面板，通常内置于Frame内部
+        pl = wx.Panel(self)
+        vbox = wx.BoxSizer(wx.VERTICAL)
+        hbox1 = wx.BoxSizer(wx.HORIZONTAL)  # 第一行组件
+
+        st = wx.TextCtrl(pl)
+        hbox1.Add(st, proportion=1, )
+
+        bt1 = wx.Button(pl, label="hello world")
+        hbox1.Add(bt1, )
+
+        vbox.Add(hbox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
+
+        hbox2 = wx.BoxSizer(wx.HORIZONTAL)  # 第二行组件
+
+        bt2 = wx.Button(pl, label="hello world")
+        bt3 = wx.Button(pl, label="hello world")
+        bt4 = wx.Button(pl, label="hello world")
+        hbox2.Add(bt2, wx.EXPAND)
+        hbox2.Add(bt3, )
+        hbox2.Add(bt4, wx.EXPAND)
+        vbox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
+
+        sb = wx.StaticBox(pl, label="test")
+        hbox3 = wx.StaticBoxSizer(sb, wx.HORIZONTAL)  # 第三行组件
+        bt5 = wx.Button(pl, label="yes")
+        bt6 = wx.Button(pl, label="no")
+        hbox3.Add(bt5, )
+        hbox3.Add(bt6, flag=wx.LEFT | wx.BOTTOM, border=10)
+        vbox.Add(hbox3, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
+
+        pl.SetSizer(vbox)
+
+
+def main():
+    app = wx.App()
+    frm = HelloFrame(None, title='wxPython 布局练习')
+    frm.Show()  # 显示窗口
+    app.MainLoop()  # 持续更新窗口
+
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy02.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy02.py">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>wxPython编程学习笔记(01)Frame程序的窗口</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-12-18 19:42:47</small> Tag:
         
@@ -317,40 +419,6 @@ git remote -v 显示更详细的信息：
 <h2>相关文章</h2>
 <ul>
 <li><a href="https://github.com/bosichong/PrimarySchoolMathematics">廖雪峰：git多人协作</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>利用Python自动生成小学生加减乘除口算考试题卷。</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2018-10-24 10:50:04</small> Tag:
-        
-        
-        <samll>站长源创</samll>
-        
-    </h3>
-</hgroup>
-<p><p>孩子上小学一年级了，加减乘除的口算就要开始练习了，估计老师肯定会让家长出题，所以提前准备一下，利用Python开发了一套自动生成小学生口算题的小应用。而且今天是程序员节，撸200行代码庆祝一下。：）</p>
-<p>为了让程序员老爹解放抄题的双手，让你拥有更多的时间去写代码而不用去手写几道口算题而伤神伤脑。所以有没有娃子的程序员爹爹加入一起来继续优化个开源小程序的？有什么点子，发现什么BUG，欢迎留言。</p>
-<p>仅以此软件，献给那些热爱<code>Python</code>的程序员老爹们！</p>
-<p>程序核心功能：</p>
-<p>1.可以设置各算数项和结果的取值范围及多步算数符号的选择，可以生成求结果、求算数项、带括号的算式，最多支持3步算式题</p>
-<p>2.可以简单设置文档标题，小标题。设置生成的口算题文档个数</p>
-<p>使用方法：</p>
-<p>1 确定本机支持python3.6.1以上版本</p>
-<p>2 安装.docx模块,安装wxPython模块 安装方法：</p>
-<p><code>pip3 install python-docx</code></p>
-<p><code>pip3 install wxpython</code></p>
-<p>3 下载程序进入主目录，终端下运行<code>python App.py</code></p>
-<p>4 修改运算项和结果范围里的数值,多步运算请添加修改需要的运算符号:</p>
-<p>5 添加口算题到列表中，然后生成口算题,生成的口算题文件都在docx文件目录下，打开后连接打印机就可以开印了。</p>
-<h2>源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/PrimarySchoolMathematics">github</a></li>
-<li><a href="https://gitee.com/J_Sky/PrimarySchoolMathematics">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 

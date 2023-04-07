@@ -87,6 +87,41 @@
 
 
 <hgroup>
+    <h2>关于本站封面头部大图</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-18 14:19:35</small> Tag:
+        
+        
+        <samll>站长吐槽</samll>
+        
+    </h3>
+</hgroup>
+<p><p><em>看到喜欢的图片就会换上，不知道为什么会喜欢这些偏暖的色调，记得很久以前的有段时间，也曾偏爱冷色调调，可能偏暖色调更LOMO些。</em></p>
+<h3>2017/09/18</h3>
+<p>本图来自bing每日壁纸</p>
+<p>戈尔代小镇是普罗旺斯地区最美丽的小镇之一，依山头而建，是众多被日光洗的发白的石头建筑与深深浅浅的绿色植物相拼而成的村庄。每年那里都会入选法国最美丽的小镇之一。从外到内小镇戈尔代给人的印象就是石头建筑，围墙，房子，教堂几乎都是石头堆砌而成，壮观而真实！</p>
+<p><img alt="戈尔代小镇是普罗旺斯地区最美丽的小镇之一" src="https://suiyan.cc/assets/images/media/upload/2017/09/BingWallpaper-2017-09-17.jpg" /></p>
+<h3>2017/10/09</h3>
+<p>windows10美丽的海边风景</p>
+<p>先前的顶部大图太闪眼睛了。。。换个清爽些的。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/6fb13e4db9f043b276e06f340cbdff6d.jpg" /></p>
+<h3>2017/11/07</h3>
+<p>windows10 秋天</p>
+<p>这个秋天真的很无聊，是个多事之秋。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/11/bing-021.jpg" /></p>
+<h3>2017/11/25</h3>
+<p>网上搜索来的图片</p>
+<p>冬天来了，我们期待着下雪。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/11/timg.jpg" /></p>
+<h3>2017/11/25</h3>
+<p>《星月夜》（The Starry Night）是荷兰后印象派画家文森特·梵·高于1889年在法国圣雷米的一家精神病院里创作的一幅油画，是梵高的代表作之一，现藏纽约现代艺术博物馆。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/11/1432084191361509.jpeg" /></p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Python3 datetime模块的时间操作</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-18 13:23:43</small> Tag:
         
@@ -319,83 +354,6 @@ if __name__ == '__main__':
 <ul>
 <li><a href="https://github.com/bosichong/17python.com/tree/master/ini">github</a></li>
 <li><a href="https://gitee.com/J_Sky/17python.com/tree/master/ini">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Python open()函数文件打开、读、写操作总结</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-05 13:36:55</small> Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p><em>在编程和计算机的使用中，与文件打交道是必不可少的，每天都要打开读取写入很多的文件，所以了解Python的文件打开、读、写操作是非常有必要的。</em></p>
-<h3>为什么是with open()?</h3>
-<p>一般的文件打开方法：</p>
-<pre><code class="python">f = open(os.path.join(os.path.dirname(__file__),'17python.txt'))
-s = f.readline();# 一次读取一行内容
-print(s)
-f.close() #关闭流，如果是写入文件，不关闭流，可能会造成写入失败或是内容丢失。
-</code></pre>
-
-<p>使用with open() as f :</p>
-<pre><code class="python">with open(os.path.join(os.path.dirname(__file__),'17python.txt')) as f :
-    s = f.readline()
-    print(s)
-</code></pre>
-
-<p>with open的好处是，不用再使用close()方法，避免因忘记close()方法产生的错误。</p>
-<p>open方法中的常用参数,open函数有很多的参数，常用的是file，mode和encoding，name就不解释了，文件名字符串，encoding='utf-8'，用来指定打开或写入文件的编码。
-    open(name[,mode[,buffering]])
-其中mode 指定文件打开方式。</p>
-<p>读写模式的类型有：</p>
-<ul>
-<li>rU 或 Ua 以读方式打开, 同时提供通用换行符支持 (PEP 278)</li>
-<li>w     以写方式打开，</li>
-<li>a     以追加模式打开 (从 EOF 开始, 必要时创建新文件)</li>
-<li>r+     以读写模式打开</li>
-<li>w+     以读写模式打开 (参见 w )</li>
-<li>a+     以读写模式打开 (参见 a )</li>
-<li>rb     以二进制读模式打开</li>
-<li>wb     以二进制写模式打开 (参见 w )</li>
-<li>ab     以二进制追加模式打开 (参见 a )</li>
-<li>rb+    以二进制读写模式打开 (参见 r+ )</li>
-<li>wb+    以二进制读写模式打开 (参见 w+ )</li>
-<li>ab+    以二进制读写模式打开 (参见 a+ )</li>
-</ul>
-<h3>读取及写入文件</h3>
-<ul>
-<li>read()方法用来读取文件</li>
-<li>write()方法用来写入文件</li>
-</ul>
-<h3>关于Python读取大文件内容丢失</h3>
-<p>数据保存 一般保存没有什么大问题，主要是读取。 如果保存后是字符串,之前是list 或是 元组（Tuples）保存后就是字符串了，再读取就需要转换成对应的容器，这里用eval(s)函数方法，效果还是比较不错的。 还有就是大文本在读取的时候如果一次用python read()全部读取的时候会出现莫明的无反应及读取内容不全的情况 ，这里采用分段读取比较好些：</p>
-<pre><code class="python">with open(os.path.join(os.path.dirname(__file__),'17python.txt'), mode='r',encoding='utf-8') as f:
-    s = ''
-    while True:  
-        temp = f.read(100)#分段读取，可以解决读取大文件时无法读取的奇怪问题
-        if temp == '':  
-            break
-        s += temp
-    print(s)
-    f.close() 
-</code></pre>
-
-<h3>相关参考</h3>
-<ul>
-<li><a href="http://www.jb51.net/article/58002.htm">Python open()文件处理使用介绍</a></li>
-<li><a href="http://python.usyiyi.cn/documents/python_352/library/io.html">官方文档 io - 使用流的核心工具</a></li>
-</ul>
-<h3>本文源码下载：</h3>
-<ul>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/io/fileopentest.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/io/fileopentest.py">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
