@@ -87,6 +87,108 @@
 
 
 <hgroup>
+    <h2>Markdown 语法学习总结</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-08-25 08:55:15</small> Tag:
+        
+        
+        <samll>网站运维</samll>
+        
+    </h3>
+</hgroup>
+<p><blockquote>
+<p>Markdown 的目标是实现「易读易写」。</p>
+</blockquote>
+<h3>需求</h3>
+<p>因为以后更新博客就需要和<code>Markdown</code>语法一直打交道了，所以有必要总结一下常用的Markdown语法，就当笔记记录一下，如有需要的时候翻查回忆一下。</p>
+<h3>解决方案</h3>
+<p><code>Markdown</code>语法的相关文档及教程在网上一搜一大把，这篇并不是<code>Markdown</code>的详细教程，只是笔者对以后博文更新常用的<code>Markdown</code>语法的一次学习及总结。</p>
+<h3>语法说明</h3>
+<p>### 标题</p>
+<pre><code>### 标题哈  
+## 标题哈  
+# 标题哈
+</code></pre>
+<h3>标题哈</h3>
+<h2>标题哈</h2>
+<h1>标题哈</h1>
+<h3>引用</h3>
+<pre><code class="markdown">> Markdown 标记区块引用是使用类似 email 中用 > 的引用方式</code></pre>
+
+<blockquote>
+<p>Markdown 标记区块引用是使用类似 email 中用 &gt; 的引用方式</p>
+</blockquote>
+<h3>序列</h3>
+<p>序列是文章中经常用到的，有几种写法如下：</p>
+<pre><code>* Python
++ Django
+- Java
+1. Python
+2. Django
+3. Java
+</code></pre>
+<ul>
+<li>Python</li>
+<li>Django</li>
+<li>Java</li>
+<li>Python</li>
+<li>Django</li>
+<li>Java</li>
+</ul>
+<h3>Markdown 代码块</h3>
+<p>比较常用的有三种方式，最简单的就是下边这种方式，一般都是用来显示一些编程语言名称提示比如<code>Python Django</code></p>
+<pre><code class="markdown">\`这里是一小段代码哦\`</code></pre>
+<p><code>这里是一小段代码哦</code></p>
+<p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，显示一行或简单几行的代码时可以用这种方法</p>
+<pre><code>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以
+</code></pre>
+<p>pre 和 code 可以直接上代码段，如果是大代码段推荐使用这种方法，如果引用了第三方的code样式，可以加上 class="你的编程语言"，这样会更友好的显示。</p>
+<pre><code class="markdown">
+&lt;pre>&lt;code class="markdown">这里是一小段代码哦&lt;/code>&lt;/pre>
+</code></pre>
+
+<pre><code class="markdown">这里是一小段代码哦</code></pre>
+
+<h3>超链接</h3>
+<pre><code class="markdown">\[17python]()
+\[百度](http://www.baidu.com)
+</code></pre>
+
+<p><a href="http://www.17python.com">17python</a></p>
+<p><a href="http://www.baidu.com">百度</a></p>
+<h3>强调</h3>
+<pre><code class="markdown">*Python*
+
+_Django_
+
+**Java**
+
+__Spring Boot__
+</code></pre>
+
+<p><em>Python</em></p>
+<p><em>Django</em></p>
+<p><strong>Java</strong></p>
+<p><strong>Spring Boot</strong></p>
+<h3>插入图片</h3>
+<pre><code class="markdown">![其实这不是站长的本人的照片](/media/upload/2017/08/avatar.jpg)
+
+![17python 微信公众号，欢迎关注哦！](https://suiyan.cc/media/upload/2017/08/wx.jpg "www.17python.com")</code></pre>
+
+<p><img alt="其实这不是站长的本人的照片" src="https://suiyan.cc/assets/images/media/upload/2017/08/avatar.jpg" /></p>
+<p><img alt="17python 微信公众号，欢迎关注哦！" src="https://suiyan.cc/assets/images/media/upload/2017/08/wx.jpg" title="www.17python.com" /></p>
+<p>如果需要控制图片大小的话，直接插入<code>html img</code>标签控制图片大小即可。<em>markdown 中是可以兼容html代码的哦！！！！</em></p>
+<h3>最后</h3>
+<p><code>&lt;font color=red&gt;Markdown 支持内嵌 HTML 标签。&lt;/font&gt;</code>
+<font color=red>Markdown 支持内嵌 HTML 标签。</font> </p>
+<p>参考：
+<a href="http://www.appinn.com/markdown/basic.html">Markdown: Basics （快速入门）</a></p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>17python.com网站已经部署上线及后期更新记录</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-08-25 01:09:49</small> Tag:
         
@@ -188,40 +290,11 @@ http://blog.csdn.net/geekun/article/details/51325383</p></p>
 <br>
 
 
-<hgroup>
-    <h2>关于17python.com关于我</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-08-19 16:51:30</small> Tag:
-        
-        
-        <samll>站长吐槽</samll>
-        
-    </h3>
-</hgroup>
-<p><p><em>非常感谢！如果你能点到这里， 说明你已经注意到17python以及帅(zhong)气(du)聪(zhai)明(nan)的站长了</em></p>
-<h3>为什么要做这个blog？</h3>
-<p>其实有很多想法，简单说想把学到的东西实践一下，也算是对这阵子<code>Python Django</code>学习的一个总结。</p>
-<h3>关于17python</h3>
-<p>17Python注册域名的时候就是想，人生苦短，何不一起<code>Python</code>？任何一个热爱<code>Python</code>的朋友都是纯粹的，用更少的代码去实现自己构想的需求和功能。<code>Python</code>这门高级语言，有着众多成熟的库类，使我们能节省更多的时间和减少学习成本，使我们有更多的时间来陪家人和孩子。</p>
-<h2>blog存在的意义</h2>
-<p>希望记录自己的学习笔记以及一些心得经验，算是帮助自己；如果，我是说如果可能帮到你了，那么这篇blog和这个网站就有了新的意义。本人也只是菜鸟一只，希望大家互相学习，一起<code>python</code></p>
-<h2>网站备案成功</h2>
-<p>今天下午收到工信部的短信通知，网站备案成功了，小小的开心了一下，想想这次网站备案的经历也不是很难，小马过河一般，经历过才知道深浅。后继将定期更新博客，发表一些优质的原创博文。</p>
-<h2>网站改版</h2>
-<p>今天折腾了一天把网站换成了自己开发的<code>碎言静态博客</code><a href="https://gitee.com/J_Sky/suiyan.git">Gitee</a>
-生命在于折腾。</p>
-<h2>联系我</h2>
-<p><em>email bosichong@qq.com</em></p></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_26.html" role="button" class="outline">Prev</a></li>
-    <li><small>27 / 27</small></li>
-    <li><a href="#" role="button" class="outline">Next</a></li>
+    <li><small>27 / 28</small></li>
+    <li><a href="list_28.html" role="button" class="outline">Next</a></li>
 </nav>
 
 </section>

@@ -87,6 +87,83 @@
 
 
 <hgroup>
+    <h2>Python TK和Tkinter的GUI编程(10) filedialog 文件目录选择对话框</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-12-24 19:21:04</small> Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171224_4.png" /></p>
+<p>python中有没有文件目录选择对话框？答案是肯定的，这个可以有。tkinter.filedialog这个模块就是负责选择文件及目录的。</p>
+<h2>tkinter.filedialog的测试</h2>
+<p>创建一个tk的窗口，包括一个文本框、按键及一个列表框，这些的创建都是很简单的，其中文本框及列表框中的关联数据我们采用tk中特有的绑定数据模式，具体可以查看代码。
+测试代码中有一个是按键回调方法filedir，主要是用来弹出目录选择对话框的,filedialog中有很多比较用用的对话框：</p>
+<pre><code>'askdirectory',
+'askopenfile',
+'askopenfilename',
+'askopenfilenames',
+'askopenfiles',
+'asksaveasfile',
+'asksaveasfilename'
+</code></pre>
+<p>以上是通过print(dir(filedialog))打印查看到的，也可以通过源码查看到，通过单词字面应该大体上可以了解到这些函数弹出的对话框是干什么用的。</p>
+<p>好了，具体测试源码如下：</p>
+<p>'''</p>
+<pre><code>import tkinter.filedialog as filedialog
+from tkinter import *
+import os
+
+def filedir():
+    print('按键已被点击')
+    v.set('')#清空文本框里内容
+    var.set((('')))
+    path = filedialog.askdirectory()
+    print(dir(filedialog))
+    if path :
+        v.set(path)
+    getdir(path)
+
+def getdir(p):
+    #把目录中遍历出来的文件目录显示到列表框中
+    fp = os.listdir(p)
+    var.set(fp)
+
+root = Tk()
+root.title('文件目录选择对话框测试')
+frame = Frame(root)
+frame.pack(fill=X,side=TOP)
+#加入一个文本框显示目录地址
+v = StringVar()#绑定文本框的变量
+ent = Entry(frame, width=50,textvariable = v).pack(fill=X,side=LEFT)
+#加入一个按键，点击后弹出文件目录选择对话框
+button = Button(frame, text='选择文件夹', command=filedir).pack(fill=X,side= LEFT)
+#加入一个列表框，显示目录中的文件列表
+listframe = Frame(root)
+listframe.pack(fill=X,side=LEFT)
+var = StringVar()#绑定listbox的列表值
+var.set((''))
+listbox = Listbox(listframe,width=60,listvariable = var).pack()
+root.mainloop()
+</code></pre>
+<h2>相关参考</h2>
+<ul>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
+<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
+</ul>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Python生成器yield应用实例——监控日志</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-12-22 09:19:40</small> Tag:
         
@@ -348,77 +425,10 @@ while day <= days :
 <br>
 
 
-<hgroup>
-    <h2>python中导入不同目录中的自定义模块/class/函数/方法</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-10-27 10:37:17</small> Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p>前几天在封装<code>PY_RPG</code>框架时，需要导入一些自定义的类、函数、常量的时候，发现始终找不到相关模块，后来参考书籍及网络上的一些经验终于解决了这个问题。</p>
-<h2>包和模块导入的需求</h2>
-<p>假设有一个项目，有a/a.py（此为工具类提供一些简单的方法和常量），b/b.py（需要调用a/a.py）项目文件，我们先在a.py中定义一些函数及常量一会引入使用。</p>
-<pre><code>M_TEST = 888
-def print_text():
-    print('这a.py下的一个打印文字函数')
-</code></pre>
-<p>现在我们引入测试</p>
-<pre><code>import a.a
-a.print_text()
-</code></pre>
-<p>ModuleNotFoundError: No module named 'a'  很显然这样是找不到正确目录的，那么问题来了，
-如果是在同一目录，我们直接<code>import a</code>就搞定了，但实际工作中我们不可能把所有文件都放在一个目录中，如果需要导入其它目录的中.py文件，这时我们就需要用到<code>sys.path.append()</code></p>
-<pre><code>['/Users/mac/PycharmProjects/PythonStudy/b', '/Library/Frameworks/Python.framework/Versions/3.6/lib/python36.zip', '/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6', '/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/lib-dynload', '/Users/mac/Library/Python/3.6/lib/python/site-packages', '/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages', '/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/beautifulsoup4-4.6.0-py3.6.egg', '/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/PyMySQL-0.7.11-py3.6.egg', '/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/xadmin-0.6.1-py3.6.egg', '/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django_formtools-2.0-py3.6.egg']
-</code></pre>
-<p>打印后，我们会发现很多目录，<code>python</code>加载包模块的目录就都在上边了，他会从这些目录中搜索需要加载内容的名称，如果有就加载进来。
-那么我们如何把自己的文件加到上边的目录里？有几种方法：</p>
-<ul>
-<li>通过修改环境变量，这个不环保，而且文件多了，不可能都去修改。</li>
-<li>复制文件到上边的目录中，有些不方便，不推荐</li>
-<li><code>sys.path.append()</code>把目录加进索引，方便python搜索，推荐</li>
-</ul>
-<p>那么我们来试试吧</p>
-<h2>如何优雅的获得目录地址？</h2>
-<p>如果需要把目录加进到索引中，我们只需要一个绝对地址即可，但是这种方法如果我们复制工程到其它目录后，我们还需要修改这个索引，很不方便不科学。
-这时我想到了<code>Django</code>配置文件中有一段代码</p>
-<pre><code>BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-</code></pre>
-<p>我们理解一下这段代码，<code>__file__</code>表示当前.py文件，<code>os.path.abspath(__file__)</code> 表示当前.py文件的绝对地址，<code>dirname</code>获得上一层目录地址，
-那么如果我们当前的文件在根目录下的一个目录下边，那么上条语句正好获得了根目录的地址。我们来打印试试</p>
-<pre><code>/Users/mac/PycharmProjects/PythonStudy/b/b.py
-/Users/mac/PycharmProjects/PythonStudy/b
-/Users/mac/PycharmProjects/PythonStudy
-</code></pre>
-<p>可以看到根目录地址已经得到了，然后通过<code>os.path.join()</code> 就可以拼装到工具类目录地址了，到这里我们的所有功能基本上可以实现了，具体实现请看下边的代码。</p>
-<pre><code>import os 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))#获取根目录
-print(os.path.abspath(__file__))
-print(os.path.dirname(os.path.abspath(__file__)))
-print(BASE_DIR)
-T_DIR = os.path.join(BASE_DIR,'a')#拼装工具类地址
-print(T_DIR)
-sys.path.append(T_DIR)
-import a
-print(a.M_TEST)
-a.print_text()
-</code></pre>
-<h2>本文源码下载： a b 两个目录下为相关源文件</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_14.html" role="button" class="outline">Prev</a></li>
-    <li><small>15 / 27</small></li>
+    <li><small>15 / 28</small></li>
     <li><a href="list_16.html" role="button" class="outline">Next</a></li>
 </nav>
 

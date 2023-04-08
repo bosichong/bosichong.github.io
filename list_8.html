@@ -87,6 +87,55 @@
 
 
 <hgroup>
+    <h2>基于Django构建的小学生英文单词背写检测考试系统。</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-11-07 16:10:19</small> Tag:
+        
+        
+        <samll>站长源创</samll>
+        
+    </h3>
+</hgroup>
+<p><h1>PyWordTest</h1>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/3tai.jpg" /></p>
+<h4>介绍</h4>
+<p>孩子的学习总是让父母担忧，英语学习也是让家长的头疼之事，做为程序员老爸不能整天忙于编程而忽视了孩子的教育，我们也要搞点事情。孩子英文单词到底背的怎么样了？别怕，用PyWordTest,创建题库，轻松搞定孩子的英语单词拼写情况。</p>
+<p><strong><em>&gt; 本软件非英语单词学习软件，只是通过在线答题来检测孩子对单词拼写的掌握。</em></strong> </p>
+<p>软件通过在线考试，记录考试结果及每个单词的拼写对错情况，最后通过一些算法分析孩子对单词拼写熟练度。</p>
+<p>通过易错单词了解孩子哪些单词没有掌握，通过自建题库加强孩子对生疏单词的反复练习，更多功能还在研发中。</p>
+<p>程序截图：</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/1.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/2.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/3.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/4.jpg" /></p>
+<h4>软件架构</h4>
+<p>基于Django构建的小学生英文单词背写检测考试系统。</p>
+<p>环境需求：
+python (3.6.1) 
+Django (2.2.7) 
+Pillow </p>
+<h4>安装教程</h4>
+<p>进入程序目录后，运行python3 manage.py runserver</p>
+<p>后台管理地址http://127.0.0.1:8000/admin/</p>
+<p>管理员登陆:</p>
+<p>用户名：admin 密码：17python.com</p>
+<p>前台地址http://127.0.0.1:8000/</p>
+<h4>使用说明</h4>
+<p>程序已经采集了近1000小学生常用单词，后台可以根据自己的需要进行添加题库进行测试。</p>
+<p>建议新建一个帐号用来考试建题库使用。</p>
+<h4>参与贡献</h4>
+<p>非常欢迎有想法的程序员参与提交代码，程序还很不完善！希望大家多多参与！</p>
+<h2>源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/WordTest">github</a></li>
+<li><a href="https://gitee.com/J_Sky/WordTest">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>PYBabyLog记录孩子成长过程的日记</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-09-29 00:15:30</small> Tag:
         
@@ -248,128 +297,10 @@ from configparser import ConfigParser
 <br>
 
 
-<hgroup>
-    <h2>wxPython编程学习笔记(10)wx.FileDialog文件选择框</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-01-05 14:41:02</small> Tag:
-        
-        
-        <samll>Python GUI</samll>
-        
-    </h3>
-</hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/01/Snip20190105_13.png" /></p>
-<h2>wx.FileDialog文件选择框</h2>
-<p>'FileDialog'是一个文件选择框，我们可以根据弹出框选择文件，确定后返回该文件的地址。</p>
-<h2>创建</h2>
-<pre><code>dlg = wx.FileDialog(parent, message=None, defaultDir=None, defaultFile=None, wildcard=None, style=None, pos=None, size=None, name=None)
-dlg.GetPath()#返回文件地址字符串
-</code></pre>
-<p>其打开方式和其它弹出窗口一样有模态和非模态，当按下确认按钮后，返回一个文件地址字符串。</p>
-<p>我做了一个测试，代码下边跑跑看吧，希望能帮助到你。</p>
-<pre><code>import wx
-import os
-import time
-
-class MyFrame(wx.Frame):
-    def __init__(self, *args, **kwds):
-
-        kwds["style"] = kwds.get("style", 0) | wx.DEFAULT_FRAME_STYLE
-        wx.Frame.__init__(self, *args, **kwds)
-        self.SetSize((400, 300))
-        self.text_ctrl_1 = wx.TextCtrl(self, wx.ID_ANY, "")
-        self.button_1 = wx.Button(self, wx.ID_ANY, u"选择文件")
-        self.text_ctrl_2 = wx.TextCtrl(self, wx.ID_ANY, "")
-
-        self.__set_properties()
-        self.__do_layout()
-
-
-    def __set_properties(self):
-
-        self.SetTitle("frame")
-        self.button_1.Bind(wx.EVT_BUTTON,self.onButton_1)
-
-    def __do_layout(self):
-
-        sizer_1 = wx.BoxSizer(wx.VERTICAL)
-        sizer_3 = wx.BoxSizer(wx.HORIZONTAL)
-        sizer_2 = wx.BoxSizer(wx.HORIZONTAL)
-        sizer_2.Add(self.text_ctrl_1, 1, wx.ALL, 0)
-        sizer_2.Add(self.button_1, 0, 0, 0)
-        sizer_1.Add(sizer_2, 0, wx.ALL | wx.EXPAND, 0)
-        sizer_3.Add(self.text_ctrl_2, 1, wx.ALL | wx.EXPAND, 0)
-        sizer_1.Add(sizer_3, 1, wx.ALL | wx.EXPAND, 0)
-        self.SetSizer(sizer_1)
-        self.Layout()
-
-    def onButton_1(self,e):
-        print("按钮事件")
-        dlg = wx.FileDialog(self, message="选择一个文件", defaultDir=os.getcwd(), style=wx.FD_OPEN)
-        ret = dlg.ShowModal()
-        if ret == wx.ID_OK:
-            print(dlg.GetPath())  # 文件地址
-            self.text_ctrl_1.SetValue(dlg.GetPath())
-
-            fp = os.path.join(dlg.GetPath())  # 组装文件地址
-            ###输出到弹出信息窗口的字符拼装。
-            retstr = str(self.get_FileSize(fp)) + "\n" + self.get_FileAccessTime(fp) + "\n" + self.get_FileCreateTime(
-                fp) + "\n" + self.get_FileModifyTime(fp)
-            self.text_ctrl_2.SetValue(retstr)
-
-        dlg.Destroy()
-
-
-    # 把时间戳转化为时间: 1479264792 to 2016-11-16 10:53:12
-    def TimeStampToTime(self, timestamp):
-        timeStruct = time.localtime(timestamp)
-        return time.strftime('%Y-%m-%d %H:%M:%S', timeStruct)
-
-    # 获取文件的大小,结果保留两位小数，单位为MB
-    def get_FileSize(self, filePath):
-        fsize = os.path.getsize(filePath)
-        return fsize
-
-    # 获取文件的访问时间
-    def get_FileAccessTime(self, filePath):
-        t = os.path.getatime(filePath)
-        return self.TimeStampToTime(t)
-
-    # 获取文件的创建时间
-    def get_FileCreateTime(self, ilePath):
-        t = os.path.getctime(ilePath)
-        return self.TimeStampToTime(t)
-
-    # 获取文件的修改时间
-    def get_FileModifyTime(self, filePath):
-        t = os.path.getmtime(filePath)
-        return self.TimeStampToTime(t)
-class MyApp(wx.App):
-    def OnInit(self):
-        self.frame = MyFrame(None, wx.ID_ANY, "")
-        self.SetTopWindow(self.frame)
-        self.frame.Show()
-        return True
-
-
-if __name__ == "__main__":
-    app = MyApp(0)
-    app.MainLoop()
-</code></pre>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy10.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy10.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_7.html" role="button" class="outline">Prev</a></li>
-    <li><small>8 / 27</small></li>
+    <li><small>8 / 28</small></li>
     <li><a href="list_9.html" role="button" class="outline">Next</a></li>
 </nav>
 

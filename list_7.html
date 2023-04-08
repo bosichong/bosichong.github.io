@@ -87,6 +87,39 @@
 
 
 <hgroup>
+    <h2>细说修改碎言博客站点的样式</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-12-30 20:15:29</small> Tag:
+        
+        
+        <samll>碎言博客</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>碎言博客HTML结构</h2>
+<p>博客HTML只有4个：</p>
+<ul>
+<li>index.html  博客首页</li>
+<li>archives.html 归档</li>
+<li>tags.html 标签页</li>
+<li>p.html 博文详情页</li>
+</ul>
+<h2>CSS修改</h2>
+<p>碎言博客CSS前端采用的bootstrap4框架，CSS样式修改采用了less本地修改生成的.css文件。这里推荐一个vscode插件:<code>Easy LESS</code></p>
+<p><img alt="" src="https://suiyan.cc/assets/images/blog/Snip20191231_2.png" /></p>
+<p>这个插件的特点就是在相同目录下可以生成一个同名的.CSS文件，配合<code>less</code>的引用命令<code>@import "theme-dark-1.less";</code>使用起来很方便的。</p>
+<h2>博客的样式修改</h2>
+<p>碎言博客的样式主要集中在<code>&lt;link id="blogcss"&gt;</code>标签连接的CSS，通过修改对应的LESS文件中对应的颜色变量，可以快速的修改博客的颜色及相关样式，变量我都有注释。</p>
+<h2>Markdown代码样式</h2>
+<p>Markdown代码样式通过修改<code>&lt;link id="highlight"&gt;</code>标签连接的highlightCSS来修改，在<code>https://suiyan.cc/assets/plugins/highlight/styles</code>下可以选择自己喜欢的样式。</p>
+<h2>进阶修改</h2>
+<p>觉得手动修改站点样式太麻烦？可以利用<code>jQuery</code>在站点上添加在线改变站点样式的浮动按钮，近期会考录添加的碎言博客的。</p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>关于站长</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-12-30 16:25:07</small> Tag:
         
@@ -208,59 +241,10 @@
 <br>
 
 
-<hgroup>
-    <h2>基于Django构建的小学生英文单词背写检测考试系统。</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2019-11-07 16:10:19</small> Tag:
-        
-        
-        <samll>站长源创</samll>
-        
-    </h3>
-</hgroup>
-<p><h1>PyWordTest</h1>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/3tai.jpg" /></p>
-<h4>介绍</h4>
-<p>孩子的学习总是让父母担忧，英语学习也是让家长的头疼之事，做为程序员老爸不能整天忙于编程而忽视了孩子的教育，我们也要搞点事情。孩子英文单词到底背的怎么样了？别怕，用PyWordTest,创建题库，轻松搞定孩子的英语单词拼写情况。</p>
-<p><strong><em>&gt; 本软件非英语单词学习软件，只是通过在线答题来检测孩子对单词拼写的掌握。</em></strong> </p>
-<p>软件通过在线考试，记录考试结果及每个单词的拼写对错情况，最后通过一些算法分析孩子对单词拼写熟练度。</p>
-<p>通过易错单词了解孩子哪些单词没有掌握，通过自建题库加强孩子对生疏单词的反复练习，更多功能还在研发中。</p>
-<p>程序截图：</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/1.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/2.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/3.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/4.jpg" /></p>
-<h4>软件架构</h4>
-<p>基于Django构建的小学生英文单词背写检测考试系统。</p>
-<p>环境需求：
-python (3.6.1) 
-Django (2.2.7) 
-Pillow </p>
-<h4>安装教程</h4>
-<p>进入程序目录后，运行python3 manage.py runserver</p>
-<p>后台管理地址http://127.0.0.1:8000/admin/</p>
-<p>管理员登陆:</p>
-<p>用户名：admin 密码：17python.com</p>
-<p>前台地址http://127.0.0.1:8000/</p>
-<h4>使用说明</h4>
-<p>程序已经采集了近1000小学生常用单词，后台可以根据自己的需要进行添加题库进行测试。</p>
-<p>建议新建一个帐号用来考试建题库使用。</p>
-<h4>参与贡献</h4>
-<p>非常欢迎有想法的程序员参与提交代码，程序还很不完善！希望大家多多参与！</p>
-<h2>源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/WordTest">github</a></li>
-<li><a href="https://gitee.com/J_Sky/WordTest">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_6.html" role="button" class="outline">Prev</a></li>
-    <li><small>7 / 27</small></li>
+    <li><small>7 / 28</small></li>
     <li><a href="list_8.html" role="button" class="outline">Next</a></li>
 </nav>
 

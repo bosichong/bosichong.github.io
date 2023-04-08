@@ -87,6 +87,78 @@
 
 
 <hgroup>
+    <h2>Python TK和Tkinter的GUI编程(2)菜单Menu</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-22 11:02:33</small> Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>Menu</h2>
+<p>菜单的创建是很简单的，先创建一个顶层的菜单加入顶层窗口root中，然后分别创建二级菜单就可以了。
+几个比较重要的方法函数：</p>
+<ul>
+<li>tkinter.Menu(root) 创建顶层菜单，root是你的顶层窗口。</li>
+<li>root.config(menu=menu) 然后加入顶层窗口</li>
+<li>menu.add_cascade() 添加二级菜单，label设置二级菜单名称，menu设置二级菜单对象。</li>
+<li>filemenu.add_command() 添加一个普通的菜单项，label设置显示字符串，command设置回调函数</li>
+<li>关于右键菜单的实现，可以参考源码中的注释处。</li>
+</ul>
+<p>还有很多功能，建议参考一下文档了了解，以上几个功能一般简单应用可以应付了。</p>
+<h2>参考源码</h2>
+<p><img alt="" src="https://suiyan.cc/assets/images/media/upload/2017/09/Snip20170922_3.png" /></p>
+<pre><code class="python">import tkinter #导入支持库
+def callback():
+    """一个简单的回调测试"""
+    print ("called the callback!")
+
+root = tkinter.Tk()#创建一个root窗口
+root.title('我只是一个测试的窗口')#设置窗口标题
+root.geometry('500x300+300+300')#设置窗口的大小及位置
+
+# 创建菜单
+menu = tkinter.Menu(root)#顶层菜单
+root.config(menu=menu)#加入窗口
+filemenu = tkinter.Menu(menu)#创建二级菜单File
+menu.add_cascade(label="File", menu=filemenu)#加入menu
+# 创建二级菜单下的功能键
+filemenu.add_command(label="New", command=callback)#按钮
+filemenu.add_command(label="Open...", command=callback)
+filemenu.add_checkbutton(label="checkbutton",)#选择框，选中后会画一个对号。
+filemenu.add_separator()#分隔线
+filemenu.add_radiobutton(label="radiobutton",)#一旦勾选，无法取消
+filemenu.add_separator()#分隔线
+filemenu.add_command(label="Exit", command=callback)
+
+helpmenu = tkinter.Menu(menu)
+menu.add_cascade(label="Help", menu=helpmenu)
+helpmenu.add_command(label="About...", command=callback)
+
+#####实现右键弹出菜单####
+def popup(event):
+    menu.post(event.x_root, event.y_root)
+root.bind("<Button-2>", popup)
+root.mainloop() 
+</code></pre>
+
+<h2>相关参考</h2>
+<ul>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
+<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
+</ul>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Python TK和Tkinter的GUI编程(1)窗口、标签Label、按钮Button</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-22 09:10:27</small> Tag:
         
@@ -312,63 +384,10 @@ print(f)
 <br>
 
 
-<hgroup>
-    <h2>Python 字符串格式化(%操作符)及format函数的使用</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2017-09-19 15:12:22</small> Tag:
-        
-        
-        <samll>读书笔记</samll>
-        
-    </h3>
-</hgroup>
-<p><p><strong>Python 字符串格式化（%操作符）及format函数的使用,Python参考手册，字符串格式化章读书笔记。</strong>
-![Python参考手册](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/timg.jpeg" /></p>
-<p>python的字符串操作是程序员编码中频繁使用的技巧，所以熟练掌握是可以影响到你的编码效率地。
-目前比较流行的字符串打印有两种方式（据笔者所知，当然如果还有其它方法，请不吝赐教）：</p>
-<ul>
-<li>一种是%符号操作，</li>
-<li>一种是format函数高级字符串格式化，</li>
-</ul>
-<p>两种各有特点，据说format的性能更好。</p>
-<h3>%操作符的使用</h3>
-<pre><code class="python">
-a = 'hello'
-b = 588
-c = 12.7896
-d = {'x':98, 'y':235.4444, 'z':'world',}
-print("a:%s" % a)
-# 10 和 2 是间隔的空格长度,小数点后的数字可以用来设置浮点数显示的精度，四舍五入，—号表示左对齐，+号是右对齐。
-print("%-10d %2.3f" % (b, c)) 
-print("%(x)-5d %(y).2f %(z).4s" % d)#打印字典中的值,.4s 表示要打印四个字符
-#vars() 函数，它将返回当前定义的所有变量的字典
-print ("%(a)s %(b)d %(c).2f %(d)s)" % vars())
-</code></pre>
-
-<h3>format函数高级字符串格式化</h3>
-<pre><code class="python">print("{0} {1} {2}".format(a,b,c))
-print("{0},{b},{c}".format(a,b=b,c=c))
-print("{0[x]} {0[y]} {0[z]}".format(d))
-
-print("{0:>10.4s} {1:d}".format(a,b))# <>^ 这几个符号用来设置排版间隔
-print("{0:10b}".format(b))#二进制整数
-print("{0:,}".format(123456789))#,号用来做金额的千位分隔符。
-</code></pre>
-
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/blob/master/str/formatstr.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/str/formatstr.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_22.html" role="button" class="outline">Prev</a></li>
-    <li><small>23 / 27</small></li>
+    <li><small>23 / 28</small></li>
     <li><a href="list_24.html" role="button" class="outline">Next</a></li>
 </nav>
 

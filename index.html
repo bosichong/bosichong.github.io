@@ -87,6 +87,52 @@
 
 
 <hgroup>
+    <h2>free_blog 碎言静态博客主题</h2>
+    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2023-04-08 09:35:36</small> Tag:
+        
+        
+        <samll>未分类</samll>
+        
+    </h3>
+</hgroup>
+<p><p>大道至简，返璞归之，这是一款侧重与内容的博客主题
+本项目为<a href="https://github.com/bosichong/suiyan.git">碎言静态博客</a>主题。
+主题支持亮色和黑暗主题在线切换。</p>
+<p><a href="https://gitee.com/J_Sky/suiyan">碎言静态博客Gitee</a>
+<a href="https://github.com/bosichong/suiyan.git">碎言静态博客GitHub</a></p>
+<h3>效果展示</h3>
+<p><img alt="" src="doc/001.png" /></p>
+<p><img alt="" src="doc/002.png" /></p>
+<h3>技术框架</h3>
+<p>主题模板采用了jinja2的模板引擎，使用了pico.css样式制作。
+图标：<a href="https://9iphp.com/fa-icons">FontAwesome 4.7.0 中完整的675个图标样式CSS参考</a>
+响应式适配移动端。</p>
+<h3>安装教程</h3>
+<ol>
+<li>首先克隆下载本主题到碎言静态博客程序<code>theme</code>目录下。</li>
+<li>修改配置文件 <code>config.json</code>中的"theme": "主题目录",即可启用。</li>
+</ol>
+<h3>运行预览</h3>
+<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。
+在配置文件里修改：
+"dev": 1,  # 调试模式，如果改为1，则使用"blog_test_url"来添加静态资源地址前缀，方便本地调试。</p>
+<h3>修改主题样式</h3>
+<p>主题采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。
+在jinja2 模板中使用<code>{{ 属性名称 }}</code>来调用。</p>
+<h3>github pages</h3>
+<p>如何部署GitHub pages 搭建自己的博客，这里就不在详细介绍了，请参考下文。</p>
+<p><a href="https://docs.github.com/zh/pages/quickstart">GitHub Pages 快速入门</a></p>
+<p>除了部署GitHub，也可以将静态文件部署到虚拟主机云服务器上，复制静态文件目录下的所有文件到你的站点目录下即可。</p>
+<h3>仓库地址</h3>
+<p><a href="https://github.com/bosichong/suiyan_free_blog">GitHub</a>
+<a href="https://gitee.com/J_Sky/suiyan_free_blog">Gitee</a></p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>程序员的痛苦：颈椎病和肩周炎</h2>
     <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2023-04-05 20:21:40</small> Tag:
         
@@ -300,46 +346,10 @@
 <br>
 
 
-<hgroup>
-    <h2>Pico.css大道至简返璞归真--一个简单轻量化的CSS框架</h2>
-    <h3> 作者:<a href="#">J.sky</a> <small>发布时间:2023-04-04 16:39:16</small> Tag:
-        
-        
-        <samll>前端框架</samll>
-        
-        <samll>CSS</samll>
-        
-    </h3>
-</hgroup>
-<p><h3>Pico.css是什么？</h3>
-<p>Pico.css是一个简单轻量化的CSS UI框架，最大的特点是样式都基于HTML原始的标签名和内置的属性，少用甚至是不用class来定义样式，写出来的代码语义清晰，可维护性强，能够帮助开发者构建自己的UI系统，也可以直接用于快速的小型项目中。Pico.css在Github上已经有高达8.8KStar。</p>
-<h3>为什么要使用Pico.css?</h3>
-<p>现代的前端框架都很重，使用之前需要搭建各种环境，安装很多的依赖，编写完代码还要打包等等。有的时候只是需要一个简单的页面，也要如此重的操作吗？
-前几天我打算写一个博客的主题，也就是几个静态页面，我的初衷就是快速实现，不要杀鸡使用牛刀，偶然搜到pico，简单看了下文档，被其漂亮简约的UI，简谱简单的使用方法吸引了，毅然决定使用她。</p>
-<h3>怎么使用Pico.css</h3>
-<p><a href="https://github.com/picocss/pico/archive/refs/heads/master.zip">Download</a> Pico and link /css/pico.min.css in the <head> of your website.
-下载并把<code>pico.min.css</code>引入到你的站点。
-或者使用CDN：</p>
-<p><code>&lt;link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"&gt;</code>
-然后呢？你只需要写你的纯正的HTML即可！</p>
-<p>例如：</p>
-<p><code>html
-&lt;button&gt;Button&lt;/button&gt;
-&lt;input type="submit"&gt;</code></p>
-<p>效果：
-<img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/0001.png" />
-在使用中，你尽情的使用HTML原生的标签，而不必担心整个站点的样式，该框架还提供了明暗两种主题，可以一键切换：<code>data-theme="light"</code>。</p>
-<p>最后，<a href="https://picocss.com/">https://picocss.com/</a>去发挥你的创意吧。</p></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="#" role="button" class="outline">Prev</a></li>
-    <li><small>0 / 27</small></li>
+    <li><small>0 / 28</small></li>
     <li><a href="list_1.html" role="button" class="outline">Next</a></li>
 </nav>
 
