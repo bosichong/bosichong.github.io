@@ -124,6 +124,63 @@
 
 
 <hgroup>
+    <h2>聊聊Python中的递归与快速排序那点事</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-01-30 14:38:39</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p><p>最近买了两本算法相关的书，快速了翻看了一下，原来算法真是编程解决问题的最基础要素，以前很少关注算法这块，以为学了基础了解了一些框架包模块等就是学会了编程，请原谅我。。。</p>
+<h2>在Python中递归</h2>
+<p>递归比较简单的例子就是阶乘，看下递归的必要条件：</p>
+<ul>
+<li>边界条件：确定递归到何时终止，也称为递归出口。</li>
+<li>递归模式：大问题是如何分解为小问题的，也称为递归体。</li>
+</ul>
+<p>阶乘中如果n=1那么就达到了边界条件，递归结束，如果大于1那么进入递归模式调用本体，具体看下代码：</p>
+<pre><code>def f(n):
+    if n == 1: return 1
+    return n * f(n - 1)
+print(f(5))
+</code></pre>
+<p>上边就是一个简单的递归阶乘函数，很简单喽，不过在<code>Python</code>中，递归调用是有限制的，通过如下代码可以查看递归可以使用的层数:</p>
+<pre><code>import sys
+sys.setrecursionlimit(5000)  # 设置递归层数
+print(sys.getrecursionlimit())  # 查看
+</code></pre>
+<h2>Python中的快速排序</h2>
+<p>快速排序法是一个非常精典的递归例子，C语言标准库中的<code>qsort</code>函数的实现主是采用的快速排序法。
+快速排序算法的边界条件是数组中只有一个成中了，即停止排序，否则继续递归模式。
+具体看代码：</p>
+<pre><code>def q_sort(arr):
+    if len(arr) &lt; 2 :
+        return arr
+    else:
+        p = arr[0]
+        print(p)
+        l = [i for i in arr[1:] if i &lt;= p]
+        g = [i for i in arr[1:] if i &gt; p]
+        temp = list()
+        temp.append(p)
+        return q_sort(l) + temp  + q_sort(g)
+print(q_sort([2,44,3,77,6,5,888,999]))
+</code></pre>
+<p>上边代码如果直接<code>return q_sort(l) + p  + q_sort(g)</code>是会报错的，所以修改了使用list相加。
+算法其实很有意思，程序都是有算法组成的，以后得多看看了。</p>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>“编学编玩”用Pygame编写游戏（10）pygame实现一个黑客帝国矩阵(Matrix)</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-01-16 10:25:21</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
         
@@ -345,61 +402,6 @@ int main() {
 }
 </code></pre>
 <p>基础当然不是只有这些，以上只是简单快速的学习及入门级的了解C++,欢迎各位大侠补充。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>妙用IPython学习Python--IPython快速上手</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-01-07 10:16:11</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p>在学习Python的时候，有时我们只是想了解一下模块或是函数，或是测试一些小小代码片段，或是在shell中结合Python一起使用，有没有简便的工具或方法呢？有的，你可以试试IPython.</p>
-<h2>IPython的安装</h2>
-<pre><code>pip3 install ipython
-</code></pre>
-<p>然后，在终端中输入 <code>ipython</code>验证一下</p>
-<pre><code>➜  ~ ipython
-Python 3.6.1 (v3.6.1:69c0db5050, Mar 21 2017, 01:21:04)
-Type 'copyright', 'credits' or 'license' for more information
-IPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.
-
-In [1]:
-</code></pre>
-<p>如果出现以上提示，即是安装成功</p>
-<h2>IPython的用处</h2>
-<p>IPython的使用妙法很多，这里我只介绍一些超级常用的方法，如有不足，欢迎回复本博文进行补充。</p>
-<ul>
-<li>代码提示</li>
-</ul>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180107_19.png" /></p>
-<ul>
-<li>问号？妙用</li>
-</ul>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180107_20.png" /></p>
-<p>这样可以直接查看到对象的一些属性介绍。</p>
-<ul>
-<li>直接使用shell命令</li>
-</ul>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/01/Snip20180107_21.png" /></p>
-<p>这个是不是很方便有没有？</p>
-<p>IPython确实是Python学习中的好帮手，在熟悉某些模块的时候，用IPythong先来探个明白是个不错的方法。</p>
-<h2>相关参考</h2>
-<ul>
-<li><a href="https://www.cnblogs.com/zzhzhao/p/5295476.html">IPython使用学习笔记</a></li>
-<li><a href="https://www.zhihu.com/question/51467397?from=profile_question_card">使用IPython有哪些好处？</a></li>
-</ul>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/">开源中国码云镜像gitee</a></li>
-</ul></p>
 
 
 <hr>

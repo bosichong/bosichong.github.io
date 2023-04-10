@@ -124,6 +124,27 @@
 
 
 <hgroup>
+    <h2>npm更换源与nrm安装与配置</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-03-30 19:43:28</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
+        
+        
+        <samll>webpack</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>nrm</h2>
+<p>安装nrm</p>
+<p>在命令行执行命令，<code>npm install -g nrm</code>，全局安装nrm。</p>
+<p>执行命令<code>nrm ls</code>查看可选的源。</p>
+<p>如果要切换到taobao源，执行命令<code>nrm use taobao</code>。</p>
+<p>很简单吧？</p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>pip临时修改下载源</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-03-30 19:38:16</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
         
@@ -347,68 +368,6 @@ new CleanWebpackPlugin(),//清理目录 而且不用加入目录数组['dist']</
 }</code></li>
 <li><strong>注意：语法插件<code>babel-preset-es2015</code>可以更新为<code>babel-preset-env</code>，它包含了所有的ES相关的语法；</strong></li>
 </ol></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Vue快速学习笔记(5)使用路由vue-router(1)</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-02-12 19:03:02</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
-        
-        
-        <samll>Vue</samll>
-        
-    </h3>
-</hgroup>
-<p><h2>在Vue中使用路由vue-router</h2>
-<ol>
-<li><code>html</code>中导入vue-router.</li>
-<li>编写<code>router-link</code>和<code>router-view</code>标签代码</li>
-<li><code>JavaScript</code>中编写模板对象，定义路由对象及创建Vue实例。</li>
-</ol>
-<p>具体代码参考：</p>
-<pre><code>&lt;div id="app"&gt;
-    &lt;!-- 使用router-link定义组件导航 --&gt;
-    &lt;router-link to="/login"&gt;登录&lt;/router-link&gt;
-    &lt;router-link to="/register"&gt;注册&lt;/router-link&gt;
-
-    &lt;!-- 使用 router-view 显示匹配的组件 --&gt;
-    &lt;router-view&gt;&lt;/router-view&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-    const login = {
-        template: '&lt;h1&gt;登录组件&lt;/h1&gt;'
-    }
-    const register = {
-        template: '&lt;h1&gt;注册组件&lt;/h1&gt;'
-    }
-
-    // 创建一个路由示例，通过routers属性来匹配规则
-    const routerobj = new VueRouter({
-        routes: [{
-                path: '/',
-                redirect: '/login'
-            },
-            {
-                path: '/login',
-                component: login
-            },
-            {
-                path: '/register',
-                component: register
-            }
-        ]
-    });
-    // 穿件Vue实例
-    var vm = new Vue({
-        el: '#app',
-        router: routerobj
-    });
-&lt;/script&gt;
-</code></pre></p>
 
 
 <hr>

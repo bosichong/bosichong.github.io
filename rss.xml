@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-08 09:35:36</pubDate>
+        <pubDate>2023-04-10 07:59:54</pubDate>
+        
+        <item>
+            <title>使用Python编写并部署第一个自己的静态独立技术博客：（一）分析与设计</title>
+            <link>https://suiyan.cc/2023/20230410075954.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-10 07:59:54</pubDate>
+        </item>
         
         <item>
             <title>free_blog 碎言静态博客主题</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/before-2022/20210316093818.html</link>
             <author>J.sky</author>
             <pubDate>2021-03-16 09:38:18</pubDate>
-        </item>
-        
-        <item>
-            <title>Flask-SQLAlchemy 使用学习笔记(上):简单的配置及使用</title>
-            <link>https://suiyan.cc/before-2022/20210223155027.html</link>
-            <author>J.sky</author>
-            <pubDate>2021-02-23 15:50:27</pubDate>
         </item>
         
     </channel>

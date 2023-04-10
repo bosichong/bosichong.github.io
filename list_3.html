@@ -124,6 +124,70 @@
 
 
 <hgroup>
+    <h2>pipenv 简化的虚拟环境、项目依赖管理工具</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-20 15:38:15</small> | <small>更新于:2023-04-08 08:48:33</small> | Tag:
+        
+        
+        <samll>Flask</samll>
+        
+    </h3>
+</hgroup>
+<p><p>最近学习flask，由于flask框架本身非常极简，功能上需要很多的扩展包，所以项目需要在Python的虚拟环境下来安装管理这些扩展，这样才会方便项目在其他地方进行扩展包的安装。这里推荐<code>pipenv</code>来管理虚拟环境和扩展。</p>
+<p>## 安装并激活虚拟环境</p>
+<pre><code>pip install pipenv
+</code></pre>
+<p>终端进入项目目录，<code>pipenv shell</code>激活并初始化虚拟环境，</p>
+<pre><code>(base) （￣︶￣）↗ pipenv shell
+Launching subshell in virtual environment...
+bash-3.2$  . /Users/mac/.local/share/virtualenvs/Flask-BabyLog-cH2fMiTs/bin/activate
+(Flask-BabyLog) bash-3.2$
+</code></pre>
+<p>我们可以看到环境配置文件的目录，以及终端的提示符的变化。</p>
+<p>使用<code>exit</code>退出虚拟环境。</p>
+<h2>安装项目依赖</h2>
+<p>把平时的<code>pip</code>换成<code>pipenv</code></p>
+<pre><code>pipenv install requests
+</code></pre>
+<p><img alt="" src="https://suiyan.cc/assets/images/2021/2021-02-20 16_07_18.gif" /></p>
+<p>打开项目目录中的<code>Pipfile</code></p>
+<pre><code>[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
+</code></pre>
+<p><code>url</code>那里可以修改pip的镜像地址，如果下载太慢，可以换成国内的镜像地址。
+<code>[packages]</code>是虚拟环境中安装过的扩展包</p>
+<p>假设换了一台机器，我们从GitHub上clone下来项目，当然项目中的包含<code>Pipfile</code> <code>Pipfile.lock</code>二个文件。</p>
+<p>终端运行:</p>
+<pre><code>pipenv install
+</code></pre>
+<p>即可安装项目的所有依赖。</p>
+<p>以上为<code>pipenv</code>的一些简单操作，更多请参考官方文档。</p>
+<p><a href="https://pipenv.pypa.io/en/latest/?badge=latest#">pipenv官方文档</a></p>
+<h2>写在最后</h2>
+<p>如果讨厌<code>lock</code>的生成速度，可以在安装依赖的时候使用<code>pip</code>，然后生成依赖列表：</p>
+<pre><code>pip freeze &gt; requirements.txt
+</code></pre>
+<p>这样在其他地方创建虚拟环境开荒的时候，可以使用下边的命令安装所有依赖。</p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
+<p>虽然这用法有点另类，我只是喜欢<code>pipenv</code>的创建、启用和退出的命令，很方便。哈哈哈，实在不行咱就用回<code>venv</code>吧，可以参考下文</p>
+<p><a href="http://2vv.net/blog/2.html">创建python 虚拟环境 venv</a></p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Anaconda常用终端命令</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-12 00:20:01</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
         
@@ -332,27 +396,6 @@ Enter your password:
 </code></pre>
 <p><code>functools.wraps</code>是为了保留原函数的属性不被装饰器破坏，这个时候就可以使用<code>functools.wraps</code>。</p>
 <p>functools这个库里有很多关于函数的功能模块，后续我们在继续研究。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>npm更换源与nrm安装与配置</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-03-30 19:43:28</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
-        
-        
-        <samll>webpack</samll>
-        
-    </h3>
-</hgroup>
-<p><h2>nrm</h2>
-<p>安装nrm</p>
-<p>在命令行执行命令，<code>npm install -g nrm</code>，全局安装nrm。</p>
-<p>执行命令<code>nrm ls</code>查看可选的源。</p>
-<p>如果要切换到taobao源，执行命令<code>nrm use taobao</code>。</p>
-<p>很简单吧？</p></p>
 
 
 <hr>

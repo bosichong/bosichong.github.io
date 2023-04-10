@@ -124,6 +124,72 @@
 
 
 <hgroup>
+    <h2>Python TK和Tkinter的GUI编程(3) 列表框 Listbox</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-09-23 13:40:35</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>listbox 列表框</h2>
+<p>列表框的日常使用的场景：</p>
+<ul>
+<li>获取列表项中的内容lb.curselection()</li>
+<li>selectmode=tk.EXTENDED 这个属性设置listbox可以选择多个选项</li>
+<li>添加列表项 lb.insert(tk.END,v.get()) END代表最后一个位置，第二个参数是要添加的字符串值。</li>
+<li>删除列表中选中的项 command = lambda lb=lb:lb.delete(tk.ANCHOR)</li>
+<li>lb.bind() 用来绑定列表的事件，比如删除列表中选中的项。</li>
+</ul>
+<h2>源码</h2>
+<p><img alt="" src="https://suiyan.cc/assets/images/media/upload/2017/09/QQ20170923-134123.png" /></p>
+<pre><code class="python">import tkinter as tk
+root = tk.Tk()
+root.title("Listbox 测试。")
+# 存放list的容器
+list_frame = tk.Frame(root)
+list_frame.pack(fill=tk.X, side=tk.TOP)
+#存放按钮文本框的容器
+button_frame = tk.Frame(root)
+button_frame.pack(fill=tk.X, side=tk.TOP)
+# 获取当前listbox中item值，并在控制台打印值
+def print_item(event):
+    items = lb.curselection()
+    for k in items:
+        print(lb.get(k))
+var = tk.StringVar()#绑定listbox的列表值
+var.set(('aa','bb','cc','dd','ee'))
+lb = tk.Listbox(list_frame, listvariable = var, selectmode=tk.EXTENDED)#创建一个listbox
+lb.bind('<ButtonRelease-1>',print_item)#绑定鼠标左键点击事件。
+lb.pack(fill=tk.X)
+# 添加listbox item的方法
+def additem():
+    lb.insert(tk.END,v.get())
+    v.set('')
+v = tk.StringVar()#绑定文本框的变量
+en = tk.Entry(button_frame, textvariable = v).pack()
+b1 = tk.Button(button_frame, text="添加", command=additem).pack(side=tk.LEFT)#添加一个item
+b2 = tk.Button(button_frame, text="删除", command= lambda lb=lb:lb.delete(tk.ANCHOR)).pack(side=tk.LEFT)#删除一个listbox中选中的item
+root.mainloop()
+</code></pre>
+
+<h2>相关参考</h2>
+<ul>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/python/charm-12/index.html">可爱的 Python：Python 中的 TK编程</a></li>
+<li><a href="http://effbot.org/tkinterbook/tkinter-index.htm">An Introduction To Tkinter</a></li>
+</ul>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/gui">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/gui">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Python TK和Tkinter的GUI编程(2)菜单Menu</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-09-22 11:02:33</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
         
@@ -362,58 +428,6 @@ print(l)
 <ul>
 <li><a href="https://github.com/bosichong/17python.com/blob/master/random/randomtest.py">github</a></li>
 <li>[开源中国码云镜像gitee](https://gitee.com/J_Sky/17python.com/blob/master/random/randomtest.py</li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Python 对象引用与复制 (Python参考手册读书笔记)</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-09-19 15:51:04</small> | <small>更新于:2023-04-08 08:48:33</small> | Tag:
-        
-        
-        <samll>读书笔记</samll>
-        
-    </h3>
-</hgroup>
-<p><p>Python 对象引用与复制 (Python参考手册读书笔记)
-![Python参考手册读书笔记](<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/09/timg.jpeg" /></p>
-<h2>通过赋值创建一个副本</h2>
-<pre><code>a = [1,2,3,4,5]
-b = a
-print(b is a )
-b[2] = -99
-print(a)
-</code></pre>
-<p>通过控制台打印，我们修改list b中的值，打印a发现值也跟着变化了，说明a与b的引用是同一个对象</p>
-<h3>浅复制 通过结果可以发现一些不同</h3>
-<pre><code class="python">c = [11,22,]
-d = list(c)
-print(c is d)
-d.append(33)
-print(c)
-print(d)
-d[1] = 00
-print(c)
-print(d)
-</code></pre>
-
-<h3>深复制</h3>
-<pre><code class="python">import copy
-e = [11,12,13]
-f = copy.deepcopy(e)
-print(e is f)
-f[1] = 78
-print(e)
-print(f)
-</code></pre>
-
-<h3>本文源码下载：</h3>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/blob/master/copy/copytest.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/copy/copytest.py">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
