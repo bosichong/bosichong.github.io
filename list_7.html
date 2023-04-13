@@ -122,78 +122,17 @@
 
 
 <hgroup>
-    <h2>config.json详细说明</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-12-31 13:35:18</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
-        
-        
-        <samll>碎言博客</samll>
-        
-    </h3>
-</hgroup>
-<p><h2>config.json 详解</h2>
-<ul>
-<li>blog_name : 博客名称</li>
-<li>blog_author : 站长昵称</li>
-<li>blog_description : 站长简介</li>
-<li>meta_description : meta</li>
-<li>meta_keywords : meta keys</li>
-<li>profile_image : 站长头像</li>
-<li>blog_sns : SNS分享</li>
-<li>nav : 博客导航</li>
-<li>blog_list : 首页加载博文篇数</li>
-</ul>
-<p>SNS中的ico图标采用的<code>font-awesome-4.07</code>，图标搜索地址如下：<a href="http://www.fontawesome.com.cn/faicons/">http://www.fontawesome.com.cn/faicons/</a>,只需填写图标名称即可。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>细说修改碎言博客站点的样式</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-12-30 20:15:29</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
-        
-        
-        <samll>碎言博客</samll>
-        
-    </h3>
-</hgroup>
-<p><h2>碎言博客HTML结构</h2>
-<p>博客HTML只有4个：</p>
-<ul>
-<li>index.html  博客首页</li>
-<li>archives.html 归档</li>
-<li>tags.html 标签页</li>
-<li>p.html 博文详情页</li>
-</ul>
-<h2>CSS修改</h2>
-<p>碎言博客CSS前端采用的bootstrap4框架，CSS样式修改采用了less本地修改生成的.css文件。这里推荐一个vscode插件:<code>Easy LESS</code></p>
-<p><img alt="" src="https://suiyan.cc/assets/images/blog/Snip20191231_2.png" /></p>
-<p>这个插件的特点就是在相同目录下可以生成一个同名的.CSS文件，配合<code>less</code>的引用命令<code>@import "theme-dark-1.less";</code>使用起来很方便的。</p>
-<h2>博客的样式修改</h2>
-<p>碎言博客的样式主要集中在<code>&lt;link id="blogcss"&gt;</code>标签连接的CSS，通过修改对应的LESS文件中对应的颜色变量，可以快速的修改博客的颜色及相关样式，变量我都有注释。</p>
-<h2>Markdown代码样式</h2>
-<p>Markdown代码样式通过修改<code>&lt;link id="highlight"&gt;</code>标签连接的highlightCSS来修改，在<code>https://suiyan.cc/assets/plugins/highlight/styles</code>下可以选择自己喜欢的样式。</p>
-<h2>进阶修改</h2>
-<p>觉得手动修改站点样式太麻烦？可以利用<code>jQuery</code>在站点上添加在线改变站点样式的浮动按钮，近期会考录添加的碎言博客的。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
     <h2>关于站长</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-12-30 16:25:07</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-12-30 16:25:07</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
         <samll>未分类</samll>
         
     </h3>
 </hgroup>
-<p><h2>About Me</h2>
+<p><h3>About Me</h3>
 <p>一个浪迹于互联网的编程爱好者且酷爱画画，希望能成为一名出色的插画师。</p>
-<h2>关于碎言博客</h2>
+<h3>关于碎言博客</h3>
 <p>本来用<code>Python Django</code>开发了一套简易的博客系统，但是由于维护起来倍感吃力，而且云服务器也即将到期费用不菲。</p>
 <p>索性改成静态博客得了，试了几个静态博客程序，但是总觉得和别人一样太没意思，正好最近在学习<code>JavaScript jQuery</code>，</p>
 <p>索性撸一个静态博客，发现自己就是爱重复造轮子。</p>
@@ -207,46 +146,166 @@
 
 
 <hgroup>
-    <h2>碎言博客终端操作详解</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-12-30 15:56:49</small> | <small>更新于:2023-04-08 08:48:33</small> | Tag:
+    <h2>基于Django构建的小学生英文单词背写检测考试系统。</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-11-07 16:10:19</small> | <small>更新于:2023-04-13 09:46:38</small> | Tag:
         
         
-        <samll>碎言博客</samll>
+        <samll>站长源创</samll>
         
     </h3>
 </hgroup>
-<p><h2>关于z.py</h2>
-<p><code>z.py</code>是碎言博客构建索引的关键程序，采用<code>Python3</code>相关技术开发。</p>
-<p>终端运行：
-    python3 z.py</p>
-<p><img alt="" src="https://suiyan.cc/assets/images/blog/Snip20191230_4.png" /></p>
-<p>即可看到相关的命令帮助。</p>
-<h2>-i</h2>
-<pre><code>python3 z.py -i
-</code></pre>
-<p>每次创建完新文章后都会自动创建索引，若是修改了文章的标题，作者，标签，时间等头部信息后，应该运行此命令进行索引更新。</p>
-<h2>-n</h2>
-<pre><code>python3 z.py -n 这里写你的新文章的标题名称
-</code></pre>
+<p><h1>PyWordTest</h1>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/3tai.jpg" /></p>
+<h4>介绍</h4>
+<p>孩子的学习总是让父母担忧，英语学习也是让家长的头疼之事，做为程序员老爸不能整天忙于编程而忽视了孩子的教育，我们也要搞点事情。孩子英文单词到底背的怎么样了？别怕，用PyWordTest,创建题库，轻松搞定孩子的英语单词拼写情况。</p>
+<p><strong><em>&gt; 本软件非英语单词学习软件，只是通过在线答题来检测孩子对单词拼写的掌握。</em></strong> </p>
+<p>软件通过在线考试，记录考试结果及每个单词的拼写对错情况，最后通过一些算法分析孩子对单词拼写熟练度。</p>
+<p>通过易错单词了解孩子哪些单词没有掌握，通过自建题库加强孩子对生疏单词的反复练习，更多功能还在研发中。</p>
+<p>程序截图：</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/1.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/2.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/3.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/4.jpg" /></p>
+<h4>软件架构</h4>
+<p>基于Django构建的小学生英文单词背写检测考试系统。</p>
+<p>环境需求：
+python (3.6.1) 
+Django (2.2.7) 
+Pillow </p>
+<h4>安装教程</h4>
+<p>进入程序目录后，运行python3 manage.py runserver</p>
+<p>后台管理地址http://127.0.0.1:8000/admin/</p>
+<p>管理员登陆:</p>
+<p>用户名：admin 密码：17python.com</p>
+<p>前台地址http://127.0.0.1:8000/</p>
+<h4>使用说明</h4>
+<p>程序已经采集了近1000小学生常用单词，后台可以根据自己的需要进行添加题库进行测试。</p>
+<p>建议新建一个帐号用来考试建题库使用。</p>
+<h4>参与贡献</h4>
+<p>非常欢迎有想法的程序员参与提交代码，程序还很不完善！希望大家多多参与！</p>
+<h2>源码下载：</h2>
 <ul>
-<li><code>-n</code>用来创建新文章，其中还有几个选项可以使用，其中<code>-n</code>后边必须跟随一个新标题。</li>
-<li>
-<p><code>-d</code>用来创建一个存放的目录</p>
-<p>python3 z.py -n blog_title -d blog</p>
-</li>
-</ul>
-<p>会在默认<code>.md</code>存放目录<code>articles</code>下创建一个<code>blog</code>目录，新文章就创建在这里。</p>
-<ul>
-<li>
-<p><code>-t -a -p</code>分别对应标签，作者和文章地址页面名称。作者留空默认填充为博客站长昵称。</p>
-</li>
-<li>
-<p><code>-v</code>显示当前程序的版本。</p>
-</li>
-<li>
-<p><code>-tt</code> 参数为<code>int</code>，此命令用来生成测试blog,填写需要生成的数目，测试文章放在目录suiyantest下。</p>
-</li>
+<li><a href="https://github.com/bosichong/WordTest">github</a></li>
+<li><a href="https://gitee.com/J_Sky/WordTest">开源中国码云镜像gitee</a></li>
 </ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>如何在Python程序中使用配置文件.ini(ConfigParser)</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-06-18 15:29:01</small> | <small>更新于:2023-04-13 09:10:37</small> | Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>引言</h2>
+<p>在<code>Python</code>程序的编写中，我们经常要为程序配置一个<code>配置文件</code>，有了配置文件，可以记录一些应用的参数配置，方便下次使用时直接调用。
+那么如何为自己的<code>Python</code>应用制作一个配置文件并方便的使用呢？这篇博文就是用来讨论这个简单的问题的。</p>
+<p><strong>本博文仅为作者对配置文件使用的一些见解，错误难免，如有问题请指教。</strong></p>
+<p>相关链接：
+<a href="http://www.17python.com/blog/14">PythonINI配置文件读写的简单方法</a></p>
+<p>本文重点讨论如何在程序中使用配置文件，<code>ConfigParser</code>类的具体使用，请参考上文。</p>
+<h2>需求</h2>
+<p>前一阵子做了个口算题的生成的应用，但是每次打开应用时都是加载的程序默认的参数，非常不方便，所以就要考虑为程序添加一个配置文件。
+具体需求如下：</p>
+<ol>
+<li>保存程序设置参数</li>
+<li>功能使用配置文件的参数</li>
+<li>组织以上功能封装成为一个类，方便以后功能的扩展。</li>
+</ol>
+<h2>分析</h2>
+<p>先上一个配置文件的工作流程图</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/06/111.png" /></p>
+<p>通过流程图我们可以总结出配置文件类中需要的方法：</p>
+<ol>
+<li>创建(若ini文件不存在)及加载本地配置文件</li>
+<li>程序加载配置项参数</li>
+<li>修改参数的时候保存配置项到ini文件</li>
+<li>整理配置项参数为程序功能所用。</li>
+</ol>
+<h2>构建APPconfig类</h2>
+<p>首先导入必须的包：</p>
+<pre><code>import os
+from configparser import ConfigParser
+</code></pre>
+<p>然后确定ini配置文件的物理位置，这里可以引用<code>Django</code>配置文件加载的方法。</p>
+<pre><code>    #ini程序所在目录，也是当前程序的根目录
+   BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+   #INI文件地址
+  INI_PATH = os.path.join(BASE_DIR, 'config.ini')
+</code></pre>
+<h2>创建INI文件</h2>
+<p>若程序是首次启动，可以判断配置文件ini是否存在，<strong>若不存在可以创建一个带有默认数据参数的配置文件。</strong>
+为类添加一个方法<code>def create_ini(self)</code>，此方法用来创建配置文件ini。
+当在类启动方法中创建了<code>ConfigParser</code>对象后，就可以利用这个对象来编辑修改配置文件了。</p>
+<h2>加载及保存配置文件</h2>
+<p>若文件存在，即可直接加载了。</p>
+<pre><code>    def readINI(self):
+        """ ini文件读取，返回一个INI配置对象
+         或是用来更新内存中的配置文件数据
+         """
+         self.c.read(self.INI_PATH, encoding='utf-8')
+</code></pre>
+<p>创建一个方法，用来读取配置文件，因为在程序运行中需要随时加载更新内存中的参数，所以弄个方法存在也是必要的。</p>
+<p>有读取了，我们还需要保存参数到配置文件里，在建一个保存的方法：</p>
+<pre><code>def saveINI(self):
+    '''保存或是更新ini文件'''
+    with open(self.INI_PATH, mode='w', encoding='utf-8') as ini:
+        self.c.write(ini)
+</code></pre>
+<p>这样，只要修改了参数，结尾就可以调用这个方法来保存配置文件。</p>
+<h2>修改并保存配置文件参数</h2>
+<p>为每一个参数指定一个方法，用来修改并保存当前参数到配置文件，当触发需要修改参数的事件是，直接调用当前方法即可修改配置文件里对应的参数了。</p>
+<p>范例：</p>
+<pre><code>def saveNumber(self,number):
+    '''保存口算题个数设置数据'''
+    self.c.set('config','number',number)
+    self.saveINI()
+</code></pre>
+<h2>读取参数</h2>
+<p>当创建完<code>ConfigParser</code>对象后，就可以使用该对象方便的操作配置文件的读取和保存了，具体方法这里不再敷衍，可以参考<a href="http://www.17python.com/blog/14">PythonINI配置文件读写的简单方法</a>
+也可以单独建立一个方法，用来返回一组数据供程序的功能使用。</p>
+<p>有关配置文件的讨论就到此为止，以上也只是自己的一些浅显理解，详细代码请参考以下源码。</p>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/PrimarySchoolMathematics/blob/master/APPconfig.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/PrimarySchoolMathematics/blob/master/APPconfig.py">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>写在我的博客PV10万时：聊聊编程与画画</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-05-14 09:11:29</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>站长吐槽</samll>
+        
+    </h3>
+</hgroup>
+<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/Snip20190514_1.png" /></p>
+<p>转眼间我的<code>blog</code>PV流量已经达到10万+了，2017年8月25日 01:09，我发布了网站更新记录，至此<code>blog</code>运行已有快二年了，没想到PV会达到10万。</p>
+<p>回想学习<code>Python</code>大约也有二年多了，这一路走来也是蛮辛苦的，自学需要自己填坑补洞修bug，痛苦与快乐并存吧。</p>
+<p>贴几张近作，显吧一下吧</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/Cache_69e1f243303b4652..jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-03025e852e1db8f2f9cf69fbd946b69c_hd.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-608fc943d8709a1c640f02a8fc46fae6_hd.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-fa357d4314c4f66b46318982526ef88a_hd.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-9497459b80fafa67937c205e373c05f7_hd.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-f27fcee295b83b010b1029a145dc1554_hd.jpg" /></p>
+<p>为什么要提到画画，去年的夏天给孩子报了美术班，然后自己也就随便画画，然后就一发不可收拾，坚持画画一直到现在，感触也是蛮多的。</p>
+<p>编程和画画的思考方式在某些方面还是有相同点的，例如编程的架构就好比画画的草稿，草稿打好了才可以细致的刻画。若程序的需求本身是一幅画，那么打好草稿，细致刻画细节，就可以使程序本身更人性化，更符合预期的要求。<strong>有的时候我就觉得，程序员本身真的应该的体验一下绘画带来的乐趣</strong>。</p>
+<p>自学画画一年感觉要比编程10年前的成就感强很多，这些年编程没写过多少像样的应用，五个手指都能算出来，或许编程要比绘画更严谨，更需要思考。</p>
+<p>未来还有很多打算，包括编程初期的一些梦想都想去实现，比如开发一款游戏，自己原画角色，场景，并利用现有的游戏框架编写成型。完成现有的程序代码的编写，继续优化维护，继续坚持画画强化绘画技能，或许能力的提高会更加丰富原有的梦想。</p>
+<p>还有三年的时候<code>blog</code>PV达到百万（是不是有点飘了？），下半年继续更新<code>blog</code>，继续学习<code>Python Django PYgame</code>等。</p></p>
 
 
 <hr>
@@ -256,7 +315,7 @@
 
 <nav>
     <li><a href="list_6.html" role="button" class="outline">Prev</a></li>
-    <li><small>7 / 28</small></li>
+    <li><small>7 / 27</small></li>
     <li><a href="list_8.html" role="button" class="outline">Next</a></li>
 </nav>
 

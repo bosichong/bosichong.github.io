@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Python GUI" name="keywords">
-    <meta content="wxPython编程学习笔记(07)wxPython Dialog 弹出对话" name="description">
+    <meta content="wxPython dialogs 弹出对话框" name="description">
     <meta content="J.sky" name="author">
     <title>SuiYan-碎言博客wxPython编程学习笔记(07)wxPython Dialog 弹出对话</title>
     <!-- 引入 pico.css -->
@@ -123,7 +123,7 @@
 
 <hgroup>
     <h2>wxPython编程学习笔记(07)wxPython Dialog 弹出对话</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-25 13:17:28</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-25 13:17:28</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
         <small>Python GUI</small>
@@ -131,10 +131,10 @@
     </h3>
 </hgroup>
 <p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181225_6.png" /></p>
-<h2>wxPython dialogs 弹出对话框</h2>
+<h3>wxPython dialogs 弹出对话框</h3>
 <p>程序中经常会遇到弹出对话框询问操作的场景，wxPython dialogs为此提供了应用的支持，
 wxPython dialogs有几种，常用的比如：wx.MessageBox wx.MessageDialog wx.Dialog wx.adv.AboutBox等。</p>
-<h2>dialog的创建</h2>
+<h3>dialog的创建</h3>
 <p>一般dialog都会配合Button使用，当按钮绑定事件后，在绑定事件的函数中创建应用即可，代码如下：</p>
 <pre><code>wx.MessageDialog(None, 'Download completed', 'Info', wx.OK)
 </code></pre>
@@ -152,7 +152,7 @@ wx.ICON_INFORMATION show an info icon
 wx.ICON_QUESTION    show a question icon
 </code></pre>
 <p>可以根据自己的需要进行组合，例如组合YES和NO，yes默认选择，并且加带图标的代码：wx.YES_NO|wx.YES_DEFAULT | wx.ICON_INFORMATION</p>
-<h2>MessageDialog 获取返回值</h2>
+<h3>MessageDialog 获取返回值</h3>
 <p>当点击对话框上的按钮后窗口就会关闭，我们需要获得关闭后的返回值，可以通过如下代码获得：</p>
 <pre><code>    dial = wx.MessageDialog(None, 'Are you sure to quit?', 'Question',
         wx.YES_NO | wx.YES_DEFAULT | wx.ICON_QUESTION)
@@ -163,7 +163,7 @@ wx.ICON_QUESTION    show a question icon
         print("NO")
 </code></pre>
 <p>好啦，完整的代码在下边，大家可以跑跑看看。</p>
-<h2>Dialog和窗口间传递数据</h2>
+<h3>Dialog和窗口间传递数据</h3>
 <p>遇到过一个在主窗口弹出Dialog的需求，因为是第一次用wxPython，所以不知道数据如何传送给主窗口，后来网上扒了扒发现了一些答案。
 我这里的解决方案：</p>
 <ol>
@@ -263,7 +263,7 @@ def main():
 if __name__ == '__main__':
     main()
 </code></pre>
-<h2>本文源码下载：</h2>
+<h3>本文源码下载：</h3>
 <ul>
 <li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy07.py">github</a></li>
 <li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy07.py">开源中国码云镜像gitee</a></li>

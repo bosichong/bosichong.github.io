@@ -122,87 +122,131 @@
 
 
 <hgroup>
-    <h2>wxPython编程学习笔记(04)wx.Butoon的应用</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-22 20:26:29</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
+    <h2>Git多人协作（码云）中的一些操作简单记录</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-10-28 14:24:15</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>Git</samll>
         
     </h3>
 </hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181222_8.png" /></p>
-<h2>wx.Butoon</h2>
-<p>按钮是在GUI中使用率最高的一种组件了，点击按钮触发事件可以说是非常普遍的事了。<code>wx.Button</code>使用起来操作简单。
-wx中开关按钮<code>ToggleButton</code>，类似于电灯开关，绑定事件后可以通过</p>
-<pre><code>obj = e.GetEventObject()
-isPressed = obj.GetValue()
-</code></pre>
-<p>来获取对象的属性，这样就可以知道开关按钮的状态了。</p>
-<h2>Button的创建与使用</h2>
-<p>创建</p>
-<pre><code>bt = wx.Button(self,label="关闭窗口",)
-</code></pre>
-<p>绑定事件</p>
-<pre><code>bt.Bind(wx.EVT_BUTTON, self.onCloseWindow)
-</code></pre>
-<p>然后编写绑定事件的函数方法，这样就可以调用此方法了。</p>
-<p>具体代码如下，希望这些短小的代码，能给您带来帮助。</p>
-<pre><code>import wx
-
-class HelloFrame(wx.Frame):
-    def __init__(self, *args, **kw):
-        #调用父类的创建方法
-        super(HelloFrame, self).__init__(*args, **kw)
-
-        box = wx.BoxSizer(wx.VERTICAL)
-        bt1 = wx.Button(self,label="关闭窗口",)
-        bt1.Bind(wx.EVT_BUTTON, self.onCloseWindow)
-
-
-        self.bt2 = wx.ToggleButton(self,label='开关')
-        self.bt2.Bind(wx.EVT_TOGGLEBUTTON,self.showFlash)
-        st = wx.TextCtrl(self,value='helloworld',)
-
-
-        box.AddMany([(bt1,0, wx.ALL | wx.EXPAND, 0),(self.bt2,0, wx.ALL | wx.EXPAND, 0),(st,0, wx.ALL | wx.EXPAND | wx.SHAPED, 0)])
-
-
-        self.SetSizer(box)
-
-
-    def onCloseWindow(self,e):
-        dl = wx.MessageDialog(None,"是否要关闭窗口？","请选择",wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
-        ret = dl.ShowModal()
-
-        if ret == wx.ID_YES:
-            self.Destroy()
-        else:
-            pass
-
-    def showFlash(self,e):
-        obj = e.GetEventObject()
-        isPressed = obj.GetValue()
-
-        if isPressed:
-            self.bt2.SetLabel("关闭")
-        else:
-            self.bt2.SetLabel("打开")
-
-
-def main():
-    app = wx.App()
-    frm = HelloFrame(None, title='wxPython Button',)
-    frm.Show()#显示窗口
-    app.MainLoop()#持续更新窗口
-
-
-if __name__ == '__main__':
-        main()
-</code></pre>
-<h2>本文源码下载：</h2>
+<p><p>最近和一个帅哥共同开发一个小项目，期间需要使用Git协作开发，之前是个人使用Git进行一些简单的提交，与他人Git协作算是头一回，记录下一些操作备查。</p>
+<p>我们模拟一个项目的多人Git协作，假设多人合作至少二人，并且添加合作人员进入项目为开发者以上权限。远程代码仓库以码云'gitee.com'为例:</p>
+<h2>创建远程代码仓库和本地仓库。</h2>
 <ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy04.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy04.py">开源中国码云镜像gitee</a></li>
+<li>选择码云在线创建代码仓库很方便，我们直接在线创建一个master和dev两条分支（很简单，这里不截图了）。</li>
+<li>创建本地代码仓库与远程关联：1.利用'git clone XXXXXXX'下载到本地，即可关联仓库。</li>
+<li>但是远端的dev分支并没有下载来，我们新建本地分支dev并进入，然后pull远程分支.<pre><code>➜  test git:(master) git branch 
+* master
+➜  test git:(master) git checkout -b dev
+Switched to a new branch 'dev'
+➜  test git:(dev) git pull origin dev   
+From https://gitee.com/bosichong/test
+* branch            dev        -&gt; FETCH_HEAD
+Already up-to-date.
+➜  test git:(dev) git branch 
+* dev
+master
+</code></pre>
+</li>
+</ul>
+<p>这样的话我们的本地库与远程代码仓库相关联了。</p>
+<h2>如何协作更新代码？</h2>
+<p>远程master是主分支，一般由专人负责提交更新版本即可，我们主要是在dev这样的分支上进行更新操作，当程序更新到一定程序后，合并到master中发布一个版本。
+模拟一次git协作：
+假设需要研发一个人工智能编码器，我和我的小伙们都在进行编码，我在分支aicode仓库中ai.py编写了大量的代码并完成需要上传远程仓库dev。
+首先我把aicode分支全并到本地的dev,然后上传到远程dev仓库。</p>
+<pre><code>➜  test git:(dev) git checkout -b aicode
+Switched to a new branch 'aicode'
+➜  test git:(aicode) touch ai.py
+➜  test git:(aicode) ✗ vi ai.py 
+➜  test git:(aicode) ✗ git add .
+➜  test git:(aicode) ✗ git commit -m 'aicode功能更新'
+[aicode a1e0b50] aicode功能更新
+1 file changed, 2 insertions(+)
+create mode 100644 ai.py
+➜  test git:(aicode) git checkout dev 
+Switched to branch 'dev'
+➜  test git:(dev) git merge aicode 
+Updating 8fcac3b..a1e0b50
+Fast-forward
+ai.py | 2 ++
+1 file changed, 2 insertions(+)
+create mode 100644 ai.py
+➜  test git:(dev) git push origin dev  
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 298 bytes | 298.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Powered by Gitee.com
+To https://gitee.com/bosichong/test.git
+8fcac3b..a1e0b50  dev -&gt; dev
+</code></pre>
+<p>这样我就完成了一次更新，其实挺简单的。</p>
+<h2>发生冲突怎么办？</h2>
+<p>有一次我和我的小伙伴都在更新readme.md，他负责前半部我负责后半部分，但是他明显比我快，先进行了版本提交，而我刚刚弄完，现在要提交了，当我提交dev分支到远程的时候终端提示如下：</p>
+<pre><code>To https://gitee.com/bosichong/test.git
+! [rejected]        dev -&gt; dev (fetch first)
+error: failed to push some refs to 'https://gitee.com/bosichong/test.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+</code></pre>
+<p>大体意思是：远程的版本比你现在的要新，你需要先下载更新一下，然后再提交。好吧，我先更新一下dev版本，pull下来。
+然后再pull的时候提示如下：</p>
+<pre><code>* branch            dev        -&gt; FETCH_HEAD
+99ccc9c..4c49e33  dev        -&gt; origin/dev
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+<p>大体意思是文件已经pull下来了，但是两个文件有冲突，必须先处理冲突，并告诉你冲突文件是readme.md。
+我们解决一下文件中的冲突内容：</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+我更新的下半部分啊
+=======
+小伙伴更新的上半部分
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4c49e33af00dd498b2d4761d3fc607ee29afbdf4
+</code></pre>
+<p>这里我这样的修改的：</p>
+<pre><code>小伙伴更新的上半部分
+我更新的下半部分啊
+</code></pre>
+<p>处理解决后，就可以提交更新dev到远程的仓库了。从此以后就可以和小伙伴们开心的编码了。</p>
+<p>遇到问题：
+1.今天小伙伴更新dev分支，但我怎么也pull不来，提示如下：</p>
+<pre><code>Updating e32f487..204c0a1
+error: Your local changes to the following files would be overwritten by merge:
+    Psmrcddup.py
+Please commit your changes or stash them before you merge.
+</code></pre>
+<p>解决方法：</p>
+<pre><code>➜  PrimarySchoolMath git:(dev) ✗ git checkout -f
+➜  PrimarySchoolMath git:(dev) git pull gitee dev
+</code></pre>
+<h2>分支策略</h2>
+<p>在实际开发中，我们应该按照几个基本原则进行分支管理：</p>
+<p>首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；</p>
+<p>那在哪干活呢？干活都从dev分支再创建一条分支在开工，完成后，再合并到本地dev并更新到远端dev，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本。</p>
+<p>你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。</p>
+<p>所以，团队合作的分支看起来就像这样：</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/10/0.png" /></p>
+<p>一些常用协作git命令：</p>
+<pre><code>查看分支：git branch
+创建分支：git branch &lt;name&gt;
+切换分支：git checkout &lt;name&gt;
+创建+切换分支：git checkout -b &lt;name&gt;
+合并某分支到当前分支：git merge &lt;name&gt;
+删除分支：git branch -d &lt;name&gt;
+git remote 显示 远程仓库的分支
+git remote -v 显示更详细的信息：
+</code></pre>
+<h2>相关文章</h2>
+<ul>
+<li><a href="https://github.com/bosichong/PrimarySchoolMathematics">廖雪峰：git多人协作</a></li>
 </ul></p>
 
 
@@ -211,72 +255,32 @@ if __name__ == '__main__':
 
 
 <hgroup>
-    <h2>wxPython编程学习笔记(03)wxPython中的事件</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-21 19:11:40</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
+    <h2>利用Python自动生成小学生加减乘除口算考试题卷。</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-10-24 10:50:04</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>站长源创</samll>
         
     </h3>
 </hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181221_2.png" /></p>
-<h2>wxPython中的事件</h2>
-<p>和大多数GUI程序一样，wxPython也有许多的事件可以绑定，这样才会有点击按钮发生行为事件的可能。</p>
-<p>wxPython中的事件绑定很简单：</p>
-<pre><code>self.Bind(wx.EVT_MOVE,self.onMove)
-</code></pre>
-<p>上边一行代码就完成了一个事件的绑定，当窗口移动时的事件，<code>self.onMove</code>就是这个事件处发时要执行的方法函数。
-我们只要在<code>class</code>中定义<code>self.onMove</code>方法的代码，然后当事件触发时，就可以执行<code>onMove</code>方法了。</p>
-<p><code>wx.EVT_XXXXX</code>这种类似的常量定义大量的事件，我们可以通过官方的文档进行查询，根据自己的需求选择所要发生的事件。</p>
-<p>好了，wxPython中的事件处理是不是很简单？至少我认为比Tk中的事件绑定更直观简单一些。</p>
-<pre><code>import wx
-
-class HelloFrame(wx.Frame):
-    def __init__(self, *args, **kw):
-        #调用父类的创建方法
-        super(HelloFrame, self).__init__(*args, **kw)
-
-
-        #创建一组文本用来显示数值
-        wx.StaticText(self,label="x:",pos=(10,10))
-        wx.StaticText(self, label="y:", pos=(10, 30))
-
-        self.st1 = wx.StaticText(self, label='', pos=(30, 10))
-        self.st2 = wx.StaticText(self, label='', pos=(30, 30))
-        #绑定窗口移动事件
-        self.Bind(wx.EVT_MOVE,self.onMove)
-        #绑定窗口关闭事件
-        self.Bind(wx.EVT_CLOSE,self.onCloseWindow)
-
-    def onMove(self,e):
-        x,y = e.GetPosition()
-        self.st1.SetLabel(str(x))
-        self.st2.SetLabel(str(y))
-
-    def onCloseWindow(self,e):
-        dl = wx.MessageDialog(None,"是否要关闭窗口？","请选择",wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
-        ret = dl.ShowModal()
-
-        if ret == wx.ID_YES:
-            self.Destroy()
-        else:
-            pass
-
-
-def main():
-    app = wx.App()
-    frm = HelloFrame(None, title='Events in wxPython',pos=(300,300))
-    frm.Show()#显示窗口
-    app.MainLoop()#持续更新窗口
-
-
-if __name__ == '__main__':
-    main()
-</code></pre>
-<h2>本文源码下载：</h2>
+<p><p>孩子上小学一年级了，加减乘除的口算就要开始练习了，估计老师肯定会让家长出题，所以提前准备一下，利用Python开发了一套自动生成小学生口算题的小应用。而且今天是程序员节，撸200行代码庆祝一下。：）</p>
+<p>为了让程序员老爹解放抄题的双手，让你拥有更多的时间去写代码而不用去手写几道口算题而伤神伤脑。所以有没有娃子的程序员爹爹加入一起来继续优化个开源小程序的？有什么点子，发现什么BUG，欢迎留言。</p>
+<p>仅以此软件，献给那些热爱<code>Python</code>的程序员老爹们！</p>
+<p>程序核心功能：</p>
+<p>1.可以设置各算数项和结果的取值范围及多步算数符号的选择，可以生成求结果、求算数项、带括号的算式，最多支持3步算式题</p>
+<p>2.可以简单设置文档标题，小标题。设置生成的口算题文档个数</p>
+<p>使用方法：</p>
+<p>1 确定本机支持python3.6.1以上版本</p>
+<p>2 安装.docx模块,安装wxPython模块 安装方法：</p>
+<p><code>pip3 install python-docx</code></p>
+<p><code>pip3 install wxpython</code></p>
+<p>3 下载程序进入主目录，终端下运行<code>python App.py</code></p>
+<p>4 修改运算项和结果范围里的数值,多步运算请添加修改需要的运算符号:</p>
+<p>5 添加口算题到列表中，然后生成口算题,生成的口算题文件都在docx文件目录下，打开后连接打印机就可以开印了。</p>
+<h2>源码下载：</h2>
 <ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy03.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy03.py">开源中国码云镜像gitee</a></li>
+<li><a href="https://github.com/bosichong/PrimarySchoolMathematics">github</a></li>
+<li><a href="https://gitee.com/J_Sky/PrimarySchoolMathematics">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -285,101 +289,20 @@ if __name__ == '__main__':
 
 
 <hgroup>
-    <h2>wxPython编程学习笔记(02)wxPython的布局</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-19 20:22:01</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
+    <h2>有时人生需要做出选择</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-06-12 10:05:40</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>站长吐槽</samll>
         
     </h3>
 </hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181219_1.png" /></p>
-<h2>wxPython的布局</h2>
-<p>窗口程序中会用到很多的小部件，有序的排列这些小部件可以让应用更直观，</p>
-<p>我们可以选择下列sizers：</p>
-<p>1.wx.BoxSizer</p>
-<p>2.wx.StaticBoxSizer</p>
-<p>3.wx.GridSizer</p>
-<p>4.wx.FlexGridSizer</p>
-<p>5.wx.GridBagSizer</p>
-<p>这里我介绍一下<code>wx.BoxSizer</code>，灵活应用它基本上可以满足大部分窗口中的布局。</p>
-<h2>wx.BoxSizer</h2>
-<p><code>wx.BoxSizer</code>有<code>wx.VERTICAL</code>或<code>wx.HORIZONTAL</code>两种方向属性，而且可以嵌套，这样复杂的窗口布局也可以迎刃解决。</p>
-<p>如果我们使用wx.EXPAND标志，我们的部件将使用所有已分配给它的空间。</p>
-<p>列举一些属性：</p>
-<p>1.wx.LEFT</p>
-<p>2.wx.RIGHT</p>
-<p>3.wx.BOTTOM</p>
-<p>4.wx.TOP</p>
-<p>5.wx.ALL</p>
-<p>以上属性用来控制小部件在布局管理器中的位置，wx.All 可以用来控制边距，例如：</p>
-<pre><code>vbox.Add(midPan, 1, wx.EXPAND | wx.ALL, 20)
-</code></pre>
-<p>我们还可以通过以下属性定义我们的部件对齐：：</p>
-<p>1.wx.ALIGN_LEFT
-2.wx.ALIGN_RIGHT
-3.wx.ALIGN_TOP
-4.wx.ALIGN_BOTTOM
-5.wx.ALIGN_CENTER_VERTICAL
-6.wx.ALIGN_CENTER_HORIZONTAL
-7.wx.ALIGN_CENTER</p>
-<p>好了，下边列举了一下小例子：</p>
-<pre><code>import wx
-
-
-class HelloFrame(wx.Frame):
-    def __init__(self, *args, **kw):
-        # 调用父类的创建方法
-        super(HelloFrame, self).__init__(*args, **kw)
-        # 创建一个面板窗口，panel 是用来放置各种小部件的面板，通常内置于Frame内部
-        pl = wx.Panel(self)
-        vbox = wx.BoxSizer(wx.VERTICAL)
-        hbox1 = wx.BoxSizer(wx.HORIZONTAL)  # 第一行组件
-
-        st = wx.TextCtrl(pl)
-        hbox1.Add(st, proportion=1, )
-
-        bt1 = wx.Button(pl, label="hello world")
-        hbox1.Add(bt1, )
-
-        vbox.Add(hbox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
-
-        hbox2 = wx.BoxSizer(wx.HORIZONTAL)  # 第二行组件
-
-        bt2 = wx.Button(pl, label="hello world")
-        bt3 = wx.Button(pl, label="hello world")
-        bt4 = wx.Button(pl, label="hello world")
-        hbox2.Add(bt2, wx.EXPAND)
-        hbox2.Add(bt3, )
-        hbox2.Add(bt4, wx.EXPAND)
-        vbox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
-
-        sb = wx.StaticBox(pl, label="test")
-        hbox3 = wx.StaticBoxSizer(sb, wx.HORIZONTAL)  # 第三行组件
-        bt5 = wx.Button(pl, label="yes")
-        bt6 = wx.Button(pl, label="no")
-        hbox3.Add(bt5, )
-        hbox3.Add(bt6, flag=wx.LEFT | wx.BOTTOM, border=10)
-        vbox.Add(hbox3, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
-
-        pl.SetSizer(vbox)
-
-
-def main():
-    app = wx.App()
-    frm = HelloFrame(None, title='wxPython 布局练习')
-    frm.Show()  # 显示窗口
-    app.MainLoop()  # 持续更新窗口
-
-
-if __name__ == '__main__':
-    main()
-</code></pre>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy02.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy02.py">开源中国码云镜像gitee</a></li>
-</ul></p>
+<p><p>好久没有更新自己的博客了，最近经历了很多变动，所以人生的规划也发生了一些微妙的变化。</p>
+<p>这段日子没怎么看编程相关的书，今天随便看了一下，python已经是3.6.5，django也是2.0.6的版本了，想想自己前一阵学习py及django的时候，机器上的环境还是3.61和1.1X版.。。。</p>
+<p>更新了一下站点的头部图片，上次更新时还是冬天的。。。。</p>
+<p>可能暂时要放下编程了，是放下不是放弃，不久的以后我还会捡起来，因为我还有一个做游戏的梦想还未实现。想起30岁的时候开始学习编程，40而终，这些年没做成什么太出色的软件，但也因为代码养家糊了口饭，想想也算是值了，人生总是再变动，曾经看到过一篇文章介绍过，程序员黑客和画家很相似，所以那天拿起笔来就画了几个月感觉还不错，我能否再用10年成就一个插画师的梦想？</p>
+<p>为自己加油！</p>
+<p>感谢曾经路过17python网友，这个站点暂时还不会关闭，但内容也许有些改变，python还会继续，但可能会慢了一些，但我还会在学习python的路上前进的。</p></p>
 
 
 <hr>
@@ -387,67 +310,55 @@ if __name__ == '__main__':
 
 
 <hgroup>
-    <h2>wxPython编程学习笔记(01)Frame程序的窗口</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-18 19:42:47</small> | <small>更新于:2023-04-04 20:47:12</small> | Tag:
+    <h2>聊聊Python中的递归与快速排序那点事</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-01-30 14:38:39</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><h2>简介</h2>
-<p>之前的一些小应用都是用的<code>python tk</code>来写的，后来发现tk的组件确实有些简单，满足不了程序越来越复杂的界面需求，所以决定学习一下<code>wxPython</code>
-<code>wxPython</code>是一个<code>Python</code>包装<code>wxWidgets</code>（这是用 C++ 编写），一个流行的跨平台GUI工具包。由Robin Dunn以及Harri Pasanen开发，
-<code>wxPython</code>是作为一个<code>Python</code>扩展模块。</p>
-<h2>wxPython的安装</h2>
-<pre><code>pip3 install wxPython
+<p><p>最近买了两本算法相关的书，快速了翻看了一下，原来算法真是编程解决问题的最基础要素，以前很少关注算法这块，以为学了基础了解了一些框架包模块等就是学会了编程，请原谅我。。。</p>
+<h2>在Python中递归</h2>
+<p>递归比较简单的例子就是阶乘，看下递归的必要条件：</p>
+<ul>
+<li>边界条件：确定递归到何时终止，也称为递归出口。</li>
+<li>递归模式：大问题是如何分解为小问题的，也称为递归体。</li>
+</ul>
+<p>阶乘中如果n=1那么就达到了边界条件，递归结束，如果大于1那么进入递归模式调用本体，具体看下代码：</p>
+<pre><code>def f(n):
+    if n == 1: return 1
+    return n * f(n - 1)
+print(f(5))
 </code></pre>
-<p>如果网络不太好，可以到官网下载进行安装，官方网址：<code>https://wxpython.org/</code></p>
-<h2>Frame 窗口</h2>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181218_12.png" /></p>
-<p>如果我们开始构建一个桌面程序，不妨从一个窗口开始，比如先创建一个<code>Frame</code>.</p>
-<p><code>Wx.Frame (parent, id, title, pos, size, style, name)</code></p>
-<p>其中的参数含意如下：</p>
-<p>Parent 窗口的父类。如果“None”被选择的对象是在顶层窗口。如果“None”未被选择时，所述框显示在父窗口的顶层
-id 窗口标识。通常-1为了让标识符自动生成
-Title 标题出现在标题栏
-Pos 帧(frame)的开始位置。如果没有给出，wxDefaultPosition是由操作系统决定
-Size 窗口的尺寸。 wxDefaultSize 是由操作系统决定
-style 窗口的外观按样式风格常数控制
-name 对象的内部名称</p>
-<h2>wxPython hello world</h2>
-<p>我们通过继承wx.Frame来创建自己的主窗口，然后再构建方法<code>__init__</code>中创建窗口中的部件。
-<code>main()</code>方法中，我们创建一个app，创建一个我们构建的窗口类，就可以展示出来一个窗口了。</p>
-<p>怎么样，很简单吧？</p>
-<pre><code>import wx
-class HelloFrame(wx.Frame):
-    def __init__(self, *args, **kw):
-        #调用父类的创建方法
-        super(HelloFrame, self).__init__(*args, **kw)
-        #创建一个面板窗口，panel 是用来放置各种小部件的面板，通常内置于Frame内部
-        pl = wx.Panel(self)
-        #创建一个静态文本
-        st = wx.StaticText(pl,label= "Hello world!!", pos=(20,20))
-        font = st.GetFont()
-        font.PointSize += 20
-        font = font.Bold()
-        st.SetFont(font)
-
-
-def main():
-    app = wx.App()
-    frm = HelloFrame(None, title='Hello World wxPython 窗口练习')
-    frm.Show()#显示窗口
-    app.MainLoop()#持续更新窗口
-
-
-if __name__ == '__main__':
-    main()
+<p>上边就是一个简单的递归阶乘函数，很简单喽，不过在<code>Python</code>中，递归调用是有限制的，通过如下代码可以查看递归可以使用的层数:</p>
+<pre><code>import sys
+sys.setrecursionlimit(5000)  # 设置递归层数
+print(sys.getrecursionlimit())  # 查看
 </code></pre>
+<h2>Python中的快速排序</h2>
+<p>快速排序法是一个非常精典的递归例子，C语言标准库中的<code>qsort</code>函数的实现主是采用的快速排序法。
+快速排序算法的边界条件是数组中只有一个成中了，即停止排序，否则继续递归模式。
+具体看代码：</p>
+<pre><code>def q_sort(arr):
+    if len(arr) &lt; 2 :
+        return arr
+    else:
+        p = arr[0]
+        print(p)
+        l = [i for i in arr[1:] if i &lt;= p]
+        g = [i for i in arr[1:] if i &gt; p]
+        temp = list()
+        temp.append(p)
+        return q_sort(l) + temp  + q_sort(g)
+print(q_sort([2,44,3,77,6,5,888,999]))
+</code></pre>
+<p>上边代码如果直接<code>return q_sort(l) + p  + q_sort(g)</code>是会报错的，所以修改了使用list相加。
+算法其实很有意思，程序都是有算法组成的，以后得多看看了。</p>
 <h2>本文源码下载：</h2>
 <ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy01.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy01.py">开源中国码云镜像gitee</a></li>
+<li><a href="https://github.com/bosichong/17python.com/">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/">开源中国码云镜像gitee</a></li>
 </ul></p>
 
 
@@ -458,7 +369,7 @@ if __name__ == '__main__':
 
 <nav>
     <li><a href="list_10.html" role="button" class="outline">Prev</a></li>
-    <li><small>11 / 28</small></li>
+    <li><small>11 / 27</small></li>
     <li><a href="list_12.html" role="button" class="outline">Next</a></li>
 </nav>
 

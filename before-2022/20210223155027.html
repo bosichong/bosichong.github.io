@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Flask" name="keywords">
-    <meta content="Flask-SQLAlchemy 使用学习笔记(上):简单的配置及使用" name="description">
+    <meta content="Flask-SQLAlchemy,使用学习笔记:简单的配置及使用" name="description">
     <meta content="J.sky" name="author">
     <title>SuiYan-碎言博客Flask-SQLAlchemy 使用学习笔记(上):简单的配置及使用</title>
     <!-- 引入 pico.css -->
@@ -123,14 +123,14 @@
 
 <hgroup>
     <h2>Flask-SQLAlchemy 使用学习笔记(上):简单的配置及使用</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-23 15:50:27</small> | <small>更新于:2023-03-25 00:01:19</small> | Tag:
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-23 15:50:27</small> | <small>更新于:2023-04-13 09:00:31</small> | Tag:
         
         
         <small>Flask</small>
         
     </h3>
 </hgroup>
-<p><h2>安装和配置</h2>
+<p><h3>安装和配置</h3>
 <pre><code>pip install Flask-SQLAlchemy
 </code></pre>
 <p>在<code>Flask</code>中简单配置:</p>
@@ -170,7 +170,7 @@ class User(db.Model):
 </code></pre>
 <p><code>SQLALCHEMY_ECHO</code> 如果设置成 <code>True</code>，<code>SQLAlchemy</code> 将会记录所有 发到标准输出(stderr)的语句，这对调试很有帮助。</p>
 <p><a href="http://www.pythondoc.com/flask-sqlalchemy/config.html">Flask-SQLAlchemy 扩展能够识别的配置键的清单</a></p>
-<h2>声明模型</h2>
+<h3>声明模型</h3>
 <p>一个简单的例子：</p>
 <pre><code>class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -194,7 +194,7 @@ Boolean 存储布尔值
 PickleType  存储为一个持久化的 Python 对象
 LargeBinary 存储一个任意大的二进制数据
 </code></pre>
-<h2>数据的增删改查</h2>
+<h3>数据的增删改查</h3>
 <p>插入记录：</p>
 <pre><code>user = User('jack',''jack@qq.com')
 db.session.add(user)
