@@ -122,28 +122,18 @@
 
 
 <hgroup>
-    <h2>前端项目构建打包的一些学习笔记</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-01-01 21:09:54</small> | <small>更新于:2023-04-13 09:07:09</small> | Tag:
+    <h2>“编学编玩”用Pygame编写游戏（6）PY_RPG 一个pygame的简单封装。</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-12-28 21:41:37</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>JavaScript</samll>
+        <samll>pygame</samll>
         
     </h3>
 </hgroup>
-<p><h2>遇到的问题</h2>
-<p>由于项目总是有一些小BUG，回想了一下项目中的JS文件的组织问题，估计应该是JS文件分散造成的加载不稳定，有时会造成一些变量莫名的未定义，事已至此，只有将这些文件打包到一个文件中就可以很好的解决这个问题，但是今天在网上搜了一些都是最近流行的打包工具，感觉功能过于丰富，以当前的项目来说用这些流行的打包工具有些大材小用了，而且学习成本高了一些，后来看了一下手头上的两JavaScript本书都推荐<code>Ant</code>打包，所以决定按书上的来吧，省时省力。</p>
-<h2>项目目录结构</h2>
-<p>书上说项目主要有三个目录：</p>
-<ul>
-<li><code>bulid</code>用来放置最终构建的文件，理想情况下这个目录不应该提交</li>
-<li><code>src</code>用来存放所有的源文件，包括用来进行文件分组的子目录</li>
-<li><code>test</code> 测试文件。</li>
-</ul>
-<h2>Ant打包</h2>
-<p>ant的安装教程很多，这里就不在重复了。</p>
-<p>前端构建需要明白自己要做的是什么，其实打包构建的工具很多的，但是有些打包工具的功能太多了，学习成本很大的，所以选择适合的工具也是很重要的。</p>
-<p>ant通过配置<code>build.xml</code>来执行一系列<code>target</code>,任务的类型选择很多，依据目前项目的选择，有打包，校验，压缩等。</p>
-<p>这里就不在贴代码了，具体可以查看<code>suiyan</code>根目录下的<code>build.xml</code>参考，网上的教程也很多的。</p></p>
+<p>pygame写起游戏都是函数式编写，对于一些简单的小游戏或许可以应付，随着游戏内容的增加，我们不可能只在一个.py文件中写下所有的游戏代码，这个时候，我们应该考虑对游戏中组件及对象进行封装，用面向对象的方式来进行游戏代码的编写。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/70.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -151,23 +141,18 @@
 
 
 <hgroup>
-    <h2>关于站长</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-12-30 16:25:07</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h2>Python TK和Tkinter的GUI编程(10) filedialog 文件目录选择对话框</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-12-24 19:21:04</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>未分类</samll>
+        <samll>Python GUI</samll>
         
     </h3>
 </hgroup>
-<p><h3>About Me</h3>
-<p>一个浪迹于互联网的编程爱好者且酷爱画画，希望能成为一名出色的插画师。</p>
-<h3>关于碎言博客</h3>
-<p>本来用<code>Python Django</code>开发了一套简易的博客系统，但是由于维护起来倍感吃力，而且云服务器也即将到期费用不菲。</p>
-<p>索性改成静态博客得了，试了几个静态博客程序，但是总觉得和别人一样太没意思，正好最近在学习<code>JavaScript jQuery</code>，</p>
-<p>索性撸一个静态博客，发现自己就是爱重复造轮子。</p>
-<p>2023-03-24 </p>
-<p>这几天把碎言博客给重构了，换了界面，这次打算坚持写博客了，也不知道能坚持多久。</p>
-<p>欢迎进群讨论学习Q群:217840699</p></p>
+<p>python中有没有文件目录选择对话框？答案是肯定的，这个可以有。tkinter.filedialog这个模块就是负责选择文件及目录的。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/69.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -175,136 +160,113 @@
 
 
 <hgroup>
-    <h2>基于Django构建的小学生英文单词背写检测考试系统。</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-11-07 16:10:19</small> | <small>更新于:2023-04-13 09:46:38</small> | Tag:
-        
-        
-        <samll>站长源创</samll>
-        
-    </h3>
-</hgroup>
-<p><h1>PyWordTest</h1>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/3tai.jpg" /></p>
-<h4>介绍</h4>
-<p>孩子的学习总是让父母担忧，英语学习也是让家长的头疼之事，做为程序员老爸不能整天忙于编程而忽视了孩子的教育，我们也要搞点事情。孩子英文单词到底背的怎么样了？别怕，用PyWordTest,创建题库，轻松搞定孩子的英语单词拼写情况。</p>
-<p><strong><em>&gt; 本软件非英语单词学习软件，只是通过在线答题来检测孩子对单词拼写的掌握。</em></strong> </p>
-<p>软件通过在线考试，记录考试结果及每个单词的拼写对错情况，最后通过一些算法分析孩子对单词拼写熟练度。</p>
-<p>通过易错单词了解孩子哪些单词没有掌握，通过自建题库加强孩子对生疏单词的反复练习，更多功能还在研发中。</p>
-<p>程序截图：</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/1.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/2.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/3.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/11/4.jpg" /></p>
-<h4>软件架构</h4>
-<p>基于Django构建的小学生英文单词背写检测考试系统。</p>
-<p>环境需求：
-python (3.6.1) 
-Django (2.2.7) 
-Pillow </p>
-<h4>安装教程</h4>
-<p>进入程序目录后，运行python3 manage.py runserver</p>
-<p>后台管理地址http://127.0.0.1:8000/admin/</p>
-<p>管理员登陆:</p>
-<p>用户名：admin 密码：17python.com</p>
-<p>前台地址http://127.0.0.1:8000/</p>
-<h4>使用说明</h4>
-<p>程序已经采集了近1000小学生常用单词，后台可以根据自己的需要进行添加题库进行测试。</p>
-<p>建议新建一个帐号用来考试建题库使用。</p>
-<h4>参与贡献</h4>
-<p>非常欢迎有想法的程序员参与提交代码，程序还很不完善！希望大家多多参与！</p>
-<h2>源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/WordTest">github</a></li>
-<li><a href="https://gitee.com/J_Sky/WordTest">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>如何在Python程序中使用配置文件.ini(ConfigParser)</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-06-18 15:29:01</small> | <small>更新于:2023-04-13 09:10:37</small> | Tag:
+    <h2>Python生成器yield应用实例——监控日志</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-12-22 09:19:40</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
         <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><h2>引言</h2>
-<p>在<code>Python</code>程序的编写中，我们经常要为程序配置一个<code>配置文件</code>，有了配置文件，可以记录一些应用的参数配置，方便下次使用时直接调用。
-那么如何为自己的<code>Python</code>应用制作一个配置文件并方便的使用呢？这篇博文就是用来讨论这个简单的问题的。</p>
-<p><strong>本博文仅为作者对配置文件使用的一些见解，错误难免，如有问题请指教。</strong></p>
-<p>相关链接：
-<a href="http://www.17python.com/blog/14">PythonINI配置文件读写的简单方法</a></p>
-<p>本文重点讨论如何在程序中使用配置文件，<code>ConfigParser</code>类的具体使用，请参考上文。</p>
-<h2>需求</h2>
-<p>前一阵子做了个口算题的生成的应用，但是每次打开应用时都是加载的程序默认的参数，非常不方便，所以就要考虑为程序添加一个配置文件。
-具体需求如下：</p>
-<ol>
-<li>保存程序设置参数</li>
-<li>功能使用配置文件的参数</li>
-<li>组织以上功能封装成为一个类，方便以后功能的扩展。</li>
-</ol>
-<h2>分析</h2>
-<p>先上一个配置文件的工作流程图</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/06/111.png" /></p>
-<p>通过流程图我们可以总结出配置文件类中需要的方法：</p>
-<ol>
-<li>创建(若ini文件不存在)及加载本地配置文件</li>
-<li>程序加载配置项参数</li>
-<li>修改参数的时候保存配置项到ini文件</li>
-<li>整理配置项参数为程序功能所用。</li>
-</ol>
-<h2>构建APPconfig类</h2>
-<p>首先导入必须的包：</p>
-<pre><code>import os
-from configparser import ConfigParser
-</code></pre>
-<p>然后确定ini配置文件的物理位置，这里可以引用<code>Django</code>配置文件加载的方法。</p>
-<pre><code>    #ini程序所在目录，也是当前程序的根目录
-   BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-   #INI文件地址
-  INI_PATH = os.path.join(BASE_DIR, 'config.ini')
-</code></pre>
-<h2>创建INI文件</h2>
-<p>若程序是首次启动，可以判断配置文件ini是否存在，<strong>若不存在可以创建一个带有默认数据参数的配置文件。</strong>
-为类添加一个方法<code>def create_ini(self)</code>，此方法用来创建配置文件ini。
-当在类启动方法中创建了<code>ConfigParser</code>对象后，就可以利用这个对象来编辑修改配置文件了。</p>
-<h2>加载及保存配置文件</h2>
-<p>若文件存在，即可直接加载了。</p>
-<pre><code>    def readINI(self):
-        """ ini文件读取，返回一个INI配置对象
-         或是用来更新内存中的配置文件数据
-         """
-         self.c.read(self.INI_PATH, encoding='utf-8')
-</code></pre>
-<p>创建一个方法，用来读取配置文件，因为在程序运行中需要随时加载更新内存中的参数，所以弄个方法存在也是必要的。</p>
-<p>有读取了，我们还需要保存参数到配置文件里，在建一个保存的方法：</p>
-<pre><code>def saveINI(self):
-    '''保存或是更新ini文件'''
-    with open(self.INI_PATH, mode='w', encoding='utf-8') as ini:
-        self.c.write(ini)
-</code></pre>
-<p>这样，只要修改了参数，结尾就可以调用这个方法来保存配置文件。</p>
-<h2>修改并保存配置文件参数</h2>
-<p>为每一个参数指定一个方法，用来修改并保存当前参数到配置文件，当触发需要修改参数的事件是，直接调用当前方法即可修改配置文件里对应的参数了。</p>
-<p>范例：</p>
-<pre><code>def saveNumber(self,number):
-    '''保存口算题个数设置数据'''
-    self.c.set('config','number',number)
-    self.saveINI()
-</code></pre>
-<h2>读取参数</h2>
-<p>当创建完<code>ConfigParser</code>对象后，就可以使用该对象方便的操作配置文件的读取和保存了，具体方法这里不再敷衍，可以参考<a href="http://www.17python.com/blog/14">PythonINI配置文件读写的简单方法</a>
-也可以单独建立一个方法，用来返回一组数据供程序的功能使用。</p>
-<p>有关配置文件的讨论就到此为止，以上也只是自己的一些浅显理解，详细代码请参考以下源码。</p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/PrimarySchoolMathematics/blob/master/APPconfig.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/PrimarySchoolMathematics/blob/master/APPconfig.py">开源中国码云镜像gitee</a></li>
-</ul></p>
+<p>Python生成器yield是编写基于处理管道，流或数据流程序的一种极其强大的方式，在《Python参考手册》中有一则实例非常简单实用，略加修改，分享一下给大家。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/68.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>听说存储数据Python与SQLite3更配哦！</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-11-16 17:34:15</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>数据库</samll>
+        
+    </h3>
+</hgroup>
+<p>曾经以为数据库自己一定需要大的，好的，功能多的，处理数据快的，迸发牛的，现在想想就象上小学时时常想：以后考大学是北大还是清华呢？后来才发现自己真特么多虑了。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/55.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>如何快速的复习学习过的Python</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-11-07 16:19:22</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p>最近老妈骨折住院，在医院护理了有8天，终于回出院回家了。回到家第一件事就是想到之前学习了python，如何快速的复习一下曾经学过的python呢？</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/51.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>python中导入不同目录中的自定义模块/class/函数/方法</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-27 10:37:17</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p>前几天在封装PY_RPG框架时，需要导入一些自定义的类、函数、常量的时候，发现始终找不到相关模块，后来参考书籍及网络上的一些经验终于解决了这个问题。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/50.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>基于Python、Tk构建的可视化目录文件同步助手</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-26 15:04:15</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>站长源创</samll>
+        
+    </h3>
+</hgroup>
+<p>之前用java GUI写过一个简单的目录同步助手，前几天在WIN10下边想用的时候，发现竟然无法使用了，正好最近在学习python，所以用python重写了一简单的目录文件同步助手。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/49.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>“编学编玩”用Pygame编写游戏（5）pygame绘制一个钟表</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-23 15:51:11</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>pygame</samll>
+        
+    </h3>
+</hgroup>
+<p>游戏中绘制圆及圆形的轨迹需求还是不少的，而且很多地方都需要用到圆及弧度的理论，如果想做些游戏的话，必须熟练掌握这些基本知识。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/48.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -314,7 +276,7 @@ from configparser import ConfigParser
 
 <nav>
     <li><a href="list_6.html" role="button" class="outline">Prev</a></li>
-    <li><small>7 / 27</small></li>
+    <li><small>7 / 13</small></li>
     <li><a href="list_8.html" role="button" class="outline">Next</a></li>
 </nav>
 

@@ -122,29 +122,18 @@
 
 
 <hgroup>
-    <h2>写在我的博客PV10万时：聊聊编程与画画</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-05-14 09:11:29</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h2>“编学编玩”用Pygame写游戏（4）一个python问答游戏</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-22 09:50:35</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>站长吐槽</samll>
+        <samll>pygame</samll>
         
     </h3>
 </hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/Snip20190514_1.png" /></p>
-<p>转眼间我的<code>blog</code>PV流量已经达到10万+了，2017年8月25日 01:09，我发布了网站更新记录，至此<code>blog</code>运行已有快二年了，没想到PV会达到10万。</p>
-<p>回想学习<code>Python</code>大约也有二年多了，这一路走来也是蛮辛苦的，自学需要自己填坑补洞修bug，痛苦与快乐并存吧。</p>
-<p>贴几张近作，显吧一下吧</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/Cache_69e1f243303b4652..jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-03025e852e1db8f2f9cf69fbd946b69c_hd.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-608fc943d8709a1c640f02a8fc46fae6_hd.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-fa357d4314c4f66b46318982526ef88a_hd.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-9497459b80fafa67937c205e373c05f7_hd.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-f27fcee295b83b010b1029a145dc1554_hd.jpg" /></p>
-<p>为什么要提到画画，去年的夏天给孩子报了美术班，然后自己也就随便画画，然后就一发不可收拾，坚持画画一直到现在，感触也是蛮多的。</p>
-<p>编程和画画的思考方式在某些方面还是有相同点的，例如编程的架构就好比画画的草稿，草稿打好了才可以细致的刻画。若程序的需求本身是一幅画，那么打好草稿，细致刻画细节，就可以使程序本身更人性化，更符合预期的要求。<strong>有的时候我就觉得，程序员本身真的应该的体验一下绘画带来的乐趣</strong>。</p>
-<p>自学画画一年感觉要比编程10年前的成就感强很多，这些年编程没写过多少像样的应用，五个手指都能算出来，或许编程要比绘画更严谨，更需要思考。</p>
-<p>未来还有很多打算，包括编程初期的一些梦想都想去实现，比如开发一款游戏，自己原画角色，场景，并利用现有的游戏框架编写成型。完成现有的程序代码的编写，继续优化维护，继续坚持画画强化绘画技能，或许能力的提高会更加丰富原有的梦想。</p>
-<p>还有三年的时候<code>blog</code>PV达到百万（是不是有点飘了？），下半年继续更新<code>blog</code>，继续学习<code>Python Django PYgame</code>等。</p></p>
+<p>好开心，买的书终于到手了，极力推荐《Python游戏编程入门》！非常不错的一本书，另千万别买《Python和Pygame游戏开发指南》，好了，不要问什么，请叫我雷锋！</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/47.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -152,117 +141,18 @@
 
 
 <hgroup>
-    <h2>wxPython编程学习笔记(10)wx.FileDialog文件选择框</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-01-05 14:41:02</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h2>“编学编玩”用Pygame写游戏（3）让角色动起来及碰撞检测</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-20 16:00:52</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>pygame</samll>
         
     </h3>
 </hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/01/Snip20190105_13.png" /></p>
-<h2>wx.FileDialog文件选择框</h2>
-<p>'FileDialog'是一个文件选择框，我们可以根据弹出框选择文件，确定后返回该文件的地址。</p>
-<h2>创建</h2>
-<pre><code>dlg = wx.FileDialog(parent, message=None, defaultDir=None, defaultFile=None, wildcard=None, style=None, pos=None, size=None, name=None)
-dlg.GetPath()#返回文件地址字符串
-</code></pre>
-<p>其打开方式和其它弹出窗口一样有模态和非模态，当按下确认按钮后，返回一个文件地址字符串。</p>
-<p>我做了一个测试，代码下边跑跑看吧，希望能帮助到你。</p>
-<pre><code>import wx
-import os
-import time
-
-class MyFrame(wx.Frame):
-    def __init__(self, *args, **kwds):
-
-        kwds["style"] = kwds.get("style", 0) | wx.DEFAULT_FRAME_STYLE
-        wx.Frame.__init__(self, *args, **kwds)
-        self.SetSize((400, 300))
-        self.text_ctrl_1 = wx.TextCtrl(self, wx.ID_ANY, "")
-        self.button_1 = wx.Button(self, wx.ID_ANY, u"选择文件")
-        self.text_ctrl_2 = wx.TextCtrl(self, wx.ID_ANY, "")
-
-        self.__set_properties()
-        self.__do_layout()
-
-
-    def __set_properties(self):
-
-        self.SetTitle("frame")
-        self.button_1.Bind(wx.EVT_BUTTON,self.onButton_1)
-
-    def __do_layout(self):
-
-        sizer_1 = wx.BoxSizer(wx.VERTICAL)
-        sizer_3 = wx.BoxSizer(wx.HORIZONTAL)
-        sizer_2 = wx.BoxSizer(wx.HORIZONTAL)
-        sizer_2.Add(self.text_ctrl_1, 1, wx.ALL, 0)
-        sizer_2.Add(self.button_1, 0, 0, 0)
-        sizer_1.Add(sizer_2, 0, wx.ALL | wx.EXPAND, 0)
-        sizer_3.Add(self.text_ctrl_2, 1, wx.ALL | wx.EXPAND, 0)
-        sizer_1.Add(sizer_3, 1, wx.ALL | wx.EXPAND, 0)
-        self.SetSizer(sizer_1)
-        self.Layout()
-
-    def onButton_1(self,e):
-        print("按钮事件")
-        dlg = wx.FileDialog(self, message="选择一个文件", defaultDir=os.getcwd(), style=wx.FD_OPEN)
-        ret = dlg.ShowModal()
-        if ret == wx.ID_OK:
-            print(dlg.GetPath())  # 文件地址
-            self.text_ctrl_1.SetValue(dlg.GetPath())
-
-            fp = os.path.join(dlg.GetPath())  # 组装文件地址
-            ###输出到弹出信息窗口的字符拼装。
-            retstr = str(self.get_FileSize(fp)) + "\n" + self.get_FileAccessTime(fp) + "\n" + self.get_FileCreateTime(
-                fp) + "\n" + self.get_FileModifyTime(fp)
-            self.text_ctrl_2.SetValue(retstr)
-
-        dlg.Destroy()
-
-
-    # 把时间戳转化为时间: 1479264792 to 2016-11-16 10:53:12
-    def TimeStampToTime(self, timestamp):
-        timeStruct = time.localtime(timestamp)
-        return time.strftime('%Y-%m-%d %H:%M:%S', timeStruct)
-
-    # 获取文件的大小,结果保留两位小数，单位为MB
-    def get_FileSize(self, filePath):
-        fsize = os.path.getsize(filePath)
-        return fsize
-
-    # 获取文件的访问时间
-    def get_FileAccessTime(self, filePath):
-        t = os.path.getatime(filePath)
-        return self.TimeStampToTime(t)
-
-    # 获取文件的创建时间
-    def get_FileCreateTime(self, ilePath):
-        t = os.path.getctime(ilePath)
-        return self.TimeStampToTime(t)
-
-    # 获取文件的修改时间
-    def get_FileModifyTime(self, filePath):
-        t = os.path.getmtime(filePath)
-        return self.TimeStampToTime(t)
-class MyApp(wx.App):
-    def OnInit(self):
-        self.frame = MyFrame(None, wx.ID_ANY, "")
-        self.SetTopWindow(self.frame)
-        self.frame.Show()
-        return True
-
-
-if __name__ == "__main__":
-    app = MyApp(0)
-    app.MainLoop()
-</code></pre>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy10.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy10.py">开源中国码云镜像gitee</a></li>
-</ul></p>
+<p>上次的代码中，除了绘制基本图形与图片外，中间还插入了一个小小动画，就是头像在不停的移动，这个移动确实简单了些，游戏中的的角色肯定不是简单的移动几像素那么简单了。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/46.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -270,104 +160,18 @@ if __name__ == "__main__":
 
 
 <hgroup>
-    <h2>wxPython编程学习笔记(09)wx.Python Menu 菜单</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-01-03 18:08:40</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h2>“编学编玩”用Pygame写游戏（2）在场景中绘制图形与动画</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-19 14:03:46</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Python GUI</samll>
+        <samll>pygame</samll>
         
     </h3>
 </hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/01/Snip20190103_12.png" /></p>
-<h3>Menu 菜单</h3>
-<p>菜单是程序经常用到的小部件，我们来看看如何创建。</p>
-<pre><code>    self.menubar = wx.MenuBar()#创建一个程序菜单
-    self.fileMenu = wx.Menu()#创建一个一级菜单，这个菜单里可以继续加入菜单，就可以产行二级菜单
-    self.new = wx.MenuItem(self.fileMenu,9,"new")#创建菜单项
-    self.fileMenu.Append(self.new)#添加菜单项
-</code></pre>
-<p>以上这几个操作就可以创建一个菜单及菜单项了</p>
-<h2>wxPython 右键菜单</h2>
-<p>创建方法，可以先创建一个菜单类<code>class MyPopupMenu(wx.Menu)</code>
-然后再类中添加菜单项，最后在窗口程序中添加右键绑定一个事件：<code>self.Bind(wx.EVT_RIGHT_DOWN, self.OnRightDown)</code>
-然后事件函数中生成这个菜单<code>self.PopupMenu(MyPopupMenu(self), e.GetPosition())</code>
-这样，窗口程序中就有一个右键菜单了，完整的代码再下边，可以跑跑试试</p>
-<pre><code>import wx
-
-class MyPopupMenu(wx.Menu):
-
-    def __init__(self, parent):
-        super(MyPopupMenu, self).__init__()
-
-        self.parent = parent
-
-        mmi = wx.MenuItem(self, wx.NewId(), 'Minimize')
-        self.Append(mmi)
-        self.Bind(wx.EVT_MENU, self.OnMinimize, mmi)
-
-        cmi = wx.MenuItem(self, wx.NewId(), 'Close')
-        self.Append(cmi)
-        self.Bind(wx.EVT_MENU, self.OnClose, cmi)
-
-
-    def OnMinimize(self, e):
-        self.parent.Iconize()
-
-    def OnClose(self, e):
-        self.parent.Close()
-
-class HelloFrame(wx.Frame):
-    def __init__(self, *args, **kw):
-        #调用父类的创建方法
-        super(HelloFrame, self).__init__(*args, **kw)
-
-        self.menubar = wx.MenuBar()#创建一个程序菜单
-        self.fileMenu = wx.Menu()#创建一个一级菜单，这个菜单里可以继续加入菜单，就可以产行二级菜单
-        self.new = wx.MenuItem(self.fileMenu,9,"new")#创建菜单项
-        self.fileMenu.Append(self.new)#添加菜单项
-
-        self.editMenu = wx.Menu()
-        self.copyItem = wx.MenuItem(self.editMenu, 100, text="copy", kind=wx.ITEM_NORMAL)
-        self.editMenu.Append(self.copyItem)
-        self.cutItem = wx.MenuItem(self.editMenu, 101, text="cut", kind=wx.ITEM_NORMAL)
-        self.editMenu.Append(self.cutItem)
-        self.pasteItem = wx.MenuItem(self.editMenu, 102, text="paste", kind=wx.ITEM_NORMAL)
-        self.editMenu.Append(self.pasteItem)
-
-        self.fileMenu.Append(22, "Edit", self.editMenu)
-        self.fileMenu.AppendSeparator()
-        self.fileMenu.AppendSeparator()#分隔线
-        self.qmi = wx.MenuItem(self.fileMenu, 1, '&amp;Quit\tCtrl+Q')
-        self.fileMenu.Append(self.qmi)
-
-        self.Bind(wx.EVT_MENU, self.OnQuit, id=1)
-
-        self.menubar.Append(self.fileMenu, '&amp;File')
-        self.SetMenuBar(self.menubar)
-
-        self.Bind(wx.EVT_RIGHT_DOWN, self.OnRightDown)
-
-    def OnRightDown(self, e):
-        self.PopupMenu(MyPopupMenu(self), e.GetPosition())
-
-    def OnQuit(self, e):
-        self.Close()
-
-def main():
-    app = wx.App(False)
-    frm = HelloFrame(None, title='wx.MenuBar 菜单',)
-    frm.Show()#显示窗口
-    app.MainLoop()#持续更新窗口
-
-
-if __name__ == '__main__':
-        main()
-</code></pre>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy09.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy09.py">开源中国码云镜像gitee</a></li>
-</ul></p>
+<p>pygame的框架使用起来很简单，但这个框架功能也还算可以的，虽然网上对pygame评价褒贬不一，但对于其的存在必有其的存在意义，功能上虽然不能说是十分的完美，但对于新手来说，在使用和学习中还是很有价值的。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/45.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -375,29 +179,94 @@ if __name__ == '__main__':
 
 
 <hgroup>
-    <h2>Python os.mknod 运行报错无法创建文件</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-27 10:47:01</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h2>“编学编玩”用Pygame写游戏（1）初识pygame</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-19 11:00:31</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>pygame</samll>
+        
+    </h3>
+</hgroup>
+<p>这阵子一直在看有关Python相关的书，Python上手确实很简单，但这并不意味着Python是一门浅显的编程语言，语法简练确实让我们节省了大量的时间。不过当你深入的学习Python的时候，比如：装饰器，推导，多线程及多进程，协程，高阶函数，元编程等等等等很多，你会发现，Python的深入学习并不是很简单。会写代Python和会优雅的编写Python代码是两回事，出来混的，坑迟早还是要挖的，这不前几天协程的深入学习，搞的我很不爽，到现在还是一头雾水。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/44.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>浅谈Python中的协程及利用协程代替多线程及多进程并发编程</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-15 15:52:46</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
         <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><p>import os
-    file = os.path.join(os.path.dirname(<strong>file</strong>),'17python888.txt')
-    os.mknod(file)#运行到此处，就会报错</p>
-<pre><code># 解开注释，用下边的方法试试
-# with open(file, mode='a',encoding='utf-8') as f:
-#     pass
-</code></pre>
-<p>前几天因为要创建一个文件，但是osx下边却发生了错误，可以运行上边的代码试试</p>
-<pre><code>os.mknod(file)#运行到此处，就会报错
-PermissionError: [Errno 1] Operation not permitted
-</code></pre>
-<p>这个错误是由于linux系统权限不够，这可真是一个坑。</p>
-<p>那么怎么办?</p>
-<p>网上查了一下，可以用<code>open()</code>方法，咱试试。</p>
-<p>通过测试，使用<code>open()</code>方法<code>mode="a"</code>即可搞定文件的创建。</p></p>
+<p>协程定义说的清楚明了的文章不是很多，手头上有几本Python相关的书籍，其中流畅的Python一书中解释协程的定义是我认为最简单明了的。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/43.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>聊聊Python中晦涩的生成器（yield）与生成器表达式</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-14 08:21:49</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p>刚开始接触Python的时候感觉很清爽，入门很简单，但后边学到生成器和协程的时候就感觉有些吃力了，是时候深入的学习一下了。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/42.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>Python中创建TCP服务器与客户端进行通信(下)Tk、thread与socket组合。</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-13 10:57:48</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p>为了不耽误稍后的学习进程，这个聊天室先码到这里，不想继续填坑了。服务器端用TK实现了图形展示，客户端依然终端。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/41.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>Python中创建TCP服务器与客户端进行通信（上）</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-12 10:14:40</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p>学习套接字编程最好的方法就是从实际应用的开发中边学边用，这样对TCP服务器及客户端通信中遇到的知识点才会更加了解。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/40.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -407,7 +276,7 @@ PermissionError: [Errno 1] Operation not permitted
 
 <nav>
     <li><a href="list_7.html" role="button" class="outline">Prev</a></li>
-    <li><small>8 / 27</small></li>
+    <li><small>8 / 13</small></li>
     <li><a href="list_9.html" role="button" class="outline">Next</a></li>
 </nav>
 

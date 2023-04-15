@@ -122,95 +122,18 @@
 
 
 <hgroup>
-    <h2>聊聊Python中的装饰器</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-10-05 20:34:04</small> | <small>更新于:2023-04-13 09:03:55</small> | Tag:
+    <h2>写在我的博客PV10万时：聊聊编程与画画</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-05-14 09:11:29</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Python</samll>
+        <samll>站长吐槽</samll>
         
     </h3>
 </hgroup>
-<p><h2>Python装饰器是什么？</h2>
-<p>在Django中曾经使用过<code>@fun</code>这种格式的语法，用在了定义视图的函数上，类似一种拦截器用来控制当前视图的访问权限。</p>
-<p>装饰器（decorator）是干嘛的？对于受到封装的原函数来说，装饰器能够在那个函数执行前或者执行后分别运行一些代码，使得可以再装饰器里面访问并修改原函数的参数以及返回值，以实现约束定义、调试程序、注册函数等目标。装饰器一般返回一个包装器（wrapper），而functools.wraps就是装饰包装器的装饰器。</p>
-<h2>定义一个Python的装饰器</h2>
-<p>我们定义一个计算Python程序运行时间的装饰器，在定义一个需要运行的韩式，代码如下：</p>
-<pre><code>    import time
-    import functools
-
-    def t(fun):
-    '''定义一个程序运行时间计算函数'''
-    @functools.wraps(fun)
-    def wrapper(*args, **kwargs):
-            start = time.time()  # 起始时间
-            fun(*args, **kwargs)  # 要执行的函数
-            end = time.time()  # 结束时间
-            print(fun.__name__, '程序运行时间:{:.2f}ms'.format((end - start) * 1000))
-    return wrapper
-
-    @t
-    def myfunc(x, y):
-    '''打印从x到y的数值'''
-    for i in range(x, y):
-            print(i)
-
-    myfunc(0, 9)
-</code></pre>
-<p>运行结果：</p>
-<pre><code>    0
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    myfunc 程序运行时间:0.03ms
-    这样的话，我们就可以在不破坏原函数代码的情况下为函数添加了计算当前函数运行时间的功能。
-</code></pre>
-<h2>定义一个可以传参的装饰器</h2>
-<p>如果我们的装饰器需要传入参数该怎么写呢？只需要在<code>wrapper</code>外加一层包装即可。代码如下:</p>
-<pre><code>    import time
-    import functools
-
-    def t(str):
-    '''定义一个程序运行时间计算函数'''
-    def decorator(fun):
-            @functools.wraps(fun)
-            def wrapper(*args, **kwargs):
-            start = time.time()  # 起始时间
-            fun(*args, **kwargs)  # 要执行的函数
-            end = time.time()  # 结束时间
-            print('传入的字符串是:', str)
-            print(fun.__name__, '程序运行时间:{:.2f}ms'.format((end - start) * 1000))
-            return wrapper
-    return decorator
-
-    @t('hello world')
-    def myfunc(x, y):
-    '''打印从x到y的数值'''
-    for i in range(x, y):
-            print(i)
-
-    myfunc(0, 9)
-</code></pre>
-<p>运行结果：</p>
-<pre><code>    0
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    传入的字符串是: hello world
-    myfunc 程序运行时间:0.11ms
-    functools.wraps是什么？
-</code></pre>
-<p><code>functools.wraps</code>是为了保留原函数的属性不被装饰器破坏，这个时候就可以使用<code>functools.wraps</code>。</p>
-<p>functools这个库里有很多关于函数的功能模块，后续我们在继续研究。</p></p>
+<p>写在我的博客PV10万时：聊聊编程与画画。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/100.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -218,20 +141,18 @@
 
 
 <hgroup>
-    <h2>npm更换源与nrm安装与配置</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-03-30 19:43:28</small> | <small>更新于:2023-04-13 09:03:55</small> | Tag:
+    <h2>wxPython编程学习笔记(10)wx.FileDialog文件选择框</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-01-05 14:41:02</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>webpack</samll>
+        <samll>Python GUI</samll>
         
     </h3>
 </hgroup>
-<p><h3>nrm</h3>
-<p>安装nrm</p>
-<p>在命令行执行命令，<code>npm install -g nrm</code>，全局安装nrm。</p>
-<p>执行命令<code>nrm ls</code>查看可选的源。</p>
-<p>如果要切换到taobao源，执行命令<code>nrm use taobao</code>。</p>
-<p>很简单吧？</p></p>
+<p>FileDialog是一个文件选择框，我们可以根据弹出框选择文件，确定后返回该文件的地址。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/97.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -239,40 +160,18 @@
 
 
 <hgroup>
-    <h2>pip临时修改下载源</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-03-30 19:38:16</small> | <small>更新于:2023-04-13 09:03:55</small> | Tag:
+    <h2>wxPython编程学习笔记(09)wx.Python Menu 菜单</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-01-03 18:08:40</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Python</samll>
+        <samll>Python GUI</samll>
         
     </h3>
 </hgroup>
-<p><h2>pip临时修改源</h2>
-<p>PYPI国内源路径</p>
-<ul>
-<li>阿里云 http://mirrors.aliyun.com/pypi/simple/</li>
-<li>豆瓣(douban) http://pypi.douban.com/simple/</li>
-<li>清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/</li>
-<li>中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/</li>
-</ul>
-<h3>临时换源</h3>
-<p>临时换源只需要在pip安装包时，加上一个-i参数后接源的url即可：</p>
-<pre><code># 下载python中的Django包，这里使用的是豆瓣源
-pip install django -i http://pypi.douban.com/simple
-</code></pre>
-<h3>永久换源（更换默认源）</h3>
-<p>Linux</p>
-<p>在根目录下创建/修改～/.pip/pip.confpip配置文件；
-进入文件新增/修改内容；</p>
-<pre><code>[global]
-index-url=http://pypi.douban.com/simple
-[install]
-trusted-host=pypi.douban.com
-</code></pre>
-<p>保存文件并退出；</p>
-<p>Windows</p>
-<p>windows在%HOMEPATH%\pip\pip.ini中修改上面第二步的内容；
-保存文件退出；</p></p>
+<p>菜单是程序经常用到的小部件，我们来看看如何创建。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/96.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -280,79 +179,94 @@ trusted-host=pypi.douban.com
 
 
 <hgroup>
-    <h2>Vue快速学习笔记(9)Vuetify配置及简单使用</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-03-19 09:33:18</small> | <small>更新于:2023-04-13 09:07:09</small> | Tag:
+    <h2>Python os.mknod 运行报错无法创建文件</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-27 10:47:01</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
         
-        <samll>Vue</samll>
+        <samll>Python基础</samll>
         
     </h3>
 </hgroup>
-<p><h3>Vuetify的安装及配置</h3>
-<p>相对来说vuecli的安装配置比较简单，在插件里搜索<code>Vuetify</code>，安装即可，这里说下<code>Vuetify</code>在<code>webpack</code>的安装及配置方式。</p>
-<p>首先是:</p>
-<pre><code>npm install vuetify
-npm install sass sass-loader fibers deepmerge -D
-</code></pre>
-<p>然后是配置文件里的加载器配置，因为使用了sass,如下方法配置。</p>
-<pre><code>// webpack.config.js
+<p>Python os.mknod 运行报错无法创建文件</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/95.html" target="_blank" >阅读全文>>></a>
+</div>
 
-module.exports = {
-rules: [
-    {
-    test: /\.s(c|a)ss$/,
-    use: [
-        'vue-style-loader',
-        'css-loader',
-        {
-        loader: 'sass-loader',
-        // Requires sass-loader@^7.0.0
-        options: {
-            implementation: require('sass'),
-            fiber: require('fibers'),
-            indentedSyntax: true // optional
-        },
-        // Requires sass-loader@^8.0.0
-        options: {
-            implementation: require('sass'),
-            sassOptions: {
-            fiber: require('fibers'),
-            indentedSyntax: true // optional
-            },
-        },
-        },
-    ],
-    },
-],
-}
-</code></pre>
-<p>然后是引入，这里官网用了一个新建.js来配置<code>Vuetify</code>的引入，如果没有设置<code>@</code>指向目录，可能会没有效果。
-这里我就直接修改了在<code>main.js</code>里引用：</p>
-<pre><code>//导入Vue
-import Vue from "vue";
 
-import App from "./components/App.vue";
+<hr>
+<br>
 
-// 引入Vuetify组件
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-Vue.use(Vuetify)
-// vuetify 自定义配置
-var vuetify = new Vuetify({})
 
-var vm = new Vue({
-    el: '#app',
-    render: c =&gt; c(App),
-    vuetify
+<hgroup>
+    <h2>wxPython编程学习笔记(08)wx.ListBox 下拉列表框</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-27 09:51:07</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p>wx.ListBox是以中数据展示的小部件，使用方便简单，可以用来展示比较单一的数据，例如：各种地址，名称列表等。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/94.html" target="_blank" >阅读全文>>></a>
+</div>
 
-});
-</code></pre>
-<p>好了，大功告成，现在就可以开始愉快的使用<code>Vuetify</code>了，总体来说，我比较喜欢<code>Vuetify</code>，很有设计感细节颜色设计的非常棒。
-javaScript在线正则表达式测试，本程序纯粹是为了学习Vue、webpack、Vuetify，一个重复制造轮子的的实践。欢迎大家交流学习。</p>
-<p>项目演示地址：<a href="http://j_sky.gitee.io/javascript_regexp/">JavaScript_RegExp</a></p>
-<p>项目仓库地址：</p>
-<p><a href="https://gitee.com/J_Sky/JavaScript_RegExp">JavaScript_RegExp___gitee</a>
-<a href="https://gitee.com/J_Sky/JavaScript_RegExp">JavaScript_RegExp___github</a></p></p>
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>wxPython编程学习笔记(07)wxPython Dialog 弹出对话</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-25 13:17:28</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p>wxPython dialogs 弹出对话框</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/93.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>wxPython编程学习笔记(06)wx.ComboBox下拉列表框</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-24 14:24:56</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p>下拉列表框，可以通过下拉列表选择内容，在使用中可以为内容节省不少空间，是GUI中比较常用的小部件。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/92.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>wxPython编程学习笔记(05)单选及多选按钮</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-23 18:49:39</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p>单选及多选按钮也是程序中经常使用到的互动小部件，使用频率也是很高的，对于选择按钮，我们重点需要了解的就是触发事件， 通常，单选我们需要得到一组按钮中的选择项值或是键值，多选，我们只要知道每一项返回的布尔值即可。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/91.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -362,7 +276,7 @@ javaScript在线正则表达式测试，本程序纯粹是为了学习Vue、webp
 
 <nav>
     <li><a href="list_3.html" role="button" class="outline">Prev</a></li>
-    <li><small>4 / 27</small></li>
+    <li><small>4 / 13</small></li>
     <li><a href="list_5.html" role="button" class="outline">Next</a></li>
 </nav>
 

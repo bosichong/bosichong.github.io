@@ -122,244 +122,151 @@
 
 
 <hgroup>
-    <h2>碎言静态博客</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-05 10:26:39</small> | <small>更新于:2023-04-13 09:10:37</small> | Tag:
-        
-        
-        <samll>站长源创</samll>
-        
-    </h3>
-</hgroup>
-<p><h3>suiyan 碎言静态博客</h3>
-<h3>介绍</h3>
-<p>碎言这个名称取自与"碎言片语"，码兄累了吗？累了就休息一下，为未来的自己留下一些碎言片语吧。</p>
-<p>演示(github)： <a href="https:/suiyan.cc/">碎言博客</a></p>
-<p><img alt="" src="https://suiyan.cc/assets/images/2023/fba.png" /></p>
-<p>一键切换主题，自动主题。</p>
-<p><img alt="" src="https://suiyan.cc/assets/images/2023/fbb.png" /></p>
-<h3>软件架构</h3>
-<p>2023-03-24 新版 3.0.0 发布啦！</p>
-<p>集成了jinja2的模板引擎，大大的提高了静态页面的构建速度， 支持模板主题的制作。</p>
-<p>使用了asyncio和aiofiles模块来实现异步IO操作，提高了生成静态博客页面的效率，几百页面瞬间生成。</p>
-<p>更新当前博客主题：使用了pico.css样式，大道至简，返璞归真，没有组件，只有HTML标签。</p>
-<p>构建博客索引并可以通过标题进行全站搜索。</p>
-<p>博客文章写作采用Markdown技术支持，让你专注写作更流畅。</p>
-<p>推荐使用Vscode搭配进行blog文章的编写(因为当创建新文章后会直接使用vscode直接打开)</p>
-<p>如果新建blog文章无法在vscode中打开，请在命令面板中搜索shell，在PATH 中安装code命令。</p>
-<h3>安装教程</h3>
-<p>首先克隆下载碎言静态博客，
-* <a href="https://gitee.com/J_Sky/suiyan">Gitee</a>
-* <a href="https://github.com/Jsky2020/suiyan">GitHub</a></p>
-<p>终端运行:</p>
-<pre><code>pip install -r requirements.txt
-</code></pre>
-<p>如果速度太慢请使用镜像：</p>
-<pre><code>pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/
-</code></pre>
-<p>安装相关依赖。</p>
-<p>博客的管理支持终端和图形界面：</p>
-<p>图形界面：</p>
-<pre><code>python3 w.py
-</code></pre>
-<p><img alt="" src="https://suiyan.cc/assets/images/2023/bloggui.png" /></p>
-<p>终端启动命令：</p>
-<pre><code>python s.py
-</code></pre>
-<p><img alt="" src="https://suiyan.cc/assets/images/2023/zhongduan1.png" /></p>
-<p>可以根据自己的喜好进行选择。</p>
-<h3>目录结构</h3>
-<p>下边是一个完整的项目结构，有些目录需要创建md文件和生成静态文件后才会显示。</p>
-<pre><code>├── LICENSE 开源协议
-├── README.md 说明文档
-├── articles md文件存放目录（名称可以自定义）
-├── blog 静态文件存放目录（名称可以自定义）
-├── config.json 站点配置文件
-├── logs 日志存放目录
-├── requirements.txt 依赖文件
-├── s.py 主程序和终端操作命令行
-├── seo 这里存放着一些SEO文件，比如验证，robots.txt
-├── theme 主题目录，下边的每一个目录对应一个主题，可以在配置文件里修改主题
-├── utils.py 程序依赖的方法
-└── w.py 窗口操作的程序
-</code></pre>
-<h3>首次运行</h3>
-<p>首次运行建议先修改根目录下的配置文件<code>config.json</code>这里简单介绍一下配置项:</p>
-<pre><code>{
-    "dev": 0,  # 调试模式，如果改为1，则使用"blog_test_url"来添加静态资源地址前缀，方便本地调试。
-    "blog_name": "碎言博客",   # 站点名称
-    "blog_name_en": "SuiYan", # 站点英文名称
-    "blog_author": "J.sky", # 站长昵称
-    "blog_description_en": "You see see you , This one day day di.",  # 站长简介
-    ## 下边是网页中的meta
-    "meta_description": " Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。",
-    "meta_keywords":"Python,Django,JavaScript,程序员,人生苦短,我用Python",
-    "profile_image":"assets/images/touxiang.jpg",  # 头像地址
-    "blog_bg": "assets/pexels-masha-raymers-3068711.jpg", #当前站点背景图片地址
-    "theme": "default_theme", # 当前使用的主题目录名称
-    "build": "blog", # 静态文件的目录名称
-    "md_dir": "articles", #md文件目录
-    "blog_page_num":4,# 静态站点首页的数据分页数值
-    "blog_test_url":"http://127.0.0.1:5500/blog/", #本地调试是的测试地址前缀
-    "blog_url":"https://suiyan.cc/", # 你的域名，生产模式使用
-    "github":"", # 这个是你的仓库地址前缀，暂时无用。
-    # sns 图标 和地址，图标的选择，后边会说。
-    "blog_sns": [
-        {
-            "ico": "github",
-            "url": "https://github.com/bosichong/suiyan"
-        },
-        {
-            "ico": "git",
-            "url": "https://gitee.com/J_Sky/suiyan"
-        },
-        {
-            "ico": "weibo",
-            "url": "https://weibo.com/qq285911"
-        },
-        {
-            "ico": "qq",
-            "url": "https://user.qzone.qq.com/285911/"
-        },
-        {
-            "ico": "book",
-            "url": "https://www.zhihu.com/people/J_sky/activities"
-        },
-        {
-            "ico": "rss",
-            "url": "https://suiyan.cc/rss.xml"
-        }
-    ],
-    # 站点的导航
-    "nav": [
-        {
-            "ico": "home",
-            "text": "Blog Home",
-            "url": "index.html"
-        },
-        {
-            "ico": "archive",
-            "text": "Blog Archive",
-            "url": "archives.html"
-        },
-        {
-            "ico": "tags",
-            "text": "Blog Tag",
-            "url": "tags.html"
-        },
-        {
-            "ico": "user",
-            "text": "About Me",
-            "url": "aboutme.html"
-        }
-    ]
-
-}
-</code></pre>
-<p>配置文件可以根据自己的需要添加删除，在jinja2 模板中使用<code>{{ 属性名称 }}</code>来调用。</p>
-<p>修改完毕后就可以穿件文章了。</p>
-<h3>创建文章</h3>
-<pre><code>python z.py -n 此处写文章标题
-</code></pre>
-<p>注意！文章标题为必填！</p>
-<p>这个时候就会在<code>articles</code>目录下创建一篇文章,并且使用<code>vscode</code>直接打开。
-如果你没有安装<code>vscode</code>的命令行，需要安装后才会打开，但是文件会被创建</p>
-<h3>修改博客及站长资料</h3>
-<p><code>config.json</code>里存放着一些站点的资料，上传前建议先修改成自己的资料。</p>
-<h3>运行站点</h3>
-<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。
-在配置文件里修改：
-"dev": 1,  # 调试模式，如果改为1，则使用"blog_test_url"来添加静态资源地址前缀，方便本地调试。</p>
-<h3>修改站点样式</h3>
-<p>采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。
-在jinja2 模板中使用<code>{{ 属性名称 }}</code>来调用。
-站点图标：
-<a href="https://9iphp.com/fa-icons">FontAwesome 4.7.0 中完整的675个图标样式CSS参考</a></p>
-<h3>部署</h3>
-<pre><code>git push origin master
-</code></pre>
-<p>提交<code>blog</code>目录下所有文件到git仓库即可，<code>blog</code>就是所有博客的全部文件！</p>
-<h3>github pages</h3>
-<p>如何部署GitHub pages 搭建自己的博客，这里就不在详细介绍了，请参考下文。</p>
-<p><a href="https://docs.github.com/zh/pages/quickstart">GitHub Pages 快速入门</a></p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>解决Github Pages自定义域名失效的问题</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-04 21:22:58</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>GitHub</samll>
-        
-    </h3>
-</hgroup>
-<p><h3>Github Pages绑定域名莫名失效？</h3>
-<p>最近更新博客的push更新到GitHub的仓库，更新之后总是返现域名莫名的失效了，我也没有动任何配置啊？为什么会时效呢？</p>
-<h3>回忆如何配置域名</h3>
-<p>在GitHub pages-- Settings -- pages -- Custom domain 添加你的域名
-<img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/0003.jpg" /></p>
-<p>每次失效的时候我都会发现这里的域名被删掉了，然后我有重新添加，但是我并没有手动删除，为什么会这样？</p>
-<p>后来我添加了域名，发现有一条仓库的更新记录：Create CNAME，增加了一个：CNMAE的文件，里边有你的域名，至此我就知道为什么了，因为GitHub自动添加了CNAME，我却没有更新到本地，所以每次更新blog的时候都会删除掉这个CNAME文件，导致域名无法正常解析。</p>
-<h3>解决办法</h3>
-<p>添加域名解析后，跟新CNAME文件到本地仓库，以后在更新blog就不会是CNAME文件缺失了。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Pico.css大道至简返璞归真--一个简单轻量化的CSS框架</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-04 16:39:16</small> | <small>更新于:2023-04-13 08:57:25</small> | Tag:
-        
-        
-        <samll>前端框架</samll>
-        
-        <samll>CSS</samll>
-        
-    </h3>
-</hgroup>
-<p><h3>Pico.css是什么？</h3>
-<p>Pico.css是一个简单轻量化的CSS UI框架，最大的特点是样式都基于HTML原始的标签名和内置的属性，少用甚至是不用class来定义样式，写出来的代码语义清晰，可维护性强，能够帮助开发者构建自己的UI系统，也可以直接用于快速的小型项目中。Pico.css在Github上已经有高达8.8KStar。</p>
-<h3>为什么要使用Pico.css?</h3>
-<p>现代的前端框架都很重，使用之前需要搭建各种环境，安装很多的依赖，编写完代码还要打包等等。有的时候只是需要一个简单的页面，也要如此重的操作吗？
-前几天我打算写一个博客的主题，也就是几个静态页面，我的初衷就是快速实现，不要杀鸡使用牛刀，偶然搜到pico，简单看了下文档，被其漂亮简约的UI，简谱简单的使用方法吸引了，毅然决定使用她。</p>
-<h3>怎么使用Pico.css</h3>
-<p><a href="https://github.com/picocss/pico/archive/refs/heads/master.zip">Download</a> Pico and link /css/pico.min.css in the <head> of your website.
-下载并把<code>pico.min.css</code>引入到你的站点。
-或者使用CDN：</p>
-<p><code>&lt;link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"&gt;</code>
-然后呢？你只需要写你的纯正的HTML即可！</p>
-<p>例如：</p>
-<p><code>html
-&lt;button&gt;Button&lt;/button&gt;
-&lt;input type="submit"&gt;</code></p>
-<p>效果：
-<img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/0001.png" />
-在使用中，你尽情的使用HTML原生的标签，而不必担心整个站点的样式，该框架还提供了明暗两种主题，可以一键切换：<code>data-theme="light"</code>。</p>
-<p>最后，<a href="https://picocss.com/">https://picocss.com/</a>去发挥你的创意吧。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>好了，又可以愉快的写博客了</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-03-24 23:40:58</small> | <small>更新于:2023-04-13 09:53:38</small> | Tag:
+    <h2>又可以继续写blog了</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2022-09-23 09:36:08</small> | <small>更新于:2023-04-13 09:00:31</small> | Tag:
         
         
         <samll>站长吐槽</samll>
         
     </h3>
 </hgroup>
-<p><h3>可以开始写blog啦(*￣︶￣)</h3>
-<p>上次我说这话的时候还是2022-09-23，一下子都过去大半年了！花了三天的时间把之前写的静态博客重构了，这次的重构还算满意挺开心的，重构达到了预期的效果。</p>
-<p>把之前在Python代码中使用字符串拼接的方式更换成了jinja2的模板引擎，大大的提高了前端页面的构建速度，之后需要丰富页面内容就简单多了，至少以后有人要用也看得懂，另外更换了前端的UI框架，这里推案件一个不错的框架：pico.css,Docs <a href="https://picocss.com/docs/">https://picocss.com/docs/</a>。Pico选择使用极少的<code>.classes</code> 尽可能保持中性和语义,这使得使用原生的HTML标签写网页就很方便了，而且样式也不错挺美观的！</p>
-<p>Python生成静态页面的代码也仔细的重构了一下，由于使用的jinja2模板引擎，代码量大大减少了很多。这几天抽空把这个静态博客的搭建心得分享一下。好了，今天起个头，以后的日子还长着呢。</p></p>
+<p>好久没有更新blog,最近抽些时间继续更新blog,把一些未完成的代码和技术债务更新完成.</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/20220923093608.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>PyKeyBoardFairy可以替代你游戏中的卡键盘和鼠标宏</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-05-21 15:54:50</small> | <small>更新于:2023-04-13 09:00:31</small> | Tag:
+        
+        
+        <samll>站长源创</samll>
+        
+    </h3>
+</hgroup>
+<p>Python编写的简单版键盘精灵,可以替代你游戏中的卡键盘和鼠标宏。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/20210521155450.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>Flask-SQLAlchemy 使用学习笔记(下):一对一、一对多、多对多关系</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-03-16 09:38:18</small> | <small>更新于:2023-04-13 09:00:31</small> | Tag:
+        
+        
+        <samll>Flask</samll>
+        
+    </h3>
+</hgroup>
+<p>Flask-SQLAlchemy使用学习笔记:一对一、一对多、多对多关系</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/20210316093818.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>Flask-SQLAlchemy 使用学习笔记(上):简单的配置及使用</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-23 15:50:27</small> | <small>更新于:2023-04-13 09:00:31</small> | Tag:
+        
+        
+        <samll>Flask</samll>
+        
+    </h3>
+</hgroup>
+<p>Flask-SQLAlchemy,使用学习笔记:简单的配置及使用</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/20210223155027.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>Flask项目配置(config)经验</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-22 08:47:45</small> | <small>更新于:2023-04-13 09:00:55</small> | Tag:
+        
+        
+        <samll>Flask</samll>
+        
+    </h3>
+</hgroup>
+<p>Flask项目配置（Configuration）</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/20210222084745.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>pipenv 简化的虚拟环境、项目依赖管理工具</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-20 15:38:15</small> | <small>更新于:2023-04-13 09:03:55</small> | Tag:
+        
+        
+        <samll>Flask</samll>
+        
+    </h3>
+</hgroup>
+<p>项目需要在Python的虚拟环境下来安装管理这些扩展，这样才会方便项目在其他地方进行扩展包的安装。这里推荐pipenv来管理虚拟环境和扩展。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/20210220153815.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>Anaconda常用终端命令</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-12 00:20:01</small> | <small>更新于:2023-04-13 09:03:55</small> | Tag:
+        
+        
+        <samll>Python</samll>
+        
+    </h3>
+</hgroup>
+<p>conda 常用的命令</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/20210212002001.html" target="_blank" >阅读全文>>></a>
+</div>
+
+
+<hr>
+<br>
+
+
+<hgroup>
+    <h2>如何打包上传Python程序或模块包到PyPi供其他人使用pip下载？</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-12-07 20:30:45</small> | <small>更新于:2023-04-13 09:03:55</small> | Tag:
+        
+        
+        <samll>Python</samll>
+        
+    </h3>
+</hgroup>
+<p>在学习和编写Python代码的过程中我们经常会用到pip来安装一些其他包，用pip下载很方便的，那么如果我们自己写了Python的代码包，如何能让别人也试用pip来进行安装呢？真巧，我这几天就打包了一个自己写的程序发布到了pypi.org，写个上传记录供大家参考。</p>
+<div>
+    <a href="https://suiyan.cc/before-2022/20201202155245.html" target="_blank" >阅读全文>>></a>
+</div>
 
 
 <hr>
@@ -369,7 +276,7 @@
 
 <nav>
     <li><a href="list_0.html" role="button" class="outline">Prev</a></li>
-    <li><small>1 / 27</small></li>
+    <li><small>1 / 13</small></li>
     <li><a href="list_2.html" role="button" class="outline">Next</a></li>
 </nav>
 
