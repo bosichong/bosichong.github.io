@@ -122,6 +122,49 @@
 
 
 <hgroup>
+    <h2>wxPython编程学习笔记(08)wx.ListBox 下拉列表框</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-27 09:51:07</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python GUI</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>wx.ListBox 下拉列表框</h2>
+<p>wx.ListBox是以中数据展示的小部件，使用方便简单，可以用来展示比较单一的数据，例如：各种地址，名称列表等。
+这次准备了一个基于wx.ListBox构建的小小通讯录，实现了增删改但是木有查，为什么没有查？因为我没写，就这样了。
+具体效果展示如下：
+<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181227_7.png" /></p>
+<h2>wx.ListBox的创建及一些方法</h2>
+<p>创建</p>
+<pre><code>listbox = wx.ListBox(panel,choices=ls)
+</code></pre>
+<p>ListBox 有些常用的方法，用来处理列表中的数据</p>
+<pre><code>listbox.Append(text) 添加
+listbox.GetSelection() 获取索引
+listbox.GetString(sel) 通过索引获取字符串
+listbox.Delete(sel) 删除当前索引
+listbox.Insert(renamed, sel) 在当前索引处添加新的值，返回当前索引
+listbox.SetSelection(item_id) 根据索引值选择项
+listbox.Clear() 清空当前列表
+</code></pre>
+<h2>通讯录的数据保存</h2>
+<p>作为一个简单的通讯录应该能保存数据，处于简单化处理，我只保存一个文本到目录下，若是需要可以使用数据库。
+通讯录在操作的同时我们要更新保存数据，所以，我建了三个方法，分别处理新建数据文本，打开读取，保存数据。
+分别对应：newFile openFile saveFile,这样配合这几个方法就可以实现一个简单的通讯录了。</p>
+<p>具体代码如下，可以跑跑看啦：</p>
+<h2>本文源码下载：</h2>
+<ul>
+<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy08.py">github</a></li>
+<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy08.py">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>wxPython编程学习笔记(07)wxPython Dialog 弹出对话</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-25 13:17:28</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
@@ -432,95 +475,6 @@ if __name__ == '__main__':
 <br>
 
 
-<hgroup>
-    <h2>wxPython编程学习笔记(04)wx.Butoon的应用</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-22 20:26:29</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python GUI</samll>
-        
-    </h3>
-</hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181222_8.png" /></p>
-<h2>wx.Butoon</h2>
-<p>按钮是在GUI中使用率最高的一种组件了，点击按钮触发事件可以说是非常普遍的事了。<code>wx.Button</code>使用起来操作简单。
-wx中开关按钮<code>ToggleButton</code>，类似于电灯开关，绑定事件后可以通过</p>
-<pre><code>obj = e.GetEventObject()
-isPressed = obj.GetValue()
-</code></pre>
-<p>来获取对象的属性，这样就可以知道开关按钮的状态了。</p>
-<h2>Button的创建与使用</h2>
-<p>创建</p>
-<pre><code>bt = wx.Button(self,label="关闭窗口",)
-</code></pre>
-<p>绑定事件</p>
-<pre><code>bt.Bind(wx.EVT_BUTTON, self.onCloseWindow)
-</code></pre>
-<p>然后编写绑定事件的函数方法，这样就可以调用此方法了。</p>
-<p>具体代码如下，希望这些短小的代码，能给您带来帮助。</p>
-<pre><code>import wx
-
-class HelloFrame(wx.Frame):
-    def __init__(self, *args, **kw):
-        #调用父类的创建方法
-        super(HelloFrame, self).__init__(*args, **kw)
-
-        box = wx.BoxSizer(wx.VERTICAL)
-        bt1 = wx.Button(self,label="关闭窗口",)
-        bt1.Bind(wx.EVT_BUTTON, self.onCloseWindow)
-
-
-        self.bt2 = wx.ToggleButton(self,label='开关')
-        self.bt2.Bind(wx.EVT_TOGGLEBUTTON,self.showFlash)
-        st = wx.TextCtrl(self,value='helloworld',)
-
-
-        box.AddMany([(bt1,0, wx.ALL | wx.EXPAND, 0),(self.bt2,0, wx.ALL | wx.EXPAND, 0),(st,0, wx.ALL | wx.EXPAND | wx.SHAPED, 0)])
-
-
-        self.SetSizer(box)
-
-
-    def onCloseWindow(self,e):
-        dl = wx.MessageDialog(None,"是否要关闭窗口？","请选择",wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
-        ret = dl.ShowModal()
-
-        if ret == wx.ID_YES:
-            self.Destroy()
-        else:
-            pass
-
-    def showFlash(self,e):
-        obj = e.GetEventObject()
-        isPressed = obj.GetValue()
-
-        if isPressed:
-            self.bt2.SetLabel("关闭")
-        else:
-            self.bt2.SetLabel("打开")
-
-
-def main():
-    app = wx.App()
-    frm = HelloFrame(None, title='wxPython Button',)
-    frm.Show()#显示窗口
-    app.MainLoop()#持续更新窗口
-
-
-if __name__ == '__main__':
-        main()
-</code></pre>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy04.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy04.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_8.html" role="button" class="outline">Prev</a></li>
@@ -536,11 +490,15 @@ if __name__ == '__main__':
     </hgroup>
 
     <!-- Search -->
-    <input type="text" id="search-input" name="search" placeholder="JavaScript">
-    <button id="search-btn" class="contrast"
+    <div id="blog-search">
+        <input type="text" id="search-input" name="search" placeholder="JavaScript">
+        <button id="search-btn" class="contrast"
             data-target="modal-example"
             onClick="toggleModal(event)">Search
-    </button>
+        </button>
+
+    </div>
+
 
 
     <!-- Modal -->
@@ -566,7 +524,7 @@ if __name__ == '__main__':
 
 
 <nav>
-    <ul>
+    <ul id="blog-nav">
         
         <li>
             <a href="https://suiyan.cc/index.html">

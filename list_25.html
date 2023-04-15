@@ -122,6 +122,66 @@
 
 
 <hgroup>
+    <h2>Python 采集数据三步曲之[Requests + re.py模块进行数据采集]</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-09-02 12:41:30</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>Python基础</samll>
+        
+    </h3>
+</hgroup>
+<p><p><em>当我们熟悉了re和Requests两个模块，就可以开始愉快的数据采集之旅了，我们先为自己找一些需要采集的数据，比如股票价格数据、新闻或是美女图片等，只要你喜欢。</em></p>
+<h3>数据采集第一步，加载数据源。</h3>
+<p>这里我假设自己一个工作繁忙兼职炒股股市老手，工作的同时经常需要查看股市行情，但是又不能总盯着炒股软件，这个时候为自己做一个简单的股票数据采集器是个不错的选择。</p>
+<pre><code class="python">import re, requests # 加载所需模块
+r = requests.get('http://hq.sinajs.cn/list=s_sh000001') #互联网上市公司股票价格
+r.encoding = 'gbk'# 设置编码 解决乱码问题
+print(r.text) #返回html代码（数据）
+</code></pre>
+
+<p>通过上边的代码运行之后我们会得到一组数据：</p>
+<pre><code>var hq_str_s_sh000001="上证指数,3367.1194,6.3091,0.19,2824975,31372209";
+</code></pre>
+<p>数据含义分别为：指数名称，当前点数，当前价格，涨跌率，成交量（手），成交额（万元）；</p>
+<p>这样我们只要提示自己需要的<code>上证指数,3367.1194,6.3091,0.19,2824975,31372209</code>这段数据后，就可以把它转换成自己需要的对象，然后处理打印。</p>
+<h3>数据采集第二步，解析数据，提取我们自己需要的。</h3>
+<pre><code class="python">s = r.text # 获取数据
+p = r'"(.+)"' #设置正则表达式
+r = re.search(p, s).group(1) #匹配并获取结果字符串
+print(r)
+ls = r.split(',')
+print(ls)
+</code></pre>
+
+<h3>数据采集第三步，处理最后的打印</h3>
+<pre><code class="python">print('''{}:{}
+当前价格:{}
+涨跌率:{}
+成交量（手）:{}
+成交额（万元）:{}'''.format(ls[0],ls[1],ls[2],ls[3],ls[4],ls[5])
+)
+
+#最后输出：
+#上证指数:3367.1194
+#当前价格:6.3091
+#涨跌率:0.19
+#成交量（手）:2824975
+#成交额（万元）:31372209
+</code></pre>
+
+<p>得到以上结果之后，我们就可以通过很多方法来通知自己查看大盘点数（发邮件，直接通过一个网址查看或是短信），了解股市行情了。具体实现这里暂时不做讲解，因为超出当前教程的范围。</p>
+<h3>本文源码下载：</h3>
+<ul>
+<li><a href="https://github.com/bosichong/17python.com/tree/master/re">github</a></li>
+<li><a href="https://gitee.com/J_Sky/17python.com/tree/master/re">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Python 采集数据三步曲之[Requests开源协议的HTTP 库]</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-09-02 09:01:48</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
@@ -332,118 +392,6 @@ vi .bash_profile</code></pre>
 <br>
 
 
-<hgroup>
-    <h2>Git 版本控制常用命令 简明指南教程</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-08-26 13:03:59</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Git</samll>
-        
-    </h3>
-</hgroup>
-<p><p><em>最近使用<code>Django</code>设计自己的个人blog，免不了要对程序的版本进行备份，所以用到了<code>Git</code>。<code>Git</code>确实是程序员居家旅游，编程备份之良药哇，本文旨在对<code>Git</code>日常使用中，使用频率较高的命令进行了一个简单的总结</em></p>
-<h3>运行环境</h3>
-<ul>
-<li>MacBookPro</li>
-<li>OS X 10.11.6</li>
-</ul>
-<p>如果您使用windows操作系统，终端下的命令可能会与我提供的有些不同，但git命令是一样的。</p>
-<h3>安装新版Git</h3>
-<ul>
-<li>Mac osx    <a href="http://git-scm.com/download/mac">点此下载</a></li>
-<li>Windows    <a href="http://git-scm.com/download/mac">点此下载</a></li>
-<li>Linux   <a href="http://git-scm.com/download/mac">点此下载</a></li>
-</ul>
-<h3>开始Git之旅</h3>
-<p>我们可以从一个简单的<code>git</code>命令行开始,在终端下输入如下命令</p>
-<pre><code>mkdir gittest
-cd gittest/
-gittest git init 
-Initialized empty Git repository in /Users/mac/gittest/.git/
-</code></pre>
-<h3>取消目录的git版本控制</h3>
-<p>当然 如果我们想取消当前目录的git版本控制，可以进入当前目录后，使用<code>rm -rf .git</code>来删除git版本控制的文件取消当前目录的版本控制。</p>
-<h3>clone 项目</h3>
-<p>终端中输入代码，下载一个项目和它的整个代码历史。</p>
-<pre><code>mkdir gittest
-git clone 项目地址
-</code></pre>
-<p><strong>git四大域：工作目录，暂存区，仓库，远程仓库。</strong></p>
-<h3>配置Git</h3>
-<p>查看Git配置项</p>
-<pre><code>git config --list
-</code></pre>
-<p>设置提交代码时的用户信息，--global表示设置为全局。</p>
-<pre><code>git config [--global] user.name "[name]"
-git config [--global] user.email "[email address]"
-</code></pre>
-<h3>添加删除</h3>
-<p>添加文件、目录、当前所有文件及目录到暂存区。</p>
-<pre><code>git add [filename]
-git add [dir]
-git add .
-</code></pre>
-<h3>删除暂存区的文件及目录</h3>
-<p>删除工作区文件，并且将这次删除放入暂存区</p>
-<pre><code>git rm [file1] [file2] ...
-git rm --cached [file] #删除缓存
-</code></pre>
-<h3>提交</h3>
-<p>提交暂存区内容到本地仓库</p>
-<pre><code>git commit -m '修改提交消息'
-</code></pre>
-<p>提交到远程仓库，先绑定远程仓库，然后推送。</p>
-<pre><code>git remote add origin &lt;server&gt;
-git push origin master
-</code></pre>
-<h3>分支</h3>
-<p>避免错误，可以在其它分支上进行开发修改。</p>
-<pre><code>git branch [branch-name] #新建分支
-git checkout -b [branch] #新建并切换到新分支
-git checkout [branch-name] #切换到指定分支
-git branch -d [branch-name] # 删除分支
-</code></pre>
-<h3>更新与合并</h3>
-<pre><code>git cherry-pick [commit] # 选择一个commit，合并进当前分支
-git pull #要更新你的本地仓库至最新改动
-git merge &lt;branch&gt; #全并分支到当前分支
-</code></pre>
-<h3>标签</h3>
-<pre><code>git tag 1.0.0 7b8a9d199
-</code></pre>
-<h3>查询</h3>
-<pre><code>git log
-</code></pre>
-<h3>git提交到多个远程仓库</h3>
-<pre><code>git remote add github git@https://github.com/bosichong/17python.com.git
-git remote add gitee git@https://gitee.com/J_Sky/17python.com.git
-</code></pre>
-<p>这样就保存了两个远程仓库，然后分别提交</p>
-<pre><code>git push github master
-git push gitee master
-</code></pre>
-<h3>新建git远程仓库上传出错</h3>
-<p>在gitee仓库新建库的时候总有一些其它文件一起创建了，这样我们push的时候是传不上去的，需要先把没有的文件pull下来。</p>
-<pre><code>git pull
-</code></pre>
-<p>然后报错</p>
-<pre><code> * branch            master     -&gt; FETCH_HEAD
-fatal: refusing to merge unrelated histories
-</code></pre>
-<p>解决方法：</p>
-<pre><code>git pull osc master --allow-unrelated-histories
-</code></pre>
-<p><strong>osc 换成你自己的别名哦。</strong></p>
-<h3>相关参考文档及教程</h3>
-<p><a href="http://www.liuyunfei.cn/blog/detail/172">常用 Git 命令清单</a> 相对比较完整的常用命令</p>
-<p><a href="http://rogerdudler.github.io/git-guide/index.zh.html">git - 简明指南</a> 初学者推荐，简单实用</p>
-<p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">史上最浅显易懂的Git教程！</a> 廖雪峰老师的Git教程。</p></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_24.html" role="button" class="outline">Prev</a></li>
@@ -459,11 +407,15 @@ fatal: refusing to merge unrelated histories
     </hgroup>
 
     <!-- Search -->
-    <input type="text" id="search-input" name="search" placeholder="JavaScript">
-    <button id="search-btn" class="contrast"
+    <div id="blog-search">
+        <input type="text" id="search-input" name="search" placeholder="JavaScript">
+        <button id="search-btn" class="contrast"
             data-target="modal-example"
             onClick="toggleModal(event)">Search
-    </button>
+        </button>
+
+    </div>
+
 
 
     <!-- Modal -->
@@ -489,7 +441,7 @@ fatal: refusing to merge unrelated histories
 
 
 <nav>
-    <ul>
+    <ul id="blog-nav">
         
         <li>
             <a href="https://suiyan.cc/index.html">

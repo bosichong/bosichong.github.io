@@ -3,10 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content="Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！" name="description">
+    <meta content="前端框架HTML" name="keywords">
+    <meta content="最近写了一些前端的项目使用了一些框架例，但是突然发现自己的前端基础是如此的渣，渣的自己好尴尬，遂决定重新学习并复习一下前端的HTML CSS JavaScript基础。" name="description">
     <meta content="J.sky" name="author">
-    <title>SuiYan-碎言博客-Home</title>
+    <title>SuiYan-碎言博客2023重学前端:HTML CSS JavaScript基础复习</title>
     <!-- 引入 pico.css -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
     <!-- 引入 图标CDN -->
@@ -126,9 +126,9 @@
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-13 09:59:13</small> | <small>更新于:2023-04-15 16:57:52</small> | Tag:
         
         
-        <samll>前端框架</samll>
+        <small>前端框架</small>
         
-        <samll>HTML</samll>
+        <small>HTML</small>
         
     </h3>
 </hgroup>
@@ -419,125 +419,6 @@ height:80px;
 <p>实际上所有浏览器都使用 <code>__proto__</code>。访问对象原型的标准方法是 <code>Object.getPrototypeOf()</code>。</p>
 <p>未完待续。。。。</p></p>
 
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>使用Python编写并部署第一个自己的静态独立技术博客：（一）分析与设计</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-10 07:59:54</small> | <small>更新于:2023-04-13 08:57:25</small> | Tag:
-        
-        
-        <samll>Python</samll>
-        
-    </h3>
-</hgroup>
-<p><h3>什么是独立技术博客？</h3>
-<p>独立博客是指个人独立运营的博客，通常是由个人自己设计、开发、维护和更新的。相比于其他博客，独立博客可以自由定制，自制主题，自由评论不受平台限制等优点。</p>
-<h3>独立技术博客的特点</h3>
-<p>建立个人品牌：一个独立的技术博客可以帮助你建立个人品牌，展示你的专业知识和技能，增强你在技术领域的影响力和声誉。</p>
-<p>分享知识和经验：编写技术博客可以帮助你分享自己的知识和经验，并向读者传达你的思考和观点。这不仅可以帮助他人解决问题，还可以帮助你深化自己的理解和思考。</p>
-<p>提升写作能力：博客是一个很好的写作平台，编写技术博客可以帮助你提升写作能力，锻炼表达能力和逻辑思维能力。同时，博客的文章需要经过反复推敲和修改，也可以锻炼自己的耐心和细心。</p>
-<p>留下成长记录：技术博客可以记录你的成长历程，留下你的学习和思考的痕迹，也可以帮助你回顾和总结过去的经验和成果。</p>
-<p>扩大交流圈：通过技术博客，可以扩大自己的交流圈，结识更多的同行和志同道合的朋友，开拓自己的视野和思路。</p>
-<h3>为什么要编写并维护自己的技术博客？</h3>
-<p>首先，我们要明确自己的写博客的目的！我觉得写博客最大的目的就是：提升写作能力、建立自己的知识体系以及个人品牌。编写一个博客系统只是一个开端，是学习与实践的开始，而后则是漫长的博客维护创作的历程。</p>
-<p>独立博客的实现有很多方法，目前现成的开原博客数不胜数，为什么要自己动手编写并设计博客呢？这是一次技术的实践，如果正在学习Python的路上，动手实践一个博客可以提高你的Python技术，了解对程序软件设计的流程，最主要的是你可以获得一份自由的感觉。</p>
-<h3>如何使用Python编写静态博客生成器？</h3>
-<p>首先我们分析需求：</p>
-<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/b01.png" /></p>
-<ol>
-<li>一行简单的命令生成更新所有静态文件。</li>
-<li>git push github master </li>
-</ol>
-<p>通过两行命令解决博客的更新，这样做的目的可以使博主专注于写作，而不必为生成博客文章、维护服务器、维护程序而费心。</p>
-<h3>重点就静态文件的生成</h3>
-<p>综上所述可以看出，处理静态文件的输出是项目的核心，我们再次细分：</p>
-<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/b02.png" /></p>
-<p>到目前为止，我们的项目构建的思路基本明朗了，下一节我们就开始着手编写具体的代码来实现我们的博客生成器。</p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>free_blog 碎言静态博客主题</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-08 09:35:36</small> | <small>更新于:2023-04-13 08:57:25</small> | Tag:
-        
-        
-        <samll>碎言博客</samll>
-        
-    </h3>
-</hgroup>
-<p><p>大道至简，返璞归之，这是一款侧重与内容的博客主题
-本项目为<a href="https://github.com/bosichong/suiyan.git">碎言静态博客</a>主题。
-主题支持亮色和黑暗主题在线切换。</p>
-<p><a href="https://gitee.com/J_Sky/suiyan">碎言静态博客Gitee</a>
-<a href="https://github.com/bosichong/suiyan.git">碎言静态博客GitHub</a></p>
-<h3>效果展示</h3>
-<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/free_blog/001.png" /></p>
-<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/free_blog/002.png" /></p>
-<h3>技术框架</h3>
-<p>主题模板采用了jinja2的模板引擎，使用了pico.css样式制作。
-图标：<a href="https://9iphp.com/fa-icons">FontAwesome 4.7.0 中完整的675个图标样式CSS参考</a>
-响应式适配移动端。</p>
-<h3>安装教程</h3>
-<ol>
-<li>首先克隆下载本主题到碎言静态博客程序<code>theme</code>目录下。</li>
-<li>修改配置文件 <code>config.json</code>中的"theme": "主题目录",即可启用。</li>
-</ol>
-<h3>运行预览</h3>
-<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。
-在配置文件里修改：
-"dev": 1,  # 调试模式，如果改为1，则使用"blog_test_url"来添加静态资源地址前缀，方便本地调试。</p>
-<h3>修改主题样式</h3>
-<p>主题采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。
-在jinja2 模板中使用<code>{{ 属性名称 }}</code>来调用。</p>
-<h3>github pages</h3>
-<p>如何部署GitHub pages 搭建自己的博客，这里就不在详细介绍了，请参考下文。</p>
-<p><a href="https://docs.github.com/zh/pages/quickstart">GitHub Pages 快速入门</a></p>
-<p>除了部署GitHub，也可以将静态文件部署到虚拟主机云服务器上，复制静态文件目录下的所有文件到你的站点目录下即可。</p>
-<h3>仓库地址</h3>
-<p><a href="https://github.com/bosichong/suiyan_free_blog">GitHub</a>
-<a href="https://gitee.com/J_Sky/suiyan_free_blog">Gitee</a></p></p>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>程序员的痛苦：颈椎病和肩周炎</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-05 20:21:40</small> | <small>更新于:2023-04-13 08:57:25</small> | Tag:
-        
-        
-        <samll>站长吐槽</samll>
-        
-    </h3>
-</hgroup>
-<p><h3>起因</h3>
-<p>最近由于气温突然降温着凉，加上之前一直使用双显示器编写代码，导致颈椎病和肩周炎一起爆发。由于病起非常急，导致我左肩膀和左边的脖子非常不舒服，然后我就去拔罐子按摩理疗，以为会好写，结果反而没有疗效却导致病情急剧加重！最后疼的我晚上都无法入睡了。</p>
-<h3>肩周炎颈椎病的症状</h3>
-<p>颈椎病和肩周炎的症状不尽相同，但有一些共同点。常见的症状包括颈部或肩部的疼痛、麻木、刺痛感，以及颈部或肩部的灵活性下降。此外，颈椎病和肩周炎都可能伴随着手臂无力、疼痛或麻木等症状。</p>
-<h3>治疗</h3>
-<p>在发现自己的症状之后，我立即停止了使用双显示器，将屏幕调整到合适的高度，并且每隔一段时间就起身活动一下身体。同时，我也开始服用止疼药和非甾体消炎药，以缓解颈部和肩部的疼痛，至少晚上能睡觉啊，不然人得崩溃死了。后来大约过了10天左右，我就停药了，基本只剩下酸疼了。</p>
-<h3>最后康复训练</h3>
-<p>然而，止疼药和非甾体消炎药只是缓解疼痛的临时措施，要想真正保护好自己的颈椎和肩膀，我们需要采取一些长期的康复训练。我采用的是一些颈部和肩部的伸展运动，例如低头、抬头、向左看、向右看等动作，以缓解颈部和肩部的紧张肌肉。此外，我还加入了一些瑜伽练习，例如颈部前屈、后弯、扭转等动作，以加强颈部和肩部的灵活性和稳定性。</p>
-<p>最后，我想提醒所有程序员兄弟姐妹们，要保护好自己的颈椎和肩膀。长时间保持同一姿势容易导致肌肉疲劳和紧张，从而引起颈椎病和肩周炎。因此，我们应该每隔一段时间就起身活动一下身体，适当地放松自己的颈椎和肩膀。此外，我们还可以采取一些预防措施，例如使用合适的电脑屏幕高度、定期锻炼颈部和肩部的肌肉等。让我们一起保护好自己的身体，更高效地工作！</p></p>
-
-
-<hr>
-<br>
-
-
-
-<nav>
-    <li><a href="#" role="button" class="outline">Prev</a></li>
-    <li><small>0 / 27</small></li>
-    <li><a href="list_1.html" role="button" class="outline">Next</a></li>
-</nav>
 
 </section>
         <aside><section>

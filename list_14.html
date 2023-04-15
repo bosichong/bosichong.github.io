@@ -122,6 +122,67 @@
 
 
 <hgroup>
+    <h2>“编学编玩”用Pygame编写游戏（6）PY_RPG 一个pygame的简单封装。</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-12-28 21:41:37</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>pygame</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>为什么要封装？</h2>
+<p>pygame写起游戏都是函数式编写，对于一些简单的小游戏或许可以应付，随着游戏内容的增加，我们不可能只在一个.py文件中写下所有的游戏代码，这个时候，我们应该考虑对游戏中组件及对象进行封装，用面向对象的方式来进行游戏代码的编写。</p>
+<h2>一些具体的封装内容</h2>
+<p>游戏中的关键词，假设游戏没有条件判断，那么游戏从头运行到尾就是一部电影。
+这样的话，我们定义一些游戏的基本对象：</p>
+<ul>
+<li>渲染器（APP）--只负责渲染游戏场景中存在的游戏片段，属性有：一个游戏片段容器及一些游戏窗口常用设置，并初始化游戏设置。</li>
+<li>游戏片段(scene)--可能是游戏中的一个片段，一个情节，一节过场，片头，片尾等，游戏片段中包含一个开关属性，用来控制是否可以渲染此游戏片段。</li>
+<li>游戏逻辑判断器--游戏中的裁判，负责判断修改游戏中的执行条件。</li>
+<li>精灵--游戏中的角色，他可以是游戏中的场景，主角，配角，怪物，子弹，文字对白。</li>
+<li>工具类包括：场景中文字渲染工具，游戏中的素材目录的定制，方便调用。一些其它可能需要重复使用的工具。</li>
+</ul>
+<h2>定义渲染器</h2>
+<p>渲染器定义为一个游戏的APP，他应该是这个游戏的最外层，可以定义他的，分辨率，标题，刷新频率。
+如果游戏中有精灵贯穿全局（比如RPG游戏中的主要角色），这种精灵角色他不属于某个游戏片段，这样他应该存在于这个游戏app中。</p>
+<h2>定义游戏片段</h2>
+<p>一个gameApp中，至少得有一个游戏片段，游戏片段包括三个主要方法：</p>
+<pre><code>draw() update() handle_event()
+</code></pre>
+<p>这三个方法分别对应:</p>
+<ul>
+<li>渲染场景</li>
+<li>更新数据 </li>
+<li>事件处理</li>
+</ul>
+<p>当我们继承新建游戏片段类的时候，需要根据自己的需求重写这三个方法。</p>
+<h2>如何使用PY_RPG？</h2>
+<pre><code>app = GameApp()#创建游戏
+appscreen = app.screen#获取渲染器
+app.scenes.append(MainScene(appscreen))#创建游戏菜单
+app.scenes.append(TestScene(appscreen))#创建游戏内容
+app.scenes.append(GameOverScene(appscreen))#游戏结束画面
+app.run() #游戏开始
+</code></pre>
+<p>根据需要创建并重写上边的三个类，然后创建游戏就可以了，现在这样看来，游戏的创建是不是很有层次了？</p>
+<p>这个框架还没有封装完毕，我还会继续的，之后的游戏制作都要从这个框架上弄起了，初步还要写几个完整的小游戏例子。</p>
+<p>以下为游戏效果图，建议下载相关代码跑一下，有问题可以留言给我。</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171228_5.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171228_6.png" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171228_7.png" /></p>
+<h2>本文源码下载</h2>
+<p>请git clone My_pygame下所有代码，以免造成游戏跑不起来的情况。本例源文件在PY_RPG目录下</p>
+<ul>
+<li><a href="https://github.com/bosichong/My_pygame/">github</a></li>
+<li><a href="https://gitee.com/J_Sky/My_pygame/">开源中国码云镜像gitee</a></li>
+</ul></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>Python TK和Tkinter的GUI编程(10) filedialog 文件目录选择对话框</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-12-24 19:21:04</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
@@ -386,80 +447,6 @@ conn.close
 <br>
 
 
-<hgroup>
-    <h2>如何快速的复习学习过的Python</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-11-07 16:19:22</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p><p>最近老妈骨折住院，在医院护理了有8天，终于回出院回家了。回到家第一件事就是想到之前学习了python，如何快速的复习一下曾经学过的<code>python</code>呢？</p>
-<h2>语法/变量/表达式</h2>
-<p>也许我们能找到一个小小例子来快速的复习一下基本语法，那么这种例子有很多，比如：打印九九乘法表/斐波那契数列/排序法等等。</p>
-<h2>九九乘法表</h2>
-<p>快速复习<code>for</code>及<code>print format</code>等函数的用法。</p>
-<pre><code>for i in range(1,10):
-    for j in range(1,i+1):
-        print("{}X{}={}".format(i,j,i*j), end=' ')
-    print()
-</code></pre>
-
-<h2>一摞<code>Python</code>风格的纸牌</h2>
-<p>在看《流畅Python》那本书的时候，第一章第一个小例子非常吸引人，具体代码如下
-Python3 扑克牌
-<code>collections.namedtuple</code>这个函数可以快速创建一个只有属性的类，我们通过这个方法来创建一张扑克牌的类，rank 和 suit 分别代表牌面数值和花色</p>
-<pre><code>import collections
-from random import choice
-Card = collections.namedtuple('Card',['rank','suit'])
-#创建一副扑克牌的类
-class Cards:
-    ranks = [str(n) for n in range(2,11)] + list('JQKA')#从2-10的数字
-    suits = 'spades clubs diamonds clubs'.split()# 黑桃 方块 草花 红桃
-
-    def __init__(self):
-        '''创建一副扑克牌'''
-        self._cards = [Card(rank,suit) for suit in self.suits
-                                       for rank in self.ranks] + ['King','Queen']
-    def __len__(self):
-        return len(self._cards)
-    def __getitem__(self,position):
-        return self._cards[position]
-
-deck = Cards()#创建一副扑克牌
-print(len(deck))#打印有多少张
-#打印所有纸牌
-for i in range(len(deck)):
-    print(deck[i])
-print(choice(deck))#随机抽取一张纸牌
-</code></pre>
-
-<p>我觉得这个纸牌的小例子很有意思，复习了类及列表推导等一些小概念。当然快速复习的小例子还有很多的，比如下边的例子</p>
-<h2>简单的复利计算</h2>
-<pre><code>p = 10000 #初始金额
-rate = 0.04/365 #利率 例如余额宝的年化收益为4%，那么每天的这里计算每天的收益
-days = 100
-
-day = 1
-while day <= days :
-    p = p * (1+rate)#复利，余额宝是每天的利滚利
-    print('%s天：%2.2f' % (day,p)) #打印当前年份及金额
-    day += 1
-</code></pre>
-
-<p>通过以上三个小例子，是不是又引起了你对Python的兴趣？温故而知新，大家加油哦！</p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/blob/master/ReviewPython.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/ReviewPython.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_13.html" role="button" class="outline">Prev</a></li>
@@ -475,11 +462,15 @@ while day <= days :
     </hgroup>
 
     <!-- Search -->
-    <input type="text" id="search-input" name="search" placeholder="JavaScript">
-    <button id="search-btn" class="contrast"
+    <div id="blog-search">
+        <input type="text" id="search-input" name="search" placeholder="JavaScript">
+        <button id="search-btn" class="contrast"
             data-target="modal-example"
             onClick="toggleModal(event)">Search
-    </button>
+        </button>
+
+    </div>
+
 
 
     <!-- Modal -->
@@ -505,7 +496,7 @@ while day <= days :
 
 
 <nav>
-    <ul>
+    <ul id="blog-nav">
         
         <li>
             <a href="https://suiyan.cc/index.html">

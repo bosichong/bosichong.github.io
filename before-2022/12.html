@@ -183,11 +183,15 @@ print(os.path.ismount(path))  #判断路径是否为挂载点（）
     </hgroup>
 
     <!-- Search -->
-    <input type="text" id="search-input" name="search" placeholder="JavaScript">
-    <button id="search-btn" class="contrast"
+    <div id="blog-search">
+        <input type="text" id="search-input" name="search" placeholder="JavaScript">
+        <button id="search-btn" class="contrast"
             data-target="modal-example"
             onClick="toggleModal(event)">Search
-    </button>
+        </button>
+
+    </div>
+
 
 
     <!-- Modal -->
@@ -213,7 +217,7 @@ print(os.path.ismount(path))  #判断路径是否为挂载点（）
 
 
 <nav>
-    <ul>
+    <ul id="blog-nav">
         
         <li>
             <a href="https://suiyan.cc/index.html">

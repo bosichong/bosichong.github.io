@@ -164,11 +164,15 @@ add()方法就是生成一个完整的自身，然后通过draw(）方法在场�
     </hgroup>
 
     <!-- Search -->
-    <input type="text" id="search-input" name="search" placeholder="JavaScript">
-    <button id="search-btn" class="contrast"
+    <div id="blog-search">
+        <input type="text" id="search-input" name="search" placeholder="JavaScript">
+        <button id="search-btn" class="contrast"
             data-target="modal-example"
             onClick="toggleModal(event)">Search
-    </button>
+        </button>
+
+    </div>
+
 
 
     <!-- Modal -->
@@ -194,7 +198,7 @@ add()方法就是生成一个完整的自身，然后通过draw(）方法在场�
 
 
 <nav>
-    <ul>
+    <ul id="blog-nav">
         
         <li>
             <a href="https://suiyan.cc/index.html">

@@ -122,6 +122,35 @@
 
 
 <hgroup>
+    <h2>前端项目构建打包的一些学习笔记</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-01-01 21:09:54</small> | <small>更新于:2023-04-13 09:07:09</small> | Tag:
+        
+        
+        <samll>JavaScript</samll>
+        
+    </h3>
+</hgroup>
+<p><h2>遇到的问题</h2>
+<p>由于项目总是有一些小BUG，回想了一下项目中的JS文件的组织问题，估计应该是JS文件分散造成的加载不稳定，有时会造成一些变量莫名的未定义，事已至此，只有将这些文件打包到一个文件中就可以很好的解决这个问题，但是今天在网上搜了一些都是最近流行的打包工具，感觉功能过于丰富，以当前的项目来说用这些流行的打包工具有些大材小用了，而且学习成本高了一些，后来看了一下手头上的两JavaScript本书都推荐<code>Ant</code>打包，所以决定按书上的来吧，省时省力。</p>
+<h2>项目目录结构</h2>
+<p>书上说项目主要有三个目录：</p>
+<ul>
+<li><code>bulid</code>用来放置最终构建的文件，理想情况下这个目录不应该提交</li>
+<li><code>src</code>用来存放所有的源文件，包括用来进行文件分组的子目录</li>
+<li><code>test</code> 测试文件。</li>
+</ul>
+<h2>Ant打包</h2>
+<p>ant的安装教程很多，这里就不在重复了。</p>
+<p>前端构建需要明白自己要做的是什么，其实打包构建的工具很多的，但是有些打包工具的功能太多了，学习成本很大的，所以选择适合的工具也是很重要的。</p>
+<p>ant通过配置<code>build.xml</code>来执行一系列<code>target</code>,任务的类型选择很多，依据目前项目的选择，有打包，校验，压缩等。</p>
+<p>这里就不在贴代码了，具体可以查看<code>suiyan</code>根目录下的<code>build.xml</code>参考，网上的教程也很多的。</p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>关于站长</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-12-30 16:25:07</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
@@ -282,36 +311,6 @@ from configparser import ConfigParser
 <br>
 
 
-<hgroup>
-    <h2>写在我的博客PV10万时：聊聊编程与画画</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-05-14 09:11:29</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>站长吐槽</samll>
-        
-    </h3>
-</hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/Snip20190514_1.png" /></p>
-<p>转眼间我的<code>blog</code>PV流量已经达到10万+了，2017年8月25日 01:09，我发布了网站更新记录，至此<code>blog</code>运行已有快二年了，没想到PV会达到10万。</p>
-<p>回想学习<code>Python</code>大约也有二年多了，这一路走来也是蛮辛苦的，自学需要自己填坑补洞修bug，痛苦与快乐并存吧。</p>
-<p>贴几张近作，显吧一下吧</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/Cache_69e1f243303b4652..jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-03025e852e1db8f2f9cf69fbd946b69c_hd.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-608fc943d8709a1c640f02a8fc46fae6_hd.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-fa357d4314c4f66b46318982526ef88a_hd.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-9497459b80fafa67937c205e373c05f7_hd.jpg" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-f27fcee295b83b010b1029a145dc1554_hd.jpg" /></p>
-<p>为什么要提到画画，去年的夏天给孩子报了美术班，然后自己也就随便画画，然后就一发不可收拾，坚持画画一直到现在，感触也是蛮多的。</p>
-<p>编程和画画的思考方式在某些方面还是有相同点的，例如编程的架构就好比画画的草稿，草稿打好了才可以细致的刻画。若程序的需求本身是一幅画，那么打好草稿，细致刻画细节，就可以使程序本身更人性化，更符合预期的要求。<strong>有的时候我就觉得，程序员本身真的应该的体验一下绘画带来的乐趣</strong>。</p>
-<p>自学画画一年感觉要比编程10年前的成就感强很多，这些年编程没写过多少像样的应用，五个手指都能算出来，或许编程要比绘画更严谨，更需要思考。</p>
-<p>未来还有很多打算，包括编程初期的一些梦想都想去实现，比如开发一款游戏，自己原画角色，场景，并利用现有的游戏框架编写成型。完成现有的程序代码的编写，继续优化维护，继续坚持画画强化绘画技能，或许能力的提高会更加丰富原有的梦想。</p>
-<p>还有三年的时候<code>blog</code>PV达到百万（是不是有点飘了？），下半年继续更新<code>blog</code>，继续学习<code>Python Django PYgame</code>等。</p></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_6.html" role="button" class="outline">Prev</a></li>
@@ -327,11 +326,15 @@ from configparser import ConfigParser
     </hgroup>
 
     <!-- Search -->
-    <input type="text" id="search-input" name="search" placeholder="JavaScript">
-    <button id="search-btn" class="contrast"
+    <div id="blog-search">
+        <input type="text" id="search-input" name="search" placeholder="JavaScript">
+        <button id="search-btn" class="contrast"
             data-target="modal-example"
             onClick="toggleModal(event)">Search
-    </button>
+        </button>
+
+    </div>
+
 
 
     <!-- Modal -->
@@ -357,7 +360,7 @@ from configparser import ConfigParser
 
 
 <nav>
-    <ul>
+    <ul id="blog-nav">
         
         <li>
             <a href="https://suiyan.cc/index.html">

@@ -122,6 +122,24 @@
 
 
 <hgroup>
+    <h2>又可以继续写blog了</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2022-09-23 09:36:08</small> | <small>更新于:2023-04-13 09:00:31</small> | Tag:
+        
+        
+        <samll>站长吐槽</samll>
+        
+    </h3>
+</hgroup>
+<p><p>又可以继续写blog了</p>
+<p>好久没有更新blog,最近抽些时间继续更新blog,把一些未完成的代码和技术债务更新完成.</p>
+<p>测试,GitHub页面不更新啊?</p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>PyKeyBoardFairy可以替代你游戏中的卡键盘和鼠标宏</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-05-21 15:54:50</small> | <small>更新于:2023-04-13 09:00:31</small> | Tag:
         
@@ -568,32 +586,6 @@ db.session.commit()
 <br>
 
 
-<hgroup>
-    <h2>Flask项目配置(config)经验</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2021-02-22 08:47:45</small> | <small>更新于:2023-04-13 09:00:55</small> | Tag:
-        
-        
-        <samll>Flask</samll>
-        
-    </h3>
-</hgroup>
-<p><p>Flask项目配置在程序中的配置及读取：</p>
-<pre><code>app.config['SECRET_KEY'] = 'secret string'
-</code></pre>
-<p>项目的配置类似字典,但是每次都如上边的方法配置可能有些麻烦，可以创建单独配置文件通过导入：</p>
-<pre><code>app.config.from_pyfile('settings.py')
-</code></pre>
-<p>配置文件里的配置项可以写成如下格式：</p>
-<pre><code>UPLOAD_PATH = os.path.join(app.root_path, 'uploads')
-ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif']
-</code></pre>
-<p>参考文献 <a href="https://zhuanlan.zhihu.com/p/24055329">Flask项目配置（Configuration）</a></p></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_1.html" role="button" class="outline">Prev</a></li>
@@ -609,11 +601,15 @@ ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif']
     </hgroup>
 
     <!-- Search -->
-    <input type="text" id="search-input" name="search" placeholder="JavaScript">
-    <button id="search-btn" class="contrast"
+    <div id="blog-search">
+        <input type="text" id="search-input" name="search" placeholder="JavaScript">
+        <button id="search-btn" class="contrast"
             data-target="modal-example"
             onClick="toggleModal(event)">Search
-    </button>
+        </button>
+
+    </div>
+
 
 
     <!-- Modal -->
@@ -639,7 +635,7 @@ ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif']
 
 
 <nav>
-    <ul>
+    <ul id="blog-nav">
         
         <li>
             <a href="https://suiyan.cc/index.html">

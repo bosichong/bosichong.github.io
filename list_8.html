@@ -122,6 +122,36 @@
 
 
 <hgroup>
+    <h2>写在我的博客PV10万时：聊聊编程与画画</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-05-14 09:11:29</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+        
+        
+        <samll>站长吐槽</samll>
+        
+    </h3>
+</hgroup>
+<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/Snip20190514_1.png" /></p>
+<p>转眼间我的<code>blog</code>PV流量已经达到10万+了，2017年8月25日 01:09，我发布了网站更新记录，至此<code>blog</code>运行已有快二年了，没想到PV会达到10万。</p>
+<p>回想学习<code>Python</code>大约也有二年多了，这一路走来也是蛮辛苦的，自学需要自己填坑补洞修bug，痛苦与快乐并存吧。</p>
+<p>贴几张近作，显吧一下吧</p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/Cache_69e1f243303b4652..jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-03025e852e1db8f2f9cf69fbd946b69c_hd.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-608fc943d8709a1c640f02a8fc46fae6_hd.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-fa357d4314c4f66b46318982526ef88a_hd.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-9497459b80fafa67937c205e373c05f7_hd.jpg" /></p>
+<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2019/05/v2-f27fcee295b83b010b1029a145dc1554_hd.jpg" /></p>
+<p>为什么要提到画画，去年的夏天给孩子报了美术班，然后自己也就随便画画，然后就一发不可收拾，坚持画画一直到现在，感触也是蛮多的。</p>
+<p>编程和画画的思考方式在某些方面还是有相同点的，例如编程的架构就好比画画的草稿，草稿打好了才可以细致的刻画。若程序的需求本身是一幅画，那么打好草稿，细致刻画细节，就可以使程序本身更人性化，更符合预期的要求。<strong>有的时候我就觉得，程序员本身真的应该的体验一下绘画带来的乐趣</strong>。</p>
+<p>自学画画一年感觉要比编程10年前的成就感强很多，这些年编程没写过多少像样的应用，五个手指都能算出来，或许编程要比绘画更严谨，更需要思考。</p>
+<p>未来还有很多打算，包括编程初期的一些梦想都想去实现，比如开发一款游戏，自己原画角色，场景，并利用现有的游戏框架编写成型。完成现有的程序代码的编写，继续优化维护，继续坚持画画强化绘画技能，或许能力的提高会更加丰富原有的梦想。</p>
+<p>还有三年的时候<code>blog</code>PV达到百万（是不是有点飘了？），下半年继续更新<code>blog</code>，继续学习<code>Python Django PYgame</code>等。</p></p>
+
+
+<hr>
+<br>
+
+
+<hgroup>
     <h2>wxPython编程学习笔记(10)wx.FileDialog文件选择框</h2>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2019-01-05 14:41:02</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
         
@@ -374,49 +404,6 @@ PermissionError: [Errno 1] Operation not permitted
 <br>
 
 
-<hgroup>
-    <h2>wxPython编程学习笔记(08)wx.ListBox 下拉列表框</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-12-27 09:51:07</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python GUI</samll>
-        
-    </h3>
-</hgroup>
-<p><h2>wx.ListBox 下拉列表框</h2>
-<p>wx.ListBox是以中数据展示的小部件，使用方便简单，可以用来展示比较单一的数据，例如：各种地址，名称列表等。
-这次准备了一个基于wx.ListBox构建的小小通讯录，实现了增删改但是木有查，为什么没有查？因为我没写，就这样了。
-具体效果展示如下：
-<img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181227_7.png" /></p>
-<h2>wx.ListBox的创建及一些方法</h2>
-<p>创建</p>
-<pre><code>listbox = wx.ListBox(panel,choices=ls)
-</code></pre>
-<p>ListBox 有些常用的方法，用来处理列表中的数据</p>
-<pre><code>listbox.Append(text) 添加
-listbox.GetSelection() 获取索引
-listbox.GetString(sel) 通过索引获取字符串
-listbox.Delete(sel) 删除当前索引
-listbox.Insert(renamed, sel) 在当前索引处添加新的值，返回当前索引
-listbox.SetSelection(item_id) 根据索引值选择项
-listbox.Clear() 清空当前列表
-</code></pre>
-<h2>通讯录的数据保存</h2>
-<p>作为一个简单的通讯录应该能保存数据，处于简单化处理，我只保存一个文本到目录下，若是需要可以使用数据库。
-通讯录在操作的同时我们要更新保存数据，所以，我建了三个方法，分别处理新建数据文本，打开读取，保存数据。
-分别对应：newFile openFile saveFile,这样配合这几个方法就可以实现一个简单的通讯录了。</p>
-<p>具体代码如下，可以跑跑看啦：</p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy08.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy08.py">开源中国码云镜像gitee</a></li>
-</ul></p>
-
-
-<hr>
-<br>
-
-
 
 <nav>
     <li><a href="list_7.html" role="button" class="outline">Prev</a></li>
@@ -432,11 +419,15 @@ listbox.Clear() 清空当前列表
     </hgroup>
 
     <!-- Search -->
-    <input type="text" id="search-input" name="search" placeholder="JavaScript">
-    <button id="search-btn" class="contrast"
+    <div id="blog-search">
+        <input type="text" id="search-input" name="search" placeholder="JavaScript">
+        <button id="search-btn" class="contrast"
             data-target="modal-example"
             onClick="toggleModal(event)">Search
-    </button>
+        </button>
+
+    </div>
+
 
 
     <!-- Modal -->
@@ -462,7 +453,7 @@ listbox.Clear() 清空当前列表
 
 
 <nav>
-    <ul>
+    <ul id="blog-nav">
         
         <li>
             <a href="https://suiyan.cc/index.html">
