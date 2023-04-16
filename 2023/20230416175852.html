@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content="Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！" name="description">
+    <meta content="JavaScript" name="keywords">
+    <meta content="异步编程是JavaScript中的一个重要概念。为了理解异步编程，首先需要了解同步编程的工作原理。在同步编程中，代码按行执行，每行必须在下一行开始之前完成执行。当处理长时间运行的任务或需要等待外部资源时，这可能会导致性能问题。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
-    <title>SuiYan-碎言博客-List Pages 第9页</title>
+    <title>SuiYan-碎言博客从回调函数到JavaScript异步编程</title>
     <!-- 引入 pico.css -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
     <!-- 引入 图标CDN -->
@@ -124,163 +124,100 @@
 
 
 <hgroup>
-    <h2>Python中创建TCP服务器与客户端进行通信（上）</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-12 10:14:40</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h2>从回调函数到JavaScript异步编程</h2>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-16 17:58:52</small> | <small>更新于:2023-04-16 18:20:42</small> | Tag:
         
         
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p>学习套接字编程最好的方法就是从实际应用的开发中边学边用，这样对TCP服务器及客户端通信中遇到的知识点才会更加了解。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/40.html" target="_blank" >阅读全文>>></a>
-</div>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Python程序在Windows10终端运行中文乱码解决方法</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-10 21:03:34</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python基础</samll>
+        <small>JavaScript</small>
         
     </h3>
 </hgroup>
-<p>今天发布了一段代码，微博上有朋友在win10下边测试报错，看错误应该是中文编码问题，然后自己试了下，总结了一下原因</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/39.html" target="_blank" >阅读全文>>></a>
-</div>
+<p><p>异步编程是JavaScript中的一个重要概念。为了理解异步编程，首先需要了解同步编程的工作原理。在同步编程中，代码按行执行，每行必须在下一行开始之前完成执行。当处理长时间运行的任务或需要等待外部资源时，这可能会导致性能问题。
+JavaScript中的异步编程允许非阻塞代码执行，这意味着代码可以在等待长时间运行的任务或外部资源时继续运行。这是通过使用回调函数、Promise和async/await实现的。
+回调函数是作为参数传递给其他函数并在原始函数完成其任务时执行的函数。Promise是表示异步操作的最终完成或失败的对象，并允许编写更可读和可维护的代码。
+async/await是一种新的语法，通过使用关键字“async”和“await”来处理Promise，从而实现更可读和可维护的异步代码。</p>
+<h4>回调</h4>
+<p>先从一个回调函数开始：</p>
+<pre><code>function cb(callback){
+    callback()
+}
+cb(()=&gt;{console.log("callback函数")})
+</code></pre>
+<p>回调函数的参数中会有一个函数的参数。</p>
+<p>下面的这个回调函数，调用了一个自定义的函数：</p>
+<pre><code>function cb1(callback){
+    const rest = {name:"callbackdata"}
+    callback(rest)
+}
 
+function print_rest(rest){
+    console.log(rest)
+}
 
-<hr>
-<br>
+cb1(print_rest)
+</code></pre>
+<p>第三个回调函数加入了<code>setTimeout</code>：</p>
+<pre><code>function fetchData(name, callback) {
+    setTimeout(() =&gt; {
+        const data = {name: name};
+        callback(data);
+    }, 3000);
+}
 
+fetchData("one", (data) =&gt; {
+    console.log(data);
+});
+</code></pre>
+<p>这会使代码运行3秒后打印数据。其实最开始的时候我也不太理解回调，运行一下这三个函数试试理解一下。
+在此示例中，fetchData函数使用setTimeout函数模拟从外部资源获取数据，以延迟执行回调函数1秒钟。fetchData函数接受一个回调函数作为参数，在可用时使用获取的数据执行该函数。
+回调函数可能很快变得难以管理，并导致回调地狱，其中嵌套的回调函数变得难以阅读和维护。Promise可以通过允许编写更可读和可维护的代码来帮助缓解此问题.</p>
+<h4>Promise</h4>
+<p>以下是使用Promise处理JavaScript中的异步代码的示例：</p>
+<pre><code>function fetchData_a() {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            const data = {name: "two"};
+            resolve(data);
+        }, 2000);
+    });
+}
 
-<hgroup>
-    <h2>你与黑客之间差了多少行Python代码？</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-10 15:23:17</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p>雷布斯曾说过：“必须写够十万行代码，不要心存侥幸。没有写过足够代码量的，想成为高手是不可能的，只能纸上谈兵！”，看来要成一名黑客10万代码量也许只是个起步。那么自己与黑客差了多少呢，要不咱统计一下吧。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/38.html" target="_blank" >阅读全文>>></a>
-</div>
+fetchData_a()
+    .then((data) =&gt; {
+        console.log(data);
+    })
+    .catch((error) =&gt; {
+        console.error(error);
+    });
+</code></pre>
+<p>在此示例中，fetchData_a函数返回一个Promise，该Promise在可用时解析为获取的数据。使用then方法处理已解析的Promise并将数据记录到控制台.使用catch方法处理可能在Promise执行期间发生的任何错误。</p>
+<h4>async/await</h4>
+<p>async/await是一种新的语法，通过使用关键字“async”和“await”来处理Promise，从而实现更可读和可维护的异步代码.
+以下是使用async/await处理JavaScript中的异步代码的示例：</p>
+<pre><code>function fetchData_b() {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            const data = {name: "three"};
+            resolve(data);
+        }, 1000);
+    });
+}
 
+async function getData() {
+    try {
+        const data = await fetchData_b();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-<hr>
-<br>
+getData();
+</code></pre>
+<p>在此示例中，fetchData_b函数返回一个Promise，该Promise在可用时解析为获取的数据。getData函数声明为async，并使用await关键字处理已解析的Promise并将数据记录到控制台.
+使用try和catch块处理可能在Promise执行期间发生的任何错误.
+总之，异步编程在JavaScript中是一个重要的概念，对于编写性能良好且易于维护的代码非常重要。通过使用回调函数、Promise和async/await，开发人员可以编写非阻塞代码并处理长时间运行的任务和外部资源.</p></p>
 
-
-<hgroup>
-    <h2>一些站长常用的搜索收录、访问统计平台</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-09 20:45:57</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>站长吐槽</samll>
-        
-    </h3>
-</hgroup>
-<p>一些站长常用的搜索收录、访问统计平台</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/37.html" target="_blank" >阅读全文>>></a>
-</div>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>聊聊Python闭包（Closure）的那点事。</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-09 15:36:19</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p>聊聊Python闭包（Closure）的那点事。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/36.html" target="_blank" >阅读全文>>></a>
-</div>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Python并发编程（下）功能强大设置简单的分布式多进程生产者与消费者模式</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-07 14:09:46</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p>功能强大设置简单的分布式多进程生产者与消费者模式</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/35.html" target="_blank" >阅读全文>>></a>
-</div>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Python并发编程（上）进程模块multiprocessing模块和Process类</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-06 09:43:48</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p>Python中为什么要用多进程编程？</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/34.html" target="_blank" >阅读全文>>></a>
-</div>
-
-
-<hr>
-<br>
-
-
-<hgroup>
-    <h2>Python多线程编程（下）多线程锁 threading.Lock</h2>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-04 14:49:34</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
-        
-        
-        <samll>Python基础</samll>
-        
-    </h3>
-</hgroup>
-<p>在多线程任务中，线程对数据的操作是随机的，这个先后次序无法预测，如果利用多线程修改唯一数据，由于对数据操作的随机性，必会影响到数据结果的准确性，所以在多线程的任务的编码中，我们必须使用线程锁。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/33.html" target="_blank" >阅读全文>>></a>
-</div>
-
-
-<hr>
-<br>
-
-
-
-<nav>
-    <li><a href="list_8.html" role="button" class="outline">Prev</a></li>
-    <li><small>9 / 13</small></li>
-    <li><a href="list_10.html" role="button" class="outline">Next</a></li>
-</nav>
 
 </section>
         <aside><section>

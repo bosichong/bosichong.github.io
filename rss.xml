@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-13 09:59:13</pubDate>
+        <pubDate>2023-04-16 17:58:52</pubDate>
+        
+        <item>
+            <title>从回调函数到JavaScript异步编程</title>
+            <link>https://suiyan.cc/2023/20230416175852.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-16 17:58:52</pubDate>
+        </item>
         
         <item>
             <title>2023重学前端:HTML CSS JavaScript基础复习</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/before-2022/20220923093608.html</link>
             <author>J.sky</author>
             <pubDate>2022-09-23 09:36:08</pubDate>
-        </item>
-        
-        <item>
-            <title>PyKeyBoardFairy可以替代你游戏中的卡键盘和鼠标宏</title>
-            <link>https://suiyan.cc/before-2022/20210521155450.html</link>
-            <author>J.sky</author>
-            <pubDate>2021-05-21 15:54:50</pubDate>
         </item>
         
     </channel>
