@@ -6,21 +6,21 @@
     <meta content="JavaScript" name="keywords">
     <meta content="由于项目总是有一些小BUG，回想了一下项目中的JS文件的组织问题，估计应该是JS文件分散造成的加载不稳定，有时会造成一些变量莫名的未定义，事已至此，只有将这些文件打包到一个文件中就可以很好的解决这个问题，但是今天在网上搜了一些都是最近流行的打包工具，感觉功能过于丰富，以当前的项目来说用这些流行的打包工具有些大材小用了，而且学习成本高了一些，后来看了一下手头上的两JavaScript本书都推荐Ant打包，所以决定按书上的来吧，省时省力。" name="description">
     <meta content="J.sky" name="author">
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="http://127.0.0.1:5500/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="http://127.0.0.1:5500/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
     <title>SuiYan-碎言博客前端项目构建打包的一些学习笔记</title>
     <!-- 引入 pico.css -->
-    <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/assets/css/pico.min.css">
     <!-- 引入 图标CDN -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- 引入 站点样式 -->
-    <link rel="stylesheet" href="https://suiyan.cc/assets/css/custom.css">
-    <script src="https://suiyan.cc/assets/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="http://127.0.0.1:5500/assets/css/custom.css">
+    <script src="http://127.0.0.1:5500/assets/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-<div class="hero" data-theme="dark" style="background-image: url('https://suiyan.cc/assets/images/bg.jpg');">
+<div class="hero" data-theme="dark" style="background-image: url('http://127.0.0.1:5500/assets/images/bg.jpg');">
     <nav class="container-fluid"><ul>
-    <li><a href="https://suiyan.cc/" class="contrast">SuiYan</a></li>
+    <li><a href="http://127.0.0.1:5500/" class="contrast">SuiYan</a></li>
 </ul>
 <ul>
     <li>
@@ -36,49 +36,7 @@
 </ul></nav>
     <head><header class="container">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <hgroup class="hd">
-        <img class="avatar" src="https://suiyan.cc/assets/images/avatar.jpg"/>
-        <div><span id="typed"></span></div>
-        <ul class="sns-ul">
-            
-            <li class="sns-li">
-                <a href="https://github.com/bosichong/suiyan" target="_blank">
-                    <i class="fa fa-github "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://gitee.com/J_Sky/suiyan" target="_blank">
-                    <i class="fa fa-git "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://weibo.com/qq285911" target="_blank">
-                    <i class="fa fa-weibo "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://user.qzone.qq.com/285911/" target="_blank">
-                    <i class="fa fa-qq "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank">
-                    <i class="fa fa-book "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://suiyan.cc/rss.xml" target="_blank">
-                    <i class="fa fa-rss "></i>
-                </a>
-            </li>
-            
-        </ul>
-    </hgroup>
+    <div class="hd"><span id="typed"></span></div>
     <script>
         const typed = new Typed('#typed', {
           strings: [
@@ -114,7 +72,8 @@
           startDelay: 1000,
           loop:true
     });
-  </script>
+
+    </script>
 </header></head>
 </div>
 <main class="container">
@@ -124,7 +83,7 @@
 
 
 <hgroup>
-    <h2>前端项目构建打包的一些学习笔记</h2>
+    <h1>前端项目构建打包的一些学习笔记</h1>
     <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2020-01-01 21:09:54</small> | <small>更新于:2023-04-13 09:07:09</small> | Tag:
         
         
@@ -150,21 +109,64 @@
 
 </section>
         <aside><section>
-    <hgroup>
-        <h2>Search</h2>
-        <h3>Search This SuiYan blog</h3>
+    <hgroup class="hd">
+        <img class="avatar" src="http://127.0.0.1:5500/assets/images/avatar.jpg"/>
+        <h3>J.sky</h3>
+        <div><small>不要害怕犯错，犯错也是学习过程中的一环。知识的价值，是不能用金钱简单衡量的。—— 原神:提纳里</small></div>
+        <div class="blog-state">
+            <div class="state-item">
+                <small>111</small>
+                <small>日志</small>
+            </div>
+            <div class="state-item">
+                <small>21</small>
+                <small>标签</small>
+            </div>
+        </div>
+        <ul class="sns-ul">
+            
+            <li class="sns-li">
+                <a href="https://github.com/bosichong/suiyan" target="_blank">
+                    <i class="fa fa-github "></i>
+                </a>
+            </li>
+            
+            <li class="sns-li">
+                <a href="https://gitee.com/J_Sky/suiyan" target="_blank">
+                    <i class="fa fa-git "></i>
+                </a>
+            </li>
+            
+            <li class="sns-li">
+                <a href="https://user.qzone.qq.com/285911/" target="_blank">
+                    <i class="fa fa-qq "></i>
+                </a>
+            </li>
+            
+            <li class="sns-li">
+                <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank">
+                    <i class="fa fa-book "></i>
+                </a>
+            </li>
+            
+            <li class="sns-li">
+                <a href="https://suiyan.cc/rss.xml" target="_blank">
+                    <i class="fa fa-rss "></i>
+                </a>
+            </li>
+            
+        </ul>
     </hgroup>
 
     <!-- Search -->
     <div id="blog-search">
         <input type="text" id="search-input" name="search" placeholder="JavaScript">
         <button id="search-btn" class="contrast"
-            data-target="modal-example"
-            onClick="toggleModal(event)">Search
+                data-target="modal-example"
+                onClick="toggleModal(event)">Search
         </button>
 
     </div>
-
 
 
     <!-- Modal -->
@@ -182,9 +184,9 @@
             </div>
         </article>
     </dialog>
-    <script src="https://suiyan.cc/assets/js/url.js"></script>
-    <script src="https://suiyan.cc/assets/js/main.js"></script>
-    <script src="https://suiyan.cc/assets/js/modal.js"></script>
+    <script src="http://127.0.0.1:5500/assets/js/url.js"></script>
+    <script src="http://127.0.0.1:5500/assets/js/main.js"></script>
+    <script src="http://127.0.0.1:5500/assets/js/modal.js"></script>
 
 </section>
 
@@ -193,28 +195,28 @@
     <ul id="blog-nav">
         
         <li>
-            <a href="https://suiyan.cc/index.html">
+            <a href="http://127.0.0.1:5500/index.html">
                 <i class="fa fa-home"></i>
                 Home
             </a>
         </li>
         
         <li>
-            <a href="https://suiyan.cc/archives.html">
+            <a href="http://127.0.0.1:5500/archives.html">
                 <i class="fa fa-archive"></i>
                 Archive
             </a>
         </li>
         
         <li>
-            <a href="https://suiyan.cc/tags.html">
+            <a href="http://127.0.0.1:5500/tags.html">
                 <i class="fa fa-tags"></i>
                 Tags
             </a>
         </li>
         
         <li>
-            <a href="https://suiyan.cc/aboutme.html">
+            <a href="http://127.0.0.1:5500/aboutme.html">
                 <i class="fa fa-user"></i>
                 About Me
             </a>
@@ -244,10 +246,10 @@
     </div>
 </div></footer>
 <!-- Minimal theme switcher -->
-<script src="https://suiyan.cc/assets/js/minimal-theme-switcher.js"></script>
+<script src="http://127.0.0.1:5500/assets/js/minimal-theme-switcher.js"></script>
 <!-- Scroll to Top button selector -->
 <a class="to-top"><i class="fa fa-chevron-up fa-3" aria-hidden="true"></i></a>
-<script src="https://suiyan.cc/assets/js/jquery.toTop.min.js"></script>
+<script src="http://127.0.0.1:5500/assets/js/jquery.toTop.min.js"></script>
 <script>
         jQuery(function($){
             // Plugin activation (basic - with all default values)
