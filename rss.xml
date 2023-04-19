@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-16 17:58:52</pubDate>
+        <pubDate>2023-04-18 12:29:36</pubDate>
+        
+        <item>
+            <title>css布局如何选择flex和grid?</title>
+            <link>https://suiyan.cc/2023/20230418122936.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-18 12:29:36</pubDate>
+        </item>
         
         <item>
             <title>从回调函数到JavaScript异步编程</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/2023/20230324234058.html</link>
             <author>J.sky</author>
             <pubDate>2023-03-24 23:40:58</pubDate>
-        </item>
-        
-        <item>
-            <title>又可以继续写blog了</title>
-            <link>https://suiyan.cc/before-2022/20220923093608.html</link>
-            <author>J.sky</author>
-            <pubDate>2022-09-23 09:36:08</pubDate>
         </item>
         
     </channel>

@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="站长吐槽" name="keywords">
-    <meta content="好久没有更新自己的博客了，最近经历了很多变动，所以人生的规划也发生了一些微妙的变化。" name="description">
+    <meta content="CSS" name="keywords">
+    <meta content="在前端界面的设计时，经常要用到css的布局属性，这里主要对flex、gird做一些学习上的总结，flex和grid都是CSS布局模块，允许响应式和灵活的设计。但是，它们具有不同的用例和属性。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
-    <title>SuiYan-碎言博客有时人生需要做出选择</title>
+    <title>SuiYan-碎言博客css布局如何选择flex和grid?</title>
     <!-- 引入 pico.css -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
     <!-- 引入 图标CDN -->
@@ -83,20 +83,67 @@
 
 
 <hgroup>
-    <h1>有时人生需要做出选择</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2018-06-12 10:05:40</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h1>css布局如何选择flex和grid?</h1>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-18 12:29:36</small> | <small>更新于:2023-04-19 08:20:54</small> | Tag:
         
         
-        <small>站长吐槽</small>
+        <small>CSS</small>
         
     </h3>
 </hgroup>
-<p><p>好久没有更新自己的博客了，最近经历了很多变动，所以人生的规划也发生了一些微妙的变化。</p>
-<p>这段日子没怎么看编程相关的书，今天随便看了一下，python已经是3.6.5，django也是2.0.6的版本了，想想自己前一阵学习py及django的时候，机器上的环境还是3.61和1.1X版.。。。</p>
-<p>更新了一下站点的头部图片，上次更新时还是冬天的。。。。</p>
-<p>可能暂时要放下编程了，是放下不是放弃，不久的以后我还会捡起来，因为我还有一个做游戏的梦想还未实现。想起30岁的时候开始学习编程，40而终，这些年没做成什么太出色的软件，但也因为代码养家糊了口饭，想想也算是值了，人生总是再变动，曾经看到过一篇文章介绍过，程序员黑客和画家很相似，所以那天拿起笔来就画了几个月感觉还不错，我能否再用10年成就一个插画师的梦想？</p>
-<p>为自己加油！</p>
-<p>感谢曾经路过17python网友，这个站点暂时还不会关闭，但内容也许有些改变，python还会继续，但可能会慢了一些，但我还会在学习python的路上前进的。</p></p>
+<p><p>在前端界面的设计时，经常要用到css的布局属性，这里主要对flex、gird做一些学习上的总结，flex和grid都是CSS布局模块，允许响应式和灵活的设计。但是，它们具有不同的用例和属性。</p>
+<h3>flex 弹性盒子</h3>
+<p>flex主要用于一维布局，例如在行或列中排列项目。它在容器元素上使用display: flex属性，在子元素上使用flex属性来控制它们的大小和位置。一些关键属性包括：</p>
+<ul>
+<li>flex-direction：确定主轴的方向（行或列）</li>
+<li>justify-content：沿主轴对齐项目</li>
+<li>align-items：沿交叉轴对齐项目</li>
+<li>flex-wrap：确定是否应在没有足够空间时将项目换行</li>
+</ul>
+<p>例子：</p>
+<pre><code>&lt;nav&gt;
+&lt;ul style="display: flex; justify-content: space-between;"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<nav>
+  <ul style="display: flex; justify-content: space-between;">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<h3>grid 网格布局</h3>
+<p>grid用于二维布局，例如创建行和列的网格。它在容器元素上使用display: grid属性，在子元素上使用grid属性来控制它们的位置和大小。一些关键属性包括：</p>
+<ul>
+<li>grid-template-columns和grid-template-rows：定义网格中列和行的大小和数量</li>
+<li>grid-column和grid-row：指定网格中项目的起始和结束位置</li>
+<li>grid-gap：设置网格项之间的间距</li>
+</ul>
+<p>一个简单的例子：</p>
+<pre><code>&lt;div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;"&gt;
+&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
+&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
+&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
+&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
+&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
+&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
+&lt;/div&gt;
+</code></pre>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;">
+  <img src="https://suiyan.cc/assets/images/avatar.jpg">
+  <img src="https://suiyan.cc/assets/images/avatar.jpg">
+  <img src="https://suiyan.cc/assets/images/avatar.jpg">
+  <img src="https://suiyan.cc/assets/images/avatar.jpg">
+  <img src="https://suiyan.cc/assets/images/avatar.jpg">
+  <img src="https://suiyan.cc/assets/images/avatar.jpg">
+</div>
+
+<p>总之，flex最适合一维布局，例如导航，瀑布流等，而grid最适合二维布局，比如站点的总体布局，数据表格布局等。但是，它们也可以一起使用以创建更复杂的布局。</p></p>
 
 
 </section>
