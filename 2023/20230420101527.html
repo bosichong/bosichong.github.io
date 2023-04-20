@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python基础" name="keywords">
-    <meta content="今天发布了一段代码，微博上有朋友在win10下边测试报错，看错误应该是中文编码问题，然后自己试了下，总结了一下原因" name="description">
+    <meta content="Python" name="keywords">
+    <meta content="实现静态页面的输出其实很简单，按着顺序来就行：搜集Markdown文件和站点配置文件->组织数据并渲染模板(jinja2)->输出HTML并保存到静态目录中。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
-    <title>SuiYan-碎言博客Python程序在Windows10终端运行中文乱码解决方法</title>
+    <title>SuiYan-碎言博客使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</title>
     <!-- 引入 pico.css -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
     <!-- 引入 图标CDN -->
@@ -83,33 +83,82 @@
 
 
 <hgroup>
-    <h1>Python程序在Windows10终端运行中文乱码解决方法</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-10 21:03:34</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h1>使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</h1>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-20 10:15:27</small> | <small>更新于:2023-04-20 16:31:35</small> | Tag:
         
         
-        <small>Python基础</small>
+        <small>Python</small>
         
     </h3>
 </hgroup>
-<p><p>今天发布了一段代码，微博上有朋友在win10下边测试报错，看错误应该是中文编码问题，然后自己试了下，总结了一下原因：</p>
-<h2>测试中文打印print()</h2>
-<p>在win10中新建记事本文档， 敲入代码：</p>
-<pre><code>print("我来试试哈")
+<p><p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署第一个自己的静态独立技术博客：（一）分析与设计</a></p>
+<p>使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</p>
+<p>实现静态页面的输出其实很简单，按着顺序来就行：搜集Markdown文件和站点配置文件-&gt;组织数据并渲染模板(jinja2)-&gt;输出HTML并保存到静态目录中。</p>
+<h3>最简单的静态文件输出</h3>
+<p>如果您想要向HTML文件添加字符串模板，您可以使用Python的字符串格式化功能。例如，如果您想要向HTML文件添加标题：</p>
+<pre><code>title = "My Title"
+html_template = "&lt;html&gt;&lt;head&gt;&lt;title&gt;{0}&lt;/title&gt;&lt;/head&gt;&lt;body&gt;{1}&lt;/body&gt;&lt;/html&gt;"
+body = "&lt;h1&gt;hello world&lt;/h1&gt;"
+with open("file.html", "w") as f:
+    f.write(html_template.format(title, body))
 </code></pre>
-<p>保存test.py，运行，果然报错，如下图：</p>
-<pre><code>SyntaxError: Non-UTF-8 code starting with '\xce' in file i:/python3/te
-st.py on line 1, but no encoding declared; see http://python.org/dev/p
-eps/pep-0263/ for details</code></pre>
-
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171010_14.png" /></p>
-<h2>为什么呢？</h2>
-<p>因为win10下边新建记事本文件是ANSIX编码的</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171010_15.png" /></p>
-<h2>解决方法</h2>
-<p>把文件另存，在编码中选择utf8。</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171010_16.png" /></p>
-<p>然后运行，完美解决！</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171010_17.png" /></p></p>
+<p>在此代码中，我们定义一个名为title的变量，其值为“My Title”，以及一个名为html_template的变量，其值为"{1}"。{0}和{1}是title和body变量的占位符，分别。然后，我们定义一个名为body的变量，其值为"hello world"。最后，我们以写入模式打开文件“file.html”，并使用format()方法将格式化的字符串写入其中。运行这段脚本后会在当前目录下生成一个<code>file.html</code>文件，内容如下：</p>
+<pre><code>&lt;html&gt;&lt;head&gt;&lt;title&gt;My Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;hello world&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+<p>至此，我们实现了一个简答的模板系统。</p>
+<h3>使用jinja2模板引擎</h3>
+<p>但是我们的站点不可能就只有一两个模板的变量，他会是由一系列的数据组成的，而且渲染的出来的HTML页面我们还需要进行布局和前端的美化，所以我们需要一个健壮的模板引擎。</p>
+<blockquote>
+<p>Jinja 是一个快速、富有表现力、可扩展的模板引擎。模板中的特殊占位符允许编写类似于 Python 语法的代码。然后向模板传递数据以呈现最终文档。</p>
+</blockquote>
+<h4>安装</h4>
+<pre><code>$ pip install Jinja2
+</code></pre>
+<p>通过上边的命令行，我们很容易就能安装jinja2的依赖文件。关于使用jinja2生成HTML有两个重要的步骤：
+1. 组织jinja2的模板变量，也就是站点的上下文。
+2. 编写jinja2的模板，这里包括模板的继承和模板的渲染，以及最后的保存输出。</p>
+<h4>jinja2的配置</h4>
+<pre><code># 设置jinja模板的所在目录
+env = Environment(loader=FileSystemLoader(os.path.join("theme")))
+context = {
+    "title" : "hello",
+    "body" : "world"
+}
+tmp = env.get_template("index.html")  # 获取对应的模板
+sitemap_path = os.path.join('index.html')  # 输出静态文件
+with open(sitemap_path, mode='w', encoding='utf-8') as f:
+    f.write(tmp.render(**context))
+</code></pre>
+<p>这是一个最简单的jinja2模板的配置，我们所有的静态文件的输出都会使用这段代码。</p>
+<h4>编写jinja2模板</h4>
+<p>编写jinja2模板首先需要布局你的网站页面，先规划好博客需要的页面，因为博客的页面布局大体相同，所以要先写<code>layout.html</code>，通过模板的继承与引用来实现页面制作的分工，应避免把重复的内容写到多个页面。</p>
+<h4>jinja2语法</h4>
+<p>jinja2的语法很简单：</p>
+<ol>
+<li>语句结构 {% %}</li>
+<li>变量取值 {{ }}</li>
+<li>注释 {# #}</li>
+</ol>
+<p>输出页面的标题：</p>
+<pre><code>&lt;h1&gt;{{ title }}&lt;/h1&gt;
+</code></pre>
+<p>循环输出标签：</p>
+<pre><code>{% for tag in tags %}
+&lt;samll&gt;{{ tag }}&lt;/samll&gt;
+{% endfor %}
+</code></pre>
+<p>对于复杂的页面我们应该建立多个继承，对于固定的内容应当使用引用。</p>
+<p>建立继承块：</p>
+<pre><code>&lt;title&gt;{{ blog_name_en }}-{{ blog_name }}{% block title %}{% endblock %}&lt;/title&gt;
+</code></pre>
+<p>通过继承进行修改：</p>
+<pre><code>{% extends "layout.html" %}
+{% block title %}-{{ title }}{% endblock %}
+{# 此处省略了一些代码 #}
+</code></pre>
+<p><a href="https://jinja.palletsprojects.com/en/3.1.x/">jinja2官方文档</a>，这里可以查询到更多有关jinja2模板引擎的使用帮助。</p>
+<h3>组合到一起</h3>
+<p>通过一些列的操作，我们可以生成一些简单的HTML页面了，接下来我们来看看在Python中如何具体组织这些功能并实现他们。</p></p>
 
 
 </section>

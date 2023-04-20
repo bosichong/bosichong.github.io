@@ -4,7 +4,21 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-18 12:29:36</pubDate>
+        <pubDate>2023-04-20 16:27:36</pubDate>
+        
+        <item>
+            <title>simple_blog 碎言静态博客主题</title>
+            <link>https://suiyan.cc/2023/20230420162736.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-20 16:27:36</pubDate>
+        </item>
+        
+        <item>
+            <title>使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</title>
+            <link>https://suiyan.cc/2023/20230420101527.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-20 10:15:27</pubDate>
+        </item>
         
         <item>
             <title>css布局如何选择flex和grid?</title>
@@ -60,20 +74,6 @@
             <link>https://suiyan.cc/2023/20230404212258.html</link>
             <author>J.sky</author>
             <pubDate>2023-04-04 21:22:58</pubDate>
-        </item>
-        
-        <item>
-            <title>Pico.css大道至简返璞归真--一个简单轻量化的CSS框架</title>
-            <link>https://suiyan.cc/2023/20230404163916.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-04-04 16:39:16</pubDate>
-        </item>
-        
-        <item>
-            <title>好了，又可以愉快的写博客了</title>
-            <link>https://suiyan.cc/2023/20230324234058.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-03-24 23:40:58</pubDate>
         </item>
         
     </channel>

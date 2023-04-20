@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python基础" name="keywords">
-    <meta content="今天发布了一段代码，微博上有朋友在win10下边测试报错，看错误应该是中文编码问题，然后自己试了下，总结了一下原因" name="description">
+    <meta content="碎言博客" name="keywords">
+    <meta content="simple_blog是一款侧重与内容的博客主题并适配移动端。主题支持亮色和黑暗主题在线切换。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
-    <title>SuiYan-碎言博客Python程序在Windows10终端运行中文乱码解决方法</title>
+    <title>SuiYan-碎言博客simple_blog 碎言静态博客主题</title>
     <!-- 引入 pico.css -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
     <!-- 引入 图标CDN -->
@@ -83,33 +83,41 @@
 
 
 <hgroup>
-    <h1>Python程序在Windows10终端运行中文乱码解决方法</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-10-10 21:03:34</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h1>simple_blog 碎言静态博客主题</h1>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-20 16:27:36</small> | <small>更新于:2023-04-20 16:28:49</small> | Tag:
         
         
-        <small>Python基础</small>
+        <small>碎言博客</small>
         
     </h3>
 </hgroup>
-<p><p>今天发布了一段代码，微博上有朋友在win10下边测试报错，看错误应该是中文编码问题，然后自己试了下，总结了一下原因：</p>
-<h2>测试中文打印print()</h2>
-<p>在win10中新建记事本文档， 敲入代码：</p>
-<pre><code>print("我来试试哈")
-</code></pre>
-<p>保存test.py，运行，果然报错，如下图：</p>
-<pre><code>SyntaxError: Non-UTF-8 code starting with '\xce' in file i:/python3/te
-st.py on line 1, but no encoding declared; see http://python.org/dev/p
-eps/pep-0263/ for details</code></pre>
-
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171010_14.png" /></p>
-<h2>为什么呢？</h2>
-<p>因为win10下边新建记事本文件是ANSIX编码的</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171010_15.png" /></p>
-<h2>解决方法</h2>
-<p>把文件另存，在编码中选择utf8。</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171010_16.png" /></p>
-<p>然后运行，完美解决！</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/10/Snip20171010_17.png" /></p></p>
+<p><p>simple_blog是一款侧重与内容的博客主题并适配移动端。
+本项目为<a href="https://github.com/bosichong/suiyan.git">碎言静态博客</a>主题。
+主题支持亮色和黑暗主题在线切换。</p>
+<p><a href="https://gitee.com/J_Sky/suiyan">碎言静态博客Gitee</a>
+<a href="https://github.com/bosichong/suiyan.git">碎言静态博客GitHub</a></p>
+<h3>效果展示</h3>
+<p><img alt="效果展示" src="doc/111.jpg" /></p>
+<h3>技术框架</h3>
+<p>主题模板采用了jinja2的模板引擎，使用了pico.css样式制作。
+图标：<a href="https://9iphp.com/fa-icons">FontAwesome 4.7.0 中完整的675个图标样式CSS参考</a>
+响应式适配移动端。</p>
+<h3>安装教程</h3>
+<ol>
+<li>首先克隆下载本主题到碎言静态博客程序<code>theme</code>目录下。</li>
+<li>修改配置文件 <code>config.json</code>中的"theme": "主题目录",即可启用。</li>
+</ol>
+<h3>运行预览</h3>
+<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。
+在配置文件里修改：
+"dev": 1,  # 调试模式，如果改为1，则使用"blog_test_url"来添加静态资源地址前缀，方便本地调试。</p>
+<h3>修改主题样式</h3>
+<p>主题采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。
+在jinja2 模板中使用<code>{{ 属性名称 }}</code>来调用。</p>
+<h3>github pages</h3>
+<p>如何部署GitHub pages 搭建自己的博客，这里就不在详细介绍了，请参考下文。</p>
+<p><a href="https://docs.github.com/zh/pages/quickstart">GitHub Pages 快速入门</a></p>
+<p>除了部署GitHub，也可以将静态文件部署到虚拟主机云服务器上，复制静态文件目录下的所有文件到你的站点目录下即可。</p></p>
 
 
 </section>
