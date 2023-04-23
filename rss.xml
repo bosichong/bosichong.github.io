@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-20 16:27:36</pubDate>
+        <pubDate>2023-04-23 09:43:05</pubDate>
+        
+        <item>
+            <title>vue3前端打包集成到后端fastAPI的uvicorn服务器</title>
+            <link>https://suiyan.cc/2023/20230423094305.html</link>
+            <author>你的大名</author>
+            <pubDate>2023-04-23 09:43:05</pubDate>
+        </item>
         
         <item>
             <title>simple_blog 碎言静态博客主题</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/before-2022/106.html</link>
             <author>J.sky</author>
             <pubDate>2023-04-05 10:26:39</pubDate>
-        </item>
-        
-        <item>
-            <title>解决Github Pages自定义域名失效的问题</title>
-            <link>https://suiyan.cc/2023/20230404212258.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-04-04 21:22:58</pubDate>
         </item>
         
     </channel>
