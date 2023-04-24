@@ -22,7 +22,7 @@
     "meta_keywords":"Python,Django,JavaScript,程序员,人生苦短,我用Python",
     "profile_image":"assets/images/avatar.jpg",
     "blog_bg": "assets/images/bg.jpg",
-    "theme": "default_theme",
+    "theme": "my_blog",
     "build": "blog",
     "md_dir": "articles",
     "blog_page_num":8,
