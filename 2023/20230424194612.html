@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="pygame" name="keywords">
-    <meta content="以前学java的时候用java做了一个简单弹球小游戏，觉得还是蛮有意思的，这次用pygame重写一下试试，以前觉得游戏编程很简单，可能是考虑的太简单了，游戏的编写是步步为营，逻辑紧扣，错一点游戏都无法运行的，所以学习用面向对象方式编写游戏，是对python编程学习的强化练习，大家可以多试试。" name="description">
+    <meta content="站长源创" name="keywords">
+    <meta content="JianCe是一个简简单单的学习结果检测的小工具，通过设置一组在线试题（题型包括：单选、多选、判断、简答）来检验学习结果。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
-    <title>SuiYan-碎言博客“编学编玩”用Pygame编写游戏（7）Pingball弹球小游戏</title>
+    <title>SuiYan-碎言博客JianCe 简测 简单的在线答题应用</title>
     <!-- 引入 pico.css -->
     <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
     <!-- 引入 图标CDN -->
@@ -83,53 +83,96 @@
 
 
 <hgroup>
-    <h1>“编学编玩”用Pygame编写游戏（7）Pingball弹球小游戏</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-12-29 20:18:35</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h1>JianCe 简测 简单的在线答题应用</h1>
+    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-24 19:46:12</small> | <small>更新于:2023-04-24 19:49:14</small> | Tag:
         
         
-        <small>pygame</small>
+        <small>站长源创</small>
         
     </h3>
 </hgroup>
-<p><p>以前学java的时候用java做了一个简单弹球小游戏，觉得还是蛮有意思的，这次用<code>pygame</code>重写一下试试，以前觉得游戏编程很简单，可能是考虑的太简单了，游戏的编写是步步为营，逻辑紧扣，错一点游戏都无法运行的，所以学习用面向对象方式编写游戏，是对python编程学习的强化练习，大家可以多试试。</p>
-<h2>Pingball游戏的设计</h2>
-<p>游戏很小，场景中的精灵有两个：球拍和一个小球。游戏的顺序包括：游戏开始画面，游戏主场景，游戏结束画面。
-游戏逻辑：判断小球的Y坐标低于球拍的Y坐标值即为游戏结束，球拍和小球都有自己的运动逻辑。这么简单的游戏我们从哪里入手呢？
-肯定是先创建一个游戏窗口啦：）</p>
-<h2>设定一些游戏的基本数据</h2>
-<p>游戏包括的主要数据有：</p>
+<p><p>JianCe是一个简简单单的学习结果检测的小工具，通过设置一组在线试题（题型包括：单选、多选、判断、简答）来检验学习结果。</p>
+<h3>功能</h3>
 <ul>
-<li>游戏场景（宽+高）</li>
-<li>球拍，（宽，高，位置，移动速度）</li>
-<li>小球，（宽，高，位置，移动速度）</li>
-<li>游戏逻辑，判断游戏是否结束，暂停游戏，重新开始游戏，及一些文字的打印。</li>
+<li>[x] 答题开始组件</li>
+<li>[x] 答题结束组件</li>
+<li>[x] 加载题库是先把题库随机打乱</li>
+<li>[x] 添加答题进度</li>
+<li>[x] 答题首页显示题目数量</li>
+<li>[x] 得分页面显示错题的时候问题和答案同时显示。</li>
+<li>[x] 添加ctrl+enter 进行下一道题</li>
+<li>[x] 把答题页面继续组件化</li>
+<li>[x] 答题的时间控制，倒计时展示</li>
+<li>[x] 显示每一道题的类型</li>
+<li>[ ] 加载失败或题库不存在的时候进行提示。</li>
+<li>[ ] 在答题页面时，如果要返回首页，应该提示是否要放弃答题而返回首页？</li>
+<li>[ ] 控制问题标题的文字大小</li>
 </ul>
-<p>有了这些构思，我们一样一样的通过我们之前封装的PY_RPG及pygame提供的一些功能来实现这个小游戏。</p>
-<h2>创建场景</h2>
-<p>一共有三个场景，分别为游戏开始画面<code>MainScene</code>游戏主场景<code>Pingball</code>游戏结束画面<code>GameOverScene</code></p>
-<p>先创建三个场景的类，通过继承<code>PY_RPG.Scene</code>，会很方便的创建出三个类，分别修改三个场景的一些参数，然后设置键盘判断，进行游戏场景的跳转。
-因为<code>Scene</code>中的三个方法分工非常明确，我们可以很好的控制游戏场景，这样我们可以先把三个场景制作出来，然后进行测试，虽然游戏主场景没有任何精灵，
-但游戏场景整体是可以切换的。</p>
-<h2>创建球拍与球</h2>
-<p><code>Racket</code>和<code>Ball</code>分别进行一些属性设置，其中<code>Racket</code>相对来说比较简单，只需要左右移动，做一个场景边界判断即可。
-<code>Ball</code>的属性多了一些，需要有移动速度，需要通过<code>update</code>方法进移动的控制。</p>
-<h2>游戏逻辑判断</h2>
-<p>在游戏主场景中的<code>Pingball.update</code>方法中进行了一些游戏逻辑判断，包括：球遇到边界反弹，小球遇到球拍反弹后增加速度，和游戏结束的判断。
-这个方法中还需要添加球与球拍自己的<code>update</code>方法,用来更新自己的坐标变化。</p>
-<h2>游戏结束</h2>
-<p>游戏结束后，还可以通过按键重新开始，在<code>Pingball</code>中有个<code>replay</code>的函数，是用来控制重新开始后球体的位置.</p>
-<h2>功能扩展</h2>
-<p>这个弹球游戏只完成了最最最基本的功能，扩展性很强，比如添加关卡，打印得分，增加一些特效，只要你想修改，弹球也一样可以玩的很嗨。</p>
-<p>以下为游戏效果图，建议下载相关代码跑一下，有问题可以留言给我。</p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_8.png" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_9.png" /></p>
-<p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2017/12/Snip20171229_10.png" /></p>
-<h2>本文源码下载</h2>
-<p>请git clone My_pygame下所有代码，以免造成游戏跑不起来的情况。本例源文件：PY_RPG.pingball.py</p>
-<ul>
-<li><a href="https://github.com/bosichong/My_pygame/tree/master/PY_RPG/demo">github</a></li>
-<li><a href="https://gitee.com/J_Sky/My_pygame/tree/master/PY_RPG/demo">开源中国码云镜像gitee</a></li>
-</ul></p>
+<p>演示页面：https://suiyan.cc/demo/jiance/</p>
+<p>界面预览：</p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/jiance/01.png" /></p>
+<p>准备答题</p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/jiance/02.png" />
+<img alt="" src="https://suiyan.cc/assets/images/2023/jiance/03.png" /></p>
+<p>亮色主题随心切换，答题结果、评分，错题展示。</p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/jiance/04.png" />
+<img alt="" src="https://suiyan.cc/assets/images/2023/jiance/05.png" /></p>
+<h3>安装依赖</h3>
+<p>项目依赖很简单：</p>
+<pre><code>"dependencies": {
+"axios": "^1.3.4",
+"pinia": "^2.0.33",
+"vue": "^3.2.47",
+"vue-router": "^4.1.6"
+},
+</code></pre>
+<p>终端进入项目的根目录，先安装项目的依赖：</p>
+<p><code>sh
+npm install</code></p>
+<h3>启动</h3>
+<p><code>sh
+npm run dev</code></p>
+<h3>编译打包</h3>
+<p><code>sh
+npm run build</code></p>
+<h3>添加和编辑题库</h3>
+<p>题库的编写使用json文件。</p>
+<p><code>public/data</code>  为题库及目录文件存放目录</p>
+<p><code>public/data/navigation.json</code> 题库目录，这里索引了所有的测试题连接</p>
+<p><code>public/data/test.json</code>  是一组测试题</p>
+<p>目录json编辑很简答了，看下json的结构就可以了解了。</p>
+<p>测试题目前有四种，下边是一组测试题的案例：</p>
+<pre><code>{
+"title": "题库的标题",
+"description": "题库的描述题库的描述题库的描述",
+"questions": [
+        {
+        "type": "单选题",
+        "question": "如何开始学习JavaScript？",
+        "options": ["死记硬背","疯狂刷题","勇于实践","埋头苦干"],
+        "answer": "勇于实践"
+        },
+        {
+        "type": "多选题",
+        "question": "如何开始学习Python？",
+        "options": ["死记硬背","疯狂刷题","勇于实践","埋头苦干"],
+        "answer": ["疯狂刷题","勇于实践"]
+        },
+        {
+        "type": "判断题",
+        "question": "JavaScript是世界上最好的编程语言？",
+        "answer": "错误"
+        },
+        {
+        "type": "简答题",
+        "question": "为什么叫JavaScript？",
+        "answer": "JavaScript 在刚诞生的时候，它的名字叫 “LiveScript”。但是因为当时 Java 很流行，所以决定将一种新语言定位为 Java 的“弟弟”会有助于它的流行"
+        }
+    ]
+}
+</code></pre>
+<h3>写在最后</h3>
+<p>JianCe检测 是我为了测试孩子学习情况所编写的小玩意，当然也可以用来检测其他任何类型知识的学习结果的。希望大家喜欢，欢迎提交代码。</p></p>
 
 
 </section>
