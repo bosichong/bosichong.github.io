@@ -3,7 +3,7 @@
     "blog_name": "碎言博客",
     "blog_name_en": "SuiYan",
     "blog_author": "J.sky",
-    "blog_description_en": "不要害怕犯错，犯错也是学习过程中的一环。知识的价值，是不能用金钱简单衡量的。—— 原神:提纳里",
+    "blog_description_en": "You see see you , This one day day di.",
     "blog_typed": [
         "Life is short, you need Python",
         "人生苦短，我用Python.",
@@ -18,17 +18,16 @@
         "Readability counts.",
         "可读性很重要."
     ],
-    "meta_description": "Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！",
+    "meta_description": " Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。",
     "meta_keywords":"Python,Django,JavaScript,程序员,人生苦短,我用Python",
     "profile_image":"assets/images/avatar.jpg",
     "blog_bg": "assets/images/bg.jpg",
-    "theme": "my_blog",
+    "theme": "coding_blog",
     "build": "blog",
     "md_dir": "articles",
     "blog_page_num":8,
     "blog_test_url":"http://127.0.0.1:5500/",
     "blog_url":"https://suiyan.cc/",
-    "github":"https://github.com/Jsky2020/suiyan/blob/suiyan/articles/",
     "blog_sns": [
         {
             "ico": "github",
@@ -39,7 +38,7 @@
             "url": "https://gitee.com/J_Sky/suiyan"
         },
         {
-            "ico": "qq",
+            "ico": "tencent-qq",
             "url": "https://user.qzone.qq.com/285911/"
         },
         {
@@ -53,22 +52,22 @@
     ],
     "nav": [
         {
-            "ico": "home",
-            "text": "Home",
+            "ico": "house-heart-fill",
+            "text": "Blog Home",
             "url": "index.html"
         },
         {
             "ico": "archive",
-            "text": "Archive",
+            "text": "Blog Archive",
             "url": "archives.html"
         },
         {
             "ico": "tags",
-            "text": "Tags",
+            "text": "Blog Tag",
             "url": "tags.html"
         },
         {
-            "ico": "user",
+            "ico": "person-circle",
             "text": "About Me",
             "url": "aboutme.html"
         }

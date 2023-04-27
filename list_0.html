@@ -1,408 +1,351 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" data-bs-theme="dark">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content="Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！" name="description">
+    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
     <meta content="J.sky" name="author">
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
     <title>SuiYan-碎言博客-Home</title>
-    <!-- 引入 pico.css -->
-    <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
-    <!-- 引入 图标CDN -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- 引入 站点样式 -->
-    <link rel="stylesheet" href="https://suiyan.cc/assets/css/custom.css">
-    <script src="https://suiyan.cc/assets/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://suiyan.cc/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://suiyan.cc/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="hero" data-theme="dark" style="background-image: url('https://suiyan.cc/assets/images/bg.jpg');">
-    <nav class="container-fluid"><ul>
-    <li><a href="https://suiyan.cc/" class="contrast">SuiYan</a></li>
-</ul>
-<ul>
-    <li>
-        <details role="list" dir="rtl">
-            <summary aria-haspopup="listbox" role="link" class="contrast">Theme</summary>
-            <ul role="listbox">
-                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
-                <li><a href="#" data-theme-switcher="light">Light</a></li>
-                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-            </ul>
-        </details>
-    </li>
-</ul></nav>
-    <head><header class="container">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <div class="hd"><span id="typed"></span></div>
-    <script>
-        const typed = new Typed('#typed', {
-          strings: [
-          
-          'Life is short, you need Python',
-          
-          '人生苦短，我用Python.',
-          
-          'Beautiful is better than ugly.',
-          
-          '美丽优于丑陋.',
-          
-          'Explicit is better than implicit.',
-          
-          '直白优于含蓄.',
-          
-          'Simple is better than complex.',
-          
-          '简单优于复杂.',
-          
-          'Complex is better than complicated.',
-          
-          '复杂优于繁琐.',
-          
-          'Readability counts.',
-          
-          '可读性很重要.',
-          
-          ],
-          typeSpeed: 100,
-          backSpeed: 10,
-          backDelay: 100,
-          startDelay: 1000,
-          loop:true
-    });
 
-    </script>
-</header></head>
+<!-- ======= Mobile nav toggle button ======= -->
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+<!-- ======= Header ======= -->
+<header id="header">
+    <div class="d-flex flex-column">
+    <div class="profile">
+        <img src="https://suiyan.cc/assets/images/avatar.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="https://suiyan.cc/">J.sky</a></h1>
+        <div class="social-links mt-3 text-center">
+            
+            <a href="https://github.com/bosichong/suiyan" target="_blank"><i class="bi bi-github"></i></a>
+            
+            <a href="https://gitee.com/J_Sky/suiyan" target="_blank"><i class="bi bi-git"></i></a>
+            
+            <a href="https://user.qzone.qq.com/285911/" target="_blank"><i class="bi bi-tencent-qq"></i></a>
+            
+            <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank"><i class="bi bi-book"></i></a>
+            
+            <a href="https://suiyan.cc/rss.xml" target="_blank"><i class="bi bi-rss"></i></a>
+            
+        </div>
+    </div>
+
+    <nav id="navbar" class="nav-menu navbar">
+        <ul>
+            
+            <li><a href="https://suiyan.cc/index.html" class="nav-link scrollto active"><i class="bi bi-house-heart-fill"></i>
+                <span>Blog Home</span></a></li>
+            
+            <li><a href="https://suiyan.cc/archives.html" class="nav-link scrollto active"><i class="bi bi-archive"></i>
+                <span>Blog Archive</span></a></li>
+            
+            <li><a href="https://suiyan.cc/tags.html" class="nav-link scrollto active"><i class="bi bi-tags"></i>
+                <span>Blog Tag</span></a></li>
+            
+            <li><a href="https://suiyan.cc/aboutme.html" class="nav-link scrollto active"><i class="bi bi-person-circle"></i>
+                <span>About Me</span></a></li>
+            
+        </ul>
+    </nav><!-- .nav-menu -->
 </div>
-<main class="container">
-    <div class="grid">
-        <section>
 
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <input class="form-control" id="search-input" type="text" placeholder="JavaScript">
+                </div>
+                <div class="col-4">
+                    <button type="button" id="search-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">搜索</button>
+                </div>
+              </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">搜索结果</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <article>
+                            <a href="#close"
+                               aria-label="Close"
+                               class="close"
+                               data-target="modal-example"
+                               onClick="toggleModal(event)">
+                            </a>
+                            <div id="modal" style="display: none;">
+                                <ul id="result-list"></ul>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+    <section class="inner-page">
+       
+
+
+
+      <div class="container typed-div">
+          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+          <div class="hd"><span id="typed"></span></div>
+          <script>
+              const typed = new Typed('#typed', {
+              strings: [
+              
+              'Life is short, you need Python',
+              
+              '人生苦短，我用Python.',
+              
+              'Beautiful is better than ugly.',
+              
+              '美丽优于丑陋.',
+              
+              'Explicit is better than implicit.',
+              
+              '直白优于含蓄.',
+              
+              'Simple is better than complex.',
+              
+              '简单优于复杂.',
+              
+              'Complex is better than complicated.',
+              
+              '复杂优于繁琐.',
+              
+              'Readability counts.',
+              
+              '可读性很重要.',
+              
+              ],
+              typeSpeed: 100,
+              backSpeed: 10,
+              backDelay: 100,
+              startDelay: 1000,
+              loop:true
+          });
+          </script>
+
+      </div>
+  
+
+
+<hgroup>
+    <h1>coding_blog 碎言静态博客主题</h1>
+     <small>作者:<a href="#">J.sky</a> | 发表于:2023-04-27 15:17:50 | 更新于:2023-04-27 15:22:40 | Tag:
+        
+        
+        碎言博客
+        
+    </small>
+    
+</hgroup>
+<p>coding_blog一款适合程序员的简约博客主题。主题模板采用了jinja2的模板引擎，使用了Bootstrap 5.3 等框架，模板设计移动优先。</p>
+<div>
+    <a href="https://suiyan.cc/2023/20230427151750.html" target="_blank" >阅读全文>>></a>
+</div>
+
+<br>
 
 
 <hgroup>
     <h1>JianCe 简测 简单的在线答题应用</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-24 19:46:12</small> | <small>更新于:2023-04-24 19:49:14</small> | Tag:
+     <small>作者:<a href="#">J.sky</a> | 发表于:2023-04-24 19:46:12 | 更新于:2023-04-24 19:49:14 | Tag:
         
         
-        <samll>站长源创</samll>
+        站长源创
         
-    </h3>
+    </small>
+    
 </hgroup>
 <p>JianCe是一个简简单单的学习结果检测的小工具，通过设置一组在线试题（题型包括：单选、多选、判断、简答）来检验学习结果。</p>
 <div>
     <a href="https://suiyan.cc/2023/20230424194612.html" target="_blank" >阅读全文>>></a>
 </div>
 
-
-<hr>
 <br>
 
 
 <hgroup>
     <h1>vue3前端打包集成到后端fastAPI的uvicorn服务器</h1>
-    <h3> 作者:<a href="#">你的大名</a> | <small>发表于:2023-04-23 09:43:05</small> | <small>更新于:2023-04-23 09:52:40</small> | Tag:
+     <small>作者:<a href="#">你的大名</a> | 发表于:2023-04-23 09:43:05 | 更新于:2023-04-27 12:50:48 | Tag:
         
         
-        <samll>Vue</samll>
+        Vue
         
-    </h3>
+    </small>
+    
 </hgroup>
 <p>数据分页在项目中的使用频率是非常高的,但是对于新手来说是一个难点和痛点,这里我记录一次数据分页从环境搭建到最后页面的渲染的过程,对于新手可以用来参考。</p>
 <div>
     <a href="https://suiyan.cc/2023/20230423094305.html" target="_blank" >阅读全文>>></a>
 </div>
 
-
-<hr>
 <br>
 
 
 <hgroup>
     <h1>simple_blog 碎言静态博客主题</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-20 16:27:36</small> | <small>更新于:2023-04-23 09:51:26</small> | Tag:
+     <small>作者:<a href="#">J.sky</a> | 发表于:2023-04-20 16:27:36 | 更新于:2023-04-23 09:51:26 | Tag:
         
         
-        <samll>碎言博客</samll>
+        碎言博客
         
-    </h3>
+    </small>
+    
 </hgroup>
 <p>simple_blog是一款侧重与内容的博客主题并适配移动端。主题支持亮色和黑暗主题在线切换。</p>
 <div>
     <a href="https://suiyan.cc/2023/20230420162736.html" target="_blank" >阅读全文>>></a>
 </div>
 
-
-<hr>
 <br>
 
 
 <hgroup>
     <h1>使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-20 10:15:27</small> | <small>更新于:2023-04-20 16:31:35</small> | Tag:
+     <small>作者:<a href="#">J.sky</a> | 发表于:2023-04-20 10:15:27 | 更新于:2023-04-20 16:31:35 | Tag:
         
         
-        <samll>Python</samll>
+        Python
         
-    </h3>
+    </small>
+    
 </hgroup>
 <p>实现静态页面的输出其实很简单，按着顺序来就行：搜集Markdown文件和站点配置文件->组织数据并渲染模板(jinja2)->输出HTML并保存到静态目录中。</p>
 <div>
     <a href="https://suiyan.cc/2023/20230420101527.html" target="_blank" >阅读全文>>></a>
 </div>
 
-
-<hr>
 <br>
 
 
 <hgroup>
     <h1>css布局如何选择flex和grid?</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-18 12:29:36</small> | <small>更新于:2023-04-19 08:20:54</small> | Tag:
+     <small>作者:<a href="#">J.sky</a> | 发表于:2023-04-18 12:29:36 | 更新于:2023-04-19 08:20:54 | Tag:
         
         
-        <samll>CSS</samll>
+        CSS
         
-    </h3>
+    </small>
+    
 </hgroup>
 <p>在前端界面的设计时，经常要用到css的布局属性，这里主要对flex、gird做一些学习上的总结，flex和grid都是CSS布局模块，允许响应式和灵活的设计。但是，它们具有不同的用例和属性。</p>
 <div>
     <a href="https://suiyan.cc/2023/20230418122936.html" target="_blank" >阅读全文>>></a>
 </div>
 
-
-<hr>
 <br>
 
 
 <hgroup>
     <h1>从回调函数到JavaScript异步编程</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-16 17:58:52</small> | <small>更新于:2023-04-16 18:20:42</small> | Tag:
+     <small>作者:<a href="#">J.sky</a> | 发表于:2023-04-16 17:58:52 | 更新于:2023-04-16 18:20:42 | Tag:
         
         
-        <samll>JavaScript</samll>
+        JavaScript
         
-    </h3>
+    </small>
+    
 </hgroup>
 <p>异步编程是JavaScript中的一个重要概念。为了理解异步编程，首先需要了解同步编程的工作原理。在同步编程中，代码按行执行，每行必须在下一行开始之前完成执行。当处理长时间运行的任务或需要等待外部资源时，这可能会导致性能问题。</p>
 <div>
     <a href="https://suiyan.cc/2023/20230416175852.html" target="_blank" >阅读全文>>></a>
 </div>
 
-
-<hr>
 <br>
 
 
 <hgroup>
     <h1>2023重学前端:HTML CSS JavaScript基础复习</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-13 09:59:13</small> | <small>更新于:2023-04-16 18:03:47</small> | Tag:
+     <small>作者:<a href="#">J.sky</a> | 发表于:2023-04-13 09:59:13 | 更新于:2023-04-16 18:03:47 | Tag:
         
         
-        <samll>前端框架</samll>
+        前端框架
         
-        <samll>HTML</samll>
+        HTML
         
-    </h3>
+    </small>
+    
 </hgroup>
 <p>最近写了一些前端的项目使用了一些框架例，但是突然发现自己的前端基础是如此的渣，渣的自己好尴尬，遂决定重新学习并复习一下前端的HTML CSS JavaScript基础。</p>
 <div>
     <a href="https://suiyan.cc/2023/20230413095913.html" target="_blank" >阅读全文>>></a>
 </div>
 
-
-<hr>
 <br>
 
 
-<hgroup>
-    <h1>使用Python编写并部署第一个自己的静态独立技术博客：（一）分析与设计</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2023-04-10 07:59:54</small> | <small>更新于:2023-04-20 16:30:49</small> | Tag:
-        
-        
-        <samll>Python</samll>
-        
-    </h3>
-</hgroup>
-<p>独立博客是指个人独立运营的博客，通常是由个人自己设计、开发、维护和更新的。相比于其他博客，独立博客可以自由定制，自制主题，自由评论不受平台限制等优点。</p>
-<div>
-    <a href="https://suiyan.cc/2023/20230410075954.html" target="_blank" >阅读全文>>></a>
+
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <a href="#" role="button" class="btn btn-primary">Prev</a>
+      </div>
+      <div class="col">
+        <small>0 / 14</small>
+      </div>
+      <div class="col">
+        <a href="list_1.html" role="button" class="btn btn-primary">Next</a>
+      </div>
+    </div>
+  </div>
+
+
+
+    </section>
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="container">
+    <div class="copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    </div>
+
+    <div class="credits">
+        Designed by <a href="https://github.com/Jsky2020/suiyan" target="_blank">SuiYan</a> | Theme by <a href="https://github.com/bosichong/coding_blog" target="_blank">Coding-blog</a>
+    </div>
 </div>
+</footer><!-- End  Footer -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<hr>
-<br>
+<!-- Template Main JS File -->
+<script src="https://suiyan.cc/assets/js/url.js"></script>
+<script src="https://suiyan.cc/assets/js/main.js"></script>
 
-
-
-<nav>
-    <li><a href="#" role="button" class="outline">Prev</a></li>
-    <li><small>0 / 14</small></li>
-    <li><a href="list_1.html" role="button" class="outline">Next</a></li>
-</nav>
-
-</section>
-        <aside><section>
-    <hgroup class="hd">
-        <img class="avatar" src="https://suiyan.cc/assets/images/avatar.jpg"/>
-        <h3>J.sky</h3>
-        <div><small>不要害怕犯错，犯错也是学习过程中的一环。知识的价值，是不能用金钱简单衡量的。—— 原神:提纳里</small></div>
-        <div class="blog-state">
-            <div class="state-item">
-                <small>116</small>
-                <small>日志</small>
-            </div>
-            <div class="state-item">
-                <small>21</small>
-                <small>标签</small>
-            </div>
-        </div>
-        <ul class="sns-ul">
-            
-            <li class="sns-li">
-                <a href="https://github.com/bosichong/suiyan" target="_blank">
-                    <i class="fa fa-github "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://gitee.com/J_Sky/suiyan" target="_blank">
-                    <i class="fa fa-git "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://user.qzone.qq.com/285911/" target="_blank">
-                    <i class="fa fa-qq "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank">
-                    <i class="fa fa-book "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://suiyan.cc/rss.xml" target="_blank">
-                    <i class="fa fa-rss "></i>
-                </a>
-            </li>
-            
-        </ul>
-    </hgroup>
-
-    <!-- Search -->
-    <div id="blog-search">
-        <input type="text" id="search-input" name="search" placeholder="JavaScript">
-        <button id="search-btn" class="contrast"
-                data-target="modal-example"
-                onClick="toggleModal(event)">Search
-        </button>
-
-    </div>
-
-
-    <!-- Modal -->
-    <dialog id="modal-example">
-        <article>
-            <a href="#close"
-               aria-label="Close"
-               class="close"
-               data-target="modal-example"
-               onClick="toggleModal(event)">
-            </a>
-            <h3>搜索结果</h3>
-            <div id="modal" style="display: none;">
-                <ul id="result-list"></ul>
-            </div>
-        </article>
-    </dialog>
-    <script src="https://suiyan.cc/assets/js/url.js"></script>
-    <script src="https://suiyan.cc/assets/js/main.js"></script>
-    <script src="https://suiyan.cc/assets/js/modal.js"></script>
-
-</section>
-
-
-<nav>
-    <ul id="blog-nav">
-        
-        <li>
-            <a href="https://suiyan.cc/index.html">
-                <i class="fa fa-home"></i>
-                Home
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://suiyan.cc/archives.html">
-                <i class="fa fa-archive"></i>
-                Archive
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://suiyan.cc/tags.html">
-                <i class="fa fa-tags"></i>
-                Tags
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://suiyan.cc/aboutme.html">
-                <i class="fa fa-user"></i>
-                About Me
-            </a>
-        </li>
-        
-    </ul>
-</nav>
-</aside>
-    </div>
-
-</main>
-<footer><div class="container">
-    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
-    <div><small>
-        Powered by
-    </small>
-        <a href="https://github.com/Jsky2020/suiyan" target="_blank">
-            SuiYan
-        </a>
-       <small> | </small>
-        <small>
-            Copyright
-            <i aria-hidden="true" class="fa fa-copyright">
-            </i>
-            2017-2023
-        </small>
-    </div>
-</div></footer>
-<!-- Minimal theme switcher -->
-<script src="https://suiyan.cc/assets/js/minimal-theme-switcher.js"></script>
-<!-- Scroll to Top button selector -->
-<a class="to-top"><i class="fa fa-chevron-up fa-3" aria-hidden="true"></i></a>
-<script src="https://suiyan.cc/assets/js/jquery.toTop.min.js"></script>
-<script>
-        jQuery(function($){
-            // Plugin activation (basic - with all default values)
-            // $('.to-top').toTop();
-
-            // Plugin activation with options
-            $('.to-top').toTop({
-                //options with default values
-                autohide: true,  //boolean 'true' or 'false'
-                offset: 420,     //numeric value (as pixels) for scrolling length from top to hide automatically
-                speed: 500,      //numeric value (as mili-seconds) for duration
-                position:true,   //boolean 'true' or 'false'. Set this 'false' if you want to add custom position with your own css
-                right: 15,       //numeric value (as pixels) for position from right. It will work only if the 'position' is set 'true'
-                bottom: 30       //numeric value (as pixels) for position from bottom. It will work only if the 'position' is set 'true'
-            });
-        });
-
-</script>
 </body>
+
 </html>

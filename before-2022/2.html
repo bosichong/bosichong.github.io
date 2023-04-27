@@ -1,95 +1,127 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" data-bs-theme="dark">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Python基础" name="keywords">
     <meta content="最近需要调试各个版本的折腾，所以虚拟环境是必须走起的。。。" name="description">
     <meta content="J.sky" name="author">
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
     <title>SuiYan-碎言博客创建python 虚拟环境 venv</title>
-    <!-- 引入 pico.css -->
-    <link rel="stylesheet" href="https://suiyan.cc/assets/css/pico.min.css">
-    <!-- 引入 图标CDN -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- 引入 站点样式 -->
-    <link rel="stylesheet" href="https://suiyan.cc/assets/css/custom.css">
-    <script src="https://suiyan.cc/assets/js/jquery-3.3.1.min.js"></script>
-</head>
-<body>
-<div class="hero" data-theme="dark" style="background-image: url('https://suiyan.cc/assets/images/bg.jpg');">
-    <nav class="container-fluid"><ul>
-    <li><a href="https://suiyan.cc/" class="contrast">SuiYan</a></li>
-</ul>
-<ul>
-    <li>
-        <details role="list" dir="rtl">
-            <summary aria-haspopup="listbox" role="link" class="contrast">Theme</summary>
-            <ul role="listbox">
-                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
-                <li><a href="#" data-theme-switcher="light">Light</a></li>
-                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-            </ul>
-        </details>
-    </li>
-</ul></nav>
-    <head><header class="container">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <div class="hd"><span id="typed"></span></div>
-    <script>
-        const typed = new Typed('#typed', {
-          strings: [
-          
-          'Life is short, you need Python',
-          
-          '人生苦短，我用Python.',
-          
-          'Beautiful is better than ugly.',
-          
-          '美丽优于丑陋.',
-          
-          'Explicit is better than implicit.',
-          
-          '直白优于含蓄.',
-          
-          'Simple is better than complex.',
-          
-          '简单优于复杂.',
-          
-          'Complex is better than complicated.',
-          
-          '复杂优于繁琐.',
-          
-          'Readability counts.',
-          
-          '可读性很重要.',
-          
-          ],
-          typeSpeed: 100,
-          backSpeed: 10,
-          backDelay: 100,
-          startDelay: 1000,
-          loop:true
-    });
 
-    </script>
-</header></head>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://suiyan.cc/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://suiyan.cc/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ======= Mobile nav toggle button ======= -->
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+<!-- ======= Header ======= -->
+<header id="header">
+    <div class="d-flex flex-column">
+    <div class="profile">
+        <img src="https://suiyan.cc/assets/images/avatar.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="https://suiyan.cc/">J.sky</a></h1>
+        <div class="social-links mt-3 text-center">
+            
+            <a href="https://github.com/bosichong/suiyan" target="_blank"><i class="bi bi-github"></i></a>
+            
+            <a href="https://gitee.com/J_Sky/suiyan" target="_blank"><i class="bi bi-git"></i></a>
+            
+            <a href="https://user.qzone.qq.com/285911/" target="_blank"><i class="bi bi-tencent-qq"></i></a>
+            
+            <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank"><i class="bi bi-book"></i></a>
+            
+            <a href="https://suiyan.cc/rss.xml" target="_blank"><i class="bi bi-rss"></i></a>
+            
+        </div>
+    </div>
+
+    <nav id="navbar" class="nav-menu navbar">
+        <ul>
+            
+            <li><a href="https://suiyan.cc/index.html" class="nav-link scrollto active"><i class="bi bi-house-heart-fill"></i>
+                <span>Blog Home</span></a></li>
+            
+            <li><a href="https://suiyan.cc/archives.html" class="nav-link scrollto active"><i class="bi bi-archive"></i>
+                <span>Blog Archive</span></a></li>
+            
+            <li><a href="https://suiyan.cc/tags.html" class="nav-link scrollto active"><i class="bi bi-tags"></i>
+                <span>Blog Tag</span></a></li>
+            
+            <li><a href="https://suiyan.cc/aboutme.html" class="nav-link scrollto active"><i class="bi bi-person-circle"></i>
+                <span>About Me</span></a></li>
+            
+        </ul>
+    </nav><!-- .nav-menu -->
 </div>
-<main class="container">
-    <div class="grid">
-        <section>
+
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <input class="form-control" id="search-input" type="text" placeholder="JavaScript">
+                </div>
+                <div class="col-4">
+                    <button type="button" id="search-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">搜索</button>
+                </div>
+              </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">搜索结果</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <article>
+                            <a href="#close"
+                               aria-label="Close"
+                               class="close"
+                               data-target="modal-example"
+                               onClick="toggleModal(event)">
+                            </a>
+                            <div id="modal" style="display: none;">
+                                <ul id="result-list"></ul>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+    <section class="inner-page">
+       
 
 
 
 <hgroup>
-    <h1>创建python 虚拟环境 venv</h1>
-    <h3> 作者:<a href="#">J.sky</a> | <small>发表于:2017-08-19 19:53:29</small> | <small>更新于:2023-04-13 09:40:24</small> | Tag:
+    <h1 class="animate__animated animate__bounce">创建python 虚拟环境 venv</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2017-08-19 19:53:29| 更新于:2023-04-13 09:40:24 | Tag:
         
         
-        <small>Python基础</small>
+        Python基础
         
-    </h3>
+    </small>
 </hgroup>
 <p><h3>创建python 虚拟环境</h3>
 <p>最近需要调试各个版本的折腾，所以虚拟环境是必须走起的。。。</p>
@@ -116,166 +148,36 @@ django1.9
 http://blog.csdn.net/geekun/article/details/51325383</p></p>
 
 
-</section>
-        <aside><section>
-    <hgroup class="hd">
-        <img class="avatar" src="https://suiyan.cc/assets/images/avatar.jpg"/>
-        <h3>J.sky</h3>
-        <div><small>不要害怕犯错，犯错也是学习过程中的一环。知识的价值，是不能用金钱简单衡量的。—— 原神:提纳里</small></div>
-        <div class="blog-state">
-            <div class="state-item">
-                <small>116</small>
-                <small>日志</small>
-            </div>
-            <div class="state-item">
-                <small>21</small>
-                <small>标签</small>
-            </div>
-        </div>
-        <ul class="sns-ul">
-            
-            <li class="sns-li">
-                <a href="https://github.com/bosichong/suiyan" target="_blank">
-                    <i class="fa fa-github "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://gitee.com/J_Sky/suiyan" target="_blank">
-                    <i class="fa fa-git "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://user.qzone.qq.com/285911/" target="_blank">
-                    <i class="fa fa-qq "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank">
-                    <i class="fa fa-book "></i>
-                </a>
-            </li>
-            
-            <li class="sns-li">
-                <a href="https://suiyan.cc/rss.xml" target="_blank">
-                    <i class="fa fa-rss "></i>
-                </a>
-            </li>
-            
-        </ul>
-    </hgroup>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
-    <!-- Search -->
-    <div id="blog-search">
-        <input type="text" id="search-input" name="search" placeholder="JavaScript">
-        <button id="search-btn" class="contrast"
-                data-target="modal-example"
-                onClick="toggleModal(event)">Search
-        </button>
 
+    </section>
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="container">
+    <div class="copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
     </div>
 
-
-    <!-- Modal -->
-    <dialog id="modal-example">
-        <article>
-            <a href="#close"
-               aria-label="Close"
-               class="close"
-               data-target="modal-example"
-               onClick="toggleModal(event)">
-            </a>
-            <h3>搜索结果</h3>
-            <div id="modal" style="display: none;">
-                <ul id="result-list"></ul>
-            </div>
-        </article>
-    </dialog>
-    <script src="https://suiyan.cc/assets/js/url.js"></script>
-    <script src="https://suiyan.cc/assets/js/main.js"></script>
-    <script src="https://suiyan.cc/assets/js/modal.js"></script>
-
-</section>
-
-
-<nav>
-    <ul id="blog-nav">
-        
-        <li>
-            <a href="https://suiyan.cc/index.html">
-                <i class="fa fa-home"></i>
-                Home
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://suiyan.cc/archives.html">
-                <i class="fa fa-archive"></i>
-                Archive
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://suiyan.cc/tags.html">
-                <i class="fa fa-tags"></i>
-                Tags
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://suiyan.cc/aboutme.html">
-                <i class="fa fa-user"></i>
-                About Me
-            </a>
-        </li>
-        
-    </ul>
-</nav>
-</aside>
+    <div class="credits">
+        Designed by <a href="https://github.com/Jsky2020/suiyan" target="_blank">SuiYan</a> | Theme by <a href="https://github.com/bosichong/coding_blog" target="_blank">Coding-blog</a>
     </div>
+</div>
+</footer><!-- End  Footer -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-</main>
-<footer><div class="container">
-    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
-    <div><small>
-        Powered by
-    </small>
-        <a href="https://github.com/Jsky2020/suiyan" target="_blank">
-            SuiYan
-        </a>
-       <small> | </small>
-        <small>
-            Copyright
-            <i aria-hidden="true" class="fa fa-copyright">
-            </i>
-            2017-2023
-        </small>
-    </div>
-</div></footer>
-<!-- Minimal theme switcher -->
-<script src="https://suiyan.cc/assets/js/minimal-theme-switcher.js"></script>
-<!-- Scroll to Top button selector -->
-<a class="to-top"><i class="fa fa-chevron-up fa-3" aria-hidden="true"></i></a>
-<script src="https://suiyan.cc/assets/js/jquery.toTop.min.js"></script>
-<script>
-        jQuery(function($){
-            // Plugin activation (basic - with all default values)
-            // $('.to-top').toTop();
 
-            // Plugin activation with options
-            $('.to-top').toTop({
-                //options with default values
-                autohide: true,  //boolean 'true' or 'false'
-                offset: 420,     //numeric value (as pixels) for scrolling length from top to hide automatically
-                speed: 500,      //numeric value (as mili-seconds) for duration
-                position:true,   //boolean 'true' or 'false'. Set this 'false' if you want to add custom position with your own css
-                right: 15,       //numeric value (as pixels) for position from right. It will work only if the 'position' is set 'true'
-                bottom: 30       //numeric value (as pixels) for position from bottom. It will work only if the 'position' is set 'true'
-            });
-        });
+<!-- Template Main JS File -->
+<script src="https://suiyan.cc/assets/js/url.js"></script>
+<script src="https://suiyan.cc/assets/js/main.js"></script>
 
-</script>
 </body>
+
 </html>
