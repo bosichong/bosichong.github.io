@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-27 15:17:50</pubDate>
+        <pubDate>2023-04-28 18:15:50</pubDate>
+        
+        <item>
+            <title>新站已提交sitemap百度不抓取Google也不收录</title>
+            <link>https://suiyan.cc/2023/20230428181550.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-28 18:15:50</pubDate>
+        </item>
         
         <item>
             <title>coding_blog 碎言静态博客主题</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/2023/20230410075954.html</link>
             <author>J.sky</author>
             <pubDate>2023-04-10 07:59:54</pubDate>
-        </item>
-        
-        <item>
-            <title>free_blog 碎言静态博客主题</title>
-            <link>https://suiyan.cc/2023/20230408093536.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-04-08 09:35:36</pubDate>
         </item>
         
     </channel>
