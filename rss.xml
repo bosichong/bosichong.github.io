@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-28 18:15:50</pubDate>
+        <pubDate>2023-04-30 07:34:41</pubDate>
+        
+        <item>
+            <title>Vue3+Element Plus环境搭建和一键切换明暗主题的配置</title>
+            <link>https://suiyan.cc/2023/20230430073441.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-04-30 07:34:41</pubDate>
+        </item>
         
         <item>
             <title>新站已提交sitemap百度不抓取Google也不收录</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/2023/20230413095913.html</link>
             <author>J.sky</author>
             <pubDate>2023-04-13 09:59:13</pubDate>
-        </item>
-        
-        <item>
-            <title>使用Python编写并部署第一个自己的静态独立技术博客：（一）分析与设计</title>
-            <link>https://suiyan.cc/2023/20230410075954.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-04-10 07:59:54</pubDate>
         </item>
         
     </channel>

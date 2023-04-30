@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
+    <meta content="Vue" name="keywords">
+    <meta content="Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaScript 框架。而Element Plus是一款基于Vue3面向设计师和开发者的组件库" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan-碎言博客-List Pages 第4页</title>
+    <title>SuiYan-碎言博客Vue3+Element Plus环境搭建和一键切换明暗主题的配置</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -114,209 +114,79 @@
 
 
 
-      <div class="container typed-div">
-          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-          <div class="hd"><span id="typed"></span></div>
-          <script>
-              const typed = new Typed('#typed', {
-              strings: [
-              
-              'Life is short, you need Python',
-              
-              '人生苦短，我用Python.',
-              
-              'Beautiful is better than ugly.',
-              
-              '美丽优于丑陋.',
-              
-              'Explicit is better than implicit.',
-              
-              '直白优于含蓄.',
-              
-              'Simple is better than complex.',
-              
-              '简单优于复杂.',
-              
-              'Complex is better than complicated.',
-              
-              '复杂优于繁琐.',
-              
-              'Readability counts.',
-              
-              '可读性很重要.',
-              
-              ],
-              typeSpeed: 100,
-              backSpeed: 10,
-              backDelay: 100,
-              startDelay: 1000,
-              loop:true
-          });
-          </script>
-
-      </div>
-  
-
-
 <hgroup>
-    <h1>Vue快速学习笔记(3)Vue的组件</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2020-02-04 15:08:07 | 更新于:2023-04-13 09:07:09 | Tag:
+    <h1 class="animate__animated animate__bounce">Vue3+Element Plus环境搭建和一键切换明暗主题的配置</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-04-30 07:34:41| 更新于:2023-04-30 16:28:10 | Tag:
         
         
         Vue
         
     </small>
-    
 </hgroup>
-<p>Vue中的组件</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/20200204150807.html" target="_blank" >阅读全文>>></a>
-</div>
+<p><p>Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaScript 框架。而Element Plus是一款基于Vue3面向设计师和开发者的组件库。</p>
+<p>最终效果：</p>
+<p><img alt="" src="https://suiyan.cc/assets/images/2023/elementtest.gif" /></p>
+<h3>环境搭建</h3>
+<p>已安装 16.0 或更高版本的 Node.js，终端：</p>
+<pre><code>npm init vue@latest
+</code></pre>
+<p>这一指令将会安装并执行 create-vue，它是 Vue 官方的项目脚手架工具。你将会看到一些诸如 TypeScript 和测试支持之类的可选功能提示：</p>
+<pre><code>✔ Project name: … &lt;your-project-name&gt;
+✔ Add TypeScript? … No / Yes
+✔ Add JSX Support? … No / Yes
+✔ Add Vue Router for Single Page Application development? … No / Yes
+✔ Add Pinia for state management? … No / Yes
+✔ Add Vitest for Unit testing? … No / Yes
+✔ Add Cypress for both Unit and End-to-End testing? … No / Yes
+✔ Add ESLint for code quality? … No / Yes
+✔ Add Prettier for code formatting? … No / Yes
 
-<br>
+Scaffolding project in ./&lt;your-project-name&gt;...
+Done.
+</code></pre>
+<p>然后：</p>
+<pre><code>&gt; cd &lt;your-project-name&gt;
+&gt; npm install
+&gt; npm run dev
+</code></pre>
+<p>然后打开提示的演示网址就能看到Vue的预览页面了。</p>
+<h3>Element Plus</h3>
+<p>element+的安装：</p>
+<pre><code>npm install element-plus --save
+npm install @element-plus/icons-vue
+</code></pre>
+<p>上边安装了element和内置的图标库。</p>
+<pre><code>// main.js
+import { createApp } from 'vue'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import App from './App.vue'
 
+const app = createApp(App)
 
-<hgroup>
-    <h1>Vue快速学习笔记(2)Vue中的监听与计算属性</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2020-02-01 10:31:26 | 更新于:2023-04-13 09:07:09 | Tag:
-        
-        
-        Vue
-        
-    </small>
-    
-</hgroup>
-<p>Vue中的监听</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/20200201103126.html" target="_blank" >阅读全文>>></a>
-</div>
-
-<br>
-
-
-<hgroup>
-    <h1>Vue快速学习笔记(1)Vue实例基础</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2020-01-10 21:18:43 | 更新于:2023-04-13 09:07:09 | Tag:
-        
-        
-        Vue
-        
-    </small>
-    
-</hgroup>
-<p>Vue实例基础</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/20200110211843.html" target="_blank" >阅读全文>>></a>
-</div>
-
-<br>
-
-
-<hgroup>
-    <h1>使用碎言静态博客依托码云Pages搭建自己的免费博客</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2020-01-08 19:17:37 | 更新于:2023-04-13 09:07:09 | Tag:
-        
-        
-        碎言博客
-        
-    </small>
-    
-</hgroup>
-<p>使用碎言静态博客依托码云Pages搭建自己的免费博客</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/20200108191737.html" target="_blank" >阅读全文>>></a>
-</div>
-
-<br>
-
-
-<hgroup>
-    <h1>今天是个好日子发行了碎言静态博客的功能完整版</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2020-01-08 16:10:47 | 更新于:2023-04-13 09:07:09 | Tag:
-        
-        
-        碎言博客
-        
-    </small>
-    
-</hgroup>
-<p>经过这段时间的努力，终于把博客成功的更换成了自己开发的碎言静态博客，也算是对这段时间学习JavaScript的一个总结。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/20200108161047.html" target="_blank" >阅读全文>>></a>
-</div>
-
-<br>
+app.use(ElementPlus)
+app.mount('#app')
+</code></pre>
+<p>然后再入口处引入element即可使用element了。</p>
+<h3>明暗主题的切换</h3>
+<p>明暗主题的切换非常简单，首先在项目的index.html中添加class="dark"：</p>
+<pre><code>&lt;html lang="en" class="dark"&gt;
+</code></pre>
+<p>在组件中使用Vueuse的内置函数就可以搞定了。</p>
+<pre><code>import { useDark, useToggle } from '@vueuse/core'
+const toggleDark = useToggle(isDark)
+</code></pre>
+<p>模板里添加一个开关</p>
+<pre><code>&lt;el-switch v-model="isDark" size="large" class="mt-2" style="margin-left: 24px" inline-prompt :active-icon="Moon" :inactive-icon="Sunny" /&gt;
+</code></pre>
+<p>这样就可以自由切换应用的明暗主题了,其他具体代码可以查看代码仓库</p>
+<p>最后，项目地址：
+(https://github.com/bosichong/elementplus-test-demo)[https://github.com/bosichong/elementplus-test-demo]</p></p>
 
 
-<hgroup>
-    <h1>前端项目构建打包的一些学习笔记</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2020-01-01 21:09:54 | 更新于:2023-04-13 09:07:09 | Tag:
-        
-        
-        JavaScript
-        
-    </small>
-    
-</hgroup>
-<p>由于项目总是有一些小BUG，回想了一下项目中的JS文件的组织问题，估计应该是JS文件分散造成的加载不稳定，有时会造成一些变量莫名的未定义，事已至此，只有将这些文件打包到一个文件中就可以很好的解决这个问题，但是今天在网上搜了一些都是最近流行的打包工具，感觉功能过于丰富，以当前的项目来说用这些流行的打包工具有些大材小用了，而且学习成本高了一些，后来看了一下手头上的两JavaScript本书都推荐Ant打包，所以决定按书上的来吧，省时省力。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/20200101210954.html" target="_blank" >阅读全文>>></a>
-</div>
-
-<br>
-
-
-<hgroup>
-    <h1>关于站长</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2019-12-30 16:25:07 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        未分类
-        
-    </small>
-    
-</hgroup>
-<p>一个浪迹于互联网的编程爱好者且酷爱画画，希望能成为一名出色的插画师。</p>
-<div>
-    <a href="https://suiyan.cc/aboutme.html" target="_blank" >阅读全文>>></a>
-</div>
-
-<br>
-
-
-<hgroup>
-    <h1>基于Django构建的小学生英文单词背写检测考试系统。</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2019-11-07 16:10:19 | 更新于:2023-04-13 09:46:38 | Tag:
-        
-        
-        站长源创
-        
-    </small>
-    
-</hgroup>
-<p>孩子的学习总是让父母担忧，英语学习也是让家长的头疼之事，做为程序员老爸不能整天忙于编程而忽视了孩子的教育，我们也要搞点事情。孩子英文单词到底背的怎么样了？别怕，用PyWordTest,创建题库，轻松搞定孩子的英语单词拼写情况。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/103.html" target="_blank" >阅读全文>>></a>
-</div>
-
-<br>
-
-
-
-<div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <a href="list_3.html" role="button" class="btn btn-primary">Prev</a>
-      </div>
-      <div class="col">
-        <small>4 / 14</small>
-      </div>
-      <div class="col">
-        <a href="list_5.html" role="button" class="btn btn-primary">Next</a>
-      </div>
-    </div>
-  </div>
-
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 
     </section>
