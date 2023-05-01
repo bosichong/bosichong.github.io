@@ -1,5 +1,5 @@
 
-(function() {
+(function () {
 
   /**
    * Easy selector helper function
@@ -84,7 +84,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('body').classList.toggle('mobile-nav-active')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -103,55 +103,55 @@
   }
 
 
-// 全站搜索
-const blog_url = suiyan.url
-const searchInput = document.getElementById('search-input');
-const searchBtn = document.getElementById('search-btn');
-const modal = document.getElementById('modal');
-const resultList = document.getElementById('result-list');
+  // 全站搜索
+  const blog_url = suiyan.url
+  const searchInput = document.getElementById('search-input');
+  const searchBtn = document.getElementById('search-btn');
+  const modal = document.getElementById('modal');
+  const resultList = document.getElementById('result-list');
 
-// 读取JSON文件
-fetch(blog_url+'blog_data.json')
-  .then(response => response.json())
-  .then(data => {
-    // 处理搜索按钮点击事件
-    searchBtn.addEventListener('click', () => {
-      const keyword = searchInput.value.trim().toLowerCase();
-      const filteredArticles = data.filter(article => {
-        return article.title.toLowerCase().includes(keyword);
-      });
-      // 清空搜索结果列表
-      resultList.innerHTML = '';
-      // 添加搜索结果到列表中
-      if (filteredArticles.length === 0) {
-        const li = document.createElement('li');
-        li.textContent = '没有搜到相关内容';
-        resultList.appendChild(li);
-        modal.style.display = 'block';
-      } else {
-        filteredArticles.forEach(article => {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = blog_url+article.url+".html";
-          a.target = '_blank';
-          a.textContent = article.title;
-          li.appendChild(a);
-          resultList.appendChild(li);
+  // 读取JSON文件
+  fetch(blog_url + 'blog_data.json')
+    .then(response => response.json())
+    .then(data => {
+      // 处理搜索按钮点击事件
+      searchBtn.addEventListener('click', () => {
+        const keyword = searchInput.value.trim().toLowerCase();
+        const filteredArticles = data.filter(article => {
+          return article.title.toLowerCase().includes(keyword);
         });
-        modal.style.display = 'block';
-      }
+        // 清空搜索结果列表
+        resultList.innerHTML = '';
+        // 添加搜索结果到列表中
+        if (filteredArticles.length === 0) {
+          const li = document.createElement('li');
+          li.textContent = '没有搜到相关内容';
+          resultList.appendChild(li);
+          modal.style.display = 'block';
+        } else {
+          filteredArticles.forEach(article => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = blog_url + article.url + ".html";
+            a.target = '_blank';
+            a.textContent = article.title;
+            li.appendChild(a);
+            resultList.appendChild(li);
+          });
+          modal.style.display = 'block';
+        }
+      });
     });
+
+  // 当#search-input获取焦点时，删除#search-btn的.vibrate-1类
+  searchInput.addEventListener('focus', () => {
+    searchBtn.classList.remove('vibrate-1');
   });
 
-// 当#search-input获取焦点时，删除#search-btn的.vibrate-1类
-searchInput.addEventListener('focus', () => {
-  searchBtn.classList.remove('vibrate-1');
-});
-
-// 当#search-input失去焦点时，#search-btn添加.vibrate-1类
-searchInput.addEventListener('blur', () => {
-  searchBtn.classList.add('vibrate-1');
-});
+  // 当#search-input失去焦点时，#search-btn添加.vibrate-1类
+  searchInput.addEventListener('blur', () => {
+    searchBtn.classList.add('vibrate-1');
+  });
 
 
 })()
