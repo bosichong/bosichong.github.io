@@ -143,4 +143,15 @@ fetch(blog_url+'blog_data.json')
     });
   });
 
+// 当#search-input获取焦点时，删除#search-btn的.vibrate-1类
+searchInput.addEventListener('focus', () => {
+  searchBtn.classList.remove('vibrate-1');
+});
+
+// 当#search-input失去焦点时，#search-btn添加.vibrate-1类
+searchInput.addEventListener('blur', () => {
+  searchBtn.classList.add('vibrate-1');
+});
+
+
 })()
