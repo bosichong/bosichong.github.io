@@ -154,4 +154,17 @@
   });
 
 
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('mouseover', () => {
+      // 在鼠标悬停在链接上时添加你的代码
+      link.classList.add('vibrate-1')
+    });
+    link.addEventListener('mouseout', () => {
+      // 在鼠标离开链接时添加你的代码
+      link.classList.remove('vibrate-1')
+    });
+  });
+
+
 })()

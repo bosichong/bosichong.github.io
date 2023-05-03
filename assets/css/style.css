@@ -16,6 +16,7 @@ body {
 }
 
 a {
+  display:inline-block;
   color: #149ddd;
   text-decoration: none;
 }
@@ -1115,6 +1116,8 @@ section {
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
  @keyframes vibrate-1{0%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(-2px,-2px)}60%{transform:translate(2px,2px)}80%{transform:translate(2px,-2px)}100%{transform:translate(0)}}
+
+
 
 .readblog:hover{
   color:coral;
