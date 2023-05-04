@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-04-30 07:34:41</pubDate>
+        <pubDate>2023-05-04 10:55:14</pubDate>
+        
+        <item>
+            <title>css的过渡效果transition的使用</title>
+            <link>https://suiyan.cc/2023/20230504105514.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-05-04 10:55:14</pubDate>
+        </item>
         
         <item>
             <title>Vue3+Element Plus环境搭建和一键切换明暗主题的配置</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/2023/20230416175852.html</link>
             <author>J.sky</author>
             <pubDate>2023-04-16 17:58:52</pubDate>
-        </item>
-        
-        <item>
-            <title>2023重学前端:HTML CSS JavaScript基础复习</title>
-            <link>https://suiyan.cc/2023/20230413095913.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-04-13 09:59:13</pubDate>
         </item>
         
     </channel>
