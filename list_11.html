@@ -112,211 +112,198 @@
     <section class="inner-page">
        
 
+<div class="container typed-div">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <div class="hd"><span id="typed"></span></div>
+  <script>
+        const typed = new Typed('#typed', {
+        strings: [
+        
+        'Life is short, you need Python',
+        
+        '人生苦短，我用Python.',
+        
+        'Beautiful is better than ugly.',
+        
+        '美丽优于丑陋.',
+        
+        'Explicit is better than implicit.',
+        
+        '直白优于含蓄.',
+        
+        'Simple is better than complex.',
+        
+        '简单优于复杂.',
+        
+        'Complex is better than complicated.',
+        
+        '复杂优于繁琐.',
+        
+        'Readability counts.',
+        
+        '可读性很重要.',
+        
+        ],
+        typeSpeed: 100,
+        backSpeed: 10,
+        backDelay: 100,
+        startDelay: 1000,
+        loop:true
+    });
+  </script>
+</div>
 
 
-      <div class="container typed-div">
-          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-          <div class="hd"><span id="typed"></span></div>
-          <script>
-              const typed = new Typed('#typed', {
-              strings: [
-              
-              'Life is short, you need Python',
-              
-              '人生苦短，我用Python.',
-              
-              'Beautiful is better than ugly.',
-              
-              '美丽优于丑陋.',
-              
-              'Explicit is better than implicit.',
-              
-              '直白优于含蓄.',
-              
-              'Simple is better than complex.',
-              
-              '简单优于复杂.',
-              
-              'Complex is better than complicated.',
-              
-              '复杂优于繁琐.',
-              
-              'Readability counts.',
-              
-              '可读性很重要.',
-              
-              ],
-              typeSpeed: 100,
-              backSpeed: 10,
-              backDelay: 100,
-              startDelay: 1000,
-              loop:true
-          });
-          </script>
-
-      </div>
-  
-
-
-<hgroup>
+<article>
+  <hgroup>
     <h1>Python并发编程（上）进程模块multiprocessing模块和Process类</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2017-10-06 09:43:48 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        Python基础
-        
+    <small
+      >作者:<a href="#">J.sky</a> | 发表于:2017-10-06 09:43:48 | 更新于:2023-04-13 09:40:24 | Tag:  
+      Python基础 
     </small>
-    
-</hgroup>
-<p>Python中为什么要用多进程编程？</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/34.html" target="_blank" class="readblog">阅读全文>>></a>
-</div>
+  </hgroup>
+  <p>Python中为什么要用多进程编程？</p>
+  <div>
+    <a href="https://suiyan.cc/before-2022/34.html" target="_blank" class="readblog"
+      >阅读全文>>></a
+    >
+  </div>
+</article>
 
-<br>
 
-
-<hgroup>
+<article>
+  <hgroup>
     <h1>Python多线程编程（下）多线程锁 threading.Lock</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2017-10-04 14:49:34 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        Python基础
-        
+    <small
+      >作者:<a href="#">J.sky</a> | 发表于:2017-10-04 14:49:34 | 更新于:2023-04-13 09:40:24 | Tag:  
+      Python基础 
     </small>
-    
-</hgroup>
-<p>在多线程任务中，线程对数据的操作是随机的，这个先后次序无法预测，如果利用多线程修改唯一数据，由于对数据操作的随机性，必会影响到数据结果的准确性，所以在多线程的任务的编码中，我们必须使用线程锁。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/33.html" target="_blank" class="readblog">阅读全文>>></a>
-</div>
+  </hgroup>
+  <p>在多线程任务中，线程对数据的操作是随机的，这个先后次序无法预测，如果利用多线程修改唯一数据，由于对数据操作的随机性，必会影响到数据结果的准确性，所以在多线程的任务的编码中，我们必须使用线程锁。</p>
+  <div>
+    <a href="https://suiyan.cc/before-2022/33.html" target="_blank" class="readblog"
+      >阅读全文>>></a
+    >
+  </div>
+</article>
 
-<br>
 
-
-<hgroup>
+<article>
+  <hgroup>
     <h1>Python多线程编程（上）多线程创建的几种方法</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2017-10-03 13:01:21 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        Python基础
-        
+    <small
+      >作者:<a href="#">J.sky</a> | 发表于:2017-10-03 13:01:21 | 更新于:2023-04-13 09:40:24 | Tag:  
+      Python基础 
     </small>
-    
-</hgroup>
-<p>在编程的日常中，如果遇到大量相同并且重复的计算任务时，我们考虑使用多线程，多线程可以并发的执行程序中的函数，这样就可以更快的利用CPU计算结果，结省时间成本。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/32.html" target="_blank" class="readblog">阅读全文>>></a>
-</div>
+  </hgroup>
+  <p>在编程的日常中，如果遇到大量相同并且重复的计算任务时，我们考虑使用多线程，多线程可以并发的执行程序中的函数，这样就可以更快的利用CPU计算结果，结省时间成本。</p>
+  <div>
+    <a href="https://suiyan.cc/before-2022/32.html" target="_blank" class="readblog"
+      >阅读全文>>></a
+    >
+  </div>
+</article>
 
-<br>
 
-
-<hgroup>
+<article>
+  <hgroup>
     <h1>python 类的静态方法和类方法</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2017-09-30 09:31:31 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        Python基础
-        
+    <small
+      >作者:<a href="#">J.sky</a> | 发表于:2017-09-30 09:31:31 | 更新于:2023-04-13 09:40:24 | Tag:  
+      Python基础 
     </small>
-    
-</hgroup>
-<p>静态方法和类方法的定义</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/31.html" target="_blank" class="readblog">阅读全文>>></a>
-</div>
+  </hgroup>
+  <p>静态方法和类方法的定义</p>
+  <div>
+    <a href="https://suiyan.cc/before-2022/31.html" target="_blank" class="readblog"
+      >阅读全文>>></a
+    >
+  </div>
+</article>
 
-<br>
 
-
-<hgroup>
+<article>
+  <hgroup>
     <h1>Python面向对象编程（OOP）初探</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2017-09-29 15:27:35 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        Python基础
-        
+    <small
+      >作者:<a href="#">J.sky</a> | 发表于:2017-09-29 15:27:35 | 更新于:2023-04-13 09:40:24 | Tag:  
+      Python基础 
     </small>
-    
-</hgroup>
-<p>说起面向对象编程，除了那些晦涩抽象的定义，我脑海中印象比较深的就是那张王宝强的表情图：程序员？面向对象编程？哈哈哈没有对象你编毛程？</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/30.html" target="_blank" class="readblog">阅读全文>>></a>
-</div>
+  </hgroup>
+  <p>说起面向对象编程，除了那些晦涩抽象的定义，我脑海中印象比较深的就是那张王宝强的表情图：程序员？面向对象编程？哈哈哈没有对象你编毛程？</p>
+  <div>
+    <a href="https://suiyan.cc/before-2022/30.html" target="_blank" class="readblog"
+      >阅读全文>>></a
+    >
+  </div>
+</article>
 
-<br>
 
-
-<hgroup>
+<article>
+  <hgroup>
     <h1>Python TK和Tkinter的GUI编程(9) Event 键盘鼠标事件</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2017-09-28 13:33:43 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        Python GUI
-        
+    <small
+      >作者:<a href="#">J.sky</a> | 发表于:2017-09-28 13:33:43 | 更新于:2023-04-13 09:40:24 | Tag:  
+      Python GUI 
     </small>
-    
-</hgroup>
-<p>Python TK和Tkinter的GUI编程Event键盘鼠标事件</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/29.html" target="_blank" class="readblog">阅读全文>>></a>
-</div>
+  </hgroup>
+  <p>Python TK和Tkinter的GUI编程Event键盘鼠标事件</p>
+  <div>
+    <a href="https://suiyan.cc/before-2022/29.html" target="_blank" class="readblog"
+      >阅读全文>>></a
+    >
+  </div>
+</article>
 
-<br>
 
-
-<hgroup>
+<article>
+  <hgroup>
     <h1>Python TK和Tkinter的GUI编程(8) Scalet和Spinbox的简单使用</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2017-09-28 09:50:15 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        Python GUI
-        
+    <small
+      >作者:<a href="#">J.sky</a> | 发表于:2017-09-28 09:50:15 | 更新于:2023-04-13 09:40:24 | Tag:  
+      Python GUI 
     </small>
-    
-</hgroup>
-<p>Scalet和Spinbox 是tk中用来调节刻度的小部件。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/28.html" target="_blank" class="readblog">阅读全文>>></a>
-</div>
+  </hgroup>
+  <p>Scalet和Spinbox 是tk中用来调节刻度的小部件。</p>
+  <div>
+    <a href="https://suiyan.cc/before-2022/28.html" target="_blank" class="readblog"
+      >阅读全文>>></a
+    >
+  </div>
+</article>
 
-<br>
 
-
-<hgroup>
+<article>
+  <hgroup>
     <h1>Python TK和Tkinter的GUI编程(7) Scrollbar的使用</h1>
-     <small>作者:<a href="#">J.sky</a> | 发表于:2017-09-27 21:23:07 | 更新于:2023-04-13 09:40:24 | Tag:
-        
-        
-        Python GUI
-        
+    <small
+      >作者:<a href="#">J.sky</a> | 发表于:2017-09-27 21:23:07 | 更新于:2023-04-13 09:40:24 | Tag:  
+      Python GUI 
     </small>
-    
-</hgroup>
-<p>Scrollbar就是窗口中的滚动条，一般应用在文本框和列表框的外围，如果内容显示超出范围之外，就会显示滚动条。</p>
-<div>
-    <a href="https://suiyan.cc/before-2022/27.html" target="_blank" class="readblog">阅读全文>>></a>
-</div>
-
-<br>
+  </hgroup>
+  <p>Scrollbar就是窗口中的滚动条，一般应用在文本框和列表框的外围，如果内容显示超出范围之外，就会显示滚动条。</p>
+  <div>
+    <a href="https://suiyan.cc/before-2022/27.html" target="_blank" class="readblog"
+      >阅读全文>>></a
+    >
+  </div>
+</article>
 
 
 
 <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <a href="list_10.html" role="button" class="btn btn-primary">Prev</a>
-      </div>
-      <div class="col">
-        <small>11 / 15</small>
-      </div>
-      <div class="col">
-        <a href="list_12.html" role="button" class="btn btn-primary">Next</a>
-      </div>
+  <div class="row">
+    <div class="col">
+      <a href="list_10.html" role="button" class="btn btn-primary">Prev</a>
+    </div>
+    <div class="col">
+      <small>11 / 15</small>
+    </div>
+    <div class="col">
+      <a href="list_12.html" role="button" class="btn btn-primary">Next</a>
     </div>
   </div>
-
+</div>
 
 
     </section>
