@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
+    <meta content="css" name="keywords">
+    <meta content="css有很多神奇的效果都是使用CSS伪元素利用视觉差来制作的，以前没怎么深入的研究过css，这次复习css的知识点才恍然大悟，原来css这么cool。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan-碎言博客-List Pages 第15页</title>
+    <title>SuiYan-碎言博客使用CSS伪元素制作动感超酷的hover动画</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -112,96 +112,136 @@
     <section class="inner-page">
        
 
-<div class="container typed-div">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <div class="hd"><span id="typed"></span></div>
-  <script>
-        const typed = new Typed('#typed', {
-        strings: [
-        
-        'Life is short, you need Python',
-        
-        '人生苦短，我用Python.',
-        
-        'Beautiful is better than ugly.',
-        
-        '美丽优于丑陋.',
-        
-        'Explicit is better than implicit.',
-        
-        '直白优于含蓄.',
-        
-        'Simple is better than complex.',
-        
-        '简单优于复杂.',
-        
-        'Complex is better than complicated.',
-        
-        '复杂优于繁琐.',
-        
-        'Readability counts.',
-        
-        '可读性很重要.',
-        
-        ],
-        typeSpeed: 100,
-        backSpeed: 10,
-        backDelay: 100,
-        startDelay: 1000,
-        loop:true
-    });
-  </script>
-</div>
 
 
-<article class="artlist">
-  <hgroup>
-    <h1>创建python 虚拟环境 venv</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 19:53:29 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
+<hgroup>
+    <h1 class="animate__animated animate__bounce">使用CSS伪元素制作动感超酷的hover动画</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-07 10:15:10| 更新于:2023-05-07 18:18:13 | Tag:
+        
+        
+        css
+        
     </small>
-  </hgroup>
-  <p>最近需要调试各个版本的折腾，所以虚拟环境是必须走起的。。。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/2.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
+</hgroup>
+<p><p>css有很多神奇的效果都是使用CSS伪元素利用视觉差来制作的，以前没怎么深入的研究过css，这次复习css的知识点才恍然大悟，原来css这么cool。</p>
+<p>先上效果：</p>
+<style>
+
+        @property --rotate {
+            syntax: "<angle>";
+            initial-value: 132deg;
+            inherits: false;
+        }
+
+        :root {
+            --card-height: 40vh;
+            --card-width: calc(var(--card-height) / 1.5);
+        }
 
 
-<article class="artlist">
-  <hgroup>
-    <h1>关于17python.com关于我</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 16:51:30 | 更新于:2023-04-13 09:40:24 | Tag:  
-      站长吐槽 
-    </small>
-  </hgroup>
-  <p>非常感谢！如果你能点到这里， 说明你已经注意到17python以及帅(zhong)气(du)聪(zhai)明(nan)的站长了</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/1.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
+        body {
+            min-height: 100vh;
+            background: #212534;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            box-sizing: border-box;
+        }
 
 
+        .card {
+            background: #191c29;
+            width: var(--card-width);
+            height: var(--card-height);
+            padding: 3px;
+            position: relative;
+            border-radius: 6px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            font-size: 1.5em;
+            color: rgb(88 199 250 / 0%);
+            cursor: pointer;
+            font-family: cursive;
+            transition: color 1s;
+            opacity: 1;
+        }
 
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <a href="list_14.html" role="button" class="btn btn-primary">Prev</a>
-    </div>
-    <div class="col">
-      <small>15 / 15</small>
-    </div>
-    <div class="col">
-      <a href="#" role="button" class="btn btn-primary">Next</a>
-    </div>
-  </div>
-</div>
+        .card:hover:before {
+            color: rgb(88 199 250 / 100%);
+            animation: none;
+            background-image:none;
+            opacity: 1;
+        }
+
+        .card:hover:after {
+            color: rgb(88 199 250 / 100%);
+            animation: none;
+            background-image:none;
+            opacity: 1;
+        }
+
+
+        .card:before {
+            content: "";
+            width: 104%;
+            height: 102%;
+            border-radius: 8px;
+            background-image: linear-gradient(
+                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+            position: absolute;
+            z-index: -1;
+            top: -1%;
+            left: -2%;
+            animation: spin 2.5s linear infinite;
+        }
+
+        .card:after {
+            position: absolute;
+            content: "";
+            top: calc(var(--card-height) / 6);
+            left: 0;
+            right: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+            transform: scale(0.8);
+            filter: blur(calc(var(--card-height) / 6));
+            background-image: linear-gradient(
+                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+            opacity: 1;
+            transition: opacity .5s;
+            animation: spin 2.5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                --rotate: 0deg;
+            }
+            100% {
+                --rotate: 720deg;
+            }
+        }
+
+        .cool{
+            color: #212534;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: bold;
+            margin-top: 2rem;
+        }
+
+
+        /*</p>
+
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 
     </section>

@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-04 20:14:22</pubDate>
+        <pubDate>2023-05-07 10:15:10</pubDate>
+        
+        <item>
+            <title>使用CSS伪元素制作动感超酷的hover动画</title>
+            <link>https://suiyan.cc/2023/20230507101510.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-05-07 10:15:10</pubDate>
+        </item>
         
         <item>
             <title>CSS动画animation的简单应用</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/2023/20230420101527.html</link>
             <author>J.sky</author>
             <pubDate>2023-04-20 10:15:27</pubDate>
-        </item>
-        
-        <item>
-            <title>css布局如何选择flex和grid?</title>
-            <link>https://suiyan.cc/2023/20230418122936.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-04-18 12:29:36</pubDate>
         </item>
         
     </channel>
