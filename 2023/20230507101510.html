@@ -116,18 +116,17 @@
 
 <hgroup>
     <h1 class="animate__animated animate__bounce">使用CSS伪元素制作动感超酷的hover动画</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-07 10:15:10| 更新于:2023-05-07 18:18:13 | Tag:
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-07 10:15:10| 更新于:2023-05-07 18:50:45 | Tag:
         
         
         css
         
     </small>
 </hgroup>
-<p><p>css有很多神奇的效果都是使用CSS伪元素利用视觉差来制作的，以前没怎么深入的研究过css，这次复习css的知识点才恍然大悟，原来css这么cool。</p>
+<p><p>css 有很多神奇的效果都是使用 CSS 伪元素利用视觉差来制作的，以前没怎么深入的研究过 css，这次复习 css 的知识点才恍然大悟，原来 css 这么 cool。</p>
 <p>先上效果：</p>
 <style>
-
-        @property --rotate {
+    @property --rotate {
             syntax: "<angle>";
             initial-value: 132deg;
             inherits: false;
@@ -235,8 +234,255 @@
             margin-top: 2rem;
         }
 
+        .cool {
+            margin: 0 auto;
+            width: 200px;
+            text-align: center;
+            position: relative;
+            border-radius: 6px;
+            box-sizing: border-box;
+            color: #fff;
+            display: block;
+            z-index: 2;
+            overflow: hidden;
+            padding: 3px;
+        }
+        .cool span {
+            position: relative;
+            z-index: 2;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            align-items: center;
+            background: #000;
+            border-radius: 3px;
+            display: block;
+            justify-content: center;
+            box-sizing: border-box;
+            height: 100%;
 
-        /*</p>
+        }
+
+        .cool:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+            background-size: 50% 100%;
+        }
+
+        .cool:hover:before {
+            animation: bg-cool .75s linear infinite;
+        }
+        @keyframes bg-cool {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+</style>
+<div class="card">
+    <a href="#" class="cool"><span>COME HERE</span></a>
+</div>
+<p><br></p>
+<h3>动画实现原理</h3>
+<p>这个组动画的实现原理很简单，前边是一个 div，这个 div 后边再加一个 div 做动画就可以实现了，那么我们需要前后两个 div 叠加在一起？NoNoNo，这个时候就需要 CSS 伪元素::before 和::after 出场了。</p>
+<h3>CSS 伪元素<code>::before</code> 和<code>::after</code></h3>
+<blockquote>
+<p>CSS 伪元素::after 用来创建一个伪元素，作为已选中元素的最后一个子元素。通常会配合 content 属性来为该元素添加装饰内容。这个虚拟元素默认是行内元素。</p>
+</blockquote>
+<p><code>::before</code> 和<code>::after</code> 的区别就是一前一后，举个简单的例子：</p>
+<p>举个例子：</p>
+<div id="demo1">这是顶部的div</div>
+<style>
+    #demo1{
+        position: relative;
+        width:100px;
+        height:100px;
+        color: white;
+        background-color: black;
+    }
+    #demo1::before{
+        content:'';
+        position: absolute;
+        width:110px;
+        height:110px;
+        z-index: -1;
+        top:-5px;
+        left:-5px;
+        background-image: linear-gradient(
+                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    }
+    #demo1::after{
+        content:'';
+        position: absolute;
+        width:120px;
+        height:120px;
+        z-index: -2;
+        top:-10px;
+        left:-10px;
+        background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+    }
+</style>
+<p><br></p>
+<p>代码如下：</p>
+<pre><code>&lt;div id="demo1"&gt;这是顶部的div&lt;/div&gt;
+&lt;style&gt;
+    #demo1{
+        position: relative;
+        width:100px;
+        height:100px;
+        color: white;
+        background-color: black;
+    }
+    #demo1::before{
+        content:'';
+        position: absolute;
+        width:110px;
+        height:110px;
+        z-index: -1;
+        top:-5px;
+        left:-5px;
+        background-image: linear-gradient(
+                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    }
+    #demo1::after{
+        content:'';
+        position: absolute;
+        width:120px;
+        height:120px;
+        z-index: -2;
+        top:-10px;
+        left:-10px;
+        background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+    }
+&lt;/style&gt;
+</code></pre>
+<p>这段 css 代码中有几个关键的属性</p>
+<ol>
+<li>div 必须作为伪元素定位的父类 position: relative;</li>
+<li>伪元素为相对于 div 定位 position: absolute;</li>
+<li>通过其他css属性来定义伪元素的属性，产生层叠和视觉上的错位。</li>
+</ol>
+<p>最后就是利用 animation 来制作动画了，动画的效果可以选择移动旋转或是透明度，可以产生各种超酷的效果。</p>
+<p>看下最后的效果：</p>
+<div id="demo2">这是顶部的div</div>
+<style>
+    @property --rotate {
+            syntax: "<angle>";
+            initial-value: 132deg;
+            inherits: false;
+        }
+    #demo2{
+        position: relative;
+        width:103px;
+        height:103px;
+        color: white;
+        background-color: black;
+        border-radius: 8px;
+        padding: 3px;
+    }
+    #demo2::before {
+        content: "";
+        width: 112px;
+        height: 112px;
+        border-radius: 8px;
+        background-image: linear-gradient(
+                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+        position: absolute;
+        z-index: -1;
+        top: -5px;
+        left: -5px;
+        animation: spin1 2.5s linear infinite;
+        }
+    #demo2::after{
+        position: absolute;
+        content: "";
+        top:30px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        transform: scale(0.8);
+        filter: blur(30px);
+        background-image: linear-gradient(
+                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+        opacity: 1;
+        transition: opacity .5s;
+        animation: spin1 2.5s linear infinite;
+    }
+    @keyframes spin1 {
+            0% {
+                --rotate: 0deg;
+            }
+            100% {
+                --rotate: 720deg;
+            }
+        }
+</style>
+<p><br>
+完整的效果代码如下：</p>
+<pre><code>&lt;div id="demo2"&gt;这是顶部的div&lt;/div&gt;
+&lt;style&gt;
+    @property --rotate {
+            syntax: "&lt;angle&gt;";
+            initial-value: 132deg;
+            inherits: false;
+        }
+    #demo2{
+        position: relative;
+        width:103px;
+        height:103px;
+        color: white;
+        background-color: black;
+        border-radius: 8px;
+        padding: 3px;
+    }
+    #demo2::before {
+        content: "";
+        width: 112px;
+        height: 112px;
+        border-radius: 8px;
+        background-image: linear-gradient(
+                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+        position: absolute;
+        z-index: -1;
+        top: -5px;
+        left: -5px;
+        animation: spin1 2.5s linear infinite;
+        }
+    #demo2::after{
+        position: absolute;
+        content: "";
+        top: calc(var(--card-height) / 6);
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        transform: scale(0.8);
+        filter: blur(calc(var(--card-height) / 5));
+        background-image: linear-gradient(
+                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+        opacity: 1;
+        transition: opacity .5s;
+        animation: spin1 2.5s linear infinite;
+    }
+    @keyframes spin1 {
+            0% {
+                --rotate: 0deg;
+            }
+            100% {
+                --rotate: 720deg;
+            }
+        }
+&lt;/style&gt;
+</code></pre>
+<p>这个 css 的效果主要是靠伪类的动画来实现的，具体的细节还需要自己多多调试修改各个参数，使之达到自己的期望的动效。</p></p>
 
 
 <link rel="stylesheet"
