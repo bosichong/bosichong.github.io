@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-07 10:15:10</pubDate>
+        <pubDate>2023-05-07 20:41:35</pubDate>
+        
+        <item>
+            <title>css链接悬停时滑动的下划线效果</title>
+            <link>https://suiyan.cc/2023/20230507204135.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-05-07 20:41:35</pubDate>
+        </item>
         
         <item>
             <title>使用CSS伪元素制作动感超酷的hover动画</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/2023/20230420162736.html</link>
             <author>J.sky</author>
             <pubDate>2023-04-20 16:27:36</pubDate>
-        </item>
-        
-        <item>
-            <title>使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</title>
-            <link>https://suiyan.cc/2023/20230420101527.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-04-20 10:15:27</pubDate>
         </item>
         
     </channel>
