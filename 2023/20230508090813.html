@@ -116,14 +116,14 @@
 
 <hgroup>
     <h1 class="animate__animated animate__bounce">Link-Validator 检测网站友情链接的JavaScript脚本</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-08 09:08:13| 更新于:2023-05-08 09:11:03 | Tag:
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-08 09:08:13| 更新于:2023-05-08 09:18:58 | Tag:
         
         
         站长源创
         
     </small>
 </hgroup>
-<p><p>一个检测对方网站友情链接页面是否添加自己网站链接的JavaScript脚本。</p>
+<p><p>Link-Validator 一个检测对方网站友情链接页面是否添加自己网站链接的JavaScript脚本。</p>
 <h2>作者</h2>
 <ul>
 <li><a href="https://github.com/bosichong">@bosichong</a></li>
@@ -131,15 +131,15 @@
 </ul>
 <h2>在本地运行</h2>
 <p>Clone 这个 project</p>
-<p><code>bash
-  git clone https://link-to-project</code></p>
+<pre><code>git clone https://link-to-project
+</code></pre>
 <p>前往项目目录</p>
-<p><code>bash
-  cd my-project</code>
-编辑<code>lv.js</code>文件，添加修改头部的'links'，把需要检测的友情链接页面加入，
-修改<code>siteUrl = 'suiyan.cc'</code>为你自己的网址。</p>
+<pre><code>cd my-project
+</code></pre>
+<p>编辑<code>lv.js</code>文件，添加修改头部的'links'，把需要检测的友情链接页面加入，</p>
+<p>修改<code>siteUrl = 'suiyan.cc'</code>为你自己的网址。</p>
 <p>格式如下：</p>
-<p><code>let siteUrl = 'suiyan.cc'
+<pre><code>let siteUrl = 'suiyan.cc'
 let links = [
     {
         site: "碎言博客",
@@ -157,10 +157,11 @@ let links = [
         site: "咕咚同学",
         ulr: "https://gudong.site/links.html"
     }
-];</code></p>
+];
+</code></pre>
 <p>启动服务器</p>
-<p><code>bash
-  node lv.js</code></p>
+<pre><code>node lv.js
+</code></pre>
 <h2>技术栈</h2>
 <p>JavaScript 原生代码，node环境下即可运行。</p>
 <p>原理：采集对方的友情链接页面，搜索自己的网址是否存在即可验证友联是否存在。</p>
