@@ -4,7 +4,14 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-07 20:41:35</pubDate>
+        <pubDate>2023-05-08 09:08:13</pubDate>
+        
+        <item>
+            <title>Link-Validator 检测网站友情链接的JavaScript脚本</title>
+            <link>https://suiyan.cc/2023/20230508090813.html</link>
+            <author>J.sky</author>
+            <pubDate>2023-05-08 09:08:13</pubDate>
+        </item>
         
         <item>
             <title>css链接悬停时滑动的下划线效果</title>
@@ -67,13 +74,6 @@
             <link>https://suiyan.cc/2023/20230423094305.html</link>
             <author>你的大名</author>
             <pubDate>2023-04-23 09:43:05</pubDate>
-        </item>
-        
-        <item>
-            <title>simple_blog 碎言静态博客主题</title>
-            <link>https://suiyan.cc/2023/20230420162736.html</link>
-            <author>J.sky</author>
-            <pubDate>2023-04-20 16:27:36</pubDate>
         </item>
         
     </channel>
