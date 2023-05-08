@@ -10,6 +10,8 @@
             <title>Link-Validator 检测网站友情链接的JavaScript脚本</title>
             <link>https://suiyan.cc/2023/20230508090813.html</link>
             <author>J.sky</author>
+            <description>Link-Validator 一个检测对方网站友情链接页面是否添加自己网站链接的JavaScript脚本。</description>
+            <category>站长源创</category>
             <pubDate>2023-05-08 09:08:13</pubDate>
         </item>
         
@@ -17,6 +19,8 @@
             <title>css链接悬停时滑动的下划线效果</title>
             <link>https://suiyan.cc/2023/20230507204135.html</link>
             <author>J.sky</author>
+            <description>要创建链接悬停时滑动的下划线效果，可以向锚点标记添加伪元素，并使用CSS过渡动画来显示它。</description>
+            <category>css</category>
             <pubDate>2023-05-07 20:41:35</pubDate>
         </item>
         
@@ -24,6 +28,8 @@
             <title>使用CSS伪元素制作动感超酷的hover动画</title>
             <link>https://suiyan.cc/2023/20230507101510.html</link>
             <author>J.sky</author>
+            <description>css有很多神奇的效果都是使用CSS伪元素利用视觉差来制作的，以前没怎么深入的研究过css，这次复习css的知识点才恍然大悟，原来css这么cool。</description>
+            <category>css</category>
             <pubDate>2023-05-07 10:15:10</pubDate>
         </item>
         
@@ -31,6 +37,8 @@
             <title>CSS动画animation的简单应用</title>
             <link>https://suiyan.cc/2023/20230504201422.html</link>
             <author>J.sky</author>
+            <description>要在CSS中创建动画，我们可以使用animation属性。该属性允许我们指定动画的关键帧、持续时间、时间函数、延迟和迭代次数。</description>
+            <category>css</category>
             <pubDate>2023-05-04 20:14:22</pubDate>
         </item>
         
@@ -38,6 +46,8 @@
             <title>css的过渡效果transition的使用</title>
             <link>https://suiyan.cc/2023/20230504105514.html</link>
             <author>J.sky</author>
+            <description>CSS的transition允许您对CSS属性的更改进行动画处理，这对于在网站上创建平滑和视觉上吸引人的效果非常有用。</description>
+            <category>css</category>
             <pubDate>2023-05-04 10:55:14</pubDate>
         </item>
         
@@ -45,6 +55,8 @@
             <title>Vue3+Element Plus环境搭建和一键切换明暗主题的配置</title>
             <link>https://suiyan.cc/2023/20230430073441.html</link>
             <author>J.sky</author>
+            <description>Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaScript 框架。而Element Plus是一款基于Vue3面向设计师和开发者的组件库</description>
+            <category>Vue</category>
             <pubDate>2023-04-30 07:34:41</pubDate>
         </item>
         
@@ -52,6 +64,8 @@
             <title>新站已提交sitemap百度不抓取Google也不收录</title>
             <link>https://suiyan.cc/2023/20230428181550.html</link>
             <author>J.sky</author>
+            <description>最近新注册了一个域名：suiyan.cc，自己写了Python脚本生成了静态页面，域名绑定了GitHub的静态页面，然后开始提交到各大搜索引擎，目前提交了Google、bing.com和百度。</description>
+            <category>SEO</category>
             <pubDate>2023-04-28 18:15:50</pubDate>
         </item>
         
@@ -59,6 +73,8 @@
             <title>coding_blog 碎言静态博客主题</title>
             <link>https://suiyan.cc/2023/20230427151750.html</link>
             <author>J.sky</author>
+            <description>coding_blog一款适合程序员的简约博客主题。主题模板采用了jinja2的模板引擎，使用了Bootstrap 5.3 等框架，模板设计移动优先。</description>
+            <category>碎言博客</category>
             <pubDate>2023-04-27 15:17:50</pubDate>
         </item>
         
@@ -66,6 +82,8 @@
             <title>JianCe 简测 简单的在线答题应用</title>
             <link>https://suiyan.cc/2023/20230424194612.html</link>
             <author>J.sky</author>
+            <description>JianCe是一个简简单单的学习结果检测的小工具，通过设置一组在线试题（题型包括：单选、多选、判断、简答）来检验学习结果。</description>
+            <category>站长源创</category>
             <pubDate>2023-04-24 19:46:12</pubDate>
         </item>
         
@@ -73,6 +91,8 @@
             <title>vue3前端打包集成到后端fastAPI的uvicorn服务器</title>
             <link>https://suiyan.cc/2023/20230423094305.html</link>
             <author>你的大名</author>
+            <description>数据分页在项目中的使用频率是非常高的,但是对于新手来说是一个难点和痛点,这里我记录一次数据分页从环境搭建到最后页面的渲染的过程,对于新手可以用来参考。</description>
+            <category>Vue</category>
             <pubDate>2023-04-23 09:43:05</pubDate>
         </item>
         
