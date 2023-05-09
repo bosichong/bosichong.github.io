@@ -47,7 +47,7 @@
             <link>https://suiyan.cc/2023/20230507204135.html</link>
             <author>J.sky</author>
             <description>要创建链接悬停时滑动的下划线效果，可以向锚点标记添加伪元素，并使用CSS过渡动画来显示它。</description>
-            <category>css</category>
+            <category>CSS</category>
             <pubDate>2023-05-07 20:41:35</pubDate>
         </item>
         
@@ -56,7 +56,7 @@
             <link>https://suiyan.cc/2023/20230507101510.html</link>
             <author>J.sky</author>
             <description>css有很多神奇的效果都是使用CSS伪元素利用视觉差来制作的，以前没怎么深入的研究过css，这次复习css的知识点才恍然大悟，原来css这么cool。</description>
-            <category>css</category>
+            <category>CSS</category>
             <pubDate>2023-05-07 10:15:10</pubDate>
         </item>
         
@@ -65,7 +65,7 @@
             <link>https://suiyan.cc/2023/20230504201422.html</link>
             <author>J.sky</author>
             <description>要在CSS中创建动画，我们可以使用animation属性。该属性允许我们指定动画的关键帧、持续时间、时间函数、延迟和迭代次数。</description>
-            <category>css</category>
+            <category>CSS</category>
             <pubDate>2023-05-04 20:14:22</pubDate>
         </item>
         
@@ -74,7 +74,7 @@
             <link>https://suiyan.cc/2023/20230504105514.html</link>
             <author>J.sky</author>
             <description>CSS的transition允许您对CSS属性的更改进行动画处理，这对于在网站上创建平滑和视觉上吸引人的效果非常有用。</description>
-            <category>css</category>
+            <category>CSS</category>
             <pubDate>2023-05-04 10:55:14</pubDate>
         </item>
         
