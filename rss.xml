@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-09 10:16:59</pubDate>
+        <pubDate>2023-05-09 20:10:37</pubDate>
+        
+        <item>
+            <title>Git提示 ! [remote rejected] master -> master (failure)</title>
+            <link>https://suiyan.cc/2023/20230509201037.html</link>
+            <author>J.sky</author>
+            <description>Git提示 ! [remote rejected] master -> master (failure) 的解决办法。</description>
+            <category>Git</category>
+            <pubDate>2023-05-09 20:10:37</pubDate>
+        </item>
         
         <item>
             <title>使用Fetch发送Ajax请求</title>
@@ -85,15 +94,6 @@
             <description>最近新注册了一个域名：suiyan.cc，自己写了Python脚本生成了静态页面，域名绑定了GitHub的静态页面，然后开始提交到各大搜索引擎，目前提交了Google、bing.com和百度。</description>
             <category>SEO</category>
             <pubDate>2023-04-28 18:15:50</pubDate>
-        </item>
-        
-        <item>
-            <title>coding_blog 碎言静态博客主题</title>
-            <link>https://suiyan.cc/2023/20230427151750.html</link>
-            <author>J.sky</author>
-            <description>coding_blog一款适合程序员的简约博客主题。主题模板采用了jinja2的模板引擎，使用了Bootstrap 5.3 等框架，模板设计移动优先。</description>
-            <category>碎言博客</category>
-            <pubDate>2023-04-27 15:17:50</pubDate>
         </item>
         
     </channel>

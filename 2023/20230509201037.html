@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
+    <meta content="Git" name="keywords">
+    <meta content="Git提示 ! [remote rejected] master -> master (failure) 的解决办法。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan-碎言博客-Home</title>
+    <title>SuiYan-碎言博客Git提示 ! [remote rejected] master -> master (failure)</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -115,198 +115,36 @@
     <section class="inner-page">
        
 
-<div class="container typed-div">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <div class="hd"><span id="typed"></span></div>
-  <script>
-        const typed = new Typed('#typed', {
-        strings: [
-        
-        'Life is short, you need Python',
-        
-        '人生苦短，我用Python.',
-        
-        'Beautiful is better than ugly.',
-        
-        '美丽优于丑陋.',
-        
-        'Explicit is better than implicit.',
-        
-        '直白优于含蓄.',
-        
-        'Simple is better than complex.',
-        
-        '简单优于复杂.',
-        
-        'Complex is better than complicated.',
-        
-        '复杂优于繁琐.',
-        
-        'Readability counts.',
-        
-        '可读性很重要.',
-        
-        ],
-        typeSpeed: 100,
-        backSpeed: 10,
-        backDelay: 100,
-        startDelay: 1000,
-        loop:true
-    });
-  </script>
-</div>
 
 
-<article class="artlist">
-  <hgroup>
-    <h1>Git提示 ! [remote rejected] master -> master (failure)</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2023-05-09 20:10:37 | 更新于:2023-05-09 20:17:43 | Tag:  
-      Git 
+<hgroup>
+    <h1 class="animate__animated animate__bounce">Git提示 ! [remote rejected] master -> master (failure)</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-09 20:10:37| 更新于:2023-05-09 20:17:43 | Tag:
+        
+        
+        Git
+        
     </small>
-  </hgroup>
-  <p>Git提示 ! [remote rejected] master -> master (failure) 的解决办法。</p>
-  <div>
-    <a href="https://suiyan.cc/2023/20230509201037.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
+</hgroup>
+<p><p>今天愉快的写好了代码，准备提交，然后就这样了：</p>
+<pre><code>(base) bash-3.2$ git push github master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 484 bytes | 484.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+remote: fatal error in commit_refs
+To https://github.com/bosichong/bosichong.github.io.git
+! [remote rejected] master -&gt; master (failure)
+error: failed to push some refs to 'https://github.com/bosichong/bosichong.github.io.git'
+</code></pre>
+<p>Google搜索没有解答，stackoverflow查了一下，都是以前的记录，大体意思是GitHub的服务器挂了。我还是有点不信，然后去推特看了下GitHub的官方账号，也发布相应的公告，有关GitHub服务器的响应可以查看这个网站：https://www.githubstatus.com/ ,看来，我得过会才能提交代码了？先休息一下吧，或许GitHub正在重启那些成千上万的服务器：）所以这个问题的解决办法就是耐心等待啦。</p></p>
 
 
-<article class="artlist">
-  <hgroup>
-    <h1>使用Fetch发送Ajax请求</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2023-05-09 10:16:59 | 更新于:2023-05-09 17:33:23 | Tag:  
-      JavaScript 
-    </small>
-  </hgroup>
-  <p>很久以前，在JavaScript中发送请求或者获取资源的时候很多人都是用的是`jQuery`，后来一直到最近一直使用`axios`，但有的时候不想使用依赖请求的库，这个时候你可以试试Fetch。</p>
-  <div>
-    <a href="https://suiyan.cc/2023/20230509101659.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>读《写作是门手艺》的思考</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2023-05-08 21:33:33 | 更新于:2023-05-08 22:03:58 | Tag:  
-      读书笔记 
-    </small>
-  </hgroup>
-  <p>这阵子一直在读编程相关的工具书，枯燥乏味的很！昨天偶然间在哪里？不记得是哪里看到的有人推荐《写作是门手艺》这本书，赶紧去京东淘了一本，今天就收到了。</p>
-  <div>
-    <a href="https://suiyan.cc/2023/20230508213333.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Link-Validator 检测网站友情链接的JavaScript脚本</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2023-05-08 09:08:13 | 更新于:2023-05-08 09:18:58 | Tag:  
-      站长源创 
-    </small>
-  </hgroup>
-  <p>Link-Validator 一个检测对方网站友情链接页面是否添加自己网站链接的JavaScript脚本。</p>
-  <div>
-    <a href="https://suiyan.cc/2023/20230508090813.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>css链接悬停时滑动的下划线效果</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2023-05-07 20:41:35 | 更新于:2023-05-07 20:50:47 | Tag:  
-      css 
-    </small>
-  </hgroup>
-  <p>要创建链接悬停时滑动的下划线效果，可以向锚点标记添加伪元素，并使用CSS过渡动画来显示它。</p>
-  <div>
-    <a href="https://suiyan.cc/2023/20230507204135.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>使用CSS伪元素制作动感超酷的hover动画</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2023-05-07 10:15:10 | 更新于:2023-05-07 18:50:45 | Tag:  
-      css 
-    </small>
-  </hgroup>
-  <p>css有很多神奇的效果都是使用CSS伪元素利用视觉差来制作的，以前没怎么深入的研究过css，这次复习css的知识点才恍然大悟，原来css这么cool。</p>
-  <div>
-    <a href="https://suiyan.cc/2023/20230507101510.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>CSS动画animation的简单应用</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2023-05-04 20:14:22 | 更新于:2023-05-04 20:26:36 | Tag:  
-      css 
-    </small>
-  </hgroup>
-  <p>要在CSS中创建动画，我们可以使用animation属性。该属性允许我们指定动画的关键帧、持续时间、时间函数、延迟和迭代次数。</p>
-  <div>
-    <a href="https://suiyan.cc/2023/20230504201422.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>css的过渡效果transition的使用</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2023-05-04 10:55:14 | 更新于:2023-05-04 14:35:37 | Tag:  
-      css 
-    </small>
-  </hgroup>
-  <p>CSS的transition允许您对CSS属性的更改进行动画处理，这对于在网站上创建平滑和视觉上吸引人的效果非常有用。</p>
-  <div>
-    <a href="https://suiyan.cc/2023/20230504105514.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <a href="#" role="button" class="btn btn-primary">Prev</a>
-    </div>
-    <div class="col">
-      <small>0 / 15</small>
-    </div>
-    <div class="col">
-      <a href="list_1.html" role="button" class="btn btn-primary">Next</a>
-    </div>
-  </div>
-</div>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 
     </section>
