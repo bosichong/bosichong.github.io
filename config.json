@@ -68,8 +68,13 @@
         },
         {
             "ico": "person-circle",
-            "text": "Links",
+            "text": "About Me",
             "url": "aboutme.html"
+        },
+        {
+            "ico": "link",
+            "text": "Blog Links",
+            "url": "links.html"
         }
     ]
 

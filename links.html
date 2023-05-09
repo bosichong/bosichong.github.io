@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python GUI" name="keywords">
-    <meta content="单选及多选按钮也是程序中经常使用到的互动小部件，使用频率也是很高的，对于选择按钮，我们重点需要了解的就是触发事件， 通常，单选我们需要得到一组按钮中的选择项值或是键值，多选，我们只要知道每一项返回的布尔值即可。" name="description">
+    <meta content="未分类" name="keywords">
+    <meta content="一名倔强的老年程序员，在执着与热爱中砥砺前行，希望能够成为一名出色的程序员。欢迎进群讨论学习Q群:217840699" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan-碎言博客wxPython编程学习笔记(05)单选及多选按钮</title>
+    <title>SuiYan-碎言博客碎言博客的友情链接</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -118,89 +118,31 @@
 
 
 <hgroup>
-    <h1 class="animate__animated animate__bounce">wxPython编程学习笔记(05)单选及多选按钮</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:2018-12-23 18:49:39| 更新于:2023-04-13 09:40:24 | Tag:
+    <h1 class="animate__animated animate__bounce">碎言博客的友情链接</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2019-12-30 16:25:07| 更新于:2023-05-09 08:57:04 | Tag:
         
         
-        Python GUI
+        未分类
         
     </small>
 </hgroup>
-<p><p><img alt="输入图片说明" src="https://suiyan.cc/assets/images/media/upload/2018/12/Snip20181223_1.png" /></p>
-<h2>wxPython单选及多选按钮</h2>
-<p>单选及多选按钮也是程序中经常使用到的互动小部件，使用频率也是很高的，对于选择按钮，我们重点需要了解的就是触发事件，
-通常，单选我们需要得到一组按钮中的选择项值或是键值，多选，我们只要知道每一项返回的布尔值即可。</p>
-<h2>多选按钮wx.CheckBox</h2>
-<p>创建及绑定事件</p>
-<pre><code>cb1=wx.CheckBox(pnl, label='hello', )
-self.Bind(wx.EVT_CHECKBOX,self.onCheckBox)
-</code></pre>
-<p>这里的<code>self.Bind</code>是指绑定了当前窗口中所有的多选按钮，如果需要单独绑定，则需要为每一个多选按钮做单独的事件绑定。</p>
-<h2>单选按钮组wx.RadioBox</h2>
-<p>这里我直接介绍<code>wx.RadioBox</code>，因为单选按钮基本上是一组呈现的，所以直接使用单选按钮组即可，还方便。</p>
-<p>创建及绑定</p>
-<pre><code>self.radio_box_1 = wx.RadioBox(pnl, wx.ID_ANY, u"请选择", choices=["aaa", "bbb", "ccccc", "ddddd"], majorDimension=1,
-                              style=wx.RA_SPECIFY_ROWS)
-self.radio_box_1.Bind(wx.EVT_RADIOBOX,self.onRadiobox)
-</code></pre>
-<p>代码很直观，<code>majorDimension</code>表示单选钮的排列方式：0横向，1竖向。</p>
-<p>好了，完整的代码在下边，可以跑跑看。</p>
-<pre><code>import wx
-
-class HelloFrame(wx.Frame):
-    def __init__(self, *args, **kw):
-        #调用父类的创建方法
-        super(HelloFrame, self).__init__(*args, **kw)
-        pnl = wx.Panel(self)
-
-
-        hbox3 = wx.StaticBoxSizer(wx.StaticBox(pnl, label='多选及单选测试',), wx.VERTICAL)
-        cb1=wx.CheckBox(pnl, label='hello', )
-        cb2=wx.CheckBox(pnl, label='world', )
-        self.Bind(wx.EVT_CHECKBOX,self.onCheckBox)
-        self.radio_box_1 = wx.RadioBox(pnl, wx.ID_ANY, u"请选择", choices=["aaa", "bbb", "ccccc", "ddddd"], majorDimension=1,
-                                  style=wx.RA_SPECIFY_ROWS)
-        self.radio_box_1.Bind(wx.EVT_RADIOBOX,self.onRadiobox)
-
-        hbox3.AddMany([(cb1),(cb2),(self.radio_box_1, 0, wx.EXPAND|wx.TOP, 10)])
-
-        btn = wx.Button(pnl, label='Ok', pos=(90, 185), size=(60, -1))
-
-        btn.Bind(wx.EVT_BUTTON, self.OnClose)
-
-        pnl.SetSizer(hbox3)
-
-
-    def onRadiobox(self,e):
-        rb = e.GetEventObject()
-        print(rb.GetSelection(),rb.GetStringSelection())#打印当前单选按钮的选项
-
-    def onCheckBox(self,e):
-        cb = e.GetEventObject()
-        if cb.GetValue():
-            print(cb.GetLabel())
-
-    def OnClose(self, e):
-        self.Close(True)
-
-
-
-
-def main():
-    app = wx.App()
-    frm = HelloFrame(None, title='wxPython Button',)
-    frm.Show()#显示窗口
-    app.MainLoop()#持续更新窗口
-
-
-if __name__ == '__main__':
-        main()
-</code></pre>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/wxPythonTest/blob/master/wxpy05.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/wxPythonTest/blob/master/wxpy05.py">开源中国码云镜像gitee</a></li>
-</ul></p>
+<p><h3>Link-Validator</h3>
+<p><a href="https://github.com/bosichong/Link-Validator">Link-Validator</a></p>
+<p>一个帮助站长检测对方网站友情链接页面是否添加自己网站链接的JavaScript脚本。欢迎各位试用。</p>
+<h3>友情链接</h3>
+<p>申请友情链接请先添加本站的链接 <a href="https://suiyan.cc">碎言博客</a> 然后发邮件到bosichong(at)qq.com，注明您的站点名称、网址和简介即可,格式请参考下边的友联，最好是独立的个人博客，感谢您的链接！排名不分先后。</p>
+<p>已经结盟：</p>
+<p><a href="https://demochen.com/">你好我是森林</a> -- 一张肆无忌惮的脸，一颗桀骜不驯的心。</p>
+<p>申请途中：</p>
+<p><a href="http://www.mebugs.com/">米虫的博客</a> -- 如果年轻不能让自己满意，那余生只会为遗憾而懊悔。</p>
+<p><a href="http://www.omegaxyz.com/">图灵技术域</a> -- 徐奕的专栏-机器学习、软件工程、计算机大佬。</p>
+<p><a href="https://hutusi.com/">胡涂说</a> -- 中文独立博客，任抛星汉归园圃，留取乾坤盛酒囊。</p>
+<p><a href="https://atjason.com/">Jason</a> -- 独立开发者，自由职业者。</p>
+<p><a href="https://gudong.site">咕咚同学</a> -- 咕咚的个人博客。</p>
+<h3>仰望大佬</h3>
+<p><a href="https://freek.dev/">Freek Van der Herten</a> -- I'm a PHP developer and Laravel enthusiast. Most of my time is spent at Spatie of which I'm the co-owner.</p>
+<p><a href="https://www.ruanyifeng.com/blog/">阮一峰的网络日志</a> -- 阮一峰的网络日志.</p>
+<p><a href="https://tumutanzi.com/">土木坛子</a> -- 写作，是对生命的一种礼赞。我们沉浸于生活的时候，会遗忘生活赋予我们的理想。我们停下脚步，用笔尖与思想同黑夜对话的时候，我们就感觉到了自己。</p></p>
 
 
 <link rel="stylesheet"
