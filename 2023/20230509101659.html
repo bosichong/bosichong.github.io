@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
+    <meta content="JavaScript" name="keywords">
+    <meta content="很久以前，在JavaScript中发送请求或者获取资源的时候很多人都是用的是`jQuery`，后来一直到最近一直使用`axios`，但有的时候不想使用依赖请求的库，这个时候你可以试试Fetch。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan-碎言博客-List Pages 第15页</title>
+    <title>SuiYan-碎言博客使用Fetch发送Ajax请求</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -115,181 +115,98 @@
     <section class="inner-page">
        
 
-<div class="container typed-div">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <div class="hd"><span id="typed"></span></div>
-  <script>
-        const typed = new Typed('#typed', {
-        strings: [
-        
-        'Life is short, you need Python',
-        
-        '人生苦短，我用Python.',
-        
-        'Beautiful is better than ugly.',
-        
-        '美丽优于丑陋.',
-        
-        'Explicit is better than implicit.',
-        
-        '直白优于含蓄.',
-        
-        'Simple is better than complex.',
-        
-        '简单优于复杂.',
-        
-        'Complex is better than complicated.',
-        
-        '复杂优于繁琐.',
-        
-        'Readability counts.',
-        
-        '可读性很重要.',
-        
-        ],
-        typeSpeed: 100,
-        backSpeed: 10,
-        backDelay: 100,
-        startDelay: 1000,
-        loop:true
-    });
-  </script>
-</div>
 
 
-<article class="artlist">
-  <hgroup>
-    <h1>Mac OS X gitk窗口打不开及Git的升级方法</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-26 16:36:30 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Git 
+<hgroup>
+    <h1 class="animate__animated animate__bounce">使用Fetch发送Ajax请求</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-09 10:16:59| 更新于:2023-05-09 17:29:38 | Tag:
+        
+        
+        JavaScript
+        
     </small>
-  </hgroup>
-  <p>Mac OS X gitk窗口打不开及Git的升级方法</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/7.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
+</hgroup>
+<p><p>很久以前，在JavaScript中发送请求或者获取资源的时候很多人都是用的是<code>jQuery</code>，后来一直到最近一直使用<code>axios</code>，但有的时候不想使用依赖请求的库，这个时候你可以试试Fetch。</p>
+<p>现代浏览器基本上都支持fetch，包括node18以上的版本，除了IE。</p>
+<h3>曾经的请求方式jQuery</h3>
+<p>曾经的回忆，jQuery发送get请求：</p>
+<pre><code>$.get( "foo.php", function( response ) {
+    console.log( response ); // server response
+});
+</code></pre>
+<p>后来的axios的get请求代码：</p>
+<pre><code>// 向给定ID的用户发起请求
+axios.get('/user?ID=12345')
+.then(function (response) {
+    // 处理成功情况
+    console.log(response);
+})
+.catch(function (error) {
+    // 处理错误情况
+    console.log(error);
+})
+.then(function () {
+    // 总是会执行
+});
+</code></pre>
+<h3>现代JavaScript的请求</h3>
+<p>在看看Fetch的get请求代码示例：</p>
+<pre><code>&lt;img id="dog" /&gt;
+&lt;script&gt;
+    fetch('https://dog.ceo/api/breeds/image/random')
+        .then((res) =&gt; {
+            return res.json()
+        }).then((result) =&gt; {
+        document.getElementById("dog").src = result.message;
+    })
+        .catch((err) =&gt; {
+        })
+&lt;/script&gt;
+</code></pre>
+<p>这个请求会返回一个图片地址，随机显示一只可爱的狗狗图片。</p>
+<p><img id="dog" /></p>
+<script>
+    fetch('https://dog.ceo/api/breeds/image/random')
+        .then((res) => {
+            return res.json()
+        }).then((result) => {
+        document.getElementById("dog").src = result.message;
+    })
+        .catch((err) => {
+        })
+</script>
+
+<p>再试试一个post的请求，这里我们使用<code>https://echo.apifox.com/post</code>这个免费的测试接口，这个接口有两个Body参数 (application/json)：d和dd.</p>
+<pre><code>let myHeaders = new Headers();
+myHeaders.append("User-Agent", "Apifox/1.0.0 (https://www.apifox.cn)");
+myHeaders.append("Content-Type", "application/json");
+
+let raw = JSON.stringify({
+    "d": "hello",
+    "dd": "world"
+});
+
+let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+};
+
+fetch("https://echo.apifox.com/post", requestOptions)
+    .then(response =&gt; response.json())
+    .then((rest)=&gt;{
+        let d = JSON.parse(rest.data);
+        console.log(d.d+d.dd) })
+    .catch(error =&gt; console.log('error', error));
+</code></pre>
+<p>在node环境下，运行脚本，会输出：helloworld。</p>
+<p>以上就是fetch的简单用法，fetch使用需要注意的是在node环境中需要18+的版本，现代浏览器除了IE基本上都是支持fetch的。</p></p>
 
 
-<article class="artlist">
-  <hgroup>
-    <h1>Git 版本控制常用命令 简明指南教程</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-26 13:03:59 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Git 
-    </small>
-  </hgroup>
-  <p>最近使用Django设计自己的个人blog，免不了要对程序的版本进行备份，所以用到了Git。Git确实是程序员居家旅游，编程备份之良药哇，本文旨在对Git日常使用中，使用频率较高的命令进行了一个简单的总结</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/6.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Markdown 语法学习总结</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-25 08:55:15 | 更新于:2023-04-13 09:40:24 | Tag:  
-      网站运维 
-    </small>
-  </hgroup>
-  <p>Markdown 语法学习总结</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/5.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>17python.com网站已经部署上线及后期更新记录</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-25 01:09:49 | 更新于:2023-04-13 09:40:24 | Tag:  
-      站长吐槽 
-    </small>
-  </hgroup>
-  <p>折腾了一个晚上，终于把网站上线了，明天要把这几天的折腾记下来，不然用不了几天就会忘掉。这阵子自学Python Django感触很多，中间也是遇到了无数的坑，还好自己都挺过来了，以后学习Python的日子还长，学习还是要继续的，给自己打气加油！</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/4.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>python3 Markdown模块解析Markdown代码</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 19:59:46 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>python3 markdown模块解析markdown代码，blog中需要一个解析markdown代码的模块，测试了一下markdown模块 ，简单好用。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/3.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>创建python 虚拟环境 venv</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 19:53:29 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>最近需要调试各个版本的折腾，所以虚拟环境是必须走起的。。。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/2.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>关于suiyan.cc</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 16:51:30 | 更新于:2023-05-09 08:55:30 | Tag:  
-      站长吐槽 
-    </small>
-  </hgroup>
-  <p>非常感谢！如果你能点到这里， 说明你已经注意到suiyan.cc以及帅(zhong)气(du)聪(zhai)明(nan)的站长了</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/1.html" target="_blank" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <a href="list_14.html" role="button" class="btn btn-primary">Prev</a>
-    </div>
-    <div class="col">
-      <small>15 / 15</small>
-    </div>
-    <div class="col">
-      <a href="#" role="button" class="btn btn-primary">Next</a>
-    </div>
-  </div>
-</div>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 
     </section>
