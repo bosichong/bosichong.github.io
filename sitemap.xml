@@ -237,11 +237,6 @@
     </url>
     
     <url>
-        <loc>https://suiyan.cc/404.html</loc>
-        <lastmod>2019-12-30 16:25:07</lastmod>
-    </url>
-    
-    <url>
         <loc>https://suiyan.cc/links.html</loc>
         <lastmod>2019-12-30 16:25:07</lastmod>
     </url>
@@ -644,6 +639,11 @@
     <url>
         <loc>https://suiyan.cc/before-2022/1.html</loc>
         <lastmod>2017-08-19 16:51:30</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://suiyan.cc/404.html</loc>
+        <lastmod>2017-08-19 16:25:07</lastmod>
     </url>
     
 </urlset>

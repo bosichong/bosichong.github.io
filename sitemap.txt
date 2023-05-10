@@ -45,7 +45,6 @@ https://suiyan.cc/before-2022/20200108191737.html
 https://suiyan.cc/before-2022/20200108161047.html
 https://suiyan.cc/before-2022/20200101210954.html
 https://suiyan.cc/aboutme.html
-https://suiyan.cc/404.html
 https://suiyan.cc/links.html
 https://suiyan.cc/before-2022/103.html
 https://suiyan.cc/before-2022/101.html
@@ -127,3 +126,4 @@ https://suiyan.cc/before-2022/4.html
 https://suiyan.cc/before-2022/3.html
 https://suiyan.cc/before-2022/2.html
 https://suiyan.cc/before-2022/1.html
+https://suiyan.cc/404.html
