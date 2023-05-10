@@ -8,7 +8,7 @@
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan-碎言博客解决Github Pages自定义域名失效的问题</title>
+    <title>SuiYan 碎言博客 解决Github Pages自定义域名失效的问题</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -116,10 +116,9 @@
        
 
 
-
 <hgroup>
     <h1 class="animate__animated animate__bounce">解决Github Pages自定义域名失效的问题</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-04-04 21:22:58| 更新于:2023-04-13 09:40:24 | Tag:
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-04-04 21:22:58| 更新于:2023-05-10 14:00:44 | Tag:
         
         
         GitHub
@@ -129,12 +128,38 @@
 <p><h3>Github Pages绑定域名莫名失效？</h3>
 <p>最近更新博客的push更新到GitHub的仓库，更新之后总是返现域名莫名的失效了，我也没有动任何配置啊？为什么会时效呢？</p>
 <h3>回忆如何配置域名</h3>
-<p>在GitHub pages-- Settings -- pages -- Custom domain 添加你的域名
-<img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/0003.jpg" /></p>
+<p>在GitHub pages-- Settings -- pages -- Custom domain 添加你的域名</p>
+<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/0003.jpg" /></p>
 <p>每次失效的时候我都会发现这里的域名被删掉了，然后我有重新添加，但是我并没有手动删除，为什么会这样？</p>
 <p>后来我添加了域名，发现有一条仓库的更新记录：Create CNAME，增加了一个：CNMAE的文件，里边有你的域名，至此我就知道为什么了，因为GitHub自动添加了CNAME，我却没有更新到本地，所以每次更新blog的时候都会删除掉这个CNAME文件，导致域名无法正常解析。</p>
 <h3>解决办法</h3>
 <p>添加域名解析后，跟新CNAME文件到本地仓库，以后在更新blog就不会是CNAME文件缺失了。</p></p>
+
+<hr>
+<div class="blog_footer">
+    <div class="prev_next">
+        
+        <a href="https://suiyan.cc/before-2022/106.html" class="text-truncate">< <span>碎言静态博客</span></a>
+        
+
+        
+        <a href="https://suiyan.cc/2023/20230404163916.html" class="text-truncate"><span>Pico.css大道至简返璞归真--一个简单轻量化的CSS框架</span> ></a>
+        
+    </div>
+    
+    <div class="related">
+
+        <p>
+            相关文章：
+        </p>
+        <ul>
+            
+        </ul>
+
+    </div>
+    
+
+</div>
 
 
 <link rel="stylesheet"
