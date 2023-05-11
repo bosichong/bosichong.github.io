@@ -4,7 +4,25 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-09 20:10:37</pubDate>
+        <pubDate>2023-05-11 19:15:15</pubDate>
+        
+        <item>
+            <title>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</title>
+            <link>https://suiyan.cc/2023/20230511191515.html</link>
+            <author>J.sky</author>
+            <description>今天在vscode中安装Tailwind CSS IntelliSense这个插件，但是安装完后，编写HTML中的class的时候并没有得到tailwindcss的代码提示，看来配置项设置有问题。</description>
+            <category>TailwindCSS</category>
+            <pubDate>2023-05-11 19:15:15</pubDate>
+        </item>
+        
+        <item>
+            <title>Tailwind CSS的安装配置和体验</title>
+            <link>https://suiyan.cc/2023/20230511182912.html</link>
+            <author>J.sky</author>
+            <description>Tailwind CSS是一种和传统CSS编写方式不一样的开发模式，Tailwind CSS编写大量的css的class，预置超多的css样式，让开发者可以通过在HTML的class中以命名的方式去调用这些class，几乎可以不用去写style的代码，只使用class的名称来代替。</description>
+            <category>TailwindCSS</category>
+            <pubDate>2023-05-11 18:29:12</pubDate>
+        </item>
         
         <item>
             <title>Git提示 ! [remote rejected] master -> master (failure)</title>
@@ -76,24 +94,6 @@
             <description>CSS的transition允许您对CSS属性的更改进行动画处理，这对于在网站上创建平滑和视觉上吸引人的效果非常有用。</description>
             <category>CSS</category>
             <pubDate>2023-05-04 10:55:14</pubDate>
-        </item>
-        
-        <item>
-            <title>Vue3+Element Plus环境搭建和一键切换明暗主题的配置</title>
-            <link>https://suiyan.cc/2023/20230430073441.html</link>
-            <author>J.sky</author>
-            <description>Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaScript 框架。而Element Plus是一款基于Vue3面向设计师和开发者的组件库</description>
-            <category>Vue</category>
-            <pubDate>2023-04-30 07:34:41</pubDate>
-        </item>
-        
-        <item>
-            <title>新站已提交sitemap百度不抓取Google也不收录</title>
-            <link>https://suiyan.cc/2023/20230428181550.html</link>
-            <author>J.sky</author>
-            <description>最近新注册了一个域名：suiyan.cc，自己写了Python脚本生成了静态页面，域名绑定了GitHub的静态页面，然后开始提交到各大搜索引擎，目前提交了Google、bing.com和百度。</description>
-            <category>SEO</category>
-            <pubDate>2023-04-28 18:15:50</pubDate>
         </item>
         
     </channel>

@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
+    <meta content="TailwindCSS" name="keywords">
+    <meta content="Tailwind CSS是一种和传统CSS编写方式不一样的开发模式，Tailwind CSS编写大量的css的class，预置超多的css样式，让开发者可以通过在HTML的class中以命名的方式去调用这些class，几乎可以不用去写style的代码，只使用class的名称来代替。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan 碎言博客-List Pages 第12页</title>
+    <title>SuiYan 碎言博客 Tailwind CSS的安装配置和体验</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -115,198 +115,125 @@
     <section class="inner-page">
        
 
-<div class="container typed-div">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <div class="hd"><span id="typed"></span></div>
-  <script>
-        const typed = new Typed('#typed', {
-        strings: [
+
+<hgroup>
+    <h1 class="animate__animated animate__bounce">Tailwind CSS的安装配置和体验</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-11 18:29:12| 更新于:2023-05-11 19:30:05 | Tag:
         
-        'Life is short, you need Python',
         
-        '人生苦短，我用Python.',
+        TailwindCSS
         
-        'Beautiful is better than ugly.',
+    </small>
+</hgroup>
+<p><h2>Tailwind CSS 简介</h2>
+<p>「Atomic/Utility-First CSS」，是和「Semantic CSS 」(语义化 CSS ) 相对的一种 CSS 规范。不管你是否听说过「Semantic CSS 」这个名词，实际项目开发中，它都是我们最常用、也是最传统的 CSS 规范。Tailwind CSS是一种和传统CSS编写方式不一样的开发模式，Tailwind CSS编写大量的css的class，预置超多的css样式，让开发者可以通过在HTML的class中以命名的方式去调用这些class，几乎可以不用去写style的代码，只使用class的名称来代替。</p>
+<h2>Tailwind CSS 环境搭建</h2>
+<p>最简单的方式就是通过引用CDN：</p>
+<pre><code>&lt;link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"&gt;
+</code></pre>
+<p><link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></p>
+<p>一个简单的例子：</p>
+<pre><code>&lt;div class="sm:container mx-auto h-64 bg-gray-100 flex"&gt;
+    &lt;div class="text-slate-950 text-2xl bg-gray-200 h-1/2 flex-1"&gt;11&lt;/div&gt;
+    &lt;div class="text-blue-600 text-xl bg-gray-400 flex-1"&gt;222&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="sm:container mx-auto h-64 bg-gray-100 flex">
+    <div class="text-slate-950 text-2xl bg-gray-200 h-1/2 flex-1">11</div>
+    <div class="text-blue-600 text-xl bg-gray-400 flex-1">222</div>
+</div>
+
+<p>再来看一个flex布局，以及box阴影的样式：</p>
+<pre><code>&lt;div class="flex flex-wrap sm:container bg-gray-200"&gt;
+    &lt;div class="shadow-sm w-48 h-48 m-5"&gt;&lt;/div&gt;
+    &lt;div class="shadow w-48 h-48 m-5"&gt;&lt;/div&gt;
+    &lt;div class="shadow-md w-48 h-48 m-5"&gt;&lt;/div&gt;
+    &lt;div class="shadow-lg w-48 h-48 m-5"&gt;&lt;/div&gt;
+    &lt;div class="shadow-xl w-48 h-48 m-5"&gt;&lt;/div&gt;
+    &lt;div class="shadow-2xl w-48 h-48 m-5"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="flex flex-wrap sm:container bg-gray-200">
+    <div class="shadow-sm w-48 h-48 m-5"></div>
+    <div class="shadow w-48 h-48 m-5"></div>
+    <div class="shadow-md w-48 h-48 m-5"></div>
+    <div class="shadow-lg w-48 h-48 m-5"></div>
+    <div class="shadow-xl w-48 h-48 m-5"></div>
+    <div class="shadow-2xl w-48 h-48 m-5"></div>
+</div>
+<p><br></p>
+<p>再来看文字排版：</p>
+<pre><code>&lt;div class="text-center mt-10"&gt;
+    &lt;p class="text-xs"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-sm"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-base"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-lg"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-xl"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-2xl"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-3xl"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-4xl"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-5xl"&gt;Tailwind CSS&lt;/p&gt;
+    &lt;p class="text-6xl"&gt;Tailwind CSS&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="text-center mt-10">
+    <p class="text-xs">Tailwind CSS</p>
+    <p class="text-sm">Tailwind CSS</p>
+    <p class="text-base">Tailwind CSS</p>
+    <p class="text-lg">Tailwind CSS</p>
+    <p class="text-xl">Tailwind CSS</p>
+    <p class="text-2xl">Tailwind CSS</p>
+    <p class="text-3xl">Tailwind CSS</p>
+    <p class="text-4xl">Tailwind CSS</p>
+    <p class="text-5xl">Tailwind CSS</p>
+    <p class="text-6xl">Tailwind CSS</p>
+</div>
+
+<h2>Tailwind CSS的优点</h2>
+<p>可以不再使用传统的style编写方式，通过预置的class可以减少更多的错误，而且熟练了之后css样式的编写会很快。因为预置，可以重复使用省去更多的时间。</p>
+<h2>Tailwind CSS的缺点</h2>
+<p>每个class中要声明使用大量的css class，开始的时候可能会不太习惯，不过我几个小时后再用的时候我就觉得我已经离不开她了。</p>
+<h2>总结</h2>
+<p>Tailwind CSS上手简单，只要你略懂css的属性，这个框架对于你编写css样式绝对是如虎添翼。</p>
+<p>参考：</p>
+<p><a href="https://www.tailwindcss.cn/">Tailwind CSS 中文官方文档</a></p>
+<p><a href="https://juejin.cn/post/6951300894684577823#heading-4">使用 Tailwind CSS 一年后，我的一些感受</a></p>
+<p><a href="https://juejin.cn/post/7042901516499288077">一次就能看懂的Tailwind CSS介绍</a></p></p>
+
+<hr>
+<div class="blog_footer">
+    <div class="prev_next">
         
-        '美丽优于丑陋.',
+        <a href="https://suiyan.cc/2023/20230511191515.html" class="text-truncate">< <span>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</span></a>
         
-        'Explicit is better than implicit.',
+
         
-        '直白优于含蓄.',
+        <a href="https://suiyan.cc/2023/20230509201037.html" class="text-truncate"><span>Git提示 ! [remote rejected] master -> master (failure)</span> ></a>
         
-        'Simple is better than complex.',
-        
-        '简单优于复杂.',
-        
-        'Complex is better than complicated.',
-        
-        '复杂优于繁琐.',
-        
-        'Readability counts.',
-        
-        '可读性很重要.',
-        
-        ],
-        typeSpeed: 100,
-        backSpeed: 10,
-        backDelay: 100,
-        startDelay: 1000,
-        loop:true
-    });
-  </script>
+    </div>
+    
+    <div class="related">
+
+        <p>
+            相关文章：
+        </p>
+        <ul>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230511191515.html" class="text-truncate "><span>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</span></a>
+            </li>
+            
+        </ul>
+
+    </div>
+    
+
 </div>
 
 
-<article class="artlist">
-  <hgroup>
-    <h1>Python并发编程（下）功能强大设置简单的分布式多进程生产者与消费者模式</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-10-07 14:09:46 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>功能强大设置简单的分布式多进程生产者与消费者模式</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/35.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Python并发编程（上）进程模块multiprocessing模块和Process类</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-10-06 09:43:48 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>Python中为什么要用多进程编程？</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/34.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Python多线程编程（下）多线程锁 threading.Lock</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-10-04 14:49:34 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>在多线程任务中，线程对数据的操作是随机的，这个先后次序无法预测，如果利用多线程修改唯一数据，由于对数据操作的随机性，必会影响到数据结果的准确性，所以在多线程的任务的编码中，我们必须使用线程锁。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/33.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Python多线程编程（上）多线程创建的几种方法</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-10-03 13:01:21 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>在编程的日常中，如果遇到大量相同并且重复的计算任务时，我们考虑使用多线程，多线程可以并发的执行程序中的函数，这样就可以更快的利用CPU计算结果，结省时间成本。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/32.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>python 类的静态方法和类方法</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-09-30 09:31:31 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>静态方法和类方法的定义</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/31.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Python面向对象编程（OOP）初探</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-09-29 15:27:35 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>说起面向对象编程，除了那些晦涩抽象的定义，我脑海中印象比较深的就是那张王宝强的表情图：程序员？面向对象编程？哈哈哈没有对象你编毛程？</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/30.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Python TK和Tkinter的GUI编程(9) Event 键盘鼠标事件</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-09-28 13:33:43 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python GUI 
-    </small>
-  </hgroup>
-  <p>Python TK和Tkinter的GUI编程Event键盘鼠标事件</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/29.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Python TK和Tkinter的GUI编程(8) Scalet和Spinbox的简单使用</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-09-28 09:50:15 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python GUI 
-    </small>
-  </hgroup>
-  <p>Scalet和Spinbox 是tk中用来调节刻度的小部件。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/28.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <a href="list_11.html" role="button" class="btn btn-primary">Prev</a>
-    </div>
-    <div class="col">
-      <small>12 / 16</small>
-    </div>
-    <div class="col">
-      <a href="list_13.html" role="button" class="btn btn-primary">Next</a>
-    </div>
-  </div>
-</div>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 
     </section>
