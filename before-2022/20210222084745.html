@@ -125,7 +125,9 @@
         
     </small>
 </hgroup>
-<p><p>Flask项目配置在程序中的配置及读取：</p>
+
+<div class="article">
+    <p>Flask项目配置在程序中的配置及读取：</p>
 <pre><code>app.config['SECRET_KEY'] = 'secret string'
 </code></pre>
 <p>项目的配置类似字典,但是每次都如上边的方法配置可能有些麻烦，可以创建单独配置文件通过导入：</p>
@@ -135,9 +137,9 @@
 <pre><code>UPLOAD_PATH = os.path.join(app.root_path, 'uploads')
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif']
 </code></pre>
-<p>参考文献 <a href="https://zhuanlan.zhihu.com/p/24055329">Flask项目配置（Configuration）</a></p></p>
+<p>参考文献 <a href="https://zhuanlan.zhihu.com/p/24055329">Flask项目配置（Configuration）</a></p>
+</div>
 
-<hr>
 <div class="blog_footer">
     <div class="prev_next">
         

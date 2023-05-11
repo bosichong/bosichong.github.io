@@ -125,7 +125,9 @@
         
     </small>
 </hgroup>
-<p><p>数据分页在项目中的使用频率是非常高的,但是对于新手来说是一个难点和痛点,这里我记录一次数据分页从环境搭建到最后页面的渲染的过程,对于新手可以用来参考,大佬勿喷高抬贵手.</p>
+
+<div class="article">
+    <p>数据分页在项目中的使用频率是非常高的,但是对于新手来说是一个难点和痛点,这里我记录一次数据分页从环境搭建到最后页面的渲染的过程,对于新手可以用来参考,大佬勿喷高抬贵手.</p>
 <p>最终效果：</p>
 <p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/0423-01.png" /></p>
 <h2>环境搭建</h2>
@@ -258,9 +260,9 @@ const showSizeChange = (current,size) =&gt;{
 </code></pre>
 <p>前端的代码很简答的,vue3极大的简化了代码,还有就是翻页的pagination封装了大量分页的逻辑控制,我们只要通过两个数据就可以控制这个前端的翻页组件,<code>let skip=size*(current-1)</code>,这个是比较关键的代码,控制着数据返回的起始点.如果没有什么问题项目已经可以正常翻页了.</p>
 <p>本文代码仓库:
-<a href="https://github.com/bosichong/vue3-fastapi-pagination.git">https://github.com/bosichong/vue3-fastapi-pagination.git</a></p></p>
+<a href="https://github.com/bosichong/vue3-fastapi-pagination.git">https://github.com/bosichong/vue3-fastapi-pagination.git</a></p>
+</div>
 
-<hr>
 <div class="blog_footer">
     <div class="prev_next">
         

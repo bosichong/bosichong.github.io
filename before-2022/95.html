@@ -125,7 +125,9 @@
         
     </small>
 </hgroup>
-<p><p>import os
+
+<div class="article">
+    <p>import os
     file = os.path.join(os.path.dirname(<strong>file</strong>),'17python888.txt')
     os.mknod(file)#运行到此处，就会报错</p>
 <pre><code># 解开注释，用下边的方法试试
@@ -139,9 +141,9 @@ PermissionError: [Errno 1] Operation not permitted
 <p>这个错误是由于linux系统权限不够，这可真是一个坑。</p>
 <p>那么怎么办?</p>
 <p>网上查了一下，可以用<code>open()</code>方法，咱试试。</p>
-<p>通过测试，使用<code>open()</code>方法<code>mode="a"</code>即可搞定文件的创建。</p></p>
+<p>通过测试，使用<code>open()</code>方法<code>mode="a"</code>即可搞定文件的创建。</p>
+</div>
 
-<hr>
 <div class="blog_footer">
     <div class="prev_next">
         
