@@ -26,7 +26,7 @@
     "build": "blog",
     "md_dir": "articles",
     "blog_page_num":8,
-    "blog_test_url":"http://127.0.0.1:5500/",
+    "blog_test_url":"http://127.0.0.1:5501/",
     "blog_url":"https://suiyan.cc/",
     "blog_sns": [
         {
@@ -38,42 +38,42 @@
             "url": "https://gitee.com/J_Sky/suiyan"
         },
         {
-            "ico": "tencent-qq",
-            "url": "https://user.qzone.qq.com/285911/"
+            "ico": "envelope",
+            "url": "mailto:285911@gmail.com"
         },
         {
             "ico": "book",
             "url": "https://www.zhihu.com/people/J_sky/activities"
         },
         {
-            "ico": "rss",
+            "ico": "rss-square",
             "url": "https://suiyan.cc/rss.xml"
         }
     ],
     "nav": [
         {
-            "ico": "house-heart-fill",
-            "text": "Blog Home",
+            "ico": "home",
+            "text": "Home",
             "url": ""
         },
         {
             "ico": "archive",
-            "text": "Blog Archive",
+            "text": "Archive",
             "url": "archives.html"
         },
         {
             "ico": "tags",
-            "text": "Blog Tag",
+            "text": "Tags",
             "url": "tags.html"
         },
         {
-            "ico": "person-circle",
+            "ico": "user-md",
             "text": "About Me",
             "url": "aboutme.html"
         },
         {
             "ico": "link",
-            "text": "Blog Links",
+            "text": "Links",
             "url": "links.html"
         }
     ]
