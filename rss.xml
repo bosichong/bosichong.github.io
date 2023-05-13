@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-13 08:20:50</pubDate>
+        <pubDate>2023-05-13 10:41:51</pubDate>
+        
+        <item>
+            <title>display:none没有隐藏元素所占空间的原因</title>
+            <link>https://suiyan.cc/2023/20230513104151.html</link>
+            <author>J.sky</author>
+            <description>今天想写一段前端的效果，然后就手动使用原生JavaScript生成了一些HTML的DOM，其中有一些是带有`display:none;`隐藏的css属性的，我的本意是想隐藏这些元素并且不占用空间，但是使用JavaScript动态生成的DOM，动态添加的css属性`display:none;`的话，元素就会发生只隐藏但空间占用的情况还是存在。</description>
+            <category>CSS</category>
+            <pubDate>2023-05-13 10:41:51</pubDate>
+        </item>
         
         <item>
             <title>再谈TailwindCSS的使用心得</title>
@@ -85,15 +94,6 @@
             <description>css有很多神奇的效果都是使用CSS伪元素利用视觉差来制作的，以前没怎么深入的研究过css，这次复习css的知识点才恍然大悟，原来css这么cool。</description>
             <category>CSS</category>
             <pubDate>2023-05-07 10:15:10</pubDate>
-        </item>
-        
-        <item>
-            <title>CSS动画animation的简单应用</title>
-            <link>https://suiyan.cc/2023/20230504201422.html</link>
-            <author>J.sky</author>
-            <description>要在CSS中创建动画，我们可以使用animation属性。该属性允许我们指定动画的关键帧、持续时间、时间函数、延迟和迭代次数。</description>
-            <category>CSS</category>
-            <pubDate>2023-05-04 20:14:22</pubDate>
         </item>
         
     </channel>
