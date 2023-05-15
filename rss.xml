@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-15 10:50:53</pubDate>
+        <pubDate>2023-05-15 21:51:36</pubDate>
+        
+        <item>
+            <title>async/await和fetch()的使用</title>
+            <link>https://suiyan.cc/2023/20230515215136.html</link>
+            <author>J.sky</author>
+            <description>async和await关键字让我们可以用一种更简洁的方式写出基于 Promise 的异步行为，而无需刻意地链式调用 promise。而FetchAPI可以通过网络访问资源，您可以发出HTTP请求（使用GET和POST其他方法）、下载和上传文件。</description>
+            <category>JavaScript,fetch,async,await</category>
+            <pubDate>2023-05-15 21:51:36</pubDate>
+        </item>
         
         <item>
             <title>fetch()如何读取请求中的'user-agent'？</title>
@@ -74,7 +83,7 @@
             <link>https://suiyan.cc/2023/20230509101659.html</link>
             <author>J.sky</author>
             <description>很久以前，在JavaScript中发送请求或者获取资源的时候很多人都是用的是`jQuery`，直到最近一直使用`axios`，但有的时候不想使用第三方的请求的库，这个时候你可以试试Fetch。</description>
-            <category>JavaScript</category>
+            <category>JavaScript,fetch</category>
             <pubDate>2023-05-09 10:16:59</pubDate>
         </item>
         
@@ -85,15 +94,6 @@
             <description>这阵子一直在读编程相关的工具书，枯燥乏味的很！昨天偶然间在哪里？不记得是哪里看到的有人推荐《写作是门手艺》这本书，赶紧去京东淘了一本，今天就收到了。</description>
             <category>读书笔记</category>
             <pubDate>2023-05-08 21:33:33</pubDate>
-        </item>
-        
-        <item>
-            <title>Link-Validator 检测网站友情链接的JavaScript脚本</title>
-            <link>https://suiyan.cc/2023/20230508090813.html</link>
-            <author>J.sky</author>
-            <description>Link-Validator 一个检测对方网站友情链接页面是否添加自己网站链接的JavaScript脚本。</description>
-            <category>站长源创</category>
-            <pubDate>2023-05-08 09:08:13</pubDate>
         </item>
         
     </channel>
