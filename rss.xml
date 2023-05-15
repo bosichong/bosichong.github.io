@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-14 16:32:31</pubDate>
+        <pubDate>2023-05-15 10:50:53</pubDate>
+        
+        <item>
+            <title>fetch()如何读取请求中的'user-agent'？</title>
+            <link>https://suiyan.cc/2023/20230515105053.html</link>
+            <author>J.sky</author>
+            <description>但是添加后我想测试一下看看请求中headers是否添加了`fetch()如何读取请求中的'user-agent'？`,本来希望打印`response`中的herders来查看`'user-agent'`是否伪装成功，直接在fetch的response中遍历headers是无法获得`'user-agent'`这个属性。所以只好搭建一个临时服务器端来打印请求的request。</description>
+            <category>JavaScript fetch request</category>
+            <pubDate>2023-05-15 10:50:53</pubDate>
+        </item>
         
         <item>
             <title>一些关于中文独立博客的聚合网站</title>
@@ -85,15 +94,6 @@
             <description>Link-Validator 一个检测对方网站友情链接页面是否添加自己网站链接的JavaScript脚本。</description>
             <category>站长源创</category>
             <pubDate>2023-05-08 09:08:13</pubDate>
-        </item>
-        
-        <item>
-            <title>css链接悬停时滑动的下划线效果</title>
-            <link>https://suiyan.cc/2023/20230507204135.html</link>
-            <author>J.sky</author>
-            <description>要创建链接悬停时滑动的下划线效果，可以向锚点标记添加伪元素，并使用CSS过渡动画来显示它。</description>
-            <category>CSS</category>
-            <pubDate>2023-05-07 20:41:35</pubDate>
         </item>
         
     </channel>

@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
+    <meta content="JavaScript fetch request" name="keywords">
+    <meta content="但是添加后我想测试一下看看请求中headers是否添加了`fetch()如何读取请求中的'user-agent'？`,本来希望打印`response`中的herders来查看`'user-agent'`是否伪装成功，直接在fetch的response中遍历headers是无法获得`'user-agent'`这个属性。所以只好搭建一个临时服务器端来打印请求的request。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan 碎言博客-List Pages 第16页</title>
+    <title>SuiYan 碎言博客 fetch()如何读取请求中的'user-agent'？</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -115,181 +115,71 @@
     <section class="inner-page">
        
 
-<div class="container typed-div">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <div class="hd"><span id="typed"></span></div>
-  <script>
-        const typed = new Typed('#typed', {
-        strings: [
+
+<hgroup>
+    <h1 class="animate__animated animate__bounce">fetch()如何读取请求中的'user-agent'？</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:2023-05-15 10:50:53| 更新于:2023-05-15 11:13:27 | Tag:
         
-        'Life is short, you need Python',
         
-        '人生苦短，我用Python.',
+        JavaScript fetch request
         
-        'Beautiful is better than ugly.',
+    </small>
+</hgroup>
+
+<div class="article">
+    <p>之前写了一个node的脚本，用来检测博客的友情链接是否互换成功，通过fetch()采集对方网站友情链接页面的HTML代码，搜索是否含有自己的博客域名来判断是否互换。但是运行了几次脚本发现其中一个网站页面无法打开的状态，后来发邮件询问大体说是被反爬虫给屏蔽了，考虑到自己的简陋的代码并没有处理反爬虫的这个情况，于是修改代码加入了headers中的<code>'user-agent'</code>伪装。</p>
+<p>但是添加后我想测试一下看看请求中headers是否添加了<code>fetch()如何读取请求中的'user-agent'？</code>,本来希望打印<code>response</code>中的herders来查看<code>'user-agent'</code>是否伪装成功，直接在fetch的response中遍历headers是无法获得<code>'user-agent'</code>这个属性。所以只好搭建一个临时服务器端来打印请求的request。</p>
+<h3>解决方法</h3>
+<p>我是通过Python fastAPI创建了一个简单的服务器，然后使用fetch发送请求，在服务器端打印request的headers中的<code>'user-agent'</code>，这次，可以看到<code>'user-agent'</code>的属性被添加了。服务端的具体代码：</p>
+<pre><code>import uvicorn
+from fastapi import FastAPI,Response,Request
+app = FastAPI()
+@app.get("/")
+async def root(request:Request):
+    print(request.headers['user-agent'])
+    return {"message": "Hello World"}
+if __name__ == '__main__':
+    uvicorn.run(app='main:app', host="127.0.0.1", port=8888, reload=True, )
+</code></pre>
+<p>node的请求代码很简单：</p>
+<pre><code>fetch(url, )
+        .then(res =&gt; {
+            // console.log(res);
+            return res.text()})
+        .catch((e) =&gt; {
+            console.error(`错误: ${e.message}`);
+        });
+</code></pre>
+<p>这样问题就解决了，直接在fetch的response中遍历headers是无法获得<code>'user-agent'</code>这个属性。</p>
+</div>
+
+<div class="blog_footer">
+    <div class="prev_next">
         
-        '美丽优于丑陋.',
+
         
-        'Explicit is better than implicit.',
+        <a href="https://suiyan.cc/2023/20230514163231.html" class="text-truncate"><span>一些关于中文独立博客的聚合网站</span> ></a>
         
-        '直白优于含蓄.',
-        
-        'Simple is better than complex.',
-        
-        '简单优于复杂.',
-        
-        'Complex is better than complicated.',
-        
-        '复杂优于繁琐.',
-        
-        'Readability counts.',
-        
-        '可读性很重要.',
-        
-        ],
-        typeSpeed: 100,
-        backSpeed: 10,
-        backDelay: 100,
-        startDelay: 1000,
-        loop:true
-    });
-  </script>
+    </div>
+    
+    <div class="related">
+
+        <p>
+            相关文章：
+        </p>
+        <ul>
+            
+        </ul>
+
+    </div>
+    
+
 </div>
 
 
-<article class="artlist">
-  <hgroup>
-    <h1>Git 版本控制常用命令 简明指南教程</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-26 13:03:59 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Git 
-    </small>
-  </hgroup>
-  <p>最近使用Django设计自己的个人blog，免不了要对程序的版本进行备份，所以用到了Git。Git确实是程序员居家旅游，编程备份之良药哇，本文旨在对Git日常使用中，使用频率较高的命令进行了一个简单的总结</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/6.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>Markdown 语法学习总结</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-25 08:55:15 | 更新于:2023-04-13 09:40:24 | Tag:  
-      网站运维 
-    </small>
-  </hgroup>
-  <p>Markdown 语法学习总结</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/5.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>17python.com网站已经部署上线及后期更新记录</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-25 01:09:49 | 更新于:2023-04-13 09:40:24 | Tag:  
-      站长吐槽 
-    </small>
-  </hgroup>
-  <p>折腾了一个晚上，终于把网站上线了，明天要把这几天的折腾记下来，不然用不了几天就会忘掉。这阵子自学Python Django感触很多，中间也是遇到了无数的坑，还好自己都挺过来了，以后学习Python的日子还长，学习还是要继续的，给自己打气加油！</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/4.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>python3 Markdown模块解析Markdown代码</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 19:59:46 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>python3 markdown模块解析markdown代码，blog中需要一个解析markdown代码的模块，测试了一下markdown模块 ，简单好用。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/3.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>创建python 虚拟环境 venv</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 19:53:29 | 更新于:2023-04-13 09:40:24 | Tag:  
-      Python基础 
-    </small>
-  </hgroup>
-  <p>最近需要调试各个版本的折腾，所以虚拟环境是必须走起的。。。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/2.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>关于suiyan.cc</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 16:51:30 | 更新于:2023-05-09 08:55:30 | Tag:  
-      站长吐槽 
-    </small>
-  </hgroup>
-  <p>非常感谢！如果你能点到这里， 说明你已经注意到suiyan.cc以及帅(zhong)气(du)聪(zhai)明(nan)的站长了</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/1.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist">
-  <hgroup>
-    <h1>suiyan.cc 404页面</h1>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:2017-08-19 16:25:07 | 更新于:2023-05-10 19:26:17 | Tag:  
-      404 
-    </small>
-  </hgroup>
-  <p>这个页面不存在，无法打开。</p>
-  <div>
-    <a href="https://suiyan.cc/404.html" class="readblog"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <a href="list_15.html" role="button" class="btn btn-primary">Prev</a>
-    </div>
-    <div class="col">
-      <small>16 / 16</small>
-    </div>
-    <div class="col">
-      <a href="#" role="button" class="btn btn-primary">Next</a>
-    </div>
-  </div>
-</div>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 
     </section>
