@@ -96,6 +96,8 @@
     });
   });
 
+
+
   // 为文档中的图片添加自适应class样式
   const images = document.querySelectorAll('.inner-page img');
   for (let i = 0; i < images.length; i++) {
@@ -166,5 +168,21 @@
     });
   });
 
+  // bootstrap5 文字提示工具初始化
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
 
 })()
+
+moment.locale('zh-CN'); // 设置moment 为中文
+$(function () {
+  // 用来解析文章发布时间和更新时间
+  $('.cr-time').each(function (i, e) {
+      $(e).text(moment($(e).text()).fromNow())
+  });
+  $('.up-time').each(function (i, e) {
+      $(e).text(moment($(e).text()).fromNow())  
+  });
+});
