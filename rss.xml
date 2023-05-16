@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-15 21:51:36</pubDate>
+        <pubDate>2023-05-16 13:28:17</pubDate>
+        
+        <item>
+            <title>使用Moment.js或Day.js对HTML页面上的时间进行格式化</title>
+            <link>https://suiyan.cc/2023/20230516132817.html</link>
+            <author>J.sky</author>
+            <description>一直想对博客页面的时间进行格式化，把标准的时间格式修改成XX时间前或相对时间，因为时间已经直接输出到了页面DOM中，所以考虑直接使用相关的js库来实现比较方便，搜了一下发现二个JavaScript的时间处理库比较不错，他们是：`Moment.js`和`Day.js`。</description>
+            <category>Moment.js,Day.js</category>
+            <pubDate>2023-05-16 13:28:17</pubDate>
+        </item>
         
         <item>
             <title>async/await和fetch()的使用</title>
@@ -85,15 +94,6 @@
             <description>很久以前，在JavaScript中发送请求或者获取资源的时候很多人都是用的是`jQuery`，直到最近一直使用`axios`，但有的时候不想使用第三方的请求的库，这个时候你可以试试Fetch。</description>
             <category>JavaScript,fetch</category>
             <pubDate>2023-05-09 10:16:59</pubDate>
-        </item>
-        
-        <item>
-            <title>读《写作是门手艺》的思考</title>
-            <link>https://suiyan.cc/2023/20230508213333.html</link>
-            <author>J.sky</author>
-            <description>这阵子一直在读编程相关的工具书，枯燥乏味的很！昨天偶然间在哪里？不记得是哪里看到的有人推荐《写作是门手艺》这本书，赶紧去京东淘了一本，今天就收到了。</description>
-            <category>读书笔记</category>
-            <pubDate>2023-05-08 21:33:33</pubDate>
         </item>
         
     </channel>

@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="网站运维" name="keywords">
-    <meta content="其实有很多想法，简单说想把学到的东西实践一下，记录下编程学习的一个过程。如果这些文字帮到你了，那么这个博客就有了新的意义。折腾这个博客确实花了不少时间，但是也是值得，从最开始的时候使用一些开源的博客程序，也曾转战博客平台，到后来干脆自己编写博客的代码，" name="description">
+    <meta content="Moment.jsDay.js" name="keywords">
+    <meta content="一直想对博客页面的时间进行格式化，把标准的时间格式修改成XX时间前或相对时间，因为时间已经直接输出到了页面DOM中，所以考虑直接使用相关的js库来实现比较方便，搜了一下发现二个JavaScript的时间处理库比较不错，他们是：`Moment.js`和`Day.js`。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan 碎言博客 关于站长</title>
+    <title>SuiYan 碎言博客 使用Moment.js或Day.js对HTML页面上的时间进行格式化</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -117,39 +117,151 @@
 
 
 <hgroup>
-    <h1 class="animate__animated animate__bounce">关于站长</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2019-12-30 16:25:07">2019-12-30 16:25:07</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-16 13:59:14">2023-05-16 13:59:14</span> | Tag:
+    <h1 class="animate__animated animate__bounce">使用Moment.js或Day.js对HTML页面上的时间进行格式化</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-16 13:28:17">2023-05-16 13:28:17</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-16 13:52:43">2023-05-16 13:52:43</span> | Tag:
         
         
-        网站运维
+        Moment.js
+        
+        Day.js
         
     </small>
 </hgroup>
 
 <div class="article">
-    <blockquote>
-<p>芝兰生于深谷，不以无人而不芳，君子修身养德，不以穷困而改志。</p>
+    <p>一直想对博客页面的时间进行格式化，把标准的时间格式修改成XX时间前或相对时间，因为时间已经直接输出到了页面DOM中，所以考虑直接使用相关的js库来实现比较方便，搜了一下发现二个JavaScript的时间处理库比较不错，他们是：<code>Moment.js</code>和<code>Day.js</code>。</p>
+<p>使用相关库里处理后的时间显示效果：</p>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>范围</th>
+      <th>Key</th>
+      <th>示例输出</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0 到 44 秒</td>
+      <td>s</td>
+      <td>几秒钟前</td>
+    </tr>
+    <tr>
+      <td><i>取消设置</i></td>
+      <td>SS</td>
+      <td>44 秒前</td>
+    </tr>
+    <tr>
+      <td>45 至 89 秒</td>
+      <td>m</td>
+      <td>一分钟前</td>
+    </tr>
+    <tr>
+      <td>90 秒到 44 分钟</td>
+      <td>mm</td>
+      <td>2分钟前... 44 分钟前</td>
+    </tr>
+    <tr>
+      <td>45至89分钟</td>
+      <td>h</td>
+      <td>一小时前</td>
+    </tr>
+    <tr>
+      <td>90 分钟到 21 小时</td>
+      <td>hh</td>
+      <td>2小时前 ... 21 小时前</td>
+    </tr>
+    <tr>
+      <td>22 至 35 小时</td>
+      <td>d</td>
+      <td>一天前</td>
+    </tr>
+    <tr>
+      <td>36 小时至 25 天</td>
+      <td>dd</td>
+      <td>2天前 ... 25天前</td>
+    </tr>
+    <tr>
+      <td>26至45天</td>
+      <td>M</td>
+      <td>一个月前</td>
+    </tr>
+    <tr>
+      <td>45至319天</td>
+      <td>MM</td>
+      <td>2个月前 ... 10个月前</td>
+    </tr>
+    <tr>
+      <td>320 至 547 天（1.5 年）</td>
+      <td>y</td>
+      <td>一年前</td>
+    </tr>
+    <tr>
+      <td>548天+</td>
+      <td>yy</td>
+      <td>2年前 ... 20年前</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>这样的看起来更人性化，好了，开搞。</p>
+<h2>Moment.js</h2>
+<p>首先引入相关库的CDN：</p>
+<ol>
+<li><code>moment.min.js</code>主要的程序依赖库。</li>
+<li>
+<p><code>moment-with-locales.min.js</code> 国际化的语言支持。</p>
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" ></script></p>
+</li>
+</ol>
+<p>DOM结构：</p>
+<pre><code>&lt;small class="cr-time"&gt;2019-12-30 16:25:07&lt;/small&gt;
+</code></pre>
+<p>jQuery代码更方便一些：</p>
+<pre><code>moment.locale('zh-CN');//设置为中文
+$(function () {
+    $('.cr-time').each(function (i, e) {
+        $(e).text(moment($(e).text()).fromNow())
+    });
+});
+</code></pre>
+<p>至此 moment格式化时间的配置都搞定了，但是，我发现moment官网已经开始劝退了，一下引用官网的原话：</p>
+<blockquote>
+<p>Moment 团队对这些问题进行了详细讨论。 我们认识到许多现有项目可能会继续使用 Moment，但我们不希望在未来的新项目中使用 Moment。我们现在普遍认为 Moment 是处于维护模式的旧项目。 它没有死，但它确实结束了。</p>
 </blockquote>
-<h3>为什么要做这个blog？</h3>
-<p>其实有很多想法，简单说就是想把学到的东西实践一下，记录下编程学习的一个过程。如果博客里的某些文字帮到你了，那么这个博客就有了新的意义。</p>
-<p>折腾这个博客确实花了不少时间，但是也是值得，从最开始的时候使用一些开源的博客程序，也曾转战博客平台，到后来干脆自己编写博客程序的源代码，最开始使用了Python的Django编写了一个服务端渲染的博客，后来服务器的租期到期了，需要缴大把的银子，所以就放弃了，随后果断选择使用GitHub部署静态的博客页面，当然也是自己编写的静态博客页面生成器，也就是你现在看到的这个博客。</p>
-<p>为什么没有选择现成的静态站点生成器而自己重复的造轮子？或许这就是一个新手程序员的宿命吧，喜欢折腾呗。不过在重复造轮子的同时，也锻炼了自己提高了自己对相关技术的熟练度，也是一种收获吧。</p>
-<h3>对独立博客的看法</h3>
-<p>如今的网络世界是娱乐至上，人们每天都在刷着手机短视频和微博，大把的碎片时间被无情的消费掉了。当然工作之余通过网络来娱乐消遣也是不错的选择。通过查看归档日志的时间和发文数据，发现我写博客的时间越是连贯，技术提升就会越大，所以这次重拾博客，重构了之前的静态博客生成器的代码，编写了几个全新的博客主题，让一切重新开始，坚持写博客。</p>
-<p>对于那些独立博客的大佬们，别说技术就是毅力都是常人无法触及的，唯有仰望。</p>
-<h3>联系我</h3>
-<p>欢迎进群讨论学习Q群:217840699
-如果你需要联系我,可以给发邮件<a href="mailto:285911@gmail.com">联系我</a></p>
+<p>好家伙，我确实是都调试好了，都发布上线了，才看了一眼官网的首页，好吧我认了，看看推荐那些替代了？看到了：<code>Day.js</code>。</p>
+<blockquote>
+<p>Day.js 旨在成为 Moment.js 的极简替代品，使用类似的 API。 它不是直接替代品，但如果您习惯使用 Moment 的 API 并希望快速上手，请考虑使用 Day.js。</p>
+</blockquote>
+<p>那就用<code>Day.js</code>来替换吧，整个替换过程很快，因为他们的属性方法都一样，只做了写小改动即可。</p>
+<h2>Day.js</h2>
+<p>引入CDN ：</p>
+<pre><code>&lt;script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/dayjs@1.8.21/locale/zh-cn.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>这里自上而下的是：主程序库、relativeTime插件库和国际化的库。DOM的结构不变和上边的一样。</p>
+<p>jQuery代码：</p>
+<pre><code>dayjs.locale('zh-cn')// 设置中文
+dayjs.extend(window.dayjs_plugin_relativeTime)
+$(function () {
+    $('.cr-time').each(function (i, e) {
+        $(e).text(dayjs($(e).text()).fromNow())
+    });
+});
+</code></pre>
+<p>其他就是把库的名称由<code>moment</code>换成了<code>dayjs</code>就可以了。然后就可以完美运行了，具体效果抬头看下文章标题下边就行啦。</p>
+<p>相关网站：</p>
+<p><a href="https://moment.nodejs.cn/">moment.js官方网站</a>
+<a href="https://dayjs.gitee.io/zh-CN/">day.js官方网站</a></p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/before-2022/20200101210954.html" class="text-truncate">< <span>前端项目构建打包的一些学习笔记</span></a>
-        
 
         
-        <a href="https://suiyan.cc/links.html" class="text-truncate"><span>碎言博客的友情链接</span> ></a>
+        <a href="https://suiyan.cc/2023/20230515215136.html" class="text-truncate"><span>async/await和fetch()的使用</span> ></a>
         
     </div>
     
@@ -159,14 +271,6 @@
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/links.html" class="text-truncate "><span>碎言博客的友情链接</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/before-2022/5.html" class="text-truncate "><span>Markdown 语法学习总结</span></a>
-            </li>
             
         </ul>
 
