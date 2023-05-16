@@ -176,13 +176,14 @@
 
 })()
 
-moment.locale('zh-CN'); // 设置moment 为中文
+// moment.locale('zh-CN');
+dayjs.locale('zh-cn')
+dayjs.extend(window.dayjs_plugin_relativeTime)
 $(function () {
-  // 用来解析文章发布时间和更新时间
-  $('.cr-time').each(function (i, e) {
-      $(e).text(moment($(e).text()).fromNow())
-  });
-  $('.up-time').each(function (i, e) {
-      $(e).text(moment($(e).text()).fromNow())  
-  });
+    $('.cr-time').each(function (i, e) {
+        $(e).text(dayjs($(e).text()).fromNow())
+    });
+    $('.up-time').each(function (i, e) {
+        $(e).text(dayjs($(e).text()).fromNow())  
+    });
 });
