@@ -1244,3 +1244,39 @@ section {
 .article{
   margin-bottom: 1rem;
 }
+
+/* 搜索框移动端适配 */
+
+.blog-search{
+  position: fixed;
+  top: 1rem;
+  right: 60px;
+  width: 400px;
+  z-index: 500;
+  transition: all 1s ease-in-out;
+}
+
+.blog-search:hover{
+  width: 600px;
+}
+
+#search-btn{
+  width: auto;
+}
+
+@media (max-width: 1000px) {
+  .blog-search{
+    position: initial;
+    top: 1rem;
+    right: 60px;
+    width: auto;
+    z-index: 500;
+  }
+  #search-btn{
+    width: 58px;
+  }
+  .blog-search:hover{
+    width: auto;
+  }
+  
+}
