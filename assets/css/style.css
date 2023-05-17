@@ -124,7 +124,7 @@ small {
 }
 
 #header .profile .social-links a {
-  font-size: 36px;
+  font-size: 32px;
   display: inline-block;
   color: #149ddd;
   line-height: 1;
@@ -138,6 +138,7 @@ small {
 }
 
 #header .profile .social-links a:hover {
+  font-size: 40px;
   background: #212431;
   color: coral;
   text-decoration: none;
@@ -1242,7 +1243,7 @@ section {
 }
 
 .article{
-  margin-bottom: 1rem;
+  margin: 1.5rem 0;
 }
 
 /* 搜索框移动端适配 */
