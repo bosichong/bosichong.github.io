@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python" name="keywords">
+    <meta content="Python碎言博客" name="keywords">
     <meta content="实现静态页面的输出其实很简单，按着顺序来就行：搜集Markdown文件和站点配置文件->组织数据并渲染模板(jinja2)->输出HTML并保存到静态目录中。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan 碎言博客 使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</title>
+    <title>SuiYan 碎言博客 使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,18 +114,21 @@
 
 
 <hgroup>
-    <h1 class="animate__animated animate__bounce">使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-20 10:15:27">2023-04-20 10:15:27</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-20 16:31:35">2023-04-20 16:31:35</span> | Tag:
+    <h1 class="animate__animated animate__bounce">使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-20 10:15:27">2023-04-20 10:15:27</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-17 08:52:35">2023-05-17 08:52:35</span> | Tag:
         
         
         Python
+        
+        碎言博客
         
     </small>
 </hgroup>
 
 <div class="article">
-    <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署第一个自己的静态独立技术博客：（一）分析与设计</a></p>
-<p>使用Python编写并部署第一个自己的静态独立技术博客：（二）实现静态页面的输出</p>
+    <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</a></p>
+<p>使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</p>
+<p><a href="https://suiyan.cc/2023/20230517084718.html">使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</a></p>
 <p>实现静态页面的输出其实很简单，按着顺序来就行：搜集Markdown文件和站点配置文件-&gt;组织数据并渲染模板(jinja2)-&gt;输出HTML并保存到静态目录中。</p>
 <h3>最简单的静态文件输出</h3>
 <p>如果您想要向HTML文件添加字符串模板，您可以使用Python的字符串格式化功能。例如，如果您想要向HTML文件添加标题：</p>
@@ -138,7 +141,7 @@ with open("file.html", "w") as f:
 <p>在此代码中，我们定义一个名为title的变量，其值为“My Title”，以及一个名为html_template的变量，其值为"{1}"。{0}和{1}是title和body变量的占位符，分别。然后，我们定义一个名为body的变量，其值为"hello world"。最后，我们以写入模式打开文件“file.html”，并使用format()方法将格式化的字符串写入其中。运行这段脚本后会在当前目录下生成一个<code>file.html</code>文件，内容如下：</p>
 <pre><code>&lt;html&gt;&lt;head&gt;&lt;title&gt;My Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;hello world&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
 </code></pre>
-<p>至此，我们实现了一个简答的模板系统。</p>
+<p>至此，我们实现了一个简单的模板系统。</p>
 <h3>使用jinja2模板引擎</h3>
 <p>但是我们的站点不可能就只有一两个模板的变量，他会是由一系列的数据组成的，而且渲染的出来的HTML页面我们还需要进行布局和前端的美化，所以我们需要一个健壮的模板引擎。</p>
 <blockquote>
@@ -212,7 +215,11 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客：（一）分析与设计</span></a>
+                <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</span></a>
             </li>
             
             <li>
@@ -229,6 +236,22 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
             
             <li>
                 <a href="https://suiyan.cc/before-2022/20200330193816.html" class="text-truncate "><span>pip临时修改下载源</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230427151750.html" class="text-truncate "><span>coding_blog 碎言静态博客主题</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230420162736.html" class="text-truncate "><span>simple_blog 碎言静态博客主题</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</span></a>
             </li>
             
         </ul>

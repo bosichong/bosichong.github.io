@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python" name="keywords">
-    <meta content="装饰器（decorator）是干嘛的？对于受到封装的原函数来说，装饰器能够在那个函数执行前或者执行后分别运行一些代码，使得可以再装饰器里面访问并修改原函数的参数以及返回值，以实现约束定义、调试程序、注册函数等目标。装饰器一般返回一个包装器（wrapper），而functools.wraps就是装饰包装器的装饰器。" name="description">
+    <meta content="Python碎言博客" name="keywords">
+    <meta content="博客的静态页面的生成都是由博客的基础数据支撑的，搜集博客的基本信息和博客文章数据，是生成博客静态文件的核心功能。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan 碎言博客 聊聊Python中的装饰器</title>
+    <title>SuiYan 碎言博客 使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,107 +114,167 @@
 
 
 <hgroup>
-    <h1 class="animate__animated animate__bounce">聊聊Python中的装饰器</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2020-10-05 20:34:04">2020-10-05 20:34:04</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:03:55">2023-04-13 09:03:55</span> | Tag:
+    <h1 class="animate__animated animate__bounce">使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-17 08:47:18">2023-05-17 08:47:18</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-17 09:27:25">2023-05-17 09:27:25</span> | Tag:
         
         
         Python
+        
+        碎言博客
         
     </small>
 </hgroup>
 
 <div class="article">
-    <h2>Python装饰器是什么？</h2>
-<p>在Django中曾经使用过<code>@fun</code>这种格式的语法，用在了定义视图的函数上，类似一种拦截器用来控制当前视图的访问权限。</p>
-<p>装饰器（decorator）是干嘛的？对于受到封装的原函数来说，装饰器能够在那个函数执行前或者执行后分别运行一些代码，使得可以再装饰器里面访问并修改原函数的参数以及返回值，以实现约束定义、调试程序、注册函数等目标。装饰器一般返回一个包装器（wrapper），而functools.wraps就是装饰包装器的装饰器。</p>
-<h2>定义一个Python的装饰器</h2>
-<p>我们定义一个计算Python程序运行时间的装饰器，在定义一个需要运行的韩式，代码如下：</p>
-<pre><code>    import time
-    import functools
+    <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</a></p>
+<p><a href="https://suiyan.cc/2023/20230420101527.html">使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</a></p>
+<p>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</p>
+<h2>搜集博客数据</h2>
+<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/b01.png" /></p>
+<p>博客的静态页面的生成都是由博客的基础数据支撑的，搜集博客的基本信息和博客文章数据，是生成博客静态文件的核心功能。</p>
+<h3>博客的基础配置</h3>
+<p>每个博客都会有一些最基础的配置，例如博客的名称、简介、站长的昵称头像等，我们可以把这些基础的数据设置为一个配置文件，这里我使用了JSON格式的配置文件。可以在站点的根目录下创建一个config.json，其内容格式大概如下，可以根据自己的需要添加修改。</p>
+<pre><code>{
+    "dev": 0,
+    "blog_name": "碎言博客",
+    "blog_name_en": "SuiYan",
+    "blog_author": "J.sky",
+    "blog_description_en": "You see see you , This one day day di.",
+    "blog_typed": [
+        "Life is short, you need Python",
+        "人生苦短，我用Python.",
+        "Beautiful is better than ugly.",
+        "美丽优于丑陋.",
+        "Explicit is better than implicit.",
+        "直白优于含蓄.",
+        "Simple is better than complex.",
+        "简单优于复杂.",
+        "Complex is better than complicated.",
+        "复杂优于繁琐.",
+        "Readability counts.",
+        "可读性很重要."
+    ],
+    "meta_description": " Python Django JavaScript 学习讨论,我们是一群热爱Python的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。",
+    "meta_keywords":"Python,Django,JavaScript,程序员,人生苦短,我用Python",
+    "profile_image":"assets/images/avatar.jpg",
+    "blog_bg": "assets/images/bg.jpg",
+    "theme": "my_blog",
+    "build": "blog",
+    "md_dir": "articles",
+    "blog_page_num":8,
+    "blog_test_url":"http://127.0.0.1:5501/",
+    "blog_url":"https://suiyan.cc/",
+    "blog_sns": [
+        {
+            "ico": "github",
+            "url": "https://github.com/bosichong/suiyan"
+        },
+        {
+            "ico": "git",
+            "url": "https://gitee.com/J_Sky/suiyan"
+        },
+        {
+            "ico": "envelope",
+            "url": "mailto:285911@gmail.com"
+        },
+        {
+            "ico": "book",
+            "url": "https://www.zhihu.com/people/J_sky/activities"
+        },
+        {
+            "ico": "rss-square",
+            "url": "https://suiyan.cc/rss.xml"
+        }
+    ],
+    "nav": [
+        {
+            "ico": "home",
+            "text": "Home",
+            "url": ""
+        },
+        {
+            "ico": "archive",
+            "text": "Archive",
+            "url": "archives.html"
+        },
+        {
+            "ico": "tags",
+            "text": "Tags",
+            "url": "tags.html"
+        },
+        {
+            "ico": "user-md",
+            "text": "About Me",
+            "url": "aboutme.html"
+        },
+        {
+            "ico": "link",
+            "text": "Links",
+            "url": "links.html"
+        }
+    ]
 
-    def t(fun):
-    '''定义一个程序运行时间计算函数'''
-    @functools.wraps(fun)
-    def wrapper(*args, **kwargs):
-            start = time.time()  # 起始时间
-            fun(*args, **kwargs)  # 要执行的函数
-            end = time.time()  # 结束时间
-            print(fun.__name__, '程序运行时间:{:.2f}ms'.format((end - start) * 1000))
-    return wrapper
-
-    @t
-    def myfunc(x, y):
-    '''打印从x到y的数值'''
-    for i in range(x, y):
-            print(i)
-
-    myfunc(0, 9)
+}
 </code></pre>
-<p>运行结果：</p>
-<pre><code>    0
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    myfunc 程序运行时间:0.03ms
-    这样的话，我们就可以在不破坏原函数代码的情况下为函数添加了计算当前函数运行时间的功能。
+<p>然后就可以在程序的文件中组织这些最基础的配置，例如提取文件地址和内容，分配静态文件生成发布的目录等，使用一些常量来定他们，放到代码的最顶部。</p>
+<pre><code>APP_CONFIG = "config_my.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # 当前目录地址
+CONFIG = load_configjson(os.path.join(BASE_DIR, APP_CONFIG))  # 获取当前配置
+BLOGPAGES = os.path.join(BASE_DIR, CONFIG["build"])  # 所有静态资源存放目录
+ARTICLES_DIR = os.path.join(BASE_DIR, CONFIG["md_dir"])  # 博文目录
+THEME = os.path.join(BASE_DIR, "theme")  # 主题目录
+CONFIGJSON = os.path.join(BASE_DIR, APP_CONFIG)
+BLOGCONFIG = os.path.join(BLOGPAGES, 'config.json')
+BLOGDATAJSON = os.path.join(BLOGPAGES, 'blog_data.json')
+SUIYANVERSION = "3.1.0"  # 程序版本
 </code></pre>
-<h2>定义一个可以传参的装饰器</h2>
-<p>如果我们的装饰器需要传入参数该怎么写呢？只需要在<code>wrapper</code>外加一层包装即可。代码如下:</p>
-<pre><code>    import time
-    import functools
-
-    def t(str):
-    '''定义一个程序运行时间计算函数'''
-    def decorator(fun):
-            @functools.wraps(fun)
-            def wrapper(*args, **kwargs):
-            start = time.time()  # 起始时间
-            fun(*args, **kwargs)  # 要执行的函数
-            end = time.time()  # 结束时间
-            print('传入的字符串是:', str)
-            print(fun.__name__, '程序运行时间:{:.2f}ms'.format((end - start) * 1000))
-            return wrapper
-    return decorator
-
-    @t('hello world')
-    def myfunc(x, y):
-    '''打印从x到y的数值'''
-    for i in range(x, y):
-            print(i)
-
-    myfunc(0, 9)
+<p>通过Python读写文件的操作，定义一个方法从磁盘上来获取config.json的内容并转化为Python的字典：</p>
+<pre><code>def load_configjson(jsonpath):
+    """载入blog配置文件config.json"""
+    config_code = loadcode(jsonpath)
+    config = json.loads(config_code)
+    return config
 </code></pre>
-<p>运行结果：</p>
-<pre><code>    0
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    传入的字符串是: hello world
-    myfunc 程序运行时间:0.11ms
-    functools.wraps是什么？
+<p>具体的代码可以查看碎言静态博客的代码仓库，这里只介绍一些项目的架构技巧。</p>
+<h3>博客文章以及其他相关数据的搜集</h3>
+<p>博客的静态文件除了基础的博客信息外，还有博客的归档、分类(标签)、博客页面的数据等，这些都需要从博客文章的Markdown文件数据集中计算得出。
+这里我采用了从文章目录中搜集博客文章，读取文章头部的定义内容，组织这些数据创建一个blog.json的索引，这个索引可以用来生成归档和标签页面的内容，也可以用来作为搜索的依据。</p>
+<p>具体通过递归扫描文章目录来生成：</p>
+<pre><code>def create_blogdata_json(adir):
+    """
+    递归获得当前目录及其子目录中所有的.md文件列表。
+    并创建blog的data索引JSON
+    :param adir: 文章日志所在目录
+    :param bdir: 站点根目录
+    :return: json字符串
+    """
+    data_json = []
+    # 当前目录下所有的文件、子目录、子目录下的文件。
+    for root, dirs, files in os.walk(adir):
+        for file in files:
+            # 值读取.md
+            if file.endswith('.md'):
+                url = os.path.join(root, file).replace(
+                    adir + os.sep, '').replace('.md', '')  # 最后需要组装的相对目录
+                furl = os.path.join(root, file)  # 当前文件的绝对目录
+                f_data = extract_md_header(furl)  # 获取.md的文章信息转成字典
+                f_data["url"] = url
+                f_data["uptime"] = get_file_modification_time(os.path.join(root, file))
+                data_json.append(f_data)  # 添加到需要返回的数据数组中
+
+    data_json.sort(key=lambda x: x["time"], reverse=True)  # 对数组进行降序排序
+    data_json_str = json.dumps(data_json, ensure_ascii=False)  # 转化为json字符串
+    return data_json_str
 </code></pre>
-<p><code>functools.wraps</code>是为了保留原函数的属性不被装饰器破坏，这个时候就可以使用<code>functools.wraps</code>。</p>
-<p>functools这个库里有很多关于函数的功能模块，后续我们在继续研究。</p>
+<p>有了这个文章数据之后，基本上就是解决了所有的静态博客文件生成依赖了。之后我们就可以编写代码，依次或是批量生成相关的页面了。</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/before-2022/20201202155245.html" class="text-truncate">< <span>如何打包上传Python程序或模块包到PyPi供其他人使用pip下载？</span></a>
-        
 
         
-        <a href="https://suiyan.cc/before-2022/20200330194328.html" class="text-truncate"><span>npm更换源与nrm安装与配置</span> ></a>
+        <a href="https://suiyan.cc/2023/20230516211444.html" class="text-truncate"><span>一款基于GitHub的评论系统不但免费安装还贼简单！</span> ></a>
         
     </div>
     
@@ -223,10 +283,6 @@
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</span></a>
@@ -245,7 +301,27 @@
             </li>
             
             <li>
+                <a href="https://suiyan.cc/before-2022/20201005203404.html" class="text-truncate "><span>聊聊Python中的装饰器</span></a>
+            </li>
+            
+            <li>
                 <a href="https://suiyan.cc/before-2022/20200330193816.html" class="text-truncate "><span>pip临时修改下载源</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230427151750.html" class="text-truncate "><span>coding_blog 碎言静态博客主题</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230420162736.html" class="text-truncate "><span>simple_blog 碎言静态博客主题</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</span></a>
             </li>
             
         </ul>

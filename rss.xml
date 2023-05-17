@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-16 21:14:44</pubDate>
+        <pubDate>2023-05-17 08:47:18</pubDate>
+        
+        <item>
+            <title>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</title>
+            <link>https://suiyan.cc/2023/20230517084718.html</link>
+            <author>J.sky</author>
+            <description>博客的静态页面的生成都是由博客的基础数据支撑的，搜集博客的基本信息和博客文章数据，是生成博客静态文件的核心功能。</description>
+            <category>Python,碎言博客</category>
+            <pubDate>2023-05-17 08:47:18</pubDate>
+        </item>
         
         <item>
             <title>一款基于GitHub的评论系统不但免费安装还贼简单！</title>
@@ -85,15 +94,6 @@
             <description>Tailwind CSS是一种和传统CSS编写方式不一样的开发模式，Tailwind CSS编写大量的css的class，预置超多的css样式，让开发者可以通过在HTML的class中以命名的方式去调用这些class，几乎可以不用去写style的代码，只使用class的名称来代替。</description>
             <category>TailwindCSS</category>
             <pubDate>2023-05-11 18:29:12</pubDate>
-        </item>
-        
-        <item>
-            <title>Git提示 ! [remote rejected] master -> master (failure)</title>
-            <link>https://suiyan.cc/2023/20230509201037.html</link>
-            <author>J.sky</author>
-            <description>Git提示 ! [remote rejected] master -> master (failure) 的解决办法。</description>
-            <category>Git</category>
-            <pubDate>2023-05-09 20:10:37</pubDate>
         </item>
         
     </channel>
