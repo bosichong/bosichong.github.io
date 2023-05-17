@@ -309,6 +309,7 @@ small {
 # Sections General
 --------------------------------------------------------------*/
 section {
+  margin-top: 50px;
   padding: 1rem;
   overflow: hidden;
 }
