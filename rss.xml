@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-17 08:47:18</pubDate>
+        <pubDate>2023-05-18 09:28:45</pubDate>
+        
+        <item>
+            <title>Django 4.2 复习笔记(一)迅速概览</title>
+            <link>https://suiyan.cc/2023/20230518092845.html</link>
+            <author>J.sky</author>
+            <description>许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。</description>
+            <category>Django</category>
+            <pubDate>2023-05-18 09:28:45</pubDate>
+        </item>
         
         <item>
             <title>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</title>
@@ -85,15 +94,6 @@
             <description>今天在vscode中安装Tailwind CSS IntelliSense这个插件，但是安装完后，编写HTML中的class的时候并没有得到tailwindcss的代码提示，看来配置项设置有问题。</description>
             <category>TailwindCSS</category>
             <pubDate>2023-05-11 19:15:15</pubDate>
-        </item>
-        
-        <item>
-            <title>Tailwind CSS的安装配置和体验</title>
-            <link>https://suiyan.cc/2023/20230511182912.html</link>
-            <author>J.sky</author>
-            <description>Tailwind CSS是一种和传统CSS编写方式不一样的开发模式，Tailwind CSS编写大量的css的class，预置超多的css样式，让开发者可以通过在HTML的class中以命名的方式去调用这些class，几乎可以不用去写style的代码，只使用class的名称来代替。</description>
-            <category>TailwindCSS</category>
-            <pubDate>2023-05-11 18:29:12</pubDate>
         </item>
         
     </channel>
