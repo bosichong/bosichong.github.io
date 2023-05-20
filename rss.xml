@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-18 09:28:45</pubDate>
+        <pubDate>2023-05-20 08:11:53</pubDate>
+        
+        <item>
+            <title>Django 4.2 复习笔记(二)编写和调试Model模型</title>
+            <link>https://suiyan.cc/2023/20230520081153.html</link>
+            <author>J.sky</author>
+            <description>对于web应用的编写应该从哪里开始呢？如果包含了数据的增删改查，那么对于使用Django开发web应用来说，从模型(Model)开始最好不过了。模型准确且唯一的描述了数据。它包含您储存的数据的重要字段和行为。一般来说，每一个模型都映射一张数据库表。</description>
+            <category>Django</category>
+            <pubDate>2023-05-20 08:11:53</pubDate>
+        </item>
         
         <item>
             <title>Django 4.2 复习笔记(一)迅速概览</title>
@@ -85,15 +94,6 @@
             <description>TailwindCSS上手确实很好用，有点明显，但是坑也挺多的。本来打算使用TailwindCSS制作一个全新的博客主题，但是在实际的使用过程中有一些不爽细节不吐不快。</description>
             <category>TailwindCSS</category>
             <pubDate>2023-05-13 08:20:50</pubDate>
-        </item>
-        
-        <item>
-            <title>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</title>
-            <link>https://suiyan.cc/2023/20230511191515.html</link>
-            <author>J.sky</author>
-            <description>今天在vscode中安装Tailwind CSS IntelliSense这个插件，但是安装完后，编写HTML中的class的时候并没有得到tailwindcss的代码提示，看来配置项设置有问题。</description>
-            <category>TailwindCSS</category>
-            <pubDate>2023-05-11 19:15:15</pubDate>
         </item>
         
     </channel>
