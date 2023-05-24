@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-22 20:18:00</pubDate>
+        <pubDate>2023-05-24 21:13:40</pubDate>
+        
+        <item>
+            <title>Django 4.2 复习笔记(三)Model模型字段</title>
+            <link>https://suiyan.cc/2023/20230524211340.html</link>
+            <author>J.sky</author>
+            <description>Django的ORM在Python中算是数一数二的，使用起来非常的简单和丝滑，文档也写的简单直观，相对于SQLAlchemy有过之而无不及。</description>
+            <category>Django</category>
+            <pubDate>2023-05-24 21:13:40</pubDate>
+        </item>
         
         <item>
             <title>vite打包后element样式被其他框架样式覆盖的解决方法</title>
@@ -85,15 +94,6 @@
             <description>但是添加后我想测试一下看看请求中headers是否添加了`fetch()如何读取请求中的'user-agent'？`,本来希望打印`response`中的herders来查看`'user-agent'`是否伪装成功，直接在fetch的response中遍历headers是无法获得`'user-agent'`这个属性。所以只好搭建一个临时服务器端来打印请求的request。</description>
             <category>JavaScript,fetch,request</category>
             <pubDate>2023-05-15 10:50:53</pubDate>
-        </item>
-        
-        <item>
-            <title>一些关于中文独立博客的聚合网站</title>
-            <link>https://suiyan.cc/2023/20230514163231.html</link>
-            <author>J.sky</author>
-            <description>这阵子忙里偷闲的更新了一些博文，因为之前中间有段时间没有更新博客，所以对独立博客的这个圈子了解的也不是很多，最近通过一些独立博客的友情链接，发现了几个有意思的关于中文独立博客聚合的网址，觉得很有趣，不敢独享分享给大家。</description>
-            <category>独立博客</category>
-            <pubDate>2023-05-14 16:32:31</pubDate>
         </item>
         
     </channel>
