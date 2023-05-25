@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-24 21:13:40</pubDate>
+        <pubDate>2023-05-25 08:41:44</pubDate>
+        
+        <item>
+            <title>Django 4.2 复习笔记(四)数据的查询Django的ORM</title>
+            <link>https://suiyan.cc/2023/20230525084144.html</link>
+            <author>J.sky</author>
+            <description>Django的ORM操作非常简答，几乎把所有你能想到的数据库的操作都封装了，即便没有你需要的，也可以使用原生的SQL语句进行查询。</description>
+            <category>Django</category>
+            <pubDate>2023-05-25 08:41:44</pubDate>
+        </item>
         
         <item>
             <title>Django 4.2 复习笔记(三)Model模型字段</title>
@@ -85,15 +94,6 @@
             <description>async和await关键字让我们可以用一种更简洁的方式写出基于 Promise 的异步行为，而无需刻意地链式调用 promise。而FetchAPI可以通过网络访问资源，您可以发出HTTP请求（使用GET和POST其他方法）、下载和上传文件。</description>
             <category>JavaScript,fetch,async,await</category>
             <pubDate>2023-05-15 21:51:36</pubDate>
-        </item>
-        
-        <item>
-            <title>fetch()如何读取请求中的'user-agent'？</title>
-            <link>https://suiyan.cc/2023/20230515105053.html</link>
-            <author>J.sky</author>
-            <description>但是添加后我想测试一下看看请求中headers是否添加了`fetch()如何读取请求中的'user-agent'？`,本来希望打印`response`中的herders来查看`'user-agent'`是否伪装成功，直接在fetch的response中遍历headers是无法获得`'user-agent'`这个属性。所以只好搭建一个临时服务器端来打印请求的request。</description>
-            <category>JavaScript,fetch,request</category>
-            <pubDate>2023-05-15 10:50:53</pubDate>
         </item>
         
     </channel>

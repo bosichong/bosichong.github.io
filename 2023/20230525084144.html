@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Django" name="keywords">
-    <meta content="对于web应用的编写应该从哪里开始呢？如果包含了数据的增删改查，那么对于使用Django开发web应用来说，从模型(Model)开始最好不过了。模型准确且唯一的描述了数据。它包含您储存的数据的重要字段和行为。一般来说，每一个模型都映射一张数据库表。" name="description">
+    <meta content="Django的ORM操作非常简答，几乎把所有你能想到的数据库的操作都封装了，即便没有你需要的，也可以使用原生的SQL语句进行查询。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Django 4.2 复习笔记(二)编写和调试Model模型 | SuiYan 碎言博客</title>
+    <title>Django 4.2 复习笔记(四)数据的查询Django的ORM | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(二)编写和调试Model模型</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-20 08:11:53">2023-05-20 08:11:53</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-20 15:40:33">2023-05-20 15:40:33</span> | Tag:
+    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(四)数据的查询Django的ORM</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-25 08:41:44">2023-05-25 08:41:44</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-25 11:58:46">2023-05-25 11:58:46</span> | Tag:
         
         
         Django
@@ -124,111 +124,67 @@
 </hgroup>
 
 <div class="article">
-    <p>对于web应用的编写应该从哪里开始呢？如果包含了数据的增删改查，那么对于使用Django开发web应用来说，从模型(Model)开始最好不过了。模型准确且唯一的描述了数据。它包含您储存的数据的重要字段和行为。一般来说，每一个模型都映射一张数据库表。</p>
-<h2>数据库配置</h2>
-<p>首先，使用数据库需要先连接到数据库才能定义表和操作数据，Django的数据库连接在配置文件<code>settins.py</code>中配置：</p>
-<pre><code>DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-</code></pre>
-<p>上边的代码配置一个sqlite3的数据库连接，本文是用sqlite数据库来进行测试，如果你需要连接其他数据库，可以修改数据库到对应的连接方式，官方支持 PostgreSQL、MariaDB、MySQL、Oracle 和 SQLite。对数据库连接的配置可以参考这个网址：</p>
-<p><a href="https://docs.djangoproject.com/zh-hans/4.2/ref/settings/#std-setting-DATABASES">https://docs.djangoproject.com/zh-hans/4.2/ref/settings/#std-setting-DATABASES</a></p>
-<h2>模型(Model)</h2>
-<p>定义模型在Django里边是很简单的，可以在Django的应用的<code>app/model.py</code>编写模型定义的代码,每个模型都是一个 Python 的类，这些类继承 django.db.models.Model，先导入：</p>
-<pre><code>from django.db import models
-</code></pre>
-<p>然后就可以编写model的代码了：</p>
+    <p>Django的ORM操作非常简答，几乎把所有你能想到的数据库的操作都封装了，即便没有你需要的，也可以使用原生的SQL语句进行查询。</p>
+<h2>创建模型</h2>
+<p>为了测试查询，先创建一个简单的Django模型：</p>
+<p><code>myapp/models.py</code></p>
 <pre><code>class Article(models.Model):
     title = models.CharField(max_length=128,verbose_name='文章标题')
     content = models.TextField(verbose_name='文章内容')
 </code></pre>
-<p>任何模型的定义都需要继承models.Model，Django为开发者提供了大量的class，模型类的每个属性都相当于一个数据库的字段。</p>
-<p>相关参考：</p>
-<p><a href="https://docs.djangoproject.com/zh-hans/4.2/ref/models/fields/#model-field-types">模型字段参考</a></p>
-<p><a href="https://docs.djangoproject.com/zh-hans/4.2/ref/models/fields/#field-types">字段类型参考</a></p>
-<h2>激活模型</h2>
-<p>定义完模型，首先需要生成相关的数据库和表，然后通过Django的命令行进行调试。</p>
-<p>配置文件<code>mysite/settings.py</code>中添加<code>myapp</code>，你的应用名称。</p>
-<pre><code>INSTALLED_APPS = [
-    'myapp',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
-</code></pre>
-<p>然后，终端下运行：</p>
-<pre><code>$ python manage.py makemigrations myapp
-Migrations for 'myapp':
-myapp/migrations/0001_initial.py
-    - Create model Article
-</code></pre>
-<p>这是通过Django的命令行生成了对应SQL语句，执行这些SQL语句就会生成对应的表和字段。</p>
-<p>继续敲入<code>python manage.py migrate</code></p>
-<pre><code>$ python manage.py migrate
-Operations to perform:
-Apply all migrations: admin, auth, contenttypes, myapp, sessions
-Running migrations:
-Applying contenttypes.0001_initial... OK
-Applying auth.0001_initial... OK
-Applying admin.0001_initial... OK
-Applying admin.0002_logentry_remove_auto_add... OK
-Applying admin.0003_logentry_add_action_flag_choices... OK
-Applying contenttypes.0002_remove_content_type_name... OK
-Applying auth.0002_alter_permission_name_max_length... OK
-Applying auth.0003_alter_user_email_max_length... OK
-Applying auth.0004_alter_user_username_opts... OK
-Applying auth.0005_alter_user_last_login_null... OK
-Applying auth.0006_require_contenttypes_0002... OK
-Applying auth.0007_alter_validators_add_error_messages... OK
-Applying auth.0008_alter_user_username_max_length... OK
-Applying auth.0009_alter_user_last_name_max_length... OK
-Applying auth.0010_alter_group_name_max_length... OK
-Applying auth.0011_update_proxy_permissions... OK
-Applying auth.0012_alter_user_first_name_max_length... OK
-Applying myapp.0001_initial... OK
-Applying sessions.0001_initial... OK
-</code></pre>
-<p>这个时候就会生成相关的数据库，当然Django一些自带的项目依赖的数据库也一并创建了。</p>
-<h2>调试模型</h2>
+<p>其他还有一些操作：配置文件里需要添加应用，连接数据库和生成数据库的表，这些操作之前都有介绍，参考：<a href="https://suiyan.cc/2023/20230520081153.html">Django 4.2 复习笔记(二)编写和调试Model模型</a></p>
+<h2>增删改查(CRUD)</h2>
 <p>终端下敲入：</p>
 <p><code>$ python manage.py shell</code></p>
-<p>进入Python的交互模式，敲入下边的代码进行测试：</p>
+<p>开始测试Django的增删改查(CRUD)</p>
+<h3>添加数据</h3>
 <pre><code>&gt;&gt;&gt; from myapp.models import Article
-&gt;&gt;&gt; a = Article(title='测试标题',content='这是一篇很长很长的文章。。。。。。')
+&gt;&gt;&gt; a = Article(title="测试文章的标题",content="哈哈，我来测试一下......")
 &gt;&gt;&gt; a.save()
-&gt;&gt;&gt; a.id
-1
 &gt;&gt;&gt; a.title
-'测试标题'
-&gt;&gt;&gt; a.content
-'这是一篇很长很长的文章。。。。。。'
-&gt;&gt;&gt; Article.objects.all()
-&lt;QuerySet [&lt;Article: Article object (1)&gt;]&gt;
-&gt;&gt;&gt; Article.objects.filter(id=1)
-&lt;QuerySet [&lt;Article: Article object (1)&gt;]&gt;
-&gt;&gt;&gt; Article.objects.get(id=1)
-&lt;Article: Article object (1)&gt;
+'测试文章的标题'
+&gt;&gt;&gt; a.id
+2
+</code></pre>
+<h3>更新数据</h3>
+<pre><code>&gt;&gt;&gt; a.title="修改后的标题"
+&gt;&gt;&gt; a.save()
+&gt;&gt;&gt; a.title
+'修改后的标题'
 &gt;&gt;&gt;
 </code></pre>
-<p>是不是很方便？不但可以创建还可以进行其他的增删改查。</p>
-<h2>总结</h2>
-<p>有关模型的使用这篇文章只是起了个头，模型是Django应用的核心与灵魂，web网站的数据都是围绕着模型展开的，熟练的创建和调试模型，会大大的提高Django应用的编写与开发，稍后会详细的介绍模型编写的一些细节。</p>
+<h3>删除数据</h3>
+<pre><code>&gt;&gt;&gt; a.delete()
+</code></pre>
+<p>此时数据已经删除，在表中已不存在。</p>
+<h3>查询</h3>
+<p>数据的查询的需求有时是非常复杂的，这里只列举一些常用的查询。</p>
+<p>Django的ORM数据操作常用函数：</p>
+<p>all()函数，返回符合条件的全部记录。</p>
+<pre><code>arts = Article.objects.all()
+</code></pre>
+<p>filter()函数，返回指定条件的记录。filter后面的括号内为过滤条件，类似于SQL中语句where后面的条件语句。</p>
+<pre><code>&gt;&gt;&gt; b = Article.objects.filter(title='aaa')
+&gt;&gt;&gt; len(b)
+1
+&gt;&gt;&gt;
+</code></pre>
+<p>用 get() 检索单个对象.</p>
+<pre><code>c = Article.objects.get(title='aaa')
+</code></pre>
+<p>order_by()函数，按照order_by后面括号中的字段排序。</p>
+<p>exclude(**kwargs) 返回一个新的 QuerySet，包含的对象 不 满足给定查询参数。</p>
+<h3>总结</h3>
+<p>Django查询还有很多方法，这里就不一一介绍了，请参考官方文档：</p>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.2/topics/db/queries/#">执行查询</a></p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230522201116.html" class="text-truncate">< <span>如何解决 Some chunks are larger than 500 KiB after minification？</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230518092845.html" class="text-truncate"><span>Django 4.2 复习笔记(一)迅速概览</span> ></a>
+        <a href="https://suiyan.cc/2023/20230524211340.html" class="text-truncate"><span>Django 4.2 复习笔记(三)Model模型字段</span> ></a>
         
     </div>
     
@@ -239,11 +195,11 @@ Applying sessions.0001_initial... OK
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230525084144.html" class="text-truncate "><span>Django 4.2 复习笔记(四)数据的查询Django的ORM</span></a>
+                <a href="https://suiyan.cc/2023/20230524211340.html" class="text-truncate "><span>Django 4.2 复习笔记(三)Model模型字段</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230524211340.html" class="text-truncate "><span>Django 4.2 复习笔记(三)Model模型字段</span></a>
+                <a href="https://suiyan.cc/2023/20230520081153.html" class="text-truncate "><span>Django 4.2 复习笔记(二)编写和调试Model模型</span></a>
             </li>
             
             <li>
