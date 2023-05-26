@@ -2,6 +2,27 @@
   --bs-body-font-size: 1.2rem;
   --bs-body-color: hsl(205deg, 16%, 77%);
   --bs-body-bg: #11191f;
+  --rainbow-gradient: linear-gradient(
+    -90deg,
+    #602ce5 0,
+    #2ce597 30%,
+    #e7bb18 50%,
+    #ff7657 70%,
+    #45c1ee 90%,
+    #2ce597 100%
+  );
+}
+
+h1 {
+  background-image: var(--rainbow-gradient, #fff);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2rem #000);
+  text-shadow: none !important;
 }
 
 .modal-backdrop {
@@ -97,7 +118,6 @@ small {
   margin: 15px auto;
   display: block;
   width: 120px;
-
 }
 
 #header .profile h1 {
@@ -110,7 +130,7 @@ small {
   font-family: "Poppins", sans-serif;
 }
 
-#header .blog-description{
+#header .blog-description {
   text-align: center;
 }
 
@@ -172,7 +192,7 @@ small {
   list-style: none;
 }
 
-.nav-menu ul{
+.nav-menu ul {
   padding-left: 0px;
 }
 
@@ -1242,13 +1262,13 @@ section {
   font-size: 1.3rem;
 }
 
-.article{
+.article {
   margin: 1.5rem 0;
 }
 
 /* 搜索框移动端适配 */
 
-.blog-search{
+.blog-search {
   position: fixed;
   top: 1rem;
   right: 60px;
@@ -1257,35 +1277,34 @@ section {
   transition: all 1s ease-in-out;
 }
 
-.blog-search:hover{
+.blog-search:hover {
   width: 600px;
 }
 
-#search-btn{
+#search-btn {
   width: auto;
 }
 
 @media (max-width: 1000px) {
-  .blog-search{
+  .blog-search {
     position: initial;
     top: 1rem;
     right: 60px;
     width: auto;
     z-index: 500;
   }
-  #search-btn{
+  #search-btn {
     width: 58px;
   }
-  .blog-search:hover{
+  .blog-search:hover {
     width: auto;
   }
-  
 }
 /* header 资料区 */
-.h-top{
+.h-top {
   margin-top: 30px;
 }
 
-.blog-info{
+.blog-info {
   margin-top: 50px;
 }
