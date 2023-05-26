@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-25 08:41:44</pubDate>
+        <pubDate>2023-05-27 07:08:32</pubDate>
+        
+        <item>
+            <title>css实现漂亮的彩虹渐变文本效果</title>
+            <link>https://suiyan.cc/2023/20230527070832.html</link>
+            <author>J.sky</author>
+            <description>这段代码的效果是，为h1标签设置一个彩虹渐变的背景，并使文本颜色透明，从而实现彩虹渐变的文本效果。</description>
+            <category>CSS</category>
+            <pubDate>2023-05-27 07:08:32</pubDate>
+        </item>
         
         <item>
             <title>Django 4.2 复习笔记(四)数据的查询Django的ORM</title>
@@ -85,15 +94,6 @@
             <description>一直想对博客页面的时间进行格式化，把标准的时间格式修改成XX时间前或相对时间，因为时间已经直接输出到了页面DOM中，所以考虑直接使用相关的js库来实现比较方便，搜了一下发现二个JavaScript的时间处理库比较不错，他们是：`Moment.js`和`Day.js`。</description>
             <category>Moment.js,Day.js</category>
             <pubDate>2023-05-16 13:28:17</pubDate>
-        </item>
-        
-        <item>
-            <title>async/await和fetch()的使用</title>
-            <link>https://suiyan.cc/2023/20230515215136.html</link>
-            <author>J.sky</author>
-            <description>async和await关键字让我们可以用一种更简洁的方式写出基于 Promise 的异步行为，而无需刻意地链式调用 promise。而FetchAPI可以通过网络访问资源，您可以发出HTTP请求（使用GET和POST其他方法）、下载和上传文件。</description>
-            <category>JavaScript,fetch,async,await</category>
-            <pubDate>2023-05-15 21:51:36</pubDate>
         </item>
         
     </channel>

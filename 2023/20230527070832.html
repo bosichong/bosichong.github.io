@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="CSS" name="keywords">
-    <meta content="在前端界面的设计时，经常要用到css的布局属性，这里主要对flex、gird做一些学习上的总结，flex和grid都是CSS布局模块，允许响应式和灵活的设计。但是，它们具有不同的用例和属性。" name="description">
+    <meta content="这段代码的效果是，为h1标签设置一个彩虹渐变的背景，并使文本颜色透明，从而实现彩虹渐变的文本效果。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>css布局如何选择flex和grid? | SuiYan 碎言博客</title>
+    <title>css实现漂亮的彩虹渐变文本效果 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">css布局如何选择flex和grid?</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-18 12:29:36">2023-04-18 12:29:36</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-19 08:20:54">2023-04-19 08:20:54</span> | Tag:
+    <h1 class="animate__animated animate__bounce">css实现漂亮的彩虹渐变文本效果</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-27 07:08:32">2023-05-27 07:08:32</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-27 07:19:09">2023-05-27 07:19:09</span> | Tag:
         
         
         CSS
@@ -124,69 +124,65 @@
 </hgroup>
 
 <div class="article">
-    <p>在前端界面的设计时，经常要用到css的布局属性，这里主要对flex、gird做一些学习上的总结，flex和grid都是CSS布局模块，允许响应式和灵活的设计。但是，它们具有不同的用例和属性。</p>
-<h3>flex 弹性盒子</h3>
-<p>flex主要用于一维布局，例如在行或列中排列项目。它在容器元素上使用display: flex属性，在子元素上使用flex属性来控制它们的大小和位置。一些关键属性包括：</p>
-<ul>
-<li>flex-direction：确定主轴的方向（行或列）</li>
-<li>justify-content：沿主轴对齐项目</li>
-<li>align-items：沿交叉轴对齐项目</li>
-<li>flex-wrap：确定是否应在没有足够空间时将项目换行</li>
-</ul>
-<p>例子：</p>
-<pre><code>&lt;nav&gt;
-&lt;ul style="display: flex; justify-content: space-between;"&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/nav&gt;
-</code></pre>
-<nav>
-  <ul style="display: flex; justify-content: space-between;">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
+    <p>这段代码的效果是，为h1标签设置一个彩虹渐变的背景，并使文本颜色透明，从而实现彩虹渐变的文本效果。具体效果如下：</p>
+<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/ch.png" /></p>
+<p>具体实现：</p>
+<ol>
+<li>定义一个名为<code>--rainbow-gradient</code>的CSS变量，用于存储一个渐变背景。这个渐变背景是一个线性渐变，从左到右分别是不同的颜色，角度为-90度。</li>
+</ol>
+<pre>
+<code>
+:root{
+            --rainbow-gradient:
+                    linear-gradient(-90deg,
+                    #602ce5 0,
+                    #2ce597 30%,
+                    #e7bb18 50%,
+                    #ff7657 70%,
+                    #45c1ee 90%,
+                    #2ce597 100%);
+        }
+</code>
+</pre>
 
-<h3>grid 网格布局</h3>
-<p>grid用于二维布局，例如创建行和列的网格。它在容器元素上使用display: grid属性，在子元素上使用grid属性来控制它们的位置和大小。一些关键属性包括：</p>
-<ul>
-<li>grid-template-columns和grid-template-rows：定义网格中列和行的大小和数量</li>
-<li>grid-column和grid-row：指定网格中项目的起始和结束位置</li>
-<li>grid-gap：设置网格项之间的间距</li>
-</ul>
-<p>一个简单的例子：</p>
-<pre><code>&lt;div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;"&gt;
-&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
-&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
-&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
-&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
-&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
-&lt;img src="https://suiyan.cc/assets/images/avatar.jpg"&gt;
-&lt;/div&gt;
-</code></pre>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;">
-  <img src="https://suiyan.cc/assets/images/avatar.jpg">
-  <img src="https://suiyan.cc/assets/images/avatar.jpg">
-  <img src="https://suiyan.cc/assets/images/avatar.jpg">
-  <img src="https://suiyan.cc/assets/images/avatar.jpg">
-  <img src="https://suiyan.cc/assets/images/avatar.jpg">
-  <img src="https://suiyan.cc/assets/images/avatar.jpg">
-</div>
+<ol>
+<li>为类和<code>h1</code>标签设置样式。这里使用了刚刚定义的 --rainbow-gradient 变量作为背景图片，并设置了一些其他样式属性。</li>
+</ol>
+<pre>
+<code>
+h1 {
+    background-image: var(--rainbow-gradient, #fff);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    filter: drop-shadow(0 0 2rem #000);
+    text-shadow: none !important;
+}
+</code>
+</pre>
 
-<p>总之，flex最适合一维布局，例如导航，瀑布流等，而grid最适合二维布局，比如站点的总体布局，数据表格布局等。但是，它们也可以一起使用以创建更复杂的布局。</p>
+<p>解释一下这段CSS：</p>
+<ul>
+<li>background-image：使用 --rainbow-gradient 变量作为背景图片，如果该变量未定义，则使用白色（#fff）作为背景。</li>
+<li>background-size：设置背景图片的尺寸为 100%。</li>
+<li>background-repeat：设置背景图片重复显示。</li>
+<li>-webkit-background-clip 和 -moz-background-clip：这两个属性用于设置背景图片的裁剪区域。这里设置为 text，表示只显示在文本区域的背景图片。</li>
+<li>-webkit-text-fill-color 和 -moz-text-fill-color：这两个属性用于设置文本的填充颜色。这里设置为 transparent，表示文本颜色透明，这样就可以看到背景图片的颜色。</li>
+<li>filter：设置一个阴影效果，颜色为黑色（#000），模糊半径为 2rem。</li>
+<li>text-shadow：设置文本阴影为无，!important 表示这个属性的优先级最高。</li>
+</ul>
+<p>这段代码的效果是，为 h1 标签设置一个彩虹渐变的背景，并使文本颜色透明，从而实现彩虹渐变的文本效果。同时，还添加了一个阴影效果，赶快试试吧，是不是很好看？</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate">< <span>使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230416175852.html" class="text-truncate"><span>从回调函数到JavaScript异步编程</span> ></a>
+        <a href="https://suiyan.cc/2023/20230525084144.html" class="text-truncate"><span>Django 4.2 复习笔记(四)数据的查询Django的ORM</span> ></a>
         
     </div>
     
@@ -195,10 +191,6 @@
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230527070832.html" class="text-truncate "><span>css实现漂亮的彩虹渐变文本效果</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230513104151.html" class="text-truncate "><span>display:none没有隐藏元素所占空间的原因</span></a>
@@ -218,6 +210,10 @@
             
             <li>
                 <a href="https://suiyan.cc/2023/20230504105514.html" class="text-truncate "><span>css的过渡效果transition的使用</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230418122936.html" class="text-truncate "><span>css布局如何选择flex和grid?</span></a>
             </li>
             
             <li>
