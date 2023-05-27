@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Django" name="keywords">
-    <meta content="许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。" name="description">
+    <meta content="DjangoSQLAlchemy" name="keywords">
+    <meta content="SQLAlchemy和Django都是流行的Python框架，用于处理数据库关系。虽然它们都提供了关系字段的概念，但在实现和使用上有一些不同点。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Django 4.2 复习笔记(一)迅速概览 | SuiYan 碎言博客</title>
+    <title>SQLAlchemy的关系字段和Django的关系字段他们的不同点。 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,115 +114,43 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(一)迅速概览</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-18 09:28:45">2023-05-18 09:28:45</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-18 10:53:59">2023-05-18 10:53:59</span> | Tag:
+    <h1 class="animate__animated animate__bounce">SQLAlchemy的关系字段和Django的关系字段他们的不同点。</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-28 07:47:12">2023-05-28 07:47:12</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-28 07:49:39">2023-05-28 07:49:39</span> | Tag:
         
         
         Django
+        
+        SQLAlchemy
         
     </small>
 </hgroup>
 
 <div class="article">
-    <p>许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。</p>
-<h2>Django 安装</h2>
-<p>建议使用conda创建虚拟环境</p>
-<p>conda 常用的命令。</p>
-<pre><code>conda list 查看安装了哪些包。
-conda env list 或 conda info -e 查看当前存在哪些虚拟环境
-conda update conda 检查更新当前conda
-conda --version 查询conda版本
-conda -h 查询conda的命令使用
-activate // 切换到base环境
-conda deactivate //退出虚拟环境
-activate learn // 切换到learn环境
-conda create -n learn python=3 // 创建一个名为learn的环境并指定python版本为3(的最新版本)
-conda env list // 列出conda管理的所有环境
-conda list // 列出当前环境的所有包
-conda install requests 安装requests包
-conda remove requests 卸载requets包
-conda remove -n learn --all // 删除learn环境及下属所有包
-conda update requests 更新requests包
-conda env export &gt; environment.yaml // 导出当前环境的包信息
-conda env create -f environment.yaml // 用配置文件创建新的虚拟环境
-</code></pre>
-<p>然后使用pip进行安装：</p>
-<pre><code>pip install Django
-</code></pre>
-<p>查询Django版本：</p>
-<pre><code>&gt;&gt;&gt; import django
-&gt;&gt;&gt; print(django.get_version())
-4.2
-</code></pre>
-<h2>创建Django项目</h2>
-<p>新建一个项目目录，例如：app</p>
-<pre><code>cd app
-django-admin startproject mysite
-</code></pre>
-<p>之后我们可以看到项目的结构大体如下：</p>
-<pre><code>.
-└── mysite
-    ├── manage.py
-    └── mysite
-        ├── __init__.py
-        ├── asgi.py
-        ├── settings.py
-        ├── urls.py
-        └── wsgi.py
-</code></pre>
-<p>切换到项目的根目，<code>manage.py</code>同目录：</p>
-<pre><code>python manage.py runserver
-
-admin, auth, contenttypes, sessions.
-Run 'python manage.py migrate' to apply them.
-May 18, 2023 - 01:38:18
-Django version 4.2.1, using settings 'app.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
-</code></pre>
-<p>浏览器输入网址：http://127.0.0.1:8000/ 就可以看到Django的默认的欢迎页面了。</p>
-<h2>创建应用</h2>
-<p>进入项目的目录，要和<code>manage.py</code>同目录，运行创建一个应用：</p>
-<pre><code>python manage.py startapp myapp
-
-
-.
-└── mysite
-    ├── db.sqlite3
-    ├── manage.py
-    ├── myapp
-    └── mysite
-</code></pre>
-<p>这个时候发现myapp的这个应用就创建成功了。</p>
-<p><code>django-admin startproject mysite</code>和<code>python manage.py startapp myapp</code>的区别是，startproject创建的是一个项目，startapp创建的是一个应用，一个项目可以包括多个应用，例如创建一个网站项目，可以包括：新闻、图片库、后台管理等，这些可以细化成单个的应用，可以对应到路由，应用模块化后方便以后分开进行开发。</p>
-<h2>添加视图和路由</h2>
-<p>在<code>myapp/views.py</code>添加一个视图：</p>
-<pre><code>from django.http import HttpResponse
-def index(request):
-    return HttpResponse("Hello world!")
-</code></pre>
-<p>在<code>myapp/urls.py</code>添加路由:</p>
-<pre><code>from django.urls import path
-from . import views
-
-
-urlpatterns = [
-    path("",views.index,name="index"),
-]
-</code></pre>
-<p>好了，这一套组合拳下去，我们也该看看效果了，在<code>manage.py</code>所在的目录中运行：<code>python manage.py runserver</code>，然后在浏览器里访问你的地址加上你的目录:<code>http://127.0.0.1:8000/myapp</code>，就可以看到久违的'hello world'了。</p>
-<h2>总结</h2>
-<p>如果你使用过flask或是fastapi，你会发现Django的hello world显得有些繁琐，但是每个web框架都有各自的优缺点，Django大而全，帮你准备好了web所需的各种依赖，相对于flask和fastapi，Django更重些但更全面。</p>
+    <p>SQLAlchemy和Django都是流行的Python框架，用于处理数据库关系。虽然它们都提供了关系字段的概念，但在实现和使用上有一些不同点。以下是SQLAlchemy和Django关系字段之间的一些主要区别：
+1. 定义语法：
+    * SQLAlchemy：使用ORM（对象关系映射）方式，关系字段通常在模型类中定义为类属性。常见的关系字段包括relationship、backref等。
+    * Django：使用Django的模型定义语法，关系字段作为模型类的字段进行定义，使用特定的关系字段类（如ForeignKey、ManyToManyField）来表示不同的关系类型。
+2. 引用和访问：
+    * SQLAlchemy：关系字段通常使用对象引用来表示关联关系。通过关系字段可以在模型之间导航和访问相关对象。
+    * Django：关系字段通常使用数据库的引用机制（如外键）来表示关联关系。通过关系字段可以在模型之间导航和访问相关对象。Django还提供了ORM的查询API来执行复杂的数据库查询操作。
+3. 外键约束：
+    * SQLAlchemy：在定义关系字段时，可以选择是否启用外键约束。外键约束可以确保数据库中的关联完整性。
+    * Django：Django自动为关系字段创建外键约束，并通过数据库的外键机制来维护关联完整性。
+4. 数据库支持：
+    * SQLAlchemy：支持多种数据库后端，包括常见的关系数据库（如MySQL、PostgreSQL、SQLite）以及其他一些数据库系统。
+    * Django：同样支持多种数据库后端，可以使用不同的数据库引擎来与数据库进行交互。
+5. 灵活性和扩展性：
+    * SQLAlchemy：提供了更高级别的灵活性，允许开发者定义和控制数据库的更多细节。它支持更复杂的关联关系，自定义查询和表达式，以及更细粒度的控制。
+    * Django：提供了更简化和自动化的开发经验，尤其适合快速开发和常见的用例。它强调约定优于配置，并提供了一套简单且易于使用的ORM和查询API。
+需要注意的是，以上只是SQLAlchemy和Django关系字段的一些常见差异，具体使用和行为可能还受到各个框架版本、配置和个人开发者偏好的影响。根据具体的项目需求和开发背景，选择合适的框架和关系字段有助于提高开发效率和代码质量。</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230520081153.html" class="text-truncate">< <span>Django 4.2 复习笔记(二)编写和调试Model模型</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate"><span>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</span> ></a>
+        <a href="https://suiyan.cc/2023/20230528074013.html" class="text-truncate"><span>Django 4.2 复习笔记(五)Django中常见的关系字段及其示例</span> ></a>
         
     </div>
     
@@ -231,10 +159,6 @@ urlpatterns = [
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230528074712.html" class="text-truncate "><span>SQLAlchemy的关系字段和Django的关系字段他们的不同点。</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230528074013.html" class="text-truncate "><span>Django 4.2 复习笔记(五)Django中常见的关系字段及其示例</span></a>
@@ -250,6 +174,10 @@ urlpatterns = [
             
             <li>
                 <a href="https://suiyan.cc/2023/20230520081153.html" class="text-truncate "><span>Django 4.2 复习笔记(二)编写和调试Model模型</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230518092845.html" class="text-truncate "><span>Django 4.2 复习笔记(一)迅速概览</span></a>
             </li>
             
         </ul>

@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Django" name="keywords">
-    <meta content="许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。" name="description">
+    <meta content="Django是一个使用Python编写的开源Web应用程序框架，它提供了一种方便的方式来处理数据库关系。Django的关系字段允许你在模型之间建立各种类型的关联关系，如一对一、一对多和多对多关系。以下是Django中常见的关系字段及其示例。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Django 4.2 复习笔记(一)迅速概览 | SuiYan 碎言博客</title>
+    <title>Django 4.2 复习笔记(五)Django中常见的关系字段及其示例 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(一)迅速概览</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-18 09:28:45">2023-05-18 09:28:45</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-18 10:53:59">2023-05-18 10:53:59</span> | Tag:
+    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(五)Django中常见的关系字段及其示例</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-28 07:40:13">2023-05-28 07:40:13</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-28 07:50:23">2023-05-28 07:50:23</span> | Tag:
         
         
         Django
@@ -124,105 +124,54 @@
 </hgroup>
 
 <div class="article">
-    <p>许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。</p>
-<h2>Django 安装</h2>
-<p>建议使用conda创建虚拟环境</p>
-<p>conda 常用的命令。</p>
-<pre><code>conda list 查看安装了哪些包。
-conda env list 或 conda info -e 查看当前存在哪些虚拟环境
-conda update conda 检查更新当前conda
-conda --version 查询conda版本
-conda -h 查询conda的命令使用
-activate // 切换到base环境
-conda deactivate //退出虚拟环境
-activate learn // 切换到learn环境
-conda create -n learn python=3 // 创建一个名为learn的环境并指定python版本为3(的最新版本)
-conda env list // 列出conda管理的所有环境
-conda list // 列出当前环境的所有包
-conda install requests 安装requests包
-conda remove requests 卸载requets包
-conda remove -n learn --all // 删除learn环境及下属所有包
-conda update requests 更新requests包
-conda env export &gt; environment.yaml // 导出当前环境的包信息
-conda env create -f environment.yaml // 用配置文件创建新的虚拟环境
-</code></pre>
-<p>然后使用pip进行安装：</p>
-<pre><code>pip install Django
-</code></pre>
-<p>查询Django版本：</p>
-<pre><code>&gt;&gt;&gt; import django
-&gt;&gt;&gt; print(django.get_version())
-4.2
-</code></pre>
-<h2>创建Django项目</h2>
-<p>新建一个项目目录，例如：app</p>
-<pre><code>cd app
-django-admin startproject mysite
-</code></pre>
-<p>之后我们可以看到项目的结构大体如下：</p>
-<pre><code>.
-└── mysite
-    ├── manage.py
-    └── mysite
-        ├── __init__.py
-        ├── asgi.py
-        ├── settings.py
-        ├── urls.py
-        └── wsgi.py
-</code></pre>
-<p>切换到项目的根目，<code>manage.py</code>同目录：</p>
-<pre><code>python manage.py runserver
+    <p>Django是一个使用Python编写的开源Web应用程序框架，它提供了一种方便的方式来处理数据库关系。Django的关系字段允许你在模型之间建立各种类型的关联关系，如一对一、一对多和多对多关系。以下是Django中常见的关系字段及其示例。</p>
+<h2>一对一关系（OneToOneField）</h2>
+<p>一对一关系表示两个模型之间的唯一关联。每个对象只能与另一个对象相关联。例如，考虑一个UserProfile模型与User模型之间的一对一关系，可以这样定义：</p>
+<pre><code>from django.contrib.auth.models import User
 
-admin, auth, contenttypes, sessions.
-Run 'python manage.py migrate' to apply them.
-May 18, 2023 - 01:38:18
-Django version 4.2.1, using settings 'app.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # 其他字段...
 </code></pre>
-<p>浏览器输入网址：http://127.0.0.1:8000/ 就可以看到Django的默认的欢迎页面了。</p>
-<h2>创建应用</h2>
-<p>进入项目的目录，要和<code>manage.py</code>同目录，运行创建一个应用：</p>
-<pre><code>python manage.py startapp myapp
+<p>在这个例子中，每个用户（User对象）都对应一个用户配置文件（UserProfile对象），并且每个用户配置文件也只能与一个用户相关联。</p>
+<p><code>on_delete=models.CASCADE</code>表示：级联删除。Django 模拟了 SQL 约束 ON DELETE CASCADE 的行为，也删除了包含 ForeignKey 的对象。</p>
+<h2>一对多关系（ForeignKey）</h2>
+<p>一对多关系表示一个模型对象与另一个模型对象之间的多个关联。例如，考虑一个Author模型与Book模型之间的一对多关系，可以这样定义：</p>
+<pre><code>class Author(models.Model):
+    name = models.CharField(max_length=100)
+    # 其他字段...
 
-
-.
-└── mysite
-    ├── db.sqlite3
-    ├── manage.py
-    ├── myapp
-    └── mysite
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    # 其他字段...
 </code></pre>
-<p>这个时候发现myapp的这个应用就创建成功了。</p>
-<p><code>django-admin startproject mysite</code>和<code>python manage.py startapp myapp</code>的区别是，startproject创建的是一个项目，startapp创建的是一个应用，一个项目可以包括多个应用，例如创建一个网站项目，可以包括：新闻、图片库、后台管理等，这些可以细化成单个的应用，可以对应到路由，应用模块化后方便以后分开进行开发。</p>
-<h2>添加视图和路由</h2>
-<p>在<code>myapp/views.py</code>添加一个视图：</p>
-<pre><code>from django.http import HttpResponse
-def index(request):
-    return HttpResponse("Hello world!")
-</code></pre>
-<p>在<code>myapp/urls.py</code>添加路由:</p>
-<pre><code>from django.urls import path
-from . import views
+<p>在这个例子中，一个作者（Author对象）可以有多本书（Book对象），而每本书只能属于一个作者。</p>
+<h2>多对多关系（ManyToManyField）</h2>
+<p>多对多关系表示两个模型对象之间的多个关联。例如，考虑一个Student模型与Course模型之间的多对多关系，可以这样定义：</p>
+<pre><code>class Student(models.Model):
+    name = models.CharField(max_length=100)
+    courses = models.ManyToManyField(Course)
+    # 其他字段...
 
-
-urlpatterns = [
-    path("",views.index,name="index"),
-]
+class Course(models.Model):
+    name = models.CharField(max_length=100)
+    # 其他字段...
 </code></pre>
-<p>好了，这一套组合拳下去，我们也该看看效果了，在<code>manage.py</code>所在的目录中运行：<code>python manage.py runserver</code>，然后在浏览器里访问你的地址加上你的目录:<code>http://127.0.0.1:8000/myapp</code>，就可以看到久违的'hello world'了。</p>
-<h2>总结</h2>
-<p>如果你使用过flask或是fastapi，你会发现Django的hello world显得有些繁琐，但是每个web框架都有各自的优缺点，Django大而全，帮你准备好了web所需的各种依赖，相对于flask和fastapi，Django更重些但更全面。</p>
+<p>在这个例子中，一个学生（Student对象）可以选择多门课程（Course对象），而一门课程也可以有多个学生选择。</p>
+<p>这些是Django中常见的关系字段，它们提供了一种便捷的方式来定义和处理模型之间的关联关系，使得在数据库层面进行复杂的查询和操作变得更加简单和高效。</p>
+<p>参考：</p>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.2/ref/models/fields/#module-django.db.models.fields.related">Django关系字段</a></p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230520081153.html" class="text-truncate">< <span>Django 4.2 复习笔记(二)编写和调试Model模型</span></a>
+        <a href="https://suiyan.cc/2023/20230528074712.html" class="text-truncate">< <span>SQLAlchemy的关系字段和Django的关系字段他们的不同点。</span></a>
         
 
         
-        <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate"><span>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</span> ></a>
+        <a href="https://suiyan.cc/2023/20230527070832.html" class="text-truncate"><span>css实现漂亮的彩虹渐变文本效果</span> ></a>
         
     </div>
     
@@ -237,10 +186,6 @@ urlpatterns = [
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230528074013.html" class="text-truncate "><span>Django 4.2 复习笔记(五)Django中常见的关系字段及其示例</span></a>
-            </li>
-            
-            <li>
                 <a href="https://suiyan.cc/2023/20230525084144.html" class="text-truncate "><span>Django 4.2 复习笔记(四)数据的查询Django的ORM</span></a>
             </li>
             
@@ -250,6 +195,10 @@ urlpatterns = [
             
             <li>
                 <a href="https://suiyan.cc/2023/20230520081153.html" class="text-truncate "><span>Django 4.2 复习笔记(二)编写和调试Model模型</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230518092845.html" class="text-truncate "><span>Django 4.2 复习笔记(一)迅速概览</span></a>
             </li>
             
         </ul>

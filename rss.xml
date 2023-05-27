@@ -4,7 +4,25 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-27 07:08:32</pubDate>
+        <pubDate>2023-05-28 07:47:12</pubDate>
+        
+        <item>
+            <title>SQLAlchemy的关系字段和Django的关系字段他们的不同点。</title>
+            <link>https://suiyan.cc/2023/20230528074712.html</link>
+            <author>J.sky</author>
+            <description>SQLAlchemy和Django都是流行的Python框架，用于处理数据库关系。虽然它们都提供了关系字段的概念，但在实现和使用上有一些不同点。</description>
+            <category>Django,SQLAlchemy</category>
+            <pubDate>2023-05-28 07:47:12</pubDate>
+        </item>
+        
+        <item>
+            <title>Django 4.2 复习笔记(五)Django中常见的关系字段及其示例</title>
+            <link>https://suiyan.cc/2023/20230528074013.html</link>
+            <author>J.sky</author>
+            <description>Django是一个使用Python编写的开源Web应用程序框架，它提供了一种方便的方式来处理数据库关系。Django的关系字段允许你在模型之间建立各种类型的关联关系，如一对一、一对多和多对多关系。以下是Django中常见的关系字段及其示例。</description>
+            <category>Django</category>
+            <pubDate>2023-05-28 07:40:13</pubDate>
+        </item>
         
         <item>
             <title>css实现漂亮的彩虹渐变文本效果</title>
@@ -76,24 +94,6 @@
             <description>博客的静态页面的生成都是由博客的基础数据支撑的，搜集博客的基本信息和博客文章数据，是生成博客静态文件的核心功能。</description>
             <category>Python,碎言博客</category>
             <pubDate>2023-05-17 08:47:18</pubDate>
-        </item>
-        
-        <item>
-            <title>一款基于GitHub的评论系统不但免费安装还贼简单！</title>
-            <link>https://suiyan.cc/2023/20230516211444.html</link>
-            <author>J.sky</author>
-            <description>这几天一直琢磨这给博客文章页面添加个第三方的评论系统，最好是免费的，然后就搜到了`giscus`，从安装到使用，用一个字来评价：真特么绝！</description>
-            <category>giscus</category>
-            <pubDate>2023-05-16 21:14:44</pubDate>
-        </item>
-        
-        <item>
-            <title>使用Moment.js或Day.js对HTML页面上的时间进行格式化</title>
-            <link>https://suiyan.cc/2023/20230516132817.html</link>
-            <author>J.sky</author>
-            <description>一直想对博客页面的时间进行格式化，把标准的时间格式修改成XX时间前或相对时间，因为时间已经直接输出到了页面DOM中，所以考虑直接使用相关的js库来实现比较方便，搜了一下发现二个JavaScript的时间处理库比较不错，他们是：`Moment.js`和`Day.js`。</description>
-            <category>Moment.js,Day.js</category>
-            <pubDate>2023-05-16 13:28:17</pubDate>
         </item>
         
     </channel>
