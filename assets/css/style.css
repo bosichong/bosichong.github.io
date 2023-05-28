@@ -161,7 +161,7 @@ small {
 
 #header .profile .social-links a:hover {
   font-size: 40px;
-  background: #212431;
+  background: none;
   color: coral;
   text-decoration: none;
 }
