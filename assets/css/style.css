@@ -141,6 +141,8 @@ small {
   color: coral;
   text-decoration: none;
   font-weight: 300;
+  -webkit-text-fill-color: coral;
+  -moz-text-fill-color: coral;
 }
 
 #header .profile .social-links a {
