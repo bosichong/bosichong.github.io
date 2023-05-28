@@ -176,6 +176,7 @@
 
 })()
 
+//文章时间的格式化。
 // moment.locale('zh-CN');
 dayjs.locale('zh-cn')
 dayjs.extend(window.dayjs_plugin_relativeTime)

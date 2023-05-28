@@ -59,7 +59,7 @@
             <li><a href="https://suiyan.cc/tags.html" class="nav-link scrollto active"><i class="fa fa-tags"></i>
                 <span>Tags</span></a></li>
             
-            <li><a href="https://suiyan.cc/aboutme.html" class="nav-link scrollto active"><i class="fa fa-user-md"></i>
+            <li><a href="https://suiyan.cc/before-2022/1.html" class="nav-link scrollto active"><i class="fa fa-user-md"></i>
                 <span>About Me</span></a></li>
             
             <li><a href="https://suiyan.cc/links.html" class="nav-link scrollto active"><i class="fa fa-link"></i>
@@ -123,7 +123,7 @@
     </small>
 </hgroup>
 
-<div class="article">
+<div class="article animate__animated animate__fadeInUp">
     <h2>Python中为什么要用多进程编程？</h2>
 <p>由于<code>Python</code>解释器中使用了内部的GIL全局解释器锁，使得<code>Python</code>多线程的并发在任意时刻只允许单个CPU来运行，这样的运行方式会影响程序的并发。
 当程序是在I/O密集时，CPU可能会有更多的空闲处理多线程的并发，这种情况下一般是没有问题的。如果是大量计算密集型的应用，如果使用多线程来并发，性能会大大降低，这个时候，我们就得考虑使用进程<code>Process</code>来进行编程及通信了。</p>

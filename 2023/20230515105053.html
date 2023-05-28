@@ -59,7 +59,7 @@
             <li><a href="https://suiyan.cc/tags.html" class="nav-link scrollto active"><i class="fa fa-tags"></i>
                 <span>Tags</span></a></li>
             
-            <li><a href="https://suiyan.cc/aboutme.html" class="nav-link scrollto active"><i class="fa fa-user-md"></i>
+            <li><a href="https://suiyan.cc/before-2022/1.html" class="nav-link scrollto active"><i class="fa fa-user-md"></i>
                 <span>About Me</span></a></li>
             
             <li><a href="https://suiyan.cc/links.html" class="nav-link scrollto active"><i class="fa fa-link"></i>
@@ -127,7 +127,7 @@
     </small>
 </hgroup>
 
-<div class="article">
+<div class="article animate__animated animate__fadeInUp">
     <p>之前写了一个node的脚本，用来检测博客的友情链接是否互换成功，通过fetch()采集对方网站友情链接页面的HTML代码，搜索是否含有自己的博客域名来判断是否互换。但是运行了几次脚本发现其中一个网站页面无法打开的状态，后来发邮件询问大体说是被反爬虫给屏蔽了，考虑到自己的简陋的代码并没有处理反爬虫的这个情况，于是修改代码加入了headers中的<code>'user-agent'</code>伪装。</p>
 <p>但是添加后我想测试一下看看请求中headers是否添加了<code>fetch()如何读取请求中的'user-agent'？</code>,本来希望打印<code>response</code>中的herders来查看<code>'user-agent'</code>是否伪装成功，直接在fetch的response中遍历headers是无法获得<code>'user-agent'</code>这个属性。所以只好搭建一个临时服务器端来打印请求的request。</p>
 <h3>解决方法</h3>
