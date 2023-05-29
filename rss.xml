@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-28 07:47:12</pubDate>
+        <pubDate>2023-05-29 07:59:25</pubDate>
+        
+        <item>
+            <title>Django 4.2 复习笔记(六)Django的路由</title>
+            <link>https://suiyan.cc/2023/20230529075925.html</link>
+            <author>J.sky</author>
+            <description>在Django中，路由由URL模式和视图函数组成。URL模式定义了URL的结构和匹配规则，而视图函数则定义了当URL匹配时要执行的代码逻辑。Django的路由系统允许你根据URL的不同部分进行模式匹配，并从URL中提取参数传递给视图函数。</description>
+            <category>Django</category>
+            <pubDate>2023-05-29 07:59:25</pubDate>
+        </item>
         
         <item>
             <title>SQLAlchemy的关系字段和Django的关系字段他们的不同点。</title>
@@ -85,15 +94,6 @@
             <description>许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。</description>
             <category>Django</category>
             <pubDate>2023-05-18 09:28:45</pubDate>
-        </item>
-        
-        <item>
-            <title>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</title>
-            <link>https://suiyan.cc/2023/20230517084718.html</link>
-            <author>J.sky</author>
-            <description>博客的静态页面的生成都是由博客的基础数据支撑的，搜集博客的基本信息和博客文章数据，是生成博客静态文件的核心功能。</description>
-            <category>Python,碎言博客</category>
-            <pubDate>2023-05-17 08:47:18</pubDate>
         </item>
         
     </channel>

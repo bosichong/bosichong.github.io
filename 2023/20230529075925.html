@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Django" name="keywords">
-    <meta content="Django的ORM在Python中算是数一数二的，使用起来非常的简单和丝滑，文档也写的简单直观，相对于SQLAlchemy有过之而无不及。" name="description">
+    <meta content="在Django中，路由由URL模式和视图函数组成。URL模式定义了URL的结构和匹配规则，而视图函数则定义了当URL匹配时要执行的代码逻辑。Django的路由系统允许你根据URL的不同部分进行模式匹配，并从URL中提取参数传递给视图函数。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Django 4.2 复习笔记(三)Model模型字段 | SuiYan 碎言博客</title>
+    <title>Django 4.2 复习笔记(六)Django的路由 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(三)Model模型字段</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-24 21:13:40">2023-05-24 21:13:40</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-25 00:30:22">2023-05-25 00:30:22</span> | Tag:
+    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(六)Django的路由</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-29 07:59:25">2023-05-29 07:59:25</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-29 08:03:51">2023-05-29 08:03:51</span> | Tag:
         
         
         Django
@@ -124,149 +124,46 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>Django的ORM在Python中算是数一数二的，使用起来非常的简单和丝滑，文档也写的简单直观，相对于SQLAlchemy有过之而无不及。</p>
-<h2>模型字段</h2>
-<p>常用的字段选项：</p>
-<table>
-  <thead>
-    <tr>
-      <th>选项</th>
-      <th>作用</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>null</td>
-      <td>如果是 True， Django 将在数据库中存储空值为 NULL。默认为 False。</td>
-    </tr>
-    <tr>
-      <td>blank</td>
-      <td>如果是 True ，该字段允许为空。默认为 False 。</td>
-    </tr>
-    <tr>
-      <td>db_index</td>
-      <td>如果是 True，将为该字段创建数据库索引。</td>
-    </tr>
-    <tr>
-      <td>default</td>
-      <td>该字段的默认值。可以是一个值或者是个可调用的对象，如果是个可调用对象，每次实例化模型时都会调用该对象。</td>
-    </tr>
-    <tr>
-      <td>help_text</td>
-      <td>额外的“帮助”文本，随表单控件一同显示。即便你的字段未用于表单，它对于生成文档也是很有用的。</td>
-    </tr>
-    <tr>
-      <td>primary_key</td>
-      <td>如果设置为 True ，将该字段设置为该模型的主键。</td>
-    </tr>
-    <tr>
-      <td>unique</td>
-      <td>如果设置为 True，这个字段必须在整个表中保持值唯一。</td>
-    </tr>
-    <tr>
-      <td>verbose_name</td>
-      <td>字段的一个人类可读名称，如果没有给定详细名称，Django 会使用字段的属性名自动创建，并将下划线转换为空格。</td>
-    </tr>
-    <tr>
-      <td>validators</td>
-      <td>要为该字段运行的验证器列表</td>
-    </tr>
-  </tbody>
-</table>
+    <p>在Django中，路由由URL模式和视图函数组成。URL模式定义了URL的结构和匹配规则，而视图函数则定义了当URL匹配时要执行的代码逻辑。Django的路由系统允许你根据URL的不同部分进行模式匹配，并从URL中提取参数传递给视图函数。</p>
+<pre><code># myapp/urls.py
 
-<p>常见字段类型：</p>
-<table>
-  <thead>
-    <tr>
-      <th>名称</th>
-      <th>作用</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AutoField</td>
-      <td>一个 IntegerField，根据可用的 ID 自动递增。你通常不需要直接使用它；如果你没有指定，主键字段会自动添加到你的模型中。</td>
-    </tr>
-    <tr>
-      <td>BooleanField</td>
-      <td>单元一个 true／false 字段。格</td>
-    </tr>
-    <tr>
-      <td>DateField</td>
-      <td>一个日期，在 Python 中用一个 datetime.date 实例表示。有一些额外的、可选的参数。</td>
-    </tr>
-    <tr>
-      <td>DateTimeField</td>
-      <td>一个日期和时间，在 Python 中用一个 datetime.datetime 实例表示。</td>
-    </tr>
-    <tr>
-      <td>EmailField</td>
-      <td>一个 CharField，使用 EmailValidator 来检查该值是否为有效的电子邮件地址。</td>
-    </tr>
-    <tr>
-      <td>FileField</td>
-      <td>一个文件上传字段</td>
-    </tr>
-    <tr>
-      <td>ImageField</td>
-      <td>继承 FileField 的所有属性和方法，但也验证上传的对象是有效的图像。</td>
-    </tr>
-    <tr>
-      <td>IntegerField</td>
-      <td>一个整数。从 -2147483648 到 2147483647 的值在 Django 支持的所有数据库中都是安全的。</td>
-    </tr>
-    <tr>
-      <td>CharField</td>
-      <td>一个字符串字段，适用于小到大的字符串。</td>
-    </tr>
-    <tr>
-      <td>TextField</td>
-      <td>一个大的文本字段。该字段的默认表单部件是一个 Textarea。</td>
-    </tr>
-    <tr>
-      <td>TimeField</td>
-      <td>一个时间，在 Python 中用 datetime.time 实例表示。接受与 DateField 相同的自动填充选项。</td>
-    </tr>
-    <tr>
-      <td>UUIDField</td>
-      <td>一个用于存储通用唯一标识符的字段。使用 Python 的 UUID 类。当在 PostgreSQL 上使用时，它存储在一个 uuid 的数据类型中，否则存储在一个 char(32) 中。</td>
-    </tr>
-  </tbody>
-</table>
+from django.urls import path
+from . import views
 
-<p>关系字段：</p>
-<table>
-  <tr>
-    <th>名称</th>
-    <th>作用</th>
-  </tr>
-  <tr>
-    <td>ForeignKey</td>
-    <td>一个多对一的关系。</td>
-  </tr>
-  <tr>
-    <td>ManyToManyField</td>
-    <td>一个多对多的关系</td>
-  </tr>
-  <tr>
-    <td>OneToOneField</td>
-    <td>一对一的关系。概念上，这类似于 ForeignKey 与 unique=True，但关系的“反向”将直接返回一个单一对象。</td>
-  </tr>
-</table>
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('post/&lt;int:post_id&gt;/', views.post_detail, name='post_detail'),
+]
+</code></pre>
+<p>在上面的示例中，我们定义了三个URL模式：</p>
+<ol>
+<li>空路径：path('') 将映射到 views.home 视图函数，表示应用程序的主页。</li>
+<li><code>about/</code>路径：path('about/') 将映射到 views.about 视图函数，表示关于页面。</li>
+<li><code>post/int:post_id/</code>路径：<code>path('post/&lt;int:post_id&gt;/')</code> 将映射到 <code>views.post_detail</code> 视图函数，并将URL中的post_id作为参数传递给该视图函数。这个URL模式使用了尖括号（&lt; &gt;）来标记参数部分，并指定了参数的类型为整数（int）。
+在上述示例中，urlpatterns列表定义了应用程序的所有URL模式。每个URL模式由path函数定义，接受两个参数：第一个参数是URL模式的字符串表示，第二个参数是要调用的视图函数。你还可以为每个URL模式指定一个名称（name），以便在代码中引用它们。</li>
+</ol>
+<p>通常，你需要在项目的主路由文件中包含应用程序的URL配置。例如，如果你的应用程序名为myapp，你需要在项目的主路由文件中包含以下内容：</p>
+<pre><code># project/urls.py
 
-<p>关系字段极大的简化了数据中表关系的设置。</p>
-<p>参考：</p>
-<p><a href="https://docs.djangoproject.com/zh-hans/4.2/ref/models/fields/">模型字段参考</a></p>
+from django.urls import include, path
+
+urlpatterns = [
+    path('myapp/', include('myapp.urls')),
+]
+</code></pre>
+<p>上述示例中，include函数用于将myapp/urls.py文件中定义的URL模式包含到主路由文件中。这样，当用户访问/myapp/路径时，Django将使用应用程序的URL配置来处理该请求。</p>
+<p>这只是Django路由系统的基本介绍。Django还提供了其他高级功能，如正则表达式匹配、命名空间等。通过使用Django的路由系统，你可以轻松地定义URL模式，并将它们与相应的视图函数关联起来，从而构建功能完整的Web应用程序。</p>
+<p>相关参考：</p>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.2/topics/http/urls/">Django URL调度器</a></p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230525084144.html" class="text-truncate">< <span>Django 4.2 复习笔记(四)数据的查询Django的ORM</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230522201800.html" class="text-truncate"><span>vite打包后element样式被其他框架样式覆盖的解决方法</span> ></a>
+        <a href="https://suiyan.cc/2023/20230528074712.html" class="text-truncate"><span>SQLAlchemy的关系字段和Django的关系字段他们的不同点。</span> ></a>
         
     </div>
     
@@ -275,10 +172,6 @@
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230529075925.html" class="text-truncate "><span>Django 4.2 复习笔记(六)Django的路由</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230528074712.html" class="text-truncate "><span>SQLAlchemy的关系字段和Django的关系字段他们的不同点。</span></a>
@@ -290,6 +183,10 @@
             
             <li>
                 <a href="https://suiyan.cc/2023/20230525084144.html" class="text-truncate "><span>Django 4.2 复习笔记(四)数据的查询Django的ORM</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230524211340.html" class="text-truncate "><span>Django 4.2 复习笔记(三)Model模型字段</span></a>
             </li>
             
             <li>
