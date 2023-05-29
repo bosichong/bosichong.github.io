@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="TailwindCSS" name="keywords">
-    <meta content="今天在vscode中安装Tailwind CSS IntelliSense这个插件，但是安装完后，编写HTML中的class的时候并没有得到tailwindcss的代码提示，看来配置项设置有问题。" name="description">
+    <meta content="在Vue+element+Vite项目中设置 Tailwind CSS。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示 | SuiYan 碎言博客</title>
+    <title>Vue+element+Vite安装 Tailwind CSS | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-11 19:15:15">2023-05-11 19:15:15</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-11 19:28:22">2023-05-11 19:28:22</span> | Tag:
+    <h1 class="animate__animated animate__bounce">Vue+element+Vite安装 Tailwind CSS</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-29 19:37:49">2023-05-29 19:37:49</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-29 19:45:56">2023-05-29 19:45:56</span> | Tag:
         
         
         TailwindCSS
@@ -124,30 +124,65 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>今天在vscode中安装Tailwind CSS IntelliSense这个插件，但是安装完后，编写HTML中的class的时候并没有得到tailwindcss的代码提示，看来配置项设置有问题。</p>
-<h2>解决方法：</h2>
+    <p>在Vue+element+Vite项目中设置 Tailwind CSS。</p>
 <ol>
-<li>打开vscode的首选项-用户配置的JSON文件，打开方法快捷键：cmd(ctrl)+shift+p 搜索：user 基本就能看到了。</li>
 <li>
-<p>添加如下配置JSON代码：</p>
-<p>"editor.quickSuggestions": {
-    "strings": true
-},</p>
+<p>请先创建一个新的Vite项目。最常见的方法是使用 Create Vite。</p>
+<p>npm init vue@latest</p>
 </li>
 </ol>
-<p>保存后重启vscode即可。</p>
-<p>参考：</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">Tailwind CSS IntelliSense 官方文档</a></p>
+<p>起好项目的名称，然后一路回车即可。</p>
+<ol>
+<li>
+<p>安装 tailwindcss 及其对等依赖项，然后生成 <code>tailwind.config.js</code> 和 <code>postcss.config.js</code> 文件。</p>
+<p>npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p</p>
+</li>
+<li>
+<p>在 <code>tailwind.config.js</code> 文件中添加所有模板文件的路径。</p>
+<p>/<strong> @type {import('tailwindcss').Config} */
+export default {
+content: [
+    "./index.html",
+    "./src/</strong>/*.{vue,js,ts,jsx,tsx}",
+],
+theme: {
+    extend: {},
+},
+plugins: [],
+}</p>
+</li>
+<li>
+<p>将每个 Tailwind 层的 @tailwind 指令添加到您的 ./src/style/taiwind.css 文件中。</p>
+<p>@tailwind base;
+@tailwind components;
+@tailwind utilities;</p>
+</li>
+<li>
+<p>在main.js中添加<code>taiwind.css</code>的引用：</p>
+<p>import "./style/tailwind.css";</p>
+</li>
+<li>
+<p>使用 <code>npm run dev</code> 运行构建过程。</p>
+</li>
+<li>
+<p>开始使用 Tailwind 的实用程序类来设计您的内容。</p>
+<p><template>
+<h1 class="text-3xl font-bold underline">
+    Hello world!
+</h1>
+</template></p>
+</li>
+</ol>
+<p>你学会了吗？</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230513082050.html" class="text-truncate">< <span>再谈TailwindCSS的使用心得</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230511182912.html" class="text-truncate"><span>Tailwind CSS的安装配置和体验</span> ></a>
+        <a href="https://suiyan.cc/2023/20230529075925.html" class="text-truncate"><span>Django 4.2 复习笔记(六)Django的路由</span> ></a>
         
     </div>
     
@@ -158,11 +193,11 @@
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230529193749.html" class="text-truncate "><span>Vue+element+Vite安装 Tailwind CSS</span></a>
+                <a href="https://suiyan.cc/2023/20230513082050.html" class="text-truncate "><span>再谈TailwindCSS的使用心得</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230513082050.html" class="text-truncate "><span>再谈TailwindCSS的使用心得</span></a>
+                <a href="https://suiyan.cc/2023/20230511191515.html" class="text-truncate "><span>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</span></a>
             </li>
             
             <li>

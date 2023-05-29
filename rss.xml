@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-29 07:59:25</pubDate>
+        <pubDate>2023-05-29 19:37:49</pubDate>
+        
+        <item>
+            <title>Vue+element+Vite安装 Tailwind CSS</title>
+            <link>https://suiyan.cc/2023/20230529193749.html</link>
+            <author>J.sky</author>
+            <description>在Vue+element+Vite项目中设置 Tailwind CSS。</description>
+            <category>TailwindCSS</category>
+            <pubDate>2023-05-29 19:37:49</pubDate>
+        </item>
         
         <item>
             <title>Django 4.2 复习笔记(六)Django的路由</title>
@@ -85,15 +94,6 @@
             <description>对于web应用的编写应该从哪里开始呢？如果包含了数据的增删改查，那么对于使用Django开发web应用来说，从模型(Model)开始最好不过了。模型准确且唯一的描述了数据。它包含您储存的数据的重要字段和行为。一般来说，每一个模型都映射一张数据库表。</description>
             <category>Django</category>
             <pubDate>2023-05-20 08:11:53</pubDate>
-        </item>
-        
-        <item>
-            <title>Django 4.2 复习笔记(一)迅速概览</title>
-            <link>https://suiyan.cc/2023/20230518092845.html</link>
-            <author>J.sky</author>
-            <description>许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。</description>
-            <category>Django</category>
-            <pubDate>2023-05-18 09:28:45</pubDate>
         </item>
         
     </channel>
