@@ -167,9 +167,10 @@ small {
   margin-left: 300px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 888px) {
   #header {
-    left: -300px;
+    width: 100vw;
+    bottom: 100vh;
   }
 
   #main {
@@ -231,7 +232,7 @@ small {
   position: fixed;
   right: 15px;
   top: 15px;
-  z-index: 958;
+  z-index: 999;
   border: 0;
   font-size: 24px;
   transition: all 0.4s;
@@ -239,12 +240,12 @@ small {
   color: #fff;
   width: 40px;
   height: 40px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 0;
   border-radius: 3px;
   cursor: pointer;
+  display: none;
 }
 
 .mobile-nav-active {
@@ -252,7 +253,13 @@ small {
 }
 
 .mobile-nav-active #header {
-  left: 0;
+  bottom: 0;
+}
+
+@media (max-width: 888px) {
+  .mobile-nav-toggle {
+    display: flex;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1122,7 +1129,7 @@ section {
   color: #eaebf0;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 888px) {
   #footer {
     position: static;
     width: auto;
