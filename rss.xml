@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-29 19:37:49</pubDate>
+        <pubDate>2023-05-30 14:51:18</pubDate>
+        
+        <item>
+            <title>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</title>
+            <link>https://suiyan.cc/2023/20230530145118.html</link>
+            <author>牛哥说我不优雅</author>
+            <description>在前端开发中，数组是一种常见且重要的数据结构。数组提供了许多便捷的方法来操作和处理其中的数据。本文将简单介绍前端中数组常用的API，包括添加、删除、截取、合并、转换等操作。</description>
+            <category>JavaScript</category>
+            <pubDate>2023-05-30 14:51:18</pubDate>
+        </item>
         
         <item>
             <title>Vue+element+Vite安装 Tailwind CSS</title>
@@ -85,15 +94,6 @@
             <description>解决vite打包超出默认值，出现警告的错误。</description>
             <category>vite</category>
             <pubDate>2023-05-22 20:11:16</pubDate>
-        </item>
-        
-        <item>
-            <title>Django 4.2 复习笔记(二)编写和调试Model模型</title>
-            <link>https://suiyan.cc/2023/20230520081153.html</link>
-            <author>J.sky</author>
-            <description>对于web应用的编写应该从哪里开始呢？如果包含了数据的增删改查，那么对于使用Django开发web应用来说，从模型(Model)开始最好不过了。模型准确且唯一的描述了数据。它包含您储存的数据的重要字段和行为。一般来说，每一个模型都映射一张数据库表。</description>
-            <category>Django</category>
-            <pubDate>2023-05-20 08:11:53</pubDate>
         </item>
         
     </channel>
