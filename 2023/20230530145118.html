@@ -115,7 +115,7 @@
 
 <hgroup class="blog-info">
     <h1 class="animate__animated animate__bounce">JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</h1>
-    <small> 作者:<a href="#">牛哥说我不优雅</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-30 14:51:18">2023-05-30 14:51:18</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-30 15:06:28">2023-05-30 15:06:28</span> | Tag:
+    <small> 作者:<a href="#">牛哥说我不优雅</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-30 14:51:18">2023-05-30 14:51:18</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-30 15:15:24">2023-05-30 15:15:24</span> | Tag:
         
         
         JavaScript
@@ -279,41 +279,46 @@ const arr = [1,2,3,4,5,6,7,6,6,5];
 console.log(arr.indexOf(5,6)); //9
 </code></pre>
 <p>3.lastIndexOf()()方法</p>
-<p>lastIndexOf() 方法用于查找数组中某个元素最后一次出现的索引（位置），如果找到则返回该索引值，否则返回 -1。
-    const fruits = ['火龙果', '橘子', '蓝莓', '西瓜', '葡萄', '橘子'];
-    console.log(fruits.lastIndexOf('橘子')); //5
-    console.log(fruits.lastIndexOf('柚子')); //-1</p>
+<p>lastIndexOf() 方法用于查找数组中某个元素最后一次出现的索引（位置），如果找到则返回该索引值，否则返回 -1。</p>
+<pre><code>const fruits = ['火龙果', '橘子', '蓝莓', '西瓜', '葡萄', '橘子'];
+console.log(fruits.lastIndexOf('橘子')); //5
+console.log(fruits.lastIndexOf('柚子')); //-1
+</code></pre>
 <p>4.findIndex()方法</p>
-<p>findIndex() 方法用于查找数组中满足条件的元素的索引，如果找到则返回该索引值，否则返回 -1。
-    const arr = [1, 2, 3, 4, 5, 6];
-    const index = arr.findIndex(num =&gt; num &gt; 3);
-    console.log(index);   //3  返回第一个符合条件的元素的下标
-    const index2 = arr.findIndex(num =&gt; num &gt; 10);
-    console.log(index2); //-1  不存在符合条件的元素</p>
+<p>findIndex() 方法用于查找数组中满足条件的元素的索引，如果找到则返回该索引值，否则返回 -1。</p>
+<pre><code>const arr = [1, 2, 3, 4, 5, 6];
+const index = arr.findIndex(num =&gt; num &gt; 3);
+console.log(index);   //3  返回第一个符合条件的元素的下标
+const index2 = arr.findIndex(num =&gt; num &gt; 10);
+console.log(index2); //-1  不存在符合条件的元素
+</code></pre>
 <h2>十四、sort() 方法</h2>
 <p>sort() 方法用于对数组进行原地排序，会直接修改原始数组，而不会创建新的数组。默认情况下，它将数组元素视为字符串，并按照 Unicode 码点进行排序。但是，可以传入自定义的比较函数来实现基于其他规则的排序。</p>
 <p>比较函数：比较函数接收两个参数，通常被称为 a 和 b，表示进行比较的两个元素。它应该返回一个负数、零或正数，表示 a 应该在 b 之前、与 b 相同位置还是在 b 之后。比较函数的返回值规则如下：</p>
 <ul>
 <li>如果返回值小于 0，则 a 排在 b 前面。</li>
 <li>如果返回值等于 0，则 a 和 b 的相对位置不变。</li>
-<li>
-<p>如果返回值大于 0，则 a 排在 b 后面。</p>
-<p>const arr = [3, 1, 5, 2, 4];
+<li>如果返回值大于 0，则 a 排在 b 后面。</li>
+</ul>
+<p>例子：</p>
+<pre><code>const arr = [3, 1, 5, 2, 4];
 arr.sort();
-console.log(arr);  //[1, 2, 3, 4, 5]</p>
-<p>//默认排序（按照 Unicode 码点排序）
+console.log(arr);  //[1, 2, 3, 4, 5]
+
+//默认排序（按照 Unicode 码点排序）
 const arr = ['f', 'k', 'c', 'a', 'b'];
 arr.sort();
-console.log(arr);  //[ 'a', 'b', 'c', 'f', 'k' ]</p>
-<p>//使用比较函数进行自定义排序
+console.log(arr);  //[ 'a', 'b', 'c', 'f', 'k' ]
+
+//使用比较函数进行自定义排序
 const arr = [10, 2, 66, 26, 13, 1];
 arr.sort((a, b) =&gt; a - b);
-console.log(arr);  //[ 1, 2, 10, 13, 26, 66 ]</p>
-<p>const arr = [10, 2, 66, 26, 13, 1];
+console.log(arr);  //[ 1, 2, 10, 13, 26, 66 ]
+
+const arr = [10, 2, 66, 26, 13, 1];
 arr.sort((a, b) =&gt; b - a);
-console.log(arr);  //[ 66, 26, 13, 10, 2, 1 ]</p>
-</li>
-</ul>
+console.log(arr);  //[ 66, 26, 13, 10, 2, 1 ]
+</code></pre>
 <h2>十五、reverse() 方法</h2>
 <p>reverse() 方法用于反转数组中的元素顺序，即将数组元素进行逆序排列。</p>
 <pre><code>const arr = [1, 2, 3, 4, 5];
