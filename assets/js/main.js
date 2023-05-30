@@ -86,8 +86,13 @@
    */
   on('click', '.mobile-nav-toggle', function (e) {
     select('body').classList.toggle('mobile-nav-active')
-    this.classList.toggle('fa-navicon')
-    this.classList.toggle('fa-close')
+    this.classList.toggle('animate__bounceOut')
+    setTimeout(()=>{
+      this.classList.toggle('animate__bounceOut')
+      this.classList.toggle('fa-navicon')
+      this.classList.toggle('fa-close')
+  },1000)
+    
   })
 
   document.addEventListener('DOMContentLoaded', (event) => {
