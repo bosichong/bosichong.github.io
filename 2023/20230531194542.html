@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="TailwindCSS" name="keywords">
-    <meta content="Tailwind CSS是一种和传统CSS编写方式不一样的开发模式，Tailwind CSS编写大量的css的class，预置超多的css样式，让开发者可以通过在HTML的class中以命名的方式去调用这些class，几乎可以不用去写style的代码，只使用class的名称来代替。" name="description">
+    <meta content="Tailwind CSS 在任何特定于框架/技术的UI开发中都有发展趋势。我发现了一些最好的使用基于 tailwind CSS的组件库，您可以在其中直接使用tailwind自定义组件。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Tailwind CSS的安装配置和体验 | SuiYan 碎言博客</title>
+    <title>Tailwind CSS 相关的组件库 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Tailwind CSS的安装配置和体验</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-11 18:29:12">2023-05-11 18:29:12</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-11 19:30:05">2023-05-11 19:30:05</span> | Tag:
+    <h1 class="animate__animated animate__bounce">Tailwind CSS 相关的组件库</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-31 19:45:42">2023-05-31 19:45:42</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-31 19:53:15">2023-05-31 19:53:15</span> | Tag:
         
         
         TailwindCSS
@@ -124,90 +124,24 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <h2>Tailwind CSS 简介</h2>
-<p>「Atomic/Utility-First CSS」，是和「Semantic CSS 」(语义化 CSS ) 相对的一种 CSS 规范。不管你是否听说过「Semantic CSS 」这个名词，实际项目开发中，它都是我们最常用、也是最传统的 CSS 规范。Tailwind CSS是一种和传统CSS编写方式不一样的开发模式，Tailwind CSS编写大量的css的class，预置超多的css样式，让开发者可以通过在HTML的class中以命名的方式去调用这些class，几乎可以不用去写style的代码，只使用class的名称来代替。</p>
-<h2>Tailwind CSS 环境搭建</h2>
-<p>最简单的方式就是通过引用CDN：</p>
-<pre><code>&lt;link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"&gt;
-</code></pre>
-<p><link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></p>
-<p>一个简单的例子：</p>
-<pre><code>&lt;div class="sm:container mx-auto h-64 bg-gray-100 flex"&gt;
-    &lt;div class="text-slate-950 text-2xl bg-gray-200 h-1/2 flex-1"&gt;11&lt;/div&gt;
-    &lt;div class="text-blue-600 text-xl bg-gray-400 flex-1"&gt;222&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<div class="sm:container mx-auto h-64 bg-gray-100 flex">
-    <div class="text-slate-950 text-2xl bg-gray-200 h-1/2 flex-1">11</div>
-    <div class="text-blue-600 text-xl bg-gray-400 flex-1">222</div>
-</div>
-
-<p>再来看一个flex布局，以及box阴影的样式：</p>
-<pre><code>&lt;div class="flex flex-wrap sm:container bg-gray-200"&gt;
-    &lt;div class="shadow-sm w-48 h-48 m-5"&gt;&lt;/div&gt;
-    &lt;div class="shadow w-48 h-48 m-5"&gt;&lt;/div&gt;
-    &lt;div class="shadow-md w-48 h-48 m-5"&gt;&lt;/div&gt;
-    &lt;div class="shadow-lg w-48 h-48 m-5"&gt;&lt;/div&gt;
-    &lt;div class="shadow-xl w-48 h-48 m-5"&gt;&lt;/div&gt;
-    &lt;div class="shadow-2xl w-48 h-48 m-5"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<div class="flex flex-wrap sm:container bg-gray-200">
-    <div class="shadow-sm w-48 h-48 m-5"></div>
-    <div class="shadow w-48 h-48 m-5"></div>
-    <div class="shadow-md w-48 h-48 m-5"></div>
-    <div class="shadow-lg w-48 h-48 m-5"></div>
-    <div class="shadow-xl w-48 h-48 m-5"></div>
-    <div class="shadow-2xl w-48 h-48 m-5"></div>
-</div>
-<p><br></p>
-<p>再来看文字排版：</p>
-<pre><code>&lt;div class="text-center mt-10"&gt;
-    &lt;p class="text-xs"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-sm"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-base"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-lg"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-xl"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-2xl"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-3xl"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-4xl"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-5xl"&gt;Tailwind CSS&lt;/p&gt;
-    &lt;p class="text-6xl"&gt;Tailwind CSS&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-<div class="text-center mt-10">
-    <p class="text-xs">Tailwind CSS</p>
-    <p class="text-sm">Tailwind CSS</p>
-    <p class="text-base">Tailwind CSS</p>
-    <p class="text-lg">Tailwind CSS</p>
-    <p class="text-xl">Tailwind CSS</p>
-    <p class="text-2xl">Tailwind CSS</p>
-    <p class="text-3xl">Tailwind CSS</p>
-    <p class="text-4xl">Tailwind CSS</p>
-    <p class="text-5xl">Tailwind CSS</p>
-    <p class="text-6xl">Tailwind CSS</p>
-</div>
-
-<h2>Tailwind CSS的优点</h2>
-<p>可以不再使用传统的style编写方式，通过预置的class可以减少更多的错误，而且熟练了之后css样式的编写会很快。因为预置，可以重复使用省去更多的时间。</p>
-<h2>Tailwind CSS的缺点</h2>
-<p>每个class中要声明使用大量的css class，开始的时候可能会不太习惯，不过我几个小时后再用的时候我就觉得我已经离不开她了。</p>
-<h2>总结</h2>
-<p>Tailwind CSS上手简单，只要你略懂css的属性，这个框架对于你编写css样式绝对是如虎添翼。</p>
-<p>参考：</p>
-<p><a href="https://www.tailwindcss.cn/">Tailwind CSS 中文官方文档</a></p>
-<p><a href="https://juejin.cn/post/6951300894684577823#heading-4">使用 Tailwind CSS 一年后，我的一些感受</a></p>
-<p><a href="https://juejin.cn/post/7042901516499288077">一次就能看懂的Tailwind CSS介绍</a></p>
+    <p>Tailwind CSS 在任何特定于框架/技术的UI开发中都有发展趋势。我发现了一些最好的使用基于 tailwind CSS的组件库，您可以在其中直接使用tailwind自定义组件。</p>
+<ul>
+<li>Daisy UI：Daisy为您提供特殊类，如“btn”、“card”等。这些特殊类是其他顺风工具类的组合。</li>
+<li>Flowbite：Flowbite 是一组免费的开源 Figma UI 组件和页面，旨在与 Tailwind CSS 的实用程序类集成。</li>
+<li>WindUI：像 Flowbite 但更好。这个组件库确实支持很多框架技术，所以只需复制和粘贴即可。</li>
+<li>Material Tailwind：非常漂亮且专业的组件库。不像之前的其他组件库......</li>
+</ul>
+<p>本文翻译自：</p>
+<p>https://dev.to/pruthvidarji1993/tailwind-web-components-293l</p>
+<p>原作者：Pruthvi Darji</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230511191515.html" class="text-truncate">< <span>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230509201037.html" class="text-truncate"><span>Git提示 ! [remote rejected] master -> master (failure)</span> ></a>
+        <a href="https://suiyan.cc/2023/20230530145118.html" class="text-truncate"><span>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</span> ></a>
         
     </div>
     
@@ -216,10 +150,6 @@
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230531194542.html" class="text-truncate "><span>Tailwind CSS 相关的组件库</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230529193749.html" class="text-truncate "><span>Vue+element+Vite安装 Tailwind CSS</span></a>
@@ -231,6 +161,10 @@
             
             <li>
                 <a href="https://suiyan.cc/2023/20230511191515.html" class="text-truncate "><span>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230511182912.html" class="text-truncate "><span>Tailwind CSS的安装配置和体验</span></a>
             </li>
             
         </ul>
