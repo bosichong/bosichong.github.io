@@ -14,7 +14,7 @@
 }
 
 h1,
-h3,
+.blog-h3,
 .mobile-nav-toggle ,
 .back-to-top{
   background-image: var(--rainbow-gradient, #fff);
