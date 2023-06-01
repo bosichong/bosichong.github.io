@@ -1179,6 +1179,7 @@ section {
 }
 
 .artlist {
+  margin: 18px;
   background: #11191f;
   padding: 1rem;
   margin-bottom: 12px;
