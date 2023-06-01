@@ -1,6 +1,6 @@
 :root {
   --bs-body-font-size: 1.2rem;
-  --bs-body-color: hsl(205deg, 16%, 77%);
+  --bs-body-color: #bbb;
   --bs-body-bg: #11191f;
   --rainbow-gradient: linear-gradient(
     -90deg,
