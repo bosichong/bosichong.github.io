@@ -1189,8 +1189,10 @@ section {
   opacity: 1;
 }
 
+
 .artlist:hover {
   opacity: 1;
+  color: #eee;
 }
 
 .artlist:hover:before {
