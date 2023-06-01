@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-01 09:04:28</pubDate>
+        <pubDate>2023-06-02 07:08:49</pubDate>
+        
+        <item>
+            <title>Python权限管理框架 Casbin PyCasbin 的简单操作</title>
+            <link>https://suiyan.cc/2023/20230602070849.html</link>
+            <author>J.sky</author>
+            <description>大多数应用都会和权限与权限管理打交道,有的时候我们希望有一套拿来即用的权限管理框架,既可以在小型的个人应用中使用,又可以应付大型应用的复杂权限的管理,Casbin可以满足你的这个小小愿望.Casbin支持多种编程语言,今天我们来试试Casbin在python下的简单操作.</description>
+            <category>Casbin,权限管理</category>
+            <pubDate>2023-06-02 07:08:49</pubDate>
+        </item>
         
         <item>
             <title>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</title>
@@ -85,15 +94,6 @@
             <description>Django的ORM操作非常简答，几乎把所有你能想到的数据库的操作都封装了，即便没有你需要的，也可以使用原生的SQL语句进行查询。</description>
             <category>Django</category>
             <pubDate>2023-05-25 08:41:44</pubDate>
-        </item>
-        
-        <item>
-            <title>Django 4.2 复习笔记(三)Model模型字段</title>
-            <link>https://suiyan.cc/2023/20230524211340.html</link>
-            <author>J.sky</author>
-            <description>Django的ORM在Python中算是数一数二的，使用起来非常的简单和丝滑，文档也写的简单直观，相对于SQLAlchemy有过之而无不及。</description>
-            <category>Django</category>
-            <pubDate>2023-05-24 21:13:40</pubDate>
         </item>
         
     </channel>

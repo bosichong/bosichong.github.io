@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="MacBookmacOS" name="keywords">
-    <meta content="我有一台老机器MacBook Pro(2015)的，最近有些软件提示如果系统不升级到macOS Monterey，软件将不再提供最新版的支持与升级了，之前升级过一回macOS Big Sur，体验非常糟糕，后来就退版本了退回了macOS Mojiave，这次我有忍不住升级了，但是这次是最后一次系统升级了，在之后的版本就不支持这个老机器了，所以豁出去了，还好升级后使用体验还不错，记录下来供有相同经历的友人参考。" name="description">
+    <meta content="Casbin权限管理" name="keywords">
+    <meta content="大多数应用都会和权限与权限管理打交道,有的时候我们希望有一套拿来即用的权限管理框架,既可以在小型的个人应用中使用,又可以应付大型应用的复杂权限的管理,Casbin可以满足你的这个小小愿望.Casbin支持多种编程语言,今天我们来试试Casbin在python下的简单操作." name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2 | SuiYan 碎言博客</title>
+    <title>Python权限管理框架 Casbin PyCasbin 的简单操作 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,118 +114,112 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-01 09:04:28">2023-06-01 09:04:28</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-01 10:18:37">2023-06-01 10:18:37</span> | Tag:
+    <h1 class="animate__animated animate__bounce">Python权限管理框架 Casbin PyCasbin 的简单操作</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-02 07:08:49">2023-06-02 07:08:49</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-02 07:14:33">2023-06-02 07:14:33</span> | Tag:
         
         
-        MacBook
+        Casbin
         
-        macOS
+        权限管理
         
     </small>
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>我有一台老机器MacBook Pro(2015)的，最近有些软件提示如果系统不升级到macOS Monterey，软件将不再提供最新版的支持与升级了，之前升级过一回macOS Big Sur，体验非常糟糕，后来就退版本了退回了macOS Mojiave，这次我有忍不住升级了，但是这次是最后一次系统升级了，在之后的版本就不支持这个老机器了，所以豁出去了，还好升级后使用体验还不错，记录下来供有相同经历的友人参考。</p>
-<h2>升级方式</h2>
-<p>直接在系统-软件更新处下载，然后开始升级就好，全程傻瓜式安装，输入了一次密码就好，无人值守去喝杯咖啡，半个小时就好了。</p>
-<h2>系统优化</h2>
-<p>升级后查看系统的进程，发现有两个进程比较占用资源。</p>
-<ol>
-<li>mds、mds_stores、mdworker占用很高的cpu和内存资源，风扇转的特别厉害！</li>
-<li>
-<p>WindewSderve 也挺占用资源的。</p>
-</li>
-<li>
-<p>优化mds、mds_stores、mdworker占用：</p>
-</li>
-</ol>
-<p>mds、mds_stores、mdworker是<code>聚焦</code>的功能，因为我很少使用这些功能，所以我选择了禁止<code>聚焦</code>索引文件。</p>
-<pre><code>sudo mdutil -a -i off
+    <p>大多数应用都会和权限与权限管理打交道,有的时候我们希望有一套拿来即用的权限管理框架,既可以在小型的个人应用中使用,又可以应付大型应用的复杂权限的管理,Casbin可以满足你的这个小小愿望.Casbin支持多种编程语言,今天我们来试试Casbin在python下的简单操作.</p>
+<h2>Casbin 简介</h2>
+<blockquote>
+<p>Casbin 是一个强大和高效的开放源码访问控制库，它支持各种 访问控制模型 以强制全面执行授权。</p>
+</blockquote>
+<h2>安装</h2>
+<pre><code>pip install casbin
 </code></pre>
-<p>如果需要再次使用，可以通过以下命令重新开启。</p>
-<pre><code>sudo mdutil -a -i on
+<p>除了安装支持的casein库,我们还需要两个配置文件, model.conf 和 policy.csv。 其中, model.conf 存储了我们的访问模型, 而 policy.csv 存储的是我们具体的用户权限配置。</p>
+<p>test.py </p>
+<pre><code>import casbin
+import os
+
+# model.conf 和 policy.csv 文件地址
+model_dir = os.path.join(os.path.dirname(__file__), 'model.conf')
+policy_dir = os.path.join(os.path.dirname(__file__), 'policy.csv')
+
+# 加载配置文件
+e = casbin.Enforcer(model_dir,policy_dir)
 </code></pre>
-<ol>
-<li>WindewSderve的优化：</li>
-</ol>
-<p>系统偏好设置-辅助设置-显示，勾选：减弱动态效果和降低透明度。</p>
-<p>经过上边的优化，系统几乎和以前一样了，至于新系统的功能这里就不在详细介绍了，大家自己体验吧。</p>
-<h2>附录 macOS各版本支持升级机型汇总！</h2>
-<h3>01 macOS Ventura 13.4支持安装系统型号：</h3>
-<ol>
-<li>MacBook: 2017年款或以后的机型;</li>
-<li>MacBook Air: 2018年款或以后的机型;</li>
-<li>MacBook Pro: 2017年款或以后的机型;</li>
-<li>Mac Mini: 2018年款或以后的机型;</li>
-<li>iMac: 2017年款或以后的机型;</li>
-<li>iMac Pro: 2017年款或以后的机型;</li>
-<li>Mac Pro: 2019年款或以后的机型;</li>
-<li>Mac Studio: 2022年款或以后的机型;</li>
-</ol>
-<h3>02 macOS Monterey 12.6.2支持安装系统型号：</h3>
-<ol>
-<li>MacBook: 2016年初及以后机型；</li>
-<li>MacBook Air: 2015年中及以后机型；</li>
-<li>MacBook Pro: 2015年初及以后机型；</li>
-<li>Mac Mini: 2014年末及以后机型；</li>
-<li>iMac: 2015年末及以后机型；</li>
-<li>iMac Pro: 2017年及以后机型；</li>
-<li>Mac Pro: 2013年末及以后机型；</li>
-</ol>
-<h3>03 macOS Big Sur 11.7.2支持安装系统型号：</h3>
-<ol>
-<li>iMac 2014及以后机型；</li>
-<li>iMac Pro 2017及以后机型；</li>
-<li>Mac Pro 2013及以后机型；</li>
-<li>MacMini 2014及以后机型；</li>
-<li>MacBook 2015及以后机型；</li>
-<li>MacBook Air 2013及以后机型；</li>
-<li>MacBook Pro 2013及以后机型；</li>
-</ol>
-<h3>04 macOS Catalina 10.15.7支持安装系统型号:</h3>
-<ol>
-<li>MacBook 2015年款及以后机型；</li>
-<li>MacBook Air 2012年款及以后机型；</li>
-<li>MacBook Pro 2012年款及以后机型；</li>
-<li>Mac Mini 2012年款及以后机型；</li>
-<li>iMac 2012年款及以后机型；</li>
-<li>iMac Pro 2017年款及以后机型；</li>
-<li>Mac Pro 2013年款及以后机型；</li>
-</ol>
-<h3>05 macOS 10.14 Mojiave10.14.6支持安装系统型号：</h3>
-<ol>
-<li>MacBook 2015 年前期及以后机型；</li>
-<li>MacBook Air 2012 年中期及以后机型；</li>
-<li>MacBook Pro 2012 年中期及以后机型；</li>
-<li>Mac mini 2012 年后期及以后机型；</li>
-<li>iMac 2012 年后期及以后机型. ；</li>
-<li>iMac Pro 2017 年及以后机型；</li>
-<li>Mac Pro 2013 年及以后期机型；</li>
-</ol>
-<h3>06 macOS High Sierra 10.13.6支持安装系统型号：</h3>
-<ol>
-<li>iMac 2009年末及以后机型；</li>
-<li>MacBook Air 2010年及以后机型；</li>
-<li>MacBook Pro 2010年及以后机型；</li>
-<li>Mac mini 2010年末及以后机型；</li>
-<li>MacBook 2009年及以后机型；</li>
-<li>Mac Pro 2010年及以后机型；</li>
-</ol>
-<p>参考文章：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/430705744">「持续更新」macOS各版本支持升级机型汇总！</a></p>
-<p><a href="https://www.xtplayer.cn/macos/mds-stores-use-high-cpu/#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF">mds、mds_stores、mdworker 占用大量 cpu 和内存</a></p>
-<p><a href="https://blog.csdn.net/weixin_48039619/article/details/122445823">Mac上的 WindowServer进程是什么？如何解决高CPU使用率</a></p>
+<p>model.conf文件里是一个ACL (Access Control List, 访问控制列表)的配置文件</p>
+<pre><code>[request_definition]
+r = sub, obj, act
+
+[policy_definition]
+p = sub, obj, act
+
+[policy_effect]
+e = some(where (p.eft == allow))
+
+[matchers]
+m = r.sub == p.sub &amp;&amp; r.obj == p.obj &amp;&amp; r.act == p.act
+</code></pre>
+<p>从policy.csv文件载入一些策略</p>
+<pre><code>p, alice, data1, read
+p, bob, data2, write
+</code></pre>
+<p>test.py文件后边我们将进行一些关于权限的测试,下边是整个文件的代码.</p>
+<pre><code>import casbin
+import os
+
+# model.conf 和 policy.csv 文件地址
+model_dir = os.path.join(os.path.dirname(__file__), 'model.conf')
+policy_dir = os.path.join(os.path.dirname(__file__), 'policy.csv')
+# 加载配置文件
+e = casbin.Enforcer(model_dir,policy_dir)
+sub = "alice"  # 想要访问资源的用户
+obj = "data1"  # 将要被访问的资源
+act = "read"  # 用户对资源进行的操作
+
+def getEnforce(sub, obj, act):
+    """
+    执行器的封装
+    """
+    if e.enforce(sub, obj, act):
+        # 允许alice读取data1
+        return True
+    else:
+        # 拒绝请求，抛出异常
+        return False
+
+if __name__ == '__main__':
+    print(getEnforce(sub,obj,act))
+</code></pre>
+<p>运行程序后会输出一个True,上边的代码我觉得不用过多的解释,看注释基本就可以明白运行的原理了.</p>
+<h2>在数据库里存放策略</h2>
+<p>将策略存放在数据库里,这样更接近实际的操作,这里我们使用casbin_sqlalchemy_adapter这个库,它封装好了很多有关casein数据库的操作的方法,可以拿来直接使用.</p>
+<h2>安装</h2>
+<pre><code>pip install casbin_sqlalchemy_adapter
+</code></pre>
+<p>然后我们吧policy_dir更换为数据库里的一个表.更改test.py文件的前半部分:</p>
+<pre><code># model.conf 和 policy.csv 文件地址
+model_dir = os.path.join(os.path.dirname(__file__), 'model.conf')
+# policy_dir = os.path.join(os.path.dirname(__file__), 'policy.csv')
+# 组装数据库的绝对地址
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_DIR = os.path.join(BASE_DIR, 'test.db')
+# 数据库访问地址
+SQLALCHEMY_DATABASE_URL = "sqlite:///" + DB_DIR
+# 从数据库加载casbin的policy
+adapter = casbin_sqlalchemy_adapter.Adapter(SQLALCHEMY_DATABASE_URL)
+e = casbin.Enforcer(model_dir, adapter)
+e.add_policy(["alice", "data1", "read"])
+</code></pre>
+<p>这里我们注释掉了policy.csv文件的磁盘上的地址,跟换为数据库,当运行程序的时候,会创建一个数据库和一个表casbin_rule,其中casbin_rule存放的数据和policy.csv是一样的,我们可以通过e.add_policy()来添加策略,也可以批量添加,或是更新删除策略.</p>
+<p>修改完代码后,运行程序,会发现和之前使用.csv文件是一样,是不是很方便,Casbin可以创建很多种权限控制模式,例如rbac等,网上介绍使用的教程很少,不过我个人感觉这个框架还是很不错的,用起来也方便,省去很多麻烦.</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230602070849.html" class="text-truncate">< <span>Python权限管理框架 Casbin PyCasbin 的简单操作</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230531194542.html" class="text-truncate"><span>Tailwind CSS 相关的组件库</span> ></a>
+        <a href="https://suiyan.cc/2023/20230601090428.html" class="text-truncate"><span>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</span> ></a>
         
     </div>
     
