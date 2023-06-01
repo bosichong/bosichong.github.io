@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-05-31 19:45:42</pubDate>
+        <pubDate>2023-06-01 09:04:28</pubDate>
+        
+        <item>
+            <title>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</title>
+            <link>https://suiyan.cc/2023/20230601090428.html</link>
+            <author>J.sky</author>
+            <description>我有一台老机器MacBook Pro(2015)的，最近有些软件提示如果系统不升级到macOS Monterey，软件将不再提供最新版的支持与升级了，之前升级过一回macOS Big Sur，体验非常糟糕，后来就退版本了退回了macOS Mojiave，这次我有忍不住升级了，但是这次是最后一次系统升级了，在之后的版本就不支持这个老机器了，所以豁出去了，还好升级后使用体验还不错，记录下来供有相同经历的友人参考。</description>
+            <category>MacBook,macOS</category>
+            <pubDate>2023-06-01 09:04:28</pubDate>
+        </item>
         
         <item>
             <title>Tailwind CSS 相关的组件库</title>
@@ -85,15 +94,6 @@
             <description>Django的ORM在Python中算是数一数二的，使用起来非常的简单和丝滑，文档也写的简单直观，相对于SQLAlchemy有过之而无不及。</description>
             <category>Django</category>
             <pubDate>2023-05-24 21:13:40</pubDate>
-        </item>
-        
-        <item>
-            <title>vite打包后element样式被其他框架样式覆盖的解决方法</title>
-            <link>https://suiyan.cc/2023/20230522201800.html</link>
-            <author>J.sky</author>
-            <description>今天打包一个项目，发现element button 样式被其他矿建的样式覆盖了，项目里还使用了`tailwindcss`，当时打包的时候提示文件大小超过了默认值，我就修改了vite build的配置项chunkSizeWarningLimit,并且使文件分开打包，然后就发现element的样式后边始终跟随一个样式表，会覆盖element button的背景颜色的样式，网上搜了很多方法都没有效果。</description>
-            <category>vite</category>
-            <pubDate>2023-05-22 20:18:00</pubDate>
         </item>
         
     </channel>

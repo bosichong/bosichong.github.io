@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="TailwindCSS" name="keywords">
-    <meta content="Tailwind CSS 在任何特定于框架/技术的UI开发中都有发展趋势。我发现了一些最好的使用基于 tailwind CSS的组件库，您可以在其中直接使用tailwind自定义组件。" name="description">
+    <meta content="MacBookmacOS" name="keywords">
+    <meta content="我有一台老机器MacBook Pro(2015)的，最近有些软件提示如果系统不升级到macOS Monterey，软件将不再提供最新版的支持与升级了，之前升级过一回macOS Big Sur，体验非常糟糕，后来就退版本了退回了macOS Mojiave，这次我有忍不住升级了，但是这次是最后一次系统升级了，在之后的版本就不支持这个老机器了，所以豁出去了，还好升级后使用体验还不错，记录下来供有相同经历的友人参考。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Tailwind CSS 相关的组件库 | SuiYan 碎言博客</title>
+    <title>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,63 +114,52 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Tailwind CSS 相关的组件库</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-31 19:45:42">2023-05-31 19:45:42</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-31 19:53:15">2023-05-31 19:53:15</span> | Tag:
+    <h1 class="animate__animated animate__bounce">记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-01 09:04:28">2023-06-01 09:04:28</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-01 10:12:17">2023-06-01 10:12:17</span> | Tag:
         
         
-        TailwindCSS
+        MacBook
+        
+        macOS
         
     </small>
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>Tailwind CSS 在任何特定于框架/技术的UI开发中都有发展趋势。我发现了一些最好的使用基于 tailwind CSS的组件库，您可以在其中直接使用tailwind自定义组件。</p>
-<ul>
-<li>Daisy UI：Daisy为您提供特殊类，如“btn”、“card”等。这些特殊类是其他顺风工具类的组合。</li>
-<li>Flowbite：Flowbite 是一组免费的开源 Figma UI 组件和页面，旨在与 Tailwind CSS 的实用程序类集成。</li>
-<li>WindUI：像 Flowbite 但更好。这个组件库确实支持很多框架技术，所以只需复制和粘贴即可。</li>
-<li>Material Tailwind：非常漂亮且专业的组件库。不像之前的其他组件库......</li>
-</ul>
-<p>本文翻译自：</p>
-<p>https://dev.to/pruthvidarji1993/tailwind-web-components-293l</p>
-<p>原作者：Pruthvi Darji</p>
+    <p>我有一台老机器MacBook Pro(2015)的，最近有些软件提示如果系统不升级到macOS Monterey，软件将不再提供最新版的支持与升级了，之前升级过一回macOS Big Sur，体验非常糟糕，后来就退版本了退回了macOS Mojiave，这次我有忍不住升级了，但是这次是最后一次系统升级了，在之后的版本就不支持这个老机器了，所以豁出去了，还好升级后使用体验还不错，记录下来供有相同经历的友人参考。</p>
+<h2>升级方式</h2>
+<p>直接在系统-软件更新处下载，然后开始升级就好，全程傻瓜式安装，输入了一次密码就好，无人值守去喝杯咖啡，半个小时就好了。</p>
+<h2>系统优化</h2>
+<p>升级后查看系统的进程，发现有两个进程比较占用资源。</p>
+<ol>
+<li>mds、mds_stores、mdworker占用很高的cpu和内存资源，风扇转的特别厉害！</li>
+<li>
+<p>WindewSderve 也挺占用资源的。</p>
+</li>
+<li>
+<p>优化mds、mds_stores、mdworker占用：</p>
+</li>
+</ol>
+<p>mds、mds_stores、mdworker是<code>聚焦</code>的功能，因为我很少使用这些功能，所以我选择了禁止<code>聚焦</code>索引文件。</p>
+<pre><code>sudo mdutil -a -i off
+</code></pre>
+<p>如果需要再次使用，可以通过以下命令重新开启。</p>
+<pre><code>sudo mdutil -a -i on
+</code></pre>
+<ol>
+<li>WindewSderve的优化：</li>
+</ol>
+<p>系统偏好设置-辅助设置-显示，勾选：减弱动态效果和降低透明度。</p>
+<p>经过上边的优化，系统几乎和以前一样了，至于新系统的功能这里就不在详细介绍了，大家自己体验吧。</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230601090428.html" class="text-truncate">< <span>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230530145118.html" class="text-truncate"><span>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</span> ></a>
+        <a href="https://suiyan.cc/2023/20230531194542.html" class="text-truncate"><span>Tailwind CSS 相关的组件库</span> ></a>
         
-    </div>
-    
-    <div class="related">
-        <p>
-            相关文章：
-        </p>
-        <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230529193749.html" class="text-truncate "><span>Vue+element+Vite安装 Tailwind CSS</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230513082050.html" class="text-truncate "><span>再谈TailwindCSS的使用心得</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230511191515.html" class="text-truncate "><span>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230511182912.html" class="text-truncate "><span>Tailwind CSS的安装配置和体验</span></a>
-            </li>
-            
-        </ul>
-
     </div>
     
 
