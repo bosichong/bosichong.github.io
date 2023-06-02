@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-02 07:08:49</pubDate>
+        <pubDate>2023-06-02 10:17:13</pubDate>
+        
+        <item>
+            <title>macOS更新后 终端提示：The default interactive shell is now zsh.</title>
+            <link>https://suiyan.cc/2023/20230602101713.html</link>
+            <author>J.sky</author>
+            <description>昨天升级了macOS系统到macOS Monterey,之后每次打开终端都会有一些提示，真的好烦人啊。</description>
+            <category>macOS</category>
+            <pubDate>2023-06-02 10:17:13</pubDate>
+        </item>
         
         <item>
             <title>Python权限管理框架 Casbin PyCasbin 的简单操作</title>
@@ -85,15 +94,6 @@
             <description>这段代码的效果是，为h1标签设置一个彩虹渐变的背景，并使文本颜色透明，从而实现彩虹渐变的文本效果。</description>
             <category>CSS</category>
             <pubDate>2023-05-27 07:08:32</pubDate>
-        </item>
-        
-        <item>
-            <title>Django 4.2 复习笔记(四)数据的查询Django的ORM</title>
-            <link>https://suiyan.cc/2023/20230525084144.html</link>
-            <author>J.sky</author>
-            <description>Django的ORM操作非常简答，几乎把所有你能想到的数据库的操作都封装了，即便没有你需要的，也可以使用原生的SQL语句进行查询。</description>
-            <category>Django</category>
-            <pubDate>2023-05-25 08:41:44</pubDate>
         </item>
         
     </channel>

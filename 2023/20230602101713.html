@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="MacBookmacOS" name="keywords">
-    <meta content="我有一台老机器MacBook Pro(2015)的，最近有些软件提示如果系统不升级到macOS Monterey，软件将不再提供最新版的支持与升级了，之前升级过一回macOS Big Sur，体验非常糟糕，后来就退版本了退回了macOS Mojiave，这次我有忍不住升级了，但是这次是最后一次系统升级了，在之后的版本就不支持这个老机器了，所以豁出去了，还好升级后使用体验还不错，记录下来供有相同经历的友人参考。" name="description">
+    <meta content="macOS" name="keywords">
+    <meta content="昨天升级了macOS系统到macOS Monterey,之后每次打开终端都会有一些提示，真的好烦人啊。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2 | SuiYan 碎言博客</title>
+    <title>macOS更新后 终端提示：The default interactive shell is now zsh. | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,11 +114,9 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-01 09:04:28">2023-06-01 09:04:28</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-01 10:18:37">2023-06-01 10:18:37</span> | Tag:
+    <h1 class="animate__animated animate__bounce">macOS更新后 终端提示：The default interactive shell is now zsh.</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-02 10:17:13">2023-06-02 10:17:13</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-02 11:30:06">2023-06-02 11:30:06</span> | Tag:
         
-        
-        MacBook
         
         macOS
         
@@ -126,106 +124,35 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>我有一台老机器MacBook Pro(2015)的，最近有些软件提示如果系统不升级到macOS Monterey，软件将不再提供最新版的支持与升级了，之前升级过一回macOS Big Sur，体验非常糟糕，后来就退版本了退回了macOS Mojiave，这次我有忍不住升级了，但是这次是最后一次系统升级了，在之后的版本就不支持这个老机器了，所以豁出去了，还好升级后使用体验还不错，记录下来供有相同经历的友人参考。</p>
-<h2>升级方式</h2>
-<p>直接在系统-软件更新处下载，然后开始升级就好，全程傻瓜式安装，输入了一次密码就好，无人值守去喝杯咖啡，半个小时就好了。</p>
-<h2>系统优化</h2>
-<p>升级后查看系统的进程，发现有两个进程比较占用资源。</p>
-<ol>
-<li>mds、mds_stores、mdworker占用很高的cpu和内存资源，风扇转的特别厉害！</li>
-<li>
-<p>WindewSderve 也挺占用资源的。</p>
-</li>
-<li>
-<p>优化mds、mds_stores、mdworker占用：</p>
-</li>
-</ol>
-<p>mds、mds_stores、mdworker是<code>聚焦</code>的功能，因为我很少使用这些功能，所以我选择了禁止<code>聚焦</code>索引文件。</p>
-<pre><code>sudo mdutil -a -i off
+    <p>昨天升级了macOS系统到macOS Monterey,之后每次打开终端都会提示：</p>
+<pre><code>The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
 </code></pre>
-<p>如果需要再次使用，可以通过以下命令重新开启。</p>
-<pre><code>sudo mdutil -a -i on
+<p>其实早就不怎么使用zsh了，正好卸载了吧。</p>
+<pre><code>sudo rm -rf /usr/local/bin/zsh
 </code></pre>
-<ol>
-<li>WindewSderve的优化：</li>
-</ol>
-<p>系统偏好设置-辅助设置-显示，勾选：减弱动态效果和降低透明度。</p>
-<p>经过上边的优化，系统几乎和以前一样了，至于新系统的功能这里就不在详细介绍了，大家自己体验吧。</p>
-<h2>附录 macOS各版本支持升级机型汇总！</h2>
-<h3>01 macOS Ventura 13.4支持安装系统型号：</h3>
-<ol>
-<li>MacBook: 2017年款或以后的机型;</li>
-<li>MacBook Air: 2018年款或以后的机型;</li>
-<li>MacBook Pro: 2017年款或以后的机型;</li>
-<li>Mac Mini: 2018年款或以后的机型;</li>
-<li>iMac: 2017年款或以后的机型;</li>
-<li>iMac Pro: 2017年款或以后的机型;</li>
-<li>Mac Pro: 2019年款或以后的机型;</li>
-<li>Mac Studio: 2022年款或以后的机型;</li>
-</ol>
-<h3>02 macOS Monterey 12.6.2支持安装系统型号：</h3>
-<ol>
-<li>MacBook: 2016年初及以后机型；</li>
-<li>MacBook Air: 2015年中及以后机型；</li>
-<li>MacBook Pro: 2015年初及以后机型；</li>
-<li>Mac Mini: 2014年末及以后机型；</li>
-<li>iMac: 2015年末及以后机型；</li>
-<li>iMac Pro: 2017年及以后机型；</li>
-<li>Mac Pro: 2013年末及以后机型；</li>
-</ol>
-<h3>03 macOS Big Sur 11.7.2支持安装系统型号：</h3>
-<ol>
-<li>iMac 2014及以后机型；</li>
-<li>iMac Pro 2017及以后机型；</li>
-<li>Mac Pro 2013及以后机型；</li>
-<li>MacMini 2014及以后机型；</li>
-<li>MacBook 2015及以后机型；</li>
-<li>MacBook Air 2013及以后机型；</li>
-<li>MacBook Pro 2013及以后机型；</li>
-</ol>
-<h3>04 macOS Catalina 10.15.7支持安装系统型号:</h3>
-<ol>
-<li>MacBook 2015年款及以后机型；</li>
-<li>MacBook Air 2012年款及以后机型；</li>
-<li>MacBook Pro 2012年款及以后机型；</li>
-<li>Mac Mini 2012年款及以后机型；</li>
-<li>iMac 2012年款及以后机型；</li>
-<li>iMac Pro 2017年款及以后机型；</li>
-<li>Mac Pro 2013年款及以后机型；</li>
-</ol>
-<h3>05 macOS 10.14 Mojiave10.14.6支持安装系统型号：</h3>
-<ol>
-<li>MacBook 2015 年前期及以后机型；</li>
-<li>MacBook Air 2012 年中期及以后机型；</li>
-<li>MacBook Pro 2012 年中期及以后机型；</li>
-<li>Mac mini 2012 年后期及以后机型；</li>
-<li>iMac 2012 年后期及以后机型. ；</li>
-<li>iMac Pro 2017 年及以后机型；</li>
-<li>Mac Pro 2013 年及以后期机型；</li>
-</ol>
-<h3>06 macOS High Sierra 10.13.6支持安装系统型号：</h3>
-<ol>
-<li>iMac 2009年末及以后机型；</li>
-<li>MacBook Air 2010年及以后机型；</li>
-<li>MacBook Pro 2010年及以后机型；</li>
-<li>Mac mini 2010年末及以后机型；</li>
-<li>MacBook 2009年及以后机型；</li>
-<li>Mac Pro 2010年及以后机型；</li>
-</ol>
-<p>参考文章：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/430705744">「持续更新」macOS各版本支持升级机型汇总！</a></p>
-<p><a href="https://www.xtplayer.cn/macos/mds-stores-use-high-cpu/#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF">mds、mds_stores、mdworker 占用大量 cpu 和内存</a></p>
-<p><a href="https://blog.csdn.net/weixin_48039619/article/details/122445823">Mac上的 WindowServer进程是什么？如何解决高CPU使用率</a></p>
+<p>试了一下，但是还是有烦人的提示！</p>
+<h2>解决办法</h2>
+<p>后来搜的一个方法：</p>
+<pre><code>chsh -s /bin/zsh
+</code></pre>
+<p>这个还是不管用的！！</p>
+<p>最终解决方法：</p>
+<p>在命令行输入：</p>
+<pre><code>vim ~/.bash_profile
+</code></pre>
+<p>在文件内输入</p>
+<pre><code>export BASH_SILENCE_DEPRECATION_WARNING=1
+</code></pre>
+<p>重启终端，完美解决！</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230602070849.html" class="text-truncate">< <span>Python权限管理框架 Casbin PyCasbin 的简单操作</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230531194542.html" class="text-truncate"><span>Tailwind CSS 相关的组件库</span> ></a>
+        <a href="https://suiyan.cc/2023/20230602070849.html" class="text-truncate"><span>Python权限管理框架 Casbin PyCasbin 的简单操作</span> ></a>
         
     </div>
     
@@ -236,7 +163,7 @@
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230602101713.html" class="text-truncate "><span>macOS更新后 终端提示：The default interactive shell is now zsh.</span></a>
+                <a href="https://suiyan.cc/2023/20230601090428.html" class="text-truncate "><span>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</span></a>
             </li>
             
         </ul>
