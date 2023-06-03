@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Django" name="keywords">
-    <meta content="Django的ORM在Python中算是数一数二的，使用起来非常的简单和丝滑，文档也写的简单直观，相对于SQLAlchemy有过之而无不及。" name="description">
+    <meta content="作为一个网络框架，Django 需要一种方便的方式来动态生成 HTML，最常见的方法是依靠模板，一个模板包含了所需HTML输出的静态部分，以及一些特殊的语法，描述了如何插入动态内容。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Django 4.2 复习笔记(三)Model模型字段 | SuiYan 碎言博客</title>
+    <title>Django 4.2 复习笔记(七)Django 模板(TEMPLATES) | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(三)Model模型字段</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-24 21:13:40">2023-05-24 21:13:40</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-25 00:30:22">2023-05-25 00:30:22</span> | Tag:
+    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(七)Django 模板(TEMPLATES)</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-03 07:32:59">2023-06-03 07:32:59</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-03 08:02:32">2023-06-03 08:02:32</span> | Tag:
         
         
         Django
@@ -124,149 +124,113 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>Django的ORM在Python中算是数一数二的，使用起来非常的简单和丝滑，文档也写的简单直观，相对于SQLAlchemy有过之而无不及。</p>
-<h2>模型字段</h2>
-<p>常用的字段选项：</p>
-<table>
-  <thead>
-    <tr>
-      <th>选项</th>
-      <th>作用</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>null</td>
-      <td>如果是 True， Django 将在数据库中存储空值为 NULL。默认为 False。</td>
-    </tr>
-    <tr>
-      <td>blank</td>
-      <td>如果是 True ，该字段允许为空。默认为 False 。</td>
-    </tr>
-    <tr>
-      <td>db_index</td>
-      <td>如果是 True，将为该字段创建数据库索引。</td>
-    </tr>
-    <tr>
-      <td>default</td>
-      <td>该字段的默认值。可以是一个值或者是个可调用的对象，如果是个可调用对象，每次实例化模型时都会调用该对象。</td>
-    </tr>
-    <tr>
-      <td>help_text</td>
-      <td>额外的“帮助”文本，随表单控件一同显示。即便你的字段未用于表单，它对于生成文档也是很有用的。</td>
-    </tr>
-    <tr>
-      <td>primary_key</td>
-      <td>如果设置为 True ，将该字段设置为该模型的主键。</td>
-    </tr>
-    <tr>
-      <td>unique</td>
-      <td>如果设置为 True，这个字段必须在整个表中保持值唯一。</td>
-    </tr>
-    <tr>
-      <td>verbose_name</td>
-      <td>字段的一个人类可读名称，如果没有给定详细名称，Django 会使用字段的属性名自动创建，并将下划线转换为空格。</td>
-    </tr>
-    <tr>
-      <td>validators</td>
-      <td>要为该字段运行的验证器列表</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>常见字段类型：</p>
-<table>
-  <thead>
-    <tr>
-      <th>名称</th>
-      <th>作用</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AutoField</td>
-      <td>一个 IntegerField，根据可用的 ID 自动递增。你通常不需要直接使用它；如果你没有指定，主键字段会自动添加到你的模型中。</td>
-    </tr>
-    <tr>
-      <td>BooleanField</td>
-      <td>单元一个 true／false 字段。格</td>
-    </tr>
-    <tr>
-      <td>DateField</td>
-      <td>一个日期，在 Python 中用一个 datetime.date 实例表示。有一些额外的、可选的参数。</td>
-    </tr>
-    <tr>
-      <td>DateTimeField</td>
-      <td>一个日期和时间，在 Python 中用一个 datetime.datetime 实例表示。</td>
-    </tr>
-    <tr>
-      <td>EmailField</td>
-      <td>一个 CharField，使用 EmailValidator 来检查该值是否为有效的电子邮件地址。</td>
-    </tr>
-    <tr>
-      <td>FileField</td>
-      <td>一个文件上传字段</td>
-    </tr>
-    <tr>
-      <td>ImageField</td>
-      <td>继承 FileField 的所有属性和方法，但也验证上传的对象是有效的图像。</td>
-    </tr>
-    <tr>
-      <td>IntegerField</td>
-      <td>一个整数。从 -2147483648 到 2147483647 的值在 Django 支持的所有数据库中都是安全的。</td>
-    </tr>
-    <tr>
-      <td>CharField</td>
-      <td>一个字符串字段，适用于小到大的字符串。</td>
-    </tr>
-    <tr>
-      <td>TextField</td>
-      <td>一个大的文本字段。该字段的默认表单部件是一个 Textarea。</td>
-    </tr>
-    <tr>
-      <td>TimeField</td>
-      <td>一个时间，在 Python 中用 datetime.time 实例表示。接受与 DateField 相同的自动填充选项。</td>
-    </tr>
-    <tr>
-      <td>UUIDField</td>
-      <td>一个用于存储通用唯一标识符的字段。使用 Python 的 UUID 类。当在 PostgreSQL 上使用时，它存储在一个 uuid 的数据类型中，否则存储在一个 char(32) 中。</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>关系字段：</p>
-<table>
-  <tr>
-    <th>名称</th>
-    <th>作用</th>
-  </tr>
-  <tr>
-    <td>ForeignKey</td>
-    <td>一个多对一的关系。</td>
-  </tr>
-  <tr>
-    <td>ManyToManyField</td>
-    <td>一个多对多的关系</td>
-  </tr>
-  <tr>
-    <td>OneToOneField</td>
-    <td>一对一的关系。概念上，这类似于 ForeignKey 与 unique=True，但关系的“反向”将直接返回一个单一对象。</td>
-  </tr>
-</table>
-
-<p>关系字段极大的简化了数据中表关系的设置。</p>
-<p>参考：</p>
-<p><a href="https://docs.djangoproject.com/zh-hans/4.2/ref/models/fields/">模型字段参考</a></p>
+    <p>作为一个网络框架，Django 需要一种方便的方式来动态生成 HTML，最常见的方法是依靠模板，一个模板包含了所需HTML输出的静态部分，以及一些特殊的语法，描述了如何插入动态内容。</p>
+<h2>配置Django模板引擎</h2>
+<p>配置Django模板引擎：在Django项目的设置文件中（settings.py），确保'Django.template.backends.django.DjangoTemplates'引擎被包含在TEMPLATES设置的'BACKENDS'中。</p>
+<p>这是Django创建项目后默认的模板配置：</p>
+<pre><code>TEMPLATES = [
+    {
+        'BACKEND':  'django.template.backends.django.DjangoTemplates',
+        'DIRS':     [],
+        'APP_DIRS': True,
+        'OPTIONS':  {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+</code></pre>
+<p>下面是修改添加并设置了模板目录的配置项：</p>
+<pre><code>TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],       # 修改位置
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+</code></pre>
+<p>告诉Django要启用Django自带的模板引擎。</p>
+<pre><code>"BACKEND": "django.template.backends.django.DjangoTemplates",
+"APP_DIRS": True,
+</code></pre>
+<p>指定模板文件的存放目录为项目的子目录下<code>templates</code></p>
+<pre><code>'DIRS': [os.path.join(BASE_DIR, 'templates')],# 修改位置
+</code></pre>
+<p>至此，Django模板就配置好了。</p>
+<h2>使用Django的模板</h2>
+<p>在模板文件（例如，template.html）编写模板文件：</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;{{ title }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, {{ name }}!&lt;/h1&gt;
+    {% if age %}
+        &lt;p&gt;Your age is {{ age }}.&lt;/p&gt;
+    {% else %}
+        &lt;p&gt;Your age is not specified.&lt;/p&gt;
+    {% endif %}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>配置好路由：</p>
+<pre><code>urlpatterns = [
+    path("", views.index, name="index"),
+    path("test_view/", views.test_view, name="test_view"),
+]
+</code></pre>
+<p>在上述示例中，视图函数test_view创建了一个包含'title'、'name'和'age'的上下文对象。然后使用render函数将模板文件名、上下文对象和请求作为参数传递。最后Django将渲染模板并返回最终的HTML响应。</p>
+<p>我们启动Django的服务器来进行测试：<code>python manage.py runserver</code></p>
+<p>我们就可以正常的看到模板渲染出来的页面了。</p>
+<h2>总结</h2>
+<p>以下是使用Django模板的基本步骤：</p>
+<ol>
+<li>
+<p>配置Django模板引擎：在Django项目的设置文件中（settings.py），确保'Django.template.backends.django.DjangoTemplates'引擎被包含在TEMPLATES设置的'BACKENDS'中。</p>
+</li>
+<li>
+<p>创建模板文件：在Django项目的一个目录中，创建一个包含HTML代码的模板文件。通常，模板文件位于一个名为'templates'的子目录中。</p>
+</li>
+<li>
+<p>定义模板变量：在模板中，可以使用双大括号（{{ variable_name }}）来包围变量名，以将其插入到模板中。</p>
+</li>
+<li>
+<p>控制流和逻辑：在模板中，可以使用控制结构（如if语句和for循环）来控制显示的内容。</p>
+</li>
+<li>
+<p>继承和包含：Django模板还支持模板继承和包含，可以在一个模板中使用{% extends %}和{% include %}指令来重用和组合模板代码。</p>
+</li>
+<li>
+<p>上下文传递：在Django视图函数中，可以通过上下文对象将数据传递给模板。上下文对象是一个包含键值对的字典，其中键是在模板中使用的变量名称，值是要传递给模板的实际数据。</p>
+</li>
+<li>
+<p>渲染模板：在Django视图函数中，使用Django的渲染器（render）将模板和上下文对象结合起来，生成最终的HTML响应。</p>
+</li>
+</ol>
+<p>参考文档：</p>
+<p><a href="https://www.runoob.com/django/django-template.html">Django 模板</a></p>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.2/topics/templates/">Django 模板 官方文档</a></p>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.2/ref/settings/#templates">模板配置文件选项设置 官方文档</a></p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230525084144.html" class="text-truncate">< <span>Django 4.2 复习笔记(四)数据的查询Django的ORM</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230522201800.html" class="text-truncate"><span>vite打包后element样式被其他框架样式覆盖的解决方法</span> ></a>
+        <a href="https://suiyan.cc/2023/20230602101713.html" class="text-truncate"><span>macOS更新后 终端提示：The default interactive shell is now zsh.</span> ></a>
         
     </div>
     
@@ -275,10 +239,6 @@
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230603073259.html" class="text-truncate "><span>Django 4.2 复习笔记(七)Django 模板(TEMPLATES)</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230529075925.html" class="text-truncate "><span>Django 4.2 复习笔记(六)Django的路由</span></a>
@@ -294,6 +254,10 @@
             
             <li>
                 <a href="https://suiyan.cc/2023/20230525084144.html" class="text-truncate "><span>Django 4.2 复习笔记(四)数据的查询Django的ORM</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230524211340.html" class="text-truncate "><span>Django 4.2 复习笔记(三)Model模型字段</span></a>
             </li>
             
             <li>
