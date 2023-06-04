@@ -115,7 +115,7 @@
 
 <hgroup class="blog-info">
     <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(八)Django 模板语言语法</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-04 08:48:35">2023-06-04 08:48:35</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-04 09:18:17">2023-06-04 09:18:17</span> | Tag:
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-04 08:48:35">2023-06-04 08:48:35</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-04 09:19:45">2023-06-04 09:19:45</span> | Tag:
         
         
         Django
@@ -170,7 +170,7 @@ HTML：｛｛变量名｝｝
 &lt;/ul&gt;
 </code></pre>
 <h2>过滤器</h2>
-<p>通过使用过滤器修改显示的变量。过滤器是这样的： {{ name|lower }}。这将显示 lower 过滤器过滤后的 {{ name }} 变量的值，该过滤器将文本转换为小写。使用管道（|）来应用过滤器。</p>
+<p>通过使用过滤器修改显示的变量。过滤器是这样的： <code>{{ name|lower }}</code>。这将显示 lower 过滤器过滤后的 <code>{{ name }}</code> 变量的值，该过滤器将文本转换为小写。使用管道（|）来应用过滤器。</p>
 <p>例如：</p>
 <pre><code>{{ value|length }}
 </code></pre>
@@ -202,8 +202,8 @@ HTML：｛｛变量名｝｝
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>这个模板，我们称之为 base.html，它定义了一个 HTML 骨架文档，你可以用它来制作一个两栏式页面。“子”模板的工作是用内容填充空块。</p>
-<p>在这个例子中，block 标签定义了三个块，子模板可以填入其中。block 标签所做的就是告诉模板引擎，子模板可以覆盖模板的这些部分。</p>
+<p>这个模板，我们称之为 <code>base.html</code>，它定义了一个 HTML 骨架文档，你可以用它来制作一个两栏式页面。“子”模板的工作是用内容填充空块。</p>
+<p>在这个例子中，<code>block</code> 标签定义了三个块，子模板可以填入其中。<code>block</code> 标签所做的就是告诉模板引擎，子模板可以覆盖模板的这些部分。</p>
 <p>子模板继承：</p>
 <pre><code>{% extends "base.html" %}
 
