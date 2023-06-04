@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-03 07:32:59</pubDate>
+        <pubDate>2023-06-04 08:48:35</pubDate>
+        
+        <item>
+            <title>Django 4.2 复习笔记(七)Django 模板语言语法</title>
+            <link>https://suiyan.cc/2023/20230604084835.html</link>
+            <author>J.sky</author>
+            <description>Django的页面渲染是通过Django的模板语法在模板中渲染上下文的变量来进行输出的，Django 的模板语言是为了在强大和简单之间取得平衡而设计的。它的设计让习惯于使用 HTML 的人感觉很舒服。如果你接触过其他基于文本的模板语言，如 Smarty 或 Jinja2 ，你应该会对 Django 的模板感到很舒服。</description>
+            <category>Django</category>
+            <pubDate>2023-06-04 08:48:35</pubDate>
+        </item>
         
         <item>
             <title>Django 4.2 复习笔记(七)Django 模板(TEMPLATES)</title>
@@ -85,15 +94,6 @@
             <description>SQLAlchemy和Django都是流行的Python框架，用于处理数据库关系。虽然它们都提供了关系字段的概念，但在实现和使用上有一些不同点。</description>
             <category>Django,SQLAlchemy</category>
             <pubDate>2023-05-28 07:47:12</pubDate>
-        </item>
-        
-        <item>
-            <title>Django 4.2 复习笔记(五)Django中常见的关系字段及其示例</title>
-            <link>https://suiyan.cc/2023/20230528074013.html</link>
-            <author>J.sky</author>
-            <description>Django是一个使用Python编写的开源Web应用程序框架，它提供了一种方便的方式来处理数据库关系。Django的关系字段允许你在模型之间建立各种类型的关联关系，如一对一、一对多和多对多关系。以下是Django中常见的关系字段及其示例。</description>
-            <category>Django</category>
-            <pubDate>2023-05-28 07:40:13</pubDate>
         </item>
         
     </channel>
