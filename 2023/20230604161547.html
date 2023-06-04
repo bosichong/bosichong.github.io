@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Django" name="keywords">
-    <meta content="在Django中，路由由URL模式和视图函数组成。URL模式定义了URL的结构和匹配规则，而视图函数则定义了当URL匹配时要执行的代码逻辑。Django的路由系统允许你根据URL的不同部分进行模式匹配，并从URL中提取参数传递给视图函数。" name="description">
+    <meta content="在Python中进行一些不是很复杂的数据库操作的时候我们都会选择使用一些ORM框架，主要的ORM框架包括Django ORM、SQLAlchemy、Pony ORM、Peewee和Tortoise ORM等。这里Django ORM在使用方面更为简单和人性化。但是Django ORM和Django的绑定很紧密，如何单独使用Django ORM呢？在非Django项目中使用Django ORM？" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Django 4.2 复习笔记(六)Django的路由 | SuiYan 碎言博客</title>
+    <title>如何单独使用Django ORM 在非Django项目中使用Django ORM？ | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(六)Django的路由</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-29 07:59:25">2023-05-29 07:59:25</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-29 08:03:51">2023-05-29 08:03:51</span> | Tag:
+    <h1 class="animate__animated animate__bounce">如何单独使用Django ORM 在非Django项目中使用Django ORM？</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-04 16:15:47">2023-06-04 16:15:47</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-04 16:37:22">2023-06-04 16:37:22</span> | Tag:
         
         
         Django
@@ -124,48 +124,87 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>在Django中，路由由URL模式和视图函数组成。URL模式定义了URL的结构和匹配规则，而视图函数则定义了当URL匹配时要执行的代码逻辑。Django的路由系统允许你根据URL的不同部分进行模式匹配，并从URL中提取参数传递给视图函数。</p>
-<pre><code># myapp/urls.py
-
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
-    path('post/&lt;int:post_id&gt;/', views.post_detail, name='post_detail'),
+    <p>在Python中进行一些不是很复杂的数据库操作的时候我们都会选择使用一些ORM框架，主要的ORM框架包括Django ORM、SQLAlchemy、Pony ORM、Peewee和Tortoise ORM等。这里Django ORM在使用方面更为简单和人性化。但是Django ORM和Django的绑定很紧密，如何单独使用Django ORM呢？</p>
+<h2>安装依赖</h2>
+<p>如果需要使用Django的ORM必须安装Django的相关依赖：</p>
+<h3>安装Django</h3>
+<pre><code>pip install Django
+</code></pre>
+<h3>创建Django的项目</h3>
+<pre><code>django-admin startproject mysite
+</code></pre>
+<h3>创建模型</h3>
+<pre><code>from django.db import models
+class Article(models.Model):
+    title = models.CharField(max_length=128,verbose_name='文章标题')
+    content = models.TextField(verbose_name='文章内容')
+</code></pre>
+<h3>配置数据库</h3>
+<p>一般创建完数据库后会有一个默认的SQLite默认数据库配置</p>
+<pre><code>DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+</code></pre>
+<h3>激活模型</h3>
+<p>定义完模型，首先需要生成相关的数据库和表，然后通过Django的命令行进行调试。</p>
+<p>配置文件mysite/settings.py中添加<code>myapp</code>，<code>myapp</code>是你的应用名称。</p>
+<pre><code>INSTALLED_APPS = [
+    'myapp',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 </code></pre>
-<p>在上面的示例中，我们定义了三个URL模式：</p>
-<ol>
-<li>空路径：path('') 将映射到 views.home 视图函数，表示应用程序的主页。</li>
-<li><code>about/</code>路径：path('about/') 将映射到 views.about 视图函数，表示关于页面。</li>
-<li><code>post/int:post_id/</code>路径：<code>path('post/&lt;int:post_id&gt;/')</code> 将映射到 <code>views.post_detail</code> 视图函数，并将URL中的post_id作为参数传递给该视图函数。这个URL模式使用了尖括号（&lt; &gt;）来标记参数部分，并指定了参数的类型为整数（int）。
-在上述示例中，urlpatterns列表定义了应用程序的所有URL模式。每个URL模式由path函数定义，接受两个参数：第一个参数是URL模式的字符串表示，第二个参数是要调用的视图函数。你还可以为每个URL模式指定一个名称（name），以便在代码中引用它们。</li>
-</ol>
-<p>通常，你需要在项目的主路由文件中包含应用程序的URL配置。例如，如果你的应用程序名为myapp，你需要在项目的主路由文件中包含以下内容：</p>
-<pre><code># project/urls.py
-
-from django.urls import include, path
-
-urlpatterns = [
-    path('myapp/', include('myapp.urls')),
-]
+<p>然后，终端下运行：</p>
+<pre><code>$ python manage.py makemigrations myapp
+Migrations for 'myapp':
+myapp/migrations/0001_initial.py
+    - Create model Article
 </code></pre>
-<p>上述示例中，include函数用于将myapp/urls.py文件中定义的URL模式包含到主路由文件中。这样，当用户访问/myapp/路径时，Django将使用应用程序的URL配置来处理该请求。</p>
-<p>这只是Django路由系统的基本介绍。Django还提供了其他高级功能，如正则表达式匹配、命名空间等。通过使用Django的路由系统，你可以轻松地定义URL模式，并将它们与相应的视图函数关联起来，从而构建功能完整的Web应用程序。</p>
-<p>相关参考：</p>
-<p><a href="https://docs.djangoproject.com/zh-hans/4.2/topics/http/urls/">Django URL调度器</a></p>
+<p>继续：</p>
+<pre><code>$ python manage.py migrate
+</code></pre>
+<p>这个时候就会生成相关的数据库，当然Django一些自带的项目依赖的数据库也一并创建了。</p>
+<h2>Python中使用Django ORM</h2>
+<p>终端下的交互调试这里就不介绍了，说下如何在Python的文件中使用Django ORM。</p>
+<p>在manage.py同目录下创建一个测试的Python文件，这里暂时为ORM.py.</p>
+<p><code>ORM.py</code></p>
+<pre><code>import os
+import django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+django.setup()
+
+
+from myapp.models import *
+
+if __name__ == '__main__':
+    art = Article(title="引用测试",content="这里是内容")
+    art.save()
+    print(art.id)
+</code></pre>
+<p>在非Django项目中使用Django ORM时需要进行的初始化步骤,主要代码就是：</p>
+<pre><code>os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+django.setup()
+</code></pre>
+<p>首先，os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings') 这行代码将环境变量 DJANGO_SETTINGS_MODULE 的值设置为 'mysite.settings'，如果该环境变量已经存在，则不进行任何更改。这个环境变量用于指定 Django 的设置模块，即包含 Django 项目配置的 Python 模块。</p>
+<p>接下来，django.setup() 调用用于初始化 Django 的函数。它会根据 DJANGO_SETTINGS_MODULE 环境变量指定的设置模块来加载并配置 Django。这个函数通常在使用 Django ORM 之前被调用，以确保 Django 正确配置和准备就绪。</p>
+<p>通过这两行代码，我们设置了 DJANGO_SETTINGS_MODULE 环境变量，并使用 django.setup() 进行初始化，以便在后续的代码中可以使用 Django ORM 或其他 Django 的功能。</p>
+<p>运行ORM.py，就可以看到打印出新加入的数据的ID值了。以上就是在非Django项目中使用Django ORM的方法。</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230529193749.html" class="text-truncate">< <span>Vue+element+Vite安装 Tailwind CSS</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230528074712.html" class="text-truncate"><span>SQLAlchemy的关系字段和Django的关系字段他们的不同点。</span> ></a>
+        <a href="https://suiyan.cc/2023/20230604084835.html" class="text-truncate"><span>Django 4.2 复习笔记(八)Django 模板语言语法</span> ></a>
         
     </div>
     
@@ -176,15 +215,15 @@ urlpatterns = [
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230604161547.html" class="text-truncate "><span>如何单独使用Django ORM 在非Django项目中使用Django ORM？</span></a>
-            </li>
-            
-            <li>
                 <a href="https://suiyan.cc/2023/20230604084835.html" class="text-truncate "><span>Django 4.2 复习笔记(八)Django 模板语言语法</span></a>
             </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230603073259.html" class="text-truncate "><span>Django 4.2 复习笔记(七)Django 模板(TEMPLATES)</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230529075925.html" class="text-truncate "><span>Django 4.2 复习笔记(六)Django的路由</span></a>
             </li>
             
             <li>
