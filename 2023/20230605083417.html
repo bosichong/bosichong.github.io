@@ -115,7 +115,7 @@
 
 <hgroup class="blog-info">
     <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(九)使用Django的上下文处理器（context processor）</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 08:34:17">2023-06-05 08:34:17</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 09:07:08">2023-06-05 09:07:08</span> | Tag:
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 08:34:17">2023-06-05 08:34:17</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 09:18:31">2023-06-05 09:18:31</span> | Tag:
         
         
         Django
@@ -161,21 +161,10 @@ def my_global_context(request):
 </pre>
 <p></code></p>
 <ol>
-<li>现在，你可以在任何模板中使用my_variable变量。例如，在一个模板文件中：</li>
+<li>现在，你可以在任何模板中使用my_variable变量。例如，在一个模板文件中：<pre><code>&lt;p&gt;{{ my_variable }}&lt;/p&gt;
+</code></pre>
+</li>
 </ol>
-<p><code></p>
-<pre>
-
-    <html>
-    <head>
-        <title>My Page</title>
-    </head>
-    <body>
-        <p>{{ my_variable }}</p>
-    </body>
-    </html>
-</pre>
-<p></code></p>
 <p>Django的上下文可以用来定义类似博客每个页面上的站点和站长资料、分类、标签集合、底部版权信息等，这样在整个web的站点访问任何地方都可以调用，极大的方便了开发者编写开发web站点的对应功能。</p>
 </div>
 
