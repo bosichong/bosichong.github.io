@@ -115,7 +115,7 @@
 
 <hgroup class="blog-info">
     <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(九)使用Django的上下文处理器（context processor）</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 08:34:17">2023-06-05 08:34:17</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 08:46:59">2023-06-05 08:46:59</span> | Tag:
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 08:34:17">2023-06-05 08:34:17</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 09:07:08">2023-06-05 09:07:08</span> | Tag:
         
         
         Django
@@ -128,43 +128,54 @@
 <p>要定义全局上下文，可以使用Django的上下文处理器（context processor）。上下文处理器是一个Python函数，它接收一个HttpRequest对象作为参数，并返回一个包含上下文变量的字典。这个字典将会被添加到每个模板的上下文中。</p>
 <ol>
 <li>创建一个Python文件，例如"myapp/context_processors.py"。</li>
-<li>
-<p>在文件中定义一个函数，接收一个HttpRequest对象作为参数，并返回一个包含上下文变量的字典。例如：</p>
-<p>def my_global_context(request):
-    return {
-        'site_name': 'suiyan_blog'
-    }</p>
-</li>
-<li>
-<p>在Django的配置文件（settings.py）中找到TEMPLATES设置。在OPTIONS部分的context_processors列表中添加你的上下文处理器的路径。例如：</p>
-<p>TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                ...
-                'myapp.context_processors.my_global_context',
-                ...
-            ],
-        },
-    },
-]</p>
-</li>
-<li>
-<p>现在，你可以在任何模板中使用my_variable变量。例如，在一个模板文件中：</p>
-<p>&lt;!DOCTYPE html&gt;
-<html>
-<head>
-    <title>My Page</title>
-</head>
-<body>
-    <h1>{{ my_variable }}</h1>
-</body>
-</html></p>
-</li>
+<li>在文件中定义一个函数，接收一个HttpRequest对象作为参数，并返回一个包含上下文变量的字典。例如：</li>
 </ol>
+<p><code></p>
+<pre>
+
+def my_global_context(request):
+        return {
+            'site_name': 'suiyan_blog'
+        }
+</pre>
+<p></code></p>
+<ol>
+<li>在Django的配置文件（settings.py）中找到TEMPLATES设置。在OPTIONS部分的context_processors列表中添加你的上下文处理器的路径。例如：</li>
+</ol>
+<p><code></p>
+<pre>
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    ...
+                    'myapp.context_processors.my_global_context',
+                    ...
+                ],
+            },
+        },
+    ]
+</pre>
+<p></code></p>
+<ol>
+<li>现在，你可以在任何模板中使用my_variable变量。例如，在一个模板文件中：</li>
+</ol>
+<p><code></p>
+<pre>
+
+    <html>
+    <head>
+        <title>My Page</title>
+    </head>
+    <body>
+        <p>{{ my_variable }}</p>
+    </body>
+    </html>
+</pre>
+<p></code></p>
 <p>Django的上下文可以用来定义类似博客每个页面上的站点和站长资料、分类、标签集合、底部版权信息等，这样在整个web的站点访问任何地方都可以调用，极大的方便了开发者编写开发web站点的对应功能。</p>
 </div>
 
