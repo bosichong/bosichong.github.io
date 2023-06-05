@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Django" name="keywords">
-    <meta content="许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。" name="description">
+    <meta content="web站点的上下文对于新手可能有些陌生和晦涩，这个东西有什么用？上下文就是一个变量或是函数，在整个web站点中都可以调用并获取其中定义的值。在Django中，全局上下文（Global Context）是指在每个视图中都可用的全局变量或函数，可以在模板中直接访问。Django提供了一种机制来定义全局上下文，使得这些变量或函数在所有的模板中都可以使用。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Django 4.2 复习笔记(一)迅速概览 | SuiYan 碎言博客</title>
+    <title>使用Django的上下文处理器（context processor） | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(一)迅速概览</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-18 09:28:45">2023-05-18 09:28:45</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-18 10:53:59">2023-05-18 10:53:59</span> | Tag:
+    <h1 class="animate__animated animate__bounce">使用Django的上下文处理器（context processor）</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 08:34:17">2023-06-05 08:34:17</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-05 08:43:01">2023-06-05 08:43:01</span> | Tag:
         
         
         Django
@@ -124,105 +124,56 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。</p>
-<h2>Django 安装</h2>
-<p>建议使用conda创建虚拟环境</p>
-<p>conda 常用的命令。</p>
-<pre><code>conda list 查看安装了哪些包。
-conda env list 或 conda info -e 查看当前存在哪些虚拟环境
-conda update conda 检查更新当前conda
-conda --version 查询conda版本
-conda -h 查询conda的命令使用
-activate // 切换到base环境
-conda deactivate //退出虚拟环境
-activate learn // 切换到learn环境
-conda create -n learn python=3 // 创建一个名为learn的环境并指定python版本为3(的最新版本)
-conda env list // 列出conda管理的所有环境
-conda list // 列出当前环境的所有包
-conda install requests 安装requests包
-conda remove requests 卸载requets包
-conda remove -n learn --all // 删除learn环境及下属所有包
-conda update requests 更新requests包
-conda env export &gt; environment.yaml // 导出当前环境的包信息
-conda env create -f environment.yaml // 用配置文件创建新的虚拟环境
-</code></pre>
-<p>然后使用pip进行安装：</p>
-<pre><code>pip install Django
-</code></pre>
-<p>查询Django版本：</p>
-<pre><code>&gt;&gt;&gt; import django
-&gt;&gt;&gt; print(django.get_version())
-4.2
-</code></pre>
-<h2>创建Django项目</h2>
-<p>新建一个项目目录，例如：app</p>
-<pre><code>cd app
-django-admin startproject mysite
-</code></pre>
-<p>之后我们可以看到项目的结构大体如下：</p>
-<pre><code>.
-└── mysite
-    ├── manage.py
-    └── mysite
-        ├── __init__.py
-        ├── asgi.py
-        ├── settings.py
-        ├── urls.py
-        └── wsgi.py
-</code></pre>
-<p>切换到项目的根目，<code>manage.py</code>同目录：</p>
-<pre><code>python manage.py runserver
-
-admin, auth, contenttypes, sessions.
-Run 'python manage.py migrate' to apply them.
-May 18, 2023 - 01:38:18
-Django version 4.2.1, using settings 'app.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
-</code></pre>
-<p>浏览器输入网址：http://127.0.0.1:8000/ 就可以看到Django的默认的欢迎页面了。</p>
-<h2>创建应用</h2>
-<p>进入项目的目录，要和<code>manage.py</code>同目录，运行创建一个应用：</p>
-<pre><code>python manage.py startapp myapp
-
-
-.
-└── mysite
-    ├── db.sqlite3
-    ├── manage.py
-    ├── myapp
-    └── mysite
-</code></pre>
-<p>这个时候发现myapp的这个应用就创建成功了。</p>
-<p><code>django-admin startproject mysite</code>和<code>python manage.py startapp myapp</code>的区别是，startproject创建的是一个项目，startapp创建的是一个应用，一个项目可以包括多个应用，例如创建一个网站项目，可以包括：新闻、图片库、后台管理等，这些可以细化成单个的应用，可以对应到路由，应用模块化后方便以后分开进行开发。</p>
-<h2>添加视图和路由</h2>
-<p>在<code>myapp/views.py</code>添加一个视图：</p>
-<pre><code>from django.http import HttpResponse
-def index(request):
-    return HttpResponse("Hello world!")
-</code></pre>
-<p>在<code>myapp/urls.py</code>添加路由:</p>
-<pre><code>from django.urls import path
-from . import views
-
-
-urlpatterns = [
-    path("",views.index,name="index"),
-]
-</code></pre>
-<p>好了，这一套组合拳下去，我们也该看看效果了，在<code>manage.py</code>所在的目录中运行：<code>python manage.py runserver</code>，然后在浏览器里访问你的地址加上你的目录:<code>http://127.0.0.1:8000/myapp</code>，就可以看到久违的'hello world'了。</p>
-<h2>总结</h2>
-<p>如果你使用过flask或是fastapi，你会发现Django的hello world显得有些繁琐，但是每个web框架都有各自的优缺点，Django大而全，帮你准备好了web所需的各种依赖，相对于flask和fastapi，Django更重些但更全面。</p>
+    <p>web站点的上下文对于新手可能有些陌生和晦涩，这个东西有什么用？上下文就是一个变量或是函数，在整个web站点中都可以调用并获取其中定义的值。在Django中，全局上下文（Global Context）是指在每个视图中都可用的全局变量或函数，可以在模板中直接访问。Django提供了一种机制来定义全局上下文，使得这些变量或函数在所有的模板中都可以使用。</p>
+<p>要定义全局上下文，可以使用Django的上下文处理器（context processor）。上下文处理器是一个Python函数，它接收一个HttpRequest对象作为参数，并返回一个包含上下文变量的字典。这个字典将会被添加到每个模板的上下文中。</p>
+<ol>
+<li>创建一个Python文件，例如"myapp/context_processors.py"。</li>
+<li>
+<p>在文件中定义一个函数，接收一个HttpRequest对象作为参数，并返回一个包含上下文变量的字典。例如：</p>
+<p>def my_global_context(request):
+    return {
+        'site_name': 'suiyan_blog'
+    }</p>
+</li>
+<li>
+<p>在Django的配置文件（settings.py）中找到TEMPLATES设置。在OPTIONS部分的context_processors列表中添加你的上下文处理器的路径。例如：</p>
+<p>TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                ...
+                'myapp.context_processors.my_global_context',
+                ...
+            ],
+        },
+    },
+]</p>
+</li>
+<li>
+<p>现在，你可以在任何模板中使用my_variable变量。例如，在一个模板文件中：</p>
+<p>&lt;!DOCTYPE html&gt;
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <h1>{{ my_variable }}</h1>
+</body>
+</html></p>
+</li>
+</ol>
+<p>Django的上下文可以用来定义类似博客每个页面上的站点和站长资料、分类、标签集合、底部版权信息等，这样在整个web的站点访问任何地方都可以调用，极大的方便了开发者编写开发web站点的对应功能。</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230520081153.html" class="text-truncate">< <span>Django 4.2 复习笔记(二)编写和调试Model模型</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate"><span>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</span> ></a>
+        <a href="https://suiyan.cc/2023/20230604161547.html" class="text-truncate"><span>如何单独使用Django ORM 在非Django项目中使用Django ORM？</span> ></a>
         
     </div>
     
@@ -231,10 +182,6 @@ urlpatterns = [
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230605083417.html" class="text-truncate "><span>使用Django的上下文处理器（context processor）</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230604161547.html" class="text-truncate "><span>如何单独使用Django ORM 在非Django项目中使用Django ORM？</span></a>
@@ -270,6 +217,10 @@ urlpatterns = [
             
             <li>
                 <a href="https://suiyan.cc/2023/20230520081153.html" class="text-truncate "><span>Django 4.2 复习笔记(二)编写和调试Model模型</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230518092845.html" class="text-truncate "><span>Django 4.2 复习笔记(一)迅速概览</span></a>
             </li>
             
         </ul>
