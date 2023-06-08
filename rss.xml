@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-07 21:14:38</pubDate>
+        <pubDate>2023-06-08 10:23:40</pubDate>
+        
+        <item>
+            <title>CDN引用lodash报错 _.debounce is not a function</title>
+            <link>https://suiyan.cc/2023/20230608102340.html</link>
+            <author>J.sky</author>
+            <description>今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错`_.debounce is not a function`!真是奇了个怪了！</description>
+            <category>lodash,bug</category>
+            <pubDate>2023-06-08 10:23:40</pubDate>
+        </item>
         
         <item>
             <title>Matrix 矩阵 JavaScript代码生成器</title>
@@ -85,15 +94,6 @@
             <description>Tailwind CSS 在任何特定于框架/技术的UI开发中都有发展趋势。我发现了一些最好的使用基于 tailwind CSS的组件库，您可以在其中直接使用tailwind自定义组件。</description>
             <category>TailwindCSS</category>
             <pubDate>2023-05-31 19:45:42</pubDate>
-        </item>
-        
-        <item>
-            <title>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</title>
-            <link>https://suiyan.cc/2023/20230530145118.html</link>
-            <author>牛哥说我不优雅</author>
-            <description>在前端开发中，数组是一种常见且重要的数据结构。数组提供了许多便捷的方法来操作和处理其中的数据。本文将简单介绍前端中数组常用的API，包括添加、删除、截取、合并、转换等操作。</description>
-            <category>JavaScript</category>
-            <pubDate>2023-05-30 14:51:18</pubDate>
         </item>
         
     </channel>

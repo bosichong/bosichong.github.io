@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="JavaScript" name="keywords">
-    <meta content="今天写了个Matrix 矩阵 JavaScript代码生成器，其实几年前就用Python的pygame实现过一个Matrix，最近在玩JavaScript canvas，索性使用JavaScript原生代码又撸了一遍，并且做了个代码生成器，方便修改Matrix的一些参数。" name="description">
+    <meta content="lodashbug" name="keywords">
+    <meta content="今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错`_.debounce is not a function`!真是奇了个怪了！" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Matrix 矩阵 JavaScript代码生成器 | SuiYan 碎言博客</title>
+    <title>CDN引用lodash报错 _.debounce is not a function | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,71 +114,32 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">Matrix 矩阵 JavaScript代码生成器</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-07 21:14:38">2023-06-07 21:14:38</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-07 21:33:13">2023-06-07 21:33:13</span> | Tag:
+    <h1 class="animate__animated animate__bounce">CDN引用lodash报错 _.debounce is not a function</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-08 10:23:40">2023-06-08 10:23:40</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-08 10:36:25">2023-06-08 10:36:25</span> | Tag:
         
         
-        JavaScript
+        lodash
+        
+        bug
         
     </small>
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p><img alt="Matrix 矩阵 JavaScript代码生成器" src="https://suiyan.cc/Matrix/assets/images/matrix.gif" /></p>
-<p>今天写了个Matrix 矩阵 JavaScript代码生成器，其实几年前就用Python的pygame实现过一个Matrix，最近在玩JavaScript canvas，索性使用JavaScript原生代码又撸了一遍，并且做了个代码生成器，方便修改Matrix的一些参数。</p>
-<h2>matrix动画原理</h2>
-<p>制作matrix动画是一个很有意思的过程，涉及到数组的一些基本操作，还有就是数组的循环和遍历，需要用到JavaScript数组中的一些方法，查看代码对于初学者来说可以学到一些很基础的知识。</p>
-<p>matrix就是一个二位数组，<code>[[a,b],[a,b],[a,b]]</code>整个下落的字符就是这个二位数组，其中下落的每一列就是这个大数组中的一个小数组，每个字符就是小数组的一个元素。</p>
-<p>我们定义每列下落的字符串样式、起始位置和下落的速度不一样，既可以达到视差效果，每列字符串消失后，就会自动创建一个新的字符串列，这样就会源源不断的下落。</p>
-<p>理论上就是这样了，关于JavaScript canvas，只需了解文字绘制和动画的循环，就可以开始至编写代码了，具体的代码就不贴了，有需要的可以在下边的网址上自动生成。</p>
-<h2>相关资源</h2>
-<p><a href="https://suiyan.cc/Matrix/">Matrix 矩阵 JavaScript代码生成器</a></p>
-<p><a href="https://github.com/bosichong/Matrix">Matrix 代码生成器的仓库</a></p>
+    <p>今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错<code>_.debounce is not a function</code>!真是奇了个怪了！</p>
+<h2>问题分析及解决方法</h2>
+<p>然后我就做了一些简单的测试，通过log打印一些lodash中的方法和属性，发现<code>_.VERSION</code>可以正常的打印lodash的版本，但是<code>_.debounce</code>确报错<code>_.debounce is not a function</code>！这怎么回事？难道这个CDN的代码库里没有<code>debounce</code>这个方法？哎！还真没有！</p>
+<p>原来是我引用的CDN的代码有问题，我引用的是<code>lodash.core.min.js</code>，这是 Lodash 的核心版本，包含了 Lodash 库中的核心函数和常用功能，但不包含一些较大或较少常用的模块。所以有些功能是没有的，后来换成<code>lodash.min.js</code>,这是 Lodash 的完整版本，包含了 Lodash 库的所有函数和功能模块。这个版本的文件大小较大，适合在拥有较大资源或需要使用 Lodash 的所有功能时使用。</p>
+<p>总结来说，lodash.core.min.js 是 Lodash 的精简核心版本，只包含核心函数和常用功能，文件较小；而 lodash.min.js 则是完整版本，包含了所有函数和功能模块，文件较大。这下问题解决了。。。好久没写JavaScript，真的都是把学到的东西都给忘记了。太菜了！</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230608102340.html" class="text-truncate">< <span>CDN引用lodash报错 _.debounce is not a function</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230605083417.html" class="text-truncate"><span>Django 4.2 复习笔记(九)使用Django的上下文处理器（context processor）</span> ></a>
+        <a href="https://suiyan.cc/2023/20230607211438.html" class="text-truncate"><span>Matrix 矩阵 JavaScript代码生成器</span> ></a>
         
-    </div>
-    
-    <div class="related">
-        <p>
-            相关文章：
-        </p>
-        <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230530145118.html" class="text-truncate "><span>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230515215136.html" class="text-truncate "><span>async/await和fetch()的使用</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230515105053.html" class="text-truncate "><span>fetch()如何读取请求中的'user-agent'？</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230509101659.html" class="text-truncate "><span>使用Fetch发送Ajax请求</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230416175852.html" class="text-truncate "><span>从回调函数到JavaScript异步编程</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/before-2022/20200101210954.html" class="text-truncate "><span>前端项目构建打包的一些学习笔记</span></a>
-            </li>
-            
-        </ul>
-
     </div>
     
 
