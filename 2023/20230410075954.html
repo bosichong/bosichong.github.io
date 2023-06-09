@@ -8,7 +8,7 @@
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计 | SuiYan 碎言博客</title>
+    <title>使用Python编写并部署个人静态博客:(一)分析与设计 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-10 07:59:54">2023-04-10 07:59:54</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-17 08:52:38">2023-05-17 08:52:38</span> | Tag:
+    <h1 class="animate__animated animate__bounce">使用Python编写并部署个人静态博客:(一)分析与设计</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-10 07:59:54">2023-04-10 07:59:54</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-09 08:31:09">2023-06-09 08:31:09</span> | Tag:
         
         
         Python
@@ -126,21 +126,22 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</p>
-<p><a href="https://suiyan.cc/2023/20230420101527.html">使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</a></p>
-<p><a href="https://suiyan.cc/2023/20230517084718.html">使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</a></p>
-<h3>什么是独立技术博客？</h3>
+    <p>使用Python编写并部署个人静态博客:(一)分析与设计</p>
+<p><a href="https://suiyan.cc/2023/20230420101527.html">使用Python编写并部署个人静态博客:(二)实现静态页面的输出</a></p>
+<p><a href="https://suiyan.cc/2023/20230517084718.html">使用Python编写并部署个人静态博客:(三)搜集博客数据</a></p>
+<p><a href="https://suiyan.cc/2023/20230609081842.html">使用Python编写并部署个人静态博客:(四)逐步输出静态页面</a></p>
+<h2>什么是独立博客？</h2>
 <p>独立博客是指个人独立运营的博客，通常是由个人自己设计、开发、维护和更新的。相比于其他博客，独立博客可以自由定制，自制主题，自由评论不受平台限制等优点。</p>
-<h3>独立技术博客的特点</h3>
-<p>建立个人品牌：一个独立的技术博客可以帮助你建立个人品牌，展示你的专业知识和技能，增强你在技术领域的影响力和声誉。</p>
+<h2>独立博客的特点</h2>
+<p>建立个人品牌：一个独立的博客可以帮助你建立个人品牌，展示你的专业知识和技能，增强你在技术领域的影响力和声誉。</p>
 <p>分享知识和经验：编写技术博客可以帮助你分享自己的知识和经验，并向读者传达你的思考和观点。这不仅可以帮助他人解决问题，还可以帮助你深化自己的理解和思考。</p>
 <p>提升写作能力：博客是一个很好的写作平台，编写技术博客可以帮助你提升写作能力，锻炼表达能力和逻辑思维能力。同时，博客的文章需要经过反复推敲和修改，也可以锻炼自己的耐心和细心。</p>
 <p>留下成长记录：技术博客可以记录你的成长历程，留下你的学习和思考的痕迹，也可以帮助你回顾和总结过去的经验和成果。</p>
 <p>扩大交流圈：通过技术博客，可以扩大自己的交流圈，结识更多的同行和志同道合的朋友，开拓自己的视野和思路。</p>
-<h3>为什么要编写并维护自己的技术博客？</h3>
+<h2>为什么要编写并维护自己的博客？</h2>
 <p>首先，我们要明确自己的写博客的目的！我觉得写博客最大的目的就是：提升写作能力、建立自己的知识体系以及个人品牌。编写一个博客系统只是一个开端，是学习与实践的开始，而后则是漫长的博客维护创作的历程。</p>
 <p>独立博客的实现有很多方法，目前现成的开原博客数不胜数，为什么要自己动手编写并设计博客呢？这是一次技术的实践，如果正在学习Python的路上，动手实践一个博客可以提高你的Python技术，了解对程序软件设计的流程，最主要的是你可以获得一份自由的感觉。</p>
-<h3>如何使用Python编写静态博客生成器？</h3>
+<h2>如何使用Python编写静态博客生成器？</h2>
 <p>首先我们分析需求：</p>
 <p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/b01.png" /></p>
 <ol>
@@ -148,7 +149,7 @@
 <li>git push github master </li>
 </ol>
 <p>通过两行命令解决博客的更新，这样做的目的可以使博主专注于写作，而不必为生成博客文章、维护服务器、维护程序而费心。</p>
-<h3>静态文件的生成</h3>
+<h2>静态文件的生成</h2>
 <p>综上所述可以看出，处理静态文件的输出是项目的核心，我们再次细分：</p>
 <p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/b02.png" /></p>
 <p>到目前为止，我们的项目构建的思路基本明朗了，下一节我们就开始着手编写具体的代码来实现我们的博客生成器。</p>
@@ -172,11 +173,11 @@
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</span></a>
+                <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(三)搜集博客数据</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</span></a>
+                <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(二)实现静态页面的输出</span></a>
             </li>
             
             <li>
@@ -196,6 +197,10 @@
             </li>
             
             <li>
+                <a href="https://suiyan.cc/2023/20230609081842.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</span></a>
+            </li>
+            
+            <li>
                 <a href="https://suiyan.cc/2023/20230427151750.html" class="text-truncate "><span>coding_blog 碎言静态博客主题</span></a>
             </li>
             
@@ -205,10 +210,6 @@
             
             <li>
                 <a href="https://suiyan.cc/2023/20230408093536.html" class="text-truncate "><span>free_blog 碎言静态博客主题</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/before-2022/20200108191737.html" class="text-truncate "><span>使用碎言静态博客依托码云Pages搭建自己的免费博客</span></a>
             </li>
             
         </ul>

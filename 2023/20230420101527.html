@@ -8,7 +8,7 @@
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出 | SuiYan 碎言博客</title>
+    <title>使用Python编写并部署个人静态博客:(二)实现静态页面的输出 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-20 10:15:27">2023-04-20 10:15:27</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-17 08:52:35">2023-05-17 08:52:35</span> | Tag:
+    <h1 class="animate__animated animate__bounce">使用Python编写并部署个人静态博客:(二)实现静态页面的输出</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-20 10:15:27">2023-04-20 10:15:27</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-09 08:31:30">2023-06-09 08:31:30</span> | Tag:
         
         
         Python
@@ -126,11 +126,12 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</a></p>
-<p>使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</p>
-<p><a href="https://suiyan.cc/2023/20230517084718.html">使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</a></p>
+    <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署个人静态博客:(一)分析与设计</a></p>
+<p>使用Python编写并部署个人静态博客:(二)实现静态页面的输出</p>
+<p><a href="https://suiyan.cc/2023/20230517084718.html">使用Python编写并部署个人静态博客:(三)搜集博客数据</a></p>
+<p><a href="https://suiyan.cc/2023/20230609081842.html">使用Python编写并部署个人静态博客:(四)逐步输出静态页面</a></p>
 <p>实现静态页面的输出其实很简单，按着顺序来就行：搜集Markdown文件和站点配置文件-&gt;组织数据并渲染模板(jinja2)-&gt;输出HTML并保存到静态目录中。</p>
-<h3>最简单的静态文件输出</h3>
+<h2>最简单的静态文件输出</h2>
 <p>如果您想要向HTML文件添加字符串模板，您可以使用Python的字符串格式化功能。例如，如果您想要向HTML文件添加标题：</p>
 <pre><code>title = "My Title"
 html_template = "&lt;html&gt;&lt;head&gt;&lt;title&gt;{0}&lt;/title&gt;&lt;/head&gt;&lt;body&gt;{1}&lt;/body&gt;&lt;/html&gt;"
@@ -142,18 +143,18 @@ with open("file.html", "w") as f:
 <pre><code>&lt;html&gt;&lt;head&gt;&lt;title&gt;My Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;hello world&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
 </code></pre>
 <p>至此，我们实现了一个简单的模板系统。</p>
-<h3>使用jinja2模板引擎</h3>
+<h2>使用jinja2模板引擎</h2>
 <p>但是我们的站点不可能就只有一两个模板的变量，他会是由一系列的数据组成的，而且渲染的出来的HTML页面我们还需要进行布局和前端的美化，所以我们需要一个健壮的模板引擎。</p>
 <blockquote>
 <p>Jinja 是一个快速、富有表现力、可扩展的模板引擎。模板中的特殊占位符允许编写类似于 Python 语法的代码。然后向模板传递数据以呈现最终文档。</p>
 </blockquote>
-<h4>安装</h4>
+<h3>安装</h3>
 <pre><code>$ pip install Jinja2
 </code></pre>
 <p>通过上边的命令行，我们很容易就能安装jinja2的依赖文件。关于使用jinja2生成HTML有两个重要的步骤：
 1. 组织jinja2的模板变量，也就是站点的上下文。
 2. 编写jinja2的模板，这里包括模板的继承和模板的渲染，以及最后的保存输出。</p>
-<h4>jinja2的配置</h4>
+<h3>jinja2的配置</h3>
 <pre><code># 设置jinja模板的所在目录
 env = Environment(loader=FileSystemLoader(os.path.join("theme")))
 context = {
@@ -166,9 +167,9 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
     f.write(tmp.render(**context))
 </code></pre>
 <p>这是一个最简单的jinja2模板的配置，我们所有的静态文件的输出都会使用这段代码。</p>
-<h4>编写jinja2模板</h4>
+<h3>编写jinja2模板</h3>
 <p>编写jinja2模板首先需要布局你的网站页面，先规划好博客需要的页面，因为博客的页面布局大体相同，所以要先写<code>layout.html</code>，通过模板的继承与引用来实现页面制作的分工，应避免把重复的内容写到多个页面。</p>
-<h4>jinja2语法</h4>
+<h3>jinja2语法</h3>
 <p>jinja2的语法很简单：</p>
 <ol>
 <li>语句结构 {% %}</li>
@@ -193,7 +194,7 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
 {# 此处省略了一些代码 #}
 </code></pre>
 <p><a href="https://jinja.palletsprojects.com/en/3.1.x/">jinja2官方文档</a>，这里可以查询到更多有关jinja2模板引擎的使用帮助。</p>
-<h3>组合到一起</h3>
+<h2>组合到一起</h2>
 <p>通过一些列的操作，我们可以生成一些简单的HTML页面了，接下来我们来看看在Python中如何具体组织这些功能并实现他们。</p>
 </div>
 
@@ -215,11 +216,11 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</span></a>
+                <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(三)搜集博客数据</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</span></a>
+                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(一)分析与设计</span></a>
             </li>
             
             <li>
@@ -239,6 +240,10 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
             </li>
             
             <li>
+                <a href="https://suiyan.cc/2023/20230609081842.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</span></a>
+            </li>
+            
+            <li>
                 <a href="https://suiyan.cc/2023/20230427151750.html" class="text-truncate "><span>coding_blog 碎言静态博客主题</span></a>
             </li>
             
@@ -248,10 +253,6 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
             
             <li>
                 <a href="https://suiyan.cc/2023/20230408093536.html" class="text-truncate "><span>free_blog 碎言静态博客主题</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/before-2022/20200108191737.html" class="text-truncate "><span>使用碎言静态博客依托码云Pages搭建自己的免费博客</span></a>
             </li>
             
         </ul>

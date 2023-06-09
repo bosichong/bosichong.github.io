@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-08 18:51:26</pubDate>
+        <pubDate>2023-06-09 08:18:42</pubDate>
+        
+        <item>
+            <title>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</title>
+            <link>https://suiyan.cc/2023/20230609081842.html</link>
+            <author>J.sky</author>
+            <description>使用Python编写并部署个人静态博客这个系列写第一篇的时候这是信心满满，以为会有很多同道中人，但是发现独立博客都挺少了，自己编写并部署博客的更是少的可怜。这就好比用电饭锅做饭，难道还要自己研究怎么做电饭锅？直接使用WordPress或一些静态站点生成器不好吗？嗯，挺好的，但是我还是选择自己编写并部署自己的博客。</description>
+            <category>碎言博客</category>
+            <pubDate>2023-06-09 08:18:42</pubDate>
+        </item>
         
         <item>
             <title>clipboard.js 一款简单好用的将文本复制到剪贴板的现代方法</title>
@@ -85,15 +94,6 @@
             <description>昨天升级了macOS系统到macOS Monterey,之后每次打开终端都会有一些提示，真的好烦人啊。</description>
             <category>macOS</category>
             <pubDate>2023-06-02 10:17:13</pubDate>
-        </item>
-        
-        <item>
-            <title>Python权限管理框架 Casbin PyCasbin 的简单操作</title>
-            <link>https://suiyan.cc/2023/20230602070849.html</link>
-            <author>J.sky</author>
-            <description>大多数应用都会和权限与权限管理打交道,有的时候我们希望有一套拿来即用的权限管理框架,既可以在小型的个人应用中使用,又可以应付大型应用的复杂权限的管理,Casbin可以满足你的这个小小愿望.Casbin支持多种编程语言,今天我们来试试Casbin在python下的简单操作.</description>
-            <category>Casbin,权限管理</category>
-            <pubDate>2023-06-02 07:08:49</pubDate>
         </item>
         
     </channel>

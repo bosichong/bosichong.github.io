@@ -8,7 +8,7 @@
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据 | SuiYan 碎言博客</title>
+    <title>使用Python编写并部署个人静态博客:(三)搜集博客数据 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,8 +114,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-17 08:47:18">2023-05-17 08:47:18</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-17 09:27:25">2023-05-17 09:27:25</span> | Tag:
+    <h1 class="animate__animated animate__bounce">使用Python编写并部署个人静态博客:(三)搜集博客数据</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-17 08:47:18">2023-05-17 08:47:18</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-09 08:31:56">2023-06-09 08:31:56</span> | Tag:
         
         
         Python
@@ -126,13 +126,14 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</a></p>
-<p><a href="https://suiyan.cc/2023/20230420101527.html">使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</a></p>
-<p>使用Python编写并部署第一个自己的静态独立技术博客:(三)搜集博客数据</p>
+    <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署个人静态博客:(一)分析与设计</a></p>
+<p><a href="https://suiyan.cc/2023/20230420101527.html">使用Python编写并部署个人静态博客:(二)实现静态页面的输出</a></p>
+<p>使用Python编写并部署个人静态博客:(三)搜集博客数据</p>
+<p><a href="https://suiyan.cc/2023/20230609081842.html">使用Python编写并部署个人静态博客:(四)逐步输出静态页面</a></p>
 <h2>搜集博客数据</h2>
 <p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/b01.png" /></p>
 <p>博客的静态页面的生成都是由博客的基础数据支撑的，搜集博客的基本信息和博客文章数据，是生成博客静态文件的核心功能。</p>
-<h3>博客的基础配置</h3>
+<h2>博客的基础配置</h2>
 <p>每个博客都会有一些最基础的配置，例如博客的名称、简介、站长的昵称头像等，我们可以把这些基础的数据设置为一个配置文件，这里我使用了JSON格式的配置文件。可以在站点的根目录下创建一个config.json，其内容格式大概如下，可以根据自己的需要添加修改。</p>
 <pre><code>{
     "dev": 0,
@@ -236,7 +237,7 @@ SUIYANVERSION = "3.1.0"  # 程序版本
     return config
 </code></pre>
 <p>具体的代码可以查看碎言静态博客的代码仓库，这里只介绍一些项目的架构技巧。</p>
-<h3>博客文章以及其他相关数据的搜集</h3>
+<h2>博客文章以及其他相关数据的搜集</h2>
 <p>博客的静态文件除了基础的博客信息外，还有博客的归档、分类(标签)、博客页面的数据等，这些都需要从博客文章的Markdown文件数据集中计算得出。
 这里我采用了从文章目录中搜集博客文章，读取文章头部的定义内容，组织这些数据创建一个blog.json的索引，这个索引可以用来生成归档和标签页面的内容，也可以用来作为搜索的依据。</p>
 <p>具体通过递归扫描文章目录来生成：</p>
@@ -287,11 +288,11 @@ SUIYANVERSION = "3.1.0"  # 程序版本
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(二)实现静态页面的输出</span></a>
+                <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(二)实现静态页面的输出</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署第一个自己的静态独立技术博客:(一)分析与设计</span></a>
+                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(一)分析与设计</span></a>
             </li>
             
             <li>
@@ -311,6 +312,10 @@ SUIYANVERSION = "3.1.0"  # 程序版本
             </li>
             
             <li>
+                <a href="https://suiyan.cc/2023/20230609081842.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</span></a>
+            </li>
+            
+            <li>
                 <a href="https://suiyan.cc/2023/20230427151750.html" class="text-truncate "><span>coding_blog 碎言静态博客主题</span></a>
             </li>
             
@@ -320,10 +325,6 @@ SUIYANVERSION = "3.1.0"  # 程序版本
             
             <li>
                 <a href="https://suiyan.cc/2023/20230408093536.html" class="text-truncate "><span>free_blog 碎言静态博客主题</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/before-2022/20200108191737.html" class="text-truncate "><span>使用碎言静态博客依托码云Pages搭建自己的免费博客</span></a>
             </li>
             
         </ul>
