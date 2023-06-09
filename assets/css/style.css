@@ -130,6 +130,9 @@ small {
 
 #header .blog-description {
   text-align: center;
+  font-size: 14px;
+  margin-top: 1rem;
+  color: darkseagreen;
 }
 
 #header .profile h1 a {
