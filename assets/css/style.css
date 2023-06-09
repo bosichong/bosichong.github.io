@@ -1286,18 +1286,28 @@ section {
 .blog-search {
   position: fixed;
   top: 1rem;
-  right: 60px;
-  width: 400px;
+  right: 10px;
+  width: 300px;
   z-index: 500;
   transition: all 1s ease-in-out;
 }
 
-.blog-search:hover {
-  width: 600px;
+
+#search-input{
+  background: none;
+  border: 1px solid var(--bs-a-color);
+}
+
+#search-input:focus-visible{
+  border: none;
+  
 }
 
 #search-btn {
   width: auto;
+  background: none;
+  border: 1px solid var(--bs-a-color);
+  color: var(--bs-a-color);
 }
 
 @media (max-width: 1000px) {
@@ -1305,14 +1315,11 @@ section {
     position: initial;
     top: 1rem;
     right: 60px;
-    width: auto;
     z-index: 500;
+    margin: 0 auto;
   }
   #search-btn {
-    width: 58px;
-  }
-  .blog-search:hover {
-    width: auto;
+    width: 40px;
   }
 }
 /* header 资料区 */
