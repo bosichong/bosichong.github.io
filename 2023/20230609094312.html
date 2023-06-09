@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="碎言博客" name="keywords">
-    <meta content="使用Python编写并部署个人静态博客这个系列写第一篇的时候这是信心满满，以为会有很多同道中人，但是发现独立博客都挺少了，自己编写并部署博客的更是少的可怜。这就好比用电饭锅做饭，难道还要自己研究怎么做电饭锅？直接使用WordPress或一些静态站点生成器不好吗？嗯，挺好的，但是我还是选择自己编写并部署自己的博客。" name="description">
+    <meta content="独立博客" name="keywords">
+    <meta content="每次看到有关独立博客的博文，都觉得这类博文比较沉闷悲观，大多都是阐述玩独立博客的人不多或是越来越少，充满着怀旧的复古气息，博主一般都会对自己从建站到现在是如何坚持过来的洋洋洒洒的写上一篇，嗯？咱就爱看这类的博文，一个博主真实的一面。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>使用Python编写并部署个人静态博客:(四)逐步输出静态页面 | SuiYan 碎言博客</title>
+    <title>好看的博客千篇一律 有趣的博主万里挑一 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -114,63 +114,38 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">使用Python编写并部署个人静态博客:(四)逐步输出静态页面</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-09 08:18:42">2023-06-09 08:18:42</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-09 09:05:44">2023-06-09 09:05:44</span> | Tag:
+    <h1 class="animate__animated animate__bounce">好看的博客千篇一律 有趣的博主万里挑一</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-09 09:43:12">2023-06-09 09:43:12</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-09 10:22:00">2023-06-09 10:22:00</span> | Tag:
         
         
-        碎言博客
+        独立博客
         
     </small>
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署个人静态博客:(一)分析与设计</a></p>
-<p><a href="https://suiyan.cc/2023/20230420101527.html">使用Python编写并部署个人静态博客:(二)实现静态页面的输出</a></p>
-<p><a href="https://suiyan.cc/2023/20230517084718.html">使用Python编写并部署个人静态博客:(三)搜集博客数据</a></p>
-<p>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</p>
-<h2>啰嗦几句</h2>
-<p>使用Python编写并部署个人静态博客这个系列写第一篇的时候这是信心满满，以为会有很多同道中人，但是发现独立博客都挺少了，自己编写并部署博客的更是少的可怜。这就好比用电饭锅做饭，难道还要自己研究怎么做电饭锅？直接使用WordPress或一些静态站点生成器不好吗？嗯，挺好的，但是我还是选择自己编写并部署自己的博客。啰嗦完毕，继续讨论技术。</p>
-<h2>确定博客的相关页面</h2>
-<p>首先要确定博客的相关页面，例如：首页、标签页、归档、友联等页面，确定页面的结构也就是页面上该有的元素，可以用笔在纸上画画草图，大概有个框架，然后在逐一筛选和确定，对于自己编写代码，在功能上应劲量简约实用，要考虑到静态页面的输出需要哪些方法来实现，边构思边设计，切忌盲目好大喜功或是追求极致和完美，如果这样的话，估计没等你开始编写就会失去动力了，力求极简，实现主要功能为主，并为后续留下优化和补充的路子。</p>
-<h2>编写相关页面的输出方法</h2>
-<p>当你确定好所需的页面和功能后，就可以开始编写输出静态页面的方法了，生成器主要负责页面的数据整理，然后发送给jinja2模板引擎负责渲染，前端配合一些CSS、avaScript库或框架来进行页面的布局和美化，不要在生成器那里输出任何页面相关的HTML代码，不然后期修改会很麻烦，只有分清工作程序，之后出现问题才会知道去哪里解决。</p>
-<h2>具体实现</h2>
-<p>这里以实现归档页面的生成为例，首先组织页面的数据，归档页面的数据无非就是一个数组，这个数组包含了按着年月份分组的数据，每一个数组里包含着当月的博客文章数据，以时间为归类，分别展示当月份的博文，这里只是把数据整理出发送给jinja2模板，模板才负责组织HTML。</p>
-<p>下边是完整代码：</p>
-<pre><code>def create_archives_html():
-    """生成archives.html"""
-    blog_data = load_blogdata_json(BLOGDATAJSON)
-    config = load_configjson(CONFIGJSON)
-    # 设置jinja模板
-    env = Environment(loader=FileSystemLoader(os.path.join(THEME, config["theme"])))
-    context = create_context()
-    tmp = env.get_template("archives.html")  # 模板
-    archives_html_path = os.path.join(BLOGPAGES, 'archives.html')  # 首页HTML
-    # 组装archives页面的上下文数据。
-    data = formatdata(blog_data)
-    for k in data:
-        k["num"] = len(k["data"])
-    context["pages_num"] = len(blog_data)
-    context["update"] = blog_data[0]["time"]
-    context["archives"] = data
-    context["title"] = "Archives"
-    with open(archives_html_path, mode='w', encoding='utf-8') as f:
-        f.write(tmp.render(**context))
-    logger.info('生成archives.html成功！')
-</code></pre>
-<p>首先获得所有的博文数据，然后获取jinja2模板和博客的上下文，<code>data = formatdata(blog_data)</code>这里是根据所有博客的数据进行了一个时间排序和分组返回了一个归档数据。最后组织其他相关的上下文，结合模板输出到静态页面。</p>
-<h2>总结</h2>
-<p>大体上每个单独的页面都是这样生成的，而有些页面则是需要批量生成，这个留到下节再说吧，这里涉及到了Python的多线程和异步编程，之后好好聊聊。</p>
+    <p>每次看到有关独立博客的博文，都觉得这类博文比较沉闷悲观，大多都是阐述玩独立博客的人不多或是越来越少，充满着怀旧的复古气息，博主一般都会对自己从建站到现在是如何坚持过来的洋洋洒洒的写上一篇，嗯？咱就爱看这类的博文，一个博主真实的一面。</p>
+<h2>独立博客怎么了？</h2>
+<p>早几年还在拨号上网的时候就在网上鼓秋过几个个人博客，或者说那不能叫做博客，当年可以免费申请各种各样的在线论坛、个人主页，还有免费的域名，免费空间随处可见，整个世界都在为网民提供建立自己“博客”的有利条件，那时候个人主页如雨后春笋搬的泛滥，你有QQ吗？你的个人主页网址是撒？手里没几个域名都不好意思说自己上过网。</p>
+<p>但是随着QQ空间、新浪博客等一些平台的出现，折腾独立个人博客的越来越少了，再往后，国内的网站都需要备案了，一下子干倒了一大片个人网站，门户网站的崛起，微博、长、短视频、网络游戏的兴起，很快改变了网民的习惯，打游戏刷视频不香么？搞什么独立博客哈？</p>
+<h2>回归</h2>
+<p>时尚总是轮回的，或许当年的大花花裙子没成为主流，但今天却成为了巴黎时尚的耀眼新星。人们会疲惫于一种重复的生活和习惯，当大多数人发现自己被困与当下的互联网信息之中的时候，独立和自由就会显得格外的可贵，恰好，个人独立博客正好契合这个需求。</p>
+<p>在《十年之约》的QQ群里，我经常发现好多年轻人在打理自己的独立博客，我一直以为当代的年轻人不会去创建维护自己的独立博客，因为如今的互联网对于博客来说，可替代的产品实在太多了，能在这么热闹的互联网中选择建立并维护独立博客的孩子们是怎样想的呢？</p>
+<p>远离互联网的喧闹，在自己的安静的“小岛”上写作，或是精神上的依托，或是烦恼的宣泄，或是灵感的并发，无所谓写什么，哪怕是一些流水账，或许那些文字不愿意发表在朋友圈，单在这里却可以尽情的写作。</p>
+<h2>一个人的孤独</h2>
+<p>独立博客大多都是很少有人来访的，像我这样的技术博客更是小众了，零星的流量来自Google bing，百度？噗嗤。有的时候觉得写博客很无聊也没啥用途，但有的时候觉得记下一些技术点滴，以后自己查阅也能方便他人也是极好的。</p>
+<h2>独立博客的未来</h2>
+<p>我对独立博客的未来还是很有信心的，随着AI的普及，独立博客就变得更加稀有了，当你读者AI生成的文字，久了，你就会想，什么时候能看到一篇作者匆忙发表的博客，哪怕有些错字，至少这是人类写的，而不是AI为了迎合我的兴趣喜好生成的爽文。</p>
+<p>好看的博客千篇一律 有趣的博主万里挑一</p>
+<p>独立博客，你折腾主题也好，记录生活也好，写写小诗，记录BUG的解决过程，分享资源和教程。。。。。什么都好，记得你的初心，别被SEO给魔化了，喜欢就好好的喜欢，不离不弃方得始终。加油！坚持独立博客的朋友们。</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230609094312.html" class="text-truncate">< <span>好看的博客千篇一律 有趣的博主万里挑一</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230608185126.html" class="text-truncate"><span>clipboard.js 一款简单好用的将文本复制到剪贴板的现代方法</span> ></a>
+        <a href="https://suiyan.cc/2023/20230609081842.html" class="text-truncate"><span>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</span> ></a>
         
     </div>
     
@@ -181,35 +156,7 @@
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(三)搜集博客数据</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230427151750.html" class="text-truncate "><span>coding_blog 碎言静态博客主题</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230420162736.html" class="text-truncate "><span>simple_blog 碎言静态博客主题</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(二)实现静态页面的输出</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(一)分析与设计</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230408093536.html" class="text-truncate "><span>free_blog 碎言静态博客主题</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/before-2022/20200108191737.html" class="text-truncate "><span>使用碎言静态博客依托码云Pages搭建自己的免费博客</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/before-2022/20200108161047.html" class="text-truncate "><span>今天是个好日子发行了碎言静态博客的功能完整版</span></a>
+                <a href="https://suiyan.cc/2023/20230514163231.html" class="text-truncate "><span>一些关于中文独立博客的聚合网站</span></a>
             </li>
             
         </ul>

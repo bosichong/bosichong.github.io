@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-09 08:18:42</pubDate>
+        <pubDate>2023-06-09 09:43:12</pubDate>
+        
+        <item>
+            <title>好看的博客千篇一律 有趣的博主万里挑一</title>
+            <link>https://suiyan.cc/2023/20230609094312.html</link>
+            <author>J.sky</author>
+            <description>每次看到有关独立博客的博文，都觉得这类博文比较沉闷悲观，大多都是阐述玩独立博客的人不多或是越来越少，充满着怀旧的复古气息，博主一般都会对自己从建站到现在是如何坚持过来的洋洋洒洒的写上一篇，嗯？咱就爱看这类的博文，一个博主真实的一面。</description>
+            <category>独立博客</category>
+            <pubDate>2023-06-09 09:43:12</pubDate>
+        </item>
         
         <item>
             <title>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</title>
@@ -85,15 +94,6 @@
             <description>作为一个网络框架，Django 需要一种方便的方式来动态生成 HTML，最常见的方法是依靠模板，一个模板包含了所需HTML输出的静态部分，以及一些特殊的语法，描述了如何插入动态内容。</description>
             <category>Django</category>
             <pubDate>2023-06-03 07:32:59</pubDate>
-        </item>
-        
-        <item>
-            <title>macOS更新后 终端提示：The default interactive shell is now zsh.</title>
-            <link>https://suiyan.cc/2023/20230602101713.html</link>
-            <author>J.sky</author>
-            <description>昨天升级了macOS系统到macOS Monterey,之后每次打开终端都会有一些提示，真的好烦人啊。</description>
-            <category>macOS</category>
-            <pubDate>2023-06-02 10:17:13</pubDate>
         </item>
         
     </channel>
