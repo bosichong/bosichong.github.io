@@ -6,8 +6,8 @@
     <meta content="JavaScript" name="keywords">
     <meta content="由于项目总是有一些小BUG，回想了一下项目中的JS文件的组织问题，估计应该是JS文件分散造成的加载不稳定，有时会造成一些变量莫名的未定义，事已至此，只有将这些文件打包到一个文件中就可以很好的解决这个问题，但是今天在网上搜了一些都是最近流行的打包工具，感觉功能过于丰富，以当前的项目来说用这些流行的打包工具有些大材小用了，而且学习成本高了一些，后来看了一下手头上的两JavaScript本书都推荐Ant打包，所以决定按书上的来吧，省时省力。" name="description">
     <meta content="J.sky" name="author">
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="http://127.0.0.1:5501/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="http://127.0.0.1:5501/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
     <title>前端项目构建打包的一些学习笔记 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template Main CSS File -->
-    <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet">
+    <link href="http://127.0.0.1:5501/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,8 +27,8 @@
 <header id="header">
     <div class="h-top d-flex flex-column">
     <div class="profile">
-        <img src="https://suiyan.cc/assets/images/avatar.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="https://suiyan.cc/">J.sky</a></h1>
+        <img src="http://127.0.0.1:5501/assets/images/avatar.jpg" alt="" class="img-fluid rounded-circle">
+        <h3 class="blog_author text-light"><a href="http://127.0.0.1:5501/">J.sky</a></h3>
         <p class="blog-description">
             You see see you , This one day day di.
           </p>
@@ -50,19 +50,19 @@
     <nav id="navbar" class="nav-menu navbar">
         <ul>
             
-            <li><a href="https://suiyan.cc/" class="nav-link scrollto active"><i class="fa fa-home"></i>
+            <li><a href="http://127.0.0.1:5501/" class="nav-link scrollto active"><i class="fa fa-home"></i>
                 <span>Home</span></a></li>
             
-            <li><a href="https://suiyan.cc/archives.html" class="nav-link scrollto active"><i class="fa fa-archive"></i>
+            <li><a href="http://127.0.0.1:5501/archives.html" class="nav-link scrollto active"><i class="fa fa-archive"></i>
                 <span>Archive</span></a></li>
             
-            <li><a href="https://suiyan.cc/tags.html" class="nav-link scrollto active"><i class="fa fa-tags"></i>
+            <li><a href="http://127.0.0.1:5501/tags.html" class="nav-link scrollto active"><i class="fa fa-tags"></i>
                 <span>Tags</span></a></li>
             
-            <li><a href="https://suiyan.cc/before-2022/1.html" class="nav-link scrollto active"><i class="fa fa-user-md"></i>
+            <li><a href="http://127.0.0.1:5501/before-2022/1.html" class="nav-link scrollto active"><i class="fa fa-user-md"></i>
                 <span>About Me</span></a></li>
             
-            <li><a href="https://suiyan.cc/links.html" class="nav-link scrollto active"><i class="fa fa-link"></i>
+            <li><a href="http://127.0.0.1:5501/links.html" class="nav-link scrollto active"><i class="fa fa-link"></i>
                 <span>Links</span></a></li>
             
         </ul>
@@ -143,11 +143,11 @@
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/before-2022/20200108161047.html" class="text-truncate">< <span>今天是个好日子发行了碎言静态博客的功能完整版</span></a>
+        <a href="http://127.0.0.1:5501/before-2022/20200108161047.html" class="text-truncate">< <span>今天是个好日子发行了碎言静态博客的功能完整版</span></a>
         
 
         
-        <a href="https://suiyan.cc/links.html" class="text-truncate"><span>友情链接</span> ></a>
+        <a href="http://127.0.0.1:5501/links.html" class="text-truncate"><span>友情链接</span> ></a>
         
     </div>
     
@@ -158,27 +158,27 @@
         <ul>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230607211438.html" class="text-truncate "><span>Matrix 矩阵 JavaScript代码生成器</span></a>
+                <a href="http://127.0.0.1:5501/2023/20230607211438.html" class="text-truncate "><span>Matrix 矩阵 JavaScript代码生成器</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230530145118.html" class="text-truncate "><span>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</span></a>
+                <a href="http://127.0.0.1:5501/2023/20230530145118.html" class="text-truncate "><span>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230515215136.html" class="text-truncate "><span>async/await和fetch()的使用</span></a>
+                <a href="http://127.0.0.1:5501/2023/20230515215136.html" class="text-truncate "><span>async/await和fetch()的使用</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230515105053.html" class="text-truncate "><span>fetch()如何读取请求中的'user-agent'？</span></a>
+                <a href="http://127.0.0.1:5501/2023/20230515105053.html" class="text-truncate "><span>fetch()如何读取请求中的'user-agent'？</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230509101659.html" class="text-truncate "><span>使用Fetch发送Ajax请求</span></a>
+                <a href="http://127.0.0.1:5501/2023/20230509101659.html" class="text-truncate "><span>使用Fetch发送Ajax请求</span></a>
             </li>
             
             <li>
-                <a href="https://suiyan.cc/2023/20230416175852.html" class="text-truncate "><span>从回调函数到JavaScript异步编程</span></a>
+                <a href="http://127.0.0.1:5501/2023/20230416175852.html" class="text-truncate "><span>从回调函数到JavaScript异步编程</span></a>
             </li>
             
         </ul>
@@ -235,8 +235,8 @@
 <script src="https://unpkg.com/dayjs@1.8.21/locale/zh-cn.js"></script>
 
 <!-- Template Main JS File -->
-<script src="https://suiyan.cc/assets/js/url.js"></script>
-<script src="https://suiyan.cc/assets/js/main.js"></script>
+<script src="http://127.0.0.1:5501/assets/js/url.js"></script>
+<script src="http://127.0.0.1:5501/assets/js/main.js"></script>
 
 </body>
 

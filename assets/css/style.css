@@ -1,6 +1,7 @@
 :root {
   --bs-body-font-size: 1.2rem;
   --bs-body-color: #bbb;
+  --bs-a-color:darkseagreen;
   --bs-body-bg: #11191f;
   --rainbow-gradient: linear-gradient(
     -90deg,
@@ -41,7 +42,7 @@ body {
 
 a {
   display: inline-block;
-  color: #149ddd;
+  color: var(--bs-a-color);
   text-decoration: none;
 }
 
@@ -135,10 +136,14 @@ small {
   color: darkseagreen;
 }
 
-#header .profile h1 a {
+#header .profile .blog_author {
+  text-align: center;
+}
+
+#header .profile .blog_author a {
   font-weight: 200;
 }
-#header .profile h1 a:hover {
+#header .profile .blog_author a:hover {
   color: coral;
   text-decoration: none;
   font-weight: 300;
@@ -149,7 +154,6 @@ small {
 #header .profile .social-links a {
   font-size: 32px;
   display: inline-block;
-  color: #149ddd;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -206,28 +210,27 @@ small {
   border-radius: 1px;
 }
 
-.nav-menu a {
+#navbar a {
   display: flex;
   align-items: center;
-  color: #149ddd;
   padding: 4px;
   margin-bottom: 5px;
   transition: 0.5s;
   font-size: 14px;
+  color: var(--bs-a-color);
 }
 
-.nav-menu a:hover {
+#navbar a:hover {
   color: coral;
   font-size: 16px;
 }
 
-.nav-menu a i {
+#navbar a i {
   font-size: 24px;
   padding-right: 8px;
-  color: #149ddd;
   transition: 0.5s;
 }
-.nav-menu a:hover i {
+#navbar a:hover i {
   color: coral;
 }
 
