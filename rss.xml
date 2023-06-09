@@ -2,13 +2,13 @@
 <rss version="2.0">
     <channel>
         <title>SuiYan 碎言博客</title>
-        <link>http://127.0.0.1:5501/</link>
+        <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
         <pubDate>2023-06-09 09:43:12</pubDate>
         
         <item>
             <title>好看的博客千篇一律 有趣的博主万里挑一</title>
-            <link>http://127.0.0.1:5501/2023/20230609094312.html</link>
+            <link>https://suiyan.cc/2023/20230609094312.html</link>
             <author>J.sky</author>
             <description>每次看到有关独立博客的博文，都觉得这类博文比较沉闷悲观，大多都是阐述玩独立博客的人不多或是越来越少，充满着怀旧的复古气息，博主一般都会对自己从建站到现在是如何坚持过来的洋洋洒洒的写上一篇，嗯？咱就爱看这类的博文，一个博主真实的一面。</description>
             <category>独立博客</category>
@@ -17,7 +17,7 @@
         
         <item>
             <title>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</title>
-            <link>http://127.0.0.1:5501/2023/20230609081842.html</link>
+            <link>https://suiyan.cc/2023/20230609081842.html</link>
             <author>J.sky</author>
             <description>使用Python编写并部署个人静态博客这个系列写第一篇的时候这是信心满满，以为会有很多同道中人，但是发现独立博客都挺少了，自己编写并部署博客的更是少的可怜。这就好比用电饭锅做饭，难道还要自己研究怎么做电饭锅？直接使用WordPress或一些静态站点生成器不好吗？嗯，挺好的，但是我还是选择自己编写并部署自己的博客。</description>
             <category>碎言博客</category>
@@ -26,7 +26,7 @@
         
         <item>
             <title>clipboard.js 一款简单好用的将文本复制到剪贴板的现代方法</title>
-            <link>http://127.0.0.1:5501/2023/20230608185126.html</link>
+            <link>https://suiyan.cc/2023/20230608185126.html</link>
             <author>J.sky</author>
             <description>复制文本到剪贴板本应该不难。它不应该需要配置的繁琐步骤或大量的加载空间。最重要的是，它不应该依赖于Flash或任何臃肿的框架</description>
             <category>JavaScript库和框架</category>
@@ -35,7 +35,7 @@
         
         <item>
             <title>一行代码升级你的node.js为最新稳定版</title>
-            <link>http://127.0.0.1:5501/2023/20230608184436.html</link>
+            <link>https://suiyan.cc/2023/20230608184436.html</link>
             <author>J.sky</author>
             <description>今天，有一个应用需要更高版本的node.js，但是我从来都没有升级过node.js，特意Google了一下，发现一个超级简单的升级node.js的方法，这里简单的记录一下。</description>
             <category>node.js</category>
@@ -44,7 +44,7 @@
         
         <item>
             <title>CDN引用lodash报错 _.debounce is not a function</title>
-            <link>http://127.0.0.1:5501/2023/20230608102340.html</link>
+            <link>https://suiyan.cc/2023/20230608102340.html</link>
             <author>J.sky</author>
             <description>今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错`_.debounce is not a function`!真是奇了个怪了！</description>
             <category>lodash,bug</category>
@@ -53,7 +53,7 @@
         
         <item>
             <title>Matrix 矩阵 JavaScript代码生成器</title>
-            <link>http://127.0.0.1:5501/2023/20230607211438.html</link>
+            <link>https://suiyan.cc/2023/20230607211438.html</link>
             <author>J.sky</author>
             <description>今天写了个Matrix 矩阵 JavaScript代码生成器，其实几年前就用Python的pygame实现过一个Matrix，最近在玩JavaScript canvas，索性使用JavaScript原生代码又撸了一遍，并且做了个代码生成器，方便修改Matrix的一些参数。</description>
             <category>JavaScript</category>
@@ -62,7 +62,7 @@
         
         <item>
             <title>Django 4.2 复习笔记(九)使用Django的上下文处理器（context processor）</title>
-            <link>http://127.0.0.1:5501/2023/20230605083417.html</link>
+            <link>https://suiyan.cc/2023/20230605083417.html</link>
             <author>J.sky</author>
             <description>web站点的上下文对于新手可能有些陌生和晦涩，这个东西有什么用？上下文就是一个变量或是函数，在整个web站点中都可以调用并获取其中定义的值。在Django中，全局上下文（Global Context）是指在每个视图中都可用的全局变量或函数，可以在模板中直接访问。Django提供了一种机制来定义全局上下文，使得这些变量或函数在所有的模板中都可以使用。</description>
             <category>Django</category>
@@ -71,7 +71,7 @@
         
         <item>
             <title>如何单独使用Django ORM 在非Django项目中使用Django ORM？</title>
-            <link>http://127.0.0.1:5501/2023/20230604161547.html</link>
+            <link>https://suiyan.cc/2023/20230604161547.html</link>
             <author>J.sky</author>
             <description>在Python中进行一些不是很复杂的数据库操作的时候我们都会选择使用一些ORM框架，主要的ORM框架包括Django ORM、SQLAlchemy、Pony ORM、Peewee和Tortoise ORM等。这里Django ORM在使用方面更为简单和人性化。但是Django ORM和Django的绑定很紧密，如何单独使用Django ORM呢？在非Django项目中使用Django ORM？</description>
             <category>Django</category>
@@ -80,7 +80,7 @@
         
         <item>
             <title>Django 4.2 复习笔记(八)Django 模板语言语法</title>
-            <link>http://127.0.0.1:5501/2023/20230604084835.html</link>
+            <link>https://suiyan.cc/2023/20230604084835.html</link>
             <author>J.sky</author>
             <description>Django的页面渲染是通过Django的模板语法在模板中渲染上下文的变量来进行输出的，Django 的模板语言是为了在强大和简单之间取得平衡而设计的。它的设计让习惯于使用 HTML 的人感觉很舒服。如果你接触过其他基于文本的模板语言，如 Smarty 或 Jinja2 ，你应该会对 Django 的模板感到很舒服。</description>
             <category>Django</category>
@@ -89,7 +89,7 @@
         
         <item>
             <title>Django 4.2 复习笔记(七)Django 模板(TEMPLATES)</title>
-            <link>http://127.0.0.1:5501/2023/20230603073259.html</link>
+            <link>https://suiyan.cc/2023/20230603073259.html</link>
             <author>J.sky</author>
             <description>作为一个网络框架，Django 需要一种方便的方式来动态生成 HTML，最常见的方法是依靠模板，一个模板包含了所需HTML输出的静态部分，以及一些特殊的语法，描述了如何插入动态内容。</description>
             <category>Django</category>
