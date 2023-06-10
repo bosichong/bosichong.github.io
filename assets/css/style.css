@@ -1284,6 +1284,7 @@ section {
 /* 搜索框移动端适配 */
 
 .blog-search {
+  display: flex;
   position: fixed;
   top: 1rem;
   right: 10px;
@@ -1299,12 +1300,16 @@ section {
   border: 1px solid var(--bs-a-color);
 }
 
+
 #search-input:focus-visible{
   border: none;
   
 }
 
 #search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 34px;
   height: 34px;
   background: none;

@@ -26,7 +26,7 @@
     "build": "blog",
     "md_dir": "articles",
     "blog_page_num":8,
-    "blog_test_url":"http://127.0.0.1:5501/",
+    "blog_test_url":"http://192.168.0.88:5501/",
     "blog_url":"https://suiyan.cc/",
     "blog_sns": [
         {
