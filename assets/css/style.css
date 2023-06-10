@@ -106,7 +106,7 @@ small {
   bottom: 0;
   width: 300px;
   transition: all ease-in-out 0.5s;
-  z-index: 997;
+  z-index: 555;
   transition: all 0.5s;
   padding: 0 15px;
   background: #040b14;
@@ -239,7 +239,7 @@ small {
   position: fixed;
   right: 15px;
   top: 15px;
-  z-index: 999;
+  z-index: 666;
   border: 0;
   font-size: 24px;
   transition: all 0.4s;
@@ -1294,6 +1294,7 @@ section {
 
 
 #search-input{
+  height: 34px;
   background: none;
   border: 1px solid var(--bs-a-color);
 }
@@ -1304,7 +1305,8 @@ section {
 }
 
 #search-btn {
-  width: auto;
+  width: 34px;
+  height: 34px;
   background: none;
   border: 1px solid var(--bs-a-color);
   color: var(--bs-a-color);
@@ -1319,7 +1321,8 @@ section {
     margin: 0 auto;
   }
   #search-btn {
-    width: 40px;
+    width: 34px;
+    height: 34px;
   }
 }
 /* header 资料区 */

@@ -24,8 +24,10 @@
 <i class="fa fa-navicon mobile-nav-toggle d-xl-none animate__animated"></i>
 
 <!-- ======= Header ======= -->
+
+
 <header id="header">
-    <div class="h-top d-flex flex-column">
+<div class="h-top d-flex flex-column">
     <div class="profile">
         <img src="https://suiyan.cc/assets/images/avatar.jpg" alt="" class="img-fluid rounded-circle">
         <h3 class="blog_author text-light"><a href="https://suiyan.cc/">J.sky</a></h3>
@@ -75,37 +77,39 @@
                 <input id="search-input" type="text" placeholder="JavaScript">
                 <button type="button" id="search-btn" class="vibrate-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search"></i></button>
             </div>
+        </div>
+    </header>
 
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">搜索结果</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">搜索结果</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <article>
+                    <a href="#close"
+                       aria-label="Close"
+                       class="close"
+                       data-target="modal-example"
+                       onClick="toggleModal(event)">
+                    </a>
+                    <div id="modal" style="display: none;">
+                        <ul id="result-list"></ul>
                     </div>
-                    <div class="modal-body">
-                        <article>
-                            <a href="#close"
-                               aria-label="Close"
-                               class="close"
-                               data-target="modal-example"
-                               onClick="toggleModal(event)">
-                            </a>
-                            <div id="modal" style="display: none;">
-                                <ul id="result-list"></ul>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-                </div>
+                </article>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
-</header><!-- End Header -->
+        </div>
+    </div>
+
+
+<!-- End Header -->
 
 <main id="main">
 
@@ -127,7 +131,7 @@
     <div class="tags container-fluid">
       
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata1">
+      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata1">
             独立博客
           </button>
           <ul class="tagdata tagdata1 list-group" style="display:none;">
@@ -146,7 +150,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata2">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata2">
             碎言博客
           </button>
           <ul class="tagdata tagdata2 list-group" style="display:none;">
@@ -207,7 +211,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-light" type="button" data-tag="tagdata3">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata3">
             JavaScript库和框架
           </button>
           <ul class="tagdata tagdata3 list-group" style="display:none;">
@@ -220,7 +224,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata4">
+      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata4">
             node.js
           </button>
           <ul class="tagdata tagdata4 list-group" style="display:none;">
@@ -233,7 +237,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata5">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata5">
             lodash
           </button>
           <ul class="tagdata tagdata5 list-group" style="display:none;">
@@ -259,7 +263,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata7">
+      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata7">
             JavaScript
           </button>
           <ul class="tagdata tagdata7 list-group" style="display:none;">
@@ -308,7 +312,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata8">
+      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata8">
             Django
           </button>
           <ul class="tagdata tagdata8 list-group" style="display:none;">
@@ -381,7 +385,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-secondary" type="button" data-tag="tagdata9">
+      <button class="m-2 tag btn btn-outline-light" type="button" data-tag="tagdata9">
             macOS
           </button>
           <ul class="tagdata tagdata9 list-group" style="display:none;">
@@ -400,7 +404,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata10">
+      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata10">
             Casbin
           </button>
           <ul class="tagdata tagdata10 list-group" style="display:none;">
@@ -413,7 +417,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-secondary" type="button" data-tag="tagdata11">
+      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata11">
             权限管理
           </button>
           <ul class="tagdata tagdata11 list-group" style="display:none;">
@@ -426,7 +430,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata12">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata12">
             MacBook
           </button>
           <ul class="tagdata tagdata12 list-group" style="display:none;">
@@ -476,7 +480,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata14">
+      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata14">
             SQLAlchemy
           </button>
           <ul class="tagdata tagdata14 list-group" style="display:none;">
@@ -489,7 +493,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-secondary" type="button" data-tag="tagdata15">
+      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata15">
             CSS
           </button>
           <ul class="tagdata tagdata15 list-group" style="display:none;">
@@ -544,7 +548,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-light" type="button" data-tag="tagdata16">
+      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata16">
             vite
           </button>
           <ul class="tagdata tagdata16 list-group" style="display:none;">
@@ -563,7 +567,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata17">
+      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata17">
             Python
           </button>
           <ul class="tagdata tagdata17 list-group" style="display:none;">
@@ -612,7 +616,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata18">
+      <button class="m-2 tag btn btn-outline-secondary" type="button" data-tag="tagdata18">
             giscus
           </button>
           <ul class="tagdata tagdata18 list-group" style="display:none;">
@@ -625,7 +629,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata19">
+      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata19">
             Moment.js
           </button>
           <ul class="tagdata tagdata19 list-group" style="display:none;">
@@ -638,7 +642,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata20">
+      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata20">
             Day.js
           </button>
           <ul class="tagdata tagdata20 list-group" style="display:none;">
@@ -651,7 +655,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata21">
+      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata21">
             fetch
           </button>
           <ul class="tagdata tagdata21 list-group" style="display:none;">
@@ -676,7 +680,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata22">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata22">
             async
           </button>
           <ul class="tagdata tagdata22 list-group" style="display:none;">
@@ -689,7 +693,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata23">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata23">
             await
           </button>
           <ul class="tagdata tagdata23 list-group" style="display:none;">
@@ -702,7 +706,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-secondary" type="button" data-tag="tagdata24">
+      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata24">
             request
           </button>
           <ul class="tagdata tagdata24 list-group" style="display:none;">
@@ -715,7 +719,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata25">
+      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata25">
             Git
           </button>
           <ul class="tagdata tagdata25 list-group" style="display:none;">
@@ -746,7 +750,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata26">
+      <button class="m-2 tag btn btn-outline-warning" type="button" data-tag="tagdata26">
             读书笔记
           </button>
           <ul class="tagdata tagdata26 list-group" style="display:none;">
@@ -771,7 +775,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata27">
+      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata27">
             站长源创
           </button>
           <ul class="tagdata tagdata27 list-group" style="display:none;">
@@ -820,7 +824,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata28">
+      <button class="m-2 tag btn btn-outline-secondary" type="button" data-tag="tagdata28">
             Vue
           </button>
           <ul class="tagdata tagdata28 list-group" style="display:none;">
@@ -875,7 +879,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata29">
+      <button class="m-2 tag btn btn-outline-light" type="button" data-tag="tagdata29">
             SEO
           </button>
           <ul class="tagdata tagdata29 list-group" style="display:none;">
@@ -888,7 +892,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata30">
+      <button class="m-2 tag btn btn-outline-light" type="button" data-tag="tagdata30">
             前端框架
           </button>
           <ul class="tagdata tagdata30 list-group" style="display:none;">
@@ -907,7 +911,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-light" type="button" data-tag="tagdata31">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata31">
             HTML
           </button>
           <ul class="tagdata tagdata31 list-group" style="display:none;">
@@ -920,7 +924,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata32">
+      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata32">
             站长吐槽
           </button>
           <ul class="tagdata tagdata32 list-group" style="display:none;">
@@ -987,7 +991,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-secondary" type="button" data-tag="tagdata33">
+      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata33">
             GitHub
           </button>
           <ul class="tagdata tagdata33 list-group" style="display:none;">
@@ -1000,7 +1004,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata34">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata34">
             Flask
           </button>
           <ul class="tagdata tagdata34 list-group" style="display:none;">
@@ -1031,7 +1035,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata35">
+      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata35">
             webpack
           </button>
           <ul class="tagdata tagdata35 list-group" style="display:none;">
@@ -1050,7 +1054,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata36">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata36">
             网站运维
           </button>
           <ul class="tagdata tagdata36 list-group" style="display:none;">
@@ -1268,7 +1272,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata38">
+      <button class="m-2 tag btn btn-outline-danger" type="button" data-tag="tagdata38">
             Python GUI
           </button>
           <ul class="tagdata tagdata38 list-group" style="display:none;">
@@ -1462,7 +1466,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-light" type="button" data-tag="tagdata40">
+      <button class="m-2 tag btn btn-outline-primary" type="button" data-tag="tagdata40">
             C/C++
           </button>
           <ul class="tagdata tagdata40 list-group" style="display:none;">
@@ -1475,7 +1479,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-light" type="button" data-tag="tagdata41">
+      <button class="m-2 tag btn btn-outline-secondary" type="button" data-tag="tagdata41">
             数据库
           </button>
           <ul class="tagdata tagdata41 list-group" style="display:none;">
@@ -1488,7 +1492,7 @@
           
           </ul>
       
-      <button class="m-2 tag btn btn-outline-info" type="button" data-tag="tagdata42">
+      <button class="m-2 tag btn btn btn-outline-success" type="button" data-tag="tagdata42">
             404
           </button>
           <ul class="tagdata tagdata42 list-group" style="display:none;">

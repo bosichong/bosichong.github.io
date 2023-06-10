@@ -24,8 +24,10 @@
 <i class="fa fa-navicon mobile-nav-toggle d-xl-none animate__animated"></i>
 
 <!-- ======= Header ======= -->
+
+
 <header id="header">
-    <div class="h-top d-flex flex-column">
+<div class="h-top d-flex flex-column">
     <div class="profile">
         <img src="https://suiyan.cc/assets/images/avatar.jpg" alt="" class="img-fluid rounded-circle">
         <h3 class="blog_author text-light"><a href="https://suiyan.cc/">J.sky</a></h3>
@@ -75,37 +77,39 @@
                 <input id="search-input" type="text" placeholder="JavaScript">
                 <button type="button" id="search-btn" class="vibrate-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search"></i></button>
             </div>
+        </div>
+    </header>
 
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">搜索结果</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">搜索结果</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <article>
+                    <a href="#close"
+                       aria-label="Close"
+                       class="close"
+                       data-target="modal-example"
+                       onClick="toggleModal(event)">
+                    </a>
+                    <div id="modal" style="display: none;">
+                        <ul id="result-list"></ul>
                     </div>
-                    <div class="modal-body">
-                        <article>
-                            <a href="#close"
-                               aria-label="Close"
-                               class="close"
-                               data-target="modal-example"
-                               onClick="toggleModal(event)">
-                            </a>
-                            <div id="modal" style="display: none;">
-                                <ul id="result-list"></ul>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-                </div>
+                </article>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
-</header><!-- End Header -->
+        </div>
+    </div>
+
+
+<!-- End Header -->
 
 <main id="main">
 
