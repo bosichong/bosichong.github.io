@@ -1223,7 +1223,7 @@ section {
   z-index: -1;
   top: -2px;
   left: -2px;
-  animation: spin 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: spin 3s ease-in-out infinite;
 }
 @keyframes spin {
   0% {
