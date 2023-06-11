@@ -24,8 +24,8 @@ const MATRIX_COLOR_B = 0;
 const MIN_AP = 1;
 const MAX_AP = 7;
 // 下落速度
-const MIN_SPEED = 3;
-const MAX_SPEED = 8;
+const MIN_SPEED = 2;
+const MAX_SPEED = 6;
 
 // 创建 Canvas 画布
 const canvas = document.getElementById("matrix");
