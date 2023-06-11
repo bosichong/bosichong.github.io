@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="DjangoSQLAlchemy" name="keywords">
-    <meta content="SQLAlchemy和Django都是流行的Python框架，用于处理数据库关系。虽然它们都提供了关系字段的概念，但在实现和使用上有一些不同点。" name="description">
+    <meta content="Django" name="keywords">
+    <meta content="在web日常中表单是必不可少的，处理数据的输入与交互在web站点中是非常重要的，Django提供了一系列的工具和库来帮助您构建表单来接收网站访客的输入，然后处理以及响应这些输入。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SQLAlchemy的关系字段和Django的关系字段他们的不同点。 | SuiYan 碎言博客</title>
+    <title>Django 4.2 复习笔记(九)Django Forms 使用表单 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -118,67 +118,73 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">SQLAlchemy的关系字段和Django的关系字段他们的不同点。</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-28 07:47:12">2023-05-28 07:47:12</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-05-28 08:04:23">2023-05-28 08:04:23</span> | Tag:
+    <h1 class="animate__animated animate__bounce">Django 4.2 复习笔记(九)Django Forms 使用表单</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-11 08:43:25">2023-06-11 08:43:25</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-11 10:47:11">2023-06-11 10:47:11</span> | Tag:
         
         
         Django
-        
-        SQLAlchemy
         
     </small>
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <p>SQLAlchemy和Django都是流行的Python框架，用于处理数据库关系。虽然它们都提供了关系字段的概念，但在实现和使用上有一些不同点。以下是SQLAlchemy和Django关系字段之间的一些主要区别：</p>
-<ol>
-<li>
-<p>定义语法：</p>
-<ul>
-<li>SQLAlchemy：使用ORM（对象关系映射）方式，关系字段通常在模型类中定义为类属性。常见的关系字段包括relationship、backref等。</li>
-<li>Django：使用Django的模型定义语法，关系字段作为模型类的字段进行定义，使用特定的关系字段类（如ForeignKey、ManyToManyField）来表示不同的关系类型。</li>
-</ul>
-</li>
-<li>
-<p>引用和访问：</p>
-<ul>
-<li>SQLAlchemy：关系字段通常使用对象引用来表示关联关系。通过关系字段可以在模型之间导航和访问相关对象。</li>
-<li>Django：关系字段通常使用数据库的引用机制（如外键）来表示关联关系。通过关系字段可以在模型之间导航和访问相关对象。Django还提供了ORM的查询API来执行复杂的数据库查询操作。</li>
-</ul>
-</li>
-<li>
-<p>外键约束：</p>
-<ul>
-<li>SQLAlchemy：在定义关系字段时，可以选择是否启用外键约束。外键约束可以确保数据库中的关联完整性。</li>
-<li>Django：Django自动为关系字段创建外键约束，并通过数据库的外键机制来维护关联完整性。</li>
-</ul>
-</li>
-<li>
-<p>数据库支持：</p>
-<ul>
-<li>SQLAlchemy：支持多种数据库后端，包括常见的关系数据库（如MySQL、PostgreSQL、SQLite）以及其他一些数据库系统。</li>
-<li>Django：同样支持多种数据库后端，可以使用不同的数据库引擎来与数据库进行交互。</li>
-</ul>
-</li>
-<li>
-<p>灵活性和扩展性：</p>
-<ul>
-<li>SQLAlchemy：提供了更高级别的灵活性，允许开发者定义和控制数据库的更多细节。它支持更复杂的关联关系，自定义查询和表达式，以及更细粒度的控制。</li>
-<li>Django：提供了更简化和自动化的开发经验，尤其适合快速开发和常见的用例。它强调约定优于配置，并提供了一套简单且易于使用的ORM和查询API。</li>
-</ul>
-</li>
-</ol>
-<p>需要注意的是，以上只是SQLAlchemy和Django关系字段的一些常见差异，具体使用和行为可能还受到各个框架版本、配置和个人开发者偏好的影响。根据具体的项目需求和开发背景，选择合适的框架和关系字段有助于提高开发效率和代码质量。</p>
+    <p>在web日常中表单是必不可少的，处理数据的输入与交互在web站点中是非常重要的，Django提供了一系列的工具和库来帮助您构建表单来接收网站访客的输入，然后处理以及响应这些输入。</p>
+<h2>HTML表单</h2>
+<p>表单在HTML使用<code>&lt;form&gt;&lt;/form&gt;</code>标签包围，它包括很多表单标签，例如输入框、单选和多选框、文本输入域等，处理表单是通过get或post方法来传输数据，在表单的action中指定一个URL，数据会提交到这个URL来进行响应，其中get会明文以键值方式，通过URL地址来发送表单中的数据。</p>
+<h2>使用Django的表单</h2>
+<p>Django中使用表单是非常简单的，甚至可以不用去写任何的HTML，Django封装大量的常用表单，只需要配置表单的相关选项即可使用。</p>
+<h3>构建Form 类</h3>
+<p>在使用Django表单前需要创建相关表单的类，例如：</p>
+<pre><code>from django import forms
+
+class ArticleForm(forms.Form):
+    title = forms.CharField(label="title", max_length=100)
+    content = forms.CharField(widget=forms.Textarea(attrs={'rows':'5'}))
+</code></pre>
+<p>引入Django表单类forms，创建表单类，创建字段并设置字段的属性和widget，上边定义了两个字段。</p>
+<h3>视图中使用表单</h3>
+<pre><code>def test_form(request):
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect("/show/")
+    else:
+        form = ArticleForm()
+        return render(request, "test_form.html", {'form': form})
+
+
+def show(request):
+if request.method == "POST":
+    # print(request.POST)
+    title = request.POST.get('title')
+    content = request.POST.get('content')
+    return HttpResponse("title:"+title+"&lt;/br&gt;content:"+content)
+</code></pre>
+<p><code>test_form</code>负责创建表单，<code>form = ArticleForm({'title':'11','content':'222'})</code>可以预填充表单的内容。</p>
+<p><code>show</code>用来响应并接收表单发来的数据，用来展示数据。</p>
+<h3>设置路由</h3>
+<pre><code>path("test_form/", views.test_form, name="test_form"),
+path("show/", views.show, name="show"),
+</code></pre>
+<p>然后运行Django的服务器，打开<code>http://127.0.0.1:8000/myapp/test_form/</code>，提交数据，在show的页面显示数，类似下边：</p>
+<pre><code>title:11
+content:222
+</code></pre>
+<h2>总结</h2>
+<p>至此，一个表单的完整使用就基本设置完成，表单类和飙到的小部件还有很多的属性，这里就不一一介绍了，可以参考下边的网址。</p>
+<p>参考网站：</p>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.2/topics/forms/">使用表单</a></p>
+<p><a href="https://docs.djangoproject.com/zh-hans/4.2/ref/forms/api/">表单 AP</a></p>
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/forms/widgets/">Widgets 小部件</a></p>
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/request-response/">使用Request and response表单</a></p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/2023/20230529075925.html" class="text-truncate">< <span>Django 4.2 复习笔记(六)Django的路由</span></a>
-        
 
         
-        <a href="https://suiyan.cc/2023/20230528074013.html" class="text-truncate"><span>Django 4.2 复习笔记(五)Django中常见的关系字段及其示例</span> ></a>
+        <a href="https://suiyan.cc/2023/20230609094312.html" class="text-truncate"><span>好看的博客千篇一律 有趣的博主万里挑一</span> ></a>
         
     </div>
     
@@ -187,10 +193,6 @@
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230611084325.html" class="text-truncate "><span>Django 4.2 复习笔记(九)Django Forms 使用表单</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230605083417.html" class="text-truncate "><span>Django 4.2 复习笔记(九)使用Django的上下文处理器（context processor）</span></a>
@@ -210,6 +212,10 @@
             
             <li>
                 <a href="https://suiyan.cc/2023/20230529075925.html" class="text-truncate "><span>Django 4.2 复习笔记(六)Django的路由</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/2023/20230528074712.html" class="text-truncate "><span>SQLAlchemy的关系字段和Django的关系字段他们的不同点。</span></a>
             </li>
             
             <li>

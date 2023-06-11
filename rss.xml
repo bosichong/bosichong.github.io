@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-09 09:43:12</pubDate>
+        <pubDate>2023-06-11 08:43:25</pubDate>
+        
+        <item>
+            <title>Django 4.2 复习笔记(九)Django Forms 使用表单</title>
+            <link>https://suiyan.cc/2023/20230611084325.html</link>
+            <author>J.sky</author>
+            <description>在web日常中表单是必不可少的，处理数据的输入与交互在web站点中是非常重要的，Django提供了一系列的工具和库来帮助您构建表单来接收网站访客的输入，然后处理以及响应这些输入。</description>
+            <category>Django</category>
+            <pubDate>2023-06-11 08:43:25</pubDate>
+        </item>
         
         <item>
             <title>好看的博客千篇一律 有趣的博主万里挑一</title>
@@ -85,15 +94,6 @@
             <description>Django的页面渲染是通过Django的模板语法在模板中渲染上下文的变量来进行输出的，Django 的模板语言是为了在强大和简单之间取得平衡而设计的。它的设计让习惯于使用 HTML 的人感觉很舒服。如果你接触过其他基于文本的模板语言，如 Smarty 或 Jinja2 ，你应该会对 Django 的模板感到很舒服。</description>
             <category>Django</category>
             <pubDate>2023-06-04 08:48:35</pubDate>
-        </item>
-        
-        <item>
-            <title>Django 4.2 复习笔记(七)Django 模板(TEMPLATES)</title>
-            <link>https://suiyan.cc/2023/20230603073259.html</link>
-            <author>J.sky</author>
-            <description>作为一个网络框架，Django 需要一种方便的方式来动态生成 HTML，最常见的方法是依靠模板，一个模板包含了所需HTML输出的静态部分，以及一些特殊的语法，描述了如何插入动态内容。</description>
-            <category>Django</category>
-            <pubDate>2023-06-03 07:32:59</pubDate>
         </item>
         
     </channel>
