@@ -1288,7 +1288,7 @@ section {
   position: fixed;
   top: 1rem;
   right: 10px;
-  width: 300px;
+  width: 250px;
   z-index: 500;
   transition: all 1s ease-in-out;
 }
