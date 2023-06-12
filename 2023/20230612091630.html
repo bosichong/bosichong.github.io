@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="JavaScript" name="keywords">
-    <meta content="由于项目总是有一些小BUG，回想了一下项目中的JS文件的组织问题，估计应该是JS文件分散造成的加载不稳定，有时会造成一些变量莫名的未定义，事已至此，只有将这些文件打包到一个文件中就可以很好的解决这个问题，但是今天在网上搜了一些都是最近流行的打包工具，感觉功能过于丰富，以当前的项目来说用这些流行的打包工具有些大材小用了，而且学习成本高了一些，后来看了一下手头上的两JavaScript本书都推荐Ant打包，所以决定按书上的来吧，省时省力。" name="description">
+    <meta content="使用之前编写的Matrix JavaScript代码生成器做了一个动态的头像，效果还不错，分享给大家，喜欢的可以试一下，做好了嵌入自己的网站使用还是挺酷的！" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>前端项目构建打包的一些学习笔记 | SuiYan 碎言博客</title>
+    <title>一键生成Matrix动态头像 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -122,8 +122,8 @@
 
 
 <hgroup class="blog-info">
-    <h1 class="animate__animated animate__bounce">前端项目构建打包的一些学习笔记</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2020-01-01 21:09:54">2020-01-01 21:09:54</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:07:09">2023-04-13 09:07:09</span> | Tag:
+    <h1 class="animate__animated animate__bounce">一键生成Matrix动态头像</h1>
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-12 09:16:30">2023-06-12 09:16:30</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-12 09:29:18">2023-06-12 09:29:18</span> | Tag:
         
         
         JavaScript
@@ -132,30 +132,26 @@
 </hgroup>
 
 <div class="article animate__animated animate__fadeInUp">
-    <h2>遇到的问题</h2>
-<p>由于项目总是有一些小BUG，回想了一下项目中的JS文件的组织问题，估计应该是JS文件分散造成的加载不稳定，有时会造成一些变量莫名的未定义，事已至此，只有将这些文件打包到一个文件中就可以很好的解决这个问题，但是今天在网上搜了一些都是最近流行的打包工具，感觉功能过于丰富，以当前的项目来说用这些流行的打包工具有些大材小用了，而且学习成本高了一些，后来看了一下手头上的两JavaScript本书都推荐<code>Ant</code>打包，所以决定按书上的来吧，省时省力。</p>
-<h2>项目目录结构</h2>
-<p>书上说项目主要有三个目录：</p>
-<ul>
-<li><code>bulid</code>用来放置最终构建的文件，理想情况下这个目录不应该提交</li>
-<li><code>src</code>用来存放所有的源文件，包括用来进行文件分组的子目录</li>
-<li><code>test</code> 测试文件。</li>
-</ul>
-<h2>Ant打包</h2>
-<p>ant的安装教程很多，这里就不在重复了。</p>
-<p>前端构建需要明白自己要做的是什么，其实打包构建的工具很多的，但是有些打包工具的功能太多了，学习成本很大的，所以选择适合的工具也是很重要的。</p>
-<p>ant通过配置<code>build.xml</code>来执行一系列<code>target</code>,任务的类型选择很多，依据目前项目的选择，有打包，校验，压缩等。</p>
-<p>这里就不在贴代码了，具体可以查看<code>suiyan</code>根目录下的<code>build.xml</code>参考，网上的教程也很多的。</p>
+    <p><img alt="矩阵头像" src="https://suiyan.cc/assets/images/2023/ax.gif" /></p>
+<p>使用之前编写的 Matrix JavaScript 代码生成器做了一个动态的头像，效果还不错，分享给大家，喜欢的可以试一下，做好了嵌入自己的网站使用还是挺酷的！</p>
+<h2>生成代码</h2>
+<p>首先打开下边的网址，设置自己的头像属性，例如，尺寸 200*200，还有下落的字符列数和每列字符的个数，起始坐标等，总之先调试出一个满意的矩阵，然后在继续镶嵌在站点内使用。</p>
+<p><a href="https://suiyan.cc/Matrix/" target="_blank">Matrix 矩阵 JavaScript 代码生成器</a></p>
+<h2>网页设置</h2>
+<ol>
+<li>在你需要插入头像的地方，放置<code>&lt;canvas id="matrix"&gt;&lt;/canvas&gt;</code></li>
+<li>复制生成的代码插入到页面中的<code>&lt;script&gt;</code>标签中。</li>
+<li>此时，你的页面已经显示出一个正方形的矩阵动画，为<code>#matrix</code>添加CSS<code>border-radius: 50%!important;</code>,头像就会变成圆形的了。</li>
+</ol>
+<p>好了，简单吧？赶紧试试吧，当然你也可以制作其他尺寸的矩阵来装饰页面。</p>
 </div>
 
 <div class="blog_footer">
     <div class="prev_next">
         
-        <a href="https://suiyan.cc/before-2022/20200108161047.html" class="text-truncate">< <span>今天是个好日子发行了碎言静态博客的功能完整版</span></a>
-        
 
         
-        <a href="https://suiyan.cc/links.html" class="text-truncate"><span>友情链接</span> ></a>
+        <a href="https://suiyan.cc/2023/20230611084325.html" class="text-truncate"><span>Django 4.2 复习笔记(九)Django Forms 使用表单</span> ></a>
         
     </div>
     
@@ -164,10 +160,6 @@
             相关文章：
         </p>
         <ul>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230612091630.html" class="text-truncate "><span>一键生成Matrix动态头像</span></a>
-            </li>
             
             <li>
                 <a href="https://suiyan.cc/2023/20230607211438.html" class="text-truncate "><span>Matrix 矩阵 JavaScript代码生成器</span></a>
@@ -191,6 +183,10 @@
             
             <li>
                 <a href="https://suiyan.cc/2023/20230416175852.html" class="text-truncate "><span>从回调函数到JavaScript异步编程</span></a>
+            </li>
+            
+            <li>
+                <a href="https://suiyan.cc/before-2022/20200101210954.html" class="text-truncate "><span>前端项目构建打包的一些学习笔记</span></a>
             </li>
             
         </ul>
