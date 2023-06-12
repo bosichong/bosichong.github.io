@@ -5,27 +5,27 @@ const CANVAS_BACK_COLOR = "#000";
 const CANVAS_WIDHT = 120;
 const CANVAS_HEIDHT = 120;
 
-const MATRIX_NUMBER = 33; // 矩阵列数
+const MATRIX_NUMBER = 16; // 矩阵列数
 const STRING_HEIGHT = 14; // 字符串高度
 // 字符串列起始坐标
 const MIN_Y = 333;
 const MAX_Y = 555;
 // 矩阵每列字符数
-const MIN_LENGTH = 15;
+const MIN_LENGTH = 16;
 const MAX_LENGTH = 35;
 // 字体大小
-const MIN_FONT = 6;
-const MAX_FONT = 16;
+const MIN_FONT = 8;
+const MAX_FONT = 17;
 // 字符样色
 const MATRIX_COLOR_R = 0;
 const MATRIX_COLOR_G = 255;
 const MATRIX_COLOR_B = 0;
 // 字符颜色的透明度
-const MIN_AP = 1;
+const MIN_AP = 2;
 const MAX_AP = 7;
 // 下落速度
 const MIN_SPEED = 2;
-const MAX_SPEED = 6;
+const MAX_SPEED = 5;
 
 // 创建 Canvas 画布
 const canvas = document.getElementById("matrix");
