@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-12 09:16:30</pubDate>
+        <pubDate>2023-06-13 19:37:00</pubDate>
+        
+        <item>
+            <title>使用Python编写并部署个人静态博客:(五)Python异步输出博文页面</title>
+            <link>https://suiyan.cc/2023/20230613193700.html</link>
+            <author>J.sky</author>
+            <description>对于静态博客来说，对于页面的批量生成和更新需要更快的速度才是最佳，这里推荐Python的异步协程文件处理方法，可以达到很不错的速度！</description>
+            <category>碎言博客</category>
+            <pubDate>2023-06-13 19:37:00</pubDate>
+        </item>
         
         <item>
             <title>一键生成Matrix动态头像</title>
@@ -85,15 +94,6 @@
             <description>web站点的上下文对于新手可能有些陌生和晦涩，这个东西有什么用？上下文就是一个变量或是函数，在整个web站点中都可以调用并获取其中定义的值。在Django中，全局上下文（Global Context）是指在每个视图中都可用的全局变量或函数，可以在模板中直接访问。Django提供了一种机制来定义全局上下文，使得这些变量或函数在所有的模板中都可以使用。</description>
             <category>Django</category>
             <pubDate>2023-06-05 08:34:17</pubDate>
-        </item>
-        
-        <item>
-            <title>如何单独使用Django ORM 在非Django项目中使用Django ORM？</title>
-            <link>https://suiyan.cc/2023/20230604161547.html</link>
-            <author>J.sky</author>
-            <description>在Python中进行一些不是很复杂的数据库操作的时候我们都会选择使用一些ORM框架，主要的ORM框架包括Django ORM、SQLAlchemy、Pony ORM、Peewee和Tortoise ORM等。这里Django ORM在使用方面更为简单和人性化。但是Django ORM和Django的绑定很紧密，如何单独使用Django ORM呢？在非Django项目中使用Django ORM？</description>
-            <category>Django</category>
-            <pubDate>2023-06-04 16:15:47</pubDate>
         </item>
         
     </channel>

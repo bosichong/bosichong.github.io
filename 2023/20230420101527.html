@@ -123,7 +123,7 @@
 
 <hgroup class="blog-info">
     <h1 class="animate__animated animate__bounce">使用Python编写并部署个人静态博客:(二)实现静态页面的输出</h1>
-    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-20 10:15:27">2023-04-20 10:15:27</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-09 08:31:30">2023-06-09 08:31:30</span> | Tag:
+    <small> 作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-20 10:15:27">2023-04-20 10:15:27</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-06-13 19:41:17">2023-06-13 19:41:17</span> | Tag:
         
         
         Python
@@ -135,9 +135,10 @@
 
 <div class="article animate__animated animate__fadeInUp">
     <p><a href="https://suiyan.cc/2023/20230410075954.html">使用Python编写并部署个人静态博客:(一)分析与设计</a></p>
-<p>使用Python编写并部署个人静态博客:(二)实现静态页面的输出</p>
+<p><a href="https://suiyan.cc/2023/20230420101527.html">使用Python编写并部署个人静态博客:(二)实现静态页面的输出</a></p>
 <p><a href="https://suiyan.cc/2023/20230517084718.html">使用Python编写并部署个人静态博客:(三)搜集博客数据</a></p>
 <p><a href="https://suiyan.cc/2023/20230609081842.html">使用Python编写并部署个人静态博客:(四)逐步输出静态页面</a></p>
+<p><a href="https://suiyan.cc/2023/20230613193700.html">使用Python编写并部署个人静态博客:(五)Python异步输出博文页面</a></p>
 <p>实现静态页面的输出其实很简单，按着顺序来就行：搜集Markdown文件和站点配置文件-&gt;组织数据并渲染模板(jinja2)-&gt;输出HTML并保存到静态目录中。</p>
 <h2>最简单的静态文件输出</h2>
 <p>如果您想要向HTML文件添加字符串模板，您可以使用Python的字符串格式化功能。例如，如果您想要向HTML文件添加标题：</p>
@@ -248,6 +249,10 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
             </li>
             
             <li>
+                <a href="https://suiyan.cc/2023/20230613193700.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(五)Python异步输出博文页面</span></a>
+            </li>
+            
+            <li>
                 <a href="https://suiyan.cc/2023/20230609081842.html" class="text-truncate "><span>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</span></a>
             </li>
             
@@ -257,10 +262,6 @@ with open(sitemap_path, mode='w', encoding='utf-8') as f:
             
             <li>
                 <a href="https://suiyan.cc/2023/20230420162736.html" class="text-truncate "><span>simple_blog 碎言静态博客主题</span></a>
-            </li>
-            
-            <li>
-                <a href="https://suiyan.cc/2023/20230408093536.html" class="text-truncate "><span>free_blog 碎言静态博客主题</span></a>
             </li>
             
         </ul>
