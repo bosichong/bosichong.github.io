@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-13 19:37:00</pubDate>
+        <pubDate>2023-06-14 15:19:48</pubDate>
+        
+        <item>
+            <title>你最讨厌什么样的独立博客？</title>
+            <link>https://suiyan.cc/2023/20230614151948.html</link>
+            <author>J.sky</author>
+            <description>搭建、部署、专心撰写博文，是每个博主都需要花费一些心思去做的事，每个博客就像一扇窗，我们透过窗口看到的那些光就是作者内心真实的表露，有些强烈如火焰，有些温柔如月光。但是有些，我真特么的想一脚给他踹关上。</description>
+            <category>独立博客,站长吐槽</category>
+            <pubDate>2023-06-14 15:19:48</pubDate>
+        </item>
         
         <item>
             <title>使用Python编写并部署个人静态博客:(五)Python异步输出博文页面</title>
@@ -85,15 +94,6 @@
             <description>今天写了个Matrix 矩阵 JavaScript代码生成器，其实几年前就用Python的pygame实现过一个Matrix，最近在玩JavaScript canvas，索性使用JavaScript原生代码又撸了一遍，并且做了个代码生成器，方便修改Matrix的一些参数。</description>
             <category>JavaScript</category>
             <pubDate>2023-06-07 21:14:38</pubDate>
-        </item>
-        
-        <item>
-            <title>Django 4.2 复习笔记(九)使用Django的上下文处理器（context processor）</title>
-            <link>https://suiyan.cc/2023/20230605083417.html</link>
-            <author>J.sky</author>
-            <description>web站点的上下文对于新手可能有些陌生和晦涩，这个东西有什么用？上下文就是一个变量或是函数，在整个web站点中都可以调用并获取其中定义的值。在Django中，全局上下文（Global Context）是指在每个视图中都可用的全局变量或函数，可以在模板中直接访问。Django提供了一种机制来定义全局上下文，使得这些变量或函数在所有的模板中都可以使用。</description>
-            <category>Django</category>
-            <pubDate>2023-06-05 08:34:17</pubDate>
         </item>
         
     </channel>
