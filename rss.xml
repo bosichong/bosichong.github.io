@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-14 15:19:48</pubDate>
+        <pubDate>2023-06-16 12:08:48</pubDate>
+        
+        <item>
+            <title>基于daisyUI Tailwind CSS做了一个博客主题</title>
+            <link>https://suiyan.cc/2023/20230616120848.html</link>
+            <author>J.sky</author>
+            <description>花了几个小时基于daisyUI Tailwind CSS做了一个博客主题，很早就想把博客的样式换成基于Tailwind CSS为基础框架的，今天终于实现了。</description>
+            <category>碎言博客</category>
+            <pubDate>2023-06-16 12:08:48</pubDate>
+        </item>
         
         <item>
             <title>你最讨厌什么样的独立博客？</title>
@@ -85,15 +94,6 @@
             <description>今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错`_.debounce is not a function`!真是奇了个怪了！</description>
             <category>lodash,bug</category>
             <pubDate>2023-06-08 10:23:40</pubDate>
-        </item>
-        
-        <item>
-            <title>Matrix 矩阵 JavaScript代码生成器</title>
-            <link>https://suiyan.cc/2023/20230607211438.html</link>
-            <author>J.sky</author>
-            <description>今天写了个Matrix 矩阵 JavaScript代码生成器，其实几年前就用Python的pygame实现过一个Matrix，最近在玩JavaScript canvas，索性使用JavaScript原生代码又撸了一遍，并且做了个代码生成器，方便修改Matrix的一些参数。</description>
-            <category>JavaScript</category>
-            <pubDate>2023-06-07 21:14:38</pubDate>
         </item>
         
     </channel>
