@@ -14,11 +14,11 @@
     "meta_keywords":"Python,Django,JavaScript,程序员,人生苦短,我用Python",
     "profile_image":"assets/images/avatar.jpg",
     "blog_bg": "assets/images/bg.jpg",
-    "theme": "my_blog",
+    "theme": "tailwind_blog",
     "build": "blog",
     "md_dir": "articles",
-    "blog_page_num":8,
-    "blog_test_url":"http://192.168.0.88:5501/",
+    "blog_page_num":12,
+    "blog_test_url":"http://192.168.0.88:5500/",
     "blog_url":"https://suiyan.cc/",
     "blog_sns": [
         {

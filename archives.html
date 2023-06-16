@@ -11,2083 +11,1959 @@
     <title>Archives | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+    />
+
+
+
     <!-- Template Main CSS File -->
     <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ======= Mobile nav toggle button ======= -->
-<i class="fa fa-navicon mobile-nav-toggle d-xl-none animate__animated"></i>
+    <div class="container max-w-3xl mx-auto font-sans text-lg font-extralight">
+        <div
+          id="sider"
+          class="fixed z-50 bg-base-100 container max-w-3xl mx-auto h-screen flex items-center justify-center sider-top"
+        >
+          <button
+            id="menu-close-btn"
+            class="absolute top-2 right-2 btn btn-square btn-ghost text-lg"
+          >
+            <i class="fa fa-close"></i>
+          </button>
+          <div class="card w-96 bg-base-100 shadow-xl p-4 m-4">
+            <div class="text-center">
+              <div class="avatar">
+                <div
+                  class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                >
+                  <img
+                    src="https://suiyan.cc/assets/images/avatar.jpg"
+                    alt="J.sky"
+                  />
+                </div>
+              </div>
+              <h3 class="text-lg my-1">
+                <a href="https://suiyan.cc/" class="">J.sky</a>
+              </h3>
+              <p class="text-xs">You see see you , This one day day di.</p>
+              <div class="mt-2 text-center text-2xl">
+                
+                <a
+                href="https://github.com/bosichong/suiyan"
+                target="_blank"
+                class=""
+                ><i class="fa fa-github"></i
+              ></a>
+            
+                <a
+                href="https://gitee.com/J_Sky/suiyan"
+                target="_blank"
+                class=""
+                ><i class="fa fa-git"></i
+              ></a>
+            
+                <a
+                href="mailto:285911@gmail.com"
+                target="_blank"
+                class=""
+                ><i class="fa fa-envelope"></i
+              ></a>
+            
+                <a
+                href="https://www.zhihu.com/people/J_sky/activities"
+                target="_blank"
+                class=""
+                ><i class="fa fa-book"></i
+              ></a>
+            
+                <a
+                href="https://suiyan.cc/rss.xml"
+                target="_blank"
+                class=""
+                ><i class="fa fa-rss-square"></i
+              ></a>
+            
+                
 
-<!-- ======= Header ======= -->
+              </div>
+            </div>
+  
+            <ul class="menu bg-base-100 w-36 rounded-box mx-auto">
+              
+              <li>
+                <a href="https://suiyan.cc/"
+                  ><i class="fa fa-home"></i> <span>Home</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/archives.html"
+                  ><i class="fa fa-archive"></i> <span>Archive</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/tags.html"
+                  ><i class="fa fa-tags"></i> <span>Tags</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/before-2022/1.html"
+                  ><i class="fa fa-user-md"></i> <span>About Me</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/links.html"
+                  ><i class="fa fa-link"></i> <span>Links</span></a
+                >
+              </li>
+            
+
+            </ul>
+  
+
+              <!-- 移动端搜索 -->
+              <button class="btn btn-sm" onclick="my_modal_3.showModal()"><i class="fa fa-search"></i>搜索</button>
+              <dialog id="my_modal_3" class="modal">
+                <form method="dialog" class="modal-box">
+                  <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  <h3 class="font-bold text-lg">站内搜索!</h3>
+                  <div class="mx-full">
+                    <input
+                      id="search-input"
+                      type="text"
+                      placeholder="JavaScript"
+                      class="input input-bordered w-3/4 max-w-xs input-sm"
+                    />
+                    <button id="search-btn" class="btn btn-sm">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <div id="modal_s">
+                      <ul id="result-list"></ul>
+                    </div>
+                  </div>
+                </form>
+              </dialog>
+            
 
 
-<header id="header">
-<div class="h-top d-flex flex-column">
-    <div class="profile">
-        <!-- <img src="https://suiyan.cc/assets/images/avatar.jpg" alt="" class="img-fluid rounded-circle"> -->
-        <div id="matrix-rapper">
-            <canvas id="matrix" class="rounded-circle"></canvas>
+
+          </div>
         </div>
-        <h3 class="blog_author text-light"><a href="https://suiyan.cc/">J.sky</a></h3>
-        <p class="blog-description">
-            You see see you , This one day day di.
-          </p>
-        <div class="social-links mt-3 text-center">
+        <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
+          <div class="navbar">
+            <div class="navbar-start">
+              <button
+                id="menu-open-btn"
+                class="btn btn-square btn-ghost lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block w-5 h-5 stroke-current"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+              <div class="avatar lg:hidden mx-2">
+                <div
+                  class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                >
+                <a href="https://suiyan.cc/">
+                  <img
+                  src="https://suiyan.cc/assets/images/avatar.jpg"
+                  alt="J.sky"
+                  />
+                </a>
+                  
+                </div>
+              </div>
+              <button
+                class="flex btn btn-sm btn-ghost normal-case font-light text-2xl hidden lg:block"
+              >
+                <a href="https://suiyan.cc/">碎言博客</a>
+              </button>
+            </div>
+            <div class="navbar-end">
+              <div class="hidden lg:block">
+                <!-- You can open the modal using ID.showModal() method -->
+              <button class="btn btn-sm" onclick="my_modal_1.showModal()"><i class="fa fa-search"></i>搜索</button>
+              <dialog id="my_modal_1" class="modal">
+                <form method="dialog" class="modal-box">
+                  <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  <h3 class="font-bold text-lg">站内搜索!</h3>
+                  <div class="mx-full">
+                    <input
+                      id="search-input1"
+                      type="text"
+                      placeholder="JavaScript"
+                      class="input input-bordered w-full max-w-xs input-sm"
+                    />
+                    <button id="search-btn1" class="btn btn-sm">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <div id="modal_s1">
+                      <ul id="result-list1"></ul>
+                    </div>
+                  </div>
+                </form>
+              </dialog>
+              </div>
+              <div class="dropdown dropdown-end">
+                <div tabindex="0" class="btn btn-sm normal-case btn-ghost">
+                  <svg
+                    width="20"
+                    height="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 stroke-current"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                    ></path>
+                  </svg>
+                  <span class="hidden font-normal md:inline">主题</span>
+                  <svg
+                    width="12px"
+                    height="12px"
+                    class="hidden h-2 w-2 fill-current opacity-60 sm:inline-block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 2048 2048"
+                  >
+                    <path
+                      d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
+                    ></path>
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-28"
+                >
+                  <li><a data-set-theme="">Default</a></li>
+                  <li><a data-set-theme="light">light</a></li>
+                  <li><a data-set-theme="dark">dark</a></li>
+                  <li><a data-set-theme="cupcake">cupcake</a></li>
+                  <li><a data-set-theme="retro">retro</a></li>
+                  <li><a data-set-theme="luxury">luxury</a></li>
+                  <li><a data-set-theme="autumn">autumn</a></li>
+                  <li><a data-set-theme="business">business</a></li>
+                  <li><a data-set-theme="valentine">valentine</a></li>
+                  <li><a data-set-theme="coffee">coffee</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="p-4">
             
-            <a href="https://github.com/bosichong/suiyan" target="_blank"><i class="fa fa-github"></i></a>
-            
-            <a href="https://gitee.com/J_Sky/suiyan" target="_blank"><i class="fa fa-git"></i></a>
-            
-            <a href="mailto:285911@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
-            
-            <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank"><i class="fa fa-book"></i></a>
-            
-            <a href="https://suiyan.cc/rss.xml" target="_blank"><i class="fa fa-rss-square"></i></a>
-            
-        </div>
+
+<div class="">
+  <h1 class="text-3xl">文章归档</h1>
+  <div class="">
+    <span class="text-sm"> 共有文章:168篇,最后更新:2023-06-14 15:19:48 </span>
+  </div>
+</div>
+<div class="divider"></div> 
+<div class="join join-vertical w-full">
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2023-06 (共17篇文章)
     </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230614151948.html" class="link" target="_blank">
+            你最讨厌什么样的独立博客？
+          </a>
+          <span> 2023-06-14 15:19:48 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230613193700.html" class="link" target="_blank">
+            使用Python编写并部署个人静态博客:(五)Python异步输出博文页面
+          </a>
+          <span> 2023-06-13 19:37:00 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230612091630.html" class="link" target="_blank">
+            一键生成Matrix动态头像
+          </a>
+          <span> 2023-06-12 09:16:30 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230611084325.html" class="link" target="_blank">
+            Django 4.2 复习笔记(九)Django Forms 使用表单
+          </a>
+          <span> 2023-06-11 08:43:25 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230609094312.html" class="link" target="_blank">
+            好看的博客千篇一律 有趣的博主万里挑一
+          </a>
+          <span> 2023-06-09 09:43:12 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230609081842.html" class="link" target="_blank">
+            使用Python编写并部署个人静态博客:(四)逐步输出静态页面
+          </a>
+          <span> 2023-06-09 08:18:42 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230608185126.html" class="link" target="_blank">
+            clipboard.js 一款简单好用的将文本复制到剪贴板的现代方法
+          </a>
+          <span> 2023-06-08 18:51:26 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230608184436.html" class="link" target="_blank">
+            一行代码升级你的node.js为最新稳定版
+          </a>
+          <span> 2023-06-08 18:44:36 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230608102340.html" class="link" target="_blank">
+            CDN引用lodash报错 _.debounce is not a function
+          </a>
+          <span> 2023-06-08 10:23:40 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230607211438.html" class="link" target="_blank">
+            Matrix 矩阵 JavaScript代码生成器
+          </a>
+          <span> 2023-06-07 21:14:38 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230605083417.html" class="link" target="_blank">
+            Django 4.2 复习笔记(九)使用Django的上下文处理器（context processor）
+          </a>
+          <span> 2023-06-05 08:34:17 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230604161547.html" class="link" target="_blank">
+            如何单独使用Django ORM 在非Django项目中使用Django ORM？
+          </a>
+          <span> 2023-06-04 16:15:47 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230604084835.html" class="link" target="_blank">
+            Django 4.2 复习笔记(八)Django 模板语言语法
+          </a>
+          <span> 2023-06-04 08:48:35 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230603073259.html" class="link" target="_blank">
+            Django 4.2 复习笔记(七)Django 模板(TEMPLATES)
+          </a>
+          <span> 2023-06-03 07:32:59 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230602101713.html" class="link" target="_blank">
+            macOS更新后 终端提示：The default interactive shell is now zsh.
+          </a>
+          <span> 2023-06-02 10:17:13 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230602070849.html" class="link" target="_blank">
+            Python权限管理框架 Casbin PyCasbin 的简单操作
+          </a>
+          <span> 2023-06-02 07:08:49 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230601090428.html" class="link" target="_blank">
+            记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2
+          </a>
+          <span> 2023-06-01 09:04:28 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
 
-    <nav id="navbar" class="nav-menu navbar">
-        <ul>
-            
-            <li><a href="https://suiyan.cc/" class="nav-link scrollto active"><i class="fa fa-home"></i>
-                <span>Home</span></a></li>
-            
-            <li><a href="https://suiyan.cc/archives.html" class="nav-link scrollto active"><i class="fa fa-archive"></i>
-                <span>Archive</span></a></li>
-            
-            <li><a href="https://suiyan.cc/tags.html" class="nav-link scrollto active"><i class="fa fa-tags"></i>
-                <span>Tags</span></a></li>
-            
-            <li><a href="https://suiyan.cc/before-2022/1.html" class="nav-link scrollto active"><i class="fa fa-user-md"></i>
-                <span>About Me</span></a></li>
-            
-            <li><a href="https://suiyan.cc/links.html" class="nav-link scrollto active"><i class="fa fa-link"></i>
-                <span>Links</span></a></li>
-            
-        </ul>
-    </nav><!-- .nav-menu -->
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2023-05 (共31篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230531194542.html" class="link" target="_blank">
+            Tailwind CSS 相关的组件库
+          </a>
+          <span> 2023-05-31 19:45:42 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230530145118.html" class="link" target="_blank">
+            JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......
+          </a>
+          <span> 2023-05-30 14:51:18 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230529193749.html" class="link" target="_blank">
+            Vue+element+Vite安装 Tailwind CSS
+          </a>
+          <span> 2023-05-29 19:37:49 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230529075925.html" class="link" target="_blank">
+            Django 4.2 复习笔记(六)Django的路由
+          </a>
+          <span> 2023-05-29 07:59:25 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230528074712.html" class="link" target="_blank">
+            SQLAlchemy的关系字段和Django的关系字段他们的不同点。
+          </a>
+          <span> 2023-05-28 07:47:12 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230528074013.html" class="link" target="_blank">
+            Django 4.2 复习笔记(五)Django中常见的关系字段及其示例
+          </a>
+          <span> 2023-05-28 07:40:13 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230527070832.html" class="link" target="_blank">
+            css实现漂亮的彩虹渐变文本效果
+          </a>
+          <span> 2023-05-27 07:08:32 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230525084144.html" class="link" target="_blank">
+            Django 4.2 复习笔记(四)数据的查询Django的ORM
+          </a>
+          <span> 2023-05-25 08:41:44 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230524211340.html" class="link" target="_blank">
+            Django 4.2 复习笔记(三)Model模型字段
+          </a>
+          <span> 2023-05-24 21:13:40 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230522201800.html" class="link" target="_blank">
+            vite打包后element样式被其他框架样式覆盖的解决方法
+          </a>
+          <span> 2023-05-22 20:18:00 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230522201116.html" class="link" target="_blank">
+            如何解决 Some chunks are larger than 500 KiB after minification？
+          </a>
+          <span> 2023-05-22 20:11:16 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230520081153.html" class="link" target="_blank">
+            Django 4.2 复习笔记(二)编写和调试Model模型
+          </a>
+          <span> 2023-05-20 08:11:53 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230518092845.html" class="link" target="_blank">
+            Django 4.2 复习笔记(一)迅速概览
+          </a>
+          <span> 2023-05-18 09:28:45 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230517084718.html" class="link" target="_blank">
+            使用Python编写并部署个人静态博客:(三)搜集博客数据
+          </a>
+          <span> 2023-05-17 08:47:18 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230516211444.html" class="link" target="_blank">
+            一款基于GitHub的评论系统不但免费安装还贼简单！
+          </a>
+          <span> 2023-05-16 21:14:44 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230516132817.html" class="link" target="_blank">
+            使用Moment.js或Day.js对HTML页面上的时间进行格式化
+          </a>
+          <span> 2023-05-16 13:28:17 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230515215136.html" class="link" target="_blank">
+            async/await和fetch()的使用
+          </a>
+          <span> 2023-05-15 21:51:36 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230515105053.html" class="link" target="_blank">
+            fetch()如何读取请求中的'user-agent'？
+          </a>
+          <span> 2023-05-15 10:50:53 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230514163231.html" class="link" target="_blank">
+            一些关于中文独立博客的聚合网站
+          </a>
+          <span> 2023-05-14 16:32:31 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230513104151.html" class="link" target="_blank">
+            display:none没有隐藏元素所占空间的原因
+          </a>
+          <span> 2023-05-13 10:41:51 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230513082050.html" class="link" target="_blank">
+            再谈TailwindCSS的使用心得
+          </a>
+          <span> 2023-05-13 08:20:50 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230511191515.html" class="link" target="_blank">
+            安装了Tailwind CSS IntelliSense插件 vscode没有代码提示
+          </a>
+          <span> 2023-05-11 19:15:15 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230511182912.html" class="link" target="_blank">
+            Tailwind CSS的安装配置和体验
+          </a>
+          <span> 2023-05-11 18:29:12 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230509201037.html" class="link" target="_blank">
+            Git提示 ! [remote rejected] master -> master (failure)
+          </a>
+          <span> 2023-05-09 20:10:37 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230509101659.html" class="link" target="_blank">
+            使用Fetch发送Ajax请求
+          </a>
+          <span> 2023-05-09 10:16:59 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230508213333.html" class="link" target="_blank">
+            读《写作是门手艺》的思考
+          </a>
+          <span> 2023-05-08 21:33:33 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230508090813.html" class="link" target="_blank">
+            Link-Validator 检测网站友情链接的JavaScript脚本
+          </a>
+          <span> 2023-05-08 09:08:13 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230507204135.html" class="link" target="_blank">
+            css链接悬停时滑动的下划线效果
+          </a>
+          <span> 2023-05-07 20:41:35 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230507101510.html" class="link" target="_blank">
+            使用CSS伪元素制作动感超酷的hover动画
+          </a>
+          <span> 2023-05-07 10:15:10 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230504201422.html" class="link" target="_blank">
+            CSS动画animation的简单应用
+          </a>
+          <span> 2023-05-04 20:14:22 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230504105514.html" class="link" target="_blank">
+            css的过渡效果transition的使用
+          </a>
+          <span> 2023-05-04 10:55:14 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2023-04 (共16篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230430073441.html" class="link" target="_blank">
+            Vue3+Element Plus环境搭建和一键切换明暗主题的配置
+          </a>
+          <span> 2023-04-30 07:34:41 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230428181550.html" class="link" target="_blank">
+            新站已提交sitemap百度不抓取Google也不收录
+          </a>
+          <span> 2023-04-28 18:15:50 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230427151750.html" class="link" target="_blank">
+            coding_blog 碎言静态博客主题
+          </a>
+          <span> 2023-04-27 15:17:50 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230424194612.html" class="link" target="_blank">
+            JianCe 简测 简单的在线答题应用
+          </a>
+          <span> 2023-04-24 19:46:12 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230423094305.html" class="link" target="_blank">
+            vue3前端打包集成到后端fastAPI的uvicorn服务器
+          </a>
+          <span> 2023-04-23 09:43:05 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230420162736.html" class="link" target="_blank">
+            simple_blog 碎言静态博客主题
+          </a>
+          <span> 2023-04-20 16:27:36 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230420101527.html" class="link" target="_blank">
+            使用Python编写并部署个人静态博客:(二)实现静态页面的输出
+          </a>
+          <span> 2023-04-20 10:15:27 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230418122936.html" class="link" target="_blank">
+            css布局如何选择flex和grid?
+          </a>
+          <span> 2023-04-18 12:29:36 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230416175852.html" class="link" target="_blank">
+            从回调函数到JavaScript异步编程
+          </a>
+          <span> 2023-04-16 17:58:52 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230413095913.html" class="link" target="_blank">
+            2023重学前端:HTML CSS JavaScript基础复习
+          </a>
+          <span> 2023-04-13 09:59:13 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230410075954.html" class="link" target="_blank">
+            使用Python编写并部署个人静态博客:(一)分析与设计
+          </a>
+          <span> 2023-04-10 07:59:54 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230408093536.html" class="link" target="_blank">
+            free_blog 碎言静态博客主题
+          </a>
+          <span> 2023-04-08 09:35:36 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230405202140.html" class="link" target="_blank">
+            程序员的痛苦：颈椎病和肩周炎
+          </a>
+          <span> 2023-04-05 20:21:40 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/106.html" class="link" target="_blank">
+            碎言静态博客
+          </a>
+          <span> 2023-04-05 10:26:39 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230404212258.html" class="link" target="_blank">
+            解决Github Pages自定义域名失效的问题
+          </a>
+          <span> 2023-04-04 21:22:58 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230404163916.html" class="link" target="_blank">
+            Pico.css大道至简返璞归真--一个简单轻量化的CSS框架
+          </a>
+          <span> 2023-04-04 16:39:16 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2023-03 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230324234058.html" class="link" target="_blank">
+            好了，又可以愉快的写博客了
+          </a>
+          <span> 2023-03-24 23:40:58 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2022-09 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20220923093608.html" class="link" target="_blank">
+            又可以继续写blog了
+          </a>
+          <span> 2022-09-23 09:36:08 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2021-05 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20210521155450.html" class="link" target="_blank">
+            PyKeyBoardFairy可以替代你游戏中的卡键盘和鼠标宏
+          </a>
+          <span> 2021-05-21 15:54:50 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2021-03 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20210316093818.html" class="link" target="_blank">
+            Flask-SQLAlchemy 使用学习笔记(下):一对一、一对多、多对多关系
+          </a>
+          <span> 2021-03-16 09:38:18 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2021-02 (共4篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20210223155027.html" class="link" target="_blank">
+            Flask-SQLAlchemy 使用学习笔记(上):简单的配置及使用
+          </a>
+          <span> 2021-02-23 15:50:27 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20210222084745.html" class="link" target="_blank">
+            Flask项目配置(config)经验
+          </a>
+          <span> 2021-02-22 08:47:45 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20210220153815.html" class="link" target="_blank">
+            pipenv 简化的虚拟环境、项目依赖管理工具
+          </a>
+          <span> 2021-02-20 15:38:15 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20210212002001.html" class="link" target="_blank">
+            Anaconda常用终端命令
+          </a>
+          <span> 2021-02-12 00:20:01 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2020-12 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20201202155245.html" class="link" target="_blank">
+            如何打包上传Python程序或模块包到PyPi供其他人使用pip下载？
+          </a>
+          <span> 2020-12-07 20:30:45 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2020-10 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20201005203404.html" class="link" target="_blank">
+            聊聊Python中的装饰器
+          </a>
+          <span> 2020-10-05 20:34:04 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2020-03 (共4篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200330194328.html" class="link" target="_blank">
+            npm更换源与nrm安装与配置
+          </a>
+          <span> 2020-03-30 19:43:28 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200330193816.html" class="link" target="_blank">
+            pip临时修改下载源
+          </a>
+          <span> 2020-03-30 19:38:16 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200319093318.html" class="link" target="_blank">
+            Vue快速学习笔记(9)Vuetify配置及简单使用
+          </a>
+          <span> 2020-03-19 09:33:18 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200305151608.html" class="link" target="_blank">
+            Vue快速学习笔记(8)webpack4.X配置Vue开发打包环境
+          </a>
+          <span> 2020-03-05 15:16:08 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2020-02 (共4篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200212190302.html" class="link" target="_blank">
+            Vue快速学习笔记(5)使用路由vue-router(1)
+          </a>
+          <span> 2020-02-12 19:03:02 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200211153353.html" class="link" target="_blank">
+            Vue快速学习笔记(4)Vue组件中的数据传递
+          </a>
+          <span> 2020-02-11 15:33:53 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200204150807.html" class="link" target="_blank">
+            Vue快速学习笔记(3)Vue的组件
+          </a>
+          <span> 2020-02-04 15:08:07 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200201103126.html" class="link" target="_blank">
+            Vue快速学习笔记(2)Vue中的监听与计算属性
+          </a>
+          <span> 2020-02-01 10:31:26 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2020-01 (共4篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200110211843.html" class="link" target="_blank">
+            Vue快速学习笔记(1)Vue实例基础
+          </a>
+          <span> 2020-01-10 21:18:43 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200108191737.html" class="link" target="_blank">
+            使用碎言静态博客依托码云Pages搭建自己的免费博客
+          </a>
+          <span> 2020-01-08 19:17:37 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200108161047.html" class="link" target="_blank">
+            今天是个好日子发行了碎言静态博客的功能完整版
+          </a>
+          <span> 2020-01-08 16:10:47 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20200101210954.html" class="link" target="_blank">
+            前端项目构建打包的一些学习笔记
+          </a>
+          <span> 2020-01-01 21:09:54 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2019-12 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/links.html" class="link" target="_blank">
+            友情链接
+          </a>
+          <span> 2019-12-30 16:25:07 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2019-11 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/103.html" class="link" target="_blank">
+            基于Django构建的小学生英文单词背写检测考试系统。
+          </a>
+          <span> 2019-11-07 16:10:19 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2019-06 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/101.html" class="link" target="_blank">
+            如何在Python程序中使用配置文件.ini(ConfigParser)
+          </a>
+          <span> 2019-06-18 15:29:01 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2019-05 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/100.html" class="link" target="_blank">
+            写在我的博客PV10万时：聊聊编程与画画
+          </a>
+          <span> 2019-05-14 09:11:29 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2019-01 (共2篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/97.html" class="link" target="_blank">
+            wxPython编程学习笔记(10)wx.FileDialog文件选择框
+          </a>
+          <span> 2019-01-05 14:41:02 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/96.html" class="link" target="_blank">
+            wxPython编程学习笔记(09)wx.Python Menu 菜单
+          </a>
+          <span> 2019-01-03 18:08:40 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2018-12 (共9篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/95.html" class="link" target="_blank">
+            Python os.mknod 运行报错无法创建文件
+          </a>
+          <span> 2018-12-27 10:47:01 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/94.html" class="link" target="_blank">
+            wxPython编程学习笔记(08)wx.ListBox 下拉列表框
+          </a>
+          <span> 2018-12-27 09:51:07 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/93.html" class="link" target="_blank">
+            wxPython编程学习笔记(07)wxPython Dialog 弹出对话
+          </a>
+          <span> 2018-12-25 13:17:28 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/92.html" class="link" target="_blank">
+            wxPython编程学习笔记(06)wx.ComboBox下拉列表框
+          </a>
+          <span> 2018-12-24 14:24:56 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/91.html" class="link" target="_blank">
+            wxPython编程学习笔记(05)单选及多选按钮
+          </a>
+          <span> 2018-12-23 18:49:39 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/90.html" class="link" target="_blank">
+            wxPython编程学习笔记(04)wx.Butoon的应用
+          </a>
+          <span> 2018-12-22 20:26:29 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/89.html" class="link" target="_blank">
+            wxPython编程学习笔记(03)wxPython中的事件
+          </a>
+          <span> 2018-12-21 19:11:40 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/88.html" class="link" target="_blank">
+            wxPython编程学习笔记(02)wxPython的布局
+          </a>
+          <span> 2018-12-19 20:22:01 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/87.html" class="link" target="_blank">
+            wxPython编程学习笔记(01)Frame程序的窗口
+          </a>
+          <span> 2018-12-18 19:42:47 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2018-11 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/86.html" class="link" target="_blank">
+            Python os.path.dirname(__file__) 在终端命令行下报错
+          </a>
+          <span> 2018-11-21 22:16:58 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2018-10 (共2篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/84.html" class="link" target="_blank">
+            Git多人协作（码云）中的一些操作简单记录
+          </a>
+          <span> 2018-10-28 14:24:15 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/83.html" class="link" target="_blank">
+            利用Python自动生成小学生加减乘除口算考试题卷。
+          </a>
+          <span> 2018-10-24 10:50:04 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2018-06 (共1篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/82.html" class="link" target="_blank">
+            有时人生需要做出选择
+          </a>
+          <span> 2018-06-12 10:05:40 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2018-01 (共7篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/79.html" class="link" target="_blank">
+            聊聊Python中的递归与快速排序那点事
+          </a>
+          <span> 2018-01-30 14:38:39 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/77.html" class="link" target="_blank">
+            “编学编玩”用Pygame编写游戏（10）pygame实现一个黑客帝国矩阵(Matrix)
+          </a>
+          <span> 2018-01-16 10:25:21 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/76.html" class="link" target="_blank">
+            “编学编玩”用Pygame编写游戏（9）Tetromino俄罗斯方块游戏
+          </a>
+          <span> 2018-01-13 16:00:40 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/75.html" class="link" target="_blank">
+            极速学习C++之基础篇
+          </a>
+          <span> 2018-01-11 09:07:47 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/74.html" class="link" target="_blank">
+            妙用IPython学习Python--IPython快速上手
+          </a>
+          <span> 2018-01-07 10:16:11 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/73.html" class="link" target="_blank">
+            “编学编玩”用Pygame编写游戏（8）GreedSnake贪食蛇小游戏
+          </a>
+          <span> 2018-01-05 09:41:22 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/72.html" class="link" target="_blank">
+            2018 新年快乐！希望在coding中找到自己的快乐与希望
+          </a>
+          <span> 2018-01-01 17:40:57 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2017-12 (共4篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/71.html" class="link" target="_blank">
+            “编学编玩”用Pygame编写游戏（7）Pingball弹球小游戏
+          </a>
+          <span> 2017-12-29 20:18:35 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/70.html" class="link" target="_blank">
+            “编学编玩”用Pygame编写游戏（6）PY_RPG 一个pygame的简单封装。
+          </a>
+          <span> 2017-12-28 21:41:37 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/69.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(10) filedialog 文件目录选择对话框
+          </a>
+          <span> 2017-12-24 19:21:04 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/68.html" class="link" target="_blank">
+            Python生成器yield应用实例——监控日志
+          </a>
+          <span> 2017-12-22 09:19:40 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2017-11 (共2篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/55.html" class="link" target="_blank">
+            听说存储数据Python与SQLite3更配哦！
+          </a>
+          <span> 2017-11-16 17:34:15 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/51.html" class="link" target="_blank">
+            如何快速的复习学习过的Python
+          </a>
+          <span> 2017-11-07 16:19:22 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2017-10 (共19篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/50.html" class="link" target="_blank">
+            python中导入不同目录中的自定义模块/class/函数/方法
+          </a>
+          <span> 2017-10-27 10:37:17 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/49.html" class="link" target="_blank">
+            基于Python、Tk构建的可视化目录文件同步助手
+          </a>
+          <span> 2017-10-26 15:04:15 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/48.html" class="link" target="_blank">
+            “编学编玩”用Pygame编写游戏（5）pygame绘制一个钟表
+          </a>
+          <span> 2017-10-23 15:51:11 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/47.html" class="link" target="_blank">
+            “编学编玩”用Pygame写游戏（4）一个python问答游戏
+          </a>
+          <span> 2017-10-22 09:50:35 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/46.html" class="link" target="_blank">
+            “编学编玩”用Pygame写游戏（3）让角色动起来及碰撞检测
+          </a>
+          <span> 2017-10-20 16:00:52 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/45.html" class="link" target="_blank">
+            “编学编玩”用Pygame写游戏（2）在场景中绘制图形与动画
+          </a>
+          <span> 2017-10-19 14:03:46 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/44.html" class="link" target="_blank">
+            “编学编玩”用Pygame写游戏（1）初识pygame
+          </a>
+          <span> 2017-10-19 11:00:31 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/43.html" class="link" target="_blank">
+            浅谈Python中的协程及利用协程代替多线程及多进程并发编程
+          </a>
+          <span> 2017-10-15 15:52:46 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/42.html" class="link" target="_blank">
+            聊聊Python中晦涩的生成器（yield）与生成器表达式
+          </a>
+          <span> 2017-10-14 08:21:49 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/41.html" class="link" target="_blank">
+            Python中创建TCP服务器与客户端进行通信(下)Tk、thread与socket组合。
+          </a>
+          <span> 2017-10-13 10:57:48 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/40.html" class="link" target="_blank">
+            Python中创建TCP服务器与客户端进行通信（上）
+          </a>
+          <span> 2017-10-12 10:14:40 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/39.html" class="link" target="_blank">
+            Python程序在Windows10终端运行中文乱码解决方法
+          </a>
+          <span> 2017-10-10 21:03:34 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/38.html" class="link" target="_blank">
+            你与黑客之间差了多少行Python代码？
+          </a>
+          <span> 2017-10-10 15:23:17 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/37.html" class="link" target="_blank">
+            一些站长常用的搜索收录、访问统计平台
+          </a>
+          <span> 2017-10-09 20:45:57 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/36.html" class="link" target="_blank">
+            聊聊Python闭包（Closure）的那点事。
+          </a>
+          <span> 2017-10-09 15:36:19 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/35.html" class="link" target="_blank">
+            Python并发编程（下）功能强大设置简单的分布式多进程生产者与消费者模式
+          </a>
+          <span> 2017-10-07 14:09:46 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/34.html" class="link" target="_blank">
+            Python并发编程（上）进程模块multiprocessing模块和Process类
+          </a>
+          <span> 2017-10-06 09:43:48 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/33.html" class="link" target="_blank">
+            Python多线程编程（下）多线程锁 threading.Lock
+          </a>
+          <span> 2017-10-04 14:49:34 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/32.html" class="link" target="_blank">
+            Python多线程编程（上）多线程创建的几种方法
+          </a>
+          <span> 2017-10-03 13:01:21 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2017-09 (共23篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/31.html" class="link" target="_blank">
+            python 类的静态方法和类方法
+          </a>
+          <span> 2017-09-30 09:31:31 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/30.html" class="link" target="_blank">
+            Python面向对象编程（OOP）初探
+          </a>
+          <span> 2017-09-29 15:27:35 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/29.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(9) Event 键盘鼠标事件
+          </a>
+          <span> 2017-09-28 13:33:43 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/28.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(8) Scalet和Spinbox的简单使用
+          </a>
+          <span> 2017-09-28 09:50:15 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/27.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(7) Scrollbar的使用
+          </a>
+          <span> 2017-09-27 21:23:07 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/26.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(6) Checkbutton Radiobutton
+          </a>
+          <span> 2017-09-27 13:10:36 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/25.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(5) messagebox tk的弹出对话框
+          </a>
+          <span> 2017-09-26 16:48:51 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/24.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(4) Entry Text 文本框控件
+          </a>
+          <span> 2017-09-26 10:26:15 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/23.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(3) 列表框 Listbox
+          </a>
+          <span> 2017-09-23 13:40:35 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/22.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(2)菜单Menu
+          </a>
+          <span> 2017-09-22 11:02:33 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/21.html" class="link" target="_blank">
+            Python TK和Tkinter的GUI编程(1)窗口、标签Label、按钮Button
+          </a>
+          <span> 2017-09-22 09:10:27 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20.html" class="link" target="_blank">
+            Python random 随机数模块操作总结
+          </a>
+          <span> 2017-09-20 13:28:23 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/19.html" class="link" target="_blank">
+            Python 对象引用与复制 (Python参考手册读书笔记)
+          </a>
+          <span> 2017-09-19 15:51:04 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/18.html" class="link" target="_blank">
+            Python 字符串格式化(%操作符)及format函数的使用
+          </a>
+          <span> 2017-09-19 15:12:22 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/17.html" class="link" target="_blank">
+            关于本站封面头部大图
+          </a>
+          <span> 2017-09-18 14:19:35 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/16.html" class="link" target="_blank">
+            Python3 datetime模块的时间操作
+          </a>
+          <span> 2017-09-18 13:23:43 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/15.html" class="link" target="_blank">
+            python3函数学习笔记简单总结
+          </a>
+          <span> 2017-09-09 09:27:49 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/14.html" class="link" target="_blank">
+            PythonINI配置文件读写的简单方法
+          </a>
+          <span> 2017-09-06 10:19:07 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/13.html" class="link" target="_blank">
+            Python open()函数文件打开、读、写操作总结
+          </a>
+          <span> 2017-09-05 13:36:55 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/12.html" class="link" target="_blank">
+            Python os.path模块中一些常用方法的整理总结
+          </a>
+          <span> 2017-09-04 14:37:17 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/11.html" class="link" target="_blank">
+            Python 采集数据三步曲之[Requests + re.py模块进行数据采集]
+          </a>
+          <span> 2017-09-02 12:41:30 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/10.html" class="link" target="_blank">
+            Python 采集数据三步曲之[Requests开源协议的HTTP 库]
+          </a>
+          <span> 2017-09-02 09:01:48 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/9.html" class="link" target="_blank">
+            Python 采集数据三步曲之[正则表达式 re.py]
+          </a>
+          <span> 2017-09-01 13:09:49 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="collapse collapse-arrow join-item border border-base-300">
+    <input type="radio" name="my-accordion-4" checked="checked" /> 
+    <div class="collapse-title text-xl font-light">
+      2017-08 (共8篇文章)
+    </div>
+    <div class="collapse-content"> 
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/7.html" class="link" target="_blank">
+            Mac OS X gitk窗口打不开及Git的升级方法
+          </a>
+          <span> 2017-08-26 16:36:30 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/6.html" class="link" target="_blank">
+            Git 版本控制常用命令 简明指南教程
+          </a>
+          <span> 2017-08-26 13:03:59 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/5.html" class="link" target="_blank">
+            Markdown 语法学习总结
+          </a>
+          <span> 2017-08-25 08:55:15 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/4.html" class="link" target="_blank">
+            17python.com网站已经部署上线及后期更新记录
+          </a>
+          <span> 2017-08-25 01:09:49 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/3.html" class="link" target="_blank">
+            python3 Markdown模块解析Markdown代码
+          </a>
+          <span> 2017-08-19 19:59:46 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/2.html" class="link" target="_blank">
+            创建python 虚拟环境 venv
+          </a>
+          <span> 2017-08-19 19:53:29 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/1.html" class="link" target="_blank">
+            关于suiyan.cc
+          </a>
+          <span> 2017-08-19 16:51:30 </span>
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/404.html" class="link" target="_blank">
+            suiyan.cc 404页面
+          </a>
+          <span> 2017-08-19 16:25:07 </span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
 </div>
 
-    
-        <div class="blog-search">
-            <input id="search-input" type="text" placeholder="JavaScript">
-            <button type="button" id="search-btn" class="vibrate-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-    </header>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h2 class="modal-title fs-5" id="exampleModalLabel">搜索结果</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <article>
-                    <a href="#close"
-                       aria-label="Close"
-                       class="close"
-                       data-target="modal-example"
-                       onClick="toggleModal(event)">
-                    </a>
-                    <div id="modal" style="display: none;">
-                        <ul id="result-list"></ul>
-                    </div>
-                </article>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
         </div>
+        <div class="sider-left fixed top-32 hidden lg:block">
+          <div class="avatar">
+            <div
+              class="w-20 rounded-full ring-offset-base-100 ring-offset-2"
+            >
+              <img src="https://suiyan.cc/assets/images/avatar.jpg"
+              alt="J.sky" />
+            </div>
+          </div>
+          <ul class="text-center text-sm space-y-1">
+            
+            <li>
+              <a href="https://suiyan.cc/"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">Home</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/archives.html"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">Archive</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/tags.html"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">Tags</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/before-2022/1.html"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">About Me</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/links.html"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">Links</button></a
+              >
+            </li>
+            
+  
+          </ul>
         </div>
+        <!-- ======= Footer ======= -->
+
+    <footer class="footer p-3 bg-base-200 text-base-content">
+  <div>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+      ><img
+        alt="知识共享许可协议"
+        style="border-width: 0"
+        src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+    /></a>
+    <div>
+      Designed by
+      <a href="https://github.com/Jsky2020/suiyan" target="_blank">SuiYan</a> |
+      Theme by
+      <a href="https://github.com/bosichong/coding_blog" target="_blank"
+        >Coding-blog</a
+      >
     </div>
-    <script src="https://suiyan.cc/assets/js/matrix.js"></script>
+
+    <div class="container typed-div">
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <div class="hd"><span id="typed"></span></div>
+      <script>
+            const typed = new Typed('#typed', {
+            strings: [
+            
+            '积硅步以致千里',
+            
+            '积怠惰以致深渊',
+            
+            '只比你努力一点的人',
+            
+            '其实已经甩你很远了！',
+            
+            ],
+            typeSpeed: 250,
+            backSpeed: 100,
+            backDelay: 100,
+            startDelay: 1000,
+            loop:true
+        });
+      </script>
+    </div>
+  </div>
+
+  <div>
+    <span class="footer-title">Contact me</span>
+    <div class="grid grid-flow-col gap-2 text-lg">
+      
+      <a href="https://suiyan.cc/" target="_blank" class=""
+        ><i class="fa fa-home"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/archives.html" target="_blank" class=""
+        ><i class="fa fa-archive"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/tags.html" target="_blank" class=""
+        ><i class="fa fa-tags"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/before-2022/1.html" target="_blank" class=""
+        ><i class="fa fa-user-md"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/links.html" target="_blank" class=""
+        ><i class="fa fa-link"></i
+      ></a>
+      
+    </div>
+  </div>
+</footer>
+
+    <!-- End  Footer -->
+
+      </div>
 
 
-<!-- End Header -->
-
-<main id="main">
-
-    <section class="inner-page">
+      <a id="scrollUp" href="#top" style="position: fixed; display: block;" class="text-1xl"></a>
        
 
-    <header class="entry-header">
-        <h1 class="single-title">
-            文章归档
-        </h1>
-        <div class="archives-meta">
-      <span class="meta">
-       共有文章:168篇,最后更新:2023-06-14 15:19:48
-      </span>
-        </div>
-    </header>
-    <br>
-<div class="accordion" id="accordionExample">
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading1">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapseTwo">
-      2023-06 (共17篇文章)
-    </button>
-  </h2>
-  <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230614151948.html" target="_blank">
-           你最讨厌什么样的独立博客？
-          </a>
-            <span>
-           2023-06-14 15:19:48
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230613193700.html" target="_blank">
-           使用Python编写并部署个人静态博客:(五)Python异步输出博文页面
-          </a>
-            <span>
-           2023-06-13 19:37:00
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230612091630.html" target="_blank">
-           一键生成Matrix动态头像
-          </a>
-            <span>
-           2023-06-12 09:16:30
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230611084325.html" target="_blank">
-           Django 4.2 复习笔记(九)Django Forms 使用表单
-          </a>
-            <span>
-           2023-06-11 08:43:25
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230609094312.html" target="_blank">
-           好看的博客千篇一律 有趣的博主万里挑一
-          </a>
-            <span>
-           2023-06-09 09:43:12
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230609081842.html" target="_blank">
-           使用Python编写并部署个人静态博客:(四)逐步输出静态页面
-          </a>
-            <span>
-           2023-06-09 08:18:42
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230608185126.html" target="_blank">
-           clipboard.js 一款简单好用的将文本复制到剪贴板的现代方法
-          </a>
-            <span>
-           2023-06-08 18:51:26
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230608184436.html" target="_blank">
-           一行代码升级你的node.js为最新稳定版
-          </a>
-            <span>
-           2023-06-08 18:44:36
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230608102340.html" target="_blank">
-           CDN引用lodash报错 _.debounce is not a function
-          </a>
-            <span>
-           2023-06-08 10:23:40
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230607211438.html" target="_blank">
-           Matrix 矩阵 JavaScript代码生成器
-          </a>
-            <span>
-           2023-06-07 21:14:38
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230605083417.html" target="_blank">
-           Django 4.2 复习笔记(九)使用Django的上下文处理器（context processor）
-          </a>
-            <span>
-           2023-06-05 08:34:17
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230604161547.html" target="_blank">
-           如何单独使用Django ORM 在非Django项目中使用Django ORM？
-          </a>
-            <span>
-           2023-06-04 16:15:47
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230604084835.html" target="_blank">
-           Django 4.2 复习笔记(八)Django 模板语言语法
-          </a>
-            <span>
-           2023-06-04 08:48:35
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230603073259.html" target="_blank">
-           Django 4.2 复习笔记(七)Django 模板(TEMPLATES)
-          </a>
-            <span>
-           2023-06-03 07:32:59
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230602101713.html" target="_blank">
-           macOS更新后 终端提示：The default interactive shell is now zsh.
-          </a>
-            <span>
-           2023-06-02 10:17:13
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230602070849.html" target="_blank">
-           Python权限管理框架 Casbin PyCasbin 的简单操作
-          </a>
-            <span>
-           2023-06-02 07:08:49
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230601090428.html" target="_blank">
-           记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2
-          </a>
-            <span>
-           2023-06-01 09:04:28
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading2">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapseTwo">
-      2023-05 (共31篇文章)
-    </button>
-  </h2>
-  <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230531194542.html" target="_blank">
-           Tailwind CSS 相关的组件库
-          </a>
-            <span>
-           2023-05-31 19:45:42
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230530145118.html" target="_blank">
-           JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......
-          </a>
-            <span>
-           2023-05-30 14:51:18
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230529193749.html" target="_blank">
-           Vue+element+Vite安装 Tailwind CSS
-          </a>
-            <span>
-           2023-05-29 19:37:49
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230529075925.html" target="_blank">
-           Django 4.2 复习笔记(六)Django的路由
-          </a>
-            <span>
-           2023-05-29 07:59:25
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230528074712.html" target="_blank">
-           SQLAlchemy的关系字段和Django的关系字段他们的不同点。
-          </a>
-            <span>
-           2023-05-28 07:47:12
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230528074013.html" target="_blank">
-           Django 4.2 复习笔记(五)Django中常见的关系字段及其示例
-          </a>
-            <span>
-           2023-05-28 07:40:13
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230527070832.html" target="_blank">
-           css实现漂亮的彩虹渐变文本效果
-          </a>
-            <span>
-           2023-05-27 07:08:32
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230525084144.html" target="_blank">
-           Django 4.2 复习笔记(四)数据的查询Django的ORM
-          </a>
-            <span>
-           2023-05-25 08:41:44
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230524211340.html" target="_blank">
-           Django 4.2 复习笔记(三)Model模型字段
-          </a>
-            <span>
-           2023-05-24 21:13:40
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230522201800.html" target="_blank">
-           vite打包后element样式被其他框架样式覆盖的解决方法
-          </a>
-            <span>
-           2023-05-22 20:18:00
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230522201116.html" target="_blank">
-           如何解决 Some chunks are larger than 500 KiB after minification？
-          </a>
-            <span>
-           2023-05-22 20:11:16
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230520081153.html" target="_blank">
-           Django 4.2 复习笔记(二)编写和调试Model模型
-          </a>
-            <span>
-           2023-05-20 08:11:53
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230518092845.html" target="_blank">
-           Django 4.2 复习笔记(一)迅速概览
-          </a>
-            <span>
-           2023-05-18 09:28:45
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230517084718.html" target="_blank">
-           使用Python编写并部署个人静态博客:(三)搜集博客数据
-          </a>
-            <span>
-           2023-05-17 08:47:18
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230516211444.html" target="_blank">
-           一款基于GitHub的评论系统不但免费安装还贼简单！
-          </a>
-            <span>
-           2023-05-16 21:14:44
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230516132817.html" target="_blank">
-           使用Moment.js或Day.js对HTML页面上的时间进行格式化
-          </a>
-            <span>
-           2023-05-16 13:28:17
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230515215136.html" target="_blank">
-           async/await和fetch()的使用
-          </a>
-            <span>
-           2023-05-15 21:51:36
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230515105053.html" target="_blank">
-           fetch()如何读取请求中的'user-agent'？
-          </a>
-            <span>
-           2023-05-15 10:50:53
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230514163231.html" target="_blank">
-           一些关于中文独立博客的聚合网站
-          </a>
-            <span>
-           2023-05-14 16:32:31
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230513104151.html" target="_blank">
-           display:none没有隐藏元素所占空间的原因
-          </a>
-            <span>
-           2023-05-13 10:41:51
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230513082050.html" target="_blank">
-           再谈TailwindCSS的使用心得
-          </a>
-            <span>
-           2023-05-13 08:20:50
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230511191515.html" target="_blank">
-           安装了Tailwind CSS IntelliSense插件 vscode没有代码提示
-          </a>
-            <span>
-           2023-05-11 19:15:15
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230511182912.html" target="_blank">
-           Tailwind CSS的安装配置和体验
-          </a>
-            <span>
-           2023-05-11 18:29:12
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230509201037.html" target="_blank">
-           Git提示 ! [remote rejected] master -> master (failure)
-          </a>
-            <span>
-           2023-05-09 20:10:37
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230509101659.html" target="_blank">
-           使用Fetch发送Ajax请求
-          </a>
-            <span>
-           2023-05-09 10:16:59
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230508213333.html" target="_blank">
-           读《写作是门手艺》的思考
-          </a>
-            <span>
-           2023-05-08 21:33:33
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230508090813.html" target="_blank">
-           Link-Validator 检测网站友情链接的JavaScript脚本
-          </a>
-            <span>
-           2023-05-08 09:08:13
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230507204135.html" target="_blank">
-           css链接悬停时滑动的下划线效果
-          </a>
-            <span>
-           2023-05-07 20:41:35
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230507101510.html" target="_blank">
-           使用CSS伪元素制作动感超酷的hover动画
-          </a>
-            <span>
-           2023-05-07 10:15:10
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230504201422.html" target="_blank">
-           CSS动画animation的简单应用
-          </a>
-            <span>
-           2023-05-04 20:14:22
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230504105514.html" target="_blank">
-           css的过渡效果transition的使用
-          </a>
-            <span>
-           2023-05-04 10:55:14
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading3">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapseTwo">
-      2023-04 (共16篇文章)
-    </button>
-  </h2>
-  <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230430073441.html" target="_blank">
-           Vue3+Element Plus环境搭建和一键切换明暗主题的配置
-          </a>
-            <span>
-           2023-04-30 07:34:41
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230428181550.html" target="_blank">
-           新站已提交sitemap百度不抓取Google也不收录
-          </a>
-            <span>
-           2023-04-28 18:15:50
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230427151750.html" target="_blank">
-           coding_blog 碎言静态博客主题
-          </a>
-            <span>
-           2023-04-27 15:17:50
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230424194612.html" target="_blank">
-           JianCe 简测 简单的在线答题应用
-          </a>
-            <span>
-           2023-04-24 19:46:12
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230423094305.html" target="_blank">
-           vue3前端打包集成到后端fastAPI的uvicorn服务器
-          </a>
-            <span>
-           2023-04-23 09:43:05
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230420162736.html" target="_blank">
-           simple_blog 碎言静态博客主题
-          </a>
-            <span>
-           2023-04-20 16:27:36
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230420101527.html" target="_blank">
-           使用Python编写并部署个人静态博客:(二)实现静态页面的输出
-          </a>
-            <span>
-           2023-04-20 10:15:27
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230418122936.html" target="_blank">
-           css布局如何选择flex和grid?
-          </a>
-            <span>
-           2023-04-18 12:29:36
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230416175852.html" target="_blank">
-           从回调函数到JavaScript异步编程
-          </a>
-            <span>
-           2023-04-16 17:58:52
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230413095913.html" target="_blank">
-           2023重学前端:HTML CSS JavaScript基础复习
-          </a>
-            <span>
-           2023-04-13 09:59:13
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230410075954.html" target="_blank">
-           使用Python编写并部署个人静态博客:(一)分析与设计
-          </a>
-            <span>
-           2023-04-10 07:59:54
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230408093536.html" target="_blank">
-           free_blog 碎言静态博客主题
-          </a>
-            <span>
-           2023-04-08 09:35:36
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230405202140.html" target="_blank">
-           程序员的痛苦：颈椎病和肩周炎
-          </a>
-            <span>
-           2023-04-05 20:21:40
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/106.html" target="_blank">
-           碎言静态博客
-          </a>
-            <span>
-           2023-04-05 10:26:39
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230404212258.html" target="_blank">
-           解决Github Pages自定义域名失效的问题
-          </a>
-            <span>
-           2023-04-04 21:22:58
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230404163916.html" target="_blank">
-           Pico.css大道至简返璞归真--一个简单轻量化的CSS框架
-          </a>
-            <span>
-           2023-04-04 16:39:16
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading4">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapseTwo">
-      2023-03 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/2023/20230324234058.html" target="_blank">
-           好了，又可以愉快的写博客了
-          </a>
-            <span>
-           2023-03-24 23:40:58
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading5">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapseTwo">
-      2022-09 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20220923093608.html" target="_blank">
-           又可以继续写blog了
-          </a>
-            <span>
-           2022-09-23 09:36:08
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading6">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapseTwo">
-      2021-05 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20210521155450.html" target="_blank">
-           PyKeyBoardFairy可以替代你游戏中的卡键盘和鼠标宏
-          </a>
-            <span>
-           2021-05-21 15:54:50
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading7">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapseTwo">
-      2021-03 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20210316093818.html" target="_blank">
-           Flask-SQLAlchemy 使用学习笔记(下):一对一、一对多、多对多关系
-          </a>
-            <span>
-           2021-03-16 09:38:18
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading8">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapseTwo">
-      2021-02 (共4篇文章)
-    </button>
-  </h2>
-  <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20210223155027.html" target="_blank">
-           Flask-SQLAlchemy 使用学习笔记(上):简单的配置及使用
-          </a>
-            <span>
-           2021-02-23 15:50:27
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20210222084745.html" target="_blank">
-           Flask项目配置(config)经验
-          </a>
-            <span>
-           2021-02-22 08:47:45
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20210220153815.html" target="_blank">
-           pipenv 简化的虚拟环境、项目依赖管理工具
-          </a>
-            <span>
-           2021-02-20 15:38:15
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20210212002001.html" target="_blank">
-           Anaconda常用终端命令
-          </a>
-            <span>
-           2021-02-12 00:20:01
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading9">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapseTwo">
-      2020-12 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20201202155245.html" target="_blank">
-           如何打包上传Python程序或模块包到PyPi供其他人使用pip下载？
-          </a>
-            <span>
-           2020-12-07 20:30:45
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading10">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapseTwo">
-      2020-10 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20201005203404.html" target="_blank">
-           聊聊Python中的装饰器
-          </a>
-            <span>
-           2020-10-05 20:34:04
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading11">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapseTwo">
-      2020-03 (共4篇文章)
-    </button>
-  </h2>
-  <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200330194328.html" target="_blank">
-           npm更换源与nrm安装与配置
-          </a>
-            <span>
-           2020-03-30 19:43:28
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200330193816.html" target="_blank">
-           pip临时修改下载源
-          </a>
-            <span>
-           2020-03-30 19:38:16
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200319093318.html" target="_blank">
-           Vue快速学习笔记(9)Vuetify配置及简单使用
-          </a>
-            <span>
-           2020-03-19 09:33:18
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200305151608.html" target="_blank">
-           Vue快速学习笔记(8)webpack4.X配置Vue开发打包环境
-          </a>
-            <span>
-           2020-03-05 15:16:08
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading12">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapseTwo">
-      2020-02 (共4篇文章)
-    </button>
-  </h2>
-  <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200212190302.html" target="_blank">
-           Vue快速学习笔记(5)使用路由vue-router(1)
-          </a>
-            <span>
-           2020-02-12 19:03:02
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200211153353.html" target="_blank">
-           Vue快速学习笔记(4)Vue组件中的数据传递
-          </a>
-            <span>
-           2020-02-11 15:33:53
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200204150807.html" target="_blank">
-           Vue快速学习笔记(3)Vue的组件
-          </a>
-            <span>
-           2020-02-04 15:08:07
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200201103126.html" target="_blank">
-           Vue快速学习笔记(2)Vue中的监听与计算属性
-          </a>
-            <span>
-           2020-02-01 10:31:26
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading13">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapseTwo">
-      2020-01 (共4篇文章)
-    </button>
-  </h2>
-  <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200110211843.html" target="_blank">
-           Vue快速学习笔记(1)Vue实例基础
-          </a>
-            <span>
-           2020-01-10 21:18:43
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200108191737.html" target="_blank">
-           使用碎言静态博客依托码云Pages搭建自己的免费博客
-          </a>
-            <span>
-           2020-01-08 19:17:37
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200108161047.html" target="_blank">
-           今天是个好日子发行了碎言静态博客的功能完整版
-          </a>
-            <span>
-           2020-01-08 16:10:47
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20200101210954.html" target="_blank">
-           前端项目构建打包的一些学习笔记
-          </a>
-            <span>
-           2020-01-01 21:09:54
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading14">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapseTwo">
-      2019-12 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/links.html" target="_blank">
-           友情链接
-          </a>
-            <span>
-           2019-12-30 16:25:07
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading15">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapseTwo">
-      2019-11 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/103.html" target="_blank">
-           基于Django构建的小学生英文单词背写检测考试系统。
-          </a>
-            <span>
-           2019-11-07 16:10:19
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading16">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapseTwo">
-      2019-06 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/101.html" target="_blank">
-           如何在Python程序中使用配置文件.ini(ConfigParser)
-          </a>
-            <span>
-           2019-06-18 15:29:01
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading17">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapseTwo">
-      2019-05 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/100.html" target="_blank">
-           写在我的博客PV10万时：聊聊编程与画画
-          </a>
-            <span>
-           2019-05-14 09:11:29
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading18">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapseTwo">
-      2019-01 (共2篇文章)
-    </button>
-  </h2>
-  <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/97.html" target="_blank">
-           wxPython编程学习笔记(10)wx.FileDialog文件选择框
-          </a>
-            <span>
-           2019-01-05 14:41:02
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/96.html" target="_blank">
-           wxPython编程学习笔记(09)wx.Python Menu 菜单
-          </a>
-            <span>
-           2019-01-03 18:08:40
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading19">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19" aria-expanded="false" aria-controls="collapseTwo">
-      2018-12 (共9篇文章)
-    </button>
-  </h2>
-  <div id="collapse19" class="accordion-collapse collapse" aria-labelledby="heading19" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/95.html" target="_blank">
-           Python os.mknod 运行报错无法创建文件
-          </a>
-            <span>
-           2018-12-27 10:47:01
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/94.html" target="_blank">
-           wxPython编程学习笔记(08)wx.ListBox 下拉列表框
-          </a>
-            <span>
-           2018-12-27 09:51:07
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/93.html" target="_blank">
-           wxPython编程学习笔记(07)wxPython Dialog 弹出对话
-          </a>
-            <span>
-           2018-12-25 13:17:28
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/92.html" target="_blank">
-           wxPython编程学习笔记(06)wx.ComboBox下拉列表框
-          </a>
-            <span>
-           2018-12-24 14:24:56
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/91.html" target="_blank">
-           wxPython编程学习笔记(05)单选及多选按钮
-          </a>
-            <span>
-           2018-12-23 18:49:39
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/90.html" target="_blank">
-           wxPython编程学习笔记(04)wx.Butoon的应用
-          </a>
-            <span>
-           2018-12-22 20:26:29
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/89.html" target="_blank">
-           wxPython编程学习笔记(03)wxPython中的事件
-          </a>
-            <span>
-           2018-12-21 19:11:40
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/88.html" target="_blank">
-           wxPython编程学习笔记(02)wxPython的布局
-          </a>
-            <span>
-           2018-12-19 20:22:01
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/87.html" target="_blank">
-           wxPython编程学习笔记(01)Frame程序的窗口
-          </a>
-            <span>
-           2018-12-18 19:42:47
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading20">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20" aria-expanded="false" aria-controls="collapseTwo">
-      2018-11 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="heading20" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/86.html" target="_blank">
-           Python os.path.dirname(__file__) 在终端命令行下报错
-          </a>
-            <span>
-           2018-11-21 22:16:58
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading21">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse21" aria-expanded="false" aria-controls="collapseTwo">
-      2018-10 (共2篇文章)
-    </button>
-  </h2>
-  <div id="collapse21" class="accordion-collapse collapse" aria-labelledby="heading21" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/84.html" target="_blank">
-           Git多人协作（码云）中的一些操作简单记录
-          </a>
-            <span>
-           2018-10-28 14:24:15
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/83.html" target="_blank">
-           利用Python自动生成小学生加减乘除口算考试题卷。
-          </a>
-            <span>
-           2018-10-24 10:50:04
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading22">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse22" aria-expanded="false" aria-controls="collapseTwo">
-      2018-06 (共1篇文章)
-    </button>
-  </h2>
-  <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="heading22" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/82.html" target="_blank">
-           有时人生需要做出选择
-          </a>
-            <span>
-           2018-06-12 10:05:40
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading23">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse23" aria-expanded="false" aria-controls="collapseTwo">
-      2018-01 (共7篇文章)
-    </button>
-  </h2>
-  <div id="collapse23" class="accordion-collapse collapse" aria-labelledby="heading23" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/79.html" target="_blank">
-           聊聊Python中的递归与快速排序那点事
-          </a>
-            <span>
-           2018-01-30 14:38:39
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/77.html" target="_blank">
-           “编学编玩”用Pygame编写游戏（10）pygame实现一个黑客帝国矩阵(Matrix)
-          </a>
-            <span>
-           2018-01-16 10:25:21
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/76.html" target="_blank">
-           “编学编玩”用Pygame编写游戏（9）Tetromino俄罗斯方块游戏
-          </a>
-            <span>
-           2018-01-13 16:00:40
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/75.html" target="_blank">
-           极速学习C++之基础篇
-          </a>
-            <span>
-           2018-01-11 09:07:47
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/74.html" target="_blank">
-           妙用IPython学习Python--IPython快速上手
-          </a>
-            <span>
-           2018-01-07 10:16:11
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/73.html" target="_blank">
-           “编学编玩”用Pygame编写游戏（8）GreedSnake贪食蛇小游戏
-          </a>
-            <span>
-           2018-01-05 09:41:22
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/72.html" target="_blank">
-           2018 新年快乐！希望在coding中找到自己的快乐与希望
-          </a>
-            <span>
-           2018-01-01 17:40:57
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading24">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse24" aria-expanded="false" aria-controls="collapseTwo">
-      2017-12 (共4篇文章)
-    </button>
-  </h2>
-  <div id="collapse24" class="accordion-collapse collapse" aria-labelledby="heading24" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/71.html" target="_blank">
-           “编学编玩”用Pygame编写游戏（7）Pingball弹球小游戏
-          </a>
-            <span>
-           2017-12-29 20:18:35
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/70.html" target="_blank">
-           “编学编玩”用Pygame编写游戏（6）PY_RPG 一个pygame的简单封装。
-          </a>
-            <span>
-           2017-12-28 21:41:37
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/69.html" target="_blank">
-           Python TK和Tkinter的GUI编程(10) filedialog 文件目录选择对话框
-          </a>
-            <span>
-           2017-12-24 19:21:04
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/68.html" target="_blank">
-           Python生成器yield应用实例——监控日志
-          </a>
-            <span>
-           2017-12-22 09:19:40
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading25">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse25" aria-expanded="false" aria-controls="collapseTwo">
-      2017-11 (共2篇文章)
-    </button>
-  </h2>
-  <div id="collapse25" class="accordion-collapse collapse" aria-labelledby="heading25" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/55.html" target="_blank">
-           听说存储数据Python与SQLite3更配哦！
-          </a>
-            <span>
-           2017-11-16 17:34:15
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/51.html" target="_blank">
-           如何快速的复习学习过的Python
-          </a>
-            <span>
-           2017-11-07 16:19:22
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading26">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse26" aria-expanded="false" aria-controls="collapseTwo">
-      2017-10 (共19篇文章)
-    </button>
-  </h2>
-  <div id="collapse26" class="accordion-collapse collapse" aria-labelledby="heading26" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/50.html" target="_blank">
-           python中导入不同目录中的自定义模块/class/函数/方法
-          </a>
-            <span>
-           2017-10-27 10:37:17
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/49.html" target="_blank">
-           基于Python、Tk构建的可视化目录文件同步助手
-          </a>
-            <span>
-           2017-10-26 15:04:15
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/48.html" target="_blank">
-           “编学编玩”用Pygame编写游戏（5）pygame绘制一个钟表
-          </a>
-            <span>
-           2017-10-23 15:51:11
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/47.html" target="_blank">
-           “编学编玩”用Pygame写游戏（4）一个python问答游戏
-          </a>
-            <span>
-           2017-10-22 09:50:35
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/46.html" target="_blank">
-           “编学编玩”用Pygame写游戏（3）让角色动起来及碰撞检测
-          </a>
-            <span>
-           2017-10-20 16:00:52
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/45.html" target="_blank">
-           “编学编玩”用Pygame写游戏（2）在场景中绘制图形与动画
-          </a>
-            <span>
-           2017-10-19 14:03:46
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/44.html" target="_blank">
-           “编学编玩”用Pygame写游戏（1）初识pygame
-          </a>
-            <span>
-           2017-10-19 11:00:31
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/43.html" target="_blank">
-           浅谈Python中的协程及利用协程代替多线程及多进程并发编程
-          </a>
-            <span>
-           2017-10-15 15:52:46
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/42.html" target="_blank">
-           聊聊Python中晦涩的生成器（yield）与生成器表达式
-          </a>
-            <span>
-           2017-10-14 08:21:49
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/41.html" target="_blank">
-           Python中创建TCP服务器与客户端进行通信(下)Tk、thread与socket组合。
-          </a>
-            <span>
-           2017-10-13 10:57:48
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/40.html" target="_blank">
-           Python中创建TCP服务器与客户端进行通信（上）
-          </a>
-            <span>
-           2017-10-12 10:14:40
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/39.html" target="_blank">
-           Python程序在Windows10终端运行中文乱码解决方法
-          </a>
-            <span>
-           2017-10-10 21:03:34
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/38.html" target="_blank">
-           你与黑客之间差了多少行Python代码？
-          </a>
-            <span>
-           2017-10-10 15:23:17
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/37.html" target="_blank">
-           一些站长常用的搜索收录、访问统计平台
-          </a>
-            <span>
-           2017-10-09 20:45:57
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/36.html" target="_blank">
-           聊聊Python闭包（Closure）的那点事。
-          </a>
-            <span>
-           2017-10-09 15:36:19
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/35.html" target="_blank">
-           Python并发编程（下）功能强大设置简单的分布式多进程生产者与消费者模式
-          </a>
-            <span>
-           2017-10-07 14:09:46
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/34.html" target="_blank">
-           Python并发编程（上）进程模块multiprocessing模块和Process类
-          </a>
-            <span>
-           2017-10-06 09:43:48
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/33.html" target="_blank">
-           Python多线程编程（下）多线程锁 threading.Lock
-          </a>
-            <span>
-           2017-10-04 14:49:34
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/32.html" target="_blank">
-           Python多线程编程（上）多线程创建的几种方法
-          </a>
-            <span>
-           2017-10-03 13:01:21
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading27">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse27" aria-expanded="false" aria-controls="collapseTwo">
-      2017-09 (共23篇文章)
-    </button>
-  </h2>
-  <div id="collapse27" class="accordion-collapse collapse" aria-labelledby="heading27" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/31.html" target="_blank">
-           python 类的静态方法和类方法
-          </a>
-            <span>
-           2017-09-30 09:31:31
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/30.html" target="_blank">
-           Python面向对象编程（OOP）初探
-          </a>
-            <span>
-           2017-09-29 15:27:35
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/29.html" target="_blank">
-           Python TK和Tkinter的GUI编程(9) Event 键盘鼠标事件
-          </a>
-            <span>
-           2017-09-28 13:33:43
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/28.html" target="_blank">
-           Python TK和Tkinter的GUI编程(8) Scalet和Spinbox的简单使用
-          </a>
-            <span>
-           2017-09-28 09:50:15
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/27.html" target="_blank">
-           Python TK和Tkinter的GUI编程(7) Scrollbar的使用
-          </a>
-            <span>
-           2017-09-27 21:23:07
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/26.html" target="_blank">
-           Python TK和Tkinter的GUI编程(6) Checkbutton Radiobutton
-          </a>
-            <span>
-           2017-09-27 13:10:36
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/25.html" target="_blank">
-           Python TK和Tkinter的GUI编程(5) messagebox tk的弹出对话框
-          </a>
-            <span>
-           2017-09-26 16:48:51
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/24.html" target="_blank">
-           Python TK和Tkinter的GUI编程(4) Entry Text 文本框控件
-          </a>
-            <span>
-           2017-09-26 10:26:15
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/23.html" target="_blank">
-           Python TK和Tkinter的GUI编程(3) 列表框 Listbox
-          </a>
-            <span>
-           2017-09-23 13:40:35
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/22.html" target="_blank">
-           Python TK和Tkinter的GUI编程(2)菜单Menu
-          </a>
-            <span>
-           2017-09-22 11:02:33
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/21.html" target="_blank">
-           Python TK和Tkinter的GUI编程(1)窗口、标签Label、按钮Button
-          </a>
-            <span>
-           2017-09-22 09:10:27
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/20.html" target="_blank">
-           Python random 随机数模块操作总结
-          </a>
-            <span>
-           2017-09-20 13:28:23
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/19.html" target="_blank">
-           Python 对象引用与复制 (Python参考手册读书笔记)
-          </a>
-            <span>
-           2017-09-19 15:51:04
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/18.html" target="_blank">
-           Python 字符串格式化(%操作符)及format函数的使用
-          </a>
-            <span>
-           2017-09-19 15:12:22
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/17.html" target="_blank">
-           关于本站封面头部大图
-          </a>
-            <span>
-           2017-09-18 14:19:35
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/16.html" target="_blank">
-           Python3 datetime模块的时间操作
-          </a>
-            <span>
-           2017-09-18 13:23:43
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/15.html" target="_blank">
-           python3函数学习笔记简单总结
-          </a>
-            <span>
-           2017-09-09 09:27:49
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/14.html" target="_blank">
-           PythonINI配置文件读写的简单方法
-          </a>
-            <span>
-           2017-09-06 10:19:07
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/13.html" target="_blank">
-           Python open()函数文件打开、读、写操作总结
-          </a>
-            <span>
-           2017-09-05 13:36:55
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/12.html" target="_blank">
-           Python os.path模块中一些常用方法的整理总结
-          </a>
-            <span>
-           2017-09-04 14:37:17
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/11.html" target="_blank">
-           Python 采集数据三步曲之[Requests + re.py模块进行数据采集]
-          </a>
-            <span>
-           2017-09-02 12:41:30
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/10.html" target="_blank">
-           Python 采集数据三步曲之[Requests开源协议的HTTP 库]
-          </a>
-            <span>
-           2017-09-02 09:01:48
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/9.html" target="_blank">
-           Python 采集数据三步曲之[正则表达式 re.py]
-          </a>
-            <span>
-           2017-09-01 13:09:49
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="accordion-item">
-  <h2 class="accordion-header" id="heading28">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse28" aria-expanded="false" aria-controls="collapseTwo">
-      2017-08 (共8篇文章)
-    </button>
-  </h2>
-  <div id="collapse28" class="accordion-collapse collapse" aria-labelledby="heading28" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-      <ul class="list-group">
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/7.html" target="_blank">
-           Mac OS X gitk窗口打不开及Git的升级方法
-          </a>
-            <span>
-           2017-08-26 16:36:30
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/6.html" target="_blank">
-           Git 版本控制常用命令 简明指南教程
-          </a>
-            <span>
-           2017-08-26 13:03:59
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/5.html" target="_blank">
-           Markdown 语法学习总结
-          </a>
-            <span>
-           2017-08-25 08:55:15
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/4.html" target="_blank">
-           17python.com网站已经部署上线及后期更新记录
-          </a>
-            <span>
-           2017-08-25 01:09:49
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/3.html" target="_blank">
-           python3 Markdown模块解析Markdown代码
-          </a>
-            <span>
-           2017-08-19 19:59:46
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/2.html" target="_blank">
-           创建python 虚拟环境 venv
-          </a>
-            <span>
-           2017-08-19 19:53:29
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/before-2022/1.html" target="_blank">
-           关于suiyan.cc
-          </a>
-            <span>
-           2017-08-19 16:51:30
-          </span>
-        </li>
-        
-        <li class="list-group-item">
-            <a href="https://suiyan.cc/404.html" target="_blank">
-           suiyan.cc 404页面
-          </a>
-            <span>
-           2017-08-19 16:25:07
-          </span>
-        </li>
-        
-    </ul>
-    </div>
-  </div>
-</div>
-
-</div>
 
 
-
-    </section>
-
-</main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer">
-<div class="container">
-    <div class="copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    </div>
-
-    <div class="credits">
-        Designed by <a href="https://github.com/Jsky2020/suiyan" target="_blank">SuiYan</a> | Theme by <a href="https://github.com/bosichong/coding_blog" target="_blank">Coding-blog</a>
-    </div>
-</div>
-</footer><!-- End  Footer -->
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center animate__animated"><i class="fa fa-arrow-up"></i></a>
-<!-- Vendor JS Files -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <!-- CDN example (unpkg) day.js -->
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
@@ -2095,6 +1971,7 @@
 
 <!-- Template Main JS File -->
 <script src="https://suiyan.cc/assets/js/url.js"></script>
+<script src="https://suiyan.cc/assets/js/jquery.scrollUp.min.js"></script>
 <script src="https://suiyan.cc/assets/js/main.js"></script>
 
 </body>

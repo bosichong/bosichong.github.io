@@ -11,315 +11,607 @@
     <title>List Pages 第12页 | SuiYan 碎言博客</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+    />
+
+
+
     <!-- Template Main CSS File -->
     <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ======= Mobile nav toggle button ======= -->
-<i class="fa fa-navicon mobile-nav-toggle d-xl-none animate__animated"></i>
+    <div class="container max-w-3xl mx-auto font-sans text-lg font-extralight">
+        <div
+          id="sider"
+          class="fixed z-50 bg-base-100 container max-w-3xl mx-auto h-screen flex items-center justify-center sider-top"
+        >
+          <button
+            id="menu-close-btn"
+            class="absolute top-2 right-2 btn btn-square btn-ghost text-lg"
+          >
+            <i class="fa fa-close"></i>
+          </button>
+          <div class="card w-96 bg-base-100 shadow-xl p-4 m-4">
+            <div class="text-center">
+              <div class="avatar">
+                <div
+                  class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                >
+                  <img
+                    src="https://suiyan.cc/assets/images/avatar.jpg"
+                    alt="J.sky"
+                  />
+                </div>
+              </div>
+              <h3 class="text-lg my-1">
+                <a href="https://suiyan.cc/" class="">J.sky</a>
+              </h3>
+              <p class="text-xs">You see see you , This one day day di.</p>
+              <div class="mt-2 text-center text-2xl">
+                
+                <a
+                href="https://github.com/bosichong/suiyan"
+                target="_blank"
+                class=""
+                ><i class="fa fa-github"></i
+              ></a>
+            
+                <a
+                href="https://gitee.com/J_Sky/suiyan"
+                target="_blank"
+                class=""
+                ><i class="fa fa-git"></i
+              ></a>
+            
+                <a
+                href="mailto:285911@gmail.com"
+                target="_blank"
+                class=""
+                ><i class="fa fa-envelope"></i
+              ></a>
+            
+                <a
+                href="https://www.zhihu.com/people/J_sky/activities"
+                target="_blank"
+                class=""
+                ><i class="fa fa-book"></i
+              ></a>
+            
+                <a
+                href="https://suiyan.cc/rss.xml"
+                target="_blank"
+                class=""
+                ><i class="fa fa-rss-square"></i
+              ></a>
+            
+                
 
-<!-- ======= Header ======= -->
-
-
-<header id="header">
-<div class="h-top d-flex flex-column">
-    <div class="profile">
-        <!-- <img src="https://suiyan.cc/assets/images/avatar.jpg" alt="" class="img-fluid rounded-circle"> -->
-        <div id="matrix-rapper">
-            <canvas id="matrix" class="rounded-circle"></canvas>
-        </div>
-        <h3 class="blog_author text-light"><a href="https://suiyan.cc/">J.sky</a></h3>
-        <p class="blog-description">
-            You see see you , This one day day di.
-          </p>
-        <div class="social-links mt-3 text-center">
-            
-            <a href="https://github.com/bosichong/suiyan" target="_blank"><i class="fa fa-github"></i></a>
-            
-            <a href="https://gitee.com/J_Sky/suiyan" target="_blank"><i class="fa fa-git"></i></a>
-            
-            <a href="mailto:285911@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
-            
-            <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank"><i class="fa fa-book"></i></a>
-            
-            <a href="https://suiyan.cc/rss.xml" target="_blank"><i class="fa fa-rss-square"></i></a>
-            
-        </div>
-    </div>
-
-    <nav id="navbar" class="nav-menu navbar">
-        <ul>
-            
-            <li><a href="https://suiyan.cc/" class="nav-link scrollto active"><i class="fa fa-home"></i>
-                <span>Home</span></a></li>
-            
-            <li><a href="https://suiyan.cc/archives.html" class="nav-link scrollto active"><i class="fa fa-archive"></i>
-                <span>Archive</span></a></li>
-            
-            <li><a href="https://suiyan.cc/tags.html" class="nav-link scrollto active"><i class="fa fa-tags"></i>
-                <span>Tags</span></a></li>
-            
-            <li><a href="https://suiyan.cc/before-2022/1.html" class="nav-link scrollto active"><i class="fa fa-user-md"></i>
-                <span>About Me</span></a></li>
-            
-            <li><a href="https://suiyan.cc/links.html" class="nav-link scrollto active"><i class="fa fa-link"></i>
-                <span>Links</span></a></li>
-            
-        </ul>
-    </nav><!-- .nav-menu -->
-</div>
-
-    
-        <div class="blog-search">
-            <input id="search-input" type="text" placeholder="JavaScript">
-            <button type="button" id="search-btn" class="vibrate-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h2 class="modal-title fs-5" id="exampleModalLabel">搜索结果</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
             </div>
-            <div class="modal-body">
-                <article>
-                    <a href="#close"
-                       aria-label="Close"
-                       class="close"
-                       data-target="modal-example"
-                       onClick="toggleModal(event)">
-                    </a>
-                    <div id="modal" style="display: none;">
-                        <ul id="result-list"></ul>
+  
+            <ul class="menu bg-base-100 w-36 rounded-box mx-auto">
+              
+              <li>
+                <a href="https://suiyan.cc/"
+                  ><i class="fa fa-home"></i> <span>Home</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/archives.html"
+                  ><i class="fa fa-archive"></i> <span>Archive</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/tags.html"
+                  ><i class="fa fa-tags"></i> <span>Tags</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/before-2022/1.html"
+                  ><i class="fa fa-user-md"></i> <span>About Me</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/links.html"
+                  ><i class="fa fa-link"></i> <span>Links</span></a
+                >
+              </li>
+            
+
+            </ul>
+  
+
+              <!-- 移动端搜索 -->
+              <button class="btn btn-sm" onclick="my_modal_3.showModal()"><i class="fa fa-search"></i>搜索</button>
+              <dialog id="my_modal_3" class="modal">
+                <form method="dialog" class="modal-box">
+                  <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  <h3 class="font-bold text-lg">站内搜索!</h3>
+                  <div class="mx-full">
+                    <input
+                      id="search-input"
+                      type="text"
+                      placeholder="JavaScript"
+                      class="input input-bordered w-3/4 max-w-xs input-sm"
+                    />
+                    <button id="search-btn" class="btn btn-sm">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <div id="modal_s">
+                      <ul id="result-list"></ul>
                     </div>
-                </article>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+                  </div>
+                </form>
+              </dialog>
+            
+
+
+
+          </div>
         </div>
-        </div>
-    </div>
-    <script src="https://suiyan.cc/assets/js/matrix.js"></script>
+        <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
+          <div class="navbar">
+            <div class="navbar-start">
+              <button
+                id="menu-open-btn"
+                class="btn btn-square btn-ghost lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block w-5 h-5 stroke-current"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+              <div class="avatar lg:hidden mx-2">
+                <div
+                  class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                >
+                <a href="https://suiyan.cc/">
+                  <img
+                  src="https://suiyan.cc/assets/images/avatar.jpg"
+                  alt="J.sky"
+                  />
+                </a>
+                  
+                </div>
+              </div>
+              <button
+                class="flex btn btn-sm btn-ghost normal-case font-light text-2xl hidden lg:block"
+              >
+                <a href="https://suiyan.cc/">碎言博客</a>
+              </button>
+            </div>
+            <div class="navbar-end">
+              <div class="hidden lg:block">
+                <!-- You can open the modal using ID.showModal() method -->
+              <button class="btn btn-sm" onclick="my_modal_1.showModal()"><i class="fa fa-search"></i>搜索</button>
+              <dialog id="my_modal_1" class="modal">
+                <form method="dialog" class="modal-box">
+                  <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  <h3 class="font-bold text-lg">站内搜索!</h3>
+                  <div class="mx-full">
+                    <input
+                      id="search-input1"
+                      type="text"
+                      placeholder="JavaScript"
+                      class="input input-bordered w-full max-w-xs input-sm"
+                    />
+                    <button id="search-btn1" class="btn btn-sm">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <div id="modal_s1">
+                      <ul id="result-list1"></ul>
+                    </div>
+                  </div>
+                </form>
+              </dialog>
+              </div>
+              <div class="dropdown dropdown-end">
+                <div tabindex="0" class="btn btn-sm normal-case btn-ghost">
+                  <svg
+                    width="20"
+                    height="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 stroke-current"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                    ></path>
+                  </svg>
+                  <span class="hidden font-normal md:inline">主题</span>
+                  <svg
+                    width="12px"
+                    height="12px"
+                    class="hidden h-2 w-2 fill-current opacity-60 sm:inline-block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 2048 2048"
+                  >
+                    <path
+                      d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
+                    ></path>
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-28"
+                >
+                  <li><a data-set-theme="">Default</a></li>
+                  <li><a data-set-theme="light">light</a></li>
+                  <li><a data-set-theme="dark">dark</a></li>
+                  <li><a data-set-theme="cupcake">cupcake</a></li>
+                  <li><a data-set-theme="retro">retro</a></li>
+                  <li><a data-set-theme="luxury">luxury</a></li>
+                  <li><a data-set-theme="autumn">autumn</a></li>
+                  <li><a data-set-theme="business">business</a></li>
+                  <li><a data-set-theme="valentine">valentine</a></li>
+                  <li><a data-set-theme="coffee">coffee</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="p-4">
+            
 
 
-<!-- End Header -->
 
-<main id="main">
 
-    <section class="inner-page">
-       
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python TK和Tkinter的GUI编程(4) Entry Text 文本框控件</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-26 10:26:15"><span class="cr-time">2017-09-26 10:26:15</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
+      Python GUI 
+    </small>
+  </div>
+  <p class="">Tk的功能不多，但应付一般应用还是足够了，Entry和Text是Tk下边显示及处理文本的小部件。</p>
+  <a href="https://suiyan.cc/before-2022/24.html" class="link link-success">阅读全文>>></a>
 
-<div class="container typed-div">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <div class="hd"><span id="typed"></span></div>
-  <script>
-        const typed = new Typed('#typed', {
-        strings: [
-        
-        '积硅步以致千里',
-        
-        '积怠惰以致深渊',
-        
-        '只比你努力一点的人',
-        
-        '其实已经甩你很远了！',
-        
-        ],
-        typeSpeed: 200,
-        backSpeed: 100,
-        backDelay: 100,
-        startDelay: 1000,
-        loop:true
-    });
-  </script>
+</div>
 </div>
 
-<div class="row justify-content-center">
 
-<article class="artlist col-11 col-xl-5">
-  <hgroup>
-    <h3 class="blog-h3 animate__animated animate__slideInRight">wxPython编程学习笔记(05)单选及多选按钮</h3>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2018-12-23 18:49:39">2018-12-23 18:49:39</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:40:24">2023-04-13 09:40:24</span> | Tag:  
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python TK和Tkinter的GUI编程(3) 列表框 Listbox</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-23 13:40:35"><span class="cr-time">2017-09-23 13:40:35</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
       Python GUI 
     </small>
-  </hgroup>
-  <p class=" animate__animated animate__slideInLeft">单选及多选按钮也是程序中经常使用到的互动小部件，使用频率也是很高的，对于选择按钮，我们重点需要了解的就是触发事件， 通常，单选我们需要得到一组按钮中的选择项值或是键值，多选，我们只要知道每一项返回的布尔值即可。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/91.html" class="readblog animate__animated animate__zoomIn"
-      >阅读全文>>></a
-    >
   </div>
-</article>
+  <p class="">listbox 列表框</p>
+  <a href="https://suiyan.cc/before-2022/23.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
 
 
-<article class="artlist col-11 col-xl-5">
-  <hgroup>
-    <h3 class="blog-h3 animate__animated animate__slideInRight">wxPython编程学习笔记(04)wx.Butoon的应用</h3>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2018-12-22 20:26:29">2018-12-22 20:26:29</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:40:24">2023-04-13 09:40:24</span> | Tag:  
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python TK和Tkinter的GUI编程(2)菜单Menu</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-22 11:02:33"><span class="cr-time">2017-09-22 11:02:33</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
       Python GUI 
     </small>
-  </hgroup>
-  <p class=" animate__animated animate__slideInLeft">按钮是在GUI中使用率最高的一种组件了，点击按钮触发事件可以说是非常普遍的事了。wx.Button使用起来操作简单。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/90.html" class="readblog animate__animated animate__zoomIn"
-      >阅读全文>>></a
-    >
   </div>
-</article>
+  <p class="">菜单的创建是很简单的，先创建一个顶层的菜单加入顶层窗口root中，然后分别创建二级菜单就可以了。</p>
+  <a href="https://suiyan.cc/before-2022/22.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
 
 
-<article class="artlist col-11 col-xl-5">
-  <hgroup>
-    <h3 class="blog-h3 animate__animated animate__slideInRight">wxPython编程学习笔记(03)wxPython中的事件</h3>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2018-12-21 19:11:40">2018-12-21 19:11:40</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:40:24">2023-04-13 09:40:24</span> | Tag:  
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python TK和Tkinter的GUI编程(1)窗口、标签Label、按钮Button</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-22 09:10:27"><span class="cr-time">2017-09-22 09:10:27</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
       Python GUI 
     </small>
-  </hgroup>
-  <p class=" animate__animated animate__slideInLeft">和大多数GUI程序一样，wxPython也有许多的事件可以绑定，这样才会有点击按钮发生行为事件的可能。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/89.html" class="readblog animate__animated animate__zoomIn"
-      >阅读全文>>></a
-    >
   </div>
-</article>
+  <p class="">Python编程中有时我们需要一些可视化的操作，如果功能相对很简单，可以使用Python内置的GUI模块：tkinter这个模块所提供的功能及部件不是很多，如果你用过java，和Swing、AWT相比，tk的所提供的确实是要少很多了。但是如果只是简单的显示或是数据展示，基本上还是够用的。</p>
+  <a href="https://suiyan.cc/before-2022/21.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
 
 
-<article class="artlist col-11 col-xl-5">
-  <hgroup>
-    <h3 class="blog-h3 animate__animated animate__slideInRight">wxPython编程学习笔记(02)wxPython的布局</h3>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2018-12-19 20:22:01">2018-12-19 20:22:01</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:40:24">2023-04-13 09:40:24</span> | Tag:  
-      Python GUI 
-    </small>
-  </hgroup>
-  <p class=" animate__animated animate__slideInLeft">wxPython的布局，窗口程序中会用到很多的小部件，有序的排列这些小部件可以让应用更直观，</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/88.html" class="readblog animate__animated animate__zoomIn"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist col-11 col-xl-5">
-  <hgroup>
-    <h3 class="blog-h3 animate__animated animate__slideInRight">wxPython编程学习笔记(01)Frame程序的窗口</h3>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2018-12-18 19:42:47">2018-12-18 19:42:47</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:40:24">2023-04-13 09:40:24</span> | Tag:  
-      Python GUI 
-    </small>
-  </hgroup>
-  <p class=" animate__animated animate__slideInLeft">wxPython的安装和使用</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/87.html" class="readblog animate__animated animate__zoomIn"
-      >阅读全文>>></a
-    >
-  </div>
-</article>
-
-
-<article class="artlist col-11 col-xl-5">
-  <hgroup>
-    <h3 class="blog-h3 animate__animated animate__slideInRight">Python os.path.dirname(__file__) 在终端命令行下报错</h3>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2018-11-21 22:16:58">2018-11-21 22:16:58</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:40:24">2023-04-13 09:40:24</span> | Tag:  
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python random 随机数模块操作总结</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-20 13:28:23"><span class="cr-time">2017-09-20 13:28:23</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
       Python基础 
     </small>
-  </hgroup>
-  <p class=" animate__animated animate__slideInLeft">Python os.path.dirname(__file__) 在终端命令行下报错</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/86.html" class="readblog animate__animated animate__zoomIn"
-      >阅读全文>>></a
-    >
   </div>
-</article>
+  <p class="">random，是Python中用于生成随机数模块，我们来了解一下这修模中几个常用的函数，这些随机函数可以应付一些日常应用了。</p>
+  <a href="https://suiyan.cc/before-2022/20.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
 
 
-<article class="artlist col-11 col-xl-5">
-  <hgroup>
-    <h3 class="blog-h3 animate__animated animate__slideInRight">Git多人协作（码云）中的一些操作简单记录</h3>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2018-10-28 14:24:15">2018-10-28 14:24:15</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:40:24">2023-04-13 09:40:24</span> | Tag:  
-      Git 
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python 对象引用与复制 (Python参考手册读书笔记)</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-19 15:51:04"><span class="cr-time">2017-09-19 15:51:04</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
+      读书笔记 
     </small>
-  </hgroup>
-  <p class=" animate__animated animate__slideInLeft">我们模拟一个项目的多人Git协作，假设多人合作至少二人，并且添加合作人员进入项目为开发者以上权限。</p>
-  <div>
-    <a href="https://suiyan.cc/before-2022/84.html" class="readblog animate__animated animate__zoomIn"
-      >阅读全文>>></a
-    >
   </div>
-</article>
+  <p class="">Python 对象引用与复制 (Python参考手册读书笔记)</p>
+  <a href="https://suiyan.cc/before-2022/19.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
 
 
-<article class="artlist col-11 col-xl-5">
-  <hgroup>
-    <h3 class="blog-h3 animate__animated animate__slideInRight">利用Python自动生成小学生加减乘除口算考试题卷。</h3>
-    <small
-      >作者:<a href="#">J.sky</a> | 发表于:<span class="cr-time" data-bs-toggle="tooltip"  data-bs-title="2018-10-24 10:50:04">2018-10-24 10:50:04</span> | 更新于:<span class="up-time" data-bs-toggle="tooltip"  data-bs-title="2023-04-13 09:40:24">2023-04-13 09:40:24</span> | Tag:  
-      站长源创 
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python 字符串格式化(%操作符)及format函数的使用</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-19 15:12:22"><span class="cr-time">2017-09-19 15:12:22</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
+      读书笔记 
     </small>
-  </hgroup>
-  <p class=" animate__animated animate__slideInLeft">孩子上小学一年级了，加减乘除的口算就要开始练习了，估计老师肯定会让家长出题，所以提前准备一下，利用Python开发了一套自动生成小学生口算题的小应用。而且今天是程序员节，撸200行代码庆祝一下。：）</p>
+  </div>
+  <p class="">Python 字符串格式化（%操作符）及format函数的使用,Python参考手册，字符串格式化章读书笔记。</p>
+  <a href="https://suiyan.cc/before-2022/18.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
+
+
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">关于本站封面头部大图</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-18 14:19:35"><span class="cr-time">2017-09-18 14:19:35</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
+      站长吐槽 
+    </small>
+  </div>
+  <p class="">看到喜欢的图片就会换上，不知道为什么会喜欢这些偏暖的色调，记得很久以前的有段时间，也曾偏爱冷色调调，可能偏暖色调更LOMO些。</p>
+  <a href="https://suiyan.cc/before-2022/17.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
+
+
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python3 datetime模块的时间操作</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-18 13:23:43"><span class="cr-time">2017-09-18 13:23:43</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
+      Python基础 
+    </small>
+  </div>
+  <p class="">出去旅游一个星期刚刚回来，上周是什么也没有更新，当我们要去做一件自己非常喜欢而又美好的事，就得去做更多不喜欢不美好的事来换取这个机会。时间是有限的，所以应当珍惜当下！今天就来复习一下Python 中有关时间的操作</p>
+  <a href="https://suiyan.cc/before-2022/16.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
+
+
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">python3函数学习笔记简单总结</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-09 09:27:49"><span class="cr-time">2017-09-09 09:27:49</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
+      Python基础 
+    </small>
+  </div>
+  <p class="">python3的函数是简单简约的，但有很有个性，而且有一些很多意思的语法糖，了解并理解这些函数语法，是python学习中必经之路</p>
+  <a href="https://suiyan.cc/before-2022/15.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
+
+
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">PythonINI配置文件读写的简单方法</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-06 10:19:07"><span class="cr-time">2017-09-06 10:19:07</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
+      Python基础 
+    </small>
+  </div>
+  <p class="">.ini 文件是Initialization File的缩写，即初始化文件，是windows的系统配置文件所采用的存储格式，统管windows的各项配置，一般用户就用windows提供的各项图形化管理界面就可实现相同的配置了。但在某些情况，还是要直接编辑ini才方便，一般只有很熟悉windows才能去直接编辑。</p>
+  <a href="https://suiyan.cc/before-2022/14.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
+
+
+<div class="card my-6 bg-base-100 shadow-xl hover:bg-base-200">
+  <div class="card-body">
+  <div class="">
+    <h3 class="text-2xl">Python open()函数文件打开、读、写操作总结</h3>
+    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-05 13:36:55"><span class="cr-time">2017-09-05 13:36:55</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
+      Python基础 
+    </small>
+  </div>
+  <p class="">在编程和计算机的使用中，与文件打交道是必不可少的，每天都要打开读取写入很多的文件，所以了解Python的文件打开、读、写操作是非常有必要的。</p>
+  <a href="https://suiyan.cc/before-2022/13.html" class="link link-success">阅读全文>>></a>
+
+</div>
+</div>
+
+
+
+
+
+  <div class="flex flex-nowrap justify-items-center px-8 my-8">
+
+      <a href="list_11.html" role="button" class="basis-1/3 btn ">Prev</a>
+
+
+      <div class="w-full basis-1/3 text-center" style="line-height: 48px;">12 / 13</div>
+
+
+      <a href="list_13.html" role="button" class=" basis-1/3 btn ">Next</a>
+
+  </div>
+
+
+
+        </div>
+        <div class="sider-left fixed top-32 hidden lg:block">
+          <div class="avatar">
+            <div
+              class="w-20 rounded-full ring-offset-base-100 ring-offset-2"
+            >
+              <img src="https://suiyan.cc/assets/images/avatar.jpg"
+              alt="J.sky" />
+            </div>
+          </div>
+          <ul class="text-center text-sm space-y-1">
+            
+            <li>
+              <a href="https://suiyan.cc/"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">Home</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/archives.html"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">Archive</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/tags.html"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">Tags</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/before-2022/1.html"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">About Me</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/links.html"
+                ><button class="btn btn-sm btn-ghost normal-case font-light">Links</button></a
+              >
+            </li>
+            
+  
+          </ul>
+        </div>
+        <!-- ======= Footer ======= -->
+
+    <footer class="footer p-3 bg-base-200 text-base-content">
   <div>
-    <a href="https://suiyan.cc/before-2022/83.html" class="readblog animate__animated animate__zoomIn"
-      >阅读全文>>></a
-    >
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+      ><img
+        alt="知识共享许可协议"
+        style="border-width: 0"
+        src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+    /></a>
+    <div>
+      Designed by
+      <a href="https://github.com/Jsky2020/suiyan" target="_blank">SuiYan</a> |
+      Theme by
+      <a href="https://github.com/bosichong/coding_blog" target="_blank"
+        >Coding-blog</a
+      >
+    </div>
+
+    <div class="container typed-div">
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <div class="hd"><span id="typed"></span></div>
+      <script>
+            const typed = new Typed('#typed', {
+            strings: [
+            
+            '积硅步以致千里',
+            
+            '积怠惰以致深渊',
+            
+            '只比你努力一点的人',
+            
+            '其实已经甩你很远了！',
+            
+            ],
+            typeSpeed: 250,
+            backSpeed: 100,
+            backDelay: 100,
+            startDelay: 1000,
+            loop:true
+        });
+      </script>
+    </div>
   </div>
-</article>
 
-
-
-</div>
-
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <a href="list_11.html" role="button" class="btn btn-primary">Prev</a>
-    </div>
-    <div class="col">
-      <small>12 / 20</small>
-    </div>
-    <div class="col">
-      <a href="list_13.html" role="button" class="btn btn-primary">Next</a>
+  <div>
+    <span class="footer-title">Contact me</span>
+    <div class="grid grid-flow-col gap-2 text-lg">
+      
+      <a href="https://suiyan.cc/" target="_blank" class=""
+        ><i class="fa fa-home"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/archives.html" target="_blank" class=""
+        ><i class="fa fa-archive"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/tags.html" target="_blank" class=""
+        ><i class="fa fa-tags"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/before-2022/1.html" target="_blank" class=""
+        ><i class="fa fa-user-md"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/links.html" target="_blank" class=""
+        ><i class="fa fa-link"></i
+      ></a>
+      
     </div>
   </div>
-</div>
+</footer>
+
+    <!-- End  Footer -->
+
+      </div>
 
 
-    </section>
+      <a id="scrollUp" href="#top" style="position: fixed; display: block;" class="text-1xl"></a>
+       
 
-</main><!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
-<div class="container">
-    <div class="copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    </div>
 
-    <div class="credits">
-        Designed by <a href="https://github.com/Jsky2020/suiyan" target="_blank">SuiYan</a> | Theme by <a href="https://github.com/bosichong/coding_blog" target="_blank">Coding-blog</a>
-    </div>
-</div>
-</footer><!-- End  Footer -->
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center animate__animated"><i class="fa fa-arrow-up"></i></a>
-<!-- Vendor JS Files -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <!-- CDN example (unpkg) day.js -->
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
@@ -327,6 +619,7 @@
 
 <!-- Template Main JS File -->
 <script src="https://suiyan.cc/assets/js/url.js"></script>
+<script src="https://suiyan.cc/assets/js/jquery.scrollUp.min.js"></script>
 <script src="https://suiyan.cc/assets/js/main.js"></script>
 
 </body>
