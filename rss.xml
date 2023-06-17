@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-16 12:08:48</pubDate>
+        <pubDate>2023-06-17 10:25:23</pubDate>
+        
+        <item>
+            <title>从一次浏览器兼容问题到何不放过自己做个快乐的博主</title>
+            <link>https://suiyan.cc/2023/20230617102523.html</link>
+            <author>J.sky</author>
+            <description>新主题做的很满意，主要是在于技术选型、策划、编写的过程中很畅快，让这个39°炎热的初夏有了一丝丝凉意，唯一美中不足的就是iPhone的Safari浏览器有个兼容性问题让人头疼。</description>
+            <category>碎言博客,站长吐槽</category>
+            <pubDate>2023-06-17 10:25:23</pubDate>
+        </item>
         
         <item>
             <title>基于daisyUI Tailwind CSS做了一个博客主题</title>
@@ -85,15 +94,6 @@
             <description>今天，有一个应用需要更高版本的node.js，但是我从来都没有升级过node.js，特意Google了一下，发现一个超级简单的升级node.js的方法，这里简单的记录一下。</description>
             <category>node.js</category>
             <pubDate>2023-06-08 18:44:36</pubDate>
-        </item>
-        
-        <item>
-            <title>CDN引用lodash报错 _.debounce is not a function</title>
-            <link>https://suiyan.cc/2023/20230608102340.html</link>
-            <author>J.sky</author>
-            <description>今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错`_.debounce is not a function`!真是奇了个怪了！</description>
-            <category>lodash,bug</category>
-            <pubDate>2023-06-08 10:23:40</pubDate>
         </item>
         
     </channel>
