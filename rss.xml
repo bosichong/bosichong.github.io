@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-17 10:25:23</pubDate>
+        <pubDate>2023-06-18 09:04:17</pubDate>
+        
+        <item>
+            <title>百度统计代码可以解决浏览器兼容问题？</title>
+            <link>https://suiyan.cc/2023/20230618090417.html</link>
+            <author>J.sky</author>
+            <description>之前新主题有个主题切换的功能，使用了下拉菜单，但是这个下拉菜单在webkit下有兼容问题，下拉菜单弹出后不能收回，但是最后这个兼容问题却奇怪的被百度统计代码给解决了！</description>
+            <category>JavaScript,BUG</category>
+            <pubDate>2023-06-18 09:04:17</pubDate>
+        </item>
         
         <item>
             <title>从一次浏览器兼容问题到何不放过自己做个快乐的博主</title>
@@ -85,15 +94,6 @@
             <description>复制文本到剪贴板本应该不难。它不应该需要配置的繁琐步骤或大量的加载空间。最重要的是，它不应该依赖于Flash或任何臃肿的框架</description>
             <category>JavaScript库和框架</category>
             <pubDate>2023-06-08 18:51:26</pubDate>
-        </item>
-        
-        <item>
-            <title>一行代码升级你的node.js为最新稳定版</title>
-            <link>https://suiyan.cc/2023/20230608184436.html</link>
-            <author>J.sky</author>
-            <description>今天，有一个应用需要更高版本的node.js，但是我从来都没有升级过node.js，特意Google了一下，发现一个超级简单的升级node.js的方法，这里简单的记录一下。</description>
-            <category>node.js</category>
-            <pubDate>2023-06-08 18:44:36</pubDate>
         </item>
         
     </channel>

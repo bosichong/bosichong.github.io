@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="碎言博客站长吐槽" name="keywords">
-    <meta content="新主题做的很满意，主要是在于技术选型、策划、编写的过程中很畅快，让这个39°炎热的初夏有了一丝丝凉意，唯一美中不足的就是iPhone的Safari浏览器有个兼容性问题让人头疼。" name="description">
+    <meta content="JavaScriptBUG" name="keywords">
+    <meta content="之前新主题有个主题切换的功能，使用了下拉菜单，但是这个下拉菜单在webkit下有兼容问题，下拉菜单弹出后不能收回，但是最后这个兼容问题却奇怪的被百度统计代码给解决了！" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>SuiYan 碎言博客 | 从一次浏览器兼容问题到何不放过自己做个快乐的博主</title>
+    <title>SuiYan 碎言博客 | 百度统计代码可以解决浏览器兼容问题？</title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -286,33 +286,88 @@
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 <div>
   <div class="mb-4">
-    <h1 class="text-3xl">从一次浏览器兼容问题到何不放过自己做个快乐的博主</h1>
+    <h1 class="text-3xl">百度统计代码可以解决浏览器兼容问题？</h1>
     <div class="text-sm my-2">
-      作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-17 10:25:23"><span
+      作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-18 09:04:17"><span
         class="cr-time"
-        >2023-06-17 10:25:23</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-06-17 10:52:28"><span class="up-time">2023-06-17 10:52:28</span></div>
-      | Tag:   碎言博客  站长吐槽 
+        >2023-06-18 09:04:17</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-06-18 09:18:36"><span class="up-time">2023-06-18 09:18:36</span></div>
+      | Tag:   JavaScript  BUG 
     </small>
   </div>
 
-  <div class="mb-4"><p>新主题做的很满意，主要是在于技术选型、策划、编写的过程中很畅快，让这个39°炎热的初夏有了一丝丝凉意，唯一美中不足的就是iPhone的Safari浏览器有个兼容性问题让人头疼。</p>
-<h2>完美主义者的痛苦</h2>
-<p>基于daisyUI制作了一个博客主题，很喜欢这个框架，既让我满足了使用tailwind css的欲望，也实现了我理想中的一些功能，例如一键实现博客的多主题，daisyUI一键换装可以实现20多个主题，配置起来也挺简单的，按着官方的文档，噼里啪啦的一顿操作猛如虎，搞定了主题的适配，很完美！但是，在iPhone的Safari浏览器下边，主题选择下拉菜单弹出后，不能正常的收回，这个着实的让我郁闷了很久，Google、AI都问了，没有解决方法，而且鉴于是手机浏览器，我暂时没有调试的方式，这真是束手无措了。</p>
-<h2>何不换种方式放过自己</h2>
-<p>大约苦苦寻找了几个小时，都没有解决这个BUG，这心里不舒服，就感觉如果有人不巧使用iPhone的Safari浏览器浏览我的博客，切换了主题，发现了这个BUG，会不会一来气，就关了网页，从此不在点开碎言博客，并且吐槽站长不负责任，技术部成熟不够老练，连这点小小的问题都解决不了？</p>
-<h2>断离舍</h2>
-<p>今天早上还在想，怎么办？就是自己浏览自己的博客也会这样的不舒服的，就这么算了吗？最后我决定试试其他浏览器，下载了几个其他热门浏览器，发现都没问题，我悄悄的把Safari从主屏删除了。。。</p>
-<p>想起前几天那个博客群里男的开玩笑(据说在开车)，进而引发女博主不满最后气愤退群的事，当事人是不是有些过于冲动了？这世界到处充满着恶心的对话和视角，如果都按那个女主那样长篇大论的写了一篇评论并且气的晚上都没睡好觉，我觉得这是在用别人的错误来惩罚自己，大可不必。就像Safari的问题，不是我代码的问题，大不了我换个浏览器。人生苦短，把精力留给自己和自己关心的人，至于那些不必要的事，就让他过眼烟云随风而去吧。</p></div>
+  <div class="mb-4"><p>之前新主题有个主题切换的功能，使用了下拉菜单，但是这个下拉菜单在webkit下有兼容问题，下拉菜单弹出后不能收回，但是最后这个兼容问题却奇怪的被百度统计代码给解决了！</p>
+<h2>问题现场</h2>
+<p>下拉菜单代码，引自菜鸟教程：</p>
+<pre><code>&lt;style&gt;
+/* 下拉按钮样式 */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 容器 &lt;div&gt; - 需要定位下拉内容 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 下拉内容 (默认隐藏) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* 下拉菜单的链接 */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* 在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+&lt;/style&gt;
+
+&lt;div class="dropdown"&gt;
+&lt;button class="dropbtn"&gt;下拉菜单&lt;/button&gt;
+&lt;div class="dropdown-content"&gt;
+    &lt;a href="#"&gt;菜鸟教程 1&lt;/a&gt;
+    &lt;a href="#"&gt;菜鸟教程 2&lt;/a&gt;
+    &lt;a href="#"&gt;菜鸟教程 3&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>一段很普通的下来菜单，保存HTML，使用一些服务器插件(Live Server 等)预览，使用iPhone Safari 打开，会发现下拉菜单展开后，无法收回，这个就是一个兼容问题，也是我想要解决掉的问题。</p>
+<p>后来多方尝试搜索，可以使用JavaScript制作一个按钮弹出菜单来替换，但是不满意，然后我就发现菜鸟教程的页面上的下拉菜单在iPhone Safari上没有问题，我把他的页面保存本地，预览，没有问题，我自己复制他的代码的HTML就有问题，好吧排除法来查找，知道我删来删去的，删到了百度统计代码：</p>
+<pre><code>&lt;script src="https://hm.baidu.com/hm.js?4c5d5a36d989457d284188afb75dd84c"&gt;&lt;/script&gt;
+</code></pre>
+<p>删除后下拉菜单就会出现问题，无法收回，恢复百度统计代码，兼容性问题就解决了？！神奇啊！百度统计竟然帮我解决了一个浏览器的兼容性问题！太神奇了。</p>
+<h2>解决问题</h2>
+<p>后来，我就在页面上添加了自己的百度统计代码，至此，这个下拉菜单弹出无法收回的兼容问题就解决掉了！感谢百度统计，百度统计真是为民服务为民解忧！</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
-      
-      <a href="https://suiyan.cc/2023/20230618090417.html" class="text-accent text-md"
-        ><span>< prev</span></a
-      >
        
-      <a href="https://suiyan.cc/2023/20230616120848.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230617102523.html" class="text-accent text-md"
         ><span>next</span> ></a
       >
       
@@ -323,62 +378,50 @@
       <ul>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230616120848.html" class="text-truncate"
-            ><span>基于daisyUI Tailwind CSS做了一个博客主题</span></a
+          <a href="https://suiyan.cc/2023/20230612091630.html" class="text-truncate"
+            ><span>一键生成Matrix动态头像</span></a
           >
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230613193700.html" class="text-truncate"
-            ><span>使用Python编写并部署个人静态博客:(五)Python异步输出博文页面</span></a
+          <a href="https://suiyan.cc/2023/20230607211438.html" class="text-truncate"
+            ><span>Matrix 矩阵 JavaScript代码生成器</span></a
           >
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230609081842.html" class="text-truncate"
-            ><span>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</span></a
+          <a href="https://suiyan.cc/2023/20230530145118.html" class="text-truncate"
+            ><span>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</span></a
           >
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230517084718.html" class="text-truncate"
-            ><span>使用Python编写并部署个人静态博客:(三)搜集博客数据</span></a
+          <a href="https://suiyan.cc/2023/20230515215136.html" class="text-truncate"
+            ><span>async/await和fetch()的使用</span></a
           >
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230427151750.html" class="text-truncate"
-            ><span>coding_blog 碎言静态博客主题</span></a
+          <a href="https://suiyan.cc/2023/20230515105053.html" class="text-truncate"
+            ><span>fetch()如何读取请求中的'user-agent'？</span></a
           >
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230420162736.html" class="text-truncate"
-            ><span>simple_blog 碎言静态博客主题</span></a
+          <a href="https://suiyan.cc/2023/20230509101659.html" class="text-truncate"
+            ><span>使用Fetch发送Ajax请求</span></a
           >
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate"
-            ><span>使用Python编写并部署个人静态博客:(二)实现静态页面的输出</span></a
+          <a href="https://suiyan.cc/2023/20230416175852.html" class="text-truncate"
+            ><span>从回调函数到JavaScript异步编程</span></a
           >
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate"
-            ><span>使用Python编写并部署个人静态博客:(一)分析与设计</span></a
-          >
-        </li>
-        
-        <li>
-          <a href="https://suiyan.cc/2023/20230408093536.html" class="text-truncate"
-            ><span>free_blog 碎言静态博客主题</span></a
-          >
-        </li>
-        
-        <li>
-          <a href="https://suiyan.cc/before-2022/20200108191737.html" class="text-truncate"
-            ><span>使用碎言静态博客依托码云Pages搭建自己的免费博客</span></a
+          <a href="https://suiyan.cc/before-2022/20200101210954.html" class="text-truncate"
+            ><span>前端项目构建打包的一些学习笔记</span></a
           >
         </li>
         
