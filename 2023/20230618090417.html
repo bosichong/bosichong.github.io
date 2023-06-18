@@ -291,7 +291,7 @@
       作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-18 09:04:17"><span
         class="cr-time"
         >2023-06-18 09:04:17</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-06-18 09:18:36"><span class="up-time">2023-06-18 09:18:36</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-06-18 09:23:03"><span class="up-time">2023-06-18 09:23:03</span></div>
       | Tag:   JavaScript  BUG 
     </small>
   </div>
@@ -356,13 +356,15 @@
 &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>一段很普通的下来菜单，保存HTML，使用一些服务器插件(Live Server 等)预览，使用iPhone Safari 打开，会发现下拉菜单展开后，无法收回，这个就是一个兼容问题，也是我想要解决掉的问题。</p>
-<p>后来多方尝试搜索，可以使用JavaScript制作一个按钮弹出菜单来替换，但是不满意，然后我就发现菜鸟教程的页面上的下拉菜单在iPhone Safari上没有问题，我把他的页面保存本地，预览，没有问题，我自己复制他的代码的HTML就有问题，好吧排除法来查找，知道我删来删去的，删到了百度统计代码：</p>
-<pre><code>&lt;script src="https://hm.baidu.com/hm.js?4c5d5a36d989457d284188afb75dd84c"&gt;&lt;/script&gt;
+<p>一段很普通的下拉菜单代码，保存HTML，本地使用一些服务器插件(Live Server 等)预览，使用iPhone Safari 打开，会发现下拉菜单展开后，无法收回，这个就是一个兼容问题，也是我想要解决掉的问题。</p>
+<p>后来多方尝试搜索，可以使用JavaScript制作一个按钮弹出菜单来替换，但是不满意，然后我就发现菜鸟教程的页面上的下拉菜单在iPhone Safari上没有问题，我把他的页面保存本地，预览，没有问题，我自己复制他的代码的HTML就有问题，只好用排除法来发现问题的根源，直到我删来删去的，删到了菜鸟教程页面上的百度统计代码：</p>
+<pre><code>&lt;script src="https://hm.baidu.com/hm.js?3eec0b7da6548cf07db3bc477ea905ee"&gt;&lt;/script&gt;
 </code></pre>
-<p>删除后下拉菜单就会出现问题，无法收回，恢复百度统计代码，兼容性问题就解决了？！神奇啊！百度统计竟然帮我解决了一个浏览器的兼容性问题！太神奇了。</p>
+<p>删除后下拉菜单就会出现无法收回问题，恢复百度统计代码，兼容性问题就解决了？！神奇啊！百度统计竟然帮我解决了一个浏览器的兼容性问题！太神奇了。</p>
 <h2>解决问题</h2>
-<p>后来，我就在页面上添加了自己的百度统计代码，至此，这个下拉菜单弹出无法收回的兼容问题就解决掉了！感谢百度统计，百度统计真是为民服务为民解忧！</p></div>
+<p>后来，我就在页面上添加了自己的百度统计代码，至此，这个下拉菜单弹出无法收回的兼容问题就解决掉了！感谢百度统计，百度统计真是为民服务为民解忧！</p>
+<p>参考：</p>
+<p><a href="https://www.runoob.com/css/css-dropdowns.html">菜鸟教程 CSS 下拉菜单</a></p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
