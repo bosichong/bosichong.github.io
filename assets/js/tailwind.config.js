@@ -4,7 +4,6 @@ tailwind.config = {
     themes: [
       "cupcake",
       "dark",
-      "light",
       "bumblebee",
       "emerald",
       "corporate",
