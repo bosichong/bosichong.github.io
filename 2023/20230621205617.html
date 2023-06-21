@@ -290,7 +290,7 @@
       作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-21 20:56:17"><span
         class="cr-time"
         >2023-06-21 20:56:17</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-06-21 21:16:45"><span class="up-time">2023-06-21 21:16:45</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-06-21 23:17:31"><span class="up-time">2023-06-21 23:17:31</span></div>
       | Tag:   MacBook 
     </small>
   </div>
@@ -304,8 +304,12 @@
 <p>电池的拆卸比较简单，可以在bilibili搜索A1389电池的更换视频，照着拆卸即可，拧几个螺丝，拆到电池线，还有一个好像是触摸板的线，后边电池拆掉后在接上即可。</p>
 <h2>使用</h2>
 <p>拆完电池，只要接通电源就会开机，但是关机还是使用之前的关机方式，电源线上的小灯一直是橙色的。开机进到系统，感觉和之前的使用没有什么变化，还是老样子，网上说会使CPU降频变卡，这个我暂时还没有正式到，平时的一些使用，暂时看不出有什么变化，CPU的温度比之前有电池的时候降低了大约10°左右，感觉没什么事，不过要注意电源线的插头，不要掉了，不然就和断电一样，据说对硬盘有损伤，所以还是要注意一下。</p>
+<p>另外，在系统-节能-关闭显示器那里改成用不，不然显示器在一定时间后关闭，可能会触发机器重启，这个刚才就发生了一次，我改了永久后，就没有再次突然重启。</p>
+<p>如果觉得CPU被降频了，可以参考如下操作：可以使用命令行工具「sysctl」来查看macOS系统中CPU的频率。在终端中输入<code>sysctl -n machdep.cpu.brand_string</code>即可查看CPU的型号和频率。也可以使用<code>sysctl -n hw.cpufrequency</code>来查看当前CPU的频率。输入<code>sysctl hw.physicalcpu</code>即可查看当前处理器物理核心数量</p>
 <h2>总结</h2>
-<p>对于这台老机器已经不在抱有幻想了，如果还还能再战三年也是极好的，如果者之间再坏了，就只好换新机器了，计划换个I9 4060 32G 哈哈哈。</p></div>
+<p>对于这台老机器已经不在抱有幻想了，如果还还能再战三年也是极好的，如果者之间再坏了，就只好换新机器了，计划换个I9 4060 32G 哈哈哈。</p>
+<p>一些有用的相关资料：</p>
+<p><a href="https://support.apple.com/en-us/HT201295">Reset the SMC of your Mac</a></p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
