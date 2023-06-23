@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-21 20:56:17</pubDate>
+        <pubDate>2023-06-23 15:59:35</pubDate>
+        
+        <item>
+            <title>macOS npx create-react-app 创建react项目报错或是没有写入权限</title>
+            <link>https://suiyan.cc/2023/20230623155935.html</link>
+            <author>J.sky</author>
+            <description>今天闲来无事，打算创建一个react的项目玩玩，但是发现使用`npx create-react-app`无法创建react项目，如果添加sudo前缀，虽能创建，但是无法修改项目中的文件，这可奇了个怪了？！</description>
+            <category>react,macOS</category>
+            <pubDate>2023-06-23 15:59:35</pubDate>
+        </item>
         
         <item>
             <title>终于把Macbook Pro A1389的电池给拆掉了</title>
@@ -85,15 +94,6 @@
             <description>在web日常中表单是必不可少的，处理数据的输入与交互在web站点中是非常重要的，Django提供了一系列的工具和库来帮助您构建表单来接收网站访客的输入，然后处理以及响应这些输入。</description>
             <category>Django</category>
             <pubDate>2023-06-11 08:43:25</pubDate>
-        </item>
-        
-        <item>
-            <title>好看的博客千篇一律 有趣的博主万里挑一</title>
-            <link>https://suiyan.cc/2023/20230609094312.html</link>
-            <author>J.sky</author>
-            <description>每次看到有关独立博客的博文，都觉得这类博文比较沉闷悲观，大多都是阐述玩独立博客的人不多或是越来越少，充满着怀旧的复古气息，博主一般都会对自己从建站到现在是如何坚持过来的洋洋洒洒的写上一篇，嗯？咱就爱看这类的博文，一个博主真实的一面。</description>
-            <category>独立博客</category>
-            <pubDate>2023-06-09 09:43:12</pubDate>
         </item>
         
     </channel>
