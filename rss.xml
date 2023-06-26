@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-23 15:59:35</pubDate>
+        <pubDate>2023-06-26 07:59:24</pubDate>
+        
+        <item>
+            <title>前端React+TailwindCSS+daisyUI开发环境的快速搭建</title>
+            <link>https://suiyan.cc/2023/20230626075924.html</link>
+            <author>J.sky</author>
+            <description>一步一步的快速搭建前端React+TailwindCSS+daisyUI开发环境</description>
+            <category>前端,react,TailwindCSS,daisyUI</category>
+            <pubDate>2023-06-26 07:59:24</pubDate>
+        </item>
         
         <item>
             <title>macOS npx create-react-app 创建react项目报错或是没有写入权限</title>
@@ -85,15 +94,6 @@
             <description>使用之前编写的Matrix JavaScript代码生成器做了一个动态的头像，效果还不错，分享给大家，喜欢的可以试一下，做好了嵌入自己的网站使用还是挺酷的！</description>
             <category>JavaScript</category>
             <pubDate>2023-06-12 09:16:30</pubDate>
-        </item>
-        
-        <item>
-            <title>Django 4.2 复习笔记(九)Django Forms 使用表单</title>
-            <link>https://suiyan.cc/2023/20230611084325.html</link>
-            <author>J.sky</author>
-            <description>在web日常中表单是必不可少的，处理数据的输入与交互在web站点中是非常重要的，Django提供了一系列的工具和库来帮助您构建表单来接收网站访客的输入，然后处理以及响应这些输入。</description>
-            <category>Django</category>
-            <pubDate>2023-06-11 08:43:25</pubDate>
         </item>
         
     </channel>

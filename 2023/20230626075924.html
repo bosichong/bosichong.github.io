@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python、JavaScript的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
+    <meta content="前端reactTailwindCSSdaisyUI" name="keywords">
+    <meta content="一步一步的快速搭建前端React+TailwindCSS+daisyUI开发环境" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>List Pages 第13页 | SuiYan 碎言博客 </title>
+    <title>前端React+TailwindCSS+daisyUI开发环境的快速搭建 | SuiYan 碎言博客 </title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -281,205 +281,154 @@
         </nav>
         <div class="p-4">
             
-
-
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/19.html"><h3 class="text-2xl">Python 对象引用与复制 (Python参考手册读书笔记)</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-19 15:51:04"><span class="cr-time">2017-09-19 15:51:04</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      读书笔记 
+<!-- Template Main CSS File -->
+<link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
+<div>
+  <div class="mb-4">
+    <h1 class="text-3xl">前端React+TailwindCSS+daisyUI开发环境的快速搭建</h1>
+    <div class="text-sm my-2">
+      作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-26 07:59:24"><span
+        class="cr-time"
+        >2023-06-26 07:59:24</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-06-26 08:15:49"><span class="up-time">2023-06-26 08:15:49</span></div>
+      | Tag:   前端  react  TailwindCSS  daisyUI 
     </small>
   </div>
-  <p class="">Python 对象引用与复制 (Python参考手册读书笔记)</p>
-  <a href="https://suiyan.cc/before-2022/19.html" class="link link-success">阅读全文>>></a>
 
-</div>
-</div>
+  <div class="mb-4"><p>TailWindCSS本质上是一个工具集，包含了大量类似 flex、 pt-4、 text-center 以及 rotate-90 等工具类，可以组合使用并直接在 HTML 代码上实现任何 UI 设计。Tailwind CSS 的工作原理是扫描所有 HTML 文件、JavaScript 组件以及任何 模板中的 CSS 类（class）名，然后生成相应的样式代码并写入 到一个静态 CSS 文件中。他快速、灵活、可靠，没有运行时负担。</p>
+<p>daisyUI最流行的TailwindCSS组件库，包含了一些常见的web组件，使用方便，结合TailwindCSS使用更是丝滑流畅。</p>
+<h2>安装TailwindCSS</h2>
+<p>如果你使用webStorm,可以直接创建一个全新的vite react项目，如果使用vscode可以在终端使用如下命令：</p>
+<pre><code>npm create vite@latest my-project -- --template react
+cd my-project
+</code></pre>
+<p>进入目录后：安装TailwindCSS并初始化：</p>
+<pre><code>npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+</code></pre>
+<p>初始化之后会发现<code>tailwind.config.js</code>，打开修改文件内容如下：</p>
+<pre><code>/** @type {import('tailwindcss').Config} */
+export default {
+content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+],
+theme: {
+    extend: {},
+},
+plugins: [],
+}
+</code></pre>
+<p>并在 <code>./src/index.css</code>中添加：</p>
+<pre><code>@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre>
+<h2>配置daisyUI</h2>
+<p>安装 daisyUI:</p>
+<pre><code>npm i -D daisyui@latest
+</code></pre>
+<p>然后，在你的tailwind.config.js文件里追加 daisyUI 的设置:</p>
+<pre><code>module.exports = {
+//...
+plugins: [require("daisyui")],
+}
+</code></pre>
+<h2>运行调试</h2>
+<pre><code>npm run dev
+</code></pre>
+<p>修改<code>app.jsx</code>添加一些daisyUI的组件进行测试:</p>
+<pre><code>&lt;&gt;
+    &lt;button className="btn"&gt;Button&lt;/button&gt;
+    &lt;button className="btn btn-neutral"&gt;Neutral&lt;/button&gt;
+    &lt;button className="btn btn-primary"&gt;Button&lt;/button&gt;
+    &lt;button className="btn btn-secondary"&gt;Button&lt;/button&gt;
+    &lt;button className="btn btn-accent"&gt;Button&lt;/button&gt;
+    &lt;button className="btn btn-ghost"&gt;Button&lt;/button&gt;
+    &lt;button className="btn btn-link"&gt;Button&lt;/button&gt;
 
+  &lt;p className = "bt-4"&gt;
+    tailwindCSS and daisyUI
+  &lt;/p&gt;
+</code></pre>
+<p>如果可以正常预览到daisyUI按钮，还有<code>bt-4</code>也实现了TailwindCSS，那么，恭喜你，React+TailwindCSS+daisyUI开发环境已经搭建好了。</p></div>
 
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/18.html"><h3 class="text-2xl">Python 字符串格式化(%操作符)及format函数的使用</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-19 15:12:22"><span class="cr-time">2017-09-19 15:12:22</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      读书笔记 
-    </small>
+  <div class="blog_footer">
+    <div class="prev_next flex justify-between my-4">
+       
+      <a href="https://suiyan.cc/2023/20230623155935.html" class="text-accent text-md"
+        ><span>next</span> ></a
+      >
+      
+    </div>
+    
+    <div class="related">
+      <p>相关文章：</p>
+      <ul>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230623155935.html" class="text-truncate"
+            ><span>macOS npx create-react-app 创建react项目报错或是没有写入权限</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230531194542.html" class="text-truncate"
+            ><span>Tailwind CSS 相关的组件库</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230529193749.html" class="text-truncate"
+            ><span>Vue+element+Vite安装 Tailwind CSS</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230513082050.html" class="text-truncate"
+            ><span>再谈TailwindCSS的使用心得</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230511191515.html" class="text-truncate"
+            ><span>安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230511182912.html" class="text-truncate"
+            ><span>Tailwind CSS的安装配置和体验</span></a
+          >
+        </li>
+        
+      </ul>
+    </div>
+    
+
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="bosichong/bosichong.github.io"
+      data-repo-id="R_kgDOJLHieA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOJLHieM4CWhL8"
+      data-mapping="title"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async
+    ></script>
   </div>
-  <p class="">Python 字符串格式化（%操作符）及format函数的使用,Python参考手册，字符串格式化章读书笔记。</p>
-  <a href="https://suiyan.cc/before-2022/18.html" class="link link-success">阅读全文>>></a>
-
 </div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/17.html"><h3 class="text-2xl">关于本站封面头部大图</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-18 14:19:35"><span class="cr-time">2017-09-18 14:19:35</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      站长吐槽 
-    </small>
-  </div>
-  <p class="">看到喜欢的图片就会换上，不知道为什么会喜欢这些偏暖的色调，记得很久以前的有段时间，也曾偏爱冷色调调，可能偏暖色调更LOMO些。</p>
-  <a href="https://suiyan.cc/before-2022/17.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/16.html"><h3 class="text-2xl">Python3 datetime模块的时间操作</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-18 13:23:43"><span class="cr-time">2017-09-18 13:23:43</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Python基础 
-    </small>
-  </div>
-  <p class="">出去旅游一个星期刚刚回来，上周是什么也没有更新，当我们要去做一件自己非常喜欢而又美好的事，就得去做更多不喜欢不美好的事来换取这个机会。时间是有限的，所以应当珍惜当下！今天就来复习一下Python 中有关时间的操作</p>
-  <a href="https://suiyan.cc/before-2022/16.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/15.html"><h3 class="text-2xl">python3函数学习笔记简单总结</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-09 09:27:49"><span class="cr-time">2017-09-09 09:27:49</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Python基础 
-    </small>
-  </div>
-  <p class="">python3的函数是简单简约的，但有很有个性，而且有一些很多意思的语法糖，了解并理解这些函数语法，是python学习中必经之路</p>
-  <a href="https://suiyan.cc/before-2022/15.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/14.html"><h3 class="text-2xl">PythonINI配置文件读写的简单方法</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-06 10:19:07"><span class="cr-time">2017-09-06 10:19:07</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Python基础 
-    </small>
-  </div>
-  <p class="">.ini 文件是Initialization File的缩写，即初始化文件，是windows的系统配置文件所采用的存储格式，统管windows的各项配置，一般用户就用windows提供的各项图形化管理界面就可实现相同的配置了。但在某些情况，还是要直接编辑ini才方便，一般只有很熟悉windows才能去直接编辑。</p>
-  <a href="https://suiyan.cc/before-2022/14.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/13.html"><h3 class="text-2xl">Python open()函数文件打开、读、写操作总结</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-05 13:36:55"><span class="cr-time">2017-09-05 13:36:55</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Python基础 
-    </small>
-  </div>
-  <p class="">在编程和计算机的使用中，与文件打交道是必不可少的，每天都要打开读取写入很多的文件，所以了解Python的文件打开、读、写操作是非常有必要的。</p>
-  <a href="https://suiyan.cc/before-2022/13.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/12.html"><h3 class="text-2xl">Python os.path模块中一些常用方法的整理总结</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-04 14:37:17"><span class="cr-time">2017-09-04 14:37:17</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Python基础 
-    </small>
-  </div>
-  <p class="">跟计算机打交道，和目录与文件接触应该是最多的了，所以，掌握Python中的目录与文件操作是非常重要的，本节主要介绍os.path模块的一些常用方法</p>
-  <a href="https://suiyan.cc/before-2022/12.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/11.html"><h3 class="text-2xl">Python 采集数据三步曲之[Requests + re.py模块进行数据采集]</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-02 12:41:30"><span class="cr-time">2017-09-02 12:41:30</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Python基础 
-    </small>
-  </div>
-  <p class="">当我们熟悉了re和Requests两个模块，就可以开始愉快的数据采集之旅了，我们先为自己找一些需要采集的数据，比如股票价格数据、新闻或是美女图片等，只要你喜欢。</p>
-  <a href="https://suiyan.cc/before-2022/11.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/10.html"><h3 class="text-2xl">Python 采集数据三步曲之[Requests开源协议的HTTP 库]</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-02 09:01:48"><span class="cr-time">2017-09-02 09:01:48</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Python基础 
-    </small>
-  </div>
-  <p class="">Python 采集数据三步曲之[Requests开源协议的HTTP 库]</p>
-  <a href="https://suiyan.cc/before-2022/10.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/9.html"><h3 class="text-2xl">Python 采集数据三步曲之[正则表达式 re.py]</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-09-01 13:09:49"><span class="cr-time">2017-09-01 13:09:49</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Python基础 
-    </small>
-  </div>
-  <p class="">越来越多的朋友开始注意并喜欢上python，有时做为一个新手或是一个从其它编程语言转投过来的新人可能会稍稍有些迷茫，Python的学习应该从哪里开始呢？虽然雄心壮志万丈目标宏伟，但我们是否应该先订一个小小的目标呢？比如说先码一个简单的Python采集器</p>
-  <a href="https://suiyan.cc/before-2022/9.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/before-2022/7.html"><h3 class="text-2xl">Mac OS X gitk窗口打不开及Git的升级方法</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2017-08-26 16:36:30"><span class="cr-time">2017-08-26 16:36:30</span> </div>| 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span> </div>| Tag:  
-      Git 
-    </small>
-  </div>
-  <p class="">Mac OS X gitk窗口打不开及Git的升级方法</p>
-  <a href="https://suiyan.cc/before-2022/7.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-
-
-
-  <div class="flex flex-nowrap justify-items-center px-8 my-8">
-
-      <a href="list_12.html" role="button" class="basis-1/3 btn ">Prev</a>
-
-
-      <div class="w-full basis-1/3 text-center" style="line-height: 48px;">13 / 14</div>
-
-
-      <a href="list_14.html" role="button" class=" basis-1/3 btn ">Next</a>
-
-  </div>
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css"
+/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 
         </div>
