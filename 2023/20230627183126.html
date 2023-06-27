@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="cupcake">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="PowerShell" name="keywords">
+    <meta content="由于更换了机器，这阵子可能开始使用Windows系统了，有8年左右没怎么系统的使用Windows了，今天刚接手就遇到了问题，终端下运行pnpm，结果PowerShell报错：因为在此系统上禁止运行脚本的解决。" name="description">
+    <meta content="J.sky" name="author">
+    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
+    <title>Windows PowerShell报错：因为在此系统上禁止运行脚本的解决 | SuiYan 碎言博客 </title>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Template Main CSS File -->
+    <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet">
+
+<script src="https://hm.baidu.com/hm.js?4c5d5a36d989457d284188afb75dd84c"></script>  
+</head>
+
+<body>
+
+    <div class="container max-w-3xl mx-auto font-sans text-lg font-extralight">
+        <div
+          id="sider"
+          class="fixed z-50 bg-base-100 container max-w-3xl mx-auto h-screen flex items-center justify-center sider-top"
+        >
+          <button
+            id="menu-close-btn"
+            class="absolute top-2 right-2 btn btn-square btn-ghost text-lg"
+          >
+            <i class="fa fa-close"></i>
+          </button>
+          <div class="card w-96 bg-base-100 shadow-xl p-4 m-4">
+            <div class="text-center">
+              <div class="avatar">
+                <div
+                  class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                >
+                  <img
+                    src="https://suiyan.cc/assets/images/avatar.jpg"
+                    alt="J.sky"
+                  />
+                </div>
+              </div>
+              <h3 class="text-lg my-1">
+                <a href="https://suiyan.cc/" class="">J.sky</a>
+              </h3>
+              <p class="text-xs">You see see you , This one day day di.</p>
+              <div class="mt-2 text-center text-2xl">
+                
+                <a
+                href="https://github.com/bosichong/suiyan"
+                target="_blank"
+                class=""
+                ><i class="fa fa-github"></i
+              ></a>
+            
+                <a
+                href="https://gitee.com/J_Sky/suiyan"
+                target="_blank"
+                class=""
+                ><i class="fa fa-git"></i
+              ></a>
+            
+                <a
+                href="mailto:285911@gmail.com"
+                target="_blank"
+                class=""
+                ><i class="fa fa-envelope"></i
+              ></a>
+            
+                <a
+                href="https://www.zhihu.com/people/J_sky/activities"
+                target="_blank"
+                class=""
+                ><i class="fa fa-book"></i
+              ></a>
+            
+                <a
+                href="https://suiyan.cc/rss.xml"
+                target="_blank"
+                class=""
+                ><i class="fa fa-rss-square"></i
+              ></a>
+            
+                
+
+              </div>
+            </div>
+  
+            <ul class="menu bg-base-100 w-36 rounded-box mx-auto">
+              
+              <li>
+                <a href="https://suiyan.cc/"
+                  ><i class="fa fa-home"></i> <span>Home</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/archives.html"
+                  ><i class="fa fa-archive"></i> <span>Archive</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/tags.html"
+                  ><i class="fa fa-tags"></i> <span>Tags</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/before-2022/1.html"
+                  ><i class="fa fa-user-md"></i> <span>About Me</span></a
+                >
+              </li>
+            
+              <li>
+                <a href="https://suiyan.cc/links.html"
+                  ><i class="fa fa-link"></i> <span>Links</span></a
+                >
+              </li>
+            
+
+            </ul>
+  
+
+              <!-- 移动端搜索 -->
+              <button class="btn btn-sm" onclick="my_modal_3.showModal()"><i class="fa fa-search"></i>搜索</button>
+              <dialog id="my_modal_3" class="modal">
+                <form method="dialog" class="modal-box">
+                  <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  <h3 class="font-bold text-lg">站内搜索!</h3>
+                  <div class="mx-full">
+                    <input
+                      id="search-input"
+                      type="text"
+                      placeholder="JavaScript"
+                      class="input input-bordered w-3/4 max-w-xs input-sm"
+                    />
+                    <button id="search-btn" class="btn btn-sm">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <div id="modal_s">
+                      <ul id="result-list"></ul>
+                    </div>
+                  </div>
+                </form>
+              </dialog>
+            
+
+
+
+          </div>
+        </div>
+        <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
+          <div class="navbar">
+            <div class="navbar-start">
+              <button
+                id="menu-open-btn"
+                class="btn btn-square btn-ghost lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block w-5 h-5 stroke-current"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+              <div class="avatar lg:hidden mx-2">
+                <div
+                  class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                >
+                <a href="https://suiyan.cc/">
+                  <img
+                  src="https://suiyan.cc/assets/images/avatar.jpg"
+                  alt="J.sky"
+                  />
+                </a>
+                  
+                </div>
+              </div>
+              <button
+                class="flex btn btn-sm btn-ghost normal-case font-light text-2xl hidden lg:block"
+              >
+                <a href="https://suiyan.cc/">碎言博客</a>
+              </button>
+            </div>
+            <div class="navbar-end">
+              <div class="hidden lg:block">
+                <!-- You can open the modal using ID.showModal() method -->
+              <button class="btn btn-sm" onclick="my_modal_1.showModal()"><i class="fa fa-search"></i>搜索</button>
+              <dialog id="my_modal_1" class="modal">
+                <form method="dialog" class="modal-box">
+                  <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  <h3 class="font-bold text-lg">站内搜索!</h3>
+                  <div class="mx-full">
+                    <input
+                      id="search-input1"
+                      type="text"
+                      placeholder="JavaScript"
+                      class="input input-bordered w-full max-w-xs input-sm"
+                    />
+                    <button id="search-btn1" class="btn btn-sm">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <div id="modal_s1">
+                      <ul id="result-list1"></ul>
+                    </div>
+                  </div>
+                </form>
+              </dialog>
+              </div>
+              <div class="dropdown dropdown-end dropdown-hover">
+                <label tabindex="0" class="btn btn-sm normal-case btn-ghost">
+                  <svg
+                    width="20"
+                    height="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 stroke-current"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                    ></path>
+                  </svg>
+                  <span class="hidden font-normal md:inline">主题</span>
+                  <svg
+                    width="12px"
+                    height="12px"
+                    class="hidden h-2 w-2 fill-current opacity-60 sm:inline-block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 2048 2048"
+                  >
+                    <path
+                      d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
+                    ></path>
+                  </svg>
+                </label>
+                <ul
+                  tabindex="0"
+                  class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-28"
+                >
+                  <li><a data-set-theme="">Default</a></li>
+                  <li><a data-set-theme="dark">dark</a></li>
+                  <li><a data-set-theme="cupcake">cupcake</a></li>
+                  <li><a data-set-theme="retro">retro</a></li>
+                  <li><a data-set-theme="luxury">luxury</a></li>
+                  <li><a data-set-theme="autumn">autumn</a></li>
+                  <li><a data-set-theme="business">business</a></li>
+                  <li><a data-set-theme="valentine">valentine</a></li>
+                  <li><a data-set-theme="coffee">coffee</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="p-4">
+            
+<!-- Template Main CSS File -->
+<link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
+<div>
+  <div class="mb-4">
+    <h1 class="text-3xl">Windows PowerShell报错：因为在此系统上禁止运行脚本的解决</h1>
+    <div class="text-sm my-2">
+      作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-27 18:31:26"><span
+        class="cr-time"
+        >2023-06-27 18:31:26</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-06-27 18:38:39"><span class="up-time">2023-06-27 18:38:39</span></div>
+      | Tag:   PowerShell 
+    </small>
+  </div>
+
+  <div class="mb-4"><p>由于更换了机器，这阵子可能开始使用Windows系统了，有8年左右没怎么系统的使用Windows了，今天刚接手就遇到了问题，终端下运行pnpm，结果PowerShell报错：因为在此系统上禁止运行脚本的解决。</p>
+<h2>解决方法</h2>
+<p>解决的方式很简单：</p>
+<p>打开PowerShell 然后输入:</p>
+<pre><code>get-executionpolicy
+</code></pre>
+<p>如果是Restricted,就不能运行，需要改为RemoteSigned。</p>
+<p>以管理员身份打开PowerShell 输入:</p>
+<pre><code>set-executionpolicy remotesigned
+</code></pre>
+<p>然后选择填写:Y</p>
+<p>之后就正常了，问题解决。</p></div>
+
+  <div class="blog_footer">
+    <div class="prev_next flex justify-between my-4">
+       
+      <a href="https://suiyan.cc/2023/20230626075924.html" class="text-accent text-md"
+        ><span>next</span> ></a
+      >
+      
+    </div>
+    
+
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="bosichong/bosichong.github.io"
+      data-repo-id="R_kgDOJLHieA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOJLHieM4CWhL8"
+      data-mapping="title"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
+</div>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css"
+/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+
+        </div>
+        <div class="sider-left w-24 fixed top-32 hidden lg:block">
+          <div class="avatar w-24">
+            <div
+              class="animate-bounce w-16 mx-auto rounded-full ring-offset-base-100 ring-offset-2 hover:blur-sm"
+            >
+              <img src="https://suiyan.cc/assets/images/avatar.jpg"
+              alt="J.sky" />
+            </div>
+          </div>
+          <ul class="text-center text-sm space-y-1">
+            
+            <li>
+              <a href="https://suiyan.cc/"
+                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">Home</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/archives.html"
+                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">Archive</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/tags.html"
+                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">Tags</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/before-2022/1.html"
+                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">About Me</button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/links.html"
+                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">Links</button></a
+              >
+            </li>
+            
+  
+          </ul>
+        </div>
+        <!-- ======= Footer ======= -->
+
+    <footer class="footer p-3 bg-base-200 text-base-content">
+  <div>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+      ><img
+        alt="知识共享许可协议"
+        style="border-width: 0"
+        src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+    /></a>
+    <div>
+      Designed by
+      <a href="https://github.com/Jsky2020/suiyan" target="_blank">SuiYan</a> |
+      Theme by
+      <a href="https://github.com/bosichong/coding_blog" target="_blank"
+        >Coding-blog</a
+      >
+    </div>
+
+    <div class="container typed-div">
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <div class="hd"><span id="typed"></span></div>
+      <script>
+            const typed = new Typed('#typed', {
+            strings: [
+            
+            '积硅步以致千里',
+            
+            '积怠惰以致深渊',
+            
+            '只比你努力一点的人',
+            
+            '其实已经甩你很远了！',
+            
+            ],
+            typeSpeed: 250,
+            backSpeed: 100,
+            backDelay: 100,
+            startDelay: 1000,
+            loop:true
+        });
+      </script>
+    </div>
+  </div>
+
+  <div>
+    <span class="footer-title">Contact me</span>
+    <div class="grid grid-flow-col gap-2 text-lg">
+      
+      <a href="https://github.com/bosichong/suiyan" target="_blank" class=""
+        ><i class="fa fa-github"></i
+      ></a>
+      
+      <a href="https://gitee.com/J_Sky/suiyan" target="_blank" class=""
+        ><i class="fa fa-git"></i
+      ></a>
+      
+      <a href="mailto:285911@gmail.com" target="_blank" class=""
+        ><i class="fa fa-envelope"></i
+      ></a>
+      
+      <a href="https://www.zhihu.com/people/J_sky/activities" target="_blank" class=""
+        ><i class="fa fa-book"></i
+      ></a>
+      
+      <a href="https://suiyan.cc/rss.xml" target="_blank" class=""
+        ><i class="fa fa-rss-square"></i
+      ></a>
+      
+    </div>
+  </div>
+</footer>
+
+    <!-- End  Footer -->
+
+      </div>
+
+
+      <a id="scrollUp" href="#top" style="position: fixed; display: block;" class="text-1xl"></a>
+       
+
+<!-- CDN example (unpkg) day.js -->
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/locale/zh-cn.js"></script>
+
+<!-- Template Main JS File -->
+<script src="https://suiyan.cc/assets/js/url.js"></script>
+<script src="https://suiyan.cc/assets/js/jquery.scrollUp.min.js"></script>
+<script src="https://suiyan.cc/assets/js/main.js"></script>
+
+</body>
+
+</html>
