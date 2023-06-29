@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-27 18:31:26</pubDate>
+        <pubDate>2023-06-29 15:54:38</pubDate>
+        
+        <item>
+            <title>使用React+Vite+TailwindCSS+daisyUI打造一个简单的ToDos</title>
+            <link>https://suiyan.cc/2023/20230629155438.html</link>
+            <author>J.sky</author>
+            <description>闲来无事，琢磨着体验一下react吧，花了一天的时间看了看react的官方文档，然后能照着以前用vue写的ToDo使用react重构了一遍，这里简单记录并总结一下学习过程。</description>
+            <category>前端,react,TailwindCSS,daisyUI</category>
+            <pubDate>2023-06-29 15:54:38</pubDate>
+        </item>
         
         <item>
             <title>Windows PowerShell报错：因为在此系统上禁止运行脚本的解决</title>
@@ -85,15 +94,6 @@
             <description>搭建、部署、专心撰写博文，是每个博主都需要花费一些心思去做的事，每个博客就像一扇窗，我们透过窗口看到的那些光就是作者内心真实的表露，有些强烈如火焰，有些温柔如月光。但是有些，我真特么的想一脚给他踹关上。</description>
             <category>独立博客,站长吐槽</category>
             <pubDate>2023-06-14 15:19:48</pubDate>
-        </item>
-        
-        <item>
-            <title>使用Python编写并部署个人静态博客:(五)Python异步输出博文页面</title>
-            <link>https://suiyan.cc/2023/20230613193700.html</link>
-            <author>J.sky</author>
-            <description>对于静态博客来说，对于页面的批量生成和更新需要更快的速度才是最佳，这里推荐Python的异步协程文件处理方法，可以达到很不错的速度！</description>
-            <category>碎言博客</category>
-            <pubDate>2023-06-13 19:37:00</pubDate>
         </item>
         
     </channel>
