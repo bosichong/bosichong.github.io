@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-29 15:54:38</pubDate>
+        <pubDate>2023-06-30 08:22:46</pubDate>
+        
+        <item>
+            <title>在react或vue中使用localStorage存储数据</title>
+            <link>https://suiyan.cc/2023/20230630082246.html</link>
+            <author>J.sky</author>
+            <description>对于一些超小型且数据临时并不重要的web应用，可以考虑把数据存储到浏览器中，使用浏览器API：localStorage</description>
+            <category>JavaScript</category>
+            <pubDate>2023-06-30 08:22:46</pubDate>
+        </item>
         
         <item>
             <title>使用React+Vite+TailwindCSS+daisyUI打造一个简单的ToDos</title>
@@ -85,15 +94,6 @@
             <description>花了几个小时基于daisyUI Tailwind CSS做了一个博客主题，很早就想把博客的样式换成基于Tailwind CSS为基础框架的，今天终于实现了。</description>
             <category>碎言博客</category>
             <pubDate>2023-06-16 12:08:48</pubDate>
-        </item>
-        
-        <item>
-            <title>你最讨厌什么样的独立博客？</title>
-            <link>https://suiyan.cc/2023/20230614151948.html</link>
-            <author>J.sky</author>
-            <description>搭建、部署、专心撰写博文，是每个博主都需要花费一些心思去做的事，每个博客就像一扇窗，我们透过窗口看到的那些光就是作者内心真实的表露，有些强烈如火焰，有些温柔如月光。但是有些，我真特么的想一脚给他踹关上。</description>
-            <category>独立博客,站长吐槽</category>
-            <pubDate>2023-06-14 15:19:48</pubDate>
         </item>
         
     </channel>

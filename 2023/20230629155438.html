@@ -290,7 +290,7 @@
       作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-29 15:54:38"><span
         class="cr-time"
         >2023-06-29 15:54:38</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-06-29 17:37:02"><span class="up-time">2023-06-29 17:37:02</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-06-30 08:21:03"><span class="up-time">2023-06-30 08:21:03</span></div>
       | Tag:   前端  react  TailwindCSS  daisyUI 
     </small>
   </div>
@@ -320,9 +320,15 @@ const tds = [
 ];
 
 function App() {
-const [todos, setTodos] = useState(tds);// 存储待办事项
+const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('myreacttodos')) || []);// 存储待办事项
 const [displayOption, setDisplayOption] = useState("all"); // 过滤待办事项的选项
 const [newtodo, setNewTodo] = useState("");// 添加代办事项
+
+
+
+useEffect(()=&gt;{
+    localStorage.setItem('myreacttodos',JSON.stringify(todos))
+},[todos])
 
 /**
 * 添加ToDo
@@ -493,11 +499,15 @@ return (
 export default App;
 </code></pre>
 <h2>总结</h2>
-<p>程序并没有做数据的持久保存，可以使用浏览器API：localStorage来保存待办事项的数组，这样下次打开浏览器就会显示之前保存的数据了。</p>
+<p>程序并没有做数据的持久保存，可以使用浏览器API：localStorage来保存待办事项的数组，这样下次打开浏览器就会显示之前保存的数据了,代码中已经更新添加了使用localStorage存储待办事项的存储代码。</p>
 <p>另外，通过ToDo这个小项目分别使用vue和react编写，也算是对两大框架有了入门级的体验，总体来说，vue在学习过程中上手更为简单，适合从未接触过这类框架的新手来学习，如果你有不错的JavaScript和前端项目的编写经验，我还是推荐使用react，react更接近原生的写法，虽然没有太多的语法糖，但是兼容更简单，react官方文档写的太死板了，对新手不太友好，总之，这二个都是非常不错的前端框架，都值得去学习去使用。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
+      
+      <a href="https://suiyan.cc/2023/20230630082246.html" class="text-accent text-md"
+        ><span>< prev</span></a
+      >
        
       <a href="https://suiyan.cc/2023/20230627183126.html" class="text-accent text-md"
         ><span>next</span> ></a
