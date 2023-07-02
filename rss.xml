@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-06-30 08:22:46</pubDate>
+        <pubDate>2023-07-02 10:34:22</pubDate>
+        
+        <item>
+            <title>Stable Diffusion ControlNet openpose 报错无法使用</title>
+            <link>https://suiyan.cc/2023/20230702103422.html</link>
+            <author>J.sky</author>
+            <description>今天发现SD ControlNet openpose竟然报错无法使用，这里分享一下解决这个错误的过程。</description>
+            <category>StableDiffusion,ControlNet</category>
+            <pubDate>2023-07-02 10:34:22</pubDate>
+        </item>
         
         <item>
             <title>在react或vue中使用localStorage存储数据</title>
@@ -85,15 +94,6 @@
             <description>新主题做的很满意，主要是在于技术选型、策划、编写的过程中很畅快，让这个39°炎热的初夏有了一丝丝凉意，唯一美中不足的就是iPhone的Safari浏览器有个兼容性问题让人头疼。</description>
             <category>碎言博客,站长吐槽</category>
             <pubDate>2023-06-17 10:25:23</pubDate>
-        </item>
-        
-        <item>
-            <title>基于daisyUI Tailwind CSS做了一个博客主题</title>
-            <link>https://suiyan.cc/2023/20230616120848.html</link>
-            <author>J.sky</author>
-            <description>花了几个小时基于daisyUI Tailwind CSS做了一个博客主题，很早就想把博客的样式换成基于Tailwind CSS为基础框架的，今天终于实现了。</description>
-            <category>碎言博客</category>
-            <pubDate>2023-06-16 12:08:48</pubDate>
         </item>
         
     </channel>
