@@ -290,7 +290,7 @@
       作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-02 10:34:22"><span
         class="cr-time"
         >2023-07-02 10:34:22</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-07-02 10:58:58"><span class="up-time">2023-07-02 10:58:58</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-07-02 13:10:17"><span class="up-time">2023-07-02 13:10:17</span></div>
       | Tag:   StableDiffusion  ControlNet 
     </small>
   </div>
@@ -305,6 +305,9 @@
 Downloading: "https://huggingface.co/lllyasviel/Annotators/resolve/main/hand_pose_model.pth" to D:\AIdraw\sd-webui-aki\sd-webui-aki-v4.2\extensions\sd-webui-controlnet\annotator\downloads\openpose\hand_pose_model.pth
 </code></pre>
 <p>这里的意思是要在远程网址出下载一个文件，但是后边就报错了，估计是网络的原因无法下载，这里不要慌，我们复制上边需要下载的文件地址，使用迅雷等下载软件，先下载下来，然后，手动复制到下边制定的目录中即可解决问题，记得下边的地址中，需要手动添加一些目录。</p>
+<p>第二种错误是模型安装好了，点击按钮也可以识别pose的骨架，但是生成图片的时候和pose没有任何关系，经过我多次排查，是由于预处理器没有安装到指定的目录，
+sd-webui-aki-v4.2\extensions\sd-webui-controlnet\annotator\downloads
+这个目录下，如果是空的或是文件缺少，都会造成无法识别POSE，我在网上找了一份'可选controlnet1.1\预处理器'，把这下边的目录和文件都拷贝到上边的目录，问题解决。可选controlnet1.1这个文件包我在哪里下载的我还给忘了，大家自己搜搜。</p>
 <p>大约pose的模型和另外几个模型都需要手动下载，在控制台的报错信息中即可找到下载和复制地址，按路径复制好后问题即可解决。</p></div>
 
   <div class="blog_footer">
