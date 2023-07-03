@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-07-02 10:34:22</pubDate>
+        <pubDate>2023-07-03 19:45:14</pubDate>
+        
+        <item>
+            <title>Stable Diffusion 相关教程与模型的记录</title>
+            <link>https://suiyan.cc/2023/20230703194514.html</link>
+            <author>J.sky</author>
+            <description>这几天体验了Stable Diffusion的强大，被AI绘画给惊艳到了，Stable Diffusion，是一款开源免费的AI动画生成工具，如果机器配置还可以，推荐你试试，操作整体来说很简单。</description>
+            <category>未分类</category>
+            <pubDate>2023-07-03 19:45:14</pubDate>
+        </item>
         
         <item>
             <title>Stable Diffusion ControlNet openpose 报错无法使用</title>
@@ -85,15 +94,6 @@
             <description>之前新主题有个主题切换的功能，使用了下拉菜单，但是这个下拉菜单在webkit下有兼容问题，下拉菜单弹出后不能收回，但是最后这个兼容问题却奇怪的被百度统计代码给解决了！</description>
             <category>JavaScript,BUG</category>
             <pubDate>2023-06-18 09:04:17</pubDate>
-        </item>
-        
-        <item>
-            <title>从一次浏览器兼容问题到何不放过自己做个快乐的博主</title>
-            <link>https://suiyan.cc/2023/20230617102523.html</link>
-            <author>J.sky</author>
-            <description>新主题做的很满意，主要是在于技术选型、策划、编写的过程中很畅快，让这个39°炎热的初夏有了一丝丝凉意，唯一美中不足的就是iPhone的Safari浏览器有个兼容性问题让人头疼。</description>
-            <category>碎言博客,站长吐槽</category>
-            <pubDate>2023-06-17 10:25:23</pubDate>
         </item>
         
     </channel>
