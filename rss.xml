@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-07-03 19:45:14</pubDate>
+        <pubDate>2023-07-04 13:51:20</pubDate>
+        
+        <item>
+            <title>解决错误 ERROR [WinError 10049] 在其上下文中，该请求的地址无效。</title>
+            <link>https://suiyan.cc/2023/20230704135120.html</link>
+            <author>J.sky</author>
+            <description>由于换了Windows系统，之前的代码都一并拷贝过来了，今天运行了一个fastapi写的程序，结果报错了，这里分享一下解决的过程。</description>
+            <category>python,Python基础</category>
+            <pubDate>2023-07-04 13:51:20</pubDate>
+        </item>
         
         <item>
             <title>Stable Diffusion 相关教程与模型的记录</title>
@@ -85,15 +94,6 @@
             <description>在前端Vue项目开发中，数据的跨组件状态在某些场景下是很有必要的，当你在一个SPA单页面的APP中需要一个全局变量的时候，Pinia是一个简单而又高效的选择。</description>
             <category>Vue,Pinia</category>
             <pubDate>2023-06-21 07:58:55</pubDate>
-        </item>
-        
-        <item>
-            <title>百度统计代码可以解决浏览器兼容问题？</title>
-            <link>https://suiyan.cc/2023/20230618090417.html</link>
-            <author>J.sky</author>
-            <description>之前新主题有个主题切换的功能，使用了下拉菜单，但是这个下拉菜单在webkit下有兼容问题，下拉菜单弹出后不能收回，但是最后这个兼容问题却奇怪的被百度统计代码给解决了！</description>
-            <category>JavaScript,BUG</category>
-            <pubDate>2023-06-18 09:04:17</pubDate>
         </item>
         
     </channel>
