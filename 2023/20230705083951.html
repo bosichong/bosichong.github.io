@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python,Django,JavaScript,程序员,人生苦短,我用Python" name="keywords">
-    <meta content=" Python Django JavaScript 学习讨论,我们是一群热爱Python、JavaScript的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。" name="description">
+    <meta content="Typed" name="keywords">
+    <meta content="博客页面不仅需要简介大方漂亮美观，还需要一些动态的效果，如果引入动态的GIF图片其大小会影响页面的加载速度，这里推荐一个JavaScript的打字机效果库Typed.js，其漂亮的打字机效果和简单的使用方法，值得博主拥有。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>Home | SuiYan 碎言博客 </title>
+    <title>Typed.js 一款有意思的网页打字机效果库 | SuiYan 碎言博客 </title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -281,216 +281,94 @@
         </nav>
         <div class="p-4">
             
-
-
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230705083951.html"><h3 class="text-2xl">Typed.js 一款有意思的网页打字机效果库</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-05 08:39:51"><span class="cr-time">2023-07-05 08:39:51</span> </div>| 更新于:<div class="tooltip" data-tip="2023-07-05 08:52:33"><span class="up-time">2023-07-05 08:52:33</span> </div>| Tag:  
-      Typed 
+<!-- Template Main CSS File -->
+<link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
+<div>
+  <div class="mb-4">
+    <h1 class="text-3xl">Typed.js 一款有意思的网页打字机效果库</h1>
+    <div class="text-sm my-2">
+      作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-05 08:39:51"><span
+        class="cr-time"
+        >2023-07-05 08:39:51</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-07-05 08:52:33"><span class="up-time">2023-07-05 08:52:33</span></div>
+      | Tag:   Typed 
     </small>
   </div>
-  <p class="">博客页面不仅需要简介大方漂亮美观，还需要一些动态的效果，如果引入动态的GIF图片其大小会影响页面的加载速度，这里推荐一个JavaScript的打字机效果库Typed.js，其漂亮的打字机效果和简单的使用方法，值得博主拥有。</p>
-  <a href="https://suiyan.cc/2023/20230705083951.html" class="link link-success">阅读全文>>></a>
 
-</div>
-</div>
+  <div class="mb-4"><p>博客页面不仅需要简介大方漂亮美观，还需要一些动态的效果，如果引入动态的GIF图片其大小会影响页面的加载速度，这里推荐一个JavaScript的打字机效果库Typed.js，其漂亮的打字机效果和简单的使用方法，值得博主拥有。</p>
+<h2>安装</h2>
+<p>CDN</p>
+<pre><code>&lt;script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>NPM</p>
+<pre><code>npm install typed.js
+</code></pre>
+<p>Yarn</p>
+<pre><code>yarn add typed.js
+</code></pre>
+<h2>使用方法</h2>
+<p>引入cdn之后，创建一个DOM用来展示文字，在JavaScript中可以设置打字机的效果参数。</p>
+<pre><code>&lt;!-- Element to contain animated typing --&gt;
+&lt;span id="element"&gt;&lt;/span&gt;
+&lt;!-- Setup and start animation! --&gt;
+&lt;script&gt;
+    var typed = new Typed('#element', {
+    strings: ['&lt;i&gt;First&lt;/i&gt; sentence.', '&amp;amp; a second sentence.'],
+    typeSpeed: 50,
+    });
+&lt;/script&gt;
+</code></pre>
+<p>在这个页面的最底部，可以看到我添加的打字机效果，我的配置参数如下：</p>
+<pre><code>  &lt;script&gt;
+        const typed = new Typed('#typed', {
+        strings: ['这里是你要输出的文字','hello world'
+        ],
+        typeSpeed: 250,
+        backSpeed: 100,
+        backDelay: 100,
+        startDelay: 1000,
+        loop:true
+    });
+  &lt;/script&gt;
+</code></pre>
+<p>具体的参数，这里就不在介绍了，大家可以查看官方的文档是实例，自己手动改改就能了解这些参数的含义了。</p>
+<h2>相关网址</h2>
+<p><a href="https://mattboldt.github.io/typed.js/">Typed.js DEMO</a></p>
+<p><a href="https://mattboldt.github.io/typed.js/docs/class/src/typed.js~Typed.html">Typed.js DOC</a></p></div>
 
+  <div class="blog_footer">
+    <div class="prev_next flex justify-between my-4">
+       
+      <a href="https://suiyan.cc/2023/20230704135120.html" class="text-accent text-md"
+        ><span>next</span> ></a
+      >
+      
+    </div>
+    
 
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230704135120.html"><h3 class="text-2xl">解决错误 ERROR [WinError 10049] 在其上下文中，该请求的地址无效。</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-04 13:51:20"><span class="cr-time">2023-07-04 13:51:20</span> </div>| 更新于:<div class="tooltip" data-tip="2023-07-04 14:00:30"><span class="up-time">2023-07-04 14:00:30</span> </div>| Tag:  
-      python 
-      Python基础 
-    </small>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="bosichong/bosichong.github.io"
+      data-repo-id="R_kgDOJLHieA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOJLHieM4CWhL8"
+      data-mapping="title"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async
+    ></script>
   </div>
-  <p class="">由于换了Windows系统，之前的代码都一并拷贝过来了，今天运行了一个fastapi写的程序，结果报错了，这里分享一下解决的过程。</p>
-  <a href="https://suiyan.cc/2023/20230704135120.html" class="link link-success">阅读全文>>></a>
-
 </div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230703194514.html"><h3 class="text-2xl">Stable Diffusion 相关教程与模型的记录</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-03 19:45:14"><span class="cr-time">2023-07-03 19:45:14</span> </div>| 更新于:<div class="tooltip" data-tip="2023-07-03 20:02:36"><span class="up-time">2023-07-03 20:02:36</span> </div>| Tag:  
-      未分类 
-    </small>
-  </div>
-  <p class="">这几天体验了Stable Diffusion的强大，被AI绘画给惊艳到了，Stable Diffusion，是一款开源免费的AI动画生成工具，如果机器配置还可以，推荐你试试，操作整体来说很简单。</p>
-  <a href="https://suiyan.cc/2023/20230703194514.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230702103422.html"><h3 class="text-2xl">Stable Diffusion ControlNet openpose 报错无法使用</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-02 10:34:22"><span class="cr-time">2023-07-02 10:34:22</span> </div>| 更新于:<div class="tooltip" data-tip="2023-07-02 13:10:17"><span class="up-time">2023-07-02 13:10:17</span> </div>| Tag:  
-      StableDiffusion 
-      ControlNet 
-    </small>
-  </div>
-  <p class="">今天发现SD ControlNet openpose竟然报错无法使用，这里分享一下解决这个错误的过程。</p>
-  <a href="https://suiyan.cc/2023/20230702103422.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230630082246.html"><h3 class="text-2xl">在react或vue中使用localStorage存储数据</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-30 08:22:46"><span class="cr-time">2023-06-30 08:22:46</span> </div>| 更新于:<div class="tooltip" data-tip="2023-06-30 08:32:05"><span class="up-time">2023-06-30 08:32:05</span> </div>| Tag:  
-      JavaScript 
-    </small>
-  </div>
-  <p class="">对于一些超小型且数据临时并不重要的web应用，可以考虑把数据存储到浏览器中，使用浏览器API：localStorage</p>
-  <a href="https://suiyan.cc/2023/20230630082246.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230629155438.html"><h3 class="text-2xl">使用React+Vite+TailwindCSS+daisyUI打造一个简单的ToDos</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-29 15:54:38"><span class="cr-time">2023-06-29 15:54:38</span> </div>| 更新于:<div class="tooltip" data-tip="2023-06-30 08:21:03"><span class="up-time">2023-06-30 08:21:03</span> </div>| Tag:  
-      前端 
-      react 
-      TailwindCSS 
-      daisyUI 
-    </small>
-  </div>
-  <p class="">闲来无事，琢磨着体验一下react吧，花了一天的时间看了看react的官方文档，然后能照着以前用vue写的ToDo使用react重构了一遍，这里简单记录并总结一下学习过程。</p>
-  <a href="https://suiyan.cc/2023/20230629155438.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230627183126.html"><h3 class="text-2xl">Windows PowerShell报错：因为在此系统上禁止运行脚本的解决</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-27 18:31:26"><span class="cr-time">2023-06-27 18:31:26</span> </div>| 更新于:<div class="tooltip" data-tip="2023-06-27 18:38:39"><span class="up-time">2023-06-27 18:38:39</span> </div>| Tag:  
-      PowerShell 
-    </small>
-  </div>
-  <p class="">由于更换了机器，这阵子可能开始使用Windows系统了，有8年左右没怎么系统的使用Windows了，今天刚接手就遇到了问题，终端下运行pnpm，结果PowerShell报错：因为在此系统上禁止运行脚本的解决。</p>
-  <a href="https://suiyan.cc/2023/20230627183126.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230626075924.html"><h3 class="text-2xl">前端React+TailwindCSS+daisyUI开发环境的快速搭建</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-26 07:59:24"><span class="cr-time">2023-06-26 07:59:24</span> </div>| 更新于:<div class="tooltip" data-tip="2023-06-26 08:15:48"><span class="up-time">2023-06-26 08:15:48</span> </div>| Tag:  
-      前端 
-      react 
-      TailwindCSS 
-      daisyUI 
-    </small>
-  </div>
-  <p class="">一步一步的快速搭建前端React+TailwindCSS+daisyUI开发环境</p>
-  <a href="https://suiyan.cc/2023/20230626075924.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230623155935.html"><h3 class="text-2xl">macOS npx create-react-app 创建react项目报错或是没有写入权限</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-23 15:59:35"><span class="cr-time">2023-06-23 15:59:35</span> </div>| 更新于:<div class="tooltip" data-tip="2023-06-23 16:13:58"><span class="up-time">2023-06-23 16:13:58</span> </div>| Tag:  
-      react 
-      macOS 
-    </small>
-  </div>
-  <p class="">今天闲来无事，打算创建一个react的项目玩玩，但是发现使用`npx create-react-app`无法创建react项目，如果添加sudo前缀，虽能创建，但是无法修改项目中的文件，这可奇了个怪了？！</p>
-  <a href="https://suiyan.cc/2023/20230623155935.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230621205617.html"><h3 class="text-2xl">终于把Macbook Pro A1389的电池给拆掉了</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-21 20:56:17"><span class="cr-time">2023-06-21 20:56:17</span> </div>| 更新于:<div class="tooltip" data-tip="2023-06-22 20:12:02"><span class="up-time">2023-06-22 20:12:02</span> </div>| Tag:  
-      MacBook 
-    </small>
-  </div>
-  <p class="">我那台2015款的Macbook Pro A1389的电池终于又挺不住了，鼓了个大包，算了，还是拆掉吧。</p>
-  <a href="https://suiyan.cc/2023/20230621205617.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230621075855.html"><h3 class="text-2xl">体验Pinia Vue的专属状态管理库</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-21 07:58:55"><span class="cr-time">2023-06-21 07:58:55</span> </div>| 更新于:<div class="tooltip" data-tip="2023-06-21 08:31:36"><span class="up-time">2023-06-21 08:31:36</span> </div>| Tag:  
-      Vue 
-      Pinia 
-    </small>
-  </div>
-  <p class="">在前端Vue项目开发中，数据的跨组件状态在某些场景下是很有必要的，当你在一个SPA单页面的APP中需要一个全局变量的时候，Pinia是一个简单而又高效的选择。</p>
-  <a href="https://suiyan.cc/2023/20230621075855.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div class="">
-    <a href="https://suiyan.cc/2023/20230618090417.html"><h3 class="text-2xl">百度统计代码可以解决浏览器兼容问题？</h3></a>
-    <small class="text-sm">作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-18 09:04:17"><span class="cr-time">2023-06-18 09:04:17</span> </div>| 更新于:<div class="tooltip" data-tip="2023-06-18 09:23:02"><span class="up-time">2023-06-18 09:23:02</span> </div>| Tag:  
-      JavaScript 
-      BUG 
-    </small>
-  </div>
-  <p class="">之前新主题有个主题切换的功能，使用了下拉菜单，但是这个下拉菜单在webkit下有兼容问题，下拉菜单弹出后不能收回，但是最后这个兼容问题却奇怪的被百度统计代码给解决了！</p>
-  <a href="https://suiyan.cc/2023/20230618090417.html" class="link link-success">阅读全文>>></a>
-
-</div>
-</div>
-
-
-
-
-
-  <div class="flex flex-nowrap justify-items-center px-8 my-8">
-
-      <a href="#" role="button" class="basis-1/3 btn ">Prev</a>
-
-
-      <div class="w-full basis-1/3 text-center" style="line-height: 48px;">0 / 15</div>
-
-
-      <a href="list_1.html" role="button" class=" basis-1/3 btn ">Next</a>
-
-  </div>
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/onedark.min.css"
+/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 
         </div>

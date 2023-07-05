@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-07-04 13:51:20</pubDate>
+        <pubDate>2023-07-05 08:39:51</pubDate>
+        
+        <item>
+            <title>Typed.js 一款有意思的网页打字机效果库</title>
+            <link>https://suiyan.cc/2023/20230705083951.html</link>
+            <author>J.sky</author>
+            <description>博客页面不仅需要简介大方漂亮美观，还需要一些动态的效果，如果引入动态的GIF图片其大小会影响页面的加载速度，这里推荐一个JavaScript的打字机效果库Typed.js，其漂亮的打字机效果和简单的使用方法，值得博主拥有。</description>
+            <category>Typed</category>
+            <pubDate>2023-07-05 08:39:51</pubDate>
+        </item>
         
         <item>
             <title>解决错误 ERROR [WinError 10049] 在其上下文中，该请求的地址无效。</title>
@@ -85,15 +94,6 @@
             <description>我那台2015款的Macbook Pro A1389的电池终于又挺不住了，鼓了个大包，算了，还是拆掉吧。</description>
             <category>MacBook</category>
             <pubDate>2023-06-21 20:56:17</pubDate>
-        </item>
-        
-        <item>
-            <title>体验Pinia Vue的专属状态管理库</title>
-            <link>https://suiyan.cc/2023/20230621075855.html</link>
-            <author>J.sky</author>
-            <description>在前端Vue项目开发中，数据的跨组件状态在某些场景下是很有必要的，当你在一个SPA单页面的APP中需要一个全局变量的时候，Pinia是一个简单而又高效的选择。</description>
-            <category>Vue,Pinia</category>
-            <pubDate>2023-06-21 07:58:55</pubDate>
         </item>
         
     </channel>
