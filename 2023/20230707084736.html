@@ -290,7 +290,7 @@
       作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-07 08:47:36"><span
         class="cr-time"
         >2023-07-07 08:47:36</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-07-07 09:14:23"><span class="up-time">2023-07-07 09:14:23</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-07-07 09:22:31"><span class="up-time">2023-07-07 09:22:31</span></div>
       | Tag:   github  python  Git 
     </small>
   </div>
@@ -321,11 +321,18 @@ def sync_to_remote_repo(path):
         subprocess.run(["git", "commit", "-m", "更新博客"])
 
         # 2. 同步到远程仓库
-        subprocess.run(["git", "push", "origin", "master"])
+        while True:
+            result = subprocess.run(["git", "push", "origin", "master"])
+            if result.returncode == 0:
+                # 如果成功同步到远程仓库，退出内部循环
+                break
+            else:
+                # 如果同步失败，等待一段时间后继续重试
+                time.sleep(10)
 
         # 检查上一步操作的返回值
         if subprocess.run(["git", "rev-parse", "--quiet", "--verify", "HEAD"]).returncode == 0:
-            # 如果成功同步到远程仓库，退出循环
+            # 如果成功同步到远程仓库，退出外部循环
             break
         else:
             # 如果同步失败，等待一段时间后继续重试
