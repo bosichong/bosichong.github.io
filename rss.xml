@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-07-07 08:47:36</pubDate>
+        <pubDate>2023-07-08 15:21:37</pubDate>
+        
+        <item>
+            <title>前端React+Material UI开发环境的快速搭建</title>
+            <link>https://suiyan.cc/2023/20230708152137.html</link>
+            <author>J.sky</author>
+            <description>打算把之前一个vue的小应用用使用react+Material UI重构一下，这里记录一下React+Material UI开发环境的快速搭建。</description>
+            <category>react,Material</category>
+            <pubDate>2023-07-08 15:21:37</pubDate>
+        </item>
         
         <item>
             <title>一键更新Github部署的静态博客</title>
@@ -85,15 +94,6 @@
             <description>由于更换了机器，这阵子可能开始使用Windows系统了，有8年左右没怎么系统的使用Windows了，今天刚接手就遇到了问题，终端下运行pnpm，结果PowerShell报错：因为在此系统上禁止运行脚本的解决。</description>
             <category>PowerShell</category>
             <pubDate>2023-06-27 18:31:26</pubDate>
-        </item>
-        
-        <item>
-            <title>前端React+TailwindCSS+daisyUI开发环境的快速搭建</title>
-            <link>https://suiyan.cc/2023/20230626075924.html</link>
-            <author>J.sky</author>
-            <description>一步一步的快速搭建前端React+TailwindCSS+daisyUI开发环境</description>
-            <category>前端,react,TailwindCSS,daisyUI</category>
-            <pubDate>2023-06-26 07:59:24</pubDate>
         </item>
         
     </channel>

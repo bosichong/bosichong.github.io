@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="reactmacOS" name="keywords">
-    <meta content="今天闲来无事，打算创建一个react的项目玩玩，但是发现使用`npx create-react-app`无法创建react项目，如果添加sudo前缀，虽能创建，但是无法修改项目中的文件，这可奇了个怪了？！" name="description">
+    <meta content="reactMaterial" name="keywords">
+    <meta content="打算把之前一个vue的小应用用使用react+Material UI重构一下，这里记录一下React+Material UI开发环境的快速搭建。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>macOS npx create-react-app 创建react项目报错或是没有写入权限 | SuiYan 碎言博客 </title>
+    <title>前端React+Material UI开发环境的快速搭建 | SuiYan 碎言博客 </title>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -285,40 +285,72 @@
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 <div>
   <div class="mb-4">
-    <h1 class="text-3xl">macOS npx create-react-app 创建react项目报错或是没有写入权限</h1>
+    <h1 class="text-3xl">前端React+Material UI开发环境的快速搭建</h1>
     <div class="text-sm my-2">
-      作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-23 15:59:35"><span
+      作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-08 15:21:37"><span
         class="cr-time"
-        >2023-06-23 15:59:35</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-06-23 16:13:58"><span class="up-time">2023-06-23 16:13:58</span></div>
-      | Tag:   react  macOS 
+        >2023-07-08 15:21:37</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-07-08 15:36:46"><span class="up-time">2023-07-08 15:36:46</span></div>
+      | Tag:   react  Material 
     </small>
   </div>
 
-  <div class="mb-4"><p>今天闲来无事，打算创建一个react的项目玩玩，但是发现使用<code>npx create-react-app</code>无法创建react项目，如果添加sudo前缀，虽能创建，但是无法修改项目中的文件，这可奇了个怪了？！</p>
-<h2>问题现场</h2>
-<p>之前可是没有这个问题的，创建react项目没有遇到过任何问题，回忆造成这种情况的原因唯一的可能性就是因为升级了macOS系统的版本，难道升级系统版本还是造成某些目录的权限丢失？</p>
-<p><code>npx create-react-app</code>之后，若是没有使用<code>sudo</code>则会因为没有写入权限创建失败，若使用了<code>sudo npx create-react-app</code>,虽能创建项目并运行，但是运行后会报错，并且无法修改任何文件，提示没有权限，IDE会只能提示让你输入管理密码后可以修改，这个可就不爽了，而且程序自动执行写入文件，一定会报错。</p>
-<h2>解决方法</h2>
-<p>后来，看到有个错误提示中有段让运行：</p>
-<pre><code>sudo chown -R 501:20 "/Users/J.sky/.npm"
+  <div class="mb-4"><p>打算把之前一个vue的小应用用使用react+Material UI重构一下，这里记录一下React+Material UI开发环境的快速搭建。</p>
+<h2>create react</h2>
+<p>在webStorm,可以直接创建一个全新的vite react项目，如果使用vscode可以在终端使用如下命令：</p>
+<pre><code>npm create vite@latest my-project -- --template react
+cd my-project
 </code></pre>
-<p>然后我就运行了一下，问题就解决了。其原因是因为<code>.npm</code>目录没有写入权限，手动修改一下就好了，如果你也有这个问题，可以试试看：</p>
-<pre><code>sudo chown -R 501:20 "/Users/「你的macOS用户名」/.npm"
+<h2>Material UI installation</h2>
+<p><code>cd my-project</code>进入到项目之后，添加material UI 到项目中:</p>
+<pre><code>npm install @mui/material @emotion/react @emotion/styled
 </code></pre>
-<p>把「你的macOS用户名」换成：J.sky(我的用户名，这里换成你的假如是Tom):</p>
-<pre><code>sudo chown -R 501:20 "/Users/Tom/.npm"
+<p>也可以使用:</p>
+<pre><code>pnpm i @mui/material @emotion/react @emotion/styled
 </code></pre>
-<p>运行，输入密码后，就可以解决了，之后使用<code>npx create-react-app</code>就和以前一样了。</p></div>
+<p>安装字体：</p>
+<pre><code>npm install @fontsource/roboto
+</code></pre>
+<p>或：</p>
+<pre><code>pnpm i @fontsource/roboto
+</code></pre>
+<p>安装icons:</p>
+<pre><code>npm install @mui/icons-material
+</code></pre>
+<p>或:</p>
+<pre><code>pnpm i @mui/icons-material
+</code></pre>
+<p>修改<code>src/index.jsx</code>:</p>
+<pre><code>import { useState } from 'react'
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+
+function App() {
+const [count, setCount] = useState(0)
+
+return (
+    &lt;Stack spacing={2} direction="row"&gt;
+    &lt;Button variant="text"&gt;Text&lt;/Button&gt;
+    &lt;Button variant="contained"&gt;Contained&lt;/Button&gt;
+    &lt;Button variant="outlined"&gt;Outlined&lt;/Button&gt;
+    &lt;/Stack&gt;
+)
+}
+
+export default App
+</code></pre>
+<p>终端运行：</p>
+<pre><code>pnpm i
+</code></pre>
+<p>当所有以来下载完毕后运行:</p>
+<pre><code>pnpm run dev
+</code></pre>
+<p>浏览器打开：http://localhost:5173/, 发现已经成功引入mui的按钮了。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
-      
-      <a href="https://suiyan.cc/2023/20230626075924.html" class="text-accent text-md"
-        ><span>< prev</span></a
-      >
        
-      <a href="https://suiyan.cc/2023/20230621205617.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230707084736.html" class="text-accent text-md"
         ><span>next</span> ></a
       >
       
@@ -327,12 +359,6 @@
     <div class="related">
       <p>相关文章：</p>
       <ul>
-        
-        <li>
-          <a href="https://suiyan.cc/2023/20230708152137.html" class="text-truncate"
-            ><span>前端React+Material UI开发环境的快速搭建</span></a
-          >
-        </li>
         
         <li>
           <a href="https://suiyan.cc/2023/20230629155438.html" class="text-truncate"
@@ -347,14 +373,8 @@
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230602101713.html" class="text-truncate"
-            ><span>macOS更新后 终端提示：The default interactive shell is now zsh.</span></a
-          >
-        </li>
-        
-        <li>
-          <a href="https://suiyan.cc/2023/20230601090428.html" class="text-truncate"
-            ><span>记一台老机器MacBook Pro macOS 10.14 Mojiave升级到macOS Monterey 12.6.2</span></a
+          <a href="https://suiyan.cc/2023/20230623155935.html" class="text-truncate"
+            ><span>macOS npx create-react-app 创建react项目报错或是没有写入权限</span></a
           >
         </li>
         
