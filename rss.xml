@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-07-08 15:21:37</pubDate>
+        <pubDate>2023-07-09 10:44:17</pubDate>
+        
+        <item>
+            <title>七年止痒！别了我曾深爱的MacBookPro</title>
+            <link>https://suiyan.cc/2023/20230709104417.html</link>
+            <author>J.sky</author>
+            <description>15年底，买了一台MacBookPro 15.6寸的笔记本，或许每个程序员都会有购买Apple设备的冲动，自从投身到Apple的阵营之后，平板、手机、老婆的平板和手机都换成了Apple，但是终有一天，我发现我也会对Apple有了厌倦之意。</description>
+            <category>MacBookPro</category>
+            <pubDate>2023-07-09 10:44:17</pubDate>
+        </item>
         
         <item>
             <title>前端React+Material UI开发环境的快速搭建</title>
@@ -85,15 +94,6 @@
             <description>闲来无事，琢磨着体验一下react吧，花了一天的时间看了看react的官方文档，然后能照着以前用vue写的ToDo使用react重构了一遍，这里简单记录并总结一下学习过程。</description>
             <category>前端,react,TailwindCSS,daisyUI</category>
             <pubDate>2023-06-29 15:54:38</pubDate>
-        </item>
-        
-        <item>
-            <title>Windows PowerShell报错：因为在此系统上禁止运行脚本的解决</title>
-            <link>https://suiyan.cc/2023/20230627183126.html</link>
-            <author>J.sky</author>
-            <description>由于更换了机器，这阵子可能开始使用Windows系统了，有8年左右没怎么系统的使用Windows了，今天刚接手就遇到了问题，终端下运行pnpm，结果PowerShell报错：因为在此系统上禁止运行脚本的解决。</description>
-            <category>PowerShell</category>
-            <pubDate>2023-06-27 18:31:26</pubDate>
         </item>
         
     </channel>
