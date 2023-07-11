@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-07-10 11:31:08</pubDate>
+        <pubDate>2023-07-11 18:54:22</pubDate>
+        
+        <item>
+            <title>react useEffect()中使用lodash库中的防抖debounce</title>
+            <link>https://suiyan.cc/2023/20230711185422.html</link>
+            <author>J.sky</author>
+            <description>今天在react useEffect()中有一个function需要防抖，于是乎就install了lodash库，但是直接在useEffect()中使用却没有效果，经过一番查找，最终解决了这个问题。</description>
+            <category>debounce,react</category>
+            <pubDate>2023-07-11 18:54:22</pubDate>
+        </item>
         
         <item>
             <title>react useEffect() 为什么在开发模式的时候会执行两次？</title>
@@ -85,15 +94,6 @@
             <description>今天发现SD ControlNet openpose竟然报错无法使用，这里分享一下解决这个错误的过程。</description>
             <category>StableDiffusion,ControlNet</category>
             <pubDate>2023-07-02 10:34:22</pubDate>
-        </item>
-        
-        <item>
-            <title>在react或vue中使用localStorage存储数据</title>
-            <link>https://suiyan.cc/2023/20230630082246.html</link>
-            <author>J.sky</author>
-            <description>对于一些超小型且数据临时并不重要的web应用，可以考虑把数据存储到浏览器中，使用浏览器API：localStorage</description>
-            <category>JavaScript</category>
-            <pubDate>2023-06-30 08:22:46</pubDate>
         </item>
         
     </channel>
