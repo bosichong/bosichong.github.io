@@ -290,7 +290,7 @@
       作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-07-11 18:54:22"><span
         class="cr-time"
         >2023-07-11 18:54:22</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-07-11 19:03:58"><span class="up-time">2023-07-11 19:03:58</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-07-13 19:22:40"><span class="up-time">2023-07-13 19:22:40</span></div>
       | Tag:   debounce  react 
     </small>
   </div>
@@ -307,17 +307,18 @@ useEffect(() =&gt; {
 <p>mc是一个函数，但是防抖后不但没有效果，mc这个函数也无法正常执行了，这跟useEffect运行机制有一定关系。</p>
 <h2>解决问题</h2>
 <p>修改代码如下：</p>
-<pre><code>function handleNuberChange(e) {
-    setMc({
-    ...mc,
-    number: e.target.value,
-    });
-}
+<pre><code>import { useState, useEffect,useCallback } from "react";
+
 useEffect(() =&gt; {
     debounceMX();
 }, [mc]);
+
+const debounceMX = useCallback(_.debounce(() =&gt;{
+    mx()
+    console.log(mc);
+}, 500),[])
 </code></pre>
-<p>先把要防抖的函数包装起来，然后再引入到useEffect中，就可以正常执行而且带有防抖的功能了。</p></div>
+<p>先把要防抖的函数使用useCallback包装起来，然后再引入到useEffect中，就可以正常执行而且带有防抖的功能了。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
