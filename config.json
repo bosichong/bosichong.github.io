@@ -1,6 +1,6 @@
 {
     "dev": 0,
-    "blog_name": "碎言博客",
+    "blog_name": "碎言",
     "blog_name_en": "SuiYan",
     "blog_author": "J.sky",
     "blog_description_en": "You see see you , This one day day di.",
@@ -10,8 +10,8 @@
         "只比你努力一点的人",
         "其实已经甩你很远了！"
     ],
-    "meta_description": " Python Django JavaScript 学习讨论,我们是一群热爱Python、JavaScript的程序员，人生苦短，我用JavaScript！一个不会JavaScript的Python开发者不是一个好网管。",
-    "meta_keywords":"Python,Django,JavaScript,程序员,人生苦短,我用Python",
+    "meta_description": " Python JavaScript 学习过程与笔记,人生苦短，我用JavaScript and Python",
+    "meta_keywords":"Python,JavaScript,程序员,人生苦短,我用Python",
     "profile_image":"assets/images/avatar.jpg",
     "blog_bg": "assets/images/bg.jpg",
     "theme": "tailwind_blog",
