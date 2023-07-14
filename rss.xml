@@ -4,7 +4,16 @@
         <title>SuiYan 碎言博客</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言博客 最近更新的10篇博文。</description>
-        <pubDate>2023-07-11 18:54:22</pubDate>
+        <pubDate>2023-07-14 10:13:40</pubDate>
+        
+        <item>
+            <title>react中如把HTML代码转成字符串进行渲染？</title>
+            <link>https://suiyan.cc/2023/20230714101340.html</link>
+            <author>J.sky</author>
+            <description>今天需要再react组件内渲染一段HTML代码，但是直接复制到组件内渲染会被当做HTML渲染出HTML的dom结构，我的本意是要把这段HTML代码输出为字符串，记录一下解决过程。</description>
+            <category>react</category>
+            <pubDate>2023-07-14 10:13:40</pubDate>
+        </item>
         
         <item>
             <title>react useEffect()中使用lodash库中的防抖debounce</title>
@@ -85,15 +94,6 @@
             <description>这几天体验了Stable Diffusion的强大，被AI绘画给惊艳到了，Stable Diffusion，是一款开源免费的AI动画生成工具，如果机器配置还可以，推荐你试试，操作整体来说很简单。</description>
             <category>未分类</category>
             <pubDate>2023-07-03 19:45:14</pubDate>
-        </item>
-        
-        <item>
-            <title>Stable Diffusion ControlNet openpose 报错无法使用</title>
-            <link>https://suiyan.cc/2023/20230702103422.html</link>
-            <author>J.sky</author>
-            <description>今天发现SD ControlNet openpose竟然报错无法使用，这里分享一下解决这个错误的过程。</description>
-            <category>StableDiffusion,ControlNet</category>
-            <pubDate>2023-07-02 10:34:22</pubDate>
         </item>
         
     </channel>
