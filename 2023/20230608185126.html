@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="JavaScript库和框架" name="keywords">
-    <meta content="复制文本到剪贴板本应该不难。它不应该需要配置的繁琐步骤或大量的加载空间。最重要的是，它不应该依赖于Flash或任何臃肿的框架" name="description">
+    <meta content="复制文本到剪贴板本应该不难。它不应该需要配置的繁琐步骤或大量的加载空间。最重要的是，它不应该依赖于Flash或任何臃肿的框架clipboard.js。" name="description">
     <meta content="J.sky" name="author">
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
@@ -290,12 +290,51 @@
       作者:<a href="#">J.sky</a> | 发表于:<div class="tooltip" data-tip="2023-06-08 18:51:26"><span
         class="cr-time"
         >2023-06-08 18:51:26</span></div>
-      | 更新于:<div class="tooltip" data-tip="2023-06-08 19:04:10"><span class="up-time">2023-06-08 19:04:10</span></div>
+      | 更新于:<div class="tooltip" data-tip="2023-07-14 15:41:13"><span class="up-time">2023-07-14 15:41:13</span></div>
       | Tag:   JavaScript库和框架 
     </small>
   </div>
 
-  <div class="mb-4"><p>-clipboard.js。</p></div>
+  <div class="mb-4"><blockquote>
+<p>复制文本到剪贴板本应该不难。它不应该需要配置的繁琐步骤或大量的加载空间。最重要的是，它不应该依赖于Flash或任何臃肿的框架。</p>
+</blockquote>
+<h2>简介</h2>
+<p>今天开发的时候遇到一个功能，就是把浏览器input组件中的文本复制到剪贴板，当时大概觉得应该会有现成的库类，所以一搜索，就搜到了：<code>clipboard.js</code>。<code>clipboard.js</code>是一个轻量级的 JavaScript 库，用于简化在网页中执行复制操作到剪贴板的过程。它没有依赖于任何第三方库或插件，仅仅使用原生的JavaScript。</p>
+<p>使用 clipboard.js，您可以通过几行代码实现将文本、HTML 或其他数据复制到剪贴板。它提供了一种简单而一致的方式来处理跨浏览器的剪贴板操作，避免了处理各种浏览器兼容性问题的烦恼。</p>
+<h2>使用方法</h2>
+<ol>
+<li>
+<p>引入CDN：</p>
+<p><!-- clipboard -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script></p>
+</li>
+<li>
+<p>绑定按钮的DOM：</p>
+<p>new ClipboardJS('.btn');</p>
+</li>
+<li>
+<p>HTML代码：</p>
+</li>
+</ol>
+<p>复制input中的字符：</p>
+<pre><code>&lt;!-- Target --&gt;
+&lt;input id="foo" value="https://github.com/zenorocha/clipboard.js.git"&gt;
+
+&lt;!-- Trigger --&gt;
+&lt;button class="btn" data-clipboard-target="#foo"&gt;
+    &lt;img src="assets/clippy.svg" alt="Copy to clipboard"&gt;
+&lt;/button&gt;
+</code></pre>
+<p>复制textarea中的字符：</p>
+<pre><code>&lt;!-- Target --&gt;
+&lt;textarea id="bar"&gt;Mussum ipsum cacilds...&lt;/textarea&gt;
+
+&lt;!-- Trigger --&gt;
+&lt;button class="btn" data-clipboard-action="cut" data-clipboard-target="#bar"&gt;
+    Cut to clipboard
+&lt;/button&gt;
+</code></pre>
+<p>嗯，就是这么简单，不要重复造轮子，很浪费时间的：）</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
