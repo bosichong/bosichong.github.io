@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-14 10:13:40</pubDate>
+        <pubDate>2023-07-15 17:07:02</pubDate>
+        
+        <item>
+            <title>在react中使用复制插件clipboard.js</title>
+            <link>https://suiyan.cc/2023/20230715170702.html</link>
+            <author>J.sky</author>
+            <description>之前在html中使用clipboard.js是很简单的，引用CDN，然后new一个clipboard对象，绑定DOM就可以搞定一键复制文本了。这次要在react中使用，所以原来的方式就不行了，来看看react中如何使用clipboard.js。</description>
+            <category>react,clipboard.js</category>
+            <pubDate>2023-07-15 17:07:02</pubDate>
+        </item>
         
         <item>
             <title>react中如把HTML代码转成字符串进行渲染？</title>
@@ -85,15 +94,6 @@
             <description>由于换了Windows系统，之前的代码都一并拷贝过来了，今天运行了一个fastapi写的程序，结果报错了，这里分享一下解决的过程。</description>
             <category>python,Python基础</category>
             <pubDate>2023-07-04 13:51:20</pubDate>
-        </item>
-        
-        <item>
-            <title>Stable Diffusion 相关教程与模型的记录</title>
-            <link>https://suiyan.cc/2023/20230703194514.html</link>
-            <author>J.sky</author>
-            <description>这几天体验了Stable Diffusion的强大，被AI绘画给惊艳到了，Stable Diffusion，是一款开源免费的AI动画生成工具，如果机器配置还可以，推荐你试试，操作整体来说很简单。</description>
-            <category>未分类</category>
-            <pubDate>2023-07-03 19:45:14</pubDate>
         </item>
         
     </channel>
