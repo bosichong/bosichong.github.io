@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-15 17:07:02</pubDate>
+        <pubDate>2023-07-16 16:51:19</pubDate>
+        
+        <item>
+            <title>七月的焦虑</title>
+            <link>https://suiyan.cc/2023/20230716165119.html</link>
+            <author>J.sky</author>
+            <description>今年夏天热的早温度也高，东北这边很早就步入了35°+，感觉很热，热的让人焦虑。</description>
+            <category>站长吐槽</category>
+            <pubDate>2023-07-16 16:51:19</pubDate>
+        </item>
         
         <item>
             <title>在react中使用复制插件clipboard.js</title>
@@ -85,15 +94,6 @@
             <description>博客页面不仅需要简介大方漂亮美观，还需要一些动态的效果，如果引入动态的GIF图片其大小会影响页面的加载速度，这里推荐一个JavaScript的打字机效果库Typed.js，其漂亮的打字机效果和简单的使用方法，值得博主拥有。</description>
             <category>Typed</category>
             <pubDate>2023-07-05 08:39:51</pubDate>
-        </item>
-        
-        <item>
-            <title>解决错误 ERROR [WinError 10049] 在其上下文中，该请求的地址无效。</title>
-            <link>https://suiyan.cc/2023/20230704135120.html</link>
-            <author>J.sky</author>
-            <description>由于换了Windows系统，之前的代码都一并拷贝过来了，今天运行了一个fastapi写的程序，结果报错了，这里分享一下解决的过程。</description>
-            <category>python,Python基础</category>
-            <pubDate>2023-07-04 13:51:20</pubDate>
         </item>
         
     </channel>
