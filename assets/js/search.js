@@ -13,7 +13,7 @@ fetch(blog_url + 'blog_data.json')
     .then(response => response.json())
     .then(data => {
         // 处理搜索按钮点击事件
-        searchBtn.addEventListener('click', (e) => {
+        searchInput.addEventListener('change', (e) => {
             showRst(searchInput, data, resultList, blog_url);
             e.preventDefault()
             return false;
