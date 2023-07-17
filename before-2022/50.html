@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN" data-theme="cupcake">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="Python基础" name="keywords">
-    <meta content="前几天在封装PY_RPG框架时，需要导入一些自定义的类、函数、常量的时候，发现始终找不到相关模块，后来参考书籍及网络上的一些经验终于解决了这个问题。" name="description">
-    <meta content="J.sky" name="author">
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
-    <link rel="icon" type="image/png" href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png" sizes="16x16"/>
-    <title>python中导入不同目录中的自定义模块/class/函数/方法 | SuiYan 碎言 </title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="Python基础" name="keywords" />
+    <meta content="前几天在封装PY_RPG框架时，需要导入一些自定义的类、函数、常量的时候，发现始终找不到相关模块，后来参考书籍及网络上的一些经验终于解决了这个问题。" name="description" />
+    <meta content="J.sky" name="author" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://suiyan.cc/assets/images/favicon/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://suiyan.cc/assets/images/favicon/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <title>
+      python中导入不同目录中的自定义模块/class/函数/方法 | SuiYan 碎言
+    </title>
     <link
       href="https://suiyan.cc/assets/css/full.css"
       rel="stylesheet"
@@ -22,171 +34,81 @@
       href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
     />
     <!-- Template Main CSS File -->
-    <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet">
+    <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="container max-w-3xl mx-auto font-sans text-lg font-extralight">
-        <div
-          id="sider"
-          class="fixed z-50 bg-base-100 container max-w-3xl mx-auto h-screen flex items-center justify-center sider-top"
-        >
-          <button
-            id="menu-close-btn"
-            class="absolute top-2 right-2 btn btn-square btn-ghost text-lg"
-          >
-            <i class="fa fa-close"></i>
-          </button>
-          <div class="card w-96 bg-base-100 shadow-xl p-4 m-4">
-            <div class="text-center">
-              <div class="avatar">
-                <div
-                  class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-                >
+      <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
+        <div class="navbar">
+          <div class="navbar-start">
+            <div class="avatar lg:hidden mx-2">
+              <div
+                class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+              >
+                <a href="https://suiyan.cc/">
                   <img
                     src="https://suiyan.cc/assets/images/avatar.jpg"
                     alt="J.sky"
                   />
-                </div>
-              </div>
-              <h3 class="text-lg my-1">
-                <a href="https://suiyan.cc/" class="">J.sky</a>
-              </h3>
-              <p class="text-xs">You see see you , This one day day di.</p>
-              <div class="mt-2 text-center text-2xl">
-                
-                <a
-                href="https://github.com/bosichong/suiyan"
-                target="_blank"
-                class=""
-                ><i class="fa fa-github"></i
-              ></a>
-            
-                <a
-                href="https://gitee.com/J_Sky/suiyan"
-                target="_blank"
-                class=""
-                ><i class="fa fa-git"></i
-              ></a>
-            
-                <a
-                href="mailto:285911@gmail.com"
-                target="_blank"
-                class=""
-                ><i class="fa fa-envelope"></i
-              ></a>
-            
-                <a
-                href="https://www.zhihu.com/people/J_sky/activities"
-                target="_blank"
-                class=""
-                ><i class="fa fa-book"></i
-              ></a>
-            
-                <a
-                href="https://suiyan.cc/rss.xml"
-                target="_blank"
-                class=""
-                ><i class="fa fa-rss-square"></i
-              ></a>
-            
-                
-
+                </a>
               </div>
             </div>
-  
-            <ul class="menu bg-base-100 w-36 rounded-box mx-auto">
+            <button
+              class="flex btn btn-sm btn-ghost normal-case font-light text-2xl hidden lg:block"
+            >
+              <a href="https://suiyan.cc/">碎言</a>
+            </button>
+          </div>
+          <div class="navbar-end">
+            <ul class="flex text-center text-xl lg:hidden">
               
               <li>
-                <a href="https://suiyan.cc/"
-                  ><i class="fa fa-home"></i> <span>Home</span></a
-                >
-              </li>
-            
-              <li>
                 <a href="https://suiyan.cc/archives.html"
-                  ><i class="fa fa-archive"></i> <span>Archive</span></a
+                  ><button
+                    class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+                  >
+                    Archive
+                  </button></a
                 >
               </li>
-            
+              
               <li>
                 <a href="https://suiyan.cc/tags.html"
-                  ><i class="fa fa-tags"></i> <span>Tags</span></a
+                  ><button
+                    class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+                  >
+                    Tags
+                  </button></a
                 >
               </li>
-            
+              
               <li>
                 <a href="https://suiyan.cc/before-2022/1.html"
-                  ><i class="fa fa-user-md"></i> <span>About Me</span></a
+                  ><button
+                    class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+                  >
+                    Me
+                  </button></a
                 >
               </li>
-            
+              
               <li>
                 <a href="https://suiyan.cc/links.html"
-                  ><i class="fa fa-link"></i> <span>Links</span></a
+                  ><button
+                    class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+                  >
+                    Links
+                  </button></a
                 >
               </li>
-            
-
+              
             </ul>
-  
-
-
             
-
-
-
           </div>
         </div>
-        <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
-          <div class="navbar">
-            <div class="navbar-start">
-              <button
-                id="menu-open-btn"
-                class="btn btn-square btn-ghost lg:hidden"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  class="inline-block w-5 h-5 stroke-current"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              </button>
-              <div class="avatar lg:hidden mx-2">
-                <div
-                  class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-                >
-                <a href="https://suiyan.cc/">
-                  <img
-                  src="https://suiyan.cc/assets/images/avatar.jpg"
-                  alt="J.sky"
-                  />
-                </a>
-                  
-                </div>
-              </div>
-              <button
-                class="flex btn btn-sm btn-ghost normal-case font-light text-2xl hidden lg:block"
-              >
-                <a href="https://suiyan.cc/">碎言</a>
-              </button>
-            </div>
-            <div class="navbar-end">
-
-            </div>
-          </div>
-        </nav>
-        <div class="p-4">
-            
+      </nav>
+      <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 <div>
@@ -336,57 +258,73 @@ a.print_text()
     
 
  
+
+<link rel="stylesheet"
+      href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
+</div>
 
-        </div>
-        <div class="sider-left w-24 fixed top-32 hidden lg:block">
-          <div class="avatar w-24">
-            <div
-              class="animate-bounce w-16 mx-auto rounded-full ring-offset-base-100 ring-offset-2 hover:blur-sm"
-            >
-              <img src="https://suiyan.cc/assets/images/avatar.jpg"
-              alt="J.sky" />
-            </div>
+      <!-- 左侧导航 -->
+      <div class="sider-left w-24 fixed top-32 hidden lg:block">
+        <div class="avatar w-24">
+          <div
+            class="animate-bounce w-16 mx-auto rounded-full ring-offset-base-100 ring-offset-2 hover:blur-sm"
+          >
+            <img
+              src="https://suiyan.cc/assets/images/avatar.jpg"
+              alt="J.sky"
+            />
           </div>
-          <ul class="text-center text-sm space-y-1">
-            
-            <li>
-              <a href="https://suiyan.cc/"
-                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">Home</button></a
-              >
-            </li>
-            
-            <li>
-              <a href="https://suiyan.cc/archives.html"
-                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">Archive</button></a
-              >
-            </li>
-            
-            <li>
-              <a href="https://suiyan.cc/tags.html"
-                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">Tags</button></a
-              >
-            </li>
-            
-            <li>
-              <a href="https://suiyan.cc/before-2022/1.html"
-                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">About Me</button></a
-              >
-            </li>
-            
-            <li>
-              <a href="https://suiyan.cc/links.html"
-                ><button class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg">Links</button></a
-              >
-            </li>
-            
-  
-          </ul>
         </div>
-        <!-- ======= Footer ======= -->
+        <ul class="text-center text-sm space-y-1">
+          
+          <li>
+            <a href="https://suiyan.cc/archives.html"
+              ><button
+                class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+              >
+                Archive
+              </button></a
+            >
+          </li>
+          
+          <li>
+            <a href="https://suiyan.cc/tags.html"
+              ><button
+                class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+              >
+                Tags
+              </button></a
+            >
+          </li>
+          
+          <li>
+            <a href="https://suiyan.cc/before-2022/1.html"
+              ><button
+                class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+              >
+                Me
+              </button></a
+            >
+          </li>
+          
+          <li>
+            <a href="https://suiyan.cc/links.html"
+              ><button
+                class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+              >
+                Links
+              </button></a
+            >
+          </li>
+          
+        </ul>
+      </div>
+      <!-- ======= Footer ======= -->
 
-    <footer class="footer p-3 bg-base-200 text-base-content">
+      <footer class="footer p-3 bg-base-200 text-base-content">
   <div>
     <div>
       本站采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可
@@ -425,22 +363,15 @@ a.print_text()
   </div>
 </footer>
 
-    <!-- End  Footer -->
+      <!-- End  Footer -->
+    </div>
 
-      </div>
+    <!-- CDN example (unpkg) day.js -->
+    <script src="https://suiyan.cc/assets/js/dayjs.min.js"></script>
+    <script src="https://suiyan.cc/assets/js/relativeTime.js"></script>
+    <script src="https://suiyan.cc/assets/js/zh-cn.js"></script>
 
-
-      
-       
-
-<!-- CDN example (unpkg) day.js -->
-<script src="https://suiyan.cc/assets/js/dayjs.min.js"></script>
-<script src="https://suiyan.cc/assets/js/relativeTime.js"></script>
-<script src="https://suiyan.cc/assets/js/zh-cn.js"></script>
-
-<!-- Template Main JS File -->
-<script src="https://suiyan.cc/assets/js/main.js"></script>
-
-</body>
-
+    <!-- Template Main JS File -->
+    <script src="https://suiyan.cc/assets/js/main.js"></script>
+  </body>
 </html>

@@ -44,11 +44,6 @@
     ],
     "nav": [
         {
-            "ico": "home",
-            "text": "Home",
-            "url": ""
-        },
-        {
             "ico": "archive",
             "text": "Archive",
             "url": "archives.html"
@@ -60,7 +55,7 @@
         },
         {
             "ico": "user-md",
-            "text": "About Me",
+            "text": "Me",
             "url": "before-2022/1.html"
         },
         {
