@@ -26,19 +26,15 @@
             "url": "https://github.com/bosichong/suiyan"
         },
         {
-            "ico": "git",
+            "ico": "gitee",
             "url": "https://gitee.com/J_Sky/suiyan"
         },
         {
-            "ico": "envelope",
+            "ico": "mail",
             "url": "mailto:285911@gmail.com"
         },
         {
-            "ico": "book",
-            "url": "https://www.zhihu.com/people/J_sky/activities"
-        },
-        {
-            "ico": "rss-square",
+            "ico": "rss",
             "url": "https://suiyan.cc/rss.xml"
         }
     ],
