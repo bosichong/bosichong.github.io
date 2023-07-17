@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-16 16:51:19</pubDate>
+        <pubDate>2023-07-17 10:38:01</pubDate>
+        
+        <item>
+            <title>久了，博客主题就一会一直做减法</title>
+            <link>https://suiyan.cc/2023/20230717103801.html</link>
+            <author>J.sky</author>
+            <description>昨天晚上登录了google Search Console，就看到站内留言，内容大致是：展开合作 展开合作 我们正在验证您对核心网页指标问题。额？我有犯了什么错误？</description>
+            <category>碎言博客</category>
+            <pubDate>2023-07-17 10:38:01</pubDate>
+        </item>
         
         <item>
             <title>七月的焦虑</title>
@@ -85,15 +94,6 @@
             <description>之前创建了一个Python和JavaScript的学习交流群，有好几年了吧？这几天在QQ搜索Python是不知怎的排名突然靠前了一点，导致很多新人加了进来，一些新手的提问真是让人无语。。。。我以为都是AI元年了，怎么还会有这么多不会提问的孩子呢？</description>
             <category>Python,编程</category>
             <pubDate>2023-07-06 08:41:31</pubDate>
-        </item>
-        
-        <item>
-            <title>Typed.js 一款有意思的网页打字机效果库</title>
-            <link>https://suiyan.cc/2023/20230705083951.html</link>
-            <author>J.sky</author>
-            <description>博客页面不仅需要简介大方漂亮美观，还需要一些动态的效果，如果引入动态的GIF图片其大小会影响页面的加载速度，这里推荐一个JavaScript的打字机效果库Typed.js，其漂亮的打字机效果和简单的使用方法，值得博主拥有。</description>
-            <category>Typed</category>
-            <pubDate>2023-07-05 08:39:51</pubDate>
         </item>
         
     </channel>

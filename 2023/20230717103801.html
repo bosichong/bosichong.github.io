@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta content="碎言博客" name="keywords" />
-    <meta content="花了几个小时基于daisyUI Tailwind CSS做了一个博客主题，很早就想把博客的样式换成基于Tailwind CSS为基础框架的，今天终于实现了。" name="description" />
+    <meta content="昨天晚上登录了google Search Console，就看到站内留言，内容大致是：展开合作 展开合作 我们正在验证您对核心网页指标问题。额？我有犯了什么错误？" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      基于daisyUI Tailwind CSS做了一个博客主题 | SuiYan 碎言
+      久了，博客主题就一会一直做减法 | SuiYan 碎言
     </title>
     <link
       href="https://suiyan.cc/assets/css/full.css"
@@ -109,29 +109,33 @@
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 <div>
   <div class="mb-4">
-    <h1 class="text-3xl">基于daisyUI Tailwind CSS做了一个博客主题</h1>
+    <h1 class="text-3xl">久了，博客主题就一会一直做减法</h1>
     <div class="text-sm my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-06-16 12:08:48"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-17 10:38:01"><span
         class="cr-time"
-        >2023-06-16 12:08:48</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-07-17 11:03:01"><span class="up-time">2023-07-17 11:03:01</span></div>
+        >2023-07-17 10:38:01</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-17 12:31:39"><span class="up-time">2023-07-17 12:31:39</span></div>
       · Tag:   碎言博客 
     </small>
   </div>
 
-  <div class="mb-4"><p>花了几个小时基于daisyUI Tailwind CSS做了一个博客主题，很早就想把博客的样式换成基于Tailwind CSS为基础框架的，今天终于实现了。</p>
-<h2>一些收获</h2>
-<pre><code>只需书写 HTML 代码，无需书写 CSS，即可快速构建美观的网站。
-</code></pre></div>
+  <div class="mb-4"><p>昨天晚上登录了google Search Console，就看到站内留言，内容大致是：展开合作 展开合作 我们正在验证您对核心网页指标问题。额？我有犯了什么错误？</p>
+<h2>起因</h2>
+<p>google核心网页指标是什么？简单来说，你的网站被收录后，google会对你的核心页面进行一个评估，这个分数是100分，当你的页面分数不足90分的时候，就会提示你改进和欠佳。这次我的问题：需要改进LCP 问题：超过了 2.5 秒（桌面设备）。至于这个LCP：Largest Contentful Paint 最大内容绘制 (LCP)，显然，我的页面绘制时间超过了google的要求。</p>
+<p>这玩意有什么用？LCP时间过长就是打开页面加载的时间太长了！这会影响用户的首次打开体验，很有可能用户不厌其烦了，太慢了，然后就会直接关掉这个页面，google就会搜集这个信息，因为他不希望把这种页面展示给搜索结果，所以核心网页如果出现分数值偏低，google通知你修改或是欠佳，那么你的网页展现在搜索的次数会大大降低的。</p>
+<p>那么这个数据的搜集是通过一个月的时间的平均值，这阵子我也发现了一些弊端，比如页面打开加载时间过长，跳出率太高等问题，自己对页面的打开速度都明显的不满意，这个加载打开页面慢的问题不能简简单单的怪罪于网络或是服务器，这里有很多细节需要修改，还好google提供了一些工具方便站长查找并修改问题。</p>
+<h2>解决</h2>
+<p>其实对现在的主题也不是很满意，主要是觉得不流畅，我一直是以为把静态页面托管于Github pages造成的，直到这次我大刀阔斧的删减很多以来之后，这页面的打开速度终于可以接受了。首先精简JavaScript的相关库类，把jQuery和其相关的库类都删除了，jq的功能实在换不掉的就用JavaScript重构了，反正必须删掉jQuery。删掉了一些效果库，删掉了图标字体库，精简了HTML、JavaScript、css的一些代码，然后发布页面，拿工具进行测试，请看结果：</p>
+<p><img alt="测试结果" src="https://suiyan.cc/assets/images/2023/pagespeed.jpg" /></p>
+<p>再这之前，这个分数可是很低的，大家可以拿自己的页面去测试一下，我随便挑选了几个博客的页面，基本上都是不合格的。当然这个大家也不要看的太重，随意就好。</p>
+<h2>总结</h2>
+<p>对于LCP的分值如果讨论起立会有很多内容，影响分值的因素也很多，当然流畅的网络和高水平的库和框架都是非常重要的，还有就是K值太高的图片也会影响的。</p>
+<p>可能每个博主都折腾过博客的主题，但是大多数最终都会走向一个极简畅快的主题风格，对博客主题做减法就像人生一样，抛去包袱轻装上阵或许只有经历过的人才会懂。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
-      
-      <a href="https://suiyan.cc/2023/20230617102523.html" class="text-accent text-md"
-        ><span> prev </span></a
-      >
        
-      <a href="https://suiyan.cc/2023/20230614151948.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230716165119.html" class="text-accent text-md"
         ><span> next </span></a
       >
       
@@ -142,14 +146,14 @@
       <ul>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230717103801.html" class="text-truncate"
-            ><span>久了，博客主题就一会一直做减法</span></a
+          <a href="https://suiyan.cc/2023/20230617102523.html" class="text-truncate"
+            ><span>从一次浏览器兼容问题到何不放过自己做个快乐的博主</span></a
           >
         </li>
         
         <li>
-          <a href="https://suiyan.cc/2023/20230617102523.html" class="text-truncate"
-            ><span>从一次浏览器兼容问题到何不放过自己做个快乐的博主</span></a
+          <a href="https://suiyan.cc/2023/20230616120848.html" class="text-truncate"
+            ><span>基于daisyUI Tailwind CSS做了一个博客主题</span></a
           >
         </li>
         
