@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta content="碎言博客" name="keywords" />
-    <meta content="大道至简，返璞归之，这是一款侧重与内容的博客主题,本项目为[碎言静态博客](https://github.com/bosichong/suiyan.git)主题。" name="description" />
+    <meta content="由于需要改进LCP 问题：超过了 2.5 秒（桌面设备）这个问题，花了点时间把最近做的这个主题进行了一些性能的优化，嗯，优化后的页面打开速度还真是不错，优化博客的主题，大概是每个博主必经之路吧。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      free_blog 碎言静态博客主题 | SuiYan 碎言
+      速度与优雅：博客性能优化之旅 | SuiYan 碎言
     </title>
     <link
       href="https://suiyan.cc/assets/css/full.css"
@@ -108,57 +108,38 @@
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 
   <div class="mb-4">
-    <h1 class="text-3xl">free_blog 碎言静态博客主题</h1>
+    <h1 class="text-3xl">速度与优雅：博客性能优化之旅</h1>
     <div class="text-sm my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-04-08 09:35:36"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-18 15:08:06"><span
         class="cr-time"
-        >2023-04-08 09:35:36</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-04-13 08:57:24"><span class="up-time">2023-04-13 08:57:24</span></div>
+        >2023-07-18 15:08:06</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-18 15:39:25"><span class="up-time">2023-07-18 15:39:25</span></div>
       · Tag:   碎言博客 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>大道至简，返璞归之，这是一款侧重与内容的博客主题
-本项目为<a href="https://github.com/bosichong/suiyan.git">碎言静态博客</a>主题。
-主题支持亮色和黑暗主题在线切换。</p>
-<p><a href="https://gitee.com/J_Sky/suiyan">碎言静态博客Gitee</a>
-<a href="https://github.com/bosichong/suiyan.git">碎言静态博客GitHub</a></p>
-<h3>效果展示</h3>
-<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/free_blog/001.png" /></p>
-<p><img alt="在这里插入图片描述" src="https://suiyan.cc/assets/images/2023/free_blog/002.png" /></p>
-<h3>技术框架</h3>
-<p>主题模板采用了jinja2的模板引擎，使用了pico.css样式制作。
-图标：<a href="https://9iphp.com/fa-icons">FontAwesome 4.7.0 中完整的675个图标样式CSS参考</a>
-响应式适配移动端。</p>
-<h3>安装教程</h3>
+  <div class="mb-4"><p>由于需要改进LCP 问题：超过了 2.5 秒（桌面设备）这个问题，花了点时间把最近做的这个主题进行了一些性能的优化，嗯，优化后的页面打开速度还真是不错，优化博客的主题大概是每个博主必经之路吧。</p>
+<h2>自己挖坑自己填</h2>
+<p>前一阵子使用tailwindcss+daisyUI做了个博客的新主题，把构思的功能不管三七二十一都给上了，导致页面的加载速度很慢，以至于自己打开都有觉得有点不耐烦了，再加上google的邮件提示，立马觉悟了，这是不改不行了。虽说部署与Github，但是页面性能优化的好，除了网络原因连不上的话，只要连上了打开的速度还是可以的，但是前一阵子忙于琐事，对于慢的事却忽略了，最终痛下决心改之。</p>
+<h2>性能优化的细节</h2>
+<p>根据google页面加载工具给出的提示，做出了一下几点修改：</p>
 <ol>
-<li>首先克隆下载本主题到碎言静态博客程序<code>theme</code>目录下。</li>
-<li>修改配置文件 <code>config.json</code>中的"theme": "主题目录",即可启用。</li>
+<li>移除了jQuery，把jq的代码都使用原生的JavaScript重写了，把依赖jq的库都去掉了，所有依赖的功能都使用JavaScript原生代码重写。</li>
+<li>优化了giscus评论插件的加载，这样打开页面不会自动加载评论，点击按钮后在加载评论页面，这样大大提高了页面的加载速度。</li>
+<li>优化了HTML的DOM结构，精简了一些无用的代码，修复了一些代码的错误，删除了一些重复功能代码，优化了站点导航。</li>
+<li>重写了站内的搜索，本来想撤掉搜索了，但是今天自己在博客里找东西找了半天，最后还是添加上了。</li>
+<li>重新使用工具进行LCP测试，页面都达到了95分+，数值很满意，页面打开速度明显的快多了！</li>
 </ol>
-<h3>运行预览</h3>
-<p>本地主题开发编写，推荐使用<code>Live Server</code>这个vscode得插件，非常方便。
-在配置文件里修改：
-"dev": 1,  # 调试模式，如果改为1，则使用"blog_test_url"来添加静态资源地址前缀，方便本地调试。</p>
-<h3>修改主题样式</h3>
-<p>主题采用jinja2模板引擎，在主题或是模板目录修改样式，一键生成页面，直接同步页面。
-在jinja2 模板中使用<code>{{ 属性名称 }}</code>来调用。</p>
-<h3>github pages</h3>
-<p>如何部署GitHub pages 搭建自己的博客，这里就不在详细介绍了，请参考下文。</p>
-<p><a href="https://docs.github.com/zh/pages/quickstart">GitHub Pages 快速入门</a></p>
-<p>除了部署GitHub，也可以将静态文件部署到虚拟主机云服务器上，复制静态文件目录下的所有文件到你的站点目录下即可。</p>
-<h3>仓库地址</h3>
-<p><a href="https://github.com/bosichong/suiyan_free_blog">GitHub</a>
-<a href="https://gitee.com/J_Sky/suiyan_free_blog">Gitee</a></p></div>
+<h2>一些取舍</h2>
+<p>本来把搜索和评论都撤掉了，总觉得没啥人评论，留着也是影响页面加载速度，但是考虑了一下，万一有人看我不顺眼，找不到发泄的地方，再给憋出病了就不好了，所以还是加上吧。评论这玩意一定要看开，千万不要太在意那些恶意的评论，看到一定要及时删除，我可不想像某个博主那样，评论事件都过去了个把月了还在念念不忘。</p>
+<p>对于首屏大图，暂时还是不添加了，没啥用，你以为好看那是你自己的审美，别人没准看了一眼就会说：这啥破玩意！然后页面直接关了。而且首屏大图太影响阅读体验了，当然你要是图片类型的博客，我建议大！图一定要更大！哈哈哈。</p>
+<p>希望大家愉快的写博客，愉快的交流。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
-      
-      <a href="https://suiyan.cc/2023/20230410075954.html" class="text-accent text-md"
-        ><span> prev </span></a
-      >
        
-      <a href="https://suiyan.cc/2023/20230405202140.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230717103801.html" class="text-accent text-md"
         ><span> next </span></a
       >
       
@@ -167,12 +148,6 @@
     <div class="related">
       <p>相关文章：</p>
       <ul>
-        
-        <li>
-          <a href="https://suiyan.cc/2023/20230718150806.html" class="text-truncate"
-            ><span>速度与优雅：博客性能优化之旅</span></a
-          >
-        </li>
         
         <li>
           <a href="https://suiyan.cc/2023/20230717103801.html" class="text-truncate"
@@ -225,6 +200,12 @@
         <li>
           <a href="https://suiyan.cc/2023/20230420101527.html" class="text-truncate"
             ><span>使用Python编写并部署个人静态博客:(二)实现静态页面的输出</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230410075954.html" class="text-truncate"
+            ><span>使用Python编写并部署个人静态博客:(一)分析与设计</span></a
           >
         </li>
         

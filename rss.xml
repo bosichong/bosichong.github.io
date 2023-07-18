@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-17 10:38:01</pubDate>
+        <pubDate>2023-07-18 15:08:06</pubDate>
+        
+        <item>
+            <title>速度与优雅：博客性能优化之旅</title>
+            <link>https://suiyan.cc/2023/20230718150806.html</link>
+            <author>J.sky</author>
+            <description>由于需要改进LCP 问题：超过了 2.5 秒（桌面设备）这个问题，花了点时间把最近做的这个主题进行了一些性能的优化，嗯，优化后的页面打开速度还真是不错，优化博客的主题，大概是每个博主必经之路吧。</description>
+            <category>碎言博客</category>
+            <pubDate>2023-07-18 15:08:06</pubDate>
+        </item>
         
         <item>
             <title>久了，博客主题就会一直做减法</title>
@@ -85,15 +94,6 @@
             <description>对于将博客部署于Github的博主来说，每次写完日志或是对博客做了些改动，都会同步远程的Github仓库，重复的在终端执行git XXXX的命令，国内连接Github很不稳定，所以有时需要重复很多次，很麻烦的一说，今天我们就要解决掉这个痛点的。</description>
             <category>github,python,Git</category>
             <pubDate>2023-07-07 08:47:36</pubDate>
-        </item>
-        
-        <item>
-            <title>编程新手学习过程中如何更好的提问？</title>
-            <link>https://suiyan.cc/2023/20230706084131.html</link>
-            <author>J.sky</author>
-            <description>之前创建了一个Python和JavaScript的学习交流群，有好几年了吧？这几天在QQ搜索Python是不知怎的排名突然靠前了一点，导致很多新人加了进来，一些新手的提问真是让人无语。。。。我以为都是AI元年了，怎么还会有这么多不会提问的孩子呢？</description>
-            <category>Python,编程</category>
-            <pubDate>2023-07-06 08:41:31</pubDate>
         </item>
         
     </channel>
