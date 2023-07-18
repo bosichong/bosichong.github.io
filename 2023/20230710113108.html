@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">react useEffect() 为什么在开发模式的时候会执行两次？</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-07-10 11:31:08</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-07-10 11:41:43"><span class="up-time">2023-07-10 11:41:43</span></div>
       · Tag:   react 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>额，今天在编写一段简短的测试代码，想在组件加载的时候弹出一个alert提示，但是刷新的时候会弹出两次alert提示？只能是奇怪了！研究了半天终于找到了解决的办法。</p>
@@ -221,6 +222,12 @@ export default App;
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -228,6 +235,11 @@ export default App;
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

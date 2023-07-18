@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Django 4.2 复习笔记(一)迅速概览</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-05-18 09:28:45</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-05-18 10:53:58"><span class="up-time">2023-05-18 10:53:58</span></div>
       · Tag:   Django 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。</p>
@@ -288,6 +289,12 @@ urlpatterns = [
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -295,6 +302,11 @@ urlpatterns = [
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

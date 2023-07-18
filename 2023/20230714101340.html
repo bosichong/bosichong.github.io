@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">react中如把HTML代码转成字符串进行渲染？</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-07-14 10:13:40</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-07-14 10:20:56"><span class="up-time">2023-07-14 10:20:56</span></div>
       · Tag:   react 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>今天需要再react组件内渲染一段HTML代码，但是直接复制到组件内渲染会被当做HTML渲染出HTML的dom结构，我的本意是要把这段HTML代码输出为字符串，记录一下解决过程。</p>
@@ -210,6 +211,12 @@ return (
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -217,6 +224,11 @@ return (
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

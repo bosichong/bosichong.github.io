@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">如何单独使用Django ORM 在非Django项目中使用Django ORM？</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-06-04 16:15:47</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-06-04 16:37:22"><span class="up-time">2023-06-04 16:37:22</span></div>
       · Tag:   Django 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>在Python中进行一些不是很复杂的数据库操作的时候我们都会选择使用一些ORM框架，主要的ORM框架包括Django ORM、SQLAlchemy、Pony ORM、Peewee和Tortoise ORM等。这里Django ORM在使用方面更为简单和人性化。但是Django ORM和Django的绑定很紧密，如何单独使用Django ORM呢？</p>
@@ -272,6 +273,12 @@ django.setup()
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -279,6 +286,11 @@ django.setup()
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Vue3+Element Plus环境搭建和一键切换明暗主题的配置</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-04-30 07:34:41</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-04-30 16:38:14"><span class="up-time">2023-04-30 16:38:14</span></div>
       · Tag:   Vue 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaScript 框架。而Element Plus是一款基于Vue3面向设计师和开发者的组件库。</p>
@@ -246,6 +247,12 @@ const toggleDark = useToggle(isDark)
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -253,6 +260,11 @@ const toggleDark = useToggle(isDark)
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

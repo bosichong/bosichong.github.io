@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Django 4.2 复习笔记(九)Django Forms 使用表单</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-06-11 08:43:25</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-06-11 10:47:10"><span class="up-time">2023-06-11 10:47:10</span></div>
       · Tag:   Django 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>在web日常中表单是必不可少的，处理数据的输入与交互在web站点中是非常重要的，Django提供了一系列的工具和库来帮助您构建表单来接收网站访客的输入，然后处理以及响应这些输入。</p>
@@ -248,6 +249,12 @@ content:222
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -255,6 +262,11 @@ content:222
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

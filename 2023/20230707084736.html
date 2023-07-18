@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">一键更新Github部署的静态博客</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-07-07 08:47:36</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-07-07 09:22:31"><span class="up-time">2023-07-07 09:22:31</span></div>
       · Tag:   github  python  Git 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>对于将博客部署于Github的博主来说，每次写完日志或是对博客做了些改动，都会同步远程的Github仓库，重复的在终端执行git XXXX的命令，国内连接Github很不稳定，所以有时需要重复很多次，很麻烦的一说，今天我们就要解决掉这个痛点的。</p>
@@ -218,6 +219,12 @@ sync_to_remote_repo(directory_path)
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -225,6 +232,11 @@ sync_to_remote_repo(directory_path)
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

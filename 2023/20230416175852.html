@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">从回调函数到JavaScript异步编程</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-04-16 17:58:52</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-04-16 18:20:42"><span class="up-time">2023-04-16 18:20:42</span></div>
       · Tag:   JavaScript 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>异步编程是JavaScript中的一个重要概念。为了理解异步编程，首先需要了解同步编程的工作原理。在同步编程中，代码按行执行，每行必须在下一行开始之前完成执行。当处理长时间运行的任务或需要等待外部资源时，这可能会导致性能问题。
@@ -278,6 +279,12 @@ getData();
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -285,6 +292,11 @@ getData();
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

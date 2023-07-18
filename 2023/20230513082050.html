@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">再谈TailwindCSS的使用心得</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-05-13 08:20:50</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-06-13 15:50:08"><span class="up-time">2023-06-13 15:50:08</span></div>
       · Tag:   TailwindCSS 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>TailwindCSS上手确实很好用，有点明显，但是坑也挺多的。本来打算使用TailwindCSS制作一个全新的博客主题，但是在实际的使用过程中有一些不爽细节不吐不快。</p>
@@ -192,6 +193,12 @@
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -199,6 +206,11 @@
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

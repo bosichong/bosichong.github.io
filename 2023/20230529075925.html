@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Django 4.2 复习笔记(六)Django的路由</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-05-29 07:59:25</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-05-29 08:03:50"><span class="up-time">2023-05-29 08:03:50</span></div>
       · Tag:   Django 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>在Django中，路由由URL模式和视图函数组成。URL模式定义了URL的结构和匹配规则，而视图函数则定义了当URL匹配时要执行的代码逻辑。Django的路由系统允许你根据URL的不同部分进行模式匹配，并从URL中提取参数传递给视图函数。</p>
@@ -231,6 +232,12 @@ urlpatterns = [
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -238,6 +245,11 @@ urlpatterns = [
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

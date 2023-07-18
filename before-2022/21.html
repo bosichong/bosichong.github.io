@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Python TK和Tkinter的GUI编程(1)窗口、标签Label、按钮Button</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2017-09-22 09:10:27</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span></div>
       · Tag:   Python GUI 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p><code>Python</code>编程中有时我们需要一些可视化的操作，如果功能相对很简单，可以使用<code>Python</code>内置的GUI模块：<code>tkinter</code>这个模块所提供的功能及部件不是很多，如果你用过java，和Swing、AWT相比，tk的所提供的确实是要少很多了。但是如果只是简单的显示或是数据展示，基本上还是够用的。</p>
@@ -302,6 +303,12 @@ root.mainloop()
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -309,6 +316,11 @@ root.mainloop()
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

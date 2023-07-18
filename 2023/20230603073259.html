@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Django 4.2 复习笔记(七)Django 模板(TEMPLATES)</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-06-03 07:32:59</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-06-03 08:02:32"><span class="up-time">2023-06-03 08:02:32</span></div>
       · Tag:   Django 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>作为一个网络框架，Django 需要一种方便的方式来动态生成 HTML，最常见的方法是依靠模板，一个模板包含了所需HTML输出的静态部分，以及一些特殊的语法，描述了如何插入动态内容。</p>
@@ -298,6 +299,12 @@
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -305,6 +312,11 @@
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

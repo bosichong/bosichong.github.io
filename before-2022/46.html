@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">“编学编玩”用Pygame写游戏（3）让角色动起来及碰撞检测</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2017-10-20 16:00:52</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span></div>
       · Tag:   pygame 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>上次的代码中，除了绘制基本图形与图片外，中间还插入了一个小小动画，就是头像在不停的移动，这个移动确实简单了些，游戏中的的角色肯定不是简单的移动几像素那么简单了。</p>
@@ -269,6 +270,12 @@ myimgs.draw(DISPLAYSURF)#绘制一组红球
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -276,6 +283,11 @@ myimgs.draw(DISPLAYSURF)#绘制一组红球
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">使用React+Vite+TailwindCSS+daisyUI打造一个简单的ToDos</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-06-29 15:54:38</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-06-30 08:21:03"><span class="up-time">2023-06-30 08:21:03</span></div>
       · Tag:   前端  react  TailwindCSS  daisyUI 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>闲来无事，琢磨着体验一下react吧，花了一天的时间看了看react的官方文档，然后能照着以前用vue写的ToDo使用react重构了一遍，这里简单记录并总结一下学习过程。</p>
@@ -405,6 +406,12 @@ export default App;
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -412,6 +419,11 @@ export default App;
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

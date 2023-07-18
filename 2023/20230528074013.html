@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Django 4.2 复习笔记(五)Django中常见的关系字段及其示例</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-05-28 07:40:13</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-05-28 07:50:22"><span class="up-time">2023-05-28 07:50:22</span></div>
       · Tag:   Django 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>Django是一个使用Python编写的开源Web应用程序框架，它提供了一种方便的方式来处理数据库关系。Django的关系字段允许你在模型之间建立各种类型的关联关系，如一对一、一对多和多对多关系。以下是Django中常见的关系字段及其示例。</p>
@@ -237,6 +238,12 @@ class Course(models.Model):
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -244,6 +251,11 @@ class Course(models.Model):
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

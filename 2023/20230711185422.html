@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">react useEffect()中使用lodash库中的防抖debounce</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-07-11 18:54:22</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-07-13 20:14:28"><span class="up-time">2023-07-13 20:14:28</span></div>
       · Tag:   debounce  react 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>今天在react useEffect()中有一个function需要防抖，于是乎就install了lodash库，但是直接在useEffect()中使用却没有效果，经过一番查找，最终解决了这个问题。</p>
@@ -209,6 +210,12 @@ useEffect(() =&gt; {
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -216,6 +223,11 @@ useEffect(() =&gt; {
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

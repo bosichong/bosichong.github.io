@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">display:none没有隐藏元素所占空间的原因</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-05-13 10:41:51</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-05-13 10:50:28"><span class="up-time">2023-05-13 10:50:28</span></div>
       · Tag:   CSS 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>今天想写一段前端的效果，然后就手动使用原生JavaScript生成了一些HTML的DOM，其中有一些是带有<code>display:none;</code>隐藏的css属性的，我的本意是想隐藏这些元素并且不占用空间，但是使用JavaScript动态生成的DOM，动态添加的css属性<code>display:none;</code>的话，元素就会发生只隐藏但空间占用的情况还是存在。</p>
@@ -185,6 +186,12 @@
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -192,6 +199,11 @@
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

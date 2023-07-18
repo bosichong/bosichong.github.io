@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Python权限管理框架 Casbin PyCasbin 的简单操作</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-06-02 07:08:49</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-06-02 07:14:32"><span class="up-time">2023-06-02 07:14:32</span></div>
       · Tag:   Casbin  权限管理 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>大多数应用都会和权限与权限管理打交道,有的时候我们希望有一套拿来即用的权限管理框架,既可以在小型的个人应用中使用,又可以应付大型应用的复杂权限的管理,Casbin可以满足你的这个小小愿望.Casbin支持多种编程语言,今天我们来试试Casbin在python下的简单操作.</p>
@@ -218,6 +219,12 @@ e.add_policy(["alice", "data1", "read"])
       
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -225,6 +232,11 @@ e.add_policy(["alice", "data1", "read"])
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

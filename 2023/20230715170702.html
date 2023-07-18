@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">在react中使用复制插件clipboard.js</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-07-15 17:07:02</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-07-15 17:15:03"><span class="up-time">2023-07-15 17:15:03</span></div>
       · Tag:   react  clipboard.js 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>之前在html中使用clipboard.js是很简单的，引用CDN，然后new一个clipboard对象，绑定DOM就可以搞定一键复制文本了。这次要在react中使用，所以原来的方式就不行了，来看看react中如何使用clipboard.js。</p>
@@ -213,6 +214,12 @@ clipboard.on('error', function(e) {
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -220,6 +227,11 @@ clipboard.on('error', function(e) {
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

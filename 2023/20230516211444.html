@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">一款基于GitHub的评论系统不但免费安装还贼简单！</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-05-16 21:14:44</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-06-06 11:57:18"><span class="up-time">2023-06-06 11:57:18</span></div>
       · Tag:   giscus 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>这几天一直琢磨这给博客文章页面添加个第三方的评论系统，最好是免费的，然后就搜到了<code>giscus</code>，从安装到使用，用一个字来评价：真特么绝！具体效果可以拉倒最底端查看。</p>
@@ -137,6 +138,12 @@
       
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -144,6 +151,11 @@
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

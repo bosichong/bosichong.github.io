@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">pipenv 简化的虚拟环境、项目依赖管理工具</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2021-02-20 15:38:15</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-04-13 09:03:54"><span class="up-time">2023-04-13 09:03:54</span></div>
       · Tag:   Flask 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>最近学习flask，由于flask框架本身非常极简，功能上需要很多的扩展包，所以项目需要在Python的虚拟环境下来安装管理这些扩展，这样才会方便项目在其他地方进行扩展包的安装。这里推荐<code>pipenv</code>来管理虚拟环境和扩展。</p>
@@ -206,6 +207,12 @@ python_version = "3.8"
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -213,6 +220,11 @@ python_version = "3.8"
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

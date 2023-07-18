@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">Django 4.2 复习笔记(八)Django 模板语言语法</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-06-04 08:48:35</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-06-04 09:19:44"><span class="up-time">2023-06-04 09:19:44</span></div>
       · Tag:   Django 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>Django的页面渲染是通过Django的模板语法在模板中渲染上下文的变量来进行输出的，Django 的模板语言是为了在强大和简单之间取得平衡而设计的。它的设计让习惯于使用 HTML 的人感觉很舒服。如果你接触过其他基于文本的模板语言，如 Smarty 或 Jinja2 ，你应该会对 Django 的模板感到很舒服。</p>
@@ -297,6 +298,12 @@ HTML：｛｛变量名｝｝
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -304,6 +311,11 @@ HTML：｛｛变量名｝｝
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

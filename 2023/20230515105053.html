@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">fetch()如何读取请求中的'user-agent'？</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-05-15 10:50:53</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-05-15 12:24:38"><span class="up-time">2023-05-15 12:24:38</span></div>
       · Tag:   JavaScript  fetch  request 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>之前写了一个node的脚本，用来检测博客的友情链接是否互换成功，通过fetch()采集对方网站友情链接页面的HTML代码，搜索是否含有自己的博客域名来判断是否互换。但是运行了几次脚本发现其中一个网站页面无法打开的状态，后来发邮件询问大体说是被反爬虫给屏蔽了，考虑到自己的简陋的代码并没有处理反爬虫的这个情况，于是修改代码加入了headers中的<code>'user-agent'</code>伪装。</p>
@@ -217,6 +218,12 @@ if __name__ == '__main__':
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -224,6 +231,11 @@ if __name__ == '__main__':
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 

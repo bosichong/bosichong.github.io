@@ -106,7 +106,7 @@
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
-<div>
+
   <div class="mb-4">
     <h1 class="text-3xl">vue3前端打包集成到后端fastAPI的uvicorn服务器</h1>
     <div class="text-sm my-2">
@@ -115,7 +115,8 @@
         >2023-04-23 09:43:05</span></div>
       · 更新于:<div class="tooltip" data-tip="2023-04-27 12:50:48"><span class="up-time">2023-04-27 12:50:48</span></div>
       · Tag:   Vue 
-    </small>
+      </small>
+    </div>
   </div>
 
   <div class="mb-4"><p>数据分页在项目中的使用频率是非常高的,但是对于新手来说是一个难点和痛点,这里我记录一次数据分页从环境搭建到最后页面的渲染的过程,对于新手可以用来参考,大佬勿喷高抬贵手.</p>
@@ -321,6 +322,12 @@ const showSizeChange = (current,size) =&gt;{
       </ul>
     </div>
     
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
+
+  </div>
 
  
 
@@ -328,6 +335,11 @@ const showSizeChange = (current,size) =&gt;{
       href="https://suiyan.cc/assets/css/default.min.css">
 <script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
+
 
 </div>
 
