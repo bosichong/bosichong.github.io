@@ -3,7 +3,6 @@
 // 全站搜索
 const blog_url = suiyan.url
 const searchInput = document.getElementById('search-input');
-const searchBtn = document.getElementById('search-btn');
 const resultList = document.getElementById('result-list');
 
 
@@ -13,8 +12,9 @@ fetch(blog_url + 'blog_data.json')
     .then(response => response.json())
     .then(data => {
         // 处理搜索按钮点击事件
-        searchInput.addEventListener('change', (e) => {
-            showRst(searchInput, data, resultList, blog_url);
+        searchInput.addEventListener('input', (e) => {
+            // 调用防抖后的showRst函数
+            debouncedShowRst(searchInput, data, resultList, blog_url);
             e.preventDefault()
             return false;
         });
@@ -45,3 +45,20 @@ function showRst(searchInput, data, resultList, blog_url) {
         });
     }
 }
+
+
+// 防抖函数
+function debounce(func, delay) {
+    let timeoutId;
+  
+    return function (...args) {
+      clearTimeout(timeoutId);
+  
+      timeoutId = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+
+  // 应用防抖功能到showRst函数
+const debouncedShowRst = debounce(showRst, 500);
