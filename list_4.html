@@ -34,76 +34,75 @@
   </head>
 
   <body>
-    <div class="container max-w-3xl mx-auto font-sans text-lg font-extralight">
-      <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
-        <div class="navbar">
-          <div class="navbar-start">
-            <div class="avatar lg:hidden mx-2">
-              <div
-                class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-              >
-                <a href="https://suiyan.cc/">
-                  <img
-                    src="https://suiyan.cc/assets/images/avatar.jpg"
-                    alt="J.sky"
-                  />
-                </a>
-              </div>
-            </div>
-            <button
-              class="flex btn btn-sm btn-ghost normal-case font-light text-2xl hidden lg:block"
+    <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
+      <div class="navbar">
+        <div class="navbar-start">
+          <div class="avatar lg:hidden mx-2">
+            <div
+              class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
             >
-              <a href="https://suiyan.cc/">碎言</a>
-            </button>
+              <a href="https://suiyan.cc/">
+                <img
+                  src="https://suiyan.cc/assets/images/avatar.jpg"
+                  alt="J.sky"
+                />
+              </a>
+            </div>
           </div>
-          <div class="navbar-end">
-            <ul class="flex text-center text-xl lg:hidden">
-              
-              <li>
-                <a href="https://suiyan.cc/archives.html"
-                  ><button
-                    class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-                  >
-                    Archive
-                  </button></a
-                >
-              </li>
-              
-              <li>
-                <a href="https://suiyan.cc/tags.html"
-                  ><button
-                    class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-                  >
-                    Tags
-                  </button></a
-                >
-              </li>
-              
-              <li>
-                <a href="https://suiyan.cc/before-2022/1.html"
-                  ><button
-                    class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-                  >
-                    Me
-                  </button></a
-                >
-              </li>
-              
-              <li>
-                <a href="https://suiyan.cc/links.html"
-                  ><button
-                    class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-                  >
-                    Links
-                  </button></a
-                >
-              </li>
-              
-            </ul>
-            
-          </div>
+          <button
+            class="flex btn btn-sm btn-ghost normal-case font-light text-2xl hidden lg:block"
+          >
+            <a href="https://suiyan.cc/">碎言</a>
+          </button>
         </div>
-      </nav>
+        <div class="navbar-end">
+          <ul class="flex text-center text-xl">
+            
+            <li>
+              <a href="https://suiyan.cc/archives.html"
+                ><button
+                  class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+                >
+                  Archive
+                </button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/tags.html"
+                ><button
+                  class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+                >
+                  Tags
+                </button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/before-2022/1.html"
+                ><button
+                  class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+                >
+                  Me
+                </button></a
+              >
+            </li>
+            
+            <li>
+              <a href="https://suiyan.cc/links.html"
+                ><button
+                  class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
+                >
+                  Links
+                </button></a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container max-w-3xl mx-auto font-sans text-lg font-extralight">
       <div class="p-4">
 
 
@@ -117,7 +116,7 @@
     </small>
   </div>
   <p class="">Django的ORM操作非常简答，几乎把所有你能想到的数据库的操作都封装了，即便没有你需要的，也可以使用原生的SQL语句进行查询。</p>
-  <a href="https://suiyan.cc/2023/20230525084144.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230525084144.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -131,7 +130,7 @@
     </small>
   </div>
   <p class="">Django的ORM在Python中算是数一数二的，使用起来非常的简单和丝滑，文档也写的简单直观，相对于SQLAlchemy有过之而无不及。</p>
-  <a href="https://suiyan.cc/2023/20230524211340.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230524211340.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -145,7 +144,7 @@
     </small>
   </div>
   <p class="">今天打包一个项目，发现element button 样式被其他矿建的样式覆盖了，项目里还使用了`tailwindcss`，当时打包的时候提示文件大小超过了默认值，我就修改了vite build的配置项chunkSizeWarningLimit,并且使文件分开打包，然后就发现element的样式后边始终跟随一个样式表，会覆盖element button的背景颜色的样式，网上搜了很多方法都没有效果。</p>
-  <a href="https://suiyan.cc/2023/20230522201800.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230522201800.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -159,7 +158,7 @@
     </small>
   </div>
   <p class="">解决vite打包超出默认值，出现警告的错误。</p>
-  <a href="https://suiyan.cc/2023/20230522201116.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230522201116.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -173,7 +172,7 @@
     </small>
   </div>
   <p class="">对于web应用的编写应该从哪里开始呢？如果包含了数据的增删改查，那么对于使用Django开发web应用来说，从模型(Model)开始最好不过了。模型准确且唯一的描述了数据。它包含您储存的数据的重要字段和行为。一般来说，每一个模型都映射一张数据库表。</p>
-  <a href="https://suiyan.cc/2023/20230520081153.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230520081153.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -187,7 +186,7 @@
     </small>
   </div>
   <p class="">许多年前曾经接触过Django，那时候还是1.X版本，现在都到了4.2版本了。今天抽空复习一下有关Django的相关技术要点。</p>
-  <a href="https://suiyan.cc/2023/20230518092845.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230518092845.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -201,7 +200,7 @@
     </small>
   </div>
   <p class="">博客的静态页面的生成都是由博客的基础数据支撑的，搜集博客的基本信息和博客文章数据，是生成博客静态文件的核心功能。</p>
-  <a href="https://suiyan.cc/2023/20230517084718.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230517084718.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -215,7 +214,7 @@
     </small>
   </div>
   <p class="">这几天一直琢磨这给博客文章页面添加个第三方的评论系统，最好是免费的，然后就搜到了`giscus`，从安装到使用，用一个字来评价：真特么绝！</p>
-  <a href="https://suiyan.cc/2023/20230516211444.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230516211444.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -229,7 +228,7 @@
     </small>
   </div>
   <p class="">一直想对博客页面的时间进行格式化，把标准的时间格式修改成XX时间前或相对时间，因为时间已经直接输出到了页面DOM中，所以考虑直接使用相关的js库来实现比较方便，搜了一下发现二个JavaScript的时间处理库比较不错，他们是：`Moment.js`和`Day.js`。</p>
-  <a href="https://suiyan.cc/2023/20230516132817.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230516132817.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -243,7 +242,7 @@
     </small>
   </div>
   <p class="">async和await关键字让我们可以用一种更简洁的方式写出基于 Promise 的异步行为，而无需刻意地链式调用 promise。而FetchAPI可以通过网络访问资源，您可以发出HTTP请求（使用GET和POST其他方法）、下载和上传文件。</p>
-  <a href="https://suiyan.cc/2023/20230515215136.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230515215136.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -257,7 +256,7 @@
     </small>
   </div>
   <p class="">但是添加后我想测试一下看看请求中headers是否添加了`fetch()如何读取请求中的'user-agent'？`,本来希望打印`response`中的herders来查看`'user-agent'`是否伪装成功，直接在fetch的response中遍历headers是无法获得`'user-agent'`这个属性。所以只好搭建一个临时服务器端来打印请求的request。</p>
-  <a href="https://suiyan.cc/2023/20230515105053.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230515105053.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -271,7 +270,7 @@
     </small>
   </div>
   <p class="">这阵子忙里偷闲的更新了一些博文，因为之前中间有段时间没有更新博客，所以对独立博客的这个圈子了解的也不是很多，最近通过一些独立博客的友情链接，发现了几个有意思的关于中文独立博客聚合的网址，觉得很有趣，不敢独享分享给大家。</p>
-  <a href="https://suiyan.cc/2023/20230514163231.html" class="link link-primary">阅读全文>>></a>
+  <a href="https://suiyan.cc/2023/20230514163231.html" class="link link-hover">阅读全文>>></a>
 
 </div>
 </div>
@@ -295,62 +294,6 @@
 
 </div>
 
-      <!-- 左侧导航 -->
-      <div class="sider-left w-24 fixed top-32 hidden lg:block">
-        <div class="avatar w-24">
-          <div
-            class="animate-bounce w-16 mx-auto rounded-full ring-offset-base-100 ring-offset-2 hover:blur-sm"
-          >
-            <img
-              src="https://suiyan.cc/assets/images/avatar.jpg"
-              alt="J.sky"
-            />
-          </div>
-        </div>
-        <ul class="text-center text-sm space-y-1">
-          
-          <li>
-            <a href="https://suiyan.cc/archives.html"
-              ><button
-                class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-              >
-                Archive
-              </button></a
-            >
-          </li>
-          
-          <li>
-            <a href="https://suiyan.cc/tags.html"
-              ><button
-                class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-              >
-                Tags
-              </button></a
-            >
-          </li>
-          
-          <li>
-            <a href="https://suiyan.cc/before-2022/1.html"
-              ><button
-                class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-              >
-                Me
-              </button></a
-            >
-          </li>
-          
-          <li>
-            <a href="https://suiyan.cc/links.html"
-              ><button
-                class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-              >
-                Links
-              </button></a
-            >
-          </li>
-          
-        </ul>
-      </div>
       <!-- ======= Footer ======= -->
 
       <footer class="footer p-3 bg-base-200 text-base-content">
@@ -389,11 +332,24 @@
 
     <div class="rightside fixed bottom-10 right-0 w-10">
       <button class="btn btn-circle btn-outline btn-sm my-2">
-        <a href="https://suiyan.cc/search.html"><img src="https://suiyan.cc/assets/ico/search.png" alt="search" width="20" height="20"></a>
-        
+        <a href="https://suiyan.cc/search.html"
+          ><img
+            src="https://suiyan.cc/assets/ico/search.png"
+            alt="search"
+            width="20"
+            height="20"
+        /></a>
       </button>
-      <button class="btn btn-circle btn-outline btn-sm my-2" onclick="scrollToTop()">
-        <img src="https://suiyan.cc/assets/ico/up.png" alt="up" width="20" height="20">
+      <button
+        class="btn btn-circle btn-outline btn-sm my-2"
+        onclick="scrollToTop()"
+      >
+        <img
+          src="https://suiyan.cc/assets/ico/up.png"
+          alt="up"
+          width="20"
+          height="20"
+        />
       </button>
     </div>
 
