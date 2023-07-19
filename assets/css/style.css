@@ -21,3 +21,7 @@
 .tag{
   text-transform:none;
 }
+
+.list-group-item{
+  text-overflow: ellipsis;
+}
