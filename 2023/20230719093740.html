@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="lodashbug" name="keywords" />
-    <meta content="今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错`_.debounce is not a function`!真是奇了个怪了！" name="description" />
+    <meta content="pythonPython GUINiceGUi" name="keywords" />
+    <meta content="对于使用python的朋友，对于python的gui总是有一种不满意的情绪，确实，python下边没有什么太出色的GUI框架，或多或少都有些不足或是遗憾吧，不过这阵子NiceGUi逐渐的火起来了，赶紧试试吧." name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      CDN引用lodash报错 _.debounce is not a function | SuiYan 碎言
+      Python Gui新框架:NiceGUi之初体验 | SuiYan 碎言
     </title>
     <link
       href="https://suiyan.cc/assets/css/full.css"
@@ -108,34 +108,125 @@
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 
   <div class="mb-4">
-    <h1 class="text-3xl">CDN引用lodash报错 _.debounce is not a function</h1>
+    <h1 class="text-3xl">Python Gui新框架:NiceGUi之初体验</h1>
     <div class="text-sm my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-06-08 10:23:40"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-19 09:37:40"><span
         class="cr-time"
-        >2023-06-08 10:23:40</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-06-08 10:36:24"><span class="up-time">2023-06-08 10:36:24</span></div>
-      · Tag:   lodash  bug 
+        >2023-07-19 09:37:40</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-19 09:50:46"><span class="up-time">2023-07-19 09:50:46</span></div>
+      · Tag:   python  Python GUI  NiceGUi 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错<code>_.debounce is not a function</code>!真是奇了个怪了！</p>
-<h2>问题分析及解决方法</h2>
-<p>然后我就做了一些简单的测试，通过log打印一些lodash中的方法和属性，发现<code>_.VERSION</code>可以正常的打印lodash的版本，但是<code>_.debounce</code>确报错<code>_.debounce is not a function</code>！这怎么回事？难道这个CDN的代码库里没有<code>debounce</code>这个方法？哎！还真没有！</p>
-<p>原来是我引用的CDN的代码有问题，我引用的是<code>lodash.core.min.js</code>，这是 Lodash 的核心版本，包含了 Lodash 库中的核心函数和常用功能，但不包含一些较大或较少常用的模块。所以有些功能是没有的，后来换成<code>lodash.min.js</code>,这是 Lodash 的完整版本，包含了 Lodash 库的所有函数和功能模块。这个版本的文件大小较大，适合在拥有较大资源或需要使用 Lodash 的所有功能时使用。</p>
-<p>总结来说，lodash.core.min.js 是 Lodash 的精简核心版本，只包含核心函数和常用功能，文件较小；而 lodash.min.js 则是完整版本，包含了所有函数和功能模块，文件较大。这下问题解决了。。。好久没写JavaScript，真的都是把学到的东西都给忘记了。太菜了！</p></div>
+  <div class="mb-4"><p>对于使用python的朋友，对于python的gui总是有一种不满意的情绪，确实，python下边没有什么太出色的GUI框架，或多或少都有些不足或是遗憾吧，不过这阵子NiceGUi逐渐的火起来了，赶紧试试吧.</p>
+<h2>安装</h2>
+<p>NiceGui的安装很简单：</p>
+<pre><code>pip3 install nicegui
+</code></pre>
+<p>然后，我们创建一个<code>main.py</code>的python文件，复制如下代码：</p>
+<pre><code>from nicegui import ui
+from nicegui.events import ValueChangeEventArguments
+
+
+def show(event: ValueChangeEventArguments):
+    name = type(event.sender).__name__
+    ui.notify(f'{name}: {event.value}')
+
+
+ui.button('Button', on_click=lambda: ui.notify('Click'))
+with ui.row():
+    ui.checkbox('Checkbox', on_change=show)
+    ui.switch('Switch', on_change=show)
+ui.radio(['A', 'B', 'C'], value='A', on_change=show).props('inline')
+with ui.row():
+    ui.input('Text input', on_change=show)
+    ui.select(['One', 'Two'], value='One', on_change=show)
+ui.link('And many more...', '/documentation').classes('mt-8')
+
+ui.run()
+</code></pre>
+<p>然后运行:</p>
+<pre><code>python main.py
+</code></pre>
+<p>这时候会打开一个浏览器窗口，对，NiceGui是基于web的图形界面，她的后端是fastapi，前端有tailwindcss加特，界面效果还是很不错，而且风格是google Material-UI，眼前一亮吧！</p>
+<h2>总结</h2>
+<p>NiceGUI的代码简洁实用，事件接口也很直观，符合python的一贯风格，对于一些有GUI需求的应用可以尝试一下，上手简单方便，快试试吧。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
-      
-      <a href="https://suiyan.cc/2023/20230608184436.html" class="text-accent text-md"
-        ><span> prev </span></a
-      >
        
-      <a href="https://suiyan.cc/2023/20230607211438.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230718165253.html" class="text-accent text-md"
         ><span> next </span></a
       >
       
+    </div>
+    
+    <div class="related">
+      <p>相关文章：</p>
+      <ul>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230718165253.html" class="text-truncate"
+            ><span>pycharm 正在关闭项目(closing project)无法关闭退出程序的解决方法！</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230707084736.html" class="text-truncate"
+            ><span>一键更新Github部署的静态博客</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/2023/20230704135120.html" class="text-truncate"
+            ><span>解决错误 ERROR [WinError 10049] 在其上下文中，该请求的地址无效。</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/before-2022/97.html" class="text-truncate"
+            ><span>wxPython编程学习笔记(10)wx.FileDialog文件选择框</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/before-2022/96.html" class="text-truncate"
+            ><span>wxPython编程学习笔记(09)wx.Python Menu 菜单</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/before-2022/94.html" class="text-truncate"
+            ><span>wxPython编程学习笔记(08)wx.ListBox 下拉列表框</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/before-2022/93.html" class="text-truncate"
+            ><span>wxPython编程学习笔记(07)wxPython Dialog 弹出对话</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/before-2022/92.html" class="text-truncate"
+            ><span>wxPython编程学习笔记(06)wx.ComboBox下拉列表框</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/before-2022/91.html" class="text-truncate"
+            ><span>wxPython编程学习笔记(05)单选及多选按钮</span></a
+          >
+        </li>
+        
+        <li>
+          <a href="https://suiyan.cc/before-2022/90.html" class="text-truncate"
+            ><span>wxPython编程学习笔记(04)wx.Butoon的应用</span></a
+          >
+        </li>
+        
+      </ul>
     </div>
     
     <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
