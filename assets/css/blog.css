@@ -18,8 +18,6 @@
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    filter: drop-shadow(0 0 2rem #000);
-    text-shadow: none !important;
   }
 
 
