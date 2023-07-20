@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-19 09:37:40</pubDate>
+        <pubDate>2023-07-20 23:03:50</pubDate>
+        
+        <item>
+            <title>1300M USB双频2.4+5G无线网卡的一些常识和使用技巧</title>
+            <link>https://suiyan.cc/2023/20230720230350.html</link>
+            <author>J.sky</author>
+            <description>入手了一个USB的双频无线网卡，但是插到电脑USB上后，速度可真是一般了，家里升级了1000M宽带，但是下载还不到3M的速度，理论上也就是20M的宽带啊？这不科学啊？赶紧找了找资料调试了一下，下载速度终于提上了来了！</description>
+            <category>无线网卡</category>
+            <pubDate>2023-07-20 23:03:50</pubDate>
+        </item>
         
         <item>
             <title>Python Gui新框架:NiceGui之初体验</title>
@@ -85,15 +94,6 @@
             <description>额，今天在编写一段简短的测试代码，想在组件加载的时候弹出一个alert提示，但是刷新的时候会弹出两次alert提示？只能是奇怪了！研究了半天终于找到了解决的办法。</description>
             <category>react</category>
             <pubDate>2023-07-10 11:31:08</pubDate>
-        </item>
-        
-        <item>
-            <title>七年之痒！别了我曾深爱的MacBookPro</title>
-            <link>https://suiyan.cc/2023/20230709104417.html</link>
-            <author>J.sky</author>
-            <description>15年底，买了一台MacBookPro 15.6寸的笔记本，或许每个程序员都会有购买Apple设备的冲动，自从投身到Apple的阵营之后，平板、手机、老婆的平板和手机都换成了Apple，但是终有一天，我发现我也会对Apple有了厌倦之意。</description>
-            <category>MacBookPro</category>
-            <pubDate>2023-07-09 10:44:17</pubDate>
         </item>
         
     </channel>

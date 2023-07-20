@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="Python,JavaScript,程序员,人生苦短,我用Python" name="keywords" />
-    <meta content="记录并分享个人学习Python、JavaScript的过程和笔记。Life is short, You need JavaScript and Python！" name="description" />
+    <meta content="无线网卡" name="keywords" />
+    <meta content="入手了一个USB的双频无线网卡，但是插到电脑USB上后，速度可真是一般了，家里升级了1000M宽带，但是下载还不到3M的速度，理论上也就是20M的宽带啊？这不科学啊？赶紧找了找资料调试了一下，下载速度终于提上了来了！" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      List Pages 第16页 | SuiYan 碎言
+      1300M USB双频2.4+5G无线网卡的一些常识和使用技巧 | SuiYan 碎言
     </title>
     <link
       href="https://suiyan.cc/assets/css/full.css"
@@ -104,80 +104,66 @@
     </nav>
     <div class="container max-w-3xl mx-auto font-sans text-lg font-extralight">
       <div class="p-4">
+<!-- Template Main CSS File -->
+<link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 
-
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div>
-    <a href="https://suiyan.cc/before-2022/3.html"><h3 class="text-2xl">python3 Markdown模块解析Markdown代码</h3></a>
-    <small class="text-sm">发表于:<div class="tooltip" data-tip="2017-08-19 19:59:46"><span class="cr-time">2017-08-19 19:59:46</span> </div>
-    </small>
+  <div class="mb-4">
+    <h1 class="text-3xl font-medium">1300M USB双频2.4+5G无线网卡的一些常识和使用技巧</h1>
+    <div class="text-sm my-2">
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-20 23:03:50"><span
+        class="cr-time"
+        >2023-07-20 23:03:50</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-20 23:42:58"><span class="up-time">2023-07-20 23:42:58</span></div>
+      · Tag:   无线网卡 
+      </small>
+    </div>
   </div>
-  <p>python3 markdown模块解析markdown代码，blog中需要一个解析markdown代码的模块，测试了一下markdown模块 ，简单好用。</p>
-  <a href="https://suiyan.cc/before-2022/3.html" class="link link-hover">阅读全文 ➞</a>
 
-</div>
-</div>
+  <div class="mb-4"><p>入手了一个USB的双频无线网卡，但是插到电脑USB上后，速度可真是一般了，家里升级了1000M宽带，但是下载还不到3M的速度，理论上也就是20M的宽带啊？这不科学啊？赶紧找了找资料调试了一下，下载速度终于提上了来了！</p>
+<h2>基础资料</h2>
+<p>关于1300M 5G 双频无线网卡的速度：2.4G传输速率为400M，5.8G传输速率为867M。这个是两个加起来的速度，并不是说你的网卡有1000M的传输速率。所以某些3000M的设备，可以理解为：600M+2400M（大约数值），所以不要看总数。</p>
+<p>关于下载速度，理论来说：100M的下载速度是12M左右，可以用此作为基数来计算。这个假设设备没有任何干扰的情况下，就是理论速度了，实际上都会有干扰，比如一堵厚厚的墙和频道的干扰。</p>
+<h2>使用技巧</h2>
+<ol>
+<li>你用5G的网卡，一定要配5G的路由器，不然得话，只能用2.4G的频道了，那么下载速度会大打折扣。</li>
+<li>USB网卡一定要插在USB3.0的接口上，2.0的速度会慢很多，蓝色接口的USB3.0,黑白的是2.0</li>
+<li>如果设备和路由器之间有墙，会影响传输速率的，会达不到理论上的867M，我就隔了两堵墙，变成了585M，偶尔还会变成520M。</li>
+<li>调整好路由器的信道，可以优化传输速率，2.4G频段一般常用的不重叠的信道是1、6、11，5.8G频段信道常用的有149、153、157、161、165，5.2G频段信道常用的有36、40、44、48，5G频段信道建议优先使用149与48频段。</li>
+</ol>
+<h2>总结</h2>
+<p>所以说，以目前的1300M的路由和1300M的无线网卡，家里就是升级了千兆光纤也是没什么用的，只有把设备都升级到3000M吧，理论上就可以享受千兆网速的快乐了，我为什么说是理论上？你想想哪些网站能财大气粗的租用千兆网络？尔等的主机宽带是多少？升级都是运营商的套路而已，大家视情况决定吧。有一种情况除外，那就是土豪，请随意，抱歉耽误土豪大哥大姐的时间了。</p>
+<h2>参考资料</h2>
+<p><a href="https://baijiahao.baidu.com/s?id=1711855034317930542&amp;wfr=spider&amp;for=pc">网速快一倍 这样设置让电脑优先连接Wifi的5G信号</a></p>
+<p><a href="https://blog.csdn.net/eyyhappy/article/details/79247483/">小米路由器3G如何解决USB3.0 5G WiFi速度慢的问题</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/583620624?utm_id=0">干货 | 秒涨知识 —— 无线网络经常太慢？这样设置信道网速最快</a></p>
+<p><a href="https://www.zhihu.com/question/591716871/answer/2952395690">知乎的回答：为什么我家千兆宽带，我电脑装了无线网卡却只有200兆？</a></p></div>
 
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div>
-    <a href="https://suiyan.cc/before-2022/2.html"><h3 class="text-2xl">创建python 虚拟环境 venv</h3></a>
-    <small class="text-sm">发表于:<div class="tooltip" data-tip="2017-08-19 19:53:29"><span class="cr-time">2017-08-19 19:53:29</span> </div>
-    </small>
-  </div>
-  <p>最近需要调试各个版本的折腾，所以虚拟环境是必须走起的。。。</p>
-  <a href="https://suiyan.cc/before-2022/2.html" class="link link-hover">阅读全文 ➞</a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div>
-    <a href="https://suiyan.cc/before-2022/1.html"><h3 class="text-2xl">关于我和suiyan.cc</h3></a>
-    <small class="text-sm">发表于:<div class="tooltip" data-tip="2017-08-19 16:51:30"><span class="cr-time">2017-08-19 16:51:30</span> </div>
-    </small>
-  </div>
-  <p>碎言博客的名字，取自于碎言片语。很早就建立过很多杂七杂八的网站，具体页面底下有想写日志，关于suiyan.cc是今年初新注册的域名，但是写博客是始于2017年。</p>
-  <a href="https://suiyan.cc/before-2022/1.html" class="link link-hover">阅读全文 ➞</a>
-
-</div>
-</div>
-
-
-<div class="transition ease-in-out delay-150 hover:-translate-y-1 card my-6 bg-base-100 shadow-xl hover:bg-base-200 hover:shadow-none">
-  <div class="card-body">
-  <div>
-    <a href="https://suiyan.cc/404.html"><h3 class="text-2xl">suiyan.cc 404页面</h3></a>
-    <small class="text-sm">发表于:<div class="tooltip" data-tip="2017-08-19 16:25:07"><span class="cr-time">2017-08-19 16:25:07</span> </div>
-    </small>
-  </div>
-  <p>这个页面不存在，无法打开。</p>
-  <a href="https://suiyan.cc/404.html" class="link link-hover">阅读全文 ➞</a>
-
-</div>
-</div>
-
-
-
-
-
-  <div class="flex flex-nowrap justify-items-center px-8 my-8">
-
-      <a href="list_15.html" role="button" class="basis-1/3 btn ">Prev</a>
-
-
-      <div class="w-full basis-1/3 text-center" style="line-height: 48px;">16 / 16</div>
-
-
-      <a href="#" role="button" class=" basis-1/3 btn ">Next</a>
+  <div class="blog_footer">
+    <div class="prev_next flex justify-between my-4">
+       
+      <a href="https://suiyan.cc/2023/20230719093740.html" class="text-accent text-md"
+        ><button class="btn"> next </button></a
+      >
+      
+    </div>
+    
+    <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div>
 
   </div>
+
+ 
+
+<link rel="stylesheet"
+      href="https://suiyan.cc/assets/css/default.min.css">
+<script src="https://suiyan.cc/assets/js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="https://suiyan.cc/assets/js/g.js"></script>
+
+
+
 
 
 </div>
