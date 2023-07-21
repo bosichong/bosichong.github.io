@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="Python基础" name="keywords" />
-    <meta content="最近老妈骨折住院，在医院护理了有8天，终于回出院回家了。回到家第一件事就是想到之前学习了python，如何快速的复习一下曾经学过的python呢？" name="description" />
+    <meta content="宽带" name="keywords" />
+    <meta content="纠结了一天，几不舍得花几百块换设备，又不想浪费千兆宽带的资源，最终决定采用了原始的布网线方式来解决这个问题。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      如何快速的复习学习过的Python | SuiYan 碎言
+      最终还是决定使用传统的网线来解决千兆速率问题。 | SuiYan 碎言
     </title>
     <link
       href="https://suiyan.cc/assets/css/full.css"
@@ -108,155 +108,32 @@
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">如何快速的复习学习过的Python</h1>
+    <h1 class="text-3xl font-medium">最终还是决定使用传统的网线来解决千兆速率问题。</h1>
     <div class="text-sm my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2017-11-07 16:19:22"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-21 17:08:56"><span
         class="cr-time"
-        >2017-11-07 16:19:22</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-04-13 09:40:24"><span class="up-time">2023-04-13 09:40:24</span></div>
-      · Tag:   Python基础 
+        >2023-07-21 17:08:56</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-21 17:24:50"><span class="up-time">2023-07-21 17:24:50</span></div>
+      · Tag:   宽带 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>最近老妈骨折住院，在医院护理了有8天，终于回出院回家了。回到家第一件事就是想到之前学习了python，如何快速的复习一下曾经学过的<code>python</code>呢？</p>
-<h2>语法/变量/表达式</h2>
-<p>也许我们能找到一个小小例子来快速的复习一下基本语法，那么这种例子有很多，比如：打印九九乘法表/斐波那契数列/排序法等等。</p>
-<h2>九九乘法表</h2>
-<p>快速复习<code>for</code>及<code>print format</code>等函数的用法。</p>
-<pre><code>for i in range(1,10):
-    for j in range(1,i+1):
-        print("{}X{}={}".format(i,j,i*j), end=' ')
-    print()
-</code></pre>
-
-<h2>一摞<code>Python</code>风格的纸牌</h2>
-<p>在看《流畅Python》那本书的时候，第一章第一个小例子非常吸引人，具体代码如下
-Python3 扑克牌
-<code>collections.namedtuple</code>这个函数可以快速创建一个只有属性的类，我们通过这个方法来创建一张扑克牌的类，rank 和 suit 分别代表牌面数值和花色</p>
-<pre><code>import collections
-from random import choice
-Card = collections.namedtuple('Card',['rank','suit'])
-#创建一副扑克牌的类
-class Cards:
-    ranks = [str(n) for n in range(2,11)] + list('JQKA')#从2-10的数字
-    suits = 'spades clubs diamonds clubs'.split()# 黑桃 方块 草花 红桃
-
-    def __init__(self):
-        '''创建一副扑克牌'''
-        self._cards = [Card(rank,suit) for suit in self.suits
-                                       for rank in self.ranks] + ['King','Queen']
-    def __len__(self):
-        return len(self._cards)
-    def __getitem__(self,position):
-        return self._cards[position]
-
-deck = Cards()#创建一副扑克牌
-print(len(deck))#打印有多少张
-#打印所有纸牌
-for i in range(len(deck)):
-    print(deck[i])
-print(choice(deck))#随机抽取一张纸牌
-</code></pre>
-
-<p>我觉得这个纸牌的小例子很有意思，复习了类及列表推导等一些小概念。当然快速复习的小例子还有很多的，比如下边的例子</p>
-<h2>简单的复利计算</h2>
-<pre><code>p = 10000 #初始金额
-rate = 0.04/365 #利率 例如余额宝的年化收益为4%，那么每天的这里计算每天的收益
-days = 100
-
-day = 1
-while day <= days :
-    p = p * (1+rate)#复利，余额宝是每天的利滚利
-    print('%s天：%2.2f' % (day,p)) #打印当前年份及金额
-    day += 1
-</code></pre>
-
-<p>通过以上三个小例子，是不是又引起了你对Python的兴趣？温故而知新，大家加油哦！</p>
-<h2>本文源码下载：</h2>
-<ul>
-<li><a href="https://github.com/bosichong/17python.com/blob/master/ReviewPython.py">github</a></li>
-<li><a href="https://gitee.com/J_Sky/17python.com/blob/master/ReviewPython.py">开源中国码云镜像gitee</a></li>
-</ul></div>
+  <div class="mb-4"><p>纠结了一天，几不舍得花几百块换设备，又不想浪费千兆宽带的资源，最终决定采用了原始的布网线方式来解决这个问题。</p>
+<h2>设备概览</h2>
+<p>千兆光纤入户直接连接的小米路由4a1200M，家里的iPhone、iPad和一些游戏机对于连接速率基本没什么问题，只是一些早些年买的台式机，之前买了一个USB的无线网卡，但是路由器在可客厅，电脑房与路由器之间有两堵墙，这使得无线连接的速率大打折扣，后来买了中继勉强可以，但是当时的宽带只有100M入户，并没有考虑到之后会升级到千兆。</p>
+<h2>一定要换</h2>
+<p>这次升级了千兆入户的宽带，如果继续使用之前的网络链接设备，电脑房实际只能达到200M的连接速率，这个我很不满意，既然都升级千兆了，如果只当200M使用那真是太可惜了！但是如果更换全套无线设备又得几百大洋，而且旧设备没人要扔了可惜还不环保。最终经过探讨，我自己的电脑改成传统网线接入，5G的无线网卡给老婆用，她现在的是可怜的100M无线网卡，实际下载速度只有1-2M,这也太。。。。她到时不挑。</p>
+<h2>等待中</h2>
+<p>坑多多上买了20米的六类网线和网线免钉固定，这样等设备到了，直接布线搞定，期待中。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
-      
-      <a href="https://suiyan.cc/before-2022/55.html" class="text-accent text-md"
-        ><button class="btn"> prev </button></a
-      >
        
-      <a href="https://suiyan.cc/before-2022/50.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230720230350.html" class="text-accent text-md"
         ><button class="btn"> next </button></a
       >
       
-    </div>
-    
-    <div class="related">
-      <p>相关文章：</p>
-      <ul>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230704135120.html" class="link link-hover"
-            ><span>解决错误 ERROR [WinError 10049] 在其上下文中，该请求的地址无效。</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/101.html" class="link link-hover"
-            ><span>如何在Python程序中使用配置文件.ini(ConfigParser)</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/95.html" class="link link-hover"
-            ><span>Python os.mknod 运行报错无法创建文件</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/86.html" class="link link-hover"
-            ><span>Python os.path.dirname(__file__) 在终端命令行下报错</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/79.html" class="link link-hover"
-            ><span>聊聊Python中的递归与快速排序那点事</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/74.html" class="link link-hover"
-            ><span>妙用IPython学习Python--IPython快速上手</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/68.html" class="link link-hover"
-            ><span>Python生成器yield应用实例——监控日志</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/50.html" class="link link-hover"
-            ><span>python中导入不同目录中的自定义模块/class/函数/方法</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/43.html" class="link link-hover"
-            ><span>浅谈Python中的协程及利用协程代替多线程及多进程并发编程</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/42.html" class="link link-hover"
-            ><span>聊聊Python中晦涩的生成器（yield）与生成器表达式</span></a
-          >
-        </li>
-        
-      </ul>
     </div>
     
     <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">

@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-20 23:03:50</pubDate>
+        <pubDate>2023-07-21 17:08:56</pubDate>
+        
+        <item>
+            <title>最终还是决定使用传统的网线来解决千兆速率问题。</title>
+            <link>https://suiyan.cc/2023/20230721170856.html</link>
+            <author>J.sky</author>
+            <description>纠结了一天，几不舍得花几百块换设备，又不想浪费千兆宽带的资源，最终决定采用了原始的布网线方式来解决这个问题。</description>
+            <category>宽带</category>
+            <pubDate>2023-07-21 17:08:56</pubDate>
+        </item>
         
         <item>
             <title>1300M USB双频2.4+5G无线网卡的一些常识和使用技巧</title>
@@ -85,15 +94,6 @@
             <description>今天在react useEffect()中有一个function需要防抖，于是乎就install了lodash库，但是直接在useEffect()中使用却没有效果，经过一番查找，最终解决了这个问题。</description>
             <category>debounce,react</category>
             <pubDate>2023-07-11 18:54:22</pubDate>
-        </item>
-        
-        <item>
-            <title>react useEffect() 为什么在开发模式的时候会执行两次？</title>
-            <link>https://suiyan.cc/2023/20230710113108.html</link>
-            <author>J.sky</author>
-            <description>额，今天在编写一段简短的测试代码，想在组件加载的时候弹出一个alert提示，但是刷新的时候会弹出两次alert提示？只能是奇怪了！研究了半天终于找到了解决的办法。</description>
-            <category>react</category>
-            <pubDate>2023-07-10 11:31:08</pubDate>
         </item>
         
     </channel>
