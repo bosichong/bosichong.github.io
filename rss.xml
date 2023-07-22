@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-21 17:08:56</pubDate>
+        <pubDate>2023-07-22 15:27:22</pubDate>
+        
+        <item>
+            <title>如何使用CSS为博客标题设置彩虹颜色？</title>
+            <link>https://suiyan.cc/2023/20230722152722.html</link>
+            <author>J.sky</author>
+            <description></description>
+            <category>css</category>
+            <pubDate>2023-07-22 15:27:22</pubDate>
+        </item>
         
         <item>
             <title>最终还是决定使用传统的网线来解决千兆速率问题。</title>
@@ -85,15 +94,6 @@
             <description>今天需要再react组件内渲染一段HTML代码，但是直接复制到组件内渲染会被当做HTML渲染出HTML的dom结构，我的本意是要把这段HTML代码输出为字符串，记录一下解决过程。</description>
             <category>react</category>
             <pubDate>2023-07-14 10:13:40</pubDate>
-        </item>
-        
-        <item>
-            <title>react useEffect()中使用lodash库中的防抖debounce</title>
-            <link>https://suiyan.cc/2023/20230711185422.html</link>
-            <author>J.sky</author>
-            <description>今天在react useEffect()中有一个function需要防抖，于是乎就install了lodash库，但是直接在useEffect()中使用却没有效果，经过一番查找，最终解决了这个问题。</description>
-            <category>debounce,react</category>
-            <pubDate>2023-07-11 18:54:22</pubDate>
         </item>
         
     </channel>

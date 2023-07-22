@@ -45,3 +45,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.list-group-item:hover{
+  background-image: var(--rainbow-gradient, #fff);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+}

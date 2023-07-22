@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="宽带" name="keywords" />
-    <meta content="纠结了一天，几不舍得花几百块换设备，又不想浪费千兆宽带的资源，最终决定采用了原始的布网线方式来解决这个问题。" name="description" />
+    <meta content="css" name="keywords" />
+    <meta content="" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      最终还是决定使用传统的网线来解决千兆速率问题。 | SuiYan 碎言
+      如何使用CSS为博客标题设置彩虹颜色？ | SuiYan 碎言
     </title>
     <link
       href="https://suiyan.cc/assets/css/full.css"
@@ -108,33 +108,49 @@
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">最终还是决定使用传统的网线来解决千兆速率问题。</h1>
+    <h1 class="text-3xl font-medium">如何使用CSS为博客标题设置彩虹颜色？</h1>
     <div class="text-sm my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-21 17:08:56"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-22 15:27:22"><span
         class="cr-time"
-        >2023-07-21 17:08:56</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-07-21 17:24:50"><span class="up-time">2023-07-21 17:24:50</span></div>
-      · Tag:   宽带 
+        >2023-07-22 15:27:22</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-22 15:42:51"><span class="up-time">2023-07-22 15:42:51</span></div>
+      · Tag:   css 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>纠结了一天，几不舍得花几百块换设备，又不想浪费千兆宽带的资源，最终决定采用了原始的布网线方式来解决这个问题。</p>
-<h2>设备概览</h2>
-<p>千兆光纤入户直接连接的小米路由4a1200M，家里的iPhone、iPad和一些游戏机对于连接速率基本没什么问题，只是一些早些年买的台式机，之前买了一个USB的无线网卡，但是路由器在可客厅，电脑房与路由器之间有两堵墙，这使得无线连接的速率大打折扣，后来买了中继勉强可以，但是当时的宽带只有100M入户，并没有考虑到之后会升级到千兆。</p>
-<h2>一定要换</h2>
-<p>这次升级了千兆入户的宽带，如果继续使用之前的网络链接设备，电脑房实际只能达到200M的连接速率，这个我很不满意，既然都升级千兆了，如果只当200M使用那真是太可惜了！但是如果更换全套无线设备又得几百大洋，而且旧设备没人要扔了可惜还不环保。最终经过探讨，我自己的电脑改成传统网线接入，5G的无线网卡给老婆用，她现在的是可怜的100M无线网卡，实际下载速度只有1-2M,这也太。。。。她到时不挑。</p>
-<h2>等待中</h2>
-<p>坑多多上买了20米的六类网线和网线免钉固定，这样等设备到了，直接布线搞定，期待中。</p></div>
+  <div class="mb-4"><p>博客的页面有些单调，但是又不想使用额外的JS代码来增加页面的加载负担，这个时候你可以考虑一下使用css来增加博客页面的效果，比如彩色博客标题。</p>
+<h2>css代码</h2>
+<p>假设我们的标题是<code>&lt;h1&gt;博客标题内容&lt;/h1&gt;</code>，这里我可以编写CSS代码如下：</p>
+<pre><code>:root {
+    --rainbow-gradient: linear-gradient(
+    -90deg,
+    #602ce5 0,
+    #2ce597 30%,
+    #e7bb18 50%,
+    #ff7657 70%,
+    #45c1ee 90%,
+    #2ce597 100%
+    );
+}
+
+h1{
+    background-image: var(--rainbow-gradient, #fff);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+</code></pre>
+<p>上边的代码中，我们定义了一个颜色变量，这样方便日后修改颜色值。background-image: var(--rainbow-gradient, #fff);这是一个CSS属性，它设置h1元素的背景图像。var(--rainbow-gradient)是一个自定义变量，它可以设置为任何颜色或图像。如果没有指定值，则默认值为#fff（白色）。</p>
+<p>通过上边简单的css代码就可以实现彩色博客标题了，如果给h1添加了伪类选择器h1:hover，就会实现，鼠标指向标题的时候会变成彩色的效果。简单吧，动手来实现一下吧。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
-      
-      <a href="https://suiyan.cc/2023/20230722152722.html" class="text-accent text-md"
-        ><button class="btn"> prev </button></a
-      >
        
-      <a href="https://suiyan.cc/2023/20230720230350.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230721170856.html" class="text-accent text-md"
         ><button class="btn"> next </button></a
       >
       
