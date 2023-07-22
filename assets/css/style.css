@@ -10,23 +10,21 @@
   );
 }
 
+h3:hover {
+  background-image: var(--rainbow-gradient, #fff);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
 .sider-top {
   top: -101vh;
 }
-.sider-left{
-  left:calc((100% - 768px) / 2 - 80px);
-}
-
-.card-body:hover{
-  h3{
-    background-image: var(--rainbow-gradient, #fff);
-    background-size: 100%;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-  }
+.sider-left {
+  left: calc((100% - 768px) / 2 - 80px);
 }
 
 #scrollUp {
@@ -35,13 +33,12 @@
   font-size: 24px;
 }
 
-.tag{
-  text-transform:none;
+.tag {
+  text-transform: none;
 }
 
-.list-group-item{
+.list-group-item {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
