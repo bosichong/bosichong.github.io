@@ -1,4 +1,14 @@
-
+:root {
+  --rainbow-gradient: linear-gradient(
+    -90deg,
+    #602ce5 0,
+    #2ce597 30%,
+    #e7bb18 50%,
+    #ff7657 70%,
+    #45c1ee 90%,
+    #2ce597 100%
+  );
+}
 
 .sider-top {
   top: -101vh;
@@ -7,10 +17,17 @@
   left:calc((100% - 768px) / 2 - 80px);
 }
 
-.card-body{
-  padding: 1.5rem;
+.card-body:hover{
+  h3{
+    background-image: var(--rainbow-gradient, #fff);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
 }
-
 
 #scrollUp {
   bottom: 20px;
@@ -27,3 +44,4 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
