@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-22 15:27:22</pubDate>
+        <pubDate>2023-07-23 17:52:16</pubDate>
+        
+        <item>
+            <title>使用JavaScript编写自己的私人RSS订阅程序</title>
+            <link>https://suiyan.cc/2023/20230723175216.html</link>
+            <author>J.sky</author>
+            <description>今天先来无事，想编写一个私人的rss订阅，用来订阅自己喜欢的博客，终端运行后可以采集列表中博客的RSS文章，只关注最近一星期的数据，然后选中文章，通过浏览器打开博文地址浏览。好吧想法有了，那么就开干！</description>
+            <category>JavaScript</category>
+            <pubDate>2023-07-23 17:52:16</pubDate>
+        </item>
         
         <item>
             <title>如何使用CSS为博客标题设置彩虹颜色？</title>
@@ -85,15 +94,6 @@
             <description>之前在html中使用clipboard.js是很简单的，引用CDN，然后new一个clipboard对象，绑定DOM就可以搞定一键复制文本了。这次要在react中使用，所以原来的方式就不行了，来看看react中如何使用clipboard.js。</description>
             <category>react,clipboard.js</category>
             <pubDate>2023-07-15 17:07:02</pubDate>
-        </item>
-        
-        <item>
-            <title>react中如把HTML代码转成字符串进行渲染？</title>
-            <link>https://suiyan.cc/2023/20230714101340.html</link>
-            <author>J.sky</author>
-            <description>今天需要再react组件内渲染一段HTML代码，但是直接复制到组件内渲染会被当做HTML渲染出HTML的dom结构，我的本意是要把这段HTML代码输出为字符串，记录一下解决过程。</description>
-            <category>react</category>
-            <pubDate>2023-07-14 10:13:40</pubDate>
         </item>
         
     </channel>
