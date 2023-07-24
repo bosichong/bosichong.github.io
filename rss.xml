@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-23 17:52:16</pubDate>
+        <pubDate>2023-07-24 13:24:03</pubDate>
+        
+        <item>
+            <title>理工计算机专业准大学生如何选配笔记本？</title>
+            <link>https://suiyan.cc/2023/20230724132403.html</link>
+            <author>J.sky</author>
+            <description></description>
+            <category>笔记本</category>
+            <pubDate>2023-07-24 13:24:03</pubDate>
+        </item>
         
         <item>
             <title>使用JavaScript编写自己的私人RSS订阅程序</title>
@@ -85,15 +94,6 @@
             <description>今年夏天热的早温度也高，东北这边很早就步入了35°+，感觉很热，热的让人焦虑。</description>
             <category>站长吐槽</category>
             <pubDate>2023-07-16 16:51:19</pubDate>
-        </item>
-        
-        <item>
-            <title>在react中使用复制插件clipboard.js</title>
-            <link>https://suiyan.cc/2023/20230715170702.html</link>
-            <author>J.sky</author>
-            <description>之前在html中使用clipboard.js是很简单的，引用CDN，然后new一个clipboard对象，绑定DOM就可以搞定一键复制文本了。这次要在react中使用，所以原来的方式就不行了，来看看react中如何使用clipboard.js。</description>
-            <category>react,clipboard.js</category>
-            <pubDate>2023-07-15 17:07:02</pubDate>
         </item>
         
     </channel>
