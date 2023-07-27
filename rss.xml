@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-26 13:29:25</pubDate>
+        <pubDate>2023-07-27 19:49:30</pubDate>
+        
+        <item>
+            <title>Windows下国产杀毒软件还有选择吗？火绒安全可以一试。</title>
+            <link>https://suiyan.cc/2023/20230727194930.html</link>
+            <author>J.sky</author>
+            <description>换回Windows使用的是Windows 10，机器买来后系统已经安装了360杀毒套件，但是对360杀毒确实挺反感的，所以一直在考虑找个杀毒软件的替代。</description>
+            <category>杀毒软件</category>
+            <pubDate>2023-07-27 19:49:30</pubDate>
+        </item>
         
         <item>
             <title>export exports module.exports 这三个命令的区别是什么如何使用？</title>
@@ -85,15 +94,6 @@
             <description>今天下载了最新版的pythonIDE PyCharm的最新版社区版，本打算体验一下，结果退出程序的时候，有一个窗口，正在关闭项目 然后就卡在哪里不动了，真是酸爽。</description>
             <category>PyCharm,python</category>
             <pubDate>2023-07-18 16:52:53</pubDate>
-        </item>
-        
-        <item>
-            <title>速度与优雅：博客性能优化之旅</title>
-            <link>https://suiyan.cc/2023/20230718150806.html</link>
-            <author>J.sky</author>
-            <description>由于需要改进LCP 问题：超过了 2.5 秒（桌面设备）这个问题，花了点时间把最近做的这个主题进行了一些性能的优化，嗯，优化后的页面打开速度还真是不错，优化博客的主题，大概是每个博主必经之路吧。</description>
-            <category>碎言博客,站长吐槽</category>
-            <pubDate>2023-07-18 15:08:06</pubDate>
         </item>
         
     </channel>

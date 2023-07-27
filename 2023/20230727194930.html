@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="node.js" name="keywords" />
-    <meta content="export exports module.exports 这三个命令中export是是ECMAScript 6（ES6）中引入的模块化规范,exports module.exports是Node.js中用于实现CommonJS模块规范的对象。" name="description" />
+    <meta content="杀毒软件" name="keywords" />
+    <meta content="换回Windows使用的是Windows 10，机器买来后系统已经安装了360杀毒套件，但是对360杀毒确实挺反感的，所以一直在考虑找个杀毒软件的替代。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      export exports module.exports 这三个命令的区别是什么如何使用？ | SuiYan 碎言
+      Windows下国产杀毒软件还有选择吗？火绒安全可以一试。 | SuiYan 碎言
     </title>
     <link
       href="https://suiyan.cc/assets/css/full.css"
@@ -108,92 +108,31 @@
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">export exports module.exports 这三个命令的区别是什么如何使用？</h1>
+    <h1 class="text-3xl font-medium">Windows下国产杀毒软件还有选择吗？火绒安全可以一试。</h1>
     <div class="text-sm my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-26 13:29:25"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-27 19:49:30"><span
         class="cr-time"
-        >2023-07-26 13:29:25</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-07-26 17:14:00"><span class="up-time">2023-07-26 17:14:00</span></div>
-      · Tag:   node.js 
+        >2023-07-27 19:49:30</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-27 20:02:58"><span class="up-time">2023-07-27 20:02:58</span></div>
+      · Tag:   杀毒软件 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>export exports module.exports 这三个命令中export是是ECMAScript 6（ES6）中引入的模块化规范,exports module.exports是Node.js中用于实现CommonJS模块规范的对象。</p>
-<h2>export的使用</h2>
-<p>export关键字用于在一个模块中声明一个或多个可以被其他模块访问的变量、函数或对象。通过export，我们可以将模块中的特定内容暴露给其他模块使用。</p>
-<p>node环境下的示例
-m_a.js:</p>
-<pre><code>// m_a.js
-export const name = "suiyan.cc";
-export function sayHello() {
-    console.log("hello world!");
-}
-</code></pre>
-<p>main.js:</p>
-<pre><code>// main.js
-import { name, sayHello } from './m_a.js';
-
-console.log(name);      // Output: suiyan.cc
-sayHello();             // Output: hello world!
-</code></pre>
-<p>如果这样直接运行会报错。</p>
-<p>如果你想在Node.js中使用ES6模块化语法，可以将文件的扩展名设置为.mjs，或者在package.json中添加"type": "module"字段。这样Node.js会将文件视为ES6模块。</p>
-<h2>exports 和 module.exports</h2>
-<p>如果你的项目是基于Node.js，可以使用exports或module.exports。这两者是等价的，但不能混用。如果在同一个模块中同时使用了exports和module.exports，后面的那个会覆盖前面的。</p>
-<p>代码m_b.js:</p>
-<pre><code>//m_b.js
-exports.age = 30;
-exports.sayBye = function() {
-    console.log("Goodbye!");
-};
-</code></pre>
-<p>m_c.js:</p>
-<pre><code>//m_c.js
-module.exports = {
-    city: "suiyan.cc",
-    population: 888
-};
-</code></pre>
-<p>main.js:</p>
-<pre><code>//main.js
-const moduleB = require('./m_b.js');
-const moduleC = require('./m_c.js');
-
-console.log(moduleB.age);       // Output: 30
-moduleB.sayBye();               // Output: Goodbye!
-
-console.log(moduleC.city);      // Output: suiyan.cc
-console.log(moduleC.population);// Output: 888
-</code></pre>
-<p>记得在package.json中删除"type": "module"字段，因为已经不需要ES6的支持了。</p>
-<h2>总结</h2>
-<p>export关键字用于在一个模块中声明一个或多个可以被其他模块访问的变量、函数或对象，大多用在前端JS文件的编写。如果你的项目是基于Node.js，可以使用exports或module.exports。</p></div>
+  <div class="mb-4"><p>换回Windows使用的是Windows 10，机器买来后系统已经安装了360杀毒套件，但是对360杀毒确实挺反感的，所以一直在考虑找个杀毒软件的替代。</p>
+<h2>老牌杀毒软件的遗憾</h2>
+<p>2016年前我一直在Windows下晃悠，那个时候的杀毒软件一直是360或QQ电脑管家二选一，但是对这二家的使用体验我只能用呵呵来表达了。之后换了MacBookpro一直裸机没有使用任何杀毒软件，知道最近又换回了Windows。说说360的优点：很体贴，几乎你能想到的痛点他都要帮你解决，比如浏览器主页，一定要给你设置成360的导航，优化了说你访问网络不安安全，便你个下载他的浏览器，添加功能目录很深且没有卸载程序，最后只好卸载拜拜，但是又不想用QQ电脑管家，咋办？</p>
+<h2>火绒安全</h2>
+<p>后来啊，网上搜了一下，有个叫火绒安全的杀毒软件，据说很安静不管闲事，抱着试试看的心态下载安装了一下，哎，就是这个样子，这才是一个杀毒软件应该有的样子，安安静静功能齐全，不改系统设置没有附加功能强制捆绑，就是他了。如果你也是痛恨360和QQ管家的运行机制，我推荐你试试火绒安全。</p>
+<p>以上纯手打，不是软文和广告，是本人真是体验。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
-      
-      <a href="https://suiyan.cc/2023/20230727194930.html" class="text-accent text-md"
-        ><button class="btn"> prev </button></a
-      >
        
-      <a href="https://suiyan.cc/2023/20230725180343.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230726132925.html" class="text-accent text-md"
         ><button class="btn"> next </button></a
       >
       
-    </div>
-    
-    <div class="related">
-      <p>相关文章：</p>
-      <ul>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230608184436.html" class="link link-hover"
-            ><span>一行代码升级你的node.js为最新稳定版</span></a
-          >
-        </li>
-        
-      </ul>
     </div>
     
     <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
