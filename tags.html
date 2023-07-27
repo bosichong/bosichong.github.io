@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="cupcake">
+<html lang="zh-CN">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,11 +21,6 @@
     <title>
       Tags | SuiYan 碎言
     </title>
-    <link
-      href="https://suiyan.cc/assets/css/full.css"
-      rel="stylesheet"
-      type="text/css"
-    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
 
@@ -35,67 +30,35 @@
 
   <body>
     <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
-      <div class="navbar container xl:w-3/5 mx-auto">
-        <div class="navbar-start">
-          <div class="avatar lg:hidden mx-2">
-            <div
-              class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-            >
-              <a href="https://suiyan.cc/">
-                <img
-                  src="https://suiyan.cc/assets/images/avatar.jpg"
-                  alt="J.sky"
-                />
-              </a>
-            </div>
-          </div>
-          <button
-            class="flextransition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg text-2xl hidden lg:block"
+      <div class="container h-16 xl:w-3/5 mx-auto flex items-center">
+        <div class="justify-start w-1/2">
+          <div
+            class="w-16 text-center text-2xl"
           >
             <a href="https://suiyan.cc/">碎言</a>
-          </button>
         </div>
-        <div class="navbar-end">
-          <ul class="flex text-center text-xl">
+        </div>
+        <div class="justify-end w-1/2 flex">
+          <ul class="flex text-center text-sm gap-6">
             
             <li>
-              <a href="https://suiyan.cc/archives.html"
-                ><button
-                  class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-                >
-                  Archive
-                </button></a
-              >
+              <a href="https://suiyan.cc/archives.html" class="text-gray-500 transition hover:text-gray-500/75">
+                  Archive</a>
             </li>
             
             <li>
-              <a href="https://suiyan.cc/tags.html"
-                ><button
-                  class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-                >
-                  Tags
-                </button></a
-              >
+              <a href="https://suiyan.cc/tags.html" class="text-gray-500 transition hover:text-gray-500/75">
+                  Tags</a>
             </li>
             
             <li>
-              <a href="https://suiyan.cc/before-2022/1.html"
-                ><button
-                  class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-                >
-                  Me
-                </button></a
-              >
+              <a href="https://suiyan.cc/before-2022/1.html" class="text-gray-500 transition hover:text-gray-500/75">
+                  Me</a>
             </li>
             
             <li>
-              <a href="https://suiyan.cc/links.html"
-                ><button
-                  class="transition ease-in-out delay-150 hover:-translate-y-1 btn btn-sm btn-ghost normal-case font-light hover:shadow-lg"
-                >
-                  Links
-                </button></a
-              >
+              <a href="https://suiyan.cc/links.html" class="text-gray-500 transition hover:text-gray-500/75">
+                  Links</a>
             </li>
             
           </ul>
@@ -111,16 +74,15 @@
     <span class="text-sm"> 共有标签:66个 </span>
   </div>
 </div>
-<div class="divider"></div>
 
-<div class="tags container-fluid">
-   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+<div class="tags container-fluid py-4">
+ 
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata1"
   >
     杀毒软件(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata1 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -130,12 +92,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata2"
   >
     node.js(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata2 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -148,12 +110,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata3"
   >
     宽带(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata3 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -166,12 +128,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata4"
   >
     笔记本(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata4 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -181,12 +143,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata5"
   >
     JavaScript(11)
-  </button>
+  </span>
   <ul class="tagdata tagdata5 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -226,12 +188,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata6"
   >
     css(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata6 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -241,12 +203,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata7"
   >
     无线网卡(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata7 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -256,12 +218,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata8"
   >
     python(4)
-  </button>
+  </span>
   <ul class="tagdata tagdata8 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -280,12 +242,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata9"
   >
     Python GUI(21)
-  </button>
+  </span>
   <ul class="tagdata tagdata9 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -355,12 +317,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata10"
   >
     NiceGui(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata10 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -370,12 +332,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata11"
   >
     PyCharm(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata11 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -385,12 +347,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata12"
   >
     碎言博客(14)
-  </button>
+  </span>
   <ul class="tagdata tagdata12 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -439,12 +401,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata13"
   >
     站长吐槽(14)
-  </button>
+  </span>
   <ul class="tagdata tagdata13 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -493,12 +455,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata14"
   >
     react(8)
-  </button>
+  </span>
   <ul class="tagdata tagdata14 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -529,12 +491,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata15"
   >
     clipboard.js(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata15 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -544,12 +506,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata16"
   >
     debounce(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata16 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -559,12 +521,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata17"
   >
     MacBookPro(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata17 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -574,12 +536,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata18"
   >
     Material(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata18 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -589,12 +551,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata19"
   >
     github(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata19 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -604,12 +566,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata20"
   >
     Git(5)
-  </button>
+  </span>
   <ul class="tagdata tagdata20 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -631,12 +593,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata21"
   >
     Python(8)
-  </button>
+  </span>
   <ul class="tagdata tagdata21 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -667,12 +629,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata22"
   >
     编程(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata22 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -682,12 +644,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata23"
   >
     Typed(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata23 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -697,12 +659,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata24"
   >
     Python基础(33)
-  </button>
+  </span>
   <ul class="tagdata tagdata24 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -808,12 +770,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata25"
   >
     未分类(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata25 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -823,12 +785,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata26"
   >
     StableDiffusion(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata26 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -838,12 +800,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata27"
   >
     ControlNet(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata27 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -853,12 +815,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata28"
   >
     前端(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata28 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -871,12 +833,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata29"
   >
     TailwindCSS(7)
-  </button>
+  </span>
   <ul class="tagdata tagdata29 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -904,12 +866,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata30"
   >
     daisyUI(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata30 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -922,12 +884,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata31"
   >
     PowerShell(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata31 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -937,12 +899,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata32"
   >
     macOS(3)
-  </button>
+  </span>
   <ul class="tagdata tagdata32 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -958,12 +920,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata33"
   >
     MacBook(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata33 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -976,12 +938,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata34"
   >
     Vue(9)
-  </button>
+  </span>
   <ul class="tagdata tagdata34 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1015,12 +977,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata35"
   >
     Pinia(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata35 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1030,12 +992,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata36"
   >
     BUG(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata36 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1045,12 +1007,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata37"
   >
     独立博客(3)
-  </button>
+  </span>
   <ul class="tagdata tagdata37 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1066,12 +1028,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata38"
   >
     Django(12)
-  </button>
+  </span>
   <ul class="tagdata tagdata38 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1114,12 +1076,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata39"
   >
     JavaScript库和框架(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata39 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1129,12 +1091,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata40"
   >
     lodash(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata40 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1144,12 +1106,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata41"
   >
     bug(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata41 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1159,12 +1121,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata42"
   >
     Casbin(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata42 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1174,12 +1136,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata43"
   >
     权限管理(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata43 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1189,12 +1151,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata44"
   >
     SQLAlchemy(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata44 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1204,12 +1166,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata45"
   >
     CSS(8)
-  </button>
+  </span>
   <ul class="tagdata tagdata45 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1240,12 +1202,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata46"
   >
     vite(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata46 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1258,12 +1220,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata47"
   >
     giscus(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata47 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1273,12 +1235,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata48"
   >
     Moment.js(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata48 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1288,12 +1250,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata49"
   >
     Day.js(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata49 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1303,12 +1265,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata50"
   >
     fetch(3)
-  </button>
+  </span>
   <ul class="tagdata tagdata50 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1324,12 +1286,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata51"
   >
     async(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata51 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1339,12 +1301,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata52"
   >
     await(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata52 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1354,12 +1316,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata53"
   >
     request(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata53 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1369,12 +1331,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata54"
   >
     读书笔记(3)
-  </button>
+  </span>
   <ul class="tagdata tagdata54 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1390,12 +1352,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata55"
   >
     站长源创(7)
-  </button>
+  </span>
   <ul class="tagdata tagdata55 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1423,12 +1385,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata56"
   >
     SEO(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata56 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1438,12 +1400,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata57"
   >
     前端框架(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata57 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1456,12 +1418,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata58"
   >
     HTML(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata58 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1471,12 +1433,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata59"
   >
     GitHub(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata59 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1486,12 +1448,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata60"
   >
     Flask(4)
-  </button>
+  </span>
   <ul class="tagdata tagdata60 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1510,12 +1472,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-info font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata61"
   >
     webpack(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata61 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1528,12 +1490,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-error font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata62"
   >
     网站运维(2)
-  </button>
+  </span>
   <ul class="tagdata tagdata62 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1546,12 +1508,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata63"
   >
     pygame(10)
-  </button>
+  </span>
   <ul class="tagdata tagdata63 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1588,12 +1550,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-warning font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata64"
   >
     C/C++(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata64 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1603,12 +1565,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata65"
   >
     数据库(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata65 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1618,12 +1580,12 @@
   </ul>
 
   
-  <button
-    class="m-2 tag btn-sm btn btn-success font-normal"
+  <span
+    class="m-2 tag cursor-pointer"
     data-tag="tagdata66"
   >
     404(1)
-  </button>
+  </span>
   <ul class="tagdata tagdata66 list-group" style="display: none">
     
     <li class="list-group-item">
@@ -1641,7 +1603,7 @@
 
       <!-- ======= Footer ======= -->
 
-      <footer class="footer p-3 bg-base-200 text-base-content">
+      <footer class="footer grid grid-flow-col text-sm p-3 bg-slate-100 text-base-content">
   <div>
     <div>
       本站采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可，转载请保留原文链接及署名。
@@ -1677,7 +1639,7 @@
     </div>
 
     <div class="rightside fixed bottom-10 right-0 w-10">
-      <button class="btn btn-circle btn-sm my-2">
+      <button class="my-2">
         <a href="https://suiyan.cc/search.html"
           ><img
             src="https://suiyan.cc/assets/ico/search.png"
