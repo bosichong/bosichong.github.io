@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta content="JavaScript" name="keywords" />
-    <meta content="今天先来无事，想编写一个私人的rss订阅，用来订阅自己喜欢的博客，终端运行后可以采集列表中博客的RSS文章，只关注最近一星期的数据，然后选中文章，通过浏览器打开博文地址浏览。好吧想法有了，那么就开干！" name="description" />
+    <meta content="今天闲来无事，想编写一个私人的rss订阅，用来订阅自己喜欢的博客，终端运行后可以采集列表中博客的RSS文章，只关注最近一星期的数据，然后选中文章，通过浏览器打开博文地址浏览。好吧想法有了，那么就开干！" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -76,13 +76,13 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-23 17:52:16"><span
         class="cr-time"
         >2023-07-23 17:52:16</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-07-23 18:05:12"><span class="up-time">2023-07-23 18:05:12</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-28 09:07:28"><span class="up-time">2023-07-28 09:07:28</span></div>
       · Tag:   JavaScript 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>今天先来无事，想编写一个私人的rss订阅，用来订阅自己喜欢的博客，终端运行后可以采集列表中博客的RSS文章，只关注最近一星期的数据，然后选中文章，通过浏览器打开博文地址浏览。好吧想法有了，那么就开干！</p>
+  <div class="mb-4"><p>今天闲来无事，想编写一个私人的rss订阅，用来订阅自己喜欢的博客，终端运行后可以采集列表中博客的RSS文章，只关注最近一星期的数据，然后选中文章，通过浏览器打开博文地址浏览。好吧想法有了，那么就开干！</p>
 <h2>程序构思</h2>
 <p>一个私人的rss订阅，用来订阅我喜欢的博客，使用JavaScript来编写，在node环境下运行，我会创建一个数组，里边存放着我喜欢的博客的rss连接地址，当我运行这个脚本的时候，程序就会通过rss采集这些博客的最新文章，然后整理保存，通过终端输出，我可以通过鼠标点击终端的文章名称，弹出一个浏览器窗口来查看博文。</p>
 <p>目前来说，我需要两个主要的依赖，一个书rss的数据采集一个是在终端可以打开指定的连接，根据搜索以及ChatGPT的提示，我找到两个库：</p>
@@ -323,27 +323,34 @@ http://www.ruanyifeng.com/blog/atom.xml的数据解析完毕！
       <!-- End  Footer -->
     </div>
 
-    <div class="rightside fixed bottom-10 right-0 w-10">
-      <button class="my-2">
-        <a href="https://suiyan.cc/search.html"
-          ><img
-            src="https://suiyan.cc/assets/ico/search.png"
-            alt="search"
-            width="20"
-            height="20"
-        /></a>
+    <div class="rightside fixed bottom-10 right-2 w-10">
+
+      <!-- Component: Base secondary button with icon  -->
+<button class="mb-2 inline-flex items-center self-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none">
+  <span class="relative only:-mx-5">
+    <a href="https://suiyan.cc/search.html">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+        <path d="M21 21l-6 -6"></path>
+     </svg>
+    </a>
+  </span>
+</button>
+<!-- End Base secondary button with icon  -->
+
+      <!-- Component: Base secondary button with icon  -->
+      <button onclick="scrollToTop()" class="mb-2 inline-flex items-center self-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none">
+        <span class="relative only:-mx-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M16 12l-4 -4l-4 4"></path>
+            <path d="M12 16v-8"></path>
+            <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"></path>
+         </svg>
+        </span>
       </button>
-      <button
-        class="btn btn-circle btn-sm my-2"
-        onclick="scrollToTop()"
-      >
-        <img
-          src="https://suiyan.cc/assets/ico/up.png"
-          alt="up"
-          width="20"
-          height="20"
-        />
-      </button>
+      <!-- End Base secondary button with icon  -->
     </div>
 
     <!-- CDN example (unpkg) day.js -->

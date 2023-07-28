@@ -244,27 +244,34 @@ http://blog.csdn.net/geekun/article/details/51325383</p></div>
       <!-- End  Footer -->
     </div>
 
-    <div class="rightside fixed bottom-10 right-0 w-10">
-      <button class="my-2">
-        <a href="https://suiyan.cc/search.html"
-          ><img
-            src="https://suiyan.cc/assets/ico/search.png"
-            alt="search"
-            width="20"
-            height="20"
-        /></a>
+    <div class="rightside fixed bottom-10 right-2 w-10">
+
+      <!-- Component: Base secondary button with icon  -->
+<button class="mb-2 inline-flex items-center self-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none">
+  <span class="relative only:-mx-5">
+    <a href="https://suiyan.cc/search.html">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+        <path d="M21 21l-6 -6"></path>
+     </svg>
+    </a>
+  </span>
+</button>
+<!-- End Base secondary button with icon  -->
+
+      <!-- Component: Base secondary button with icon  -->
+      <button onclick="scrollToTop()" class="mb-2 inline-flex items-center self-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none">
+        <span class="relative only:-mx-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M16 12l-4 -4l-4 4"></path>
+            <path d="M12 16v-8"></path>
+            <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"></path>
+         </svg>
+        </span>
       </button>
-      <button
-        class="btn btn-circle btn-sm my-2"
-        onclick="scrollToTop()"
-      >
-        <img
-          src="https://suiyan.cc/assets/ico/up.png"
-          alt="up"
-          width="20"
-          height="20"
-        />
-      </button>
+      <!-- End Base secondary button with icon  -->
     </div>
 
     <!-- CDN example (unpkg) day.js -->
