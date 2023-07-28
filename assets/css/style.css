@@ -56,3 +56,9 @@
     -moz-text-fill-color: transparent;
 
 }
+
+
+img {
+  height: auto;
+  width: 100%;
+}
