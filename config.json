@@ -22,15 +22,15 @@
     "blog_url":"https://suiyan.cc/",
     "blog_sns": [
         {
-            "ico": "brand-github-filled",
+            "ico": "github",
             "url": "https://github.com/bosichong/suiyan"
         },
         {
-            "ico": "brand-github",
+            "ico": "gitee",
             "url": "https://gitee.com/J_Sky/suiyan"
         },
         {
-            "ico": "mail-heart",
+            "ico": "mail",
             "url": "mailto:285911@gmail.com"
         },
         {
