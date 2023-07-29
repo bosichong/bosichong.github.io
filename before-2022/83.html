@@ -26,46 +26,70 @@
 
     <!-- Template Main CSS File -->
     <link href="https://suiyan.cc/assets/css/style.css" rel="stylesheet" />
+
+    <!-- CDN example (unpkg) day.js -->
+    <script src="https://suiyan.cc/assets/js/dayjs.min.js"></script>
+    <script src="https://suiyan.cc/assets/js/relativeTime.js"></script>
+    <script src="https://suiyan.cc/assets/js/zh-cn.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://suiyan.cc/assets/js/main.js"></script>
   </head>
 
   <body>
     <nav class="sticky top-0 h-16 px-4 z-10 bg-opacity-90 backdrop-blur">
       <div class="container h-16 xl:w-3/5 mx-auto flex items-center">
         <div class="justify-start w-1/2">
-          <div
-            class="w-16 text-center text-2xl"
-          >
+          <div class="w-16 text-center text-2xl">
             <a href="https://suiyan.cc/">碎言</a>
-        </div>
+          </div>
         </div>
         <div class="justify-end w-1/2 flex">
           <ul class="flex text-center text-sm gap-6">
             
             <li>
-              <a href="https://suiyan.cc/archives.html" class="text-gray-500 transition hover:text-gray-500/75">
-                  Archive</a>
+              <a
+                href="https://suiyan.cc/archives.html"
+                class="text-gray-500 transition hover:text-gray-500/75"
+              >
+                Archive</a
+              >
             </li>
             
             <li>
-              <a href="https://suiyan.cc/tags.html" class="text-gray-500 transition hover:text-gray-500/75">
-                  Tags</a>
+              <a
+                href="https://suiyan.cc/tags.html"
+                class="text-gray-500 transition hover:text-gray-500/75"
+              >
+                Tags</a
+              >
             </li>
             
             <li>
-              <a href="https://suiyan.cc/before-2022/1.html" class="text-gray-500 transition hover:text-gray-500/75">
-                  Me</a>
+              <a
+                href="https://suiyan.cc/before-2022/1.html"
+                class="text-gray-500 transition hover:text-gray-500/75"
+              >
+                Me</a
+              >
             </li>
             
             <li>
-              <a href="https://suiyan.cc/links.html" class="text-gray-500 transition hover:text-gray-500/75">
-                  Links</a>
+              <a
+                href="https://suiyan.cc/links.html"
+                class="text-gray-500 transition hover:text-gray-500/75"
+              >
+                Links</a
+              >
             </li>
             
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container max-w-3xl mx-auto leading-normal text-lg font-extralight">
+    <div
+      class="container max-w-3xl mx-auto leading-normal text-lg font-extralight"
+    >
       <div class="p-4">
 <!-- Template Main CSS File -->
 <link href="https://suiyan.cc/assets/css/blog.css" rel="stylesheet">
@@ -218,41 +242,63 @@
     </div>
 
     <div class="rightside fixed bottom-20 right-2 w-10">
-
       <!-- Component: Base secondary button with icon  -->
-<button aria-label="Search" class="mb-2 inline-flex items-center self-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none">
-  <span class="relative only:-mx-5">
-    <a href="https://suiyan.cc/search.html" aria-label="Search page">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
-        <path d="M21 21l-6 -6"></path>
-     </svg>
-    </a>
-  </span>
-</button>
-<!-- End Base secondary button with icon  -->
-
-      <!-- Component: Base secondary button with icon  -->
-      <button aria-label="arrow-up" onclick="scrollToTop()" class="mb-2 inline-flex items-center self-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none">
+      <button
+        aria-label="Search"
+        class="mb-2 inline-flex items-center self-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none"
+      >
         <span class="relative only:-mx-5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://suiyan.cc/search.html" aria-label="Search page">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-search"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+              <path d="M21 21l-6 -6"></path>
+            </svg>
+          </a>
+        </span>
+      </button>
+      <!-- End Base secondary button with icon  -->
+
+      <!-- Component: Base secondary button with icon  -->
+      <button
+        aria-label="arrow-up"
+        onclick="scrollToTop()"
+        class="mb-2 inline-flex items-center self-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded-full focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none"
+      >
+        <span class="relative only:-mx-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-square-rounded-arrow-up"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M16 12l-4 -4l-4 4"></path>
             <path d="M12 16v-8"></path>
-            <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"></path>
-         </svg>
+            <path
+              d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"
+            ></path>
+          </svg>
         </span>
       </button>
       <!-- End Base secondary button with icon  -->
     </div>
-
-    <!-- CDN example (unpkg) day.js -->
-    <script src="https://suiyan.cc/assets/js/dayjs.min.js"></script>
-    <script src="https://suiyan.cc/assets/js/relativeTime.js"></script>
-    <script src="https://suiyan.cc/assets/js/zh-cn.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="https://suiyan.cc/assets/js/main.js"></script>
   </body>
 </html>
