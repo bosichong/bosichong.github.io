@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-28 15:23:00</pubDate>
+        <pubDate>2023-07-29 15:12:14</pubDate>
+        
+        <item>
+            <title>使用python结合feedparser模块编写自己的私人RSS订阅程序</title>
+            <link>https://suiyan.cc/2023/20230729151214.html</link>
+            <author>J.sky</author>
+            <description>前几天使用JavaScript编写了一个简单的私人RSS订阅终端程序，但是是自己对JavaScript的并不是很熟悉，今天有用python重构了一下，感觉python的代码看起来更简单直观。</description>
+            <category>python,feedparser</category>
+            <pubDate>2023-07-29 15:12:14</pubDate>
+        </item>
         
         <item>
             <title>博客大数据分析：38880条博文揭示博主最爱写什么？</title>
@@ -85,15 +94,6 @@
             <description>入手了一个USB的双频无线网卡，但是插到电脑USB上后，速度可真是一般了，家里升级了1000M宽带，但是下载还不到3M的速度，理论上也就是20M的宽带啊？这不科学啊？赶紧找了找资料调试了一下，下载速度终于提上了来了！</description>
             <category>无线网卡</category>
             <pubDate>2023-07-20 23:03:50</pubDate>
-        </item>
-        
-        <item>
-            <title>Python Gui新框架:NiceGui之初体验</title>
-            <link>https://suiyan.cc/2023/20230719093740.html</link>
-            <author>J.sky</author>
-            <description>对于使用python的朋友，对于python的gui总是有一种不满意的情绪，确实，python下边没有什么太出色的GUI框架，或多或少都有些不足或是遗憾吧，不过这阵子NiceGui逐渐的火起来了，赶紧试试吧.</description>
-            <category>python,Python GUI,NiceGui</category>
-            <pubDate>2023-07-19 09:37:40</pubDate>
         </item>
         
     </channel>
