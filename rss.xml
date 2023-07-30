@@ -4,7 +4,25 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-29 15:12:14</pubDate>
+        <pubDate>2023-07-30 14:47:09</pubDate>
+        
+        <item>
+            <title>vim常用命令整理</title>
+            <link>https://suiyan.cc/2023/20230730144709.html</link>
+            <author>J.sky</author>
+            <description>最近要经常和终端打交道了，所以整理了一下vim的常用命令用来参考。</description>
+            <category>vim</category>
+            <pubDate>2023-07-30 14:47:09</pubDate>
+        </item>
+        
+        <item>
+            <title>Ubuntu 22 安装Docker过程记录</title>
+            <link>https://suiyan.cc/2023/20230730133646.html</link>
+            <author>J.sky</author>
+            <description>今天突然想把docker在Windows10下安装上，结果被坑的一塌糊涂，后来没办法了，只好在虚拟机的ubuntu下边安装了docker。</description>
+            <category>Ubuntu,Docker</category>
+            <pubDate>2023-07-30 13:36:46</pubDate>
+        </item>
         
         <item>
             <title>使用python结合feedparser模块编写自己的私人RSS订阅程序</title>
@@ -76,24 +94,6 @@
             <description>博客的页面有些单调，但是又不想使用额外的JS代码来增加页面的加载负担，这个时候你可以考虑一下使用css来增加博客页面的效果，比如彩色博客标题。</description>
             <category>css</category>
             <pubDate>2023-07-22 15:27:22</pubDate>
-        </item>
-        
-        <item>
-            <title>最终还是决定使用传统的网线来解决千兆速率问题。</title>
-            <link>https://suiyan.cc/2023/20230721170856.html</link>
-            <author>J.sky</author>
-            <description>纠结了一天，几不舍得花几百块换设备，又不想浪费千兆宽带的资源，最终决定采用了原始的布网线方式来解决这个问题。</description>
-            <category>宽带</category>
-            <pubDate>2023-07-21 17:08:56</pubDate>
-        </item>
-        
-        <item>
-            <title>1300M USB双频2.4+5G无线网卡的一些常识和使用技巧</title>
-            <link>https://suiyan.cc/2023/20230720230350.html</link>
-            <author>J.sky</author>
-            <description>入手了一个USB的双频无线网卡，但是插到电脑USB上后，速度可真是一般了，家里升级了1000M宽带，但是下载还不到3M的速度，理论上也就是20M的宽带啊？这不科学啊？赶紧找了找资料调试了一下，下载速度终于提上了来了！</description>
-            <category>无线网卡</category>
-            <pubDate>2023-07-20 23:03:50</pubDate>
         </item>
         
     </channel>
