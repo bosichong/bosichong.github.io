@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="vim" name="keywords" />
-    <meta content="最近要经常和终端打交道了，所以整理了一下vim的常用命令用来参考。" name="description" />
+    <meta content="Docker" name="keywords" />
+    <meta content="" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      vim常用命令整理 | SuiYan 碎言
+      Docker基础学习笔记和常用命令汇总 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -99,103 +99,109 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">vim常用命令整理</h1>
+    <h1 class="text-3xl font-medium">Docker基础学习笔记和常用命令汇总</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-30 14:47:09"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-30 22:35:50"><span
         class="cr-time"
-        >2023-07-30 14:47:09</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-07-30 14:51:32"><span class="up-time">2023-07-30 14:51:32</span></div>
-      · Tag:   vim 
+        >2023-07-30 22:35:50</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-07-31 10:45:00"><span class="up-time">2023-07-31 10:45:00</span></div>
+      · Tag:   Docker 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>最近要经常和终端打交道了，所以整理了一下vim的常用命令用来参考。</p>
-<h2>一般模式下移动光标</h2>
-<pre><code>h或者(向左方向键)    //光标向左移动一个字符
-j或者(向下方向键)    //光标向下移动一个字符
-k或者(向上方向键)    //光标向上移动一个字符
-l或者(向右方向健)    //光标向右移动一个字符
-Ctrl+f              //屏幕向文件尾移动一页
-Ctrl+b              //屏幕向文件头移动一页
-n空格(n是数字)       //按下数字n然后按空格，则光标向右移动n个字符，如果该行字符数小于n，则光标继续 
-                    从下行开始向右移动，一直到n
+  <div class="mb-4"><p>这是一篇Docker的学习笔记，记录了Docker一些日常操作。</p>
+<h2>Docker 安装</h2>
+<p><a href="https://suiyan.cc/2023/20230730133646.html">Ubuntu 22 安装Docker过程记录</a></p>
+<h2>Docker常用命令</h2>
+<pre><code>docker version        # 显示docker的版本信息
+docker info              # 显示docker的系统信息，包括镜像和容器的数量
+docker 命令 --help         # 帮助命令
 
-0(数字0)或者Home     //移动到本行行首
-$或者End             //移动到本行行尾
-H                   //光标移动到当前屏幕的最顶行
-M                   //光标移动到当前屏幕的中央那一行
-L                   //光标移动到当前屏幕的最底行
-G                   //光标移动到文本的最末行
-nG(n是数字)         //光标移动到文本的第n行
-gg                  //光标移动到文本的首行
-n回车(n是数字)       //光标向下移动n行
+docker search  # 搜索镜像
+docker pull #下载镜像
+docker rm 容器id                    # 删除容器（不能删除正在运行的容器）如果要强制删除：docker rm -f 容器id
+docker rm -f $(docker ps -aq)        # 删除全部容器
+docker ps -a -q|xargs docker rm        # 删除所有容器
+docker ps #列出所有容器
+
+docker run image #启动容器
+docker run -d image #后台启动容器
+docker exec -it 容器id /bin/bash #进入当前容器
+docker start 容器id        # 启动容器
+docker restart 容器id    # 重启容器
+docker stop 容器id        # 停止当前正在运行的容器
+docker kill 容器id        # 强制停止当前容器
+
+
+docker logs -tf --tail 容器id # 查看日志
+docker inspect 容器id #查看容器内容
+
+docker run [可选参数] image
+# 参数说明
+--name="name"        容器名字：用来区分容器
+-d                    后台方式运行：相当于nohup
+-it                    使用交互式运行：进入容器查看内容
+-p                    指定容器的端口（四种方式）小写字母p
+    -p ip:主机端口：容器端口
+    -p 主机端口：容器端口
+    -p 容器端口
+    容器端口
+-P                     随机指定端口（大写字母P）
 </code></pre>
-<h2>一般模式下删除、复制和粘贴</h2>
-<pre><code>x,X    // x为向后删除一个字符，X为向前删除一个字符
-nx(n是数字)    //向后删除n个字符
-dd            //删除光标所在的那一行
-ndd(n是数字)   // 删除光标所在的向下n行
-d1G       //删除光标所在行到第1行的所有数据
-dG        //删除光标所在行到末行的所有数据
-yy        //复制光标所在的那一行
-nyy       //复制从光标所在行开始的向下n行
-p,P       //p将复制的数据从光标下一行粘贴，P则从光标上一行粘贴
-y1G      //复制光标所在行到第1行的所有数据
-yG        //复制光标所在行到末行的所有数据
-J         //将光标所在行与下一行的数据结合成一行
-u         //还原过去的操作
-Ctrl+r    //重做上一个操作
-.         //重复前一个操作
+<h2>安装mysql</h2>
+<pre><code># docker 中下载 mysql
+docker pull mysql
+
+#启动
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Lzslov123! -d mysql
+
+#进入容器
+docker exec -it mysql bash
+
+#登录mysql
+mysql -u root -p
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'suiyan';
+
+#添加远程登录用户
+CREATE USER 'suiyan'@'%' IDENTIFIED WITH mysql_native_password BY 'suiyan.cc';
+GRANT ALL PRIVILEGES ON *.* TO 'liaozesong'@'%';
 </code></pre>
-<h2>一般模式下查找与替换</h2>
-<pre><code>/word      //向光标之后寻找名为word的字符串,当找到第一个word后,按下"n"继续查找后一个，按下"N",反方向查找下一个
+<h2>安装Ubuntu</h2>
+<pre><code>sudo docker pull ubuntu
 
-?word      //向光标之前寻找名为word的字符串,当找到第一个word后,按下"n"继续查找后一个,按下"N",反方向查找下一个
+sudo docker images
 
-:n1,n2s/word1/word2/g     //在n1和n2行之间查找wordl字符串并替换为word2
+sudo run -itd --name ubuntutest ubuntu
 
-:1,$s/word1/word2/g       //从第一行到最末行,查找word1并替换成word2
+sudo docker exec -it 52b9 /bin/bash # 进入容器Ubuntu
 
-:1,$s/word1/word2/gc      //在第一行和最末行之间查找word1,替换为word2之前需要用户确认
+exit #推出
+
+sudo docker stop 容器ID #停止Ubuntu容器
 </code></pre>
-<h2>从一般模式进入编辑模式</h2>
-<pre><code>i     //在光标前插入字符
-I     //在光标所在行的行首插入字符
-a     //在光标后插入字符
-A     //在光标所在行末插入字符
-o     //在光标所在行下插入新的一行
-O     //在光标所在行上插入新的一行
-r     //替换光标所在的字符,只替换一次
-R     //一直替换光标所在的字符,直到按下Esc键
-</code></pre>
-<h2>命令行模式下常用命令</h2>
-<pre><code>:w    //保存文本
-:w!   //如果文件属性为只读时，强制保存
-:q    //退出vim
-:q!   //强制退出vim，不管编辑还是未编辑都不保存退出
-:wq   //保存之后退出
-:e!   //将文档还原成最原始状态
-:ZZ    //等价:wq
-:w [filename]     //将文档另存为filename
-:r [filename]     //在光标所在行的下面读入filename文档的内容
-:set nu           //在每行的行首设置行号
-:set nonu         //取消行号
-:n1,n2 w [filename]   //将n1到n2行的内容另存为filename文件中
-:!command     //暂时离开vim，执行某个Linux命令，例如：:ls/home 暂时列出/home下的文件，然后会提示按回车返回vim
-</code></pre></div>
+<p>总体来说，docker的安装和使用还是很简单的，上手操作一下，半小时就能入手了。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230730133646.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230730144709.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230730223550.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
+    </div>
+    
+    <div class="related">
+      <p>相关文章：</p>
+      <ul>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230730133646.html" class="link link-hover"
+            ><span>Ubuntu 22 安装Docker过程记录</span></a
+          >
+        </li>
+        
+      </ul>
     </div>
     
     <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">

@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-07-30 14:47:09</pubDate>
+        <pubDate>2023-07-30 22:35:50</pubDate>
+        
+        <item>
+            <title>Docker基础学习笔记和常用命令汇总</title>
+            <link>https://suiyan.cc/2023/20230730223550.html</link>
+            <author>J.sky</author>
+            <description></description>
+            <category>Docker</category>
+            <pubDate>2023-07-30 22:35:50</pubDate>
+        </item>
         
         <item>
             <title>vim常用命令整理</title>
@@ -85,15 +94,6 @@
             <description>今天闲来无事，想编写一个私人的rss订阅，用来订阅自己喜欢的博客，终端运行后可以采集列表中博客的RSS文章，只关注最近一星期的数据，然后选中文章，通过浏览器打开博文地址浏览。好吧想法有了，那么就开干！</description>
             <category>JavaScript</category>
             <pubDate>2023-07-23 17:52:16</pubDate>
-        </item>
-        
-        <item>
-            <title>如何使用CSS为博客标题设置彩虹颜色？</title>
-            <link>https://suiyan.cc/2023/20230722152722.html</link>
-            <author>J.sky</author>
-            <description>博客的页面有些单调，但是又不想使用额外的JS代码来增加页面的加载负担，这个时候你可以考虑一下使用css来增加博客页面的效果，比如彩色博客标题。</description>
-            <category>css</category>
-            <pubDate>2023-07-22 15:27:22</pubDate>
         </item>
         
     </channel>
