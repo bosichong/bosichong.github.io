@@ -104,7 +104,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-29 15:12:14"><span
         class="cr-time"
         >2023-07-29 15:12:14</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-07-29 15:47:52"><span class="up-time">2023-07-29 15:47:52</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-01 10:17:05"><span class="up-time">2023-08-01 10:17:05</span></div>
       · Tag:   python  feedparser 
       </small>
     </div>
@@ -127,8 +127,92 @@ for data in d.entries:
     print("title:"+data.title)
     print("description:" + data.description)
     print("link:" + data.link)
-    print("
-</code></pre></div>
+</code></pre>
+<p>可以很方便的解析出博客RSS中的内容。根据需求，我们重构之前的JavaScript编写的订阅程序的代码。</p>
+<p>完整的python代码：</p>
+<pre><code>from concurrent.futures import ThreadPoolExecutor
+
+import feedparser
+import webbrowser
+import os
+from datetime import datetime, timedelta
+
+# 定义你喜欢的博客的RSS链接地址，放入一个数组中
+rss_feeds = [
+    'https://suiyan.cc/rss',
+    'https://hutusi.com/feed.xml',
+    'http://www.ruanyifeng.com/blog/atom.xml',
+    # 添加更多博客的RSS链接
+]
+
+
+def fetch_articles_from_feed(feed_url, one_week_ago):
+    articles = []
+    print("开始解析:"+feed_url)
+    feed = feedparser.parse(feed_url)
+    if 'entries' in feed:
+        for entry in feed.entries:
+            published_time = datetime(*entry.published_parsed[:6])
+            if published_time &gt;= one_week_ago:
+                article = {
+                    'title': entry.get('title', ''),
+                    'link': entry.get('link', ''),
+                    'published': entry.get('published', ''),
+                    # 可以根据需要提取更多信息，如作者、摘要等
+                }
+                articles.append(article)
+    print("解析完成！" + feed_url)
+    return articles
+
+
+def fetch_latest_articles(rss_feeds):
+    articles = []
+    one_week_ago = datetime.now() - timedelta(weeks=1)
+
+    with ThreadPoolExecutor() as executor:
+        futures = [executor.submit(fetch_articles_from_feed, feed_url, one_week_ago) for feed_url in rss_feeds]
+
+        for future in futures:
+            articles.extend(future.result())
+
+    return articles
+
+
+def display_articles(articles):
+    if not articles:
+        print("没有找到一周内的文章。")
+        return
+
+    for index, article in enumerate(articles, start=1):
+        print(f"{index}. {article['title']}")
+
+
+def open_article_in_browser(article):
+    webbrowser.open(article['link'])
+
+
+if __name__ == "__main__":
+    # 采集最新文章并保存到数组中
+    articles = fetch_latest_articles(rss_feeds)
+
+    # 在终端输出文章列表
+    display_articles(articles)
+
+    # 等待用户输入选择哪篇文章查看
+    while True:
+        try:
+            choice = int(input("输入文章编号查看详情（输入0退出）: "))
+            if choice == 0:
+                break
+            elif 1 &lt;= choice &lt;= len(articles):
+                selected_article = articles[choice - 1]
+                open_article_in_browser(selected_article)
+            else:
+                print("无效的选择，请重新输入。")
+        except ValueError:
+            print("无效的输入，请输入文章编号的数字。")
+</code></pre>
+<p>这个简单的脚本思路是：准备一个RSS列表，使用线程池技术多线程采集列表中rss一周内的最新博文，终端打印展示，选中编号，回车后通过浏览器打开该篇博客。简单吧，复制代码试试吧。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
