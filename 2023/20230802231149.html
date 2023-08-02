@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="pythonfeedparser" name="keywords" />
-    <meta content="前几天使用JavaScript编写了一个简单的私人RSS订阅终端程序，但是是自己对JavaScript的并不是很熟悉，今天有用python重构了一下，感觉python的代码看起来更简单直观。" name="description" />
+    <meta content="pythonrequests" name="keywords" />
+    <meta content="python中的requests库极大的方便了采集中的网络请求，但是在采集中会遇到一种比较极端的情况：请求的读取超时。这种情况呀怎么解决？" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      使用python结合feedparser模块编写自己的私人RSS订阅程序 | SuiYan 碎言
+      python requests 设置读取超时时间 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -99,52 +99,36 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">使用python结合feedparser模块编写自己的私人RSS订阅程序</h1>
+    <h1 class="text-3xl font-medium">python requests 设置读取超时时间</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-29 15:12:14"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-02 23:11:49"><span
         class="cr-time"
-        >2023-07-29 15:12:14</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-01 10:41:50"><span class="up-time">2023-08-01 10:41:50</span></div>
-      · Tag:   python  feedparser 
+        >2023-08-02 23:11:49</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-02 23:24:11"><span class="up-time">2023-08-02 23:24:11</span></div>
+      · Tag:   python  requests 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>前几天使用JavaScript编写了一个简单的私人RSS订阅终端程序，但是是自己对JavaScript的并不是很熟悉，今天有用python重构了一下，感觉python的代码看起来更简单直观。</p>
-<h2>feedparser</h2>
-<p>feedparser模块是一个RSS订阅的解析模块，可以通过RSS的地址方便的提取出RSS的具体内容。</p>
-<pre><code>pip install feedparser
+  <div class="mb-4"><p>python中的requests库极大的方便了采集中的网络请求，但是在采集中会遇到一种比较极端的情况：请求的读取超时。这种情况呀怎么解决？</p>
+<h2>问题现场</h2>
+<p>多线程批量采集的过程中，会有一些线程长时间卡死，也不抛出错误也不停止，后来发现是读取内容很慢时间很长，本来想通过结束线程来断开这个连接，但是终止一个python的线程并不那么简单，我搜遍了全网询问了AI,并没有什么满意的结果。所以只好从requests.get()下手了，看是只发现了一个连接超时的设置方法：</p>
+<pre><code>response = requests.get(feed_url, timeout=5)
 </code></pre>
-<p>先安装，然后我们来测试一下：</p>
-<pre><code>import feedparser
-
-d = feedparser.parse('https://suiyan.cc/rss')
-# print(d.feed)
-print(d.feed.title)
-print(d.feed.link)
-print(d.entries)
-for data in d.entries:
-    print("title:"+data.title)
-    print("description:" + data.description)
-    print("link:" + data.link)
+<p>这段代码的意思是连接超时就会抛出错误，我们使用try就可以捕获进行相关的操作，但是我需要的读取超时！</p>
+<h2>问题解决</h2>
+<p>后来在网上搜到timeout还可以设置一个元组，例如：</p>
+<pre><code>response = requests.get(feed_url, timeout=(5,5))
 </code></pre>
-<p>可以很方便的解析出博客RSS中的内容。根据需求，我们重构之前的JavaScript编写的订阅程序的代码。</p>
-<h2>继续编写</h2>
-<p>私人RSS订阅程序完整的python代码:</p>
-<p><a href="https://github.com/bosichong/python_rss_subscription">python_rss_subscription</a></p>
-<p>这个简单的脚本思路是：准备一个RSS列表，使用线程池技术多线程采集列表中rss一周内的最新博文，终端打印展示，选中编号，回车后通过浏览器打开该篇博客。简单吧，复制代码试试吧。</p></div>
+<p>切记，后边的那个5，就是读取超时！至此，连接后读取时间过长的问题就可以抛出了。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230728152300.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230801081356.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230730133646.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
     </div>
     
     <div class="related">
@@ -152,8 +136,8 @@ for data in d.entries:
       <ul>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230802231149.html" class="link link-hover"
-            ><span>python requests 设置读取超时时间</span></a
+          <a href="https://suiyan.cc/2023/20230729151214.html" class="link link-hover"
+            ><span>使用python结合feedparser模块编写自己的私人RSS订阅程序</span></a
           >
         </li>
         

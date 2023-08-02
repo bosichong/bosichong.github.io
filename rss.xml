@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-01 08:13:56</pubDate>
+        <pubDate>2023-08-02 23:11:49</pubDate>
+        
+        <item>
+            <title>python requests 设置读取超时时间</title>
+            <link>https://suiyan.cc/2023/20230802231149.html</link>
+            <author>J.sky</author>
+            <description>python中的requests库极大的方便了采集中的网络请求，但是在采集中会遇到一种比较极端的情况：请求的读取超时。这种情况呀怎么解决？</description>
+            <category>python,requests</category>
+            <pubDate>2023-08-02 23:11:49</pubDate>
+        </item>
         
         <item>
             <title>八月回顾：博客之路，一路前行</title>
@@ -85,15 +94,6 @@
             <description>今天，电信宽带提速了，从200M提到了1G入户，这次网速的提升真是一次速度的飞跃。回想起那些年艰辛的上网历程，还是有些感慨的。</description>
             <category>宽带</category>
             <pubDate>2023-07-25 18:03:43</pubDate>
-        </item>
-        
-        <item>
-            <title>理工计算机专业准大学生如何选配笔记本？</title>
-            <link>https://suiyan.cc/2023/20230724132403.html</link>
-            <author>J.sky</author>
-            <description>昨天，朋友的孩子被大连理工大学录取了，很开心！晚上就叫上了我们几个朋友一起聚聚，席间，朋友问我该给孩子配个什么样的笔记本？</description>
-            <category>笔记本</category>
-            <pubDate>2023-07-24 13:24:03</pubDate>
         </item>
         
     </channel>
