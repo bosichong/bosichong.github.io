@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-02 23:11:49</pubDate>
+        <pubDate>2023-08-03 13:33:42</pubDate>
+        
+        <item>
+            <title>1767个中文博客中提取的数据中看看中文博主都干了些啥？</title>
+            <link>https://suiyan.cc/2023/20230803133342.html</link>
+            <author>J.sky</author>
+            <description>前几天有个网友给了我一个API的接口，这个接口返回了大量的中文博客数据，通过这个数据我做了一些简单的分析，如果你正巧也对中文博客感兴趣，不妨进来随便看看。</description>
+            <category>中文博客</category>
+            <pubDate>2023-08-03 13:33:42</pubDate>
+        </item>
         
         <item>
             <title>python requests 设置读取超时时间</title>
@@ -85,15 +94,6 @@
             <description>export exports module.exports 这三个命令中export是是ECMAScript 6（ES6）中引入的模块化规范,exports module.exports是Node.js中用于实现CommonJS模块规范的对象。</description>
             <category>node.js</category>
             <pubDate>2023-07-26 13:29:25</pubDate>
-        </item>
-        
-        <item>
-            <title>时代的变迁：从56K拨号上网到1G光纤的回忆</title>
-            <link>https://suiyan.cc/2023/20230725180343.html</link>
-            <author>J.sky</author>
-            <description>今天，电信宽带提速了，从200M提到了1G入户，这次网速的提升真是一次速度的飞跃。回想起那些年艰辛的上网历程，还是有些感慨的。</description>
-            <category>宽带</category>
-            <pubDate>2023-07-25 18:03:43</pubDate>
         </item>
         
     </channel>
