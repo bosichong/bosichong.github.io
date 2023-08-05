@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-04 16:13:10</pubDate>
+        <pubDate>2023-08-05 16:38:19</pubDate>
+        
+        <item>
+            <title>史诗结合的浪漫：《长安三万里》</title>
+            <link>https://suiyan.cc/2023/20230805163819.html</link>
+            <author>J.sky</author>
+            <description>这个暑假匆匆忙忙的就过去了大半，孩子说不喜欢假期，因为假期要比上学还累。直到今天，孩子终于忙完了假期中所有艺术类的课程，我赶紧带她一起去看了那场长达三个小时的史诗级的动画片《长安三万里》。</description>
+            <category>观影,长安三万里</category>
+            <pubDate>2023-08-05 16:38:19</pubDate>
+        </item>
         
         <item>
             <title>聊 聊 友 情 链 接</title>
@@ -85,15 +94,6 @@
             <description>十年之约有个rss订阅的专题页面，这里通过十年的博主RSS采集了很多的博文，那么多博文，真是好奇大家都在写什么？那么，我们来一次博客大数据分析，看看这些年博主们都写了些什么？</description>
             <category>中文博客</category>
             <pubDate>2023-07-28 15:23:00</pubDate>
-        </item>
-        
-        <item>
-            <title>Windows下国产杀毒软件还有选择吗？火绒安全可以一试。</title>
-            <link>https://suiyan.cc/2023/20230727194930.html</link>
-            <author>J.sky</author>
-            <description>换回Windows使用的是Windows 10，机器买来后系统已经安装了360杀毒套件，但是对360杀毒确实挺反感的，所以一直在考虑找个杀毒软件的替代。</description>
-            <category>杀毒软件</category>
-            <pubDate>2023-07-27 19:49:30</pubDate>
         </item>
         
     </channel>
