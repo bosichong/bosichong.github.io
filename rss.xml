@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-05 17:32:10</pubDate>
+        <pubDate>2023-08-06 19:43:05</pubDate>
+        
+        <item>
+            <title>PHILIPS猛禽SPK8404机械键盘手感真是超赞！</title>
+            <link>https://suiyan.cc/2023/20230806194305.html</link>
+            <author>J.sky</author>
+            <description>原来用的罗技K480是2019年买的，用起来已经感觉很“费劲”了，打字的话需要使劲按键盘的键子，手指头都觉得很累！最近实在是受不了了，某东直接入手了一个PHILIPS机械键盘。</description>
+            <category>机械键盘</category>
+            <pubDate>2023-08-06 19:43:05</pubDate>
+        </item>
         
         <item>
             <title>局域网的DNS设置192.168.0.1与8.8.8.8,114.114.114.114有什么区别？</title>
@@ -85,15 +94,6 @@
             <description>今天突然想把docker在Windows10下安装上，结果被坑的一塌糊涂，后来没办法了，只好在虚拟机的ubuntu下边安装了docker。</description>
             <category>Ubuntu,Docker</category>
             <pubDate>2023-07-30 13:36:46</pubDate>
-        </item>
-        
-        <item>
-            <title>使用python结合feedparser模块编写自己的私人RSS订阅程序</title>
-            <link>https://suiyan.cc/2023/20230729151214.html</link>
-            <author>J.sky</author>
-            <description>前几天使用JavaScript编写了一个简单的私人RSS订阅终端程序，但是是自己对JavaScript的并不是很熟悉，今天有用python重构了一下，感觉python的代码看起来更简单直观。</description>
-            <category>python,feedparser</category>
-            <pubDate>2023-07-29 15:12:14</pubDate>
         </item>
         
     </channel>
