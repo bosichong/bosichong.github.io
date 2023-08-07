@@ -20,10 +20,31 @@ window.onload = function () {
 
 };
 
+/**
+ * 按钮点击后，滚动将以平滑的动画方式进行。
+ */
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
 
-function scrollToTop() {  
-  window.scrollTo({  
-    top: 0,  
-    behavior: 'smooth'  
-  });  
-} 
+// 获取返回顶部按钮的元素
+const topButton = document.getElementById("topButton");
+
+// 监听页面滚动事件
+window.onscroll = function () {
+  // 获取页面滚动距离
+  const scrollY = window.scrollY;
+
+
+  // 如果页面没有滚动或者滚动条还在页面的顶端，隐藏按钮
+  if (scrollY < 100) {
+    topButton.classList.remove("block");
+    topButton.classList.add("hidden");
+  } else {
+    topButton.classList.remove("hidden");
+    topButton.classList.add("block");
+  }
+};
