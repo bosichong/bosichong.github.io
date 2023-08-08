@@ -40,7 +40,7 @@ window.onscroll = function () {
 
 
   // 如果页面没有滚动或者滚动条还在页面的顶端，隐藏按钮
-  if (scrollY < 100) {
+  if (scrollY < 500) {
     topButton.classList.remove("block");
     topButton.classList.add("hidden");
   } else {
