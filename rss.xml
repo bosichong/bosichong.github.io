@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-06 22:24:22</pubDate>
+        <pubDate>2023-08-08 08:09:05</pubDate>
+        
+        <item>
+            <title>使用Tailwind css和JavaScript实现一个简单的返回顶部功能</title>
+            <link>https://suiyan.cc/2023/20230808080905.html</link>
+            <author>J.sky</author>
+            <description>博客的页面需要一个返回顶部的功能，之前都是使用的jQuery的插件来实现的，但是一个及其简单的功能就需要引入jQuery和一个相关插件总觉得有些多余，所以只好自己动手实现一个返回顶部的功能。</description>
+            <category>JavaScript,TailwindCSS</category>
+            <pubDate>2023-08-08 08:09:05</pubDate>
+        </item>
         
         <item>
             <title>罗技K380 F1-F12 功能键锁定</title>
@@ -85,15 +94,6 @@
             <description>这是一篇Docker的学习笔记，记录了Docker一些日常操作。</description>
             <category>Docker</category>
             <pubDate>2023-07-30 22:35:50</pubDate>
-        </item>
-        
-        <item>
-            <title>vim常用命令整理</title>
-            <link>https://suiyan.cc/2023/20230730144709.html</link>
-            <author>J.sky</author>
-            <description>最近要经常和终端打交道了，所以整理了一下vim的常用命令用来参考。</description>
-            <category>vim</category>
-            <pubDate>2023-07-30 14:47:09</pubDate>
         </item>
         
     </channel>

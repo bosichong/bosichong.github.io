@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="罗技K380" name="keywords" />
-    <meta content="原来的罗技K380键盘给老婆用了，但是键盘的F1-F2默认是一些功能键，用起来非常不习惯，所以需要恢复到原来Windows默认的功能，解决方法如下" name="description" />
+    <meta content="JavaScriptTailwindCSS" name="keywords" />
+    <meta content="博客的页面需要一个返回顶部的功能，之前都是使用的jQuery的插件来实现的，但是一个及其简单的功能就需要引入jQuery和一个相关插件总觉得有些多余，所以只好自己动手实现一个返回顶部的功能。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      罗技K380 F1-F12 功能键锁定 | SuiYan 碎言
+      使用Tailwind css和JavaScript实现一个简单的返回顶部功能 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,38 +117,140 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">罗技K380 F1-F12 功能键锁定</h1>
+    <h1 class="text-3xl font-medium">使用Tailwind css和JavaScript实现一个简单的返回顶部功能</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-06 22:24:22"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-08 08:09:05"><span
         class="cr-time"
-        >2023-08-06 22:24:22</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-06 22:29:56"><span class="up-time">2023-08-06 22:29:56</span></div>
-      · Tag:   罗技K380 
+        >2023-08-08 08:09:05</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-08 08:29:18"><span class="up-time">2023-08-08 08:29:18</span></div>
+      · Tag:   JavaScript  TailwindCSS 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>原来的罗技K380键盘给老婆用了，但是键盘的F1-F2默认是一些功能键，用起来非常不习惯，所以需要恢复到原来Windows默认的功能，解决方法如下：</p>
+  <div class="mb-4"><p>博客的页面需要一个返回顶部的功能，之前都是使用的jQuery的插件来实现的，但是一个及其简单的功能就需要引入jQuery和一个相关插件总觉得有些多余，所以只好自己动手实现一个返回顶部的功能。</p>
+<h2>需求分析</h2>
 <ol>
-<li>下载罗技K380的键盘驱动：</li>
+<li>有一个按钮，固定在页面的右下角的。</li>
+<li>当HTML页面视口不在顶部的时候，点击返回顶部按钮就会实现返回页面顶部的功能，且返回时有动画效果，不是直接立即返回。</li>
+<li>当滚动条的位置高度小于500的时候，返回按钮隐藏，当大于500的时候显示。</li>
 </ol>
-<p>下载地址：https://www.logitech.com/zh-cn/software/logi-options-plus.html#supported-keyboards</p>
-<ol>
-<li>安装后打开驱动设置，找到F1-12功能键设置的位置，锁定默认功能键即可。</li>
-</ol>
-<p>然后就可以按F5快乐的刷新了。</p></div>
+<p>很简单就这二个功能。</p>
+<h2>具体实现</h2>
+<p>首先实现按钮的定位，这里可以使用纯CSS来实现也可以使用tailwind，由于我引用了tailwind，这里我使用tailwind css来实现：</p>
+<pre><code>&lt;div class="rightside fixed bottom-20 right-2 w-10"&gt;
+    &lt;button&gt;Top&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<p>添加一个fixed的页面绝对定位，然后通过bottom-20 right-2 等属性来定义他的具体位置。</p>
+<p>接下来就是实现按钮点击返回顶部的功能：</p>
+<pre><code>/**
+* 按钮点击后，滚动将以平滑的动画方式进行。
+*/
+function scrollToTop() {
+window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+});
+}
+</code></pre>
+<p>只要为<button>绑定鼠标点击事件scrollToTop()，就可以实现点击返回页面顶部。</p>
+<p>最后来实现按钮的隐藏和显示，JavaScript代码如下：</p>
+<pre><code>// 获取返回顶部按钮的元素
+const topButton = document.getElementById("topButton");
+
+// 监听页面滚动事件
+window.onscroll = function () {
+// 获取页面滚动距离
+const scrollY = window.scrollY;
+
+
+// 如果页面没有滚动或者滚动条还在页面的顶端，隐藏按钮
+if (scrollY &lt; 500) {
+    topButton.classList.remove("block");
+    topButton.classList.add("hidden");
+} else {
+    topButton.classList.remove("hidden");
+    topButton.classList.add("block");
+}
+};
+</code></pre>
+<p>这里使用滚动条时间来监听滚动条的位置，<code>const scrollY = window.scrollY;</code>获得了滚动条的实时位置，然后判断位置，为按钮添加class,使之隐藏和显示，进而实现了本次需求的所有功能。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230806194305.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230806222422.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230808080905.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
+    </div>
+    
+    <div class="related">
+      <p>相关文章：</p>
+      <ul>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230723175216.html" class="link link-hover"
+            ><span>使用JavaScript编写自己的私人RSS订阅程序</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230630082246.html" class="link link-hover"
+            ><span>在react或vue中使用localStorage存储数据</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230618090417.html" class="link link-hover"
+            ><span>百度统计代码可以解决浏览器兼容问题？</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230612091630.html" class="link link-hover"
+            ><span>一键生成Matrix动态头像</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230607211438.html" class="link link-hover"
+            ><span>Matrix 矩阵 JavaScript代码生成器</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230530145118.html" class="link link-hover"
+            ><span>JS中数组常用API总结，slice、splice、map、reduce、shift、filter、indexOf......</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230515215136.html" class="link link-hover"
+            ><span>async/await和fetch()的使用</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230515105053.html" class="link link-hover"
+            ><span>fetch()如何读取请求中的'user-agent'？</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230509101659.html" class="link link-hover"
+            ><span>使用Fetch发送Ajax请求</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230416175852.html" class="link link-hover"
+            ><span>从回调函数到JavaScript异步编程</span></a
+          >
+        </li>
+        
+      </ul>
     </div>
     
     <!-- <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
