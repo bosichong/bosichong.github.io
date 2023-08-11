@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-08 08:09:05</pubDate>
+        <pubDate>2023-08-11 11:36:13</pubDate>
+        
+        <item>
+            <title>关于使用Next.js重构博客构思的记录</title>
+            <link>https://suiyan.cc/2023/20230811113613.html</link>
+            <author>J.sky</author>
+            <description>手痒，又想重构博客了。博客的1.0使用的是Django，2.0使用的是JavaScript。3.0使用的python生成的静态页面，目前正在考虑使用Next.js重构现有博客。</description>
+            <category>Next.js,碎言博客</category>
+            <pubDate>2023-08-11 11:36:13</pubDate>
+        </item>
         
         <item>
             <title>使用Tailwind css和JavaScript实现一个简单的返回顶部功能</title>
@@ -85,15 +94,6 @@
             <description>一转眼已经是八月了，重建博客也有三个半月了，这阵子都在坚持学习和复盘，偶尔重构之前的代码，坚持写博客确实有些收获，之前停更了一段时间具体是因为什么已经不重要了，人总要向前看，这才是最重要的。</description>
             <category>站长吐槽,心情日记</category>
             <pubDate>2023-08-01 08:13:56</pubDate>
-        </item>
-        
-        <item>
-            <title>Docker基础学习笔记和常用命令汇总</title>
-            <link>https://suiyan.cc/2023/20230730223550.html</link>
-            <author>J.sky</author>
-            <description>这是一篇Docker的学习笔记，记录了Docker一些日常操作。</description>
-            <category>Docker</category>
-            <pubDate>2023-07-30 22:35:50</pubDate>
         </item>
         
     </channel>
