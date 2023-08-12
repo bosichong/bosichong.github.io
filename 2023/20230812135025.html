@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="站长吐槽" name="keywords" />
-    <meta content="上次我说这话的时候还是2022-09-23，一下子都过去大半年了！花了三天的时间把之前写的静态博客重构了，这次的重构还算满意挺开心的，重构达到了预期的效果。" name="description" />
+    <meta content="next.js碎言博客" name="keywords" />
+    <meta content="断断续续的花了几个小时的时间，就把博客的全部功能使用next.js复刻了，真是事半功倍啊！" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      好了，又可以愉快的写博客了 | SuiYan 碎言
+      禁用了几个小时就使用next.js重构博客的所有功能 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,33 +117,33 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">好了，又可以愉快的写博客了</h1>
+    <h1 class="text-3xl font-medium">禁用了几个小时就使用next.js重构博客的所有功能</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-03-24 23:40:58"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-12 13:50:25"><span
         class="cr-time"
-        >2023-03-24 23:40:58</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-04-13 09:53:38"><span class="up-time">2023-04-13 09:53:38</span></div>
-      · Tag:   站长吐槽 
+        >2023-08-12 13:50:25</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-12 14:17:00"><span class="up-time">2023-08-12 14:17:00</span></div>
+      · Tag:   next.js  碎言博客 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><h3>可以开始写blog啦(*￣︶￣)</h3>
-<p>上次我说这话的时候还是2022-09-23，一下子都过去大半年了！花了三天的时间把之前写的静态博客重构了，这次的重构还算满意挺开心的，重构达到了预期的效果。</p>
-<p>把之前在Python代码中使用字符串拼接的方式更换成了jinja2的模板引擎，大大的提高了前端页面的构建速度，之后需要丰富页面内容就简单多了，至少以后有人要用也看得懂，另外更换了前端的UI框架，这里推案件一个不错的框架：pico.css,Docs <a href="https://picocss.com/docs/">https://picocss.com/docs/</a>。Pico选择使用极少的<code>.classes</code> 尽可能保持中性和语义,这使得使用原生的HTML标签写网页就很方便了，而且样式也不错挺美观的！</p>
-<p>Python生成静态页面的代码也仔细的重构了一下，由于使用的jinja2模板引擎，代码量大大减少了很多。这几天抽空把这个静态博客的搭建心得分享一下。好了，今天起个头，以后的日子还长着呢。</p></div>
+  <div class="mb-4"><p>断断续续的花了几个小时的时间，就把博客的全部功能使用next.js复刻了，真是事半功倍啊！</p>
+<h2>效率第一</h2>
+<p>编写过几个版本不同编程语言和框架的博客，但是从来没有像使用next.js这样编写一个博客这个畅快！首先由于依赖的减少，整个程序的代码量减少了很大一部分，打包编译的工作的自动化，极大的减少错误的产生，后期有最大的JavaScript相关库类的支持，添加新的功能会比以前更加简单。</p>
+<p>之前采用的时python+jinja2后台处理输出格式化的数据，与jinja2模板引擎合作输出静态页面，由于属于需要python转成json，这里有时候需要写一些麻烦的算法，加之静态化前后端也没有分离，使之前端的打包盒编译都没有参与进来的机会，这使得前端的编写依然采用老旧的方式，感觉有些伸展不开拳脚。这次使用next.js之后，重构博客的感觉就像是在使用原生的JavaScript+react写静态的HTML，而且基于react的框架库类非常多，日后进行扩展会非常方便。</p>
+<h2>继续编写</h2>
+<p>功能复刻完毕之后就是样式的复刻，可能会做一些小小的改动但是变动不会太大，而且单独把友联和关于的页面拉出来重新设计一下，反正现在修改样式依靠tailwind时很方便的。友联可能考虑添加友联博客的RSS文章列表，省去挨个点了，这样直达友联的最新博文会更方便了。</p>
+<h2>展望未来</h2>
+<p>有了这次的next.js的编写经验，后续可能还会写一些有意思的小玩意，之前很想依赖react写一些东西，但是没有接触到next.js，这下载思路开阔多了，看来从vue转到react是明智的选择。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/before-2022/20220923093608.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230811113613.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230404163916.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
     </div>
     
     <div class="related">
@@ -151,8 +151,8 @@
       <ul>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230801081356.html" class="link link-hover"
-            ><span>八月回顾：博客之路，一路前行</span></a
+          <a href="https://suiyan.cc/2023/20230811113613.html" class="link link-hover"
+            ><span>关于使用Next.js重构博客构思的记录</span></a
           >
         </li>
         
@@ -163,8 +163,8 @@
         </li>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230716165119.html" class="link link-hover"
-            ><span>七月的焦虑</span></a
+          <a href="https://suiyan.cc/2023/20230717103801.html" class="link link-hover"
+            ><span>久了，博客主题就会一直做减法</span></a
           >
         </li>
         
@@ -175,38 +175,38 @@
         </li>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230614151948.html" class="link link-hover"
-            ><span>你最讨厌什么样的独立博客？</span></a
+          <a href="https://suiyan.cc/2023/20230616120848.html" class="link link-hover"
+            ><span>基于daisyUI Tailwind CSS做了一个博客主题</span></a
           >
         </li>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230405202140.html" class="link link-hover"
-            ><span>程序员的痛苦：颈椎病和肩周炎</span></a
+          <a href="https://suiyan.cc/2023/20230613193700.html" class="link link-hover"
+            ><span>使用Python编写并部署个人静态博客:(五)Python异步输出博文页面</span></a
           >
         </li>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/20220923093608.html" class="link link-hover"
-            ><span>又可以继续写blog了</span></a
+          <a href="https://suiyan.cc/2023/20230609081842.html" class="link link-hover"
+            ><span>使用Python编写并部署个人静态博客:(四)逐步输出静态页面</span></a
           >
         </li>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/100.html" class="link link-hover"
-            ><span>写在我的博客PV10万时：聊聊编程与画画</span></a
+          <a href="https://suiyan.cc/2023/20230517084718.html" class="link link-hover"
+            ><span>使用Python编写并部署个人静态博客:(三)搜集博客数据</span></a
           >
         </li>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/82.html" class="link link-hover"
-            ><span>有时人生需要做出选择</span></a
+          <a href="https://suiyan.cc/2023/20230427151750.html" class="link link-hover"
+            ><span>coding_blog 碎言静态博客主题</span></a
           >
         </li>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/72.html" class="link link-hover"
-            ><span>2018 新年快乐！希望在coding中找到自己的快乐与希望</span></a
+          <a href="https://suiyan.cc/2023/20230420162736.html" class="link link-hover"
+            ><span>simple_blog 碎言静态博客主题</span></a
           >
         </li>
         

@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-11 11:36:13</pubDate>
+        <pubDate>2023-08-12 13:50:25</pubDate>
+        
+        <item>
+            <title>禁用了几个小时就使用next.js重构博客的所有功能</title>
+            <link>https://suiyan.cc/2023/20230812135025.html</link>
+            <author>J.sky</author>
+            <description>断断续续的花了几个小时的时间，就把博客的全部功能使用next.js复刻了，真是事半功倍啊！</description>
+            <category>next.js,碎言博客</category>
+            <pubDate>2023-08-12 13:50:25</pubDate>
+        </item>
         
         <item>
             <title>关于使用Next.js重构博客构思的记录</title>
@@ -85,15 +94,6 @@
             <description>python中的requests库极大的方便了采集中的网络请求，但是在采集中会遇到一种比较极端的情况：请求的读取超时。这种情况呀怎么解决？</description>
             <category>python,requests</category>
             <pubDate>2023-08-02 23:11:49</pubDate>
-        </item>
-        
-        <item>
-            <title>八月回顾：博客之路，一路前行</title>
-            <link>https://suiyan.cc/2023/20230801081356.html</link>
-            <author>J.sky</author>
-            <description>一转眼已经是八月了，重建博客也有三个半月了，这阵子都在坚持学习和复盘，偶尔重构之前的代码，坚持写博客确实有些收获，之前停更了一段时间具体是因为什么已经不重要了，人总要向前看，这才是最重要的。</description>
-            <category>站长吐槽,心情日记</category>
-            <pubDate>2023-08-01 08:13:56</pubDate>
         </item>
         
     </channel>
