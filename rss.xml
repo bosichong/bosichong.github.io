@@ -4,7 +4,16 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-12 13:50:25</pubDate>
+        <pubDate>2023-08-13 20:48:27</pubDate>
+        
+        <item>
+            <title>关于Google LCP 问题：超过了2.5秒 验证已通过</title>
+            <link>https://suiyan.cc/2023/20230813204827.html</link>
+            <author>J.sky</author>
+            <description></description>
+            <category>LCP</category>
+            <pubDate>2023-08-13 20:48:27</pubDate>
+        </item>
         
         <item>
             <title>仅用了几个小时就使用next.js重构博客的所有功能</title>
@@ -85,15 +94,6 @@
             <description>前几天有个网友给了我一个API的接口，这个接口返回了大量的中文博客数据，通过这个数据我做了一些简单的分析，如果你正巧也对中文博客感兴趣，不妨进来随便看看。</description>
             <category>中文博客</category>
             <pubDate>2023-08-03 13:33:42</pubDate>
-        </item>
-        
-        <item>
-            <title>python requests 设置读取超时时间</title>
-            <link>https://suiyan.cc/2023/20230802231149.html</link>
-            <author>J.sky</author>
-            <description>python中的requests库极大的方便了采集中的网络请求，但是在采集中会遇到一种比较极端的情况：请求的读取超时。这种情况呀怎么解决？</description>
-            <category>python,requests</category>
-            <pubDate>2023-08-02 23:11:49</pubDate>
         </item>
         
     </channel>
