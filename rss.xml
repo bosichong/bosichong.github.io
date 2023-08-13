@@ -4,7 +4,7 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-13 20:48:27</pubDate>
+        <pubDate>2023-08-13T20:48:27.000000Z</pubDate>
         
         <item>
             <title>关于Google LCP 问题：超过了2.5秒 验证已通过</title>
@@ -12,7 +12,8 @@
             <author>J.sky</author>
             <description>持续了一个月的 LCP 问题：超过了 2.5 秒（桌面设备），经过了20多天的验证终于通过了，总结一下关于解决LCP问题的经验。</description>
             <category>LCP</category>
-            <pubDate>2023-08-13 20:48:27</pubDate>
+            <guid>https://suiyan.cc/2023/20230813204827.html</guid>
+            <pubDate>2023-08-13T20:48:27.000000Z</pubDate>
         </item>
         
         <item>
@@ -21,7 +22,8 @@
             <author>J.sky</author>
             <description>断断续续花了几个小时的时间，我成功地使用了 Next.js 复刻了我的博客的全部功能，真是事半功倍啊！</description>
             <category>next.js,碎言博客</category>
-            <pubDate>2023-08-12 13:50:25</pubDate>
+            <guid>https://suiyan.cc/2023/20230812135025.html</guid>
+            <pubDate>2023-08-12T13:50:25.000000Z</pubDate>
         </item>
         
         <item>
@@ -30,7 +32,8 @@
             <author>J.sky</author>
             <description>手痒，又想重构博客了。博客的1.0使用的是Django，2.0使用的是JavaScript。3.0使用的python生成的静态页面，目前正在考虑使用Next.js重构现有博客。</description>
             <category>Next.js,碎言博客</category>
-            <pubDate>2023-08-11 11:36:13</pubDate>
+            <guid>https://suiyan.cc/2023/20230811113613.html</guid>
+            <pubDate>2023-08-11T11:36:13.000000Z</pubDate>
         </item>
         
         <item>
@@ -39,7 +42,8 @@
             <author>J.sky</author>
             <description>博客的页面需要一个返回顶部的功能，之前都是使用的jQuery的插件来实现的，但是一个及其简单的功能就需要引入jQuery和一个相关插件总觉得有些多余，所以只好自己动手实现一个返回顶部的功能。</description>
             <category>JavaScript,TailwindCSS</category>
-            <pubDate>2023-08-08 08:09:05</pubDate>
+            <guid>https://suiyan.cc/2023/20230808080905.html</guid>
+            <pubDate>2023-08-08T08:09:05.000000Z</pubDate>
         </item>
         
         <item>
@@ -48,7 +52,8 @@
             <author>J.sky</author>
             <description>原来的罗技K380键盘给老婆用了，但是键盘的F1-F2默认是一些功能键，用起来非常不习惯，所以需要恢复到原来Windows默认的功能，解决方法如下</description>
             <category>罗技K380</category>
-            <pubDate>2023-08-06 22:24:22</pubDate>
+            <guid>https://suiyan.cc/2023/20230806222422.html</guid>
+            <pubDate>2023-08-06T22:24:22.000000Z</pubDate>
         </item>
         
         <item>
@@ -57,7 +62,8 @@
             <author>J.sky</author>
             <description>原来用的罗技K480是2019年买的，用起来已经感觉很“费劲”了，打字的话需要使劲按键盘的键子，手指头都觉得很累！最近实在是受不了了，某东直接入手了一个PHILIPS机械键盘。</description>
             <category>机械键盘</category>
-            <pubDate>2023-08-06 19:43:05</pubDate>
+            <guid>https://suiyan.cc/2023/20230806194305.html</guid>
+            <pubDate>2023-08-06T19:43:05.000000Z</pubDate>
         </item>
         
         <item>
@@ -66,7 +72,8 @@
             <author>J.sky</author>
             <description>虽然上网这么多年了而且也是个半吊子程序员，但是我从来没去了解过DNS这么设置的区别与作用，不过从实际操作上来说，设置公共DNS在访问一些网站上确实有优势，解决了一些但不开或是打开缓慢的问题。</description>
             <category>局域网,DNS</category>
-            <pubDate>2023-08-05 17:32:10</pubDate>
+            <guid>https://suiyan.cc/2023/20230805173210.html</guid>
+            <pubDate>2023-08-05T17:32:10.000000Z</pubDate>
         </item>
         
         <item>
@@ -75,16 +82,18 @@
             <author>J.sky</author>
             <description>这个暑假匆匆忙忙的就过去了大半，孩子说不喜欢假期，因为假期要比上学还累。直到今天，孩子终于忙完了假期中所有艺术类的课程，我赶紧带她一起去看了那场长达三个小时的史诗级的动画片《长安三万里》。</description>
             <category>观影,长安三万里</category>
-            <pubDate>2023-08-05 16:38:19</pubDate>
+            <guid>https://suiyan.cc/2023/20230805163819.html</guid>
+            <pubDate>2023-08-05T16:38:19.000000Z</pubDate>
         </item>
         
         <item>
-            <title>聊 聊 友 情 链 接</title>
+            <title>聊 聊 友 情 链 接 </title>
             <link>https://suiyan.cc/2023/20230804161310.html</link>
             <author>J.sky</author>
             <description>在浏览一个博客时，除了关注关于我的页面，友情链接页面也是吸引人注意的重要部分。如果说关于我是一个博主主观的自我介绍，那么友情链接则是一个博主个人喜好的侧写。</description>
             <category>中文博客</category>
-            <pubDate>2023-08-04 16:13:10</pubDate>
+            <guid>https://suiyan.cc/2023/20230804161310.html</guid>
+            <pubDate>2023-08-04T16:13:10.000000Z</pubDate>
         </item>
         
         <item>
@@ -93,7 +102,8 @@
             <author>J.sky</author>
             <description>前几天有个网友给了我一个API的接口，这个接口返回了大量的中文博客数据，通过这个数据我做了一些简单的分析，如果你正巧也对中文博客感兴趣，不妨进来随便看看。</description>
             <category>中文博客</category>
-            <pubDate>2023-08-03 13:33:42</pubDate>
+            <guid>https://suiyan.cc/2023/20230803133342.html</guid>
+            <pubDate>2023-08-03T13:33:42.000000Z</pubDate>
         </item>
         
     </channel>
