@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta content="站长吐槽" name="keywords" />
-    <meta content="今年夏天热的早温度也高，东北这边很早就步入了35°+，感觉很热，热的让人焦虑。" name="description" />
+    <meta content="前几天大言不惭的说是要使用next重构博客的程序，但是经过几天的磨合，当时的锐气几乎都被消灭了，所以说人还是不要吹牛逼，不然......" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      七月的焦虑 | SuiYan 碎言
+      放弃Next.js重构博客：经验、教训与未来技术探索 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,45 +117,46 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">七月的焦虑</h1>
+    <h1 class="text-3xl font-medium">放弃Next.js重构博客：经验、教训与未来技术探索</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-16T16:51:19.000000Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-14T21:12:48.844725Z"><span
         class="cr-time"
-        >2023-07-16T16:51:19.000000Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-13T22:54:57.639619Z"><span class="up-time">2023-08-13T22:54:57.639619Z</span></div>
+        >2023-08-14T21:12:48.844725Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-14T21:58:57.515523Z"><span class="up-time">2023-08-14T21:58:57.515523Z</span></div>
       · Tag:   站长吐槽 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>今年夏天热的早温度也高，东北这边很早就步入了35°+，感觉很热，热的让人焦虑。</p>
-<p>前几天，孩子的老师安排了正文，按照以前的步骤，我会带孩子找素材，让孩子写出完整的正文然后我来修改，打出电子版修改后交给老师。但是这次我却下意识的改变了这些过程，在网上搜索了相关资料和视频喂给孩子（给孩子看），她自己写出征文，我习惯的用iPhone拍照识别文字，扔给ChatGPT润了一下，然后交给老师。</p>
-<p>我知道，会有很多家长使用ChatGPT，也会有很多人不会用。ChatGPT节约了我很多的时间，但是也给我带来很多的焦虑，当然这已经大部分人的焦虑，而且有些人连焦虑都没来得及就。。。</p>
-<p>我时常和孩子说AI会画画会写文章敲代码，孩子只是觉得“她”很厉害，我告诉孩子一定要努力，不仅要和身边的人比还要和AI比。确实，这一代人和他的孩子们，见识了太多的科技和人工智能，孩子的学习、我的工作、我的爱好、我的生活，AI无处不在。</p>
-<p>早些年我学编程的时候，那些讲课的大佬们都说要用记事本，不要用IDE提示，现在的培训教你提示词、炼丹。AI改变了生活，也改变了这个世界的生存方式，有的时候确实焦虑，不过人生还得继续，要么适应要么淘汰，适者生存，没得选择。</p></div>
+  <div class="mb-4"><p>前几天大言不惭的说是要使用next重构博客的程序，但是经过几天的磨合，当时的锐气几乎都被消灭了，所以说人还是不要吹牛逼，不然......</p>
+<h2>放弃的原因</h2>
+<p>大约花了二天的时间就把博客现有的功能和界面复刻了，但是在最后的实际测试中逐渐的失去了更换博客程序的动力，首先next的优势是部署vercel+自动化，这和我的初衷有些冲突，目前来说我的博客主要是写一些记录编程学习读书笔记日常等，连图片都很少。我写作博客日常操作就是:创建md文档、更新静态文件、同步GitHub。</p>
+<pre><code># 创建一个新的博文，开写。
+python s.py -n 'h'
+2023-08-14 21:12:48.844 | INFO     | __main__:create_blog:325 - blog文章.md创建成功！
+# 更新
+python s.py -i    
+2023-08-14 21:24:16.521 | INFO     | __main__:create_all:369 - 所有静态资源创建更新完毕！
+# 同步github
+python s.py -g
+</code></pre>
+<p>目前我的静态资源生成速度我还是比较满意的，大约也就几秒钟，同步GitHub也是很稳定的。但是如果我换成next，我就得部署vercel并关联GitHub仓库，可能我个人不太喜欢折腾主机部署什么的，想想我就觉得麻烦，我就用我的写博客三部曲我觉得挺方便的，所以我就放弃了，但是，我把新的友情链接页面给搬运过来了，不能白折腾，把友情链接的页面设计好看点也算是对友联博客的尊重嘛。</p>
+<p>其实还有一些技术上的细节原因，一方面是对react和next代码编写和框架使用的熟练度还是很差的，例如我不喜欢看到页面上控制台输出红色的错误信息，黄色警告是我的极限。重构之后总会有些莫名其妙的错误，大红叉子看着很难受，但是我一时半会由解决不掉，对于一个不可控的程序，我就会觉得体验超差，所以，至少在我解决这些错误之前我是不会更换了。</p>
+<h2>收获</h2>
+<p>但是不使用并不代表不喜欢，对react和next环境下的代码编写还是很有信心的，这阵子也许会搞些小东西来试试，而且也有可能会去考虑一些自动化的项目部署玩玩，总之，重构代码还是有一些收获的。还有标题是chatGPT给起的，就当无题好了。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230715170702.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230813204827.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230717103801.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
     </div>
     
     <div class="related">
       <p>相关文章：</p>
       <ul>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230814211248.html" class="link link-hover"
-            ><span>放弃Next.js重构博客：经验、教训与未来技术探索</span></a
-          >
-        </li>
         
         <li class="list-group-item">
           <a href="https://suiyan.cc/2023/20230801081356.html" class="link link-hover"
@@ -166,6 +167,12 @@
         <li class="list-group-item">
           <a href="https://suiyan.cc/2023/20230718150806.html" class="link link-hover"
             ><span>速度与优雅：博客性能优化之旅</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230716165119.html" class="link link-hover"
+            ><span>七月的焦虑</span></a
           >
         </li>
         
