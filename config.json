@@ -34,6 +34,10 @@
             "url": "mailto:285911@gmail.com"
         },
         {
+            "ico": "bili",
+            "url": "https://space.bilibili.com/275991552"
+        },
+        {
             "ico": "rss",
             "url": "https://suiyan.cc/rss.xml"
         }
