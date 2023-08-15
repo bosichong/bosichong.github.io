@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="站长吐槽" name="keywords" />
-    <meta content="前几天大言不惭的说是要使用next重构博客的程序，但是经过几天的磨合，当时的锐气几乎都被消灭了，所以说人还是不要吹牛逼，不然......" name="description" />
+    <meta content="Actions" name="keywords" />
+    <meta content="自学编程很久了，对GitHub的使用熟练度自认为还是可以了，以前也看到过仓库导航上的GitHub Actions，当时由于没有相关的需求所以并没有去主动的了解，这几天总是想做一些自动化的脚本，所以才发现GitHub很早就做了这个自动化的功能。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      放弃Next.js重构博客：经验、教训与未来技术探索 | SuiYan 碎言
+      GitHub Actions 是什么干什么用的？ | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,112 +117,67 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">放弃Next.js重构博客：经验、教训与未来技术探索</h1>
+    <h1 class="text-3xl font-medium">GitHub Actions 是什么干什么用的？</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-14T21:12:48.844725Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-15T19:36:44.141108Z"><span
         class="cr-time"
-        >2023-08-14T21:12:48.844725Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-14T21:58:57.515523Z"><span class="up-time">2023-08-14T21:58:57.515523Z</span></div>
-      · Tag:   站长吐槽 
+        >2023-08-15T19:36:44.141108Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-15T19:55:36.755244Z"><span class="up-time">2023-08-15T19:55:36.755244Z</span></div>
+      · Tag:   Actions 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>前几天大言不惭的说是要使用next重构博客的程序，但是经过几天的磨合，当时的锐气几乎都被消灭了，所以说人还是不要吹牛逼，不然......</p>
-<h2>放弃的原因</h2>
-<p>大约花了二天的时间就把博客现有的功能和界面复刻了，但是在最后的实际测试中逐渐的失去了更换博客程序的动力，首先next的优势是部署vercel+自动化，这和我的初衷有些冲突，目前来说我的博客主要是写一些记录编程学习读书笔记日常等，连图片都很少。我写作博客日常操作就是:创建md文档、更新静态文件、同步GitHub。</p>
-<pre><code># 创建一个新的博文，开写。
-python s.py -n 'h'
-2023-08-14 21:12:48.844 | INFO     | __main__:create_blog:325 - blog文章.md创建成功！
-# 更新
-python s.py -i    
-2023-08-14 21:24:16.521 | INFO     | __main__:create_all:369 - 所有静态资源创建更新完毕！
-# 同步github
-python s.py -g
+  <div class="mb-4"><p>自学编程很久了，对GitHub的使用熟练度自认为还是可以了，以前也看到过仓库导航上的GitHub Actions，当时由于没有相关的需求所以并没有去主动的了解，这几天总是想做一些自动化的脚本，所以才发现GitHub很早就做了这个自动化的功能。</p>
+<h2>什么是GitHub Actions？</h2>
+<p>GitHub Actions 是一项由 GitHub 提供的持续集成（Continuous Integration，CI）和持续部署（Continuous Deployment，CD）服务。它允许开发者在代码库中配置自动化的工作流程，以便在代码发生更改时执行各种任务，如构建、测试、部署和通知等。GitHub Actions 可以帮助开发团队更加高效地管理和维护他们的软件项目。</p>
+<h2>GitHub Actions可以做什么？</h2>
+<p>GitHub Actions可以做的事情实在太多了，简单来说就是执行一些脚本命令，例如前端的打包编译，我们可以在本地进行，也可以使用GitHub Actions发布一个任务，在GitHub仓库出发一个事件的时候，自动执行打包和编译，这样的话，假如我们使用next开发了一个基于.md的博客，我们可以设定事件当我们push一个.md的博文到博客的仓库就会触发build事件，这样就不必再本地进行build了，而是GitHub帮我们打包发布了博客的静态页面，这就极大的简化了博客更新的步骤，只需一步push代码就可以了。</p>
+<h2>GitHub Actions 部署 Next.js 项目：</h2>
+<p>对于一些常用的actios,我们不必自己去动手写，GitHub有一个actions的市场，大部分你能想到的动作脚本这里都有，譬如部署Next.js的项目：</p>
+<h1>.github/workflows/build.yml</h1>
+<pre><code>name: Build, Export and Publish Next.js App
+on:
+push:
+    branches:
+    - main
+pull_request:
+    branches:
+    - main
+workflow_dispatch:
+
+jobs:
+build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+        with:
+        node-version: 14.x
+    - run: |
+        npm i
+        npm run build
+    - name: Next Pages
+        uses: anorcle/next-pages@v1.0
+    - name: Commit and push changes
+        run: |
+        git config --global user.name "anorcle"
+        git config --global user.email "next-pages@anorcle.com"
+        git add -A
+        git commit -m "New Build"
+        git push
 </code></pre>
-<p>目前我的静态资源生成速度我还是比较满意的，大约也就几秒钟，同步GitHub也是很稳定的。但是如果我换成next，我就得部署vercel并关联GitHub仓库，可能我个人不太喜欢折腾主机部署什么的，想想我就觉得麻烦，我就用我的写博客三部曲我觉得挺方便的，所以我就放弃了，但是，我把新的友情链接页面给搬运过来了，不能白折腾，把友情链接的页面设计好看点也算是对友联博客的尊重嘛。</p>
-<p>其实还有一些技术上的细节原因，一方面是对react和next代码编写和框架使用的熟练度还是很差的，例如我不喜欢看到页面上控制台输出红色的错误信息，黄色警告是我的极限。重构之后总会有些莫名其妙的错误，大红叉子看着很难受，但是我一时半会由解决不掉，对于一个不可控的程序，我就会觉得体验超差，所以，至少在我解决这些错误之前我是不会更换了。</p>
-<h2>收获</h2>
-<p>但是不使用并不代表不喜欢，对react和next环境下的代码编写还是很有信心的，这阵子也许会搞些小东西来试试，而且也有可能会去考虑一些自动化的项目部署玩玩，总之，重构代码还是有一些收获的。还有标题是chatGPT给起的，就当无题好了。</p></div>
+<p>这段代码是一个 GitHub Actions 的工作流程配置文件，用于自动化构建、导出和发布 Next.js 应用程序，这是直接再市场了就能搜到的，具体代码的含义，复制到chatGPT里就会得到很好的解释。</p>
+<h2>总结</h2>
+<p>GitHub Actions 是一个不错的选择，实际的用途还有很多，熟练应用可以事半功倍，抽空我要试试哈。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230813204827.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230814211248.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230815193644.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
-    </div>
-    
-    <div class="related">
-      <p>相关文章：</p>
-      <ul>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230801081356.html" class="link link-hover"
-            ><span>八月回顾：博客之路，一路前行</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230718150806.html" class="link link-hover"
-            ><span>速度与优雅：博客性能优化之旅</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230716165119.html" class="link link-hover"
-            ><span>七月的焦虑</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230617102523.html" class="link link-hover"
-            ><span>从一次浏览器兼容问题到何不放过自己做个快乐的博主</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230614151948.html" class="link link-hover"
-            ><span>你最讨厌什么样的独立博客？</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230405202140.html" class="link link-hover"
-            ><span>程序员的痛苦：颈椎病和肩周炎</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/20220923093608.html" class="link link-hover"
-            ><span>又可以继续写blog了</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/100.html" class="link link-hover"
-            ><span>写在我的博客PV10万时：聊聊编程与画画</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/82.html" class="link link-hover"
-            ><span>有时人生需要做出选择</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/72.html" class="link link-hover"
-            ><span>2018 新年快乐！希望在coding中找到自己的快乐与希望</span></a
-          >
-        </li>
-        
-      </ul>
     </div>
     
     <!-- <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
