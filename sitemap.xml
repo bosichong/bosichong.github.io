@@ -2,8 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://suiyan.cc/2023/20230818211027.html</loc>
+        <lastmod>2023-08-18T21:24:50.078849Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://suiyan.cc/2023/20230815193644.html</loc>
-        <lastmod>2023-08-15T19:55:36.755244Z</lastmod>
+        <lastmod>2023-08-18T19:56:32.841480Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
