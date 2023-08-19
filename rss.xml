@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-18T21:10:27.607090Z</pubDate>
+        <pubDate>2023-08-19T17:30:41.813943Z</pubDate>
+        
+        <item>
+            <title>整理了一个下午的收藏夹......</title>
+            <link>https://suiyan.cc/2023/20230819173041.html</link>
+            <author>J.sky</author>
+            <description>终于开始拾到我的收藏夹了...从头到尾逐一测试筛查，去除了一些404和过时的内容，整理了两个小时左右终于搞定了！</description>
+            <category>站长源创</category>
+            <guid>https://suiyan.cc/2023/20230819173041.html</guid>
+            <pubDate>2023-08-19T17:30:41.813943Z</pubDate>
+        </item>
         
         <item>
             <title>短暂而忙碌的暑假即将谢幕</title>
@@ -94,16 +104,6 @@
             <category>机械键盘</category>
             <guid>https://suiyan.cc/2023/20230806194305.html</guid>
             <pubDate>2023-08-06T19:43:05.000000Z</pubDate>
-        </item>
-        
-        <item>
-            <title>局域网的DNS设置192.168.0.1与8.8.8.8,114.114.114.114有什么区别？</title>
-            <link>https://suiyan.cc/2023/20230805173210.html</link>
-            <author>J.sky</author>
-            <description>虽然上网这么多年了而且也是个半吊子程序员，但是我从来没去了解过DNS这么设置的区别与作用，不过从实际操作上来说，设置公共DNS在访问一些网站上确实有优势，解决了一些但不开或是打开缓慢的问题。</description>
-            <category>局域网,DNS</category>
-            <guid>https://suiyan.cc/2023/20230805173210.html</guid>
-            <pubDate>2023-08-05T17:32:10.000000Z</pubDate>
         </item>
         
     </channel>

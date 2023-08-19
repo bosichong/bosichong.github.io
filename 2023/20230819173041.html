@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="心情日记" name="keywords" />
-    <meta content="使用next撸了一个极简的网址导航，本打算是用来测试GitHub actions用的，但是build都成功了，部署到GitHub pages又卡住了" name="description" />
+    <meta content="站长源创" name="keywords" />
+    <meta content="终于开始拾到我的收藏夹了...从头到尾逐一测试筛查，去除了一些404和过时的内容，整理了两个小时左右终于搞定了！" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      短暂而忙碌的暑假即将谢幕 | SuiYan 碎言
+      整理了一个下午的收藏夹...... | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,36 +117,38 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">短暂而忙碌的暑假即将谢幕</h1>
+    <h1 class="text-3xl font-medium">整理了一个下午的收藏夹......</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-18T21:10:27.607090Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-19T17:30:41.813943Z"><span
         class="cr-time"
-        >2023-08-18T21:10:27.607090Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-19T17:21:05.801054Z"><span class="up-time">2023-08-19T17:21:05.801054Z</span></div>
-      · Tag:   心情日记 
+        >2023-08-19T17:30:41.813943Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-19T18:30:55.088710Z"><span class="up-time">2023-08-19T18:30:55.088710Z</span></div>
+      · Tag:   站长源创 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>使用next撸了一个极简的网址导航，本打算是用来测试GitHub actions用的，但是build都成功了，部署到GitHub pages又卡住了，访问GitHub本来就是很慢，调试起来就麻烦，算了，GitHub actions又从入门到放弃了。</p>
-<h2>关于这个暑假</h2>
-<p>这个暑假很忙，开学孩子就上六年级了，提前陪孩子预习初中的英语和数学，哎呀数学和英语单词都忘了妥妥的还给了体育老师，还好现在只要你想学，互联网可以给你任何你想学的课程，买了些书和资料配合视频教程，孩子看着学习我在边上陪着，偶尔也跟着做些题，还好，孩子预习初中的数学和英语还是有很大的收获的。</p>
-<h2>关于编程的学习</h2>
-<p>前端的学习有了些进步，切换vue到react再到next，感觉我学习的进度时赶不上前端的发展速度的，又买了几本书有next和python的，继续深入的学习和实践，编程这东西还就是得多动手练习。</p>
-<h2>写了一个导航</h2>
-<p>写了一个简单的网址导航，打算把自己收藏的网址整理一下，实在的太多了收藏夹也是乱套，把没用的失效的剔除，把有用的归类整理，估计得整理几天，整完发布。</p></div>
+  <div class="mb-4"><p>终于开始拾到我的收藏夹了...从头到尾逐一测试筛查，去除了一些404和过时的内容，整理了两个小时左右终于搞定了！</p>
+<h2>很闲？</h2>
+<p>额，忘了截图了，原来的收藏夹乱的狠，点开收藏可以满屏而且杂乱无序，有的时候找个东西也是很不方便，而且很多网址失效打不开太影响效率了！前几天看到别人用了网址导航不错，自己也痒痒的要搞个玩，但是看了一下网址导航的程序都好专业，咱就一个自用型，也用不上那么多的功能呢，算了还是自己动手写吧。</p>
+<p>要不先看看效果：</p>
+<p><a href="https://suiyan.cc/favorites/">我的收藏夹</a></p>
+<h2>网址导航的设计构思</h2>
+<p>这么多的网址不可能一个一个的复制然后加入到静态页面去，所以先模拟数据设计好前端的dom结构，然后导出自己的收藏夹为HTML，使用python写了一个脚本，将收藏夹的HTML解析并生成JavaScript的对象，这样就可以直接使用这个对象在next项目中加载数据了，然后打包编译，上传到GitHub，大功告成！</p>
+<h2>遇到的坑</h2>
+<p>再写python的脚本的时候差点放弃了，因为导出的收藏夹的HTML结构很特殊，与普通网页的HTML不一样，所以解析的时候总是出错，中间竟然放弃了，决定手动组装JavaScript对象，但是复制粘贴了半个小时就累的不行，回头继续写脚本，后来求助与AI，调试了半个多小时，终于解析出来了，生成了JavaScript的对象。</p>
+<p>在上传GitHub pages时候也遇到了问题，由于GitHub pages 对静态文件目录识别的特别性，导致无法正确的加载静态资源，后来修改了next的配置文件，增加了一个静态资源前缀的配置项：</p>
+<pre><code>assetPrefix: 'https://suiyan.cc/favorites/',
+</code></pre>
+<p>至此，终于搞定了这个网址导航......，看给我闲的！</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230815193644.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230818211027.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230819173041.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
     </div>
     
     <div class="related">
@@ -154,8 +156,44 @@
       <ul>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230801081356.html" class="link link-hover"
-            ><span>八月回顾：博客之路，一路前行</span></a
+          <a href="https://suiyan.cc/2023/20230508090813.html" class="link link-hover"
+            ><span>Link-Validator 检测网站友情链接的JavaScript脚本</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230424194612.html" class="link link-hover"
+            ><span>JianCe 简测 简单的在线答题应用</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/106.html" class="link link-hover"
+            ><span>碎言静态博客</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/20210521155450.html" class="link link-hover"
+            ><span>PyKeyBoardFairy可以替代你游戏中的卡键盘和鼠标宏</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/103.html" class="link link-hover"
+            ><span>基于Django构建的小学生英文单词背写检测考试系统。</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/83.html" class="link link-hover"
+            ><span>利用Python自动生成小学生加减乘除口算考试题卷。</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/before-2022/49.html" class="link link-hover"
+            ><span>基于Python、Tk构建的可视化目录文件同步助手</span></a
           >
         </li>
         
