@@ -122,7 +122,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-19T17:30:41.813943Z"><span
         class="cr-time"
         >2023-08-19T17:30:41.813943Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-19T18:30:55.088710Z"><span class="up-time">2023-08-19T18:30:55.088710Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-19T19:27:42.323208Z"><span class="up-time">2023-08-19T19:27:42.323208Z</span></div>
       · Tag:   站长源创 
       </small>
     </div>
@@ -137,9 +137,7 @@
 <p>这么多的网址不可能一个一个的复制然后加入到静态页面去，所以先模拟数据设计好前端的dom结构，然后导出自己的收藏夹为HTML，使用python写了一个脚本，将收藏夹的HTML解析并生成JavaScript的对象，这样就可以直接使用这个对象在next项目中加载数据了，然后打包编译，上传到GitHub，大功告成！</p>
 <h2>遇到的坑</h2>
 <p>再写python的脚本的时候差点放弃了，因为导出的收藏夹的HTML结构很特殊，与普通网页的HTML不一样，所以解析的时候总是出错，中间竟然放弃了，决定手动组装JavaScript对象，但是复制粘贴了半个小时就累的不行，回头继续写脚本，后来求助与AI，调试了半个多小时，终于解析出来了，生成了JavaScript的对象。</p>
-<p>在上传GitHub pages时候也遇到了问题，由于GitHub pages 对静态文件目录识别的特别性，导致无法正确的加载静态资源，后来修改了next的配置文件，增加了一个静态资源前缀的配置项：</p>
-<pre><code>assetPrefix: 'https://suiyan.cc/favorites/',
-</code></pre>
+<p>在上传GitHub pages时候也遇到了问题，由于GitHub pages 对静态文件目录识别的特别性，导致无法正确的加载静态资源，后来修改了next的配置文件，增加了一个静态资源前缀的配置项，还添加了一个空文件：<code>.nojekyll</code>才解决的了一些资源加载的问题，明天总结一下这些坑。</p>
 <p>至此，终于搞定了这个网址导航......，看给我闲的！</p></div>
 
   <div class="blog_footer">
