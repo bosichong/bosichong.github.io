@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="站长源创" name="keywords" />
-    <meta content="终于开始拾到我的收藏夹了...从头到尾逐一测试筛查，去除了一些404和过时的内容，整理了两个小时左右终于搞定了！" name="description" />
+    <meta content="next.js" name="keywords" />
+    <meta content="next项目部署GitHub pages有两个小坑，今天就来说到说到。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      整理了一个下午的收藏夹...... | SuiYan 碎言
+      Next项目部署GitHub pages的一些坑 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,40 +117,41 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">整理了一个下午的收藏夹......</h1>
+    <h1 class="text-3xl font-medium">Next项目部署GitHub pages的一些坑</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-19T17:30:41.813943Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-20T09:44:08.429420Z"><span
         class="cr-time"
-        >2023-08-19T17:30:41.813943Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-19T19:27:42.323208Z"><span class="up-time">2023-08-19T19:27:42.323208Z</span></div>
-      · Tag:   站长源创 
+        >2023-08-20T09:44:08.429420Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-20T10:01:39.836582Z"><span class="up-time">2023-08-20T10:01:39.836582Z</span></div>
+      · Tag:   next.js 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>终于开始拾到我的收藏夹了...从头到尾逐一测试筛查，去除了一些404和过时的内容，整理了两个小时左右终于搞定了！</p>
-<h2>很闲？</h2>
-<p>额，忘了截图了，原来的收藏夹乱的狠，点开收藏可以满屏而且杂乱无序，有的时候找个东西也是很不方便，而且很多网址失效打不开太影响效率了！前几天看到别人用了网址导航不错，自己也痒痒的要搞个玩，但是看了一下网址导航的程序都好专业，咱就一个自用型，也用不上那么多的功能呢，算了还是自己动手写吧。</p>
-<p>要不先看看效果：</p>
-<p><a href="https://suiyan.cc/favorites/">我的收藏夹</a></p>
-<h2>网址导航的设计构思</h2>
-<p>这么多的网址不可能一个一个的复制然后加入到静态页面去，所以先模拟数据设计好前端的dom结构，然后导出自己的收藏夹为HTML，使用python写了一个脚本，将收藏夹的HTML解析并生成JavaScript的对象，这样就可以直接使用这个对象在next项目中加载数据了，然后打包编译，上传到GitHub，大功告成！</p>
-<h2>遇到的坑</h2>
-<p>再写python的脚本的时候差点放弃了，因为导出的收藏夹的HTML结构很特殊，与普通网页的HTML不一样，所以解析的时候总是出错，中间竟然放弃了，决定手动组装JavaScript对象，但是复制粘贴了半个小时就累的不行，回头继续写脚本，后来求助与AI，调试了半个多小时，终于解析出来了，生成了JavaScript的对象。</p>
-<p>在上传GitHub pages时候也遇到了问题，由于GitHub pages 对静态文件目录识别的特别性，导致无法正确的加载静态资源，后来修改了next的配置文件，增加了一个静态资源前缀的配置项，还添加了一个空文件：<code>.nojekyll</code>才解决的了一些资源加载的问题，明天总结一下这些坑。</p>
-<p>至此，终于搞定了这个网址导航......，看给我闲的！</p></div>
+  <div class="mb-4"><p>next项目部署GitHub pages有两个小坑，今天就来说到说到。</p>
+<h2>坑一 静态资源地址</h2>
+<p>当你build打包了静态资源之后，你会push到你的GitHub仓库中，这个时候你会发现只有index.html可以打开，其他的静态资源统统404找不到地址，查看代码发现静态资源的地址都是错误的，例如你线上的正确地址是：<code>&lt;script defer="" nomodule="" src="/favorites/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"&gt;&lt;/script&gt;</code>，因为你的仓库名称:<code>favorites</code>，所以只有添加了<code>/favorites</code>的前缀才会打开，但是实际上传之后地址是:<code>/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js</code>，少了<code>/favorites</code>,就会造成资源的404状态。</p>
+<p>解决办法：</p>
+<p>在next的配置文件中添加：</p>
+<pre><code># next.config.js
+basePath: '/favorites',
+</code></pre>
+<p>给你的静态资源添加一个前缀就好了，然后重新编译打包，再次push到仓库，结果你会发现你的地址已经完全正确了！甚至通过浏览器的工具查看了请求地址，绝对是没有问题的，但是......</p>
+<h2>坑二 _惹的祸</h2>
+<p>通过浏览器的工具查看了静态资源的请求地址，绝对是没有问题的，但是依然是404，你仰天长啸：卧槽，这是见鬼了么？</p>
+<p>这世界没有鬼，如果看似正确的事情却出现了不正常的现象，那么就一定是有人在捣鬼！没错，是GitHub搞得鬼！GitHub的静态页面服务竟然不支持<code>_</code>这个符号，也就是说<code>/_next/static/chunks/XXXX</code>这个地址是无法识别的，所以才会出现404这个鬼！那么结局的办法是：</p>
+<p>在你的 Next.js 项目中，你可以通过在构建脚本中添加一些自定义操作来实现在输出目录（例如 out 目录）中自动生成一个 <code>.nojekyll</code> 文件。这样做可以确保在部署到 GitHub Pages 时，静态资源能够正确地被访问，而不会受到 Jekyll 处理的影响。</p>
+<p>你可以建一个脚本，每次打包的时候都自动生成一个<code>.nojekyll</code>的空文件在out目录中，这样就解决了！再次push GitHub仓库，一切正常了</p>
+<h2>总结</h2>
+<p>真是见鬼了！</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230818211027.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230819173041.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230820094408.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
     </div>
     
     <div class="related">
@@ -158,44 +159,8 @@
       <ul>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230508090813.html" class="link link-hover"
-            ><span>Link-Validator 检测网站友情链接的JavaScript脚本</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230424194612.html" class="link link-hover"
-            ><span>JianCe 简测 简单的在线答题应用</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/106.html" class="link link-hover"
-            ><span>碎言静态博客</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/20210521155450.html" class="link link-hover"
-            ><span>PyKeyBoardFairy可以替代你游戏中的卡键盘和鼠标宏</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/103.html" class="link link-hover"
-            ><span>基于Django构建的小学生英文单词背写检测考试系统。</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/83.html" class="link link-hover"
-            ><span>利用Python自动生成小学生加减乘除口算考试题卷。</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/before-2022/49.html" class="link link-hover"
-            ><span>基于Python、Tk构建的可视化目录文件同步助手</span></a
+          <a href="https://suiyan.cc/2023/20230812135025.html" class="link link-hover"
+            ><span>仅用了几个小时就使用next.js重构博客的所有功能</span></a
           >
         </li>
         
