@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="next.js" name="keywords" />
-    <meta content="next项目部署GitHub pages有两个小坑，今天就来说到说到。" name="description" />
+    <meta content="ubuntu" name="keywords" />
+    <meta content="博文之前使用VMware Workstation Pro 17 安装了Ubuntu 22 server版，但是每次启动Ubuntu都会很卡，遂更换成VirtualBox-7.0.10-158379-Win，启动一切正常了，这里记录一下设置Ubuntu server固定IP的方法。的简介" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      Next项目部署GitHub pages的一些坑 | SuiYan 碎言
+      ubuntu-22-live-server 设置固定IP | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,58 +117,49 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">Next项目部署GitHub pages的一些坑</h1>
+    <h1 class="text-3xl font-medium">ubuntu-22-live-server 设置固定IP</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-20T09:44:08.429420Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-21T10:02:58.938279Z"><span
         class="cr-time"
-        >2023-08-20T09:44:08.429420Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-20T10:01:39.836582Z"><span class="up-time">2023-08-20T10:01:39.836582Z</span></div>
-      · Tag:   next.js 
+        >2023-08-21T10:02:58.938279Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-21T10:09:30.157987Z"><span class="up-time">2023-08-21T10:09:30.157987Z</span></div>
+      · Tag:   ubuntu 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>next项目部署GitHub pages有两个小坑，今天就来说到说到。</p>
-<h2>坑一 静态资源地址</h2>
-<p>当你build打包了静态资源之后，你会push到你的GitHub仓库中，这个时候你会发现只有index.html可以打开，其他的静态资源统统404找不到地址，查看代码发现静态资源的地址都是错误的，例如你线上的正确地址是：<code>&lt;script defer="" nomodule="" src="/favorites/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"&gt;&lt;/script&gt;</code>，因为你的仓库名称:<code>favorites</code>，所以只有添加了<code>/favorites</code>的前缀才会打开，但是实际上传之后地址是:<code>/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js</code>，少了<code>/favorites</code>,就会造成资源的404状态。</p>
-<p>解决办法：</p>
-<p>在next的配置文件中添加：</p>
-<pre><code># next.config.js
-basePath: '/favorites',
+  <div class="mb-4"><p>之前使用VMware Workstation Pro 17 安装了Ubuntu 22 server版，但是每次启动Ubuntu都会很卡，遂更换成VirtualBox-7.0.10-158379-Win，启动一切正常了，这里记录一下设置Ubuntu server固定IP的方法。</p>
+<h2>设置方法</h2>
+<p>打开网卡的配置文件:</p>
+<pre><code>sudo vim /etc/netplan/00-installer-config.yaml
 </code></pre>
-<p>给你的静态资源添加一个前缀就好了，然后重新编译打包，再次push到仓库，结果你会发现你的地址已经完全正确了！甚至通过浏览器的工具查看了请求地址，绝对是没有问题的，但是......</p>
-<h2>坑二 _惹的祸</h2>
-<p>通过浏览器的工具查看了静态资源的请求地址，绝对是没有问题的，但是依然是404，你仰天长啸：卧槽，这是见鬼了么？</p>
-<p>这世界没有鬼，如果看似正确的事情却出现了不正常的现象，那么就一定是有人在捣鬼！没错，是GitHub搞得鬼！GitHub的静态页面服务竟然不支持<code>_</code>这个符号，也就是说<code>/_next/static/chunks/XXXX</code>这个地址是无法识别的，所以才会出现404这个鬼！那么结局的办法是：</p>
-<p>在你的 Next.js 项目中，你可以通过在构建脚本中添加一些自定义操作来实现在输出目录（例如 out 目录）中自动生成一个 <code>.nojekyll</code> 文件。这样做可以确保在部署到 GitHub Pages 时，静态资源能够正确地被访问，而不会受到 Jekyll 处理的影响。</p>
-<p>你可以建一个脚本，每次打包的时候都自动生成一个<code>.nojekyll</code>的空文件在out目录中，这样就解决了！再次push GitHub仓库，一切正常了</p>
-<h2>总结</h2>
-<p>真是见鬼了！</p></div>
+<p>如果在系统中没有 00-installer-config.yaml 文件，可能是因为网络配置文件的名称不同。在较新的 Ubuntu 版本中，Netplan 已成为网络配置的首选工具，因此文件名可能会有所不同。确保根据实际情况修改文件名。</p>
+<p>编辑修改内容如下：</p>
+<pre><code>network:
+ethernets:
+    enp0s3:  # 网络接口的名称可能会有所不同
+    dhcp4: false
+    addresses: [192.168.1.10/24]  # 根据您的网络进行调整
+    gateway4: 192.168.1.1
+    nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]  # 可以使用谷歌的 DNS 服务器
+version: 2
+</code></pre>
+<p>保存退出，并刷新网络。</p>
+<pre><code>sudo netplan apply
+</code></pre>
+<p>查看IP</p>
+<pre><code>ip a
+</code></pre>
+<p>大功告成！</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230819173041.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230820094408.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230821100258.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
-    </div>
-    
-    <div class="related">
-      <p>相关文章：</p>
-      <ul>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230812135025.html" class="link link-hover"
-            ><span>仅用了几个小时就使用next.js重构博客的所有功能</span></a
-          >
-        </li>
-        
-      </ul>
     </div>
     
     <!-- <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
