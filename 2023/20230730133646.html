@@ -122,7 +122,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-30T13:36:46.000000Z"><span
         class="cr-time"
         >2023-07-30T13:36:46.000000Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-13T22:54:57.651618Z"><span class="up-time">2023-08-13T22:54:57.651618Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-21T18:34:22.508877Z"><span class="up-time">2023-08-21T18:34:22.508877Z</span></div>
       · Tag:   Ubuntu  Docker 
       </small>
     </div>
@@ -137,6 +137,20 @@
 <h2>Docker的安装</h2>
 <p>这里我就不再重复了，参考大神的博文，一路安装到底即可。</p>
 <p><a href="https://linux.cn/article-14871-1.html">如何在 Ubuntu 22.04 LTS 中安装 Docker 和 Docker Compose</a></p>
+<p>也可以试试这个方法：</p>
+<ol>
+<li>
+<p>更新软件包列表： 首先，确保你的软件包列表是最新的。运行以下命令来更新软件包列表：</p>
+<p>$ sudo apt update # 更新本地软件包的列表信息
+$ sudo apt upgrade #升级系统中已安装的软件包到它们的最新可用版本
+$ sudo apt full-upgrade # 这个命令与 sudo apt upgrade 类似，但在升级软件包时会更加细致。</p>
+</li>
+<li>
+<p>安装 Docker： Docker 软件包名称可能会随时间变化，取决于仓库中的版本。你可以尝试使用 docker.io 作为软件包名称来安装 Docker：</p>
+<p>sudo apt install docker.io</p>
+</li>
+</ol>
+<p>亲测可以安装成功！很简单的。</p>
 <h2>Docker 镜像</h2>
 <pre><code>Docker中国区官方镜像
 https://registry.docker-cn.com
