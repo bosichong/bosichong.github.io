@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="ubuntu" name="keywords" />
-    <meta content="之前使用VMware Workstation Pro 17 安装了Ubuntu 22 server版，但是每次启动Ubuntu都会很卡，遂更换成VirtualBox-7.0.10-158379-Win，启动一切正常了，这里记录一下设置Ubuntu server固定IP的方法。的简介" name="description" />
+    <meta content="edge" name="keywords" />
+    <meta content="自从回归Windows之后，总感觉用着chrome不是很爽，偶然的一次试了edge发现打开的速度真是不错，日常的调试也是可以替代chrome，索性就换成edge了。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      ubuntu-22-live-server 设置固定IP | SuiYan 碎言
+      我又用回了"IE"--edge | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,53 +117,31 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">ubuntu-22-live-server 设置固定IP</h1>
+    <h1 class="text-3xl font-medium">我又用回了"IE"--edge</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-21T10:02:58.938279Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-22T16:08:56.361888Z"><span
         class="cr-time"
-        >2023-08-21T10:02:58.938279Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-21T10:46:22.902924Z"><span class="up-time">2023-08-21T10:46:22.902924Z</span></div>
-      · Tag:   ubuntu 
+        >2023-08-22T16:08:56.361888Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-22T22:05:44.116022Z"><span class="up-time">2023-08-22T22:05:44.116022Z</span></div>
+      · Tag:   edge 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>之前使用VMware Workstation Pro 17 安装了Ubuntu 22 server版，但是每次启动Ubuntu都会很卡，遂更换成VirtualBox-7.0.10-158379-Win，启动一切正常了，这里记录一下设置Ubuntu server固定IP的方法。</p>
-<h2>设置方法</h2>
-<p>打开网卡的配置文件:</p>
-<pre><code>sudo vim /etc/netplan/00-installer-config.yaml
-</code></pre>
-<p>如果在系统中没有 00-installer-config.yaml 文件，可能是因为网络配置文件的名称不同。在较新的 Ubuntu 版本中，Netplan 已成为网络配置的首选工具，因此文件名可能会有所不同。确保根据实际情况修改文件名。</p>
-<p>编辑修改内容如下：</p>
-<pre><code>network:
-ethernets:
-    enp0s3:  # 网络接口的名称可能会有所不同
-    dhcp4: false
-    addresses: [192.168.1.10/24]  # 根据您的网络进行调整
-    gateway4: 192.168.1.1
-    nameservers:
-        addresses: [8.8.8.8, 8.8.4.4]  # 可以使用谷歌的 DNS 服务器
-version: 2
-</code></pre>
-<p>保存退出，并刷新网络。</p>
-<pre><code>sudo netplan apply
-</code></pre>
-<p>查看IP</p>
-<pre><code>ip a
-</code></pre>
-<p>大功告成！</p></div>
+  <div class="mb-4"><p>自从回归Windows之后，总感觉用着chrome不是很爽，偶然的一次试了edge发现打开的速度真是不错，日常的调试也是可以替代chrome，索性就换成edge了。</p>
+<h2>回忆</h2>
+<p>其实使用chrome和edge区别不大，他们内核一样但功能却各不相同，相比较safari就显得有些格格不入，safari唯一的优点可能就是移动设备用起来省电吧。</p>
+<p>绕了半天，我想说啥来着？不管是chrome还是edge、火狐、OP，这些公司的浏览器，几乎都没有什么广告，这和国内的厂商再制作软件上的理念大不相同，老外再软件上的竞争是良性的，或许是我没看到吧，但是至少不想3Q大战那样惊心动魄你死我活的，还没脸的要用户二选一。</p>
+<h2>未来</h2>
+<p>国内开发者最近因为app需要备案反响很大意见很多，想起当年个人网站都需要ICP备案的时候，网站成批的倒下了，因噎废食表现的淋漓尽致。国内的开发者哪个没违法？去过GitHub吧？科学上网？那些其实都是违法的，呜呼悲哉！其实大部分网名都还是好人啊。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230820094408.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230821100258.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230822160856.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
     </div>
     
     <!-- <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
