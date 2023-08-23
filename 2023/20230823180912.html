@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="UbuntuDocker" name="keywords" />
-    <meta content="今天突然想把docker在Windows10下安装上，结果被坑的一塌糊涂，后来没办法了，只好在虚拟机的ubuntu下边安装了docker。" name="description" />
+    <meta content="Ubuntu" name="keywords" />
+    <meta content="虚拟机中装了个Ubuntu，使用非root登录总是需要sudo,好麻烦的一说，查了一下如何启用root的ssh登录便修改了，这里记录一下操作过程。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      Ubuntu 22 安装Docker过程记录 | SuiYan 碎言
+      Ubuntu下使用root登录ssh的设置 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,78 +117,45 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">Ubuntu 22 安装Docker过程记录</h1>
+    <h1 class="text-3xl font-medium">Ubuntu下使用root登录ssh的设置</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-30T13:36:46.000000Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-23T18:09:12.150253Z"><span
         class="cr-time"
-        >2023-07-30T13:36:46.000000Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-21T18:34:22.508877Z"><span class="up-time">2023-08-21T18:34:22.508877Z</span></div>
-      · Tag:   Ubuntu  Docker 
+        >2023-08-23T18:09:12.150253Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-23T18:15:12.509059Z"><span class="up-time">2023-08-23T18:15:12.509059Z</span></div>
+      · Tag:   Ubuntu 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>今天突然想把docker在Windows10下安装上，结果被坑的一塌糊涂，后来没办法了，只好在虚拟机的ubuntu下边安装了docker。</p>
-<h2>Windows下安装Docker</h2>
-<p>本以为像macos下边一样，下载了Docker的桌面版直接暗转就好了，结果Windows下边的安装又是启用虚拟化，又是添加Hyper-V服务，虽然麻烦但是最后都安装上了，但是有个巨大坑：主机的网络异常了，只要打开Docker，过一小会就会无法上网打不开任何网页，不死心，各种搜索各种办法，折腾了一上午，竟然没有搞定，最后果断放弃！改为虚拟机Ubuntu下吧安装吧。</p>
-<h2>VMware Workstation 下安装 Ubuntu</h2>
-<p>官网下载最新版即可，然后咋虚拟机里开始安装Ubuntu，这些都是很简单的，一路回车就可以了。全部安装完毕后，为Ubuntu设置静态的局域网IP，方便以后访问。</p>
-<p>点击：编辑Ubuntu虚拟机，找到网络设置那里，修改成桥接模式即可，然后到Ubuntu里设置一下固定IP、子网掩码、DNS就好了。</p>
-<h2>Docker的安装</h2>
-<p>这里我就不再重复了，参考大神的博文，一路安装到底即可。</p>
-<p><a href="https://linux.cn/article-14871-1.html">如何在 Ubuntu 22.04 LTS 中安装 Docker 和 Docker Compose</a></p>
-<p>也可以试试这个方法：</p>
-<ol>
-<li>
-<p>更新软件包列表： 首先，确保你的软件包列表是最新的。运行以下命令来更新软件包列表：</p>
-<p>$ sudo apt update # 更新本地软件包的列表信息
-$ sudo apt upgrade #升级系统中已安装的软件包到它们的最新可用版本
-$ sudo apt full-upgrade # 这个命令与 sudo apt upgrade 类似，但在升级软件包时会更加细致。</p>
-</li>
-<li>
-<p>安装 Docker： Docker 软件包名称可能会随时间变化，取决于仓库中的版本。你可以尝试使用 docker.io 作为软件包名称来安装 Docker：</p>
-<p>sudo apt install docker.io</p>
-</li>
-</ol>
-<p>亲测可以安装成功！很简单的。</p>
-<h2>Docker 镜像</h2>
-<pre><code>Docker中国区官方镜像
-https://registry.docker-cn.com
-
-网易
-http://hub-mirror.c.163.com
-
-ustc 中国科技大学
-https://docker.mirrors.ustc.edu.cn
-
-阿里云容器  服务（阿里云得到的是一个专属的加速链接）
-https://cr.console.aliyun.com/
+  <div class="mb-4"><p>虚拟机中装了个Ubuntu，使用非root登录总是需要sudo,好麻烦的一说，查了一下如何启用root的ssh登录便修改了，这里记录一下操作过程。</p>
+<h2>修改root的密码</h2>
+<pre><code>bosi@kk:~$ sudo passwd root
+[sudo] password for bosi:
+New password:
+Retype new password:
+passwd: password updated successfully
 </code></pre>
-<p>进入 /etc/docker/daemon.json 文件(没有使用vim则自动创建)，修改如下：</p>
-<pre><code># vi /etc/docker/daemon.json
-{
-    "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
-}
+<p>先输入密码，后两次输入root的新密码。</p>
+<h2>修改配置文件时root可以ssh登录</h2>
+<pre><code>sudo vim /etc/ssh/sshd_config
 </code></pre>
-<h2>总结</h2>
-<p>至此 docker的安装就完成，可以下载hello world 的镜像测试，一般都不会有问题的。</p>
-<h2>相关参考</h2>
-<p><a href="https://linux.cn/article-14871-1.html">如何在 Ubuntu 22.04 LTS 中安装 Docker 和 Docker Compose</a></p>
-<p><a href="https://blog.csdn.net/cristianoxm/article/details/104923157">ubuntu下docker的安装及更换镜像源</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/420247468">40个最常用的Linux命令行大全</a></p>
-<p><a href="https://suiyan.cc/2023/20230730144709.html">vim常用命令</a></p></div>
+<p>Ubuntu 22 打开后可以直接添加：</p>
+<pre><code>PermitRootLogin yes
+</code></pre>
+<p>保存退出</p>
+<p>重启服务：</p>
+<pre><code>sudo service ssh restart
+</code></pre>
+<p>OK！可以试试了，root应该可以登录ssh了.</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230729151214.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230823163738.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230730144709.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
     </div>
     
     <div class="related">
@@ -196,14 +163,8 @@ https://cr.console.aliyun.com/
       <ul>
         
         <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230823180912.html" class="link link-hover"
-            ><span>Ubuntu下使用root登录ssh的设置</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://suiyan.cc/2023/20230730223550.html" class="link link-hover"
-            ><span>Docker基础学习笔记和常用命令汇总</span></a
+          <a href="https://suiyan.cc/2023/20230730133646.html" class="link link-hover"
+            ><span>Ubuntu 22 安装Docker过程记录</span></a
           >
         </li>
         

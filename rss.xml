@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-23T16:37:38.846176Z</pubDate>
+        <pubDate>2023-08-23T18:09:12.150253Z</pubDate>
+        
+        <item>
+            <title>Ubuntu下使用root登录ssh的设置</title>
+            <link>https://suiyan.cc/2023/20230823180912.html</link>
+            <author>J.sky</author>
+            <description>虚拟机中装了个Ubuntu，使用非root登录总是需要sudo,好麻烦的一说，查了一下如何启用root的ssh登录便修改了，这里记录一下操作过程。</description>
+            <category>Ubuntu</category>
+            <guid>https://suiyan.cc/2023/20230823180912.html</guid>
+            <pubDate>2023-08-23T18:09:12.150253Z</pubDate>
+        </item>
         
         <item>
             <title>GitHub Actions 构建、部署 Next.js项目</title>
@@ -94,16 +104,6 @@
             <category>LCP</category>
             <guid>https://suiyan.cc/2023/20230813204827.html</guid>
             <pubDate>2023-08-13T20:48:27.000000Z</pubDate>
-        </item>
-        
-        <item>
-            <title>仅用了几个小时就使用next.js重构博客的所有功能</title>
-            <link>https://suiyan.cc/2023/20230812135025.html</link>
-            <author>J.sky</author>
-            <description>断断续续花了几个小时的时间，我成功地使用了 Next.js 复刻了我的博客的全部功能，真是事半功倍啊！</description>
-            <category>next.js,碎言博客</category>
-            <guid>https://suiyan.cc/2023/20230812135025.html</guid>
-            <pubDate>2023-08-12T13:50:25.000000Z</pubDate>
         </item>
         
     </channel>
