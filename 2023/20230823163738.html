@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="edge" name="keywords" />
-    <meta content="自从回归Windows之后，总感觉用着chrome不是很爽，偶然的一次试了edge发现打开的速度真是不错，日常的调试也是可以替代chrome，索性就换成edge了。" name="description" />
+    <meta content="Next.js" name="keywords" />
+    <meta content="博文的简介" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      我又用回了"IE"--edge | SuiYan 碎言
+      GitHub Actions 构建、部署 Next.js项目 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -117,35 +117,101 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">我又用回了"IE"--edge</h1>
+    <h1 class="text-3xl font-medium">GitHub Actions 构建、部署 Next.js项目</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-22T16:08:56.361888Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-23T16:37:38.846176Z"><span
         class="cr-time"
-        >2023-08-22T16:08:56.361888Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-22T22:05:44.116022Z"><span class="up-time">2023-08-22T22:05:44.116022Z</span></div>
-      · Tag:   edge 
+        >2023-08-23T16:37:38.846176Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-23T16:59:42.037155Z"><span class="up-time">2023-08-23T16:59:42.037155Z</span></div>
+      · Tag:   Next.js 
       </small>
     </div>
   </div>
 
-  <div class="mb-4"><p>自从回归Windows之后，总感觉用着chrome不是很爽，偶然的一次试了edge发现打开的速度真是不错，日常的调试也是可以替代chrome，索性就换成edge了。</p>
-<h2>回忆</h2>
-<p>其实使用chrome和edge区别不大，他们内核一样但功能却各不相同，相比较safari就显得有些格格不入，safari唯一的优点可能就是移动设备用起来省电吧。</p>
-<p>绕了半天，我想说啥来着？不管是chrome还是edge、火狐、OP，这些公司的浏览器，几乎都没有什么广告，这和国内的厂商再制作软件上的理念大不相同，老外再软件上的竞争是良性的，或许是我没看到吧，但是至少不想3Q大战那样惊心动魄你死我活的，还没脸的要用户二选一。</p>
-<h2>未来</h2>
-<p>国内开发者最近因为app需要备案反响很大意见很多，想起当年个人网站都需要ICP备案的时候，网站成批的倒下了，因噎废食表现的淋漓尽致。国内的开发者哪个没违法？去过GitHub吧？科学上网？那些其实都是违法的，呜呼悲哉！其实大部分网名都还是好人啊。</p></div>
+  <div class="mb-4"><p>国内连接GitHub的速度真是喜人，所以测试GitHub Actions总是再重复的push连接失败中煎熬，好在最后实践通过了，记录一下这里的坑。</p>
+<h2>Actions代码</h2>
+<p>GitHub Actions 的配置文件叫做 workflow 文件，存放在代码仓库的 .github/workflows目录中，这里复制使用的一位前辈的代码，除了修改了pnpm的版本意外，其他基本上没有修改，代码如下：</p>
+<pre><code>name: Actions CI - Next.js version 12 static site export, GitHub Actions Build and Deploy
+on:
+push:
+    branches: [ master ]
+# 执行的一项或  多项任务
+jobs:
+build-and-deploy:
+    # 运行在虚拟机环境ubuntu-latest
+    # https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: ubuntu-latest
+    steps:
+    - name: 获取源码  🛎️
+        uses: actions/checkout@v3
+    - name: Node环境版本 🗜️
+        uses: actions/setup-node@v3
+        with:
+        node-version: 18
+    - name: 安装 Pnpm 🧬
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+        version: 8
+        run_install: true
+    - name: 安装依赖 ⚙️
+        run: pnpm install
+    - name: 打包 🏗️
+        run: |
+        npm run build
+        touch out/.nojekyll
+    - name: 部署 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+        branch: gh-pages
+        folder: out
+        clean: true
+</code></pre>
+<p>目前来说，这段代码简洁而且过程清晰，如果有特别的要求可以按自己的需求修改。</p>
+<h2>一些坑</h2>
+<ol>
+<li>
+<p>权限问题</p>
+<p>Error: The deploy step encountered an error: The process '/usr/bin/git' failed with exit code "128"  ❌ Notice: Deployment failed! ❌</p>
+</li>
+</ol>
+<p>基本上都动作通过了，突然出现这个128，其实是权限问题，解决方法：</p>
+<p><a href="https://github.com/actions/checkout/issues/417#issuecomment-1427951779">点击查看</a></p>
+<p><img alt="博客名称" src="https://suiyan.cc/assets/images/2023/git128.webp" /></p>
+<ol>
+<li>Next项目的静态文件资源地址正确，却无法打开显示404，修改方法：静态文件的根目录添加<code>.nojekyll</code>的空文件即可。</li>
+<li>
+<p>如果项目保存再域名的下一级目录，可以考虑在next的配置文件中添加：</p>
+<h1>next.config.js</h1>
+<p>basePath: '/目录名称',</p>
+</li>
+</ol>
+<h2>总结</h2>
+<p>其实很简单，但是测试的时候由于网速问题造成的很费时间，所以调试的时候尽量要看仔细哈。</p>
+<p>相关连接：</p>
+<p><a href="https://github.com/bosichong/githubactionstest">测试项目地址，包含所有代码</a></p>
+<p><a href="https://juejin.cn/post/7220410343649624121">使用 GitHub Actions 构建、部署 Next.js 并将其托管到 GitHub Pages</a></p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://suiyan.cc/2023/20230821100258.html" class="text-accent text-md"
+      <a href="https://suiyan.cc/2023/20230822160856.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://suiyan.cc/2023/20230823163738.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
+    </div>
+    
+    <div class="related">
+      <p>相关文章：</p>
+      <ul>
+        
+        <li class="list-group-item">
+          <a href="https://suiyan.cc/2023/20230811113613.html" class="link link-hover"
+            ><span>关于使用Next.js重构博客构思的记录</span></a
+          >
+        </li>
+        
+      </ul>
     </div>
     
     <!-- <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
