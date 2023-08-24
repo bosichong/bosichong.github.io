@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-23T18:09:12.150253Z</pubDate>
+        <pubDate>2023-08-24T18:33:12.594703Z</pubDate>
+        
+        <item>
+            <title>shields.io 一个简洁、一致、清晰的徽章</title>
+            <link>https://suiyan.cc/2023/20230824183312.html</link>
+            <author>J.sky</author>
+            <description>今天，女儿看到我在浏览我的博客页面，她喵了一眼说到：你博客现在的界面没有之前的“老年跑马灯好看”，我愣了一下，好，那咱就换回去！</description>
+            <category>shields.io</category>
+            <guid>https://suiyan.cc/2023/20230824183312.html</guid>
+            <pubDate>2023-08-24T18:33:12.594703Z</pubDate>
+        </item>
         
         <item>
             <title>Ubuntu下使用root登录ssh的设置</title>
@@ -94,16 +104,6 @@
             <category>站长吐槽</category>
             <guid>https://suiyan.cc/2023/20230814211248.html</guid>
             <pubDate>2023-08-14T21:12:48.844725Z</pubDate>
-        </item>
-        
-        <item>
-            <title>关于Google LCP 问题：超过了2.5秒 验证已通过</title>
-            <link>https://suiyan.cc/2023/20230813204827.html</link>
-            <author>J.sky</author>
-            <description>持续了一个月的 LCP 问题：超过了 2.5 秒（桌面设备），经过了20多天的验证终于通过了，总结一下关于解决LCP问题的经验。</description>
-            <category>LCP</category>
-            <guid>https://suiyan.cc/2023/20230813204827.html</guid>
-            <pubDate>2023-08-13T20:48:27.000000Z</pubDate>
         </item>
         
     </channel>
