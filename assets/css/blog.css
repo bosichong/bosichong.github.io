@@ -48,3 +48,8 @@ code{
 ul,ol{
     list-style: auto;
 }
+
+footer ul, footer ol {
+    list-style: none;
+    
+}

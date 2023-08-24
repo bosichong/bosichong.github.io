@@ -52,16 +52,6 @@
             "ico": "tags",
             "text": "标签",
             "url": "tags.html"
-        },
-        {
-            "ico": "user-md",
-            "text": "关于",
-            "url": "before-2022/1.html"
-        },
-        {
-            "ico": "link",
-            "text": "链接",
-            "url": "links.html"
         }
     ],
     "links": [
