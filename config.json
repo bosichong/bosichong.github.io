@@ -14,7 +14,7 @@
     "meta_keywords":"Python,JavaScript,程序员,人生苦短,我用Python",
     "profile_image":"assets/images/avatar.jpg",
     "blog_bg": "assets/images/bg.jpg",
-    "theme": "tailwind_HyperUI",
+    "theme": "tailwind_HyperUI_dark",
     "build": "blog",
     "md_dir": "articles",
     "blog_page_num":12,
