@@ -105,7 +105,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-08-25T10:29:26.593746Z"><span
         class="cr-time"
         >2023-08-25T10:29:26.593746Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-25T13:48:43.948128Z"><span class="up-time">2023-08-25T13:48:43.948128Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2023-08-25T13:49:55.569926Z"><span class="up-time">2023-08-25T13:49:55.569926Z</span></div>
       · Tag:   MySQL  Docker 
       </small>
     </div>
@@ -116,18 +116,19 @@
 <ol>
 <li>
 <p>下载:</p>
-<p>docker pull mysql:5.7</p>
+<pre><code>docker pull mysql:5.7
+</code></pre>
 </li>
 <li>
 <p>通过docker run 创建一个容器，并绑定端口及数据卷：</p>
-<p>docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 -v /path/on/host:/var/lib/mysql mysql:5.7</p>
+<pre><code>docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 -v /path/on/host:/var/lib/mysql mysql:5.7
+</code></pre>
 </li>
 </ol>
 <p><code>my-secret-pw</code>，改成你root的密码，然后绑定端口和数据卷即可。</p>
 <ol>
-<li>
-<p>登录MySQL</p>
-<p>docker exec -it mysql mysql -uroot -p</p>
+<li>登录MySQL<pre><code>docker exec -it mysql mysql -uroot -p
+</code></pre>
 </li>
 </ol>
 <p>此时，会让你输入MySQL的root密码进行登录。</p>
@@ -136,10 +137,9 @@
 </ol>
 <p>在MySQL命令行下输入<code>quit</code>，即可退出MySQL的命令行模式。</p>
 <ol>
-<li>
-<p>停止和删除docker的MySQL</p>
-<p>docker stop mysql
-docker rm mysql</p>
+<li>停止和删除docker的MySQL<pre><code>docker stop mysql
+docker rm mysql
+</code></pre>
 </li>
 </ol>
 <h2>总结</h2>
