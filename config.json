@@ -56,16 +56,22 @@
     ],
     "links": [
         {
-            "site_name": "ScarSu - 终身成长,前端技术,信息源",
-            "site_url": "https://www.scarsu.com",
-            "site_description": "96女性程序员，以终身成长为人生意义，热爱前端技术，喜欢读各种书，关注效率提升、自我管理、心智成长、认知提升、极简生活。",
-            "site_avatar": "https://scarsu.oss-cn-shanghai.aliyuncs.com/picgo20201012144739.jpg"
-        },
-        {
             "site_name": "特立独行的异类",
             "site_url": "https://www.demochen.com",
             "site_description": "一张肆无忌惮的脸，一颗桀骜不驯的心。",
             "site_avatar": "https://www.demochen.com/images/avatar.png"
+        },
+        {
+            "site_name": "八咫乌",
+            "site_url": "https://www.vergilisme.com/",
+            "site_description": "思君如满月，夜夜减清辉",
+            "site_avatar": "https://www.vergilisme.com/usr/themes/Lumieres/fonts/logo_vertical.svg"
+        },
+        {
+            "site_name": "ScarSu - 终身成长,前端技术,信息源",
+            "site_url": "https://www.scarsu.com",
+            "site_description": "96女性程序员，以终身成长为人生意义，热爱前端技术，喜欢读各种书，关注效率提升、自我管理、心智成长、认知提升、极简生活。",
+            "site_avatar": "https://scarsu.oss-cn-shanghai.aliyuncs.com/picgo20201012144739.jpg"
         },
         {
             "site_name": "BORBER",
