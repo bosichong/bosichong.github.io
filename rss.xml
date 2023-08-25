@@ -4,17 +4,7 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-25T18:24:01.678697Z</pubDate>
-        
-        <item>
-            <title>友情链接要慎重：道不同不相为谋！</title>
-            <link>https://suiyan.cc/2023/20230825182401.html</link>
-            <author>J.sky</author>
-            <description>路遥知马力，日久见人心，友情链接要慎重！道不同不相为谋！</description>
-            <category>站长吐槽</category>
-            <guid>https://suiyan.cc/2023/20230825182401.html</guid>
-            <pubDate>2023-08-25T18:24:01.678697Z</pubDate>
-        </item>
+        <pubDate>2023-08-25T10:29:26.593746Z</pubDate>
         
         <item>
             <title>Docker下安装MySQL</title>
@@ -104,6 +94,16 @@
             <category>站长源创</category>
             <guid>https://suiyan.cc/2023/20230819173041.html</guid>
             <pubDate>2023-08-19T17:30:41.813943Z</pubDate>
+        </item>
+        
+        <item>
+            <title>短暂而忙碌的暑假即将谢幕</title>
+            <link>https://suiyan.cc/2023/20230818211027.html</link>
+            <author>J.sky</author>
+            <description>使用next撸了一个极简的网址导航，本打算是用来测试GitHub actions用的，但是build都成功了，部署到GitHub pages又卡住了</description>
+            <category>心情日记</category>
+            <guid>https://suiyan.cc/2023/20230818211027.html</guid>
+            <pubDate>2023-08-18T21:10:27.607090Z</pubDate>
         </item>
         
     </channel>
