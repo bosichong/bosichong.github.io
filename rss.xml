@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-25T10:29:26.593746Z</pubDate>
+        <pubDate>2023-08-26T18:46:09.397753Z</pubDate>
+        
+        <item>
+            <title>Docker 简单快速安装部署WordPress</title>
+            <link>https://suiyan.cc/2023/20230826184609.html</link>
+            <author>J.sky</author>
+            <description>前几天在虚拟机Ubuntu里安装了Docker，其实就是打算使用Docker安装MySQL和WordPress,没想到安装部署的过程非常的简单，安装部署的过程记录如下。</description>
+            <category>Docker,WordPress</category>
+            <guid>https://suiyan.cc/2023/20230826184609.html</guid>
+            <pubDate>2023-08-26T18:46:09.397753Z</pubDate>
+        </item>
         
         <item>
             <title>Docker下安装MySQL</title>
@@ -94,16 +104,6 @@
             <category>站长源创</category>
             <guid>https://suiyan.cc/2023/20230819173041.html</guid>
             <pubDate>2023-08-19T17:30:41.813943Z</pubDate>
-        </item>
-        
-        <item>
-            <title>短暂而忙碌的暑假即将谢幕</title>
-            <link>https://suiyan.cc/2023/20230818211027.html</link>
-            <author>J.sky</author>
-            <description>使用next撸了一个极简的网址导航，本打算是用来测试GitHub actions用的，但是build都成功了，部署到GitHub pages又卡住了</description>
-            <category>心情日记</category>
-            <guid>https://suiyan.cc/2023/20230818211027.html</guid>
-            <pubDate>2023-08-18T21:10:27.607090Z</pubDate>
         </item>
         
     </channel>
