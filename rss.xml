@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-08-26T18:46:09.397753Z</pubDate>
+        <pubDate>2023-08-27T11:39:26.300570Z</pubDate>
+        
+        <item>
+            <title>Ubuntu开机自动启动Docker容器运行WordPress</title>
+            <link>https://suiyan.cc/2023/20230827113926.html</link>
+            <author>J.sky</author>
+            <description>有的时候我们需要在Ubuntu系统启动的时候自动启动一些服务，例如docker的容器，该如何操作呢？</description>
+            <category>Docker,Ubuntu</category>
+            <guid>https://suiyan.cc/2023/20230827113926.html</guid>
+            <pubDate>2023-08-27T11:39:26.300570Z</pubDate>
+        </item>
         
         <item>
             <title>Docker 简单快速安装部署WordPress</title>
@@ -94,16 +104,6 @@
             <category>next.js</category>
             <guid>https://suiyan.cc/2023/20230820094408.html</guid>
             <pubDate>2023-08-20T09:44:08.429420Z</pubDate>
-        </item>
-        
-        <item>
-            <title>整理了一个下午的收藏夹......</title>
-            <link>https://suiyan.cc/2023/20230819173041.html</link>
-            <author>J.sky</author>
-            <description>终于开始拾到我的收藏夹了...从头到尾逐一测试筛查，去除了一些404和过时的内容，整理了两个小时左右终于搞定了！</description>
-            <category>站长源创</category>
-            <guid>https://suiyan.cc/2023/20230819173041.html</guid>
-            <pubDate>2023-08-19T17:30:41.813943Z</pubDate>
         </item>
         
     </channel>
