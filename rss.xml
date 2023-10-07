@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-09-03T23:05:26.591806Z</pubDate>
+        <pubDate>2023-10-07T20:26:42.808615Z</pubDate>
+        
+        <item>
+            <title>老妈大腿骨骨折，最近一直在医院护理</title>
+            <link>https://suiyan.cc/2023/20231007202642.html</link>
+            <author>J.sky</author>
+            <description>老妈已经是第五次骨折了，曾经做过三次手术，保守治疗两次，大多数人会说这事骨头太脆骨质酥松把，其实这都是次要的，人若是不会保护自己，则是神仙也难救了。</description>
+            <category>站长吐槽</category>
+            <guid>https://suiyan.cc/2023/20231007202642.html</guid>
+            <pubDate>2023-10-07T20:26:42.808615Z</pubDate>
+        </item>
         
         <item>
             <title>不懂就别瞎掰掰:【程序员的常识】写的什么玩意？</title>
@@ -94,16 +104,6 @@
             <category>Next.js</category>
             <guid>https://suiyan.cc/2023/20230823163738.html</guid>
             <pubDate>2023-08-23T16:37:38.846176Z</pubDate>
-        </item>
-        
-        <item>
-            <title>我又用回了"IE"--edge</title>
-            <link>https://suiyan.cc/2023/20230822160856.html</link>
-            <author>J.sky</author>
-            <description>自从回归Windows之后，总感觉用着chrome不是很爽，偶然的一次试了edge发现打开的速度真是不错，日常的调试也是可以替代chrome，索性就换成edge了。</description>
-            <category>edge</category>
-            <guid>https://suiyan.cc/2023/20230822160856.html</guid>
-            <pubDate>2023-08-22T16:08:56.361888Z</pubDate>
         </item>
         
     </channel>
