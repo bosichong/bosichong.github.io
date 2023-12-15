@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-10-07T20:26:42.808615Z</pubDate>
+        <pubDate>2023-12-15T20:55:05.032543Z</pubDate>
+        
+        <item>
+            <title>好久没有更新博客了。。。</title>
+            <link>https://suiyan.cc/2023/20231215205505.html</link>
+            <author>J.sky</author>
+            <description>好久没有更新博客了，最近真的忙忙碌碌混混沌沌的。</description>
+            <category>未分类</category>
+            <guid>https://suiyan.cc/2023/20231215205505.html</guid>
+            <pubDate>2023-12-15T20:55:05.032543Z</pubDate>
+        </item>
         
         <item>
             <title>老妈大腿骨骨折，最近一直在医院护理</title>
@@ -94,16 +104,6 @@
             <category>Ubuntu</category>
             <guid>https://suiyan.cc/2023/20230823180912.html</guid>
             <pubDate>2023-08-23T18:09:12.150253Z</pubDate>
-        </item>
-        
-        <item>
-            <title>GitHub Actions 构建、部署 Next.js项目</title>
-            <link>https://suiyan.cc/2023/20230823163738.html</link>
-            <author>J.sky</author>
-            <description>国内连接GitHub的速度真是喜人，所以测试GitHub Actions总是再重复的push连接失败中煎熬，好在最后实践通过了，记录一下这里的坑。</description>
-            <category>Next.js</category>
-            <guid>https://suiyan.cc/2023/20230823163738.html</guid>
-            <pubDate>2023-08-23T16:37:38.846176Z</pubDate>
         </item>
         
     </channel>
