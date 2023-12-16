@@ -56,6 +56,12 @@
     ],
     "links": [
         {
+            "site_name": "小林笔记",
+            "site_url": "https://m.senlinm.cn",
+            "site_description": "轻生活，秒上签",
+            "site_avatar": "https://senlinm.s3.us-east-005.backblazeb2.com/01.png"
+        },
+        {
             "site_name": "zhangpingcloud",
             "site_url": "https://www.zhangpingcloud.tech/",
             "site_description": "编程爱好者，帅哥一个。",
