@@ -4,14 +4,24 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2023-12-15T20:55:05.032543Z</pubDate>
+        <pubDate>2023-12-23T20:04:59.653384Z</pubDate>
+        
+        <item>
+            <title>终于熬到了新手上路</title>
+            <link>https://suiyan.cc/2023/20231223200459.html</link>
+            <author>J.sky</author>
+            <description>断断续续的练车终于考下来了心心念的驾照，对于一个大部分时间都和电脑打交道的程序员来说，考取驾照是一件很有挑战的事情。</description>
+            <category>站长吐槽</category>
+            <guid>https://suiyan.cc/2023/20231223200459.html</guid>
+            <pubDate>2023-12-23T20:04:59.653384Z</pubDate>
+        </item>
         
         <item>
             <title>好久没有更新博客了。。。</title>
             <link>https://suiyan.cc/2023/20231215205505.html</link>
             <author>J.sky</author>
             <description>好久没有更新博客了，最近真的忙忙碌碌混混沌沌的。</description>
-            <category>未分类</category>
+            <category>站长吐槽</category>
             <guid>https://suiyan.cc/2023/20231215205505.html</guid>
             <pubDate>2023-12-15T20:55:05.032543Z</pubDate>
         </item>
@@ -94,16 +104,6 @@
             <category>shields.io</category>
             <guid>https://suiyan.cc/2023/20230824183312.html</guid>
             <pubDate>2023-08-24T18:33:12.594703Z</pubDate>
-        </item>
-        
-        <item>
-            <title>Ubuntu下使用root登录ssh的设置</title>
-            <link>https://suiyan.cc/2023/20230823180912.html</link>
-            <author>J.sky</author>
-            <description>虚拟机中装了个Ubuntu，使用非root登录总是需要sudo,好麻烦的一说，查了一下如何启用root的ssh登录便修改了，这里记录一下操作过程。</description>
-            <category>Ubuntu</category>
-            <guid>https://suiyan.cc/2023/20230823180912.html</guid>
-            <pubDate>2023-08-23T18:09:12.150253Z</pubDate>
         </item>
         
     </channel>
