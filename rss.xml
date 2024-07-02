@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-04-20T20:47:31.663111Z</pubDate>
+        <pubDate>2024-07-02T21:57:36.117582Z</pubDate>
+        
+        <item>
+            <title>每日原创壁纸：黑色几何 2024.07.02</title>
+            <link>https://suiyan.cc/2024/20240702215736.html</link>
+            <author>J.sky</author>
+            <description>博文的简介</description>
+            <category>原创壁纸</category>
+            <guid>https://suiyan.cc/2024/20240702215736.html</guid>
+            <pubDate>2024-07-02T21:57:36.117582Z</pubDate>
+        </item>
         
         <item>
             <title>差点忘了我还有一个博客...</title>
@@ -94,16 +104,6 @@
             <category>Docker,WordPress</category>
             <guid>https://suiyan.cc/2023/20230826184609.html</guid>
             <pubDate>2023-08-26T18:46:09.397753Z</pubDate>
-        </item>
-        
-        <item>
-            <title>Docker下安装MySQL</title>
-            <link>https://suiyan.cc/2023/20230825102926.html</link>
-            <author>J.sky</author>
-            <description>Docker下安装MySQL5.7过程记录</description>
-            <category>MySQL,Docker</category>
-            <guid>https://suiyan.cc/2023/20230825102926.html</guid>
-            <pubDate>2023-08-25T10:29:26.593746Z</pubDate>
         </item>
         
     </channel>
