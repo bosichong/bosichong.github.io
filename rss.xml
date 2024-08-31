@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-08-28T19:27:13.495765Z</pubDate>
+        <pubDate>2024-08-31T19:36:48.474492Z</pubDate>
+        
+        <item>
+            <title>blender流体Fluid使用中没有流体、流体穿模等一些问题的解决方法</title>
+            <link>https://suiyan.cc/2024/20240831193648.html</link>
+            <author>J.sky</author>
+            <description>blender流体Fluid使用中没有流体、流体穿模等一些问题的解决方法</description>
+            <category>blender</category>
+            <guid>https://suiyan.cc/2024/20240831193648.html</guid>
+            <pubDate>2024-08-31T19:36:48.474492Z</pubDate>
+        </item>
         
         <item>
             <title>每日原创壁纸:极简|平面|抽象|几何|色彩|护眼|壁纸</title>
@@ -94,16 +104,6 @@
             <category>原创壁纸</category>
             <guid>https://suiyan.cc/2024/20240801231859.html</guid>
             <pubDate>2024-08-01T23:18:59.180704Z</pubDate>
-        </item>
-        
-        <item>
-            <title>虽然只有我自己在用，但还是更新了碎言博客的源代码，</title>
-            <link>https://suiyan.cc/2024/20240729222957.html</link>
-            <author>J.sky</author>
-            <description>把自己许久没有更新的代码更新了一下，好久没有操作GitHub的命令了，好在都有结成环境，点点鼠标就搞定了仓库的版本更新推送。</description>
-            <category>碎言博客</category>
-            <guid>https://suiyan.cc/2024/20240729222957.html</guid>
-            <pubDate>2024-07-29T22:29:57.693581Z</pubDate>
         </item>
         
     </channel>
