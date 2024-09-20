@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-08-31T19:36:48.474492Z</pubDate>
+        <pubDate>2024-09-20T21:30:45.982005Z</pubDate>
+        
+        <item>
+            <title>Git项目的子文件夹中的内容无法同步到远程仓库的解决方法</title>
+            <link>https://suiyan.cc/2024/20240920213045.html</link>
+            <author>J.sky</author>
+            <description>Git项目的子文件夹中的内容无法同步到远程仓库的解决方法</description>
+            <category>Git</category>
+            <guid>https://suiyan.cc/2024/20240920213045.html</guid>
+            <pubDate>2024-09-20T21:30:45.982005Z</pubDate>
+        </item>
         
         <item>
             <title>blender流体Fluid使用中没有流体、流体穿模等一些问题的解决方法</title>
@@ -94,16 +104,6 @@
             <category>blender</category>
             <guid>https://suiyan.cc/2024/20240808214401.html</guid>
             <pubDate>2024-08-08T21:44:01.584251Z</pubDate>
-        </item>
-        
-        <item>
-            <title>每日原创壁纸:简约壁纸冲个凉吧笑脸球球</title>
-            <link>https://suiyan.cc/2024/20240801231859.html</link>
-            <author>J.sky</author>
-            <description>简约壁纸冲个凉吧笑脸球球</description>
-            <category>原创壁纸</category>
-            <guid>https://suiyan.cc/2024/20240801231859.html</guid>
-            <pubDate>2024-08-01T23:18:59.180704Z</pubDate>
         </item>
         
     </channel>
