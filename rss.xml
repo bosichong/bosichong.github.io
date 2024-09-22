@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-09-20T21:30:45.982005Z</pubDate>
+        <pubDate>2024-09-22T20:45:05.962082Z</pubDate>
+        
+        <item>
+            <title>Flux.1 入门必知：硬件、环境、模型</title>
+            <link>https://suiyan.cc/2024/20240922204505.html</link>
+            <author>J.sky</author>
+            <description>博文的简介</description>
+            <category>Flux.1</category>
+            <guid>https://suiyan.cc/2024/20240922204505.html</guid>
+            <pubDate>2024-09-22T20:45:05.962082Z</pubDate>
+        </item>
         
         <item>
             <title>Git项目的子文件夹中的内容无法同步到远程仓库的解决方法</title>
@@ -94,16 +104,6 @@
             <category>原创壁纸</category>
             <guid>https://suiyan.cc/2024/20240817225004.html</guid>
             <pubDate>2024-08-17T22:50:04.903199Z</pubDate>
-        </item>
-        
-        <item>
-            <title>blender日常使用中的一些技巧</title>
-            <link>https://suiyan.cc/2024/20240808214401.html</link>
-            <author>J.sky</author>
-            <description>blender日常使用中的一些技巧,不定期更新。</description>
-            <category>blender</category>
-            <guid>https://suiyan.cc/2024/20240808214401.html</guid>
-            <pubDate>2024-08-08T21:44:01.584251Z</pubDate>
         </item>
         
     </channel>
