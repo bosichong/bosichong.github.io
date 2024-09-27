@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-09-22T20:45:05.962082Z</pubDate>
+        <pubDate>2024-09-27T08:27:23.728820Z</pubDate>
+        
+        <item>
+            <title>ComfyUI 和 Flux.1 安装与使用教程</title>
+            <link>https://suiyan.cc/2024/20240927082723.html</link>
+            <author>J.sky</author>
+            <description>博文的简介</description>
+            <category>Flux.1,ComfyUI</category>
+            <guid>https://suiyan.cc/2024/20240927082723.html</guid>
+            <pubDate>2024-09-27T08:27:23.728820Z</pubDate>
+        </item>
         
         <item>
             <title>Flux.1 入门必知：硬件、环境、模型</title>
@@ -94,16 +104,6 @@
             <category>站长吐槽</category>
             <guid>https://suiyan.cc/2024/20240820220056.html</guid>
             <pubDate>2024-08-20T22:00:56.468707Z</pubDate>
-        </item>
-        
-        <item>
-            <title>每日原创壁纸:抽象几何简约色彩质感壁纸</title>
-            <link>https://suiyan.cc/2024/20240817225004.html</link>
-            <author>J.sky</author>
-            <description>抽象几何简约色彩质感壁纸</description>
-            <category>原创壁纸</category>
-            <guid>https://suiyan.cc/2024/20240817225004.html</guid>
-            <pubDate>2024-08-17T22:50:04.903199Z</pubDate>
         </item>
         
     </channel>
