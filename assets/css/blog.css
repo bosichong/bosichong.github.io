@@ -48,3 +48,7 @@ code{
 ul,ol{
     list-style: none;
 }
+
+.Blog_content{
+    color:darkgoldenrod
+}

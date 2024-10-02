@@ -110,7 +110,7 @@
     </div>
   </div>
 
-  <div class="mb-4"><p>今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错<code>_.debounce is not a function</code>!真是奇了个怪了！</p>
+  <div class="mb-4 Blog_content"><p>今天有一段代码需要用到JavaScript的防抖功能，忽的想起lodash中有这个功能函数，由于代码比较简单，只需直接引用CDN即可，便在网上搜了CDN直接引入，但是在使用_.debounce方法的时候却报错<code>_.debounce is not a function</code>!真是奇了个怪了！</p>
 <h2>问题分析及解决方法</h2>
 <p>然后我就做了一些简单的测试，通过log打印一些lodash中的方法和属性，发现<code>_.VERSION</code>可以正常的打印lodash的版本，但是<code>_.debounce</code>确报错<code>_.debounce is not a function</code>！这怎么回事？难道这个CDN的代码库里没有<code>debounce</code>这个方法？哎！还真没有！</p>
 <p>原来是我引用的CDN的代码有问题，我引用的是<code>lodash.core.min.js</code>，这是 Lodash 的核心版本，包含了 Lodash 库中的核心函数和常用功能，但不包含一些较大或较少常用的模块。所以有些功能是没有的，后来换成<code>lodash.min.js</code>,这是 Lodash 的完整版本，包含了 Lodash 库的所有函数和功能模块。这个版本的文件大小较大，适合在拥有较大资源或需要使用 Lodash 的所有功能时使用。</p>

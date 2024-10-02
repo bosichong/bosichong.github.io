@@ -110,7 +110,7 @@
     </div>
   </div>
 
-  <div class="mb-4"><p>今天闲来无事，打算创建一个react的项目玩玩，但是发现使用<code>npx create-react-app</code>无法创建react项目，如果添加sudo前缀，虽能创建，但是无法修改项目中的文件，这可奇了个怪了？！</p>
+  <div class="mb-4 Blog_content"><p>今天闲来无事，打算创建一个react的项目玩玩，但是发现使用<code>npx create-react-app</code>无法创建react项目，如果添加sudo前缀，虽能创建，但是无法修改项目中的文件，这可奇了个怪了？！</p>
 <h2>问题现场</h2>
 <p>之前可是没有这个问题的，创建react项目没有遇到过任何问题，回忆造成这种情况的原因唯一的可能性就是因为升级了macOS系统的版本，难道升级系统版本还是造成某些目录的权限丢失？</p>
 <p><code>npx create-react-app</code>之后，若是没有使用<code>sudo</code>则会因为没有写入权限创建失败，若使用了<code>sudo npx create-react-app</code>,虽能创建项目并运行，但是运行后会报错，并且无法修改任何文件，提示没有权限，IDE会只能提示让你输入管理密码后可以修改，这个可就不爽了，而且程序自动执行写入文件，一定会报错。</p>

@@ -110,7 +110,7 @@
     </div>
   </div>
 
-  <div class="mb-4"><p>next项目部署GitHub pages有两个小坑，今天就来说到说到。</p>
+  <div class="mb-4 Blog_content"><p>next项目部署GitHub pages有两个小坑，今天就来说到说到。</p>
 <h2>坑一 静态资源地址</h2>
 <p>当你build打包了静态资源之后，你会push到你的GitHub仓库中，这个时候你会发现只有index.html可以打开，其他的静态资源统统404找不到地址，查看代码发现静态资源的地址都是错误的，例如你线上的正确地址是：<code>&lt;script defer="" nomodule="" src="/favorites/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"&gt;&lt;/script&gt;</code>，因为你的仓库名称:<code>favorites</code>，所以只有添加了<code>/favorites</code>的前缀才会打开，但是实际上传之后地址是:<code>/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js</code>，少了<code>/favorites</code>,就会造成资源的404状态。</p>
 <p>解决办法：</p>
