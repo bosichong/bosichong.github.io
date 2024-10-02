@@ -49,6 +49,10 @@ ul,ol{
     list-style: none;
 }
 
-.Blog_content{
+.Blog_content a {
     color:darkgoldenrod
+}
+
+.Blog_content a:hover {
+    color:#ff7657
 }
