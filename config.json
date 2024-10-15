@@ -19,7 +19,7 @@
     "md_dir": "articles",
     "blog_page_num":12,
     "blog_test_url":"http://192.168.0.88:5500/",
-    "blog_url":"https://suiyan.cc/",
+    "blog_url":"https://www.suiyan.cc/",
     "blog_sns": [
         {
             "ico": "github",
@@ -39,7 +39,7 @@
         },
         {
             "ico": "rss",
-            "url": "https://suiyan.cc/rss.xml"
+            "url": "https://www.suiyan.cc/rss.xml"
         }
     ],
     "nav": [
@@ -65,7 +65,7 @@
             "site_name": "zhangpingcloud",
             "site_url": "https://www.zhangpingcloud.tech/",
             "site_description": "编程爱好者，帅哥一个。",
-            "site_avatar": "http://suiyan.cc/assets/images/user_circle.png"
+            "site_avatar": "http://www.suiyan.cc/assets/images/user_circle.png"
         },
         {
             "site_name": "特立独行的异类",
@@ -95,7 +95,7 @@
             "site_name": "胡涂说",
             "site_url": "https://hutusi.com/",
             "site_description": "中文独立博客，任抛星汉归园圃，留取乾坤盛酒囊。",
-            "site_avatar": "http://suiyan.cc/assets/images/user_circle.png"
+            "site_avatar": "http://www.suiyan.cc/assets/images/user_circle.png"
         },
         {
             "site_name": "诺依阁的日常记录",
@@ -111,9 +111,9 @@
         },
         {
             "site_name": "碎言",
-            "site_url": "https://suiyan.cc",
+            "site_url": "https://www.suiyan.cc",
             "site_description": "记录并分享个人学习Python、JavaScript的过程和笔记。Life is short, You need JavaScript and Python！",
-            "site_avatar": "https://suiyan.cc/assets/images/avatar.jpg"
+            "site_avatar": "https://www.suiyan.cc/assets/images/avatar.jpg"
         }
     ]
     
