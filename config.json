@@ -44,14 +44,19 @@
     ],
     "nav": [
         {
+            "ico": "wallpaper",
+            "text": "壁纸",
+            "url": "https://suipian.suiyan.cc"
+        },
+        {
             "ico": "archive",
             "text": "归档",
-            "url": "archives.html"
+            "url": "https://www.suiyan.cc/archives.html"
         },
         {
             "ico": "tags",
             "text": "标签",
-            "url": "tags.html"
+            "url": "https://www.suiyan.cc/tags.html"
         }
     ],
     "links": [
