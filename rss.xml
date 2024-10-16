@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://www.suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-09-27T08:27:23.728820Z</pubDate>
+        <pubDate>2024-10-16T22:12:06.920917Z</pubDate>
+        
+        <item>
+            <title>把博客从GitHub迁移到到了vercel</title>
+            <link>https://www.suiyan.cc/2024/20241016221206.html</link>
+            <author>J.sky</author>
+            <description>vercel的部署竟然这么简单，有点意外。</description>
+            <category>碎言博客,站长吐槽,vercel</category>
+            <guid>https://www.suiyan.cc/2024/20241016221206.html</guid>
+            <pubDate>2024-10-16T22:12:06.920917Z</pubDate>
+        </item>
         
         <item>
             <title>ComfyUI 和 Flux.1 安装与使用教程</title>
@@ -94,16 +104,6 @@
             <category>原创壁纸</category>
             <guid>https://www.suiyan.cc/2024/20240822205630.html</guid>
             <pubDate>2024-08-22T20:56:30.830361Z</pubDate>
-        </item>
-        
-        <item>
-            <title>博客聚合网站：积薪，竟然关闭了！</title>
-            <link>https://www.suiyan.cc/2024/20240820220056.html</link>
-            <author>J.sky</author>
-            <description>很早以前就觉得积薪可能会被迫关闭，此处省略了几千字，不想说什么，各位站长引以为戒，好自为之吧。</description>
-            <category>站长吐槽</category>
-            <guid>https://www.suiyan.cc/2024/20240820220056.html</guid>
-            <pubDate>2024-08-20T22:00:56.468707Z</pubDate>
         </item>
         
     </channel>
