@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://www.suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-10-16T22:12:06.920917Z</pubDate>
+        <pubDate>2024-10-21T21:38:22.671471Z</pubDate>
+        
+        <item>
+            <title>GitHub push更新总是失败，写个python脚本解决</title>
+            <link>https://www.suiyan.cc/2024/20241021213822.html</link>
+            <author>J.sky</author>
+            <description>Failed to connect to github.com port 443  的解决方法</description>
+            <category>GitHub</category>
+            <guid>https://www.suiyan.cc/2024/20241021213822.html</guid>
+            <pubDate>2024-10-21T21:38:22.671471Z</pubDate>
+        </item>
         
         <item>
             <title>把博客从GitHub迁移到到了vercel</title>
@@ -94,16 +104,6 @@
             <category>原创壁纸</category>
             <guid>https://www.suiyan.cc/2024/20240823202455.html</guid>
             <pubDate>2024-08-23T20:24:55.416678Z</pubDate>
-        </item>
-        
-        <item>
-            <title>每日原创壁纸:玻璃质感壁纸</title>
-            <link>https://www.suiyan.cc/2024/20240822205630.html</link>
-            <author>J.sky</author>
-            <description>玻璃质感壁纸</description>
-            <category>原创壁纸</category>
-            <guid>https://www.suiyan.cc/2024/20240822205630.html</guid>
-            <pubDate>2024-08-22T20:56:30.830361Z</pubDate>
         </item>
         
     </channel>
