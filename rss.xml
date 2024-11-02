@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://www.suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-11-01T07:59:26.368486Z</pubDate>
+        <pubDate>2024-11-02T08:33:14.236559Z</pubDate>
+        
+        <item>
+            <title>使用 Next.js 和 Tailwind CSS 搭建静态图片展示站点并部署到 Vercel</title>
+            <link>https://www.suiyan.cc/2024/20241102083314.html</link>
+            <author>J.sky</author>
+            <description>在本文中，我们将介绍如何使用 Next.js（纯.js 文件，不使用.jsx）和 Tailwind CSS 搭建一个静态图片展示站点。该站点将具有首页以瀑布流模式展示图片，点击图片可跳转到图片展示页面，所有图片信息存储在一个 JSON 文件中，并且为每个图片生成单独的静态页面。最后，我们将把这个站点部署到 Vercel。</description>
+            <category>vercel,next.js,tailwind.css</category>
+            <guid>https://www.suiyan.cc/2024/20241102083314.html</guid>
+            <pubDate>2024-11-02T08:33:14.236559Z</pubDate>
+        </item>
         
         <item>
             <title>AI 辅助编程：免费工具的优缺点及官网一览</title>
@@ -94,16 +104,6 @@
             <category>原创壁纸</category>
             <guid>https://www.suiyan.cc/2024/20240827211008.html</guid>
             <pubDate>2024-08-27T21:10:08.441438Z</pubDate>
-        </item>
-        
-        <item>
-            <title>每日原创壁纸:抽象|质感|光影|清新|清爽|壁纸</title>
-            <link>https://www.suiyan.cc/2024/20240826202500.html</link>
-            <author>J.sky</author>
-            <description>抽象|质感|光影|清新|清爽|壁纸</description>
-            <category>原创壁纸</category>
-            <guid>https://www.suiyan.cc/2024/20240826202500.html</guid>
-            <pubDate>2024-08-26T20:25:00.126677Z</pubDate>
         </item>
         
     </channel>

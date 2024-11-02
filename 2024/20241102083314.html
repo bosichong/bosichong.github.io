@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="壁纸,设计师,Blender,Python,JavaScript,程序员,人生苦短,我用Python" name="keywords" />
-    <meta content="记录并分享个人学习Python、blender的过程和笔记,定期分享原创壁纸。Life is short, You need blender and Python！" name="description" />
+    <meta content="vercelnext.jstailwind.css" name="keywords" />
+    <meta content="在本文中，我们将介绍如何使用 Next.js（纯.js 文件，不使用.jsx）和 Tailwind CSS 搭建一个静态图片展示站点。该站点将具有首页以瀑布流模式展示图片，点击图片可跳转到图片展示页面，所有图片信息存储在一个 JSON 文件中，并且为每个图片生成单独的静态页面。最后，我们将把这个站点部署到 Vercel。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      List Pages 第12页 | SuiYan 碎言
+      使用 Next.js 和 Tailwind CSS 搭建静态图片展示站点并部署到 Vercel | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -99,221 +99,225 @@
     <div
       class="container max-w-3xl mx-auto leading-normal text-lg font-extralight"
     >
-      <div class="p-4"> 
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230513104151.html"
-          ><h3 class="list-title text-2xl">display:none没有隐藏元素所占空间的原因</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">今天想写一段前端的效果，然后就手动使用原生JavaScript生成了一些HTML的DOM，其中有一些是带有`display:none;`隐藏的css属性的，我的本意是想隐藏这些元素并且不占用空间，但是使用JavaScript动态生成的DOM，动态添加的css属性`display:none;`的话，元素就会发生只隐藏但空间占用的情况还是存在。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230513104151.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-13T10:41:51.000000Z</span></p>
-      </div>
+      <div class="p-4">
+<!-- Template Main CSS File -->
+<link href="https://www.suiyan.cc/assets/css/blog.css" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://www.suiyan.cc/assets/css/default.min.css">
+<script src="https://www.suiyan.cc/assets/js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+  <div class="mb-4">
+    <h1 class="text-3xl font-medium">使用 Next.js 和 Tailwind CSS 搭建静态图片展示站点并部署到 Vercel</h1>
+    <div class="text-sm flex flex-wrap my-2">
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2024-11-02T08:33:14.236559Z"><span
+        class="cr-time"
+        >2024-11-02T08:33:14.236559Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2024-11-02T08:44:36.040905Z"><span class="up-time">2024-11-02T08:44:36.040905Z</span></div>
+      · Tag:   vercel  next.js  tailwind.css 
+      </small>
     </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230513082050.html"
-          ><h3 class="list-title text-2xl">再谈TailwindCSS的使用心得</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">TailwindCSS上手确实很好用，有点明显，但是坑也挺多的。本来打算使用TailwindCSS制作一个全新的博客主题，但是在实际的使用过程中有一些不爽细节不吐不快。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230513082050.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-13T08:20:50.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230511191515.html"
-          ><h3 class="list-title text-2xl">安装了Tailwind CSS IntelliSense插件 vscode没有代码提示</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">今天在vscode中安装Tailwind CSS IntelliSense这个插件，但是安装完后，编写HTML中的class的时候并没有得到tailwindcss的代码提示，看来配置项设置有问题。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230511191515.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-11T19:15:15.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230511182912.html"
-          ><h3 class="list-title text-2xl">Tailwind CSS的安装配置和体验</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">Tailwind CSS是一种和传统CSS编写方式不一样的开发模式，Tailwind CSS编写大量的css的class，预置超多的css样式，让开发者可以通过在HTML的class中以命名的方式去调用这些class，几乎可以不用去写style的代码，只使用class的名称来代替。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230511182912.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-11T18:29:12.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230509201037.html"
-          ><h3 class="list-title text-2xl">Git提示 ! [remote rejected] master -> master (failure)</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">Git提示 ! [remote rejected] master -> master (failure) 的解决办法。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230509201037.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-09T20:10:37.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230509101659.html"
-          ><h3 class="list-title text-2xl">使用Fetch发送Ajax请求</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">很久以前，在JavaScript中发送请求或者获取资源的时候很多人都是用的是`jQuery`，直到最近一直使用`axios`，但有的时候不想使用第三方的请求的库，这个时候你可以试试Fetch。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230509101659.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-09T10:16:59.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230508213333.html"
-          ><h3 class="list-title text-2xl">读《写作是门手艺》的思考</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">这阵子一直在读编程相关的工具书，枯燥乏味的很！昨天偶然间在哪里？不记得是哪里看到的有人推荐《写作是门手艺》这本书，赶紧去京东淘了一本，今天就收到了。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230508213333.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-08T21:33:33.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230508090813.html"
-          ><h3 class="list-title text-2xl">Link-Validator 检测网站友情链接的JavaScript脚本</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">Link-Validator 一个检测对方网站友情链接页面是否添加自己网站链接的JavaScript脚本。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230508090813.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-08T09:08:13.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230507204135.html"
-          ><h3 class="list-title text-2xl">css链接悬停时滑动的下划线效果</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">要创建链接悬停时滑动的下划线效果，可以向锚点标记添加伪元素，并使用CSS过渡动画来显示它。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230507204135.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-07T20:41:35.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230507101510.html"
-          ><h3 class="list-title text-2xl">使用CSS伪元素制作动感超酷的hover动画</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">css有很多神奇的效果都是使用CSS伪元素利用视觉差来制作的，以前没怎么深入的研究过css，这次复习css的知识点才恍然大悟，原来css这么cool。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230507101510.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-07T10:15:10.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230504201422.html"
-          ><h3 class="list-title text-2xl">CSS动画animation的简单应用</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">要在CSS中创建动画，我们可以使用animation属性。该属性允许我们指定动画的关键帧、持续时间、时间函数、延迟和迭代次数。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230504201422.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-04T20:14:22.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-<article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg my-4 hover:animate-pulse">
-    <div class="card-body">
-      <div>
-        <a href="https://www.suiyan.cc/2023/20230504105514.html"
-          ><h3 class="list-title text-2xl">css的过渡效果transition的使用</h3></a
-        >
-      </div>
-      <p class="my-4 text-base">CSS的transition允许您对CSS属性的更改进行动画处理，这对于在网站上创建平滑和视觉上吸引人的效果非常有用。</p>
-      <div class="flex items-center text-base">
-        <a href="https://www.suiyan.cc/2023/20230504105514.html" class="block justify-start w-1/2">阅读全文 ➞</a>
-      <p class="flex justify-end w-1/2">发表于:<span class="cr-time">2023-05-04T10:55:14.000000Z</span></p>
-      </div>
-    </div>
-</article>
-
-
-
-<div class="flex flex-nowrap justify-items-center px-8 my-8">
-  <a href="list_11.html"  class="basis-1/3 text-left">
-    <!-- Component: Base secondary basic button -->
-<button class="hover:animate-bounce inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none">
-  <span>Prev</span>
-</button>
-<!-- End Base secondary basic button -->
-  </a>
-
-  <div class="w-full basis-1/3 text-center" style="line-height: 48px">
-    12 / 22
   </div>
 
-  <a href="list_13.html" class="basis-1/3 text-right">
-    <!-- Component: Base secondary basic button -->
-<button class="hover:animate-bounce inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap bg-zinc-50 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 focus:bg-zinc-200 focus:text-zinc-700 disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-100 disabled:text-zinc-400 disabled:shadow-none">
-  <span>Next</span>
-</button>
-<!-- End Base secondary basic button -->
-  </a>
-</div>
+  <div class="mb-4 Blog_content"><p>在本文中，我们将介绍如何使用 Next.js（纯.js 文件，不使用.jsx）和 Tailwind CSS 搭建一个静态图片展示站点。该站点将具有首页以瀑布流模式展示图片，点击图片可跳转到图片展示页面，所有图片信息存储在一个 JSON 文件中，并且为每个图片生成单独的静态页面。最后，我们将把这个站点部署到 Vercel。</p>
+<p>效果展示：</p>
+<p><img alt="抽象创意壁纸" src="https://suiyan.cc/assets/images/2024/sp.png" /></p>
+<h2>一、建站构思</h2>
+<h3>（一）功能需求</h3>
+<p>首页以瀑布流布局展示图片，让用户可以快速浏览多个图片。
+点击图片能够跳转到对应的图片展示页面，显示图片的详细信息，包括标签和简介。
+所有图片存储在特定目录下，方便管理和维护。
+使用 JSON 文件存储图片的相关信息，便于动态读取和生成页面。</p>
+<h3>（二）技术选择</h3>
+<p>Next.js：Next.js 是一个用于构建服务器端渲染和静态生成的 React 框架。它提供了很多强大的功能，如路由、代码分割、静态导出等，非常适合构建高性能的 Web 应用。
+Tailwind CSS：Tailwind CSS 是一个实用工具类优先的 CSS 框架，可以快速构建美观的用户界面。它提供了丰富的预定义样式类，使得开发过程更加高效。
+JSON 文件：用于存储图片的相关信息，方便读取和管理。
+Vercel：一个优秀的云平台，用于部署 Next.js 应用，提供快速的部署、全球 CDN 加速和自动扩展等功能。</p>
+<h2>二、代码编写步骤</h2>
+<h3>（一）项目初始化</h3>
+<p>创建一个 Next.js 项目：
+确保已经安装了npx（如果使用npm版本大于 5.2.0），然后运行以下命令创建项目：</p>
+<pre><code>npx create-next-app picture-gallery-app
+</code></pre>
+<p>进入项目目录：</p>
+<pre><code>cd picture-gallery-app
+</code></pre>
+<p>安装 Tailwind CSS：</p>
+<p>按照官方文档安装依赖：</p>
+<pre><code>npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+</code></pre>
+<p>在tailwind.config.js文件中，配置内容路径：</p>
+<pre><code>module.exports = {
+content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+],
+theme: {
+    extend: {},
+},
+plugins: [],
+};
+</code></pre>
+<p>在styles/globals.css中导入 Tailwind 的基础样式：</p>
+<pre><code>@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre>
+<h3>（二）创建图片数据 JSON 文件</h3>
+<p>在项目根目录下创建一个images.json文件，示例结构如下：</p>
+<pre><code>[
+{
+    "imagePath": "/images/image1.jpg",
+    "tags": ["nature", "landscape"],
+    "description": "A beautiful landscape photo."
+},
+{
+    "imagePath": "/images/image2.jpg",
+    "tags": ["city", "architecture"],
+    "description": "An amazing architecture in the city."
+}
+]
+</code></pre>
+<h3>（三）创建首页组件（pages/index.js）</h3>
+<pre><code>import Link from 'next/link';
+import data from '../images.json';
+import Image from 'next/image';
+
+const HomePage = () =&gt; {
+return (
+    &lt;div className="container mx-auto px-4 py-8"&gt;
+    &lt;h1 className="text-3xl font-bold mb-8"&gt;Picture Gallery&lt;/h1&gt;
+    &lt;div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"&gt;
+        {data.map((image, index) =&gt; (
+        &lt;Link key={index} href={`/image/${index}`}&gt;
+            &lt;a className="block relative"&gt;
+            &lt;Image
+                src={image.imagePath}
+                alt={image.description}
+                width={300}
+                height={200}
+                layout="responsive"
+                className="object-cover w-full h-full rounded-lg"
+            /&gt;
+            &lt;/a&gt;
+        &lt;/Link&gt;
+        ))}
+    &lt;/div&gt;
+    &lt;/div&gt;
+);
+};
+
+export default HomePage;
+</code></pre>
+<h3>（四）创建单个图片展示页面组件（pages/image/[id].js）</h3>
+<pre><code>import data from '../../images.json';
+import Image from 'next/image';
+
+const ImagePage = ({ params }) =&gt; {
+const { id } = params;
+const image = data[id];
+return (
+    &lt;div className="container mx-auto px-4 py-8"&gt;
+    &lt;Link href="/"&gt;
+        &lt;a className="text-blue-500 mb-4"&gt;Back to Home&lt;/a&gt;
+    &lt;/Link&gt;
+    &lt;Image
+        src={image.imagePath}
+        alt={image.description}
+        width={600}
+        height={400}
+        layout="responsive"
+        className="object-cover w-full h-full rounded-lg mb-4"
+    /&gt;
+    &lt;h2 className="text-2xl font-bold mb-2"&gt;{image.description}&lt;/h2&gt;
+    &lt;p className="text-gray-700"&gt;Tags: {image.tags.join(', ')}&lt;/p&gt;
+    &lt;/div&gt;
+);
+};
+
+export default ImagePage;
+</code></pre>
+<h2>三、部署到 Vercel</h2>
+<h3>（一）前期准备</h3>
+<p>确保你的 Next.js 项目已经开发完成并且在本地能够正常运行。项目结构应该包括 package.json 文件、页面组件、样式文件等。
+如果你的项目使用了环境变量，确保将敏感的环境变量设置为在 Vercel 上可配置的变量，或者使用 .env.local 文件来存储本地开发环境变量，而在生产环境中使用 Vercel 的环境变量配置功能。</p>
+<h3>（二）连接 Vercel</h3>
+<p>注册并登录 Vercel。
+在 Vercel 控制台，点击 “New Project”（新建项目）按钮。
+选择 “Import Git Repository”（导入 Git 仓库）选项。如果你的项目已经托管在 Git 平台（如 GitHub、GitLab、Bitbucket 等），Vercel 会自动检测到你的仓库并列出。选择你的 Next.js 项目仓库。</p>
+<h3>（三）配置项目</h3>
+<p>Vercel 会自动检测项目的框架为 Next.js，并显示一些默认的配置选项。
+在 “Project Settings”（项目设置）中，可以设置项目名称、环境变量、构建和输出目录等。
+如果你的项目有特定的构建命令或环境变量需求，可以在 “Build &amp; Development Settings”（构建和开发设置）中进行配置。例如，默认情况下，Vercel 会使用 npm install 和 npm run build 作为构建命令，但如果你的项目有不同的构建流程，可以在这里进行修改。</p>
+<h3>（四）部署项目</h3>
+<p>完成配置后，点击 “Deploy”（部署）按钮。Vercel 会开始克隆你的 Git 仓库、安装依赖、构建项目，并将构建后的项目部署到 Vercel 的全球 CDN 网络上。
+部署过程中，你可以在控制台查看构建日志和部署进度。一旦部署完成，Vercel 会提供一个项目的访问 URL，你可以通过这个 URL 访问你的 Next.js 项目。
+通过以上步骤，我们成功地使用 Next.js 和 Tailwind CSS 搭建了一个静态图片展示站点，并将其部署到了 Vercel。这个站点具有良好的用户体验和性能，可以让用户轻松浏览和查看图片。以上就是一个简单的 Next.js 静态图片展示站点的搭建和部署过程，但着只是一个简单的示例，你可以根据自己的需求和项目特点进行更复杂的定制和扩展。</p>
+<p>项目演示地址：https://suipian.suiyan.cc</p>
+<p>项目源码地址：https://github.com/bosichong/suipian</p></div>
+
+  <div class="blog_footer">
+    <div class="prev_next flex justify-between my-4">
+      
+      <a href="https://www.suiyan.cc/2024/20241101075926.html" class="text-accent text-md"
+        ><button class="btn"> prev </button></a
+      >
+       
+    </div>
+    
+    <div class="related">
+      <p>相关文章：</p>
+      <ul>
+        
+        <li class="list-group-item">
+          <a href="https://www.suiyan.cc/2024/20241016221206.html" class="link link-hover"
+            ><span>把博客从GitHub迁移到到了vercel</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://www.suiyan.cc/2023/20230820094408.html" class="link link-hover"
+            ><span>Next项目部署GitHub pages的一些坑</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://www.suiyan.cc/2023/20230812135025.html" class="link link-hover"
+            ><span>仅用了几个小时就使用next.js重构博客的所有功能</span></a
+          >
+        </li>
+        
+      </ul>
+    </div>
+    
+    <!-- <div class="mb-4 my-2 flex flex-wrap items-center justify-center gap-2">
+      <button id="load-comments-btn" class="btn btn-wide">加载评论</button>
+      <div id="comments-container" class="w-full"></div>
+    </div> -->
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+  data-repo="bosichong/bosichong.github.io"
+  data-repo-id="R_kgDOJLHieA"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOJLHieM4CWhL8"
+  data-mapping="title"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+
+
+
+
 
 </div>
 
