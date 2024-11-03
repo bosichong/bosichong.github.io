@@ -113,7 +113,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2024-11-03T08:50:39.953144Z"><span
         class="cr-time"
         >2024-11-03T08:50:39.953144Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2024-11-03T09:01:54.379807Z"><span class="up-time">2024-11-03T09:01:54.379807Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2024-11-03T21:20:37.762094Z"><span class="up-time">2024-11-03T21:20:37.762094Z</span></div>
       · Tag:   AI辅助编程 
       </small>
     </div>
@@ -127,7 +127,7 @@
 <li><strong>代码补全</strong>
 当你在编码的时候，是否常常为如何快速准确地输入代码而烦恼？MarsCode 的代码补全功能就像是你的贴心助手。它不仅可以为你提供单行或多行代码推荐，还能根据你的注释生成相应的代码片段。比如，当你需要编写一个返回成功响应的代码时，原本你可能需要手动输入以下代码：</li>
 </ol>
-<p>```python
+<p>```
 from flask import jsonify</p>
 <p>@app.route('/success')
 def success():
@@ -139,12 +139,11 @@ def success():
 <li><strong>单测生成</strong>
 对于提升代码质量而言，单元测试至关重要。MarsCode 可以为你选中的函数生成单元测试，这大大提高了单测覆盖率。就像在处理注册函数时，假设我们有一个简单的用户注册函数：</li>
 </ol>
-<p><code>python
-def register_user(username, password):
+<p><code>def register_user(username, password):
     # 这里是注册逻辑，比如插入数据库等
     return True</code></p>
 <p>MarsCode 能快速生成合适的单测，如：</p>
-<p>```python
+<p>```
 import unittest</p>
 <p>class TestRegister(unittest.TestCase):
     def test_register_user(self):
@@ -162,32 +161,27 @@ import unittest</p>
 在修改或重构代码时，MarsCode 的代码补全 Pro Beta 功能大放异彩。例如，你有一段旧的代码用于计算两个数的和：</p>
 </li>
 </ol>
-<p><code>python
-def add_numbers(a, b):
+<p><code>def add_numbers(a, b):
     return a + b</code></p>
 <p>现在你想修改它，使其可以处理多个数的相加。MarsCode 能根据你的编辑行为，预测改动点并给出推荐，可能会建议你将函数修改为：</p>
-<p><code>python
-def add_numbers(*nums):
+<p><code>def add_numbers(*nums):
     return sum(nums)</code></p>
 <p>让代码的修改和重构不再是难题。</p>
 <ol>
 <li><strong>生成注释</strong>
 清晰的注释是代码可读性的保障，也是团队协同开发的关键。MarsCode 可以为函数或每行代码生成注释，让你的代码一目了然。比如对于以下函数：</li>
 </ol>
-<p><code>python
-def calculate_area(length, width):
+<p><code>def calculate_area(length, width):
     return length * width</code></p>
 <p>MarsCode 可能会生成注释：“此函数用于计算矩形的面积，接收长度和宽度作为参数，并返回面积值。”无论是新加入项目的成员还是未来的自己，都能轻松理解代码的含义。</p>
 <ol>
 <li><strong>错误修复</strong>
 代码中的错误就像隐藏在暗处的小怪兽，而 MarsCode 就是超级英雄。它能快速发现代码问题，并给出优化建议。比如，以下代码存在潜在的类型错误：</li>
 </ol>
-<p><code>python
-def concat_strings(str1, str2):
+<p><code>def concat_strings(str1, str2):
     return str1 + 2  # 这里应该是 str2 而不是 2</code></p>
 <p>MarsCode 会指出错误并建议修改为正确的代码：</p>
-<p><code>python
-def concat_strings(str1, str2):
+<p><code>def concat_strings(str1, str2):
     return str1 + str2</code></p>
 <p>帮助你轻松打败这些小怪兽，让代码更加健壮。</p>
 <ol>
