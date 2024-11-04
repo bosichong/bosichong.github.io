@@ -113,7 +113,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2024-11-04T09:22:09.467325Z"><span
         class="cr-time"
         >2024-11-04T09:22:09.467325Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2024-11-04T09:28:43.169185Z"><span class="up-time">2024-11-04T09:28:43.169185Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2024-11-04T09:31:41.659464Z"><span class="up-time">2024-11-04T09:31:41.659464Z</span></div>
       · Tag:   next.js  react  tailweind.css 
       </small>
     </div>
@@ -160,18 +160,14 @@
 <h3>（一）项目初始化</h3>
 <ol>
 <li>创建 Next.js 项目：
-    <code>bash
-    npx create-next-app todo-app-with-edit</code>
+    <code>npx create-next-app todo-app-with-edit</code>
     然后进入项目目录：
-    <code>bash
-    cd todo-app-with-edit</code></li>
+    <code>cd todo-app-with-edit</code></li>
 <li>安装 Tailwind CSS：
-    <code>bash
-    npm install -D tailwindcss postcss autoprefixer
+    <code>npm install -D tailwindcss postcss autoprefixer
     npx tailwindcss init -p</code>
     在<code>tailwind.config.js</code>中配置内容路径：
-    <code>javascript
-    module.exports = {
+    <code>module.exports = {
       content: [
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
@@ -182,8 +178,7 @@
       plugins: [],
     };</code>
     在<code>styles/globals.css</code>中导入 Tailwind 基础样式：
-    <code>css
-    @tailwind base;
+    <code>@tailwind base;
     @tailwind components;
     @tailwind utilities;</code></li>
 </ol>
@@ -191,7 +186,7 @@
 <ol>
 <li>
 <p><strong>任务输入组件（<code>components/TaskInput.js</code>）</strong>
-    ```javascript
+    ```
     // 导入 React 和 useState 钩子
     import React, { useState } from 'react';</p>
 <p>const TaskInput = ({ onAddTask }) =&gt; {
@@ -240,7 +235,7 @@
   );
 };</p>
 <p>export default TaskInput;
-<code>2. **任务项组件（`components/TaskItem.js`）**</code>javascript
+<code>2. **任务项组件（`components/TaskItem.js`）**</code>
 import React, { useState } from 'react';</p>
 <p>const TaskItem = ({ task, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
   const [isEditing, setIsEditing] = useState(false);
@@ -314,7 +309,7 @@ import React, { useState } from 'react';</p>
   );
 };</p>
 <p>export default TaskItem;
-<code>3. **任务列表组件（`components/TaskList.js`）**</code>javascript
+<code>3. **任务列表组件（`components/TaskList.js`）**</code>
 import React from 'react';
 import TaskItem from './TaskItem';</p>
 <p>const TaskList = ({ tasks, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
@@ -331,7 +326,7 @@ import TaskItem from './TaskItem';</p>
 </li>
 </ol>
 <h3>（三）页面组件（<code>pages/index.js</code>）</h3>
-<p>```javascript
+<p>```
 import React, { useState, useEffect } from 'react';
 import TaskInput from '../components/TaskInput';
 import TaskList from '../components/TaskList';</p>
