@@ -113,7 +113,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2024-11-04T09:22:09.467325Z"><span
         class="cr-time"
         >2024-11-04T09:22:09.467325Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2024-11-04T09:31:41.659464Z"><span class="up-time">2024-11-04T09:31:41.659464Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2024-11-04T09:40:53.183532Z"><span class="up-time">2024-11-04T09:40:53.183532Z</span></div>
       · Tag:   next.js  react  tailweind.css 
       </small>
     </div>
@@ -159,36 +159,42 @@
 <h2>二、项目创建过程</h2>
 <h3>（一）项目初始化</h3>
 <ol>
-<li>创建 Next.js 项目：
-    <code>npx create-next-app todo-app-with-edit</code>
-    然后进入项目目录：
-    <code>cd todo-app-with-edit</code></li>
-<li>安装 Tailwind CSS：
-    <code>npm install -D tailwindcss postcss autoprefixer
-    npx tailwindcss init -p</code>
-    在<code>tailwind.config.js</code>中配置内容路径：
-    <code>module.exports = {
-      content: [
-        "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}",
-      ],
-      theme: {
-        extend: {},
-      },
-      plugins: [],
-    };</code>
-    在<code>styles/globals.css</code>中导入 Tailwind 基础样式：
-    <code>@tailwind base;
-    @tailwind components;
-    @tailwind utilities;</code></li>
+<li>创建 Next.js 项目：</li>
+<li>
+<p><code>npx create-next-app todo-app-with-edit</code></p>
+<p>然后进入项目目录：</p>
+<p><code>cd todo-app-with-edit</code></p>
+</li>
+<li>
+<p>安装 Tailwind CSS：</p>
+</li>
+<li>
+<p><code>npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p</code></p>
+<p>在<code>tailwind.config.js</code>中配置内容路径：</p>
+<p><code>module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};</code></p>
+<p>在<code>styles/globals.css</code>中导入 Tailwind 基础样式：</p>
+<p><code>@tailwind base;
+@tailwind components;
+@tailwind utilities;</code></p>
+</li>
 </ol>
 <h3>（二）创建组件</h3>
 <ol>
 <li>
-<p><strong>任务输入组件（<code>components/TaskInput.js</code>）</strong>
-    ```
-    // 导入 React 和 useState 钩子
-    import React, { useState } from 'react';</p>
+<p><strong>任务输入组件（<code>components/TaskInput.js</code>）</strong></p>
+<p>```
+// 导入 React 和 useState 钩子
+import React, { useState } from 'react';</p>
 <p>const TaskInput = ({ onAddTask }) =&gt; {
   // 状态来存储任务标题和描述
   const [title, setTitle] = useState('');
@@ -235,7 +241,11 @@
   );
 };</p>
 <p>export default TaskInput;
-<code>2. **任务项组件（`components/TaskItem.js`）**</code>
+```</p>
+</li>
+<li>
+<p><strong>任务项组件（<code>components/TaskItem.js</code>）</strong></p>
+<p>```
 import React, { useState } from 'react';</p>
 <p>const TaskItem = ({ task, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
   const [isEditing, setIsEditing] = useState(false);
@@ -309,7 +319,11 @@ import React, { useState } from 'react';</p>
   );
 };</p>
 <p>export default TaskItem;
-<code>3. **任务列表组件（`components/TaskList.js`）**</code>
+```</p>
+</li>
+<li>
+<p><strong>任务列表组件（<code>components/TaskList.js</code>）</strong></p>
+<p>```
 import React from 'react';
 import TaskItem from './TaskItem';</p>
 <p>const TaskList = ({ tasks, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
