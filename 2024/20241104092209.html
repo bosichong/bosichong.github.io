@@ -113,7 +113,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2024-11-04T09:22:09.467325Z"><span
         class="cr-time"
         >2024-11-04T09:22:09.467325Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2024-11-04T09:40:53.183532Z"><span class="up-time">2024-11-04T09:40:53.183532Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2024-11-04T09:46:14.307784Z"><span class="up-time">2024-11-04T09:46:14.307784Z</span></div>
       · Tag:   next.js  react  tailweind.css 
       </small>
     </div>
@@ -159,236 +159,255 @@
 <h2>二、项目创建过程</h2>
 <h3>（一）项目初始化</h3>
 <ol>
-<li>创建 Next.js 项目：</li>
 <li>
-<p><code>npx create-next-app todo-app-with-edit</code></p>
+<p>创建 Next.js 项目：</p>
+<pre><code>npx create-next-app todo-app-with-edit
+</code></pre>
 <p>然后进入项目目录：</p>
-<p><code>cd todo-app-with-edit</code></p>
+<pre><code>cd todo-app-with-edit
+</code></pre>
 </li>
 <li>
 <p>安装 Tailwind CSS：</p>
-</li>
-<li>
-<p><code>npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p</code></p>
+<pre><code>npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+</code></pre>
 <p>在<code>tailwind.config.js</code>中配置内容路径：</p>
-<p><code>module.exports = {
-  content: [
+<pre><code>module.exports = {
+content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
+],
+theme: {
     extend: {},
-  },
-  plugins: [],
-};</code></p>
+},
+plugins: [],
+};
+</code></pre>
 <p>在<code>styles/globals.css</code>中导入 Tailwind 基础样式：</p>
-<p><code>@tailwind base;
+<pre><code>@tailwind base;
 @tailwind components;
-@tailwind utilities;</code></p>
+@tailwind utilities;
+</code></pre>
 </li>
 </ol>
 <h3>（二）创建组件</h3>
 <ol>
 <li>
 <p><strong>任务输入组件（<code>components/TaskInput.js</code>）</strong></p>
-<p>```
-// 导入 React 和 useState 钩子
-import React, { useState } from 'react';</p>
-<p>const TaskInput = ({ onAddTask }) =&gt; {
-  // 状态来存储任务标题和描述
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');</p>
-<p>const handleSubmit = (e) =&gt; {
+<pre><code>// 导入 React 和 useState 钩子
+import React, { useState } from 'react';
+
+const TaskInput = ({ onAddTask }) =&gt; {
+// 状态来存储任务标题和描述
+const [title, setTitle] = useState('');
+const [description, setDescription] = useState('');
+
+const handleSubmit = (e) =&gt; {
     e.preventDefault();
     // 检查标题是否为空
     if (title.trim()!== '') {
-      // 创建新的任务对象
-      const newTask = {
+    // 创建新的任务对象
+    const newTask = {
         id: Date.now(),
         title,
         description,
         completed: false
-      };
-      onAddTask(newTask);
-      setTitle('');
-      setDescription('');
+    };
+    onAddTask(newTask);
+    setTitle('');
+    setDescription('');
     }
-  };</p>
-<p>return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Add New Task</h2>
-      <input
+};
+
+return (
+    &lt;form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md"&gt;
+    &lt;h2 className="text-2xl font-bold mb-4"&gt;Add New Task&lt;/h2&gt;
+    &lt;input
         type="text"
         placeholder="Task Title"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) =&gt; setTitle(e.target.value)}
         className="w-full border border-gray-300 p-2 rounded mb-4"
-      /&gt;
-      <textarea
+    /&gt;
+    &lt;textarea
         placeholder="Task Description"
         value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={(e) =&gt; setDescription(e.target.value)}
         className="w-full border border-gray-300 p-2 rounded mb-4"
-      /&gt;
-      <button
+    /&gt;
+    &lt;button
         type="submit"
         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
+    &gt;
         Add Task
-      </button>
-    </form>
-  );
-};</p>
-<p>export default TaskInput;
-```</p>
+    &lt;/button&gt;
+    &lt;/form&gt;
+);
+};
+
+export default TaskInput;
+</code></pre>
 </li>
 <li>
 <p><strong>任务项组件（<code>components/TaskItem.js</code>）</strong></p>
-<p>```
-import React, { useState } from 'react';</p>
-<p>const TaskItem = ({ task, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedTitle, setEditedTitle] = useState(task.title);
-  const [editedDescription, setEditedDescription] = useState(task.description);</p>
-<p>const handleEditToggle = () =&gt; {
+<pre><code>import React, { useState } from 'react';
+
+const TaskItem = ({ task, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
+const [isEditing, setIsEditing] = useState(false);
+const [editedTitle, setEditedTitle] = useState(task.title);
+const [editedDescription, setEditedDescription] = useState(task.description);
+
+const handleEditToggle = () =&gt; {
     setIsEditing(!isEditing);
-  };</p>
-<p>const handleSave = () =&gt; {
+};
+
+const handleSave = () =&gt; {
     const updatedTask = {
     ...task,
-      title: editedTitle,
-      description: editedDescription
+    title: editedTitle,
+    description: editedDescription
     };
     onEditTask(updatedTask);
     setIsEditing(false);
-  };</p>
-<p>return (
-    <div className="bg-white p-4 rounded shadow-md mb-4">
-      {isEditing? (
+};
+
+return (
+    &lt;div className="bg-white p-4 rounded shadow-md mb-4"&gt;
+    {isEditing? (
         &lt;&gt;
-          <input
+        &lt;input
             type="text"
             value={editedTitle}
-            onChange={(e) => setEditedTitle(e.target.value)}
+            onChange={(e) =&gt; setEditedTitle(e.target.value)}
             className="w-full border border-gray-300 p-2 rounded mb-2"
-          /&gt;
-          <textarea
+        /&gt;
+        &lt;textarea
             value={editedDescription}
-            onChange={(e) => setEditedDescription(e.target.value)}
+            onChange={(e) =&gt; setEditedDescription(e.target.value)}
             className="w-full border border-gray-300 p-2 rounded mb-2"
-          /&gt;
-          <button
+        /&gt;
+        &lt;button
             onClick={handleSave}
             className="bg-green-500 text-white px-4 py-2 rounded mr-2"
-          >
+        &gt;
             Save
-          </button>
-          <button
+        &lt;/button&gt;
+        &lt;button
             onClick={handleEditToggle}
             className="bg-gray-500 text-white px-4 py-2 rounded"
-          >
+        &gt;
             Cancel
-          </button>
-      <br />
-      ) : (
+        &lt;/button&gt;
+        
+    ) : (
         &lt;&gt;
-          <h3 className={<code>text-xl font-bold ${task.completed? 'line-through' : ''}</code>}>{task.title}</h3>
-          <p className="text-gray-700">{task.description}</p>
-          <button
-            onClick={() => onToggleComplete(task.id)}
-            className={<code>${task.completed? 'bg-green-500' : 'bg-yellow-500'} text-white px-4 py-2 rounded mt-2 mr-2</code>}
-          &gt;
+        &lt;h3 className={`text-xl font-bold ${task.completed? 'line-through' : ''}`}&gt;{task.title}&lt;/h3&gt;
+        &lt;p className="text-gray-700"&gt;{task.description}&lt;/p&gt;
+        &lt;button
+            onClick={() =&gt; onToggleComplete(task.id)}
+            className={`${task.completed? 'bg-green-500' : 'bg-yellow-500'} text-white px-4 py-2 rounded mt-2 mr-2`}
+        &gt;
             {task.completed? 'Completed' : 'Mark as Completed'}
-          </button>
-          <button
+        &lt;/button&gt;
+        &lt;button
             onClick={handleEditToggle}
             className="bg-blue-500 text-white px-4 py-2 rounded mt-2 mr-2"
-          >
+        &gt;
             Edit
-          </button>
-          <button
-            onClick={() => onDeleteTask(task.id)}
+        &lt;/button&gt;
+        &lt;button
+            onClick={() =&gt; onDeleteTask(task.id)}
             className="bg-red-500 text-white px-4 py-2 rounded mt-2"
-          &gt;
+        &gt;
             Delete
-          </button>
-      <br />
-      )}
-    </div>
-  );
-};</p>
-<p>export default TaskItem;
-```</p>
+        &lt;/button&gt;
+        
+    )}
+    &lt;/div&gt;
+);
+};
+
+export default TaskItem;
+</code></pre>
 </li>
 <li>
 <p><strong>任务列表组件（<code>components/TaskList.js</code>）</strong></p>
-<p>```
-import React from 'react';
-import TaskItem from './TaskItem';</p>
-<p>const TaskList = ({ tasks, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
-  return (
-    <div className="container mx-auto px-4">
-      {tasks.map(task =&gt; (
-        <TaskItem key={task.id} task={task} onToggleComplete={onToggleComplete} onEditTask={onEditTask} onDeleteTask={onDeleteTask} />
-      ))}
-    </div>
-  );
-};</p>
-<p>export default TaskList;
-```</p>
+<pre><code>import React from 'react';
+import TaskItem from './TaskItem';
+
+const TaskList = ({ tasks, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
+return (
+    &lt;div className="container mx-auto px-4"&gt;
+    {tasks.map(task =&gt; (
+        &lt;TaskItem key={task.id} task={task} onToggleComplete={onToggleComplete} onEditTask={onEditTask} onDeleteTask={onDeleteTask} /&gt;
+    ))}
+    &lt;/div&gt;
+);
+};
+
+export default TaskList;
+</code></pre>
 </li>
 </ol>
 <h3>（三）页面组件（<code>pages/index.js</code>）</h3>
-<p>```
-import React, { useState, useEffect } from 'react';
+<pre><code>import React, { useState, useEffect } from 'react';
 import TaskInput from '../components/TaskInput';
-import TaskList from '../components/TaskList';</p>
-<p>const HomePage = () =&gt; {
-  const [tasks, setTasks] = useState([]);</p>
-<p>useEffect(() =&gt; {
+import TaskList from '../components/TaskList';
+
+const HomePage = () =&gt; {
+const [tasks, setTasks] = useState([]);
+
+useEffect(() =&gt; {
     // 从本地存储获取任务数据
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     setTasks(storedTasks);
-  }, []);</p>
-<p>const addTask = (newTask) =&gt; {
+}, []);
+
+const addTask = (newTask) =&gt; {
     setTasks([...tasks, newTask]);
-  };</p>
-<p>const toggleComplete = (taskId) =&gt; {
+};
+
+const toggleComplete = (taskId) =&gt; {
     setTasks(tasks.map(task =&gt; {
-      if (task.id === taskId) {
+    if (task.id === taskId) {
         return {
         ...task,
-          completed:!task.completed
+        completed:!task.completed
         };
-      }
-      return task;
+    }
+    return task;
     }));
-  };</p>
-<p>const editTask = (updatedTask) =&gt; {
+};
+
+const editTask = (updatedTask) =&gt; {
     setTasks(tasks.map(task =&gt; {
-      if (task.id === updatedTask.id) {
+    if (task.id === updatedTask.id) {
         return updatedTask;
-      }
-      return task;
+    }
+    return task;
     }));
-  };</p>
-<p>const deleteTask = (taskId) =&gt; {
+};
+
+const deleteTask = (taskId) =&gt; {
     setTasks(tasks.filter(task =&gt; task.id!== taskId));
-  };</p>
-<p>useEffect(() =&gt; {
+};
+
+useEffect(() =&gt; {
     // 将任务数据保存到本地存储
     localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);</p>
-<p>return (
-    <div className="min-h-screen bg-gray-100">
-      <TaskInput onAddTask={addTask} />
-      <TaskList tasks={tasks} onToggleComplete={toggleComplete} onEditTask={editTask} onDeleteTask={deleteTask} />
-    </div>
-  );
-};</p>
-<p>export default HomePage;
-```</p>
+}, [tasks]);
+
+return (
+    &lt;div className="min-h-screen bg-gray-100"&gt;
+    &lt;TaskInput onAddTask={addTask} /&gt;
+    &lt;TaskList tasks={tasks} onToggleComplete={toggleComplete} onEditTask={editTask} onDeleteTask={deleteTask} /&gt;
+    &lt;/div&gt;
+);
+};
+
+export default HomePage;
+</code></pre>
 <h2>三、部署上线（以 Vercel 为例）</h2>
 <h3>（一）准备工作</h3>
 <ol>
