@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta content="reactMaterial" name="keywords" />
-    <meta content="打算把之前一个vue的小应用用使用react+Material UI重构一下，这里记录一下React+Material UI开发环境的快速搭建。" name="description" />
+    <meta content="next.jsreacttailweind.css" name="keywords" />
+    <meta content="利用 Next.js 和 Tailwind CSS 这两个强大的工具来构建一个可编辑和删除的 ToDo 待办事项应用，帮助用户更好地管理他们的任务。" name="description" />
     <meta content="J.sky" name="author" />
     <link
       rel="icon"
@@ -19,7 +19,7 @@
       sizes="16x16"
     />
     <title>
-      前端React+Material UI开发环境的快速搭建 | SuiYan 碎言
+      使用 Next.js 和 Tailwind CSS 构建可编辑和删除的 ToDo 待办事项应用 | SuiYan 碎言
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.suiyan.cc/assets/js/tailwind.config.js"></script>
@@ -108,80 +108,310 @@
 <script>hljs.highlightAll();</script>
 
   <div class="mb-4">
-    <h1 class="text-3xl font-medium">前端React+Material UI开发环境的快速搭建</h1>
+    <h1 class="text-3xl font-medium">使用 Next.js 和 Tailwind CSS 构建可编辑和删除的 ToDo 待办事项应用</h1>
     <div class="text-sm flex flex-wrap my-2">
-      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2023-07-08T15:21:37.000000Z"><span
+      作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2024-11-04T09:22:09.467325Z"><span
         class="cr-time"
-        >2023-07-08T15:21:37.000000Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2023-08-13T22:54:57.634618Z"><span class="up-time">2023-08-13T22:54:57.634618Z</span></div>
-      · Tag:   react  Material 
+        >2024-11-04T09:22:09.467325Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2024-11-04T09:27:30.931417Z"><span class="up-time">2024-11-04T09:27:30.931417Z</span></div>
+      · Tag:   next.js  react  tailweind.css 
       </small>
     </div>
   </div>
 
-  <div class="mb-4 Blog_content"><p>打算把之前一个vue的小应用用使用react+Material UI重构一下，这里记录一下React+Material UI开发环境的快速搭建。</p>
-<h2>create react</h2>
-<p>在webStorm,可以直接创建一个全新的vite react项目，如果使用vscode可以在终端使用如下命令：</p>
-<pre><code>npm create vite@latest my-project -- --template react
-cd my-project
-</code></pre>
-<h2>Material UI installation</h2>
-<p><code>cd my-project</code>进入到项目之后，添加material UI 到项目中:</p>
-<pre><code>npm install @mui/material @emotion/react @emotion/styled
-</code></pre>
-<p>也可以使用:</p>
-<pre><code>pnpm i @mui/material @emotion/react @emotion/styled
-</code></pre>
-<p>安装字体：</p>
-<pre><code>npm install @fontsource/roboto
-</code></pre>
-<p>或：</p>
-<pre><code>pnpm i @fontsource/roboto
-</code></pre>
-<p>安装icons:</p>
-<pre><code>npm install @mui/icons-material
-</code></pre>
-<p>或:</p>
-<pre><code>pnpm i @mui/icons-material
-</code></pre>
-<p>修改<code>src/index.jsx</code>:</p>
-<pre><code>import { useState } from 'react'
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-
-function App() {
-const [count, setCount] = useState(0)
-
-return (
-    &lt;Stack spacing={2} direction="row"&gt;
-    &lt;Button variant="text"&gt;Text&lt;/Button&gt;
-    &lt;Button variant="contained"&gt;Contained&lt;/Button&gt;
-    &lt;Button variant="outlined"&gt;Outlined&lt;/Button&gt;
-    &lt;/Stack&gt;
-)
-}
-
-export default App
-</code></pre>
-<p>终端运行：</p>
-<pre><code>pnpm i
-</code></pre>
-<p>当所有以来下载完毕后运行:</p>
-<pre><code>pnpm run dev
-</code></pre>
-<p>浏览器打开：http://localhost:5173/, 发现已经成功引入mui的按钮了。</p></div>
+  <div class="mb-4 Blog_content"><p><img alt="演示" src="https://suiyan.cc/assets/images/2024/todo.png" /></p>
+<h2>一、项目构建构思</h2>
+<h3>（一）功能设计</h3>
+<ol>
+<li><strong>任务管理</strong><ul>
+<li>用户能够添加新的待办任务，包括任务标题和描述。</li>
+<li>针对每个任务，用户可进行编辑，编辑功能应允许修改任务标题和描述。</li>
+<li>用户可以删除不再需要的任务。</li>
+<li>每个任务能被标记为已完成或未完成，方便用户跟踪任务进度。</li>
+</ul>
+</li>
+<li><strong>任务列表展示</strong><ul>
+<li>以清晰、美观的列表形式展示所有待办任务，已完成和未完成的任务有明显的视觉区分。</li>
+<li>可以按照任务创建时间、完成状态等进行排序，便于用户查看。</li>
+</ul>
+</li>
+<li><strong>数据存储与持久化</strong><ul>
+<li>使用本地存储（localStorage）来保存任务数据，确保用户刷新页面后数据不会丢失。</li>
+</ul>
+</li>
+</ol>
+<h3>（二）技术选型与架构设计</h3>
+<ol>
+<li><strong>Next.js</strong><ul>
+<li>作为项目的核心框架，利用其服务器端渲染（SSR）和静态生成（SSG）能力，提高应用的性能和 SEO。</li>
+<li>Next.js 的路由系统方便实现不同页面和功能的导航（虽然本项目暂不需要多页面，但为后续扩展考虑）。</li>
+</ul>
+</li>
+<li><strong>Tailwind CSS</strong><ul>
+<li>用于快速搭建应用的用户界面，通过其丰富的实用类来设置样式，使页面布局和设计更加简洁高效。</li>
+</ul>
+</li>
+<li><strong>组件化设计</strong><ul>
+<li>将应用划分为多个组件，如任务输入组件、任务列表组件、任务项组件等，提高代码的可维护性和复用性。每个组件负责特定的功能和展示逻辑。</li>
+</ul>
+</li>
+</ol>
+<h2>二、项目创建过程</h2>
+<h3>（一）项目初始化</h3>
+<ol>
+<li>创建 Next.js 项目：
+    <code>bash
+    npx create-next-app todo-app-with-edit</code>
+    然后进入项目目录：
+    <code>bash
+    cd todo-app-with-edit</code></li>
+<li>安装 Tailwind CSS：
+    <code>bash
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p</code>
+    在<code>tailwind.config.js</code>中配置内容路径：
+    <code>javascript
+    module.exports = {
+      content: [
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+    };</code>
+    在<code>styles/globals.css</code>中导入 Tailwind 基础样式：
+    <code>css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;</code></li>
+</ol>
+<h3>（二）创建组件</h3>
+<ol>
+<li>
+<p><strong>任务输入组件（<code>components/TaskInput.js</code>）</strong>
+    ```javascript
+    // 导入 React 和 useState 钩子
+    import React, { useState } from 'react';</p>
+<p>const TaskInput = ({ onAddTask }) =&gt; {
+  // 状态来存储任务标题和描述
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');</p>
+<p>const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    // 检查标题是否为空
+    if (title.trim()!== '') {
+      // 创建新的任务对象
+      const newTask = {
+        id: Date.now(),
+        title,
+        description,
+        completed: false
+      };
+      onAddTask(newTask);
+      setTitle('');
+      setDescription('');
+    }
+  };</p>
+<p>return (
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
+      <h2 className="text-2xl font-bold mb-4">Add New Task</h2>
+      <input
+        type="text"
+        placeholder="Task Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        className="w-full border border-gray-300 p-2 rounded mb-4"
+      /&gt;
+      <textarea
+        placeholder="Task Description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        className="w-full border border-gray-300 p-2 rounded mb-4"
+      /&gt;
+      <button
+        type="submit"
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
+        Add Task
+      </button>
+    </form>
+  );
+};</p>
+<p>export default TaskInput;
+<code>2. **任务项组件（`components/TaskItem.js`）**</code>javascript
+import React, { useState } from 'react';</p>
+<p>const TaskItem = ({ task, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTitle, setEditedTitle] = useState(task.title);
+  const [editedDescription, setEditedDescription] = useState(task.description);</p>
+<p>const handleEditToggle = () =&gt; {
+    setIsEditing(!isEditing);
+  };</p>
+<p>const handleSave = () =&gt; {
+    const updatedTask = {
+    ...task,
+      title: editedTitle,
+      description: editedDescription
+    };
+    onEditTask(updatedTask);
+    setIsEditing(false);
+  };</p>
+<p>return (
+    <div className="bg-white p-4 rounded shadow-md mb-4">
+      {isEditing? (
+        &lt;&gt;
+          <input
+            type="text"
+            value={editedTitle}
+            onChange={(e) => setEditedTitle(e.target.value)}
+            className="w-full border border-gray-300 p-2 rounded mb-2"
+          /&gt;
+          <textarea
+            value={editedDescription}
+            onChange={(e) => setEditedDescription(e.target.value)}
+            className="w-full border border-gray-300 p-2 rounded mb-2"
+          /&gt;
+          <button
+            onClick={handleSave}
+            className="bg-green-500 text-white px-4 py-2 rounded mr-2"
+          >
+            Save
+          </button>
+          <button
+            onClick={handleEditToggle}
+            className="bg-gray-500 text-white px-4 py-2 rounded"
+          >
+            Cancel
+          </button>
+      <br />
+      ) : (
+        &lt;&gt;
+          <h3 className={<code>text-xl font-bold ${task.completed? 'line-through' : ''}</code>}>{task.title}</h3>
+          <p className="text-gray-700">{task.description}</p>
+          <button
+            onClick={() => onToggleComplete(task.id)}
+            className={<code>${task.completed? 'bg-green-500' : 'bg-yellow-500'} text-white px-4 py-2 rounded mt-2 mr-2</code>}
+          &gt;
+            {task.completed? 'Completed' : 'Mark as Completed'}
+          </button>
+          <button
+            onClick={handleEditToggle}
+            className="bg-blue-500 text-white px-4 py-2 rounded mt-2 mr-2"
+          >
+            Edit
+          </button>
+          <button
+            onClick={() => onDeleteTask(task.id)}
+            className="bg-red-500 text-white px-4 py-2 rounded mt-2"
+          &gt;
+            Delete
+          </button>
+      <br />
+      )}
+    </div>
+  );
+};</p>
+<p>export default TaskItem;
+<code>3. **任务列表组件（`components/TaskList.js`）**</code>javascript
+import React from 'react';
+import TaskItem from './TaskItem';</p>
+<p>const TaskList = ({ tasks, onToggleComplete, onEditTask, onDeleteTask }) =&gt; {
+  return (
+    <div className="container mx-auto px-4">
+      {tasks.map(task =&gt; (
+        <TaskItem key={task.id} task={task} onToggleComplete={onToggleComplete} onEditTask={onEditTask} onDeleteTask={onDeleteTask} />
+      ))}
+    </div>
+  );
+};</p>
+<p>export default TaskList;
+```</p>
+</li>
+</ol>
+<h3>（三）页面组件（<code>pages/index.js</code>）</h3>
+<p>```javascript
+import React, { useState, useEffect } from 'react';
+import TaskInput from '../components/TaskInput';
+import TaskList from '../components/TaskList';</p>
+<p>const HomePage = () =&gt; {
+  const [tasks, setTasks] = useState([]);</p>
+<p>useEffect(() =&gt; {
+    // 从本地存储获取任务数据
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(storedTasks);
+  }, []);</p>
+<p>const addTask = (newTask) =&gt; {
+    setTasks([...tasks, newTask]);
+  };</p>
+<p>const toggleComplete = (taskId) =&gt; {
+    setTasks(tasks.map(task =&gt; {
+      if (task.id === taskId) {
+        return {
+        ...task,
+          completed:!task.completed
+        };
+      }
+      return task;
+    }));
+  };</p>
+<p>const editTask = (updatedTask) =&gt; {
+    setTasks(tasks.map(task =&gt; {
+      if (task.id === updatedTask.id) {
+        return updatedTask;
+      }
+      return task;
+    }));
+  };</p>
+<p>const deleteTask = (taskId) =&gt; {
+    setTasks(tasks.filter(task =&gt; task.id!== taskId));
+  };</p>
+<p>useEffect(() =&gt; {
+    // 将任务数据保存到本地存储
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);</p>
+<p>return (
+    <div className="min-h-screen bg-gray-100">
+      <TaskInput onAddTask={addTask} />
+      <TaskList tasks={tasks} onToggleComplete={toggleComplete} onEditTask={editTask} onDeleteTask={deleteTask} />
+    </div>
+  );
+};</p>
+<p>export default HomePage;
+```</p>
+<h2>三、部署上线（以 Vercel 为例）</h2>
+<h3>（一）准备工作</h3>
+<ol>
+<li>确保项目在本地运行无误，包括所有功能都正常工作，没有报错。检查添加、编辑、删除任务以及标记任务完成等功能是否都能正常执行，同时检查本地存储的数据是否正确保存和读取。</li>
+<li>检查项目中是否有敏感信息（如 API 密钥等），如果有，确保妥善处理，避免泄露。</li>
+</ol>
+<h3>（二）连接 Vercel</h3>
+<ol>
+<li>注册并登录 Vercel。</li>
+<li>在 Vercel 控制台，点击“New Project”（新建项目）按钮。</li>
+<li>选择“Import Git Repository”（导入 Git 仓库）选项。如果你的项目已经托管在 Git 平台（如 GitHub、GitLab、Bitbucket 等），Vercel 会自动检测到你的仓库并列出。选择你的<code>todo - app - with - edit</code>项目仓库。</li>
+</ol>
+<h3>（三）配置项目</h3>
+<ol>
+<li>Vercel 会自动识别项目为 Next.js 框架。</li>
+<li>在“Project Settings”（项目设置）中，可以设置项目名称等基本信息。</li>
+<li>如果有需要，可以在“Build &amp; Development Settings”（构建和开发设置）中配置构建命令等。一般情况下，Next.js 项目默认的构建命令<code>npm install &amp;&amp; npm run build</code>就可以正常工作。</li>
+</ol>
+<h3>（四）部署项目</h3>
+<ol>
+<li>点击“Deploy”（部署）按钮，Vercel 会开始克隆仓库、安装依赖、构建项目。</li>
+<li>在部署过程中，可以在控制台查看构建日志和部署进度。部署完成后，Vercel 会提供一个访问 URL，通过这个 URL 就可以在线访问你的可编辑和删除的 ToDo 待办事项应用了。</li>
+</ol>
+<p>这样，我们就完成了一个具有添加、编辑和删除功能的 ToDo 待办事项应用的构建和部署。用户可以方便地管理自己的任务列表，并且数据在本地存储中得以持久化保存。</p></div>
 
   <div class="blog_footer">
     <div class="prev_next flex justify-between my-4">
       
-      <a href="https://www.suiyan.cc/2023/20230707084736.html" class="text-accent text-md"
+      <a href="https://www.suiyan.cc/2024/20241103085039.html" class="text-accent text-md"
         ><button class="btn"> prev </button></a
       >
        
-      <a href="https://www.suiyan.cc/2023/20230709104417.html" class="text-accent text-md"
-        ><button class="btn"> next </button></a
-      >
-      
     </div>
     
     <div class="related">
@@ -189,8 +419,20 @@ export default App
       <ul>
         
         <li class="list-group-item">
-          <a href="https://www.suiyan.cc/2024/20241104092209.html" class="link link-hover"
-            ><span>使用 Next.js 和 Tailwind CSS 构建可编辑和删除的 ToDo 待办事项应用</span></a
+          <a href="https://www.suiyan.cc/2024/20241102083314.html" class="link link-hover"
+            ><span>使用 Next.js 和 Tailwind CSS 搭建静态图片展示站点并部署到 Vercel</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://www.suiyan.cc/2023/20230820094408.html" class="link link-hover"
+            ><span>Next项目部署GitHub pages的一些坑</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
+          <a href="https://www.suiyan.cc/2023/20230812135025.html" class="link link-hover"
+            ><span>仅用了几个小时就使用next.js重构博客的所有功能</span></a
           >
         </li>
         
@@ -219,6 +461,12 @@ export default App
         </li>
         
         <li class="list-group-item">
+          <a href="https://www.suiyan.cc/2023/20230708152137.html" class="link link-hover"
+            ><span>前端React+Material UI开发环境的快速搭建</span></a
+          >
+        </li>
+        
+        <li class="list-group-item">
           <a href="https://www.suiyan.cc/2023/20230629155438.html" class="link link-hover"
             ><span>使用React+Vite+TailwindCSS+daisyUI打造一个简单的ToDos</span></a
           >
@@ -227,12 +475,6 @@ export default App
         <li class="list-group-item">
           <a href="https://www.suiyan.cc/2023/20230626075924.html" class="link link-hover"
             ><span>前端React+TailwindCSS+daisyUI开发环境的快速搭建</span></a
-          >
-        </li>
-        
-        <li class="list-group-item">
-          <a href="https://www.suiyan.cc/2023/20230623155935.html" class="link link-hover"
-            ><span>macOS npx create-react-app 创建react项目报错或是没有写入权限</span></a
           >
         </li>
         

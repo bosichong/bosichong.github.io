@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://www.suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-11-03T08:50:39.953144Z</pubDate>
+        <pubDate>2024-11-04T09:22:09.467325Z</pubDate>
+        
+        <item>
+            <title>使用 Next.js 和 Tailwind CSS 构建可编辑和删除的 ToDo 待办事项应用</title>
+            <link>https://www.suiyan.cc/2024/20241104092209.html</link>
+            <author>J.sky</author>
+            <description>利用 Next.js 和 Tailwind CSS 这两个强大的工具来构建一个可编辑和删除的 ToDo 待办事项应用，帮助用户更好地管理他们的任务。</description>
+            <category>next.js,react,tailweind.css</category>
+            <guid>https://www.suiyan.cc/2024/20241104092209.html</guid>
+            <pubDate>2024-11-04T09:22:09.467325Z</pubDate>
+        </item>
         
         <item>
             <title>探索编程新境界：MarsCode 助你一臂之力</title>
@@ -94,16 +104,6 @@
             <category>blender</category>
             <guid>https://www.suiyan.cc/2024/20240831193648.html</guid>
             <pubDate>2024-08-31T19:36:48.474492Z</pubDate>
-        </item>
-        
-        <item>
-            <title>每日原创壁纸:极简|平面|抽象|几何|色彩|护眼|壁纸</title>
-            <link>https://www.suiyan.cc/2024/20240828192713.html</link>
-            <author>J.sky</author>
-            <description>极简|平面|抽象|几何|色彩|护眼|壁纸</description>
-            <category>原创壁纸</category>
-            <guid>https://www.suiyan.cc/2024/20240828192713.html</guid>
-            <pubDate>2024-08-28T19:27:13.495765Z</pubDate>
         </item>
         
     </channel>
