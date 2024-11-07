@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://www.suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-11-05T09:26:53.146214Z</pubDate>
+        <pubDate>2024-11-07T08:57:52.830681Z</pubDate>
+        
+        <item>
+            <title>PrimaryOralMathPack 小学生口算题生成器</title>
+            <link>https://www.suiyan.cc/2024/20241107085752.html</link>
+            <author>J.sky</author>
+            <description>PrimaryOralMathPack是一个功能强大的NPM包，专门用于生成小学生口算题。它可以根据用户指定的各种参数，如运算类型（加法、减法、乘法、除法）的属性、运算步数、题目数量、是否求结果或运算项、是否包含括号以及数值范围和运算符列表等，生成符合要求的口算题数组，为教育工作者或家长创建个性化的口算练习材料提供了便利。</description>
+            <category>口算题</category>
+            <guid>https://www.suiyan.cc/2024/20241107085752.html</guid>
+            <pubDate>2024-11-07T08:57:52.830681Z</pubDate>
+        </item>
         
         <item>
             <title>AI 辅助编程下的程序设计与代码编写</title>
@@ -94,16 +104,6 @@
             <category>Flux.1</category>
             <guid>https://www.suiyan.cc/2024/20240922204505.html</guid>
             <pubDate>2024-09-22T20:45:05.962082Z</pubDate>
-        </item>
-        
-        <item>
-            <title>Git项目的子文件夹中的内容无法同步到远程仓库的解决方法</title>
-            <link>https://www.suiyan.cc/2024/20240920213045.html</link>
-            <author>J.sky</author>
-            <description>Git项目的子文件夹中的内容无法同步到远程仓库的解决方法</description>
-            <category>Git</category>
-            <guid>https://www.suiyan.cc/2024/20240920213045.html</guid>
-            <pubDate>2024-09-20T21:30:45.982005Z</pubDate>
         </item>
         
     </channel>
