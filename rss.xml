@@ -10,7 +10,7 @@
             <title>npm login 和 npm publish 总是连接不上npm的网站的解决方法</title>
             <link>https://www.suiyan.cc/2024/20241107092043.html</link>
             <author>J.sky</author>
-            <description>博文的简介</description>
+            <description>昨天像发布一个npm的包，但是，npm login 和 npm publish 总是连接不上npm的网站，一直显示超时，但是我ping 一下，是可以ping通的，但是就是连接不上，然后我就去网上查了一下，总结一下连接不上npm网站的解决方法。</description>
             <category>npm</category>
             <guid>https://www.suiyan.cc/2024/20241107092043.html</guid>
             <pubDate>2024-11-07T09:20:43.941593Z</pubDate>
