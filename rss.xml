@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://www.suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-11-07T09:20:43.941593Z</pubDate>
+        <pubDate>2024-11-10T09:17:51.380962Z</pubDate>
+        
+        <item>
+            <title>Node.js新手教程：使用3M（nvm, npm, nrm）</title>
+            <link>https://www.suiyan.cc/2024/20241110091751.html</link>
+            <author>J.sky</author>
+            <description>本教程将带你了解如何使用3M工具（nvm, npm, nrm）来管理Node.js环境。这些工具将帮助你轻松切换Node.js版本，管理项目依赖，以及优化包的下载速度。</description>
+            <category>node.js</category>
+            <guid>https://www.suiyan.cc/2024/20241110091751.html</guid>
+            <pubDate>2024-11-10T09:17:51.380962Z</pubDate>
+        </item>
         
         <item>
             <title>npm login 和 npm publish 总是连接不上npm的网站的解决方法</title>
@@ -94,16 +104,6 @@
             <category>碎言博客,站长吐槽,vercel</category>
             <guid>https://www.suiyan.cc/2024/20241016221206.html</guid>
             <pubDate>2024-10-16T22:12:06.920917Z</pubDate>
-        </item>
-        
-        <item>
-            <title>ComfyUI 和 Flux.1 安装与使用教程</title>
-            <link>https://www.suiyan.cc/2024/20240927082723.html</link>
-            <author>J.sky</author>
-            <description>ComfyUI 是一个基于 Stable Diffusion 的图形用户界面，它允许用户通过拖放节点来创建图像生成工作流.</description>
-            <category>Flux.1,ComfyUI</category>
-            <guid>https://www.suiyan.cc/2024/20240927082723.html</guid>
-            <pubDate>2024-09-27T08:27:23.728820Z</pubDate>
         </item>
         
     </channel>
