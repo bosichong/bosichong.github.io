@@ -113,7 +113,7 @@
       作者:<a href="#">J.sky</a> · 发表于:<div class="tooltip" data-tip="2024-11-14T08:36:51.182778Z"><span
         class="cr-time"
         >2024-11-14T08:36:51.182778Z</span></div>
-      · 更新于:<div class="tooltip" data-tip="2024-11-14T08:47:56.155940Z"><span class="up-time">2024-11-14T08:47:56.155940Z</span></div>
+      · 更新于:<div class="tooltip" data-tip="2024-11-14T09:17:01.847856Z"><span class="up-time">2024-11-14T09:17:01.847856Z</span></div>
       · Tag:   Socket.IO 
       </small>
     </div>
@@ -295,22 +295,22 @@ clientSocket.on('sendMsg', function (data, fn) {
 <h3>（一）基于 WebSocket 和降级策略</h3>
 <p>Socket.IO 底层使用 engine.io 封装了一层协议。在支持 WebSocket 的环境中，Socket.IO 会优先使用 WebSocket 进行通信，以实现高效的双向通信。但当浏览器不支持 WebSocket 时，Socket.IO 会自动采用降级策略，拥有多种轮询解决方案，确保在各种网络环境下都能实现实时通信。例如，它可以使用 XHR 轮询、JSONP 轮询等方式。这样的设计使得 Socket.IO 具有极高的兼容性，能够适应不同的浏览器和网络环境。</p>
 <h3>（二）建立连接过程</h3>
-<p>WebSocket 建立连接的过程复用了 HTTP 的握手通道。客户端发送 HTTP 请求，并在请求头中带上特定的参数，如Connection: Upgrade、Upgrade: websocket，服务端识别该请求头之后，进行协议升级，使用 WebSocket 协议进行数据通信。
-请求头参数说明如下：
-Request URL：请求服务端地址。
-Request Method：请求方式，支持get、post、option等。
-Status Code 101 Switching Protocols：当收到 101 请求状态码时，表明服务端理解并同意客户端请求，更改Upgrade header字段。服务端也必须在响应中，生成对应的Upgrade值。
-Connection：设置upgrade header，通知服务端，该request类型需要进行升级为 websocket。
-upgrade_mechanism：规范。
-Host：服务端 hostname。
-Origin：客户端 hostname:port。
-Sec-WebSocket-Extensions：客户端向服务端发起请求扩展列表，供服务端选择并在响应中返回。
-Sec-WebSocket-Key：秘钥的值是通过规范中定义的算法进行计算得出，虽然不安全，但是可以阻止一些误操作的 websocket 请求。
-Sec-WebSocket-Accept：计算公式为获取客户端请求 header 的值Sec-WebSocket-Key，使用魔数'258EAFA5-E914-47DA-95CA-C5AB0DC85B11'，通过 SHA1 进行加密计算（sha1(Sec-WebSocket-Key + magic)），将值转换为 base64。
-Sec-WebSocket-Protocol：指定有限使用的 WebSocket 协议，可以是一个协议列表。服务端在响应中返回列表中支持的第一个值。
-Sec-WebSocket-Version：指定通信时使用的 WebSocket 协议版本。最新版本为 13，历史版本也有其他值。
-Upgrade：通知服务端，指定升级协议类型为 websocket。
-响应头方面，服务端响应了Upgrade，此时，连接已经和 HTTP 没什么关系了，协议升级后双方建立的就是 WebSocket 连接。整个过程中，通过这样的握手方式，实现了从 HTTP 协议到 WebSocket 协议的转换，为客户端和服务端的双向通信奠定了基础。</p>
+<p>WebSocket 建立连接的过程复用了 HTTP 的握手通道。客户端发送 HTTP 请求，并在请求头中带上特定的参数，如Connection: Upgrade、Upgrade: websocket，服务端识别该请求头之后，进行协议升级，使用 WebSocket 协议进行数据通信。</p>
+<p>请求头参数说明如下：</p>
+<p>Request URL：请求服务端地址。</p>
+<p>Request Method：请求方式，支持get、post、option等。</p>
+<p>Status Code 101 Switching Protocols：当收到 101 请求状态码时，表明服务端理解并同意客户端请求，更改Upgrade header字段。服务端也必须在响应中，生成对应的Upgrade值。</p>
+<p>Connection：设置upgrade header，通知服务端，该request类型需要进行升级为 websocket。</p>
+<p>upgrade_mechanism：规范。</p>
+<p>Host：服务端 hostname。</p>
+<p>Origin：客户端 hostname:port。</p>
+<p>Sec-WebSocket-Extensions：客户端向服务端发起请求扩展列表，供服务端选择并在响应中返回。</p>
+<p>Sec-WebSocket-Key：秘钥的值是通过规范中定义的算法进行计算得出，虽然不安全，但是可以阻止一些误操作的 websocket 请求。</p>
+<p>Sec-WebSocket-Accept：计算公式为获取客户端请求 header 的值Sec-WebSocket-Key，使用魔数'258EAFA5-E914-47DA-95CA-C5AB0DC85B11'，通过 SHA1 进行加密计算（sha1(Sec-WebSocket-Key + magic)），将值转换为 base64。</p>
+<p>Sec-WebSocket-Protocol：指定有限使用的 WebSocket 协议，可以是一个协议列表。服务端在响应中返回列表中支持的第一个值。</p>
+<p>Sec-WebSocket-Version：指定通信时使用的 WebSocket 协议版本。最新版本为 13，历史版本也有其他值。</p>
+<p>Upgrade：通知服务端，指定升级协议类型为 websocket。</p>
+<p>响应头方面，服务端响应了Upgrade，此时，连接已经和 HTTP 没什么关系了，协议升级后双方建立的就是 WebSocket 连接。整个过程中，通过这样的握手方式，实现了从 HTTP 协议到 WebSocket 协议的转换，为客户端和服务端的双向通信奠定了基础。</p>
 <h2>六、应用与展望</h2>
 <h3>（一）应用场景</h3>
 <p>实时分析：将数据推送到客户端，客户端表现为实时计数器、图表或日志客户。例如在金融交易平台中，可以实时更新股票价格、交易量等数据，让用户能够及时了解市场动态。在工业监控系统中，传感器数据可以通过 Socket.IO 实时传输到客户端，实现对生产过程的实时监测和分析。</p>
