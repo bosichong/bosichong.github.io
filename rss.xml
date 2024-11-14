@@ -4,7 +4,17 @@
         <title>SuiYan 碎言</title>
         <link>https://www.suiyan.cc/</link>
         <description>SuiYan 碎言 最近更新的10篇博文。</description>
-        <pubDate>2024-11-10T09:17:51.380962Z</pubDate>
+        <pubDate>2024-11-14T08:36:51.182778Z</pubDate>
+        
+        <item>
+            <title>Socket.IO：实时通信的强大工具</title>
+            <link>https://www.suiyan.cc/2024/20241114083651.html</link>
+            <author>J.sky</author>
+            <description>Socket.IO 由 Guillermo Rauch 开发，旨在解决 WebSocket 在不同浏览器和网络环境中的兼容性问题。它提供了统一的 API，让开发者无需担心底层传输协议的差异，轻松实现实时双向通信。</description>
+            <category>Socket.IO</category>
+            <guid>https://www.suiyan.cc/2024/20241114083651.html</guid>
+            <pubDate>2024-11-14T08:36:51.182778Z</pubDate>
+        </item>
         
         <item>
             <title>Node.js新手教程：使用3M（nvm, npm, nrm）</title>
@@ -94,16 +104,6 @@
             <category>GitHub</category>
             <guid>https://www.suiyan.cc/2024/20241021213822.html</guid>
             <pubDate>2024-10-21T21:38:22.671471Z</pubDate>
-        </item>
-        
-        <item>
-            <title>把博客从GitHub迁移到到了vercel</title>
-            <link>https://www.suiyan.cc/2024/20241016221206.html</link>
-            <author>J.sky</author>
-            <description>vercel的部署竟然这么简单，有点意外。</description>
-            <category>碎言博客,站长吐槽,vercel</category>
-            <guid>https://www.suiyan.cc/2024/20241016221206.html</guid>
-            <pubDate>2024-10-16T22:12:06.920917Z</pubDate>
         </item>
         
     </channel>
