@@ -46,7 +46,7 @@
         {
             "ico": "wallpaper",
             "text": "壁纸",
-            "url": "https://suipian.suiyan.cc"
+            "url": "https://www.suipian.cc/"
         },
         {
             "ico": "archive",
@@ -60,6 +60,12 @@
         }
     ],
     "links": [
+        {
+            "site_name": "碎片壁纸",
+            "site_url": "https://www.suipian.cc/",
+            "site_description": "精美高清壁纸站",
+            "site_avatar": "http://www.suiyan.cc/assets/images/user_circle.png"
+        },
         {
             "site_name": "小林笔记",
             "site_url": "https://m.senlinm.cn",
